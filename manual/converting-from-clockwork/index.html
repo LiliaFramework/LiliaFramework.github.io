@@ -1034,7 +1034,7 @@ WeaponSelectSound											</a>
 <h1>The <code>Character</code> Object</h1>
 <p>One main thing that is very notable is how the character is referenced using <code>client:GetCharacter()</code> which returns a character object. The way the object works is just like an entity you spawn. It has its own properties like the model, color, etc. that makes it unique. You can access all the characters in a table which stores loaded characters with <code>ix.char.loaded</code>.</p>
 
-<p>The character object comes with many predefined methods. You can look at how they are defined <a href="https://github.com/NebulousCloud/helix/blob/master/gamemode/core/meta/sh_character.lua">by clicking here</a>. The character object makes it very simple to manager character information.</p>
+<p>The character object comes with many predefined methods. You can look at how they are defined <a href="https://github.com/bleonheart/LiliaTest/blob/master/gamemode/core/meta/sh_character.lua">by clicking here</a>. The character object makes it very simple to manager character information.</p>
 
 <p>You will notice throughout the framework, the character object is used a lot. The use of the character object makes a large barrier between what belongs to the character and what belongs to the player. For example: flags, models, factions, data, and other things are stored on the character and can be accessed by the character object.</p>
 
@@ -1070,7 +1070,7 @@ WeaponSelectSound											</a>
 
 <p>One extra feature for attributes in Helix is <code>ATTRIBUTE:OnSetup(client, value)</code> which is a function that gets called on spawn to apply any effects. For example, the stamina attribute changes the player's run speed by adding the amount of stamina points the player has.</p>
 
-<p>You can find an example at <a href="https://github.com/NebulousCloud/helix/blob/master/plugins/stamina/attributes/sh_stm.lua">https://github.com/NebulousCloud/helix/blob/master/plugins/stamina/attributes/sh_stm.lua</a></p>
+<p>You can find an example at <a href="https://github.com/bleonheart/LiliaTest/blob/master/plugins/stamina/attributes/sh_stm.lua">https://github.com/bleonheart/LiliaTest/blob/master/plugins/stamina/attributes/sh_stm.lua</a></p>
 
 <p><a name="Classes___ix_class__"></a></p>
 <h2>Classes (<code>ix.class</code>)</h2>
@@ -1087,7 +1087,7 @@ WeaponSelectSound											</a>
 
 <p><a name="Commands___ix_command__"></a></p>
 <h2>Commands (<code>ix.command</code>)</h2>
-<p>Commands no longer need to be in separate files. Instead, they are just placed into one large file. However, if you really wanted you can register multiple commands across multiple files or however you want. One thing you may notice is Clockwork uses a <em>COMMAND</em> table while Helix does not always. It is simply a design preference. You can find examples at <a href="https://github.com/NebulousCloud/helix/blob/master/gamemode/core/sh_commands.lua">https://github.com/NebulousCloud/helix/blob/master/gamemode/core/sh_commands.lua</a></p>
+<p>Commands no longer need to be in separate files. Instead, they are just placed into one large file. However, if you really wanted you can register multiple commands across multiple files or however you want. One thing you may notice is Clockwork uses a <em>COMMAND</em> table while Helix does not always. It is simply a design preference. You can find examples at <a href="https://github.com/bleonheart/LiliaTest/blob/master/gamemode/core/sh_commands.lua">https://github.com/bleonheart/LiliaTest/blob/master/gamemode/core/sh_commands.lua</a></p>
 
 <p>It should be noted that:</p>
 
@@ -1101,7 +1101,7 @@ WeaponSelectSound											</a>
 
 <p><a name="Configurations___ix_config__"></a></p>
 <h2>Configurations (<code>ix.config</code>)</h2>
-<p>In Helix, the method of adding configurations that can be changed by server owners is heavily simplified. <a href="https://github.com/NebulousCloud/helix/blob/master/gamemode/config/sh_config.lua">See an example here</a>.</p>
+<p>In Helix, the method of adding configurations that can be changed by server owners is heavily simplified. <a href="https://github.com/bleonheart/LiliaTest/blob/master/gamemode/config/sh_config.lua">See an example here</a>.</p>
 
 <p>Adding a configuration is as follows:</p>
 
@@ -1118,7 +1118,7 @@ WeaponSelectSound											</a>
     <li><code>Clockwork.config:ShareKey()</code> is not needed.</li>
     <li>The 3rd argument for <code>Clockwork.config:AddToSystem(name, key, description, min, max)</code> is also the 3rd argument for <code>ix.config.Add</code></li>
     <li>The 4th argument for <code>ix.config.Add</code> is an optional function that is called when the configuration is changed.</li>
-    <li>The 5th argument for <code>ix.config.Add</code> is a table. You can specify the category for the configuration to group it with other configurations. There is also a data table inside which can be used to determine the minimum value and maximum value for numbers. Check out <a href="https://github.com/NebulousCloud/helix/blob/master/gamemode/config/sh_config.lua">an example here</a>. See also <code>ix.config</code>.</li>
+    <li>The 5th argument for <code>ix.config.Add</code> is a table. You can specify the category for the configuration to group it with other configurations. There is also a data table inside which can be used to determine the minimum value and maximum value for numbers. Check out <a href="https://github.com/bleonheart/LiliaTest/blob/master/gamemode/config/sh_config.lua">an example here</a>. See also <code>ix.config</code>.</li>
 </ul>
 
 <p><a name="Currency___ix_currency__"></a></p>
@@ -1256,7 +1256,7 @@ WeaponSelectSound											</a>
 
 <p>All item functions are defined in the <code>ITEM.functions</code> table. This allows the drop-down menus when using the item a lot easier and cleaner to generate dynamically. There is also more control of the icons used for the options, whether or not the function should be displayed, etc.</p>
 
-<p>You can see an example of a water item here: <a href="https://github.com/NebulousCloud/helix-hl2rp/blob/master/schema/items/sh_water.lua">https://github.com/NebulousCloud/helix-hl2rp/blob/master/schema/items/sh_water.lua</a></p>
+<p>You can see an example of a water item here: <a href="https://github.com/bleonheart/LiliaTest-hl2rp/blob/master/schema/items/sh_water.lua">https://github.com/bleonheart/LiliaTest-hl2rp/blob/master/schema/items/sh_water.lua</a></p>
 
 <p>Here, we can define what happens when the function is run, what the icon is, and what sound it plays when used. It is basically put into one area rather than being scattered among hooks and stuff.</p>
 
@@ -1330,7 +1330,7 @@ WeaponSelectSound											</a>
 <h1>Conclusion</h1>
 <p>Overall, most of the conversion from Clockwork to Helix is simply renaming a certain function and/or switching the order of arguments around. Both are frameworks so they function similarly.</p>
 
-<p>You may want to use our HL2 RP schema example for reference which can be found at <a href="https://github.com/NebulousCloud/helix-hl2rp">https://github.com/NebulousCloud/helix-hl2rp</a></p>
+<p>You may want to use our HL2 RP schema example for reference which can be found at <a href="https://github.com/bleonheart/LiliaTest-hl2rp">https://github.com/bleonheart/LiliaTest-hl2rp</a></p>
 
 					</div>
 			</article>
