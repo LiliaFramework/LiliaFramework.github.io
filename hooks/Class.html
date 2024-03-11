@@ -40,23 +40,23 @@
 
 										<li>
 											<span class="realm shared"></span>
-											<a href="../index.html#CanSwitchTo">
-CanSwitchTo											</a>
+											<a href="../index.html#onCanBe">
+onCanBe											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../index.html#OnLeave">
-OnLeave											</a>
+											<a href="../index.html#onLeave">
+onLeave											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../index.html#OnSet">
-OnSet											</a>
+											<a href="../index.html#onSet">
+onSet											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../index.html#OnSpawn">
-OnSpawn											</a>
+											<a href="../index.html#onSpawn">
+onSpawn											</a>
 										</li>
 
 									</ul>
@@ -196,14 +196,14 @@ log											</a>
 </header>
 
 <p>As with <a href="../hooks/Faction.html#">Faction</a>s, <a href="../index.html#">Class</a>es get their own hooks for when players leave/join a class, etc. These hooks are only
-valid in class tables that are created in <code>schema/classes/sh_classname.lua</code>, and cannot be used like regular gamemode hooks.</p>
+valid in class tables that are created in <code>schema/classes/classname.lua</code>, and cannot be used like regular gamemode hooks.</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="CanSwitchTo">
-					<h1><span class="realm shared"></span></span>CLASS:CanSwitchTo(client)</h1>
+				<a class="anchor" id="onCanBe">
+					<h1><span class="realm shared"></span></span>CLASS:onCanBe(client)</h1>
 				</a>
 
 
@@ -220,10 +220,9 @@ valid in class tables that are created in <code>schema/classes/sh_classname.lua<
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
 
 
-								<p> Client that wants to switch to this class</p>
+								<p> Player who wants to switch to this class</p>
 							</li>
 					</ul>
 
@@ -240,22 +239,21 @@ valid in class tables that are created in <code>schema/classes/sh_classname.lua<
 				</ul>
 
 				<h3>Example Usage</h3>
-					<pre><code>function CLASS:CanSwitchTo(client)
-	return client:IsAdmin() -- only admins allowed in this class!
+					<pre><code>function CLASS:onCanBe(client)
+    return client:IsAdmin() or client:getChar():hasFlags("Z") -- Only admins or people with the Z flag are allowed in this class!
 end
 </code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="OnLeave">
-					<h1><span class="realm server"></span></span>CLASS:OnLeave(client)</h1>
+				<a class="anchor" id="onLeave">
+					<h1><span class="realm server"></span></span>CLASS:onLeave(client)</h1>
 				</a>
 
 
 
-					<p>Called when a character has left this class and has joined a different one.  You can get the class the character has
- has joined by calling <code>character:GetClass()</code>.</p>
+					<p>Called when a character has left this class and has joined a different one.</p>
 			</header>
 
 
@@ -267,7 +265,6 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
 
 
 								<p> Player who left this class</p>
@@ -275,12 +272,18 @@ end
 					</ul>
 
 
+				<h3>Example Usage</h3>
+					<pre><code>function CLASS:onLeave(client)
+    local character = client:getChar()
+    character:setModel("models/player/alyx.mdl")
+end
+</code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="OnSet">
-					<h1><span class="realm server"></span></span>CLASS:OnSet(client)</h1>
+				<a class="anchor" id="onSet">
+					<h1><span class="realm server"></span></span>CLASS:onSet(client)</h1>
 				</a>
 
 
@@ -297,7 +300,6 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
 
 
 								<p> Player who has joined this class</p>
@@ -306,16 +308,16 @@ end
 
 
 				<h3>Example Usage</h3>
-					<pre><code>function CLASS:OnSet(client)
-	client:SetModel("models/police.mdl")
+					<pre><code>function CLASS:onSet(client)
+    client:setModel("models/police.mdl")
 end
 </code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="OnSpawn">
-					<h1><span class="realm server"></span></span>CLASS:OnSpawn(client)</h1>
+				<a class="anchor" id="onSpawn">
+					<h1><span class="realm server"></span></span>CLASS:onSpawn(client)</h1>
 				</a>
 
 
@@ -332,7 +334,6 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
 
 
 								<p> Player that has just spawned</p>
@@ -340,6 +341,12 @@ end
 					</ul>
 
 
+				<h3>Example Usage</h3>
+					<pre><code>function CLASS:onSpawn(client)
+    client:SetMaxHealth(500) -- Sets your Max Health to 500
+    client:SetHealth(500) -- Subsequently sets your Health to 500
+end
+</code></pre>
 
 		</section>
 
