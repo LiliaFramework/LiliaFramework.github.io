@@ -71,6 +71,11 @@ onSpawn											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../hooks/Faction.html#getDefaultDesc">
+getDefaultDesc											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../hooks/Faction.html#getDefaultName">
 getDefaultName											</a>
 										</li>
@@ -193,8 +198,8 @@ log											</a>
 	<h2>Faction setup hooks.</h2>
 </header>
 
-<p>Factions get their own hooks that are called for various reasons, but the most common one is to set up a character
-once it's created and assigned to a certain faction. For example, giving a police faction character a weapon on creation.
+<p>Factions have their own hooks that are called for various reasons, with the most common being to set up a character
+once it's created and assigned to a certain faction. For example, giving a police faction character a weapon upon creation.
 These hooks are used in faction tables that are created in <code>schema/factions/sfactionname.lua</code> and cannot be used like
 regular gamemode hooks.</p>
 
@@ -202,13 +207,14 @@ regular gamemode hooks.</p>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="getDefaultName">
-					<h1><span class="realm shared"></span></span>FACTION:getDefaultName(client)</h1>
+				<a class="anchor" id="getDefaultDesc">
+					<h1><span class="realm shared"></span></span>FACTION:getDefaultDesc(client, faction)</h1>
 				</a>
 
 
 
-					<p>Called when the default name for a character needs to be retrieved (i.e upon initial creation).</p>
+					<p>Called when the default description for a character needs to be retrieved.
+ This function allows factions to define custom default descriptions for characters.</p>
 			</header>
 
 
@@ -220,10 +226,20 @@ regular gamemode hooks.</p>
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
 
 
-								<p> Client to get the default name for</p>
+								<p> The client for whom the default description is being retrieved</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">faction</span>
+
+
+
+								<p> The faction ID for which the default description is being retrieved</p>
 							</li>
 					</ul>
 
@@ -234,14 +250,59 @@ regular gamemode hooks.</p>
 							<li>
 									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
 
-								<p>Defines the default name for the newly created character</p>
+								<p>The default description for the newly created character</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function FACTION:getDefaultDesc(client, faction)
+    return "A police officer" -- Example default description
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getDefaultName">
+					<h1><span class="realm shared"></span></span>FACTION:getDefaultName(client)</h1>
+				</a>
+
+
+
+					<p>Called when the default name for a character needs to be retrieved (i.e., upon initial creation).</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+
+
+								<p> The client for whom the default name is being retrieved</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>The default name for the newly created character</p>
 							</li>
 
 				</ul>
 
 				<h3>Example Usage</h3>
 					<pre><code>function FACTION:getDefaultName(client)
-return "CT-" .. math.random(111111, 999999) -- This will set their name as CT-XXXXXX where as those 6 numerals are random generated
+    return "CT-" .. math.random(111111, 999999) -- Sets the name as CT-XXXXXX, where the XXXXXX are randomly generated digits
 end
 </code></pre>
 
@@ -254,7 +315,7 @@ end
 
 
 
-					<p>Called when a character has been initally created and assigned to this faction.</p>
+					<p>Called when a character has been initially created and assigned to this faction.</p>
 			</header>
 
 
@@ -266,10 +327,9 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
 
 
-								<p> Client that owns the character</p>
+								<p> The client that owns the character</p>
 							</li>
 					</ul>
 
@@ -278,18 +338,17 @@ end
 							<li>
 								<span class="tag parameter">character</span>
 
-									<span class="tag"><span class="type">Character</span></span>
 
 
-								<p> Character that has been created</p>
+								<p> The character that has been created</p>
 							</li>
 					</ul>
 
 
 				<h3>Example Usage</h3>
 					<pre><code>function FACTION:onCharCreated(client, character)
-local inventory = character:getInv()
-inventory:add("fancy_suit") -- Adds a Fancy Suit Item
+    local inventory = character:getInv()
+    inventory:add("fancy_suit") -- Adds a Fancy Suit item to the character's inventory
 end
 </code></pre>
 
@@ -314,17 +373,16 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
 
 
-								<p> Player that has just spawned</p>
+								<p> The player that has just spawned</p>
 							</li>
 					</ul>
 
 
 				<h3>Example Usage</h3>
 					<pre><code>function FACTION:onSpawn(client)
-client:ChatPrint("You have Spawned!") -- Notifies a client that he has spawned.
+    client:ChatPrint("You have spawned!") -- Notifies the client that they have spawned
 end
 </code></pre>
 
@@ -349,20 +407,18 @@ end
 							<li>
 								<span class="tag parameter">character</span>
 
-									<span class="tag"><span class="type">Character</span></span>
 
 
-								<p> Character that was transferred</p>
+								<p> The character that was transferred</p>
 							</li>
 					</ul>
 
 
 				<h3>Example Usage</h3>
-					<pre><code> function FACTION:onTransferred(target)
-local character = target:getChar()
-local randomModelIndex = math.random(1, #self.models)
-character:setModel(self.models[randomModelIndex]) -- Retrieves a random model from the table and sets it as the character's model
- end
+					<pre><code>function FACTION:onTransferred(character)
+    local randomModelIndex = math.random(1, #self.models)
+    character:setModel(self.models[randomModelIndex]) -- Sets a random model from the faction's model list as the character's model
+end
 </code></pre>
 
 		</section>

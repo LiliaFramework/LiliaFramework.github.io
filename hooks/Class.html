@@ -71,6 +71,11 @@ onSpawn											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../hooks/Faction.html#getDefaultDesc">
+getDefaultDesc											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../hooks/Faction.html#getDefaultName">
 getDefaultName											</a>
 										</li>
@@ -218,10 +223,9 @@ valid in class tables that are created in <code>schema/classes/classname.lua</co
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
 
 
-								<p> Client that wants to switch to this class</p>
+								<p> Player who wants to switch to this class</p>
 							</li>
 					</ul>
 
@@ -238,8 +242,8 @@ valid in class tables that are created in <code>schema/classes/classname.lua</co
 				</ul>
 
 				<h3>Example Usage</h3>
-					<pre><code> function CLASS:onCanBe(client)
-return client:IsAdmin() or client:getChar():hasFlags("Z") -- Only admins or people with the Z flag are allowed in this class!
+					<pre><code>function CLASS:onCanBe(client)
+    return client:IsAdmin() or client:getChar():hasFlags("Z") -- Only admins or people with the Z flag are allowed in this class!
 end
 </code></pre>
 
@@ -252,8 +256,7 @@ end
 
 
 
-					<p>Called when a character has left this class and has joined a different one.  You can get the class the character has
- has joined by calling <code>character:GetClass()</code>.</p>
+					<p>Called when a character has left this class and has joined a different one.</p>
 			</header>
 
 
@@ -265,7 +268,6 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
 
 
 								<p> Player who left this class</p>
@@ -274,9 +276,9 @@ end
 
 
 				<h3>Example Usage</h3>
-					<pre><code> function CLASS:onLeave(client)
-local character = client:getChar()
-character:setMode("models/player/alyx.mdl")
+					<pre><code>function CLASS:onLeave(client)
+    local character = client:getChar()
+    character:setModel("models/player/alyx.mdl")
 end
 </code></pre>
 
@@ -301,7 +303,6 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
 
 
 								<p> Player who has joined this class</p>
@@ -310,8 +311,8 @@ end
 
 
 				<h3>Example Usage</h3>
-					<pre><code>function CLASS:OnSet(client)
-	client:setModel("models/police.mdl")
+					<pre><code>function CLASS:onSet(client)
+    client:setModel("models/police.mdl")
 end
 </code></pre>
 
@@ -336,7 +337,6 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
 
 
 								<p> Player that has just spawned</p>
@@ -345,9 +345,9 @@ end
 
 
 				<h3>Example Usage</h3>
-					<pre><code> function CLASS:onSpawn(client)
-client:SetMaxHealth(500) -- Sets your Max Health to 500
-client:SetHealth(500) -- Subsequently sets your Health to 500
+					<pre><code>function CLASS:onSpawn(client)
+    client:SetMaxHealth(500) -- Sets your Max Health to 500
+    client:SetHealth(500) -- Subsequently sets your Health to 500
 end
 </code></pre>
 
