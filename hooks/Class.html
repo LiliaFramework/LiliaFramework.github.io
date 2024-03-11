@@ -274,9 +274,9 @@ end
 
 
 				<h3>Example Usage</h3>
-					<pre><code> function CLASS:onSpawn(client)
+					<pre><code> function CLASS:onLeave(client)
 local character = client:getChar()
-character:SetMode("models/player/alyx.mdl")
+character:setMode("models/player/alyx.mdl")
 end
 </code></pre>
 
@@ -311,7 +311,7 @@ end
 
 				<h3>Example Usage</h3>
 					<pre><code>function CLASS:OnSet(client)
-	client:SetModel("models/police.mdl")
+	client:setModel("models/police.mdl")
 end
 </code></pre>
 
