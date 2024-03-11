@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Faction - Lilia Documentation</title>
+		<title>Class - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Faction - Lilia Documentation" />
+		<meta property="og:title" content="Class - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Faction setup hooks." />
+			<meta property="og:description" content="Class setup hooks." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -32,7 +32,7 @@
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../hooks/Class.html">Class</a></summary>
 
 									<ul>
@@ -63,7 +63,7 @@ onSpawn											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../hooks/Faction.html">Faction</a></summary>
 
 									<ul>
@@ -202,27 +202,24 @@ log											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Faction</h1>
-	<h2>Faction setup hooks.</h2>
+	<h1>Class</h1>
+	<h2>Class setup hooks.</h2>
 </header>
 
-<p>Factions have their own hooks that are called for various reasons, with the most common being to set up a character
-once it's created and assigned to a certain faction. For example, giving a police faction character a weapon upon creation.
-These hooks are used in faction tables that are created in <code>schema/factions/sfactionname.lua</code> and cannot be used like
-regular gamemode hooks.</p>
+<p>As with <a href="../hooks/Faction.html#">Faction</a>s, <a href="../hooks/Class.html#">Class</a>es get their own hooks for when players leave/join a class, etc. These hooks are only
+valid in class tables that are created in <code>schema/classes/classname.lua</code>, and cannot be used like regular gamemode hooks.</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="getDefaultDesc">
-					<h1><span class="realm shared"></span></span>FACTION:getDefaultDesc(client, faction)</h1>
+				<a class="anchor" id="onCanBe">
+					<h1><span class="realm shared"></span></span>CLASS:onCanBe(client)</h1>
 				</a>
 
 
 
-					<p>Called when the default description for a character needs to be retrieved.
- This function allows factions to define custom default descriptions for characters.</p>
+					<p>Whether or not a player can switch to this class.</p>
 			</header>
 
 
@@ -236,18 +233,7 @@ regular gamemode hooks.</p>
 
 
 
-								<p> The client for whom the default description is being retrieved</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">faction</span>
-
-
-
-								<p> The faction ID for which the default description is being retrieved</p>
+								<p> Player who wants to switch to this class</p>
 							</li>
 					</ul>
 
@@ -256,29 +242,29 @@ regular gamemode hooks.</p>
 				<ul>
 
 							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+									<span class="type">bool</span>
 
-								<p>The default description for the newly created character</p>
+								<p>True if the player is allowed to switch to this class</p>
 							</li>
 
 				</ul>
 
 				<h3>Example Usage</h3>
-					<pre><code>function FACTION:getDefaultDesc(client, faction)
-    return "A police officer" -- Example default description
+					<pre><code>function CLASS:onCanBe(client)
+    return client:IsAdmin() or client:getChar():hasFlags("Z") -- Only admins or people with the Z flag are allowed in this class!
 end
 </code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="getDefaultName">
-					<h1><span class="realm shared"></span></span>FACTION:getDefaultName(client)</h1>
+				<a class="anchor" id="onLeave">
+					<h1><span class="realm server"></span></span>CLASS:onLeave(client)</h1>
 				</a>
 
 
 
-					<p>Called when the default name for a character needs to be retrieved (i.e., upon initial creation).</p>
+					<p>Called when a character has left this class and has joined a different one.</p>
 			</header>
 
 
@@ -292,38 +278,28 @@ end
 
 
 
-								<p> The client for whom the default name is being retrieved</p>
+								<p> Player who left this class</p>
 							</li>
 					</ul>
 
 
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
-
-								<p>The default name for the newly created character</p>
-							</li>
-
-				</ul>
-
 				<h3>Example Usage</h3>
-					<pre><code>function FACTION:getDefaultName(client)
-    return "CT-" .. math.random(111111, 999999) -- Sets the name as CT-XXXXXX, where the XXXXXX are randomly generated digits
+					<pre><code>function CLASS:onLeave(client)
+    local character = client:getChar()
+    character:setModel("models/player/alyx.mdl")
 end
 </code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="onCharCreated">
-					<h1><span class="realm server"></span></span>FACTION:onCharCreated(client, character)</h1>
+				<a class="anchor" id="onSet">
+					<h1><span class="realm server"></span></span>CLASS:onSet(client)</h1>
 				</a>
 
 
 
-					<p>Called when a character has been initially created and assigned to this faction.</p>
+					<p>Called when a character has joined this class.</p>
 			</header>
 
 
@@ -337,26 +313,14 @@ end
 
 
 
-								<p> The client that owns the character</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">character</span>
-
-
-
-								<p> The character that has been created</p>
+								<p> Player who has joined this class</p>
 							</li>
 					</ul>
 
 
 				<h3>Example Usage</h3>
-					<pre><code>function FACTION:onCharCreated(client, character)
-    local inventory = character:getInv()
-    inventory:add("fancy_suit") -- Adds a Fancy Suit item to the character's inventory
+					<pre><code>function CLASS:onSet(client)
+    client:setModel("models/police.mdl")
 end
 </code></pre>
 
@@ -364,12 +328,12 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="onSpawn">
-					<h1><span class="realm server"></span></span>FACTION:onSpawn(client)</h1>
+					<h1><span class="realm server"></span></span>CLASS:onSpawn(client)</h1>
 				</a>
 
 
 
-					<p>Called when a character in this faction has spawned in the world.</p>
+					<p>Called when a character in this class has spawned in the world.</p>
 			</header>
 
 
@@ -383,49 +347,15 @@ end
 
 
 
-								<p> The player that has just spawned</p>
+								<p> Player that has just spawned</p>
 							</li>
 					</ul>
 
 
 				<h3>Example Usage</h3>
-					<pre><code>function FACTION:onSpawn(client)
-    client:ChatPrint("You have spawned!") -- Notifies the client that they have spawned
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="onTransferred">
-					<h1><span class="realm server"></span></span>FACTION:onTransferred(character)</h1>
-				</a>
-
-
-
-					<p>Called when a player's character has been transferred to this faction.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">character</span>
-
-
-
-								<p> The character that was transferred</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:onTransferred(character)
-    local randomModelIndex = math.random(1, #self.models)
-    character:setModel(self.models[randomModelIndex]) -- Sets a random model from the faction's model list as the character's model
+					<pre><code>function CLASS:onSpawn(client)
+    client:SetMaxHealth(500) -- Sets your Max Health to 500
+    client:SetHealth(500) -- Subsequently sets your Health to 500
 end
 </code></pre>
 
