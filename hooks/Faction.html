@@ -98,17 +98,6 @@ onTransferred											</a>
 									</ul>
 									</details>
 							</li>
-							<li>
-									<details >
-									<summary><a href="../hooks/Index.html">Index</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
 					</ul>
 				</details>
 				<details class="category" open>
@@ -130,6 +119,162 @@ onTransferred											</a>
 							</li>
 							<li>
 									<details >
+									<summary><a href="../libraries/lia.anim.html">lia.anim</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.anim.html#lia.anim.getModelClass">
+getModelClass											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.anim.html#lia.anim.setModelClass">
+setModelClass											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../libraries/lia.data.html">lia.data</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.data.html#lia.data.delete">
+delete											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.data.html#lia.data.get">
+get											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.data.html#lia.data.set">
+set											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../libraries/lia.faction.html">lia.faction</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.faction.html#lia.faction.get">
+get											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.faction.html#lia.faction.getIndex">
+getIndex											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../libraries/lia.faction.html#lia.faction.hasWhitelist">
+hasWhitelist											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.faction.html#lia.faction.loadFromDir">
+loadFromDir											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../libraries/lia.flag.html">lia.flag</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.flag.html#getFlags">
+getFlags											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.flag.html#giveFlags">
+giveFlags											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.flag.html#hasFlags">
+hasFlags											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.flag.html#lia.flag.add">
+add											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.flag.html#setFlags">
+setFlags											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.flag.html#takeFlags">
+takeFlags											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../libraries/lia.item.html">lia.item</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.item.html#lia.item.get">
+get											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.item.html#lia.item.spawn">
+spawn											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../libraries/lia.lang.html">lia.lang</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.lang.html#lia.lang.loadFromDir">
+loadFromDir											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
 									<summary><a href="../libraries/lia.log.html">lia.log</a></summary>
 
 									<ul>
@@ -145,6 +290,17 @@ add											</a>
 											<a href="../libraries/lia.log.html#log">
 log											</a>
 										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../libraries/lia.menu.html">lia.menu</a></summary>
+
+									<ul>
+
+
 
 									</ul>
 									</details>
@@ -276,7 +432,7 @@ regular gamemode hooks.</p>
 
 				<h3>Example Usage</h3>
 					<pre><code>function FACTION:getDefaultDesc(client, faction)
-    return "A police officer" -- Example default description
+	return "A police officer"
 end
 </code></pre>
 
@@ -321,7 +477,7 @@ end
 
 				<h3>Example Usage</h3>
 					<pre><code>function FACTION:getDefaultName(client)
-    return "CT-" .. math.random(111111, 999999) -- Sets the name as CT-XXXXXX, where the XXXXXX are randomly generated digits
+	return "CT-" .. math.random(111111, 999999)
 end
 </code></pre>
 
@@ -366,8 +522,8 @@ end
 
 				<h3>Example Usage</h3>
 					<pre><code>function FACTION:onCharCreated(client, character)
-    local inventory = character:getInv()
-    inventory:add("fancy_suit") -- Adds a Fancy Suit item to the character's inventory
+	local inventory = character:getInv()
+	inventory:add("fancy_suit")
 end
 </code></pre>
 
@@ -401,7 +557,7 @@ end
 
 				<h3>Example Usage</h3>
 					<pre><code>function FACTION:onSpawn(client)
-    client:ChatPrint("You have spawned!") -- Notifies the client that they have spawned
+	client:ChatPrint("You have spawned!")
 end
 </code></pre>
 
@@ -435,8 +591,8 @@ end
 
 				<h3>Example Usage</h3>
 					<pre><code>function FACTION:onTransferred(character)
-    local randomModelIndex = math.random(1, #self.models)
-    character:setModel(self.models[randomModelIndex]) -- Sets a random model from the faction's model list as the character's model
+	local randomModelIndex = math.random(1, #self.models)
+	character:setModel(self.models[randomModelIndex])
 end
 </code></pre>
 

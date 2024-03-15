@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia - Lilia Documentation</title>
+		<title>lia.item - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia - Lilia Documentation" />
+		<meta property="og:title" content="lia.item - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Top-level library containing all Lilia libraries." />
+			<meta property="og:description" content="Item manipulation and helper functions." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -107,7 +107,7 @@ onTransferred											</a>
 
 					<ul>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../libraries/lia.html">lia</a></summary>
 
 									<ul>
@@ -237,7 +237,7 @@ takeFlags											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../libraries/lia.item.html">lia.item</a></summary>
 
 									<ul>
@@ -369,13 +369,144 @@ log											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia</h1>
-	<h2>Top-level library containing all Lilia libraries.</h2>
+	<h1>lia.item</h1>
+	<h2>Item manipulation and helper functions.</h2>
 </header>
 
-<p> A large majority of the framework is split into respective libraries that
- reside within <a href="../libraries/lia.html#">lia</a>.</p>
+<p>
 
+</p>
+
+	<h1 class="title">Functions</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.item.get">
+					<h1><span class="realm shared"></span></span>lia.item.get(identifier)</h1>
+				</a>
+
+
+					<a class="reference" href="https://github.com/LiliaFramework/Liliatree/main/home/runner/work/Lilia/Lilia/lilia/lilia/libraries/items/shared.lua#L62">View source &raquo;</a>
+
+					<p>Retrieves an item table.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">identifier</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Unique ID of the item</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">item</span>
+
+								<p>Item table</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>print(lia.item.get("example"))
+ > "item[example][0]"
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.item.spawn">
+					<h1><span class="realm server"></span></span>lia.item.spawn(uniqueID, position, callback, angles, data)</h1>
+				</a>
+
+
+					<a class="reference" href="https://github.com/LiliaFramework/Liliatree/main/home/runner/work/Lilia/Lilia/lilia/lilia/libraries/items/shared.lua#L353">View source &raquo;</a>
+
+					<p>Instances and spawns a given item type.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">uniqueID</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Unique ID of the item</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">position</span>
+
+									<span class="tag"><span class="type">vector</span></span>
+
+
+								<p> The position in which the item's entity will be spawned</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">callback</span>
+
+									<span class="tag"><span class="type">function</span></span>
+
+									<span class="tag default">default: nil</span>
+
+								<p> Function to call when the item entity is created</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">angles</span>
+
+									<span class="tag"><span class="type">angle</span></span>
+
+									<span class="tag default">default: angle_zero</span>
+
+								<p> The angles at which the item's entity will spawn</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">data</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+									<span class="tag default">default: nil</span>
+
+								<p> Additional data for this item instance</p>
+							</li>
+					</ul>
+
+
+
+		</section>
 
 					</div>
 			</article>

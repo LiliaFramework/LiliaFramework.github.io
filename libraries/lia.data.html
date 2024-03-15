@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia - Lilia Documentation</title>
+		<title>lia.data - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia - Lilia Documentation" />
+		<meta property="og:title" content="lia.data - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Top-level library containing all Lilia libraries." />
+			<meta property="og:description" content="Helper library for reading&#47;writing files to the data folder." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -107,7 +107,7 @@ onTransferred											</a>
 
 					<ul>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../libraries/lia.html">lia</a></summary>
 
 									<ul>
@@ -139,7 +139,7 @@ setModelClass											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../libraries/lia.data.html">lia.data</a></summary>
 
 									<ul>
@@ -369,13 +369,261 @@ log											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia</h1>
-	<h2>Top-level library containing all Lilia libraries.</h2>
+	<h1>lia.data</h1>
+	<h2>Helper library for reading/writing files to the data folder.</h2>
 </header>
 
-<p> A large majority of the framework is split into respective libraries that
- reside within <a href="../libraries/lia.html#">lia</a>.</p>
+<p>
 
+</p>
+
+	<h1 class="title">Functions</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.data.delete">
+					<h1><span class="realm shared"></span></span>lia.data.delete(key, global, ignoreMap)</h1>
+				</a>
+
+
+					<a class="reference" href="https://github.com/LiliaFramework/Liliatree/main/home/runner/work/Lilia/Lilia/lilia/lilia/libraries/data/shared.lua#L34">View source &raquo;</a>
+
+					<p>Deletes the contents of a saved file in the <code>data/lilia</code> folder.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Name of the file to delete</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">global</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether or not the data is in the <code>data/lilia</code> folder, or the <code>data/lilia/schema</code> folder,
+ where <code>schema</code> is the name of the current schema.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">ignoreMap</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether or not to ignore the map and delete from the schema folder, rather than
+ <code>data/lilia/schema/map</code>, where <code>map</code> is the name of the current map.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not the deletion has succeeded</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.data.get">
+					<h1><span class="realm shared"></span></span>lia.data.get(key, default, global, ignoreMap, refresh)</h1>
+				</a>
+
+
+					<a class="reference" href="https://github.com/LiliaFramework/Liliatree/main/home/runner/work/Lilia/Lilia/lilia/lilia/libraries/data/shared.lua#L63">View source &raquo;</a>
+
+					<p>Retrieves the contents of a saved file in the <code>data/lilia</code> folder.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Name of the file to load</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">default</span>
+
+
+
+								<p> Value to return if the file could not be loaded successfully</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">global</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether or not the data is in the <code>data/lilia</code> folder, or the <code>data/lilia/schema</code> folder,
+ where <code>schema</code> is the name of the current schema.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">ignoreMap</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether or not to ignore the map and load from the schema folder, rather than
+ <code>data/lilia/schema/map</code>, where <code>map</code> is the name of the current map.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">refresh</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether or not to skip the cache and forcefully load from disk.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>Value associated with the key, or the default that was given if it doesn't exist</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.data.set">
+					<h1><span class="realm shared"></span></span>lia.data.set(key, value, global, ignoreMap)</h1>
+				</a>
+
+
+					<a class="reference" href="https://github.com/LiliaFramework/Liliatree/main/home/runner/work/Lilia/Lilia/lilia/lilia/libraries/data/shared.lua#L16">View source &raquo;</a>
+
+					<p>Populates a file in the <code>data/lilia</code> folder with some serialized data.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Name of the file to save</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">value</span>
+
+
+
+								<p> Some sort of data to save</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">global</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether or not to write directly to the <code>data/lilia</code> folder, or the <code>data/lilia/schema</code> folder,
+ where <code>schema</code> is the name of the current schema.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">ignoreMap</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether or not to ignore the map and save in the schema folder, rather than
+ <code>data/lilia/schema/map</code>, where <code>map</code> is the name of the current map.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>The path where the file is saved</p>
+							</li>
+
+				</ul>
+
+
+		</section>
 
 					</div>
 			</article>

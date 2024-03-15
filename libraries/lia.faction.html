@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia - Lilia Documentation</title>
+		<title>lia.faction - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia - Lilia Documentation" />
+		<meta property="og:title" content="lia.faction - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Top-level library containing all Lilia libraries." />
+			<meta property="og:description" content="Helper library for loading&#47;getting faction information." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -107,7 +107,7 @@ onTransferred											</a>
 
 					<ul>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../libraries/lia.html">lia</a></summary>
 
 									<ul>
@@ -165,7 +165,7 @@ set											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../libraries/lia.faction.html">lia.faction</a></summary>
 
 									<ul>
@@ -369,13 +369,176 @@ log											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia</h1>
-	<h2>Top-level library containing all Lilia libraries.</h2>
+	<h1>lia.faction</h1>
+	<h2>Helper library for loading/getting faction information.</h2>
 </header>
 
-<p> A large majority of the framework is split into respective libraries that
- reside within <a href="../libraries/lia.html#">lia</a>.</p>
+<p>
 
+</p>
+
+	<h1 class="title">Functions</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.faction.get">
+					<h1><span class="realm shared"></span></span>lia.faction.get(identifier)</h1>
+				</a>
+
+
+					<a class="reference" href="https://github.com/LiliaFramework/Liliatree/main/home/runner/work/Lilia/Lilia/lilia/lilia/libraries/teams/factions/shared.lua#L64">View source &raquo;</a>
+
+					<p>Retrieves a faction table.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">identifier</span>
+
+
+
+								<p> Index or name of the faction</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
+
+								<p>Faction table</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>print(lia.faction.get(Entity(1):Team()).name)
+ > "Citizen"
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.faction.getIndex">
+					<h1><span class="realm shared"></span></span>lia.faction.getIndex(uniqueID)</h1>
+				</a>
+
+
+					<a class="reference" href="https://github.com/LiliaFramework/Liliatree/main/home/runner/work/Lilia/Lilia/lilia/lilia/libraries/teams/factions/shared.lua#L72">View source &raquo;</a>
+
+					<p>Retrieves a faction index.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">uniqueID</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Unique ID of the faction</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">number</span>
+
+								<p>Faction index</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.faction.hasWhitelist">
+					<h1><span class="realm client"></span></span>lia.faction.hasWhitelist(faction)</h1>
+				</a>
+
+
+					<a class="reference" href="https://github.com/LiliaFramework/Liliatree/main/home/runner/work/Lilia/Lilia/lilia/lilia/libraries/teams/factions/shared.lua#L147">View source &raquo;</a>
+
+					<p>Returns true if a faction requires a whitelist.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">faction</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> Index of the faction</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not the faction requires a whitelist</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.faction.loadFromDir">
+					<h1><span class="realm shared"></span></span>lia.faction.loadFromDir(directory)</h1>
+				</a>
+
+
+					<a class="reference" href="https://github.com/LiliaFramework/Liliatree/main/home/runner/work/Lilia/Lilia/lilia/lilia/libraries/teams/factions/shared.lua#L10">View source &raquo;</a>
+
+					<p>Loads factions from a directory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">directory</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The path to the factions files.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
 
 					</div>
 			</article>

@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia - Lilia Documentation</title>
+		<title>lia.lang - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia - Lilia Documentation" />
+		<meta property="og:title" content="lia.lang - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Top-level library containing all Lilia libraries." />
+			<meta property="og:description" content="Multi-language phrase support." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -107,7 +107,7 @@ onTransferred											</a>
 
 					<ul>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../libraries/lia.html">lia</a></summary>
 
 									<ul>
@@ -258,7 +258,7 @@ spawn											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../libraries/lia.lang.html">lia.lang</a></summary>
 
 									<ul>
@@ -369,13 +369,73 @@ log											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia</h1>
-	<h2>Top-level library containing all Lilia libraries.</h2>
+	<h1>lia.lang</h1>
+	<h2>Multi-language phrase support.</h2>
 </header>
 
-<p> A large majority of the framework is split into respective libraries that
- reside within <a href="../libraries/lia.html#">lia</a>.</p>
+<p>
 
+
+<p>Lilia has support for multiple languages, and you can easily leverage this system for use in your own schema, plugins, etc.
+Languages will be loaded from the schema and any plugins in <code>languages/sh_languagename.lua</code>, where <code>languagename</code> is the id of a
+language (<code>english</code> for English, <code>french</code> for French, etc). The structure of a language file is a table of phrases with the key
+as its phrase ID and the value as its translation for that language. An example
+LANGUAGE = {</p>
+<pre><code>welcomeMessage = "Welcome to the game!",
+gameOver = "Game over! You won the game!",
+victory = "%s achieved victory!",
+</code></pre>
+<p>}</p>
+
+<p>The phrases defined in these language files can be used with the <code>L</code> global function:</p>
+<pre><code>print(L("welcomeMessage"))
+&gt; "Welcome to the game!"
+</code></pre>
+
+<p>All phrases are formatted with <a href="https://www.lua.org/manual/5.2/manual.html#pdf-string.format">string.format</a>, so if you wish to add some info in a phrase you can use standard Lua string
+formatting arguments:</p>
+<pre><code>print(L("victory", "Nicholas"))
+&gt; Nicholas achieved victory!
+</code></pre>
+</p>
+
+	<h1 class="title">Functions</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.lang.loadFromDir">
+					<h1><span class="realm shared"></span></span>lia.lang.loadFromDir(directory)</h1>
+				</a>
+
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
+
+					<a class="reference" href="https://github.com/LiliaFramework/Liliatree/main/home/runner/work/Lilia/Lilia/lilia/lilia/libraries/languages/shared.lua#L31">View source &raquo;</a>
+
+					<p>Loads language files from a directory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">directory</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Directory to load language files from</p>
+							</li>
+					</ul>
+
+
+
+		</section>
 
 					</div>
 			</article>

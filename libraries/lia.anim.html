@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia - Lilia Documentation</title>
+		<title>lia.anim - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia - Lilia Documentation" />
+		<meta property="og:title" content="lia.anim - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Top-level library containing all Lilia libraries." />
+			<meta property="og:description" content="Player model animation." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -107,7 +107,7 @@ onTransferred											</a>
 
 					<ul>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../libraries/lia.html">lia</a></summary>
 
 									<ul>
@@ -118,7 +118,7 @@ onTransferred											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../libraries/lia.anim.html">lia.anim</a></summary>
 
 									<ul>
@@ -369,13 +369,128 @@ log											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia</h1>
-	<h2>Top-level library containing all Lilia libraries.</h2>
+	<h1>lia.anim</h1>
+	<h2>Player model animation.</h2>
 </header>
 
-<p> A large majority of the framework is split into respective libraries that
- reside within <a href="../libraries/lia.html#">lia</a>.</p>
+<p>Lilia comes with support for using Player-Models, although, there are
+a few standard animation sets that are built-in that should cover most non-player models:</p>
+<pre><code>citizen_male
+citizen_female
+metrocop
+overwatch
+vortigaunt
+player
+zombie
+fastZombie
+</code></pre>
 
+<p>If you find that your models are T-posing when they work elsewhere, you'll probably need to set the model class for your
+model with <a href="../libraries/lia.anim.html#lia.anim.setModelClass">lia.anim.setModelClass</a> in order for the correct animations to be used. If you'd like to add your own animation
+class, simply add to the <a href="../libraries/lia.anim.html#">lia.anim</a> table with a model class name and the required animation translation table.</p>
+
+	<h1 class="title">Functions</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.anim.getModelClass">
+					<h1><span class="realm shared"></span></span>lia.anim.getModelClass(model)</h1>
+				</a>
+
+
+					<a class="reference" href="https://github.com/LiliaFramework/Liliatree/main/home/runner/work/Lilia/Lilia/lilia/lilia/libraries/animations/shared.lua#L369">View source &raquo;</a>
+
+					<p>Gets a model's animation class.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">model</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Model to get the animation class for</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>Animation class of the model</p>
+							</li>
+
+							<div class="or"><span>OR</span></div>
+
+							<li>
+									<span class="type">nil</span>
+
+								<p>If there was no animation associated with the given model</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>lia.anim.getModelClass("models/police.mdl")
+ > metrocop
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.anim.setModelClass">
+					<h1><span class="realm shared"></span></span>lia.anim.setModelClass(model, class)</h1>
+				</a>
+
+
+					<a class="reference" href="https://github.com/LiliaFramework/Liliatree/main/home/runner/work/Lilia/Lilia/lilia/lilia/libraries/animations/shared.lua#L357">View source &raquo;</a>
+
+					<p>Sets a model's animation class.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">model</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Model name to set the animation class for</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">class</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Animation class to assign to the model</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>lia.anim.setModelClass("models/police.mdl", "metrocop")
+</code></pre>
+
+		</section>
 
 					</div>
 			</article>
