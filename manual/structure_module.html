@@ -400,6 +400,19 @@ log											</a>
         Description = <span class="string">"Allows access to OPM to Ragdoll Minges."</span>,
     },
 }
+<span class="comment">--------------------------------------------------------------------------------------------------------------------------
+</span>MODULE.Dependencies = {
+
+    {
+        File = MODULE.path .. <span class="string">"/permissinons.lua"</span>,
+        Realm = <span class="string">"server"</span>,
+    },
+    {
+        File = MODULE.path .. <span class="string">"/logs.lua"</span>,
+        Realm = <span class="string">"server"</span>,
+    },
+}
+
 <span class="comment">--------------------------------------------------------------------------------------------------------------------------</span>
 </pre>
 
@@ -420,6 +433,7 @@ log											</a>
     <li><p>**<code>MODULE.CAMIPrivileges</code>:** An example CAMI permission that is loaded alongside the module.</p></li>
     <li><p>**<code>MODULE.WorkshopContent</code>:** Workshop Content to be added.</p></li>
     <li><p>**<code>MODULE.enabled</code>:** Indicates if the module is active or not. If False, then it won't be.</p></li>
+    <li><p>**<code>MODULE.Dependencies</code>:** Files and corresponding realms to be included.</p></li>
 </ul>
 
 <h3>Automatically Included Files and Folders in the Module:</h3>
@@ -427,12 +441,12 @@ log											</a>
 <p><strong>Files:</strong></p>
 
 <ul>
-    <li>client.lua</li>
-    <li>cl_module.lua</li>
-    <li>sv_module.lua</li>
-    <li>server.lua</li>
-    <li>config.lua</li>
-    <li>sconfig.lua</li>
+    <li><p>client.lua</p></li>
+    <li><p>cl_module.lua</p></li>
+    <li><p>sv_module.lua</p></li>
+    <li><p>server.lua</p></li>
+    <li><p>config.lua</p></li>
+    <li><p>sconfig.lua</p></li>
 </ul>
 
 <p><strong>Folders:</strong></p>
@@ -449,9 +463,9 @@ log											</a>
     <li><p>meta</p></li>
     <li><p>derma</p></li>
     <li><p>pim</p></li>
-    <li><h2>concommands</h2></li>
-    <li><p><a href="https://github.com/LiliaFramework/Lilia/wiki/Module-List">Default Module List</a>: This link directs you to the Module List.</p></li>
+    <li><p>concommands</p></li>
 </ul>
+
 
 					</div>
 			</article>
