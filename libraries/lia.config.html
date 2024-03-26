@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia.menu - Lilia Documentation</title>
+		<title>lia.config - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia.menu - Lilia Documentation" />
+		<meta property="og:title" content="lia.config - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Entity menu manipulation." />
+			<meta property="og:description" content="Configuration options for Lilia." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -139,7 +139,7 @@ setModelClass											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../libraries/lia.config.html">lia.config</a></summary>
 
 									<ul>
@@ -306,7 +306,7 @@ log											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../libraries/lia.menu.html">lia.menu</a></summary>
 
 									<ul>
@@ -380,12 +380,48 @@ log											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia.menu</h1>
-	<h2>Entity menu manipulation.</h2>
+	<h1>lia.config</h1>
+	<h2>Configuration options for Lilia.</h2>
 </header>
 
-<p>The <a href="../libraries/lia.menu.html">menu</a> library allows you to open up a context menu of arbitrary options whose callbacks will be ran when they are selected
-from the panel that shows up for the player.</p>
+<p>This module contains various configuration options used in the Lilia gamemode. Each option in the <a href="../libraries/lia.config.html#">lia.config</a> table serves a specific purpose and defines various aspects of the gamemode's functionality.</p>
+
+<ul>
+    <li><code>WalkSpeed</code>: (integer) Controls how fast characters walk.</li>
+    <li><code>RunSpeed</code>: (integer) Controls how fast characters run.</li>
+    <li><code>WalkRatio</code>: (float) Defines the walk speed ratio when holding the Alt key.</li>
+    <li><code>AllowExistNames</code>: (boolean) Determines whether duplicated character names are allowed.</li>
+    <li><code>GamemodeName</code>: (string) Specifies the name of the gamemode.</li>
+    <li><code>Color</code>: (color) Sets the theme color used throughout the gamemode.</li>
+    <li><code>Font</code>: (string) Specifies the core font used for UI elements.</li>
+    <li><code>GenericFont</code>: (string) Specifies the secondary font used for UI elements.</li>
+    <li><code>MoneyModel</code>: (string) Defines the model used for representing money in the game.</li>
+    <li><code>MaxCharacters</code>: (integer) Sets the maximum number of characters per player.</li>
+    <li><code>DataSaveInterval</code>: (integer) Time interval between data saves.</li>
+    <li><code>CharacterDataSaveInterval</code>: (integer) Time interval between character data saves.</li>
+    <li><code>MoneyLimit</code>: (integer) Sets the limit of money a player can have (0 for infinite).</li>
+    <li><code>invW</code>: (integer) Defines the width of the default inventory.</li>
+    <li><code>invH</code>: (integer) Defines the height of the default inventory.</li>
+    <li><code>DefaultMoney</code>: (integer) Specifies the default amount of money a player starts with.</li>
+    <li><code>MaxChatLength</code>: (integer) Sets the maximum length of chat messages.</li>
+    <li><code>CurrencySymbol</code>: (string) Specifies the currency symbol used in the game.</li>
+    <li><code>SpawnTime</code>: (integer) Time to respawn after death.</li>
+    <li><code>MaxAttributes</code>: (integer) Maximum attributes a character can have.</li>
+    <li><code>CurrencySingularName</code>: (string) Singular name of the in-game currency.</li>
+    <li><code>CurrencyPluralName</code>: (string) Plural name of the in-game currency.</li>
+    <li><code>SchemaYear</code>: (integer) Year in the gamemode's schema.</li>
+    <li><code>AmericanDates</code>: (boolean) Determines whether to use the American date format.</li>
+    <li><code>AmericanTimeStamp</code>: (boolean) Determines whether to use the American timestamp format.</li>
+    <li><code>MinDescLen</code>: (integer) Minimum length required for a character's description.</li>
+    <li><code>TimeToEnterVehicle</code>: (integer) Time (in seconds) required to enter a vehicle.</li>
+    <li><code>CarEntryDelayEnabled</code>: (boolean) Determines if the car entry delay is applicable.</li>
+    <li><code>Notify</code>: (table) Contains notification sound and volume settings.</li>
+    <li><code>Notify[1]</code>: (string) Notification sound file path.</li>
+    <li><code>Notify[2]</code>: (integer) Notification volume.</li>
+    <li><code>Notify[3]</code>: (integer) Notification pitch.</li>
+</ul>
+
+<p>These configuration options control various aspects of the gamemode's mechanics, user interface, and gameplay experience.</p>
 
 
 					</div>
