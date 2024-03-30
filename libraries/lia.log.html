@@ -309,8 +309,8 @@ add											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../libraries/lia.log.html#log">
-log											</a>
+											<a href="../libraries/lia.log.html#lia.log.addType">
+addType											</a>
 										</li>
 
 									</ul>
@@ -417,7 +417,7 @@ FLAG_DEV
 				</a>
 
 
-					<a class="reference" href="https://github.com/LiliaFramework/Liliatree/main/home/runner/work/Lilia/Lilia/lilia/lilia/libraries/logger/server.lua#L52">View source &raquo;</a>
+					<a class="reference" href="https://github.com/LiliaFramework/Liliatree/main/home/runner/work/Lilia/Lilia/lilia/lilia/libraries/logger/server.lua#L57">View source &raquo;</a>
 
 					<p>Add a log message.</p>
 			</header>
@@ -466,8 +466,8 @@ FLAG_DEV
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="log">
-					<h1><span class="realm server"></span></span>log(logType, client, ...)</h1>
+				<a class="anchor" id="lia.log.addType">
+					<h1><span class="realm server"></span></span>lia.log.addType(logType, func, category, color)</h1>
 				</a>
 
 
@@ -495,22 +495,33 @@ FLAG_DEV
 					<ul>
 
 							<li>
-								<span class="tag parameter">client</span>
+								<span class="tag parameter">func</span>
 
 
 
-								<p> Client object</p>
+								<p> format callback function(client, ...)</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">...</span>
+								<span class="tag parameter">category</span>
 
 
 
-								<p> Additional parameters for the log format callback</p>
+								<p> Log category</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">color</span>
+
+
+
+								<p> Log color (optional, defaults to Color(52, 152, 219))</p>
 							</li>
 					</ul>
 
