@@ -199,7 +199,7 @@ set											</a>
 get											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm shared"></span>
 											<a href="../libraries/lia.faction.html#lia.faction.getClasses">
 getClasses											</a>
 										</li>
@@ -209,12 +209,12 @@ getClasses											</a>
 getIndex											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm shared"></span>
 											<a href="../libraries/lia.faction.html#lia.faction.getPlayerCount">
 getPlayerCount											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm shared"></span>
 											<a href="../libraries/lia.faction.html#lia.faction.getPlayers">
 getPlayers											</a>
 										</li>
@@ -224,7 +224,7 @@ getPlayers											</a>
 hasWhitelist											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm shared"></span>
 											<a href="../libraries/lia.faction.html#lia.faction.jobGenerate">
 jobGenerate											</a>
 										</li>
@@ -273,6 +273,27 @@ setFlags											</a>
 											<span class="realm server"></span>
 											<a href="../libraries/lia.flag.html#takeFlags">
 takeFlags											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../libraries/lia.include.html">lia.include</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.include.html#lia.include">
+lia.include											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.include.html#lia.includeDir">
+ir											</a>
 										</li>
 
 									</ul>
@@ -343,6 +364,22 @@ addType											</a>
 									<ul>
 
 
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../libraries/lia.module.html">lia.module</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.module.html#lia.module.load">
+load											</a>
+										</li>
 
 									</ul>
 									</details>
@@ -439,6 +476,7 @@ addType											</a>
 							<li>
 								<span class="tag parameter">identifier</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> Index or name of the faction</p>
@@ -466,7 +504,7 @@ addType											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="lia.faction.getClasses">
-					<h1><span class="realm client"></span></span>lia.faction.getClasses(faction)</h1>
+					<h1><span class="realm shared"></span></span>lia.faction.getClasses(faction)</h1>
 				</a>
 
 					<p>Returns a table containing the classes associated with a faction.</p>
@@ -481,6 +519,7 @@ addType											</a>
 							<li>
 								<span class="tag parameter">faction</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> number The index of the faction</p>
@@ -543,7 +582,7 @@ addType											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="lia.faction.getPlayerCount">
-					<h1><span class="realm client"></span></span>lia.faction.getPlayerCount(faction)</h1>
+					<h1><span class="realm shared"></span></span>lia.faction.getPlayerCount(faction)</h1>
 				</a>
 
 					<p>Returns the number of players belonging to a specific faction.</p>
@@ -558,6 +597,7 @@ addType											</a>
 							<li>
 								<span class="tag parameter">faction</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> number The index of the faction</p>
@@ -581,7 +621,7 @@ addType											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="lia.faction.getPlayers">
-					<h1><span class="realm client"></span></span>lia.faction.getPlayers(faction)</h1>
+					<h1><span class="realm shared"></span></span>lia.faction.getPlayers(faction)</h1>
 				</a>
 
 					<p>Returns a table containing the players belonging to a specific faction.</p>
@@ -596,6 +636,7 @@ addType											</a>
 							<li>
 								<span class="tag parameter">faction</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> number The index of the faction</p>
@@ -658,7 +699,7 @@ addType											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="lia.faction.jobGenerate">
-					<h1><span class="realm server"></span></span>lia.faction.jobGenerate(index, name, color, default, models)</h1>
+					<h1><span class="realm shared"></span></span>lia.faction.jobGenerate(index, name, color, default, models)</h1>
 				</a>
 
 					<p>Generates a faction job. </p>
