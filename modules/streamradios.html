@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia.module - Lilia Documentation</title>
+		<title>streamradios - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia.module - Lilia Documentation" />
+		<meta property="og:title" content="streamradios - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Core library that manages module loading behaviors." />
+			<meta property="og:description" content="Compatibility - 3D Stream Radios" />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -228,7 +228,7 @@ onTransferred											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../modules/streamradios.html">streamradios</a></summary>
 
 									<ul>
@@ -531,7 +531,7 @@ addType											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../libraries/lia.module.html">lia.module</a></summary>
 
 									<ul>
@@ -635,273 +635,12 @@ verifyModuleValidity											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia.module</h1>
-	<h2>Core library that manages module loading behaviors.</h2>
+	<h1>streamradios</h1>
+	<h2>Compatibility - 3D Stream Radios</h2>
 </header>
 
-<p>
+<p>This module implements compatibility to 3D Stream Radios.</p>
 
-</p>
-
-	<h1 class="title">Functions</h1>
-
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.module.get">
-					<h1><span class="realm shared"></span></span>lia.module.get(identifier)</h1>
-				</a>
-
-					<p>Retrieves a module.
- This function retrieves a module table based on its identifier.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">identifier</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The identifier of the module.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>table The module object.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.module.initialize">
-					<h1><span class="realm shared"></span></span>lia.module.initialize()</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Loads and initializes the modules.
- This function loads and initializes modules located under their respective folders.</p>
-			</header>
-
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.module.load">
-					<h1><span class="realm shared"></span></span>lia.module.load(uniqueID, path, isSingleFile, variable)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Loads a module into the system.
- This function loads a module into the system, making its functionality available. It sets up the module environment, including defining globals and loading necessary files.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">uniqueID</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> string The unique identifier of the module.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">path</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> string The path to the module.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">isSingleFile</span>
-
-									<span class="tag"><span class="type">boolean</span></span>
-
-
-								<p> boolean Specifies if the module is contained in a single file.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">variable</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> string The variable name to assign the module to.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.module.loadExtras">
-					<h1><span class="realm shared"></span></span>lia.module.loadExtras(path)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Loads the additional files associated with the module.
- This function loads extra files tied to the module, such as language files, factions, classes, and attributes.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">path</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The path to the module directory.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.module.loadFromDir">
-					<h1><span class="realm shared"></span></span>lia.module.loadFromDir(directory, group)</h1>
-				</a>
-
-					<p>Loads modules from a directory.
- This function loads modules from a specified directory into the system.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">directory</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The path to the directory containing modules.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">group</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The group of the modules (e.g., "schema" or "module").</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.module.verifyModuleValidity">
-					<h1><span class="realm shared"></span></span>lia.module.verifyModuleValidity(uniqueID, isEnabled)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Checks if a module should load.
- This function verifies whether a module should be loaded based on its unique ID and conditions.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">uniqueID</span>
-
-									<span class="tag"><span class="type">boolean</span></span>
-
-
-								<p> The unique identifier of the module.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">isEnabled</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> Is the module enabled?</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>boolean Should the module be loaded?</p>
-							</li>
-
-				</ul>
-
-
-		</section>
 
 					</div>
 			</article>
