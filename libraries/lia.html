@@ -113,6 +113,16 @@ onTransferred											</a>
 									<ul>
 
 
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.html#include">
+include											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.html#includeDir">
+includeDir											</a>
+										</li>
 
 									</ul>
 									</details>
@@ -273,27 +283,6 @@ setFlags											</a>
 											<span class="realm server"></span>
 											<a href="../libraries/lia.flag.html#takeFlags">
 takeFlags											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../libraries/lia.include.html">lia.include</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm shared"></span>
-											<a href="../libraries/lia.include.html#lia.include">
-lia.include											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../libraries/lia.include.html#lia.includeDir">
-ir											</a>
 										</li>
 
 									</ul>
@@ -480,6 +469,127 @@ verifyModuleValidity											</a>
 <p> A large majority of the framework is split into respective libraries that
  reside within <a href="../libraries/lia.html#">lia</a>.</p>
 
+	<h1 class="title">Functions</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="include">
+					<h1><span class="realm shared"></span></span>include(fileName, state)</h1>
+				</a>
+
+					<p>Loads a Lua file into the server, client, or shared realm.
+ This function includes a Lua file into the server, client, or shared realm depending on the specified state.
+ This function has an legacy alias <em>lia.util.include</em> that can be used instead of lia.include.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">fileName</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The name of the Lua file to be included.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">state</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The state in which the Lua file should be included: "server", "client", or "shared".</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>If the Lua file is included on the server and the state is "server", it returns the included file; otherwise, no return value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="includeDir">
+					<h1><span class="realm shared"></span></span>includeDir(directory, fromLua, recursive, realm)</h1>
+				</a>
+
+					<p>Loads Lua files from a directory into the server, client, or shared realm.
+ This function recursively includes Lua files from a directory into the specified realm.
+ This function has a legacy alias <em>lia.util.includeDir</em> that can be used instead of lia.includeDir.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">directory</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The directory containing the Lua files to be included.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">fromLua</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+
+								<p> Specifies if the Lua files are located in the lua/ folder.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">recursive</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+
+								<p> Specifies if subdirectories should be included recursively.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">realm</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> string The realm in which the Lua files should be included: "server", "client", or "shared".</p>
+							</li>
+					</ul>
+
+
+
+		</section>
 
 					</div>
 			</article>
