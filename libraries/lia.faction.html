@@ -199,14 +199,34 @@ set											</a>
 get											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../libraries/lia.faction.html#lia.faction.getClasses">
+getClasses											</a>
+										</li>
+										<li>
 											<span class="realm shared"></span>
 											<a href="../libraries/lia.faction.html#lia.faction.getIndex">
 getIndex											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../libraries/lia.faction.html#lia.faction.getPlayerCount">
+getPlayerCount											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../libraries/lia.faction.html#lia.faction.getPlayers">
+getPlayers											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
 											<a href="../libraries/lia.faction.html#lia.faction.hasWhitelist">
 hasWhitelist											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.faction.html#lia.faction.jobGenerate">
+jobGenerate											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -445,6 +465,44 @@ addType											</a>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="lia.faction.getClasses">
+					<h1><span class="realm client"></span></span>lia.faction.getClasses(faction)</h1>
+				</a>
+
+					<p>Returns a table containing the classes associated with a faction.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">faction</span>
+
+
+
+								<p> number The index of the faction</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
+
+								<p>A table containing the indices of the classes associated with the faction</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="lia.faction.getIndex">
 					<h1><span class="realm shared"></span></span>lia.faction.getIndex(uniqueID)</h1>
 				</a>
@@ -476,6 +534,82 @@ addType											</a>
 									<span class="type">number</span>
 
 								<p>Faction index</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.faction.getPlayerCount">
+					<h1><span class="realm client"></span></span>lia.faction.getPlayerCount(faction)</h1>
+				</a>
+
+					<p>Returns the number of players belonging to a specific faction.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">faction</span>
+
+
+
+								<p> number The index of the faction</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">number</span>
+
+								<p>The number of players belonging to the specified faction</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.faction.getPlayers">
+					<h1><span class="realm client"></span></span>lia.faction.getPlayers(faction)</h1>
+				</a>
+
+					<p>Returns a table containing the players belonging to a specific faction.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">faction</span>
+
+
+
+								<p> number The index of the faction</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
+
+								<p>A table containing the players belonging to the specified faction</p>
 							</li>
 
 				</ul>
@@ -519,6 +653,88 @@ addType											</a>
 
 				</ul>
 
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.faction.jobGenerate">
+					<h1><span class="realm server"></span></span>lia.faction.jobGenerate(index, name, color, default, models)</h1>
+				</a>
+
+					<p>Generates a faction job. </p>
+
+<p>This function is an example of how to create a custom faction using <a href="../libraries/lia.faction.html#lia.faction.jobGenerate">lia.faction.jobGenerate</a>. It is not recommended to use this method directly as it may lead to unexpected behavior. Instead, consider using more appropriate methods provided by the framework, such as faction files.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">index</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> The index of the faction. This should be a unique numerical identifier for the faction.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">name</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The name of the faction.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">color</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> The color of the faction.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">default</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+
+								<p> Whether the faction is default or not.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">models</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> (Optional) The models associated with the faction.</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>lia.faction.jobGenerate(9, "Custom Faction", Color(255, 0, 0), false, {"models/player/custom_model.mdl", "models/player/custom_accessory.mdl"})
+lia.faction.jobGenerate(10, "Another Custom Faction", Color(255, 255, 0), false, lia.faction.DefaultModels)
+</code></pre>
 
 		</section>
 		<section class="method">
