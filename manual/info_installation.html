@@ -739,10 +739,10 @@ verifyModuleValidity											</a>
 <p>Before you begin, make sure you have the following:</p>
 
 <ul>
-    <li>A working Garry's Mod server.</li>
-    <li>Basic knowledge of Garry's Mod server administration.</li>
-    <li>An understanding of how to use the command line.</li>
-    <li>An Admin Menu (we recommend SAM).</li>
+    <li><p>A working Garry's Mod server.</p></li>
+    <li><p>Basic knowledge of Garry's Mod server administration.</p></li>
+    <li><p>An understanding of how to use the command line.</p></li>
+    <li><p>An Admin Menu (we recommend <a href="https://www.gmodstore.com/market/view/sam">SAM</a>).</p></li>
 </ul>
 
 <p><a name="Step_1__Setting_Up_Your_Garry_s_Mod_Server"></a></p>
@@ -753,64 +753,76 @@ verifyModuleValidity											</a>
 <p><a name="Step_2__Downloading_Lilia"></a></p>
 <h2>Step 2: Downloading Lilia</h2>
 
-<ol>
-    <li>After downloading the ZIP file, visit the Lilia GitHub repository: <a href="https://github.com/bleonheart/Lilia">Lilia GitHub Repo</a>.</li>
-    <li>Pick the branch you wish to use; we recommend 2.0.</li>
-    <li>Click on the green "Code" button and select "Download ZIP."</li>
-    <li>Save the ZIP file to a location on your computer.</li>
-</ol>
+<ul>
+    <li><p>After downloading the ZIP file, visit the Lilia GitHub repository: <a href="https://github.com/LiliaFramework/Lilia">Lilia GitHub Repo</a>.</p></li>
+    <li><p>Click on the green "Code" button and select "Download ZIP."</p></li>
+    <li><p>Save the ZIP file to a location on your computer.</p></li>
+</ul>
 
 <p><a name="Step_3__Extracting_Lilia"></a></p>
 <h2>Step 3: Extracting Lilia</h2>
 
-<ol>
-    <li>After downloading, locate the ZIP file and extract its contents to a temporary folder on your computer.</li>
-    <li>You should now have a folder named something like "Lilia-master."</li>
-</ol>
+<ul>
+    <li><p>After downloading, locate the ZIP file and extract its contents to a temporary folder on your computer.</p></li>
+    <li><p>You should now have a folder named something like "Lilia-main.zip."</p></li>
+    <li><p>Extract the contents inside to a folder within your desktop.</p></li>
+    <li><p>You will be faced with several files alongside with 2 folders: <code>docs</code> and <code>lilia</code>. Move <code>lilia</code> into a separate folder.</p></li>
+</ul>
 
 <p><a name="Step_4__Uploading_Lilia_to_Your_Server"></a></p>
 <h2>Step 4: Uploading Lilia to Your Server</h2>
 
-<ol>
-    <li>Connect to your server using a tool like FTP or SFTP.</li>
-    <li>Navigate to the <code>garrysmod/gamemodes</code> directory within your server.</li>
-    <li>Upload the "lilia" folder into the <code>gamemodes</code> directory.</li>
-</ol>
+<ul>
+    <li><p>Connect to your server using a tool like FTP or SFTP.</p></li>
+    <li><p>Navigate to the <code>garrysmod/gamemodes</code> directory within your server.</p></li>
+    <li><p>Upload the previously mentioned "lilia" folder into the <code>gamemodes</code> directory.</p></li>
+</ul>
 
 <p><a name="Step_5__Configuring_Lilia"></a></p>
 <h2>Step 5: Configuring Lilia</h2>
 
-<ol>
-    <li>Before making any changes, consider making a backup of the default configuration.</li>
-    <li>Edit this <a href="https://github.com/LiliaFramework/Lilia-Skeleton/blob/main/skeleton/schema/config/shared.lua">configuration</a> to override any default values you wish.</li>
-</ol>
+<ul>
+    <li><p>Before making any changes, consider making a backup of the default configuration.</p></li>
+    <li><p>Edit this <a href="https://github.com/LiliaFramework/Lilia-Skeleton/blob/main/skeleton/schema/config/shared.lua">configuration</a> to override any default values you wish.</p></li>
+</ul>
 
 <p><a name="Step_6__Starting_Lilia_on_Your_Server"></a></p>
 <h2>Step 6: Starting Lilia on Your Server</h2>
 
-<ol>
-    <li>Restart your Garry's Mod server for the changes to take effect.</li>
-    <li>If you encounter any issues, refer to the troubleshooting tips in the documentation.</li>
-</ol>
+<ul>
+    <li><p>Restart your Garry's Mod server for the changes to take effect.</p></li>
+    <li><p>If you encounter any issues, refer to the troubleshooting tips in the documentation.</p></li>
+</ul>
 
 <p><a name="Step_7__Installing_Roleplay_Schemas"></a></p>
 <h2>Step 7: Installing Roleplay Schemas</h2>
 
 <p>To install a roleplay schema for your Lilia framework, follow these steps:</p>
 
-<ol>
-    <li><p>Download one of the available schemas from the repositories listed below, based on your server's theme:</p></li>
-    <li><p><a href="https://github.com/LiliaFramework/Lilia">Framework</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/Lilia-Skeleton">Skeleton Schema</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/Lilia-MafiaRP">MafiaRP Schema</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/Lilia-HL2RP">HL2RP Schema</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/Lilia-MetroRP">MetroRP Schema</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/Lilia-1942RP">1942RP Schema</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/Lilia-Modules">Public Modules</a></p></li>
-    <li><p><a href="https://github.com/B0zy/Boz-Lilia-Modules">Bozy's Modules</a></p></li>
+<ul>
+    <li><p>Download one of the available schemas from the repositories listed below, based on your server's theme:</p>
+
+<pre>
+-   [Framework](https://github.com/LiliaFramework/Lilia)
+
+-   [Skeleton Schema](https://github.com/LiliaFramework/Lilia-Skeleton)
+
+-   [MafiaRP Schema](https://github.com/LiliaFramework/Lilia-MafiaRP)
+
+-   [HL2RP Schema](https://github.com/LiliaFramework/Lilia-HL2RP)
+
+-   [MetroRP Schema](https://github.com/LiliaFramework/Lilia-MetroRP)
+
+-   [<span class="number">1942</span>RP Schema](https://github.com/LiliaFramework/Lilia-<span class="number">1942</span>RP)
+
+-   [Public Modules](https://github.com/LiliaFramework/Lilia-Modules)
+
+-   [Bozy's Modules](https://github.com/B0zy/Boz-Lilia-Modules)
+</pre>
+</li>
     <li><p>Set up factions, items, and modules as required.</p></li>
     <li><p>Set the startup gamemode to the schema folder ID within your server's startup configuration.</p></li>
-</ol>
+</ul>
 
 <p>That's it! You've successfully installed a roleplay schema using Lilia. Enjoy your customized roleplaying experience!</p>
 
