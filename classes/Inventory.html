@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia.flag - Lilia Documentation</title>
+		<title>Inventory - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia.flag - Lilia Documentation" />
+		<meta property="og:title" content="Inventory - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Grants abilities to characters." />
+			<meta property="og:description" content="Holds items within a grid layout." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -509,7 +509,7 @@ loadFromDir											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../libraries/lia.flag.html">lia.flag</a></summary>
 
 									<ul>
@@ -710,7 +710,7 @@ setNetVar											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../classes/Inventory.html">Inventory</a></summary>
 
 									<ul>
@@ -806,253 +806,25 @@ setNetVar											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia.flag</h1>
-	<h2>Grants abilities to characters.</h2>
+	<h1>Inventory</h1>
+	<h2>Holds items within a grid layout.</h2>
 </header>
 
-<p>Flags are a simple way of adding/removing certain abilities to players on a per-character basis. Lilia comes with a few flags
-by default, for example to restrict spawning of props, usage of the physgun, etc. All flags will be listed in the
-<code>Flags</code> section of the <code>Help</code> menu. Flags are usually used when server validation is required to allow a player to do something
-on their character. However, it's usually preferable to use in-character methods over flags when possible (i.e restricting
-prop spawning to characters that rather have a bussiness).</p>
+<p>Inventories are an object that contains <a href="../classes/Item.html#">Item</a>s in a grid layout. Every <a href="../classes/Character.html#">Character</a> will have exactly one inventory attached to
+it, which is the only inventory that is allowed to hold bags - any item that has its own inventory (i.e a suitcase). Inventories
+can be owned by a character, or it can be individually interacted with as a standalone object. For example, the container plugin
+attaches inventories to props, allowing for items to be stored outside of any character inventories and remain "in the world".</p>
 
-<p>Flags are a single alphanumeric character that can be checked on the server. Serverside callbacks can be used to provide
-functionality whenever the flag is added or removed. For example:</p>
-<pre><code>lia.flag.add("z", "Access to some cool stuff.", function(client, bGiven)
-    print("z flag given:", bGiven)
-end)
+<p>You may be looking for the following common functions:</p>
 
-Entity(1):getChar():giveFlags("z")
-&gt; z flag given: true
+<p><code>add</code> Which adds an item to the inventory.</p>
 
-Entity(1):getChar():takeFlags("z")
-&gt; z flag given: false
+<p><code>getItems</code> Which gets all of the items inside the inventory.</p>
 
-print(Entity(1):getChar():hasFlags("z"))
-&gt; false
-</code></pre>
+<p><code>getID</code> Which gets the inventory's ID.</p>
 
-<p>Check out <code>Character:giveFlags</code> and <code>Character:takeFlags</code> for additional info.</p>
+<p><code>hasItem</code> Which checks if the inventory has an item.</p>
 
-	<h1 class="title">Functions</h1>
-
-		<section class="method">
-			<header>
-				<a class="anchor" id="getFlags">
-					<h1><span class="realm shared"></span></span>getFlags()</h1>
-				</a>
-
-					<p>Returns all of the flags this character has.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
-
-								<p>Flags this character has represented as one string. You can access individual flags by iterating through
- the string letter by letter</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="giveFlags">
-					<h1><span class="realm server"></span></span>giveFlags(flags)</h1>
-				</a>
-
-					<p>Adds a flag to the list of this character's accessible flags.  This does not overwrite existing flags.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flags</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> Flag(s) this character should be given</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>character:GiveFlags("pet")
- gives p, e, and t flags to the character
-</code></pre>
-
-				<h3>See Also</h3>
-				<ul>
-						<li><a href="../libraries/lia.flag.html#hasFlags">hasFlags</a></li>
-				</ul>
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="hasFlags">
-					<h1><span class="realm shared"></span></span>hasFlags(flags)</h1>
-				</a>
-
-					<p>Returns <code>true</code> if the character has the given flag(s).</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flags</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> Flag(s) to check access for</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>Whether or not this character has access to the given flag(s)</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.flag.add">
-					<h1><span class="realm shared"></span></span>lia.flag.add(flag, desc, callback)</h1>
-				</a>
-
-					<p>Creates a flag.  This should be called shared in order for the client to be aware of the flag's existence.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flag</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> Alphanumeric character to use for the flag</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">desc</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> Description of the flag</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">callback</span>
-
-									<span class="tag"><span class="type">function</span></span>
-
-
-								<p> Function to call when the flag is given or taken from a player</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="setFlags">
-					<h1><span class="realm server"></span></span>setFlags(flags)</h1>
-				</a>
-
-					<p>Sets this character's accessible flags.  Note that this method overwrites <strong>all</strong> flags instead of adding them.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flags</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> Flag(s) this charater is allowed to have</p>
-							</li>
-					</ul>
-
-
-
-				<h3>See Also</h3>
-				<ul>
-						<li><a href="../libraries/lia.flag.html#giveFlags">giveFlags</a></li>
-				</ul>
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="takeFlags">
-					<h1><span class="realm server"></span></span>takeFlags(flags)</h1>
-				</a>
-
-					<p>Removes this character's access to the given flags.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flags</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> Flag(s) to remove from this character</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>-- for a character with "pet" flags
-character:takeFlags("p")
--- character now has e, and t flags
-</code></pre>
-
-		</section>
 
 					</div>
 			</article>
