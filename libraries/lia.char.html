@@ -119,17 +119,6 @@ onTransferred											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../configurations/Commands.html">Commands</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
 									<summary><a href="../configurations/InteractionMenu.html">InteractionMenu</a></summary>
 
 									<ul>
@@ -208,6 +197,11 @@ include											</a>
 											<a href="../libraries/lia.html#includeDir">
 includeDir											</a>
 										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.html#includeEntities">
+includeEntities											</a>
+										</li>
 
 									</ul>
 									</details>
@@ -273,8 +267,23 @@ getChar											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../libraries/lia.char.html#lia.char.cleanUpForPlayer">
+cleanUpForPlayer											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.char.html#lia.char.create">
 create											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.char.html#lia.char.delete">
+delete											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.char.html#lia.char.getCharData">
+getCharData											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -285,6 +294,11 @@ new											</a>
 											<span class="realm server"></span>
 											<a href="../libraries/lia.char.html#lia.char.restore">
 restore											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.char.html#lia.char.setCharData">
+setCharData											</a>
 										</li>
 
 									</ul>
@@ -312,6 +326,17 @@ register											</a>
 											<a href="../libraries/lia.chat.html#lia.chat.send">
 send											</a>
 										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../libraries/lia.command.html">lia.command</a></summary>
+
+									<ul>
+
+
 
 									</ul>
 									</details>
@@ -824,12 +849,12 @@ canSeeEntity											</a>
 clearNetVars											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
@@ -839,12 +864,12 @@ getDoorPartner											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
@@ -869,12 +894,12 @@ inTrace											</a>
 isChair											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
@@ -1228,12 +1253,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -1600,6 +1625,33 @@ character data using these functions!</p>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="lia.char.cleanUpForPlayer">
+					<h1><span class="realm server"></span></span>lia.char.cleanUpForPlayer(client)</h1>
+				</a>
+
+					<p>Cleans up a player's characters, removing them from memory and database.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+
+
+								<p> The player whose characters to clean up.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="lia.char.create">
 					<h1><span class="realm server"></span></span>lia.char.create(data, callback)</h1>
 				</a>
@@ -1636,6 +1688,93 @@ character data using these functions!</p>
 							</li>
 					</ul>
 
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.char.delete">
+					<h1><span class="realm server"></span></span>lia.char.delete(id, client)</h1>
+				</a>
+
+					<p>Deletes a character from memory and database.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">id</span>
+
+
+
+								<p> The ID of the character to delete.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+
+
+								<p> The player associated with the character.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.char.getCharData">
+					<h1><span class="realm shared"></span></span>lia.char.getCharData(charID, key)</h1>
+				</a>
+
+					<p>Loads data for a character from the database.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">charID</span>
+
+
+
+								<p> The ID of the character to load data for.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+
+
+								<p> Optional key to retrieve a specific value from the character's data.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>If key is provided, returns the value associated with that key in the character's data. Otherwise, returns the entire data table.</p>
+							</li>
+
+				</ul>
 
 
 		</section>
@@ -1773,6 +1912,66 @@ character data using these functions!</p>
 							</li>
 					</ul>
 
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.char.setCharData">
+					<h1><span class="realm server"></span></span>lia.char.setCharData(charID, key, val)</h1>
+				</a>
+
+					<p>Sets data for a character in the database and in memory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">charID</span>
+
+
+
+								<p> The ID of the character to set data for.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+
+
+								<p> The key of the data to set.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">val</span>
+
+
+
+								<p> The value to set for the specified key.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>True if the data was successfully set, false otherwise.</p>
+							</li>
+
+				</ul>
 
 
 		</section>

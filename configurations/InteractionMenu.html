@@ -118,17 +118,6 @@ onTransferred											</a>
 									</details>
 							</li>
 							<li>
-									<details >
-									<summary><a href="../configurations/Commands.html">Commands</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
 									<details open>
 									<summary><a href="../configurations/InteractionMenu.html">InteractionMenu</a></summary>
 
@@ -208,6 +197,11 @@ include											</a>
 											<a href="../libraries/lia.html#includeDir">
 includeDir											</a>
 										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.html#includeEntities">
+includeEntities											</a>
+										</li>
 
 									</ul>
 									</details>
@@ -273,8 +267,23 @@ getChar											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../libraries/lia.char.html#lia.char.cleanUpForPlayer">
+cleanUpForPlayer											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.char.html#lia.char.create">
 create											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.char.html#lia.char.delete">
+delete											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.char.html#lia.char.getCharData">
+getCharData											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -285,6 +294,11 @@ new											</a>
 											<span class="realm server"></span>
 											<a href="../libraries/lia.char.html#lia.char.restore">
 restore											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.char.html#lia.char.setCharData">
+setCharData											</a>
 										</li>
 
 									</ul>
@@ -312,6 +326,17 @@ register											</a>
 											<a href="../libraries/lia.chat.html#lia.chat.send">
 send											</a>
 										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../libraries/lia.command.html">lia.command</a></summary>
+
+									<ul>
+
+
 
 									</ul>
 									</details>
@@ -824,12 +849,12 @@ canSeeEntity											</a>
 clearNetVars											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
@@ -839,12 +864,12 @@ getDoorPartner											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
@@ -869,12 +894,12 @@ inTrace											</a>
 isChair											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
@@ -1228,12 +1253,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>

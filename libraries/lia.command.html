@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Commands - Lilia Documentation</title>
+		<title>lia.command - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Commands - Lilia Documentation" />
+		<meta property="og:title" content="lia.command - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="**Commands List:**." />
+			<meta property="og:description" content="Registration, parsing, and handling of commands." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -118,17 +118,6 @@ onTransferred											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
-									<summary><a href="../configurations/Commands.html">Commands</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
 									<details >
 									<summary><a href="../configurations/InteractionMenu.html">InteractionMenu</a></summary>
 
@@ -208,6 +197,11 @@ include											</a>
 											<a href="../libraries/lia.html#includeDir">
 includeDir											</a>
 										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.html#includeEntities">
+includeEntities											</a>
+										</li>
 
 									</ul>
 									</details>
@@ -273,8 +267,23 @@ getChar											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../libraries/lia.char.html#lia.char.cleanUpForPlayer">
+cleanUpForPlayer											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.char.html#lia.char.create">
 create											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.char.html#lia.char.delete">
+delete											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.char.html#lia.char.getCharData">
+getCharData											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -285,6 +294,11 @@ new											</a>
 											<span class="realm server"></span>
 											<a href="../libraries/lia.char.html#lia.char.restore">
 restore											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.char.html#lia.char.setCharData">
+setCharData											</a>
 										</li>
 
 									</ul>
@@ -312,6 +326,17 @@ register											</a>
 											<a href="../libraries/lia.chat.html#lia.chat.send">
 send											</a>
 										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details open>
+									<summary><a href="../libraries/lia.command.html">lia.command</a></summary>
+
+									<ul>
+
+
 
 									</ul>
 									</details>
@@ -1525,139 +1550,130 @@ takeMoney											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Commands</h1>
-	<h2><strong>Commands List:</strong>.</h2>
+	<h1>lia.command</h1>
+	<h2>Registration, parsing, and handling of commands.</h2>
 </header>
 
-<p>
+<p>Commands can be ran through the chat with slash commands or they can be executed through the console. Commands can be manually
+restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">CAMI</a>-compliant admin mod.</p>
+
+	<h1 class="title">Tables</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="CommandList">
+					<h1><span class="realm shared"></span></span>CommandList</h1>
+				</a>
+
+					<p>A list of available commands for use within the game.
+ Each command is represented by a table with fields defining its functionality.</p>
+			</header>
 
 
-<ul>
-    <li><p><strong>charsetspeed</strong>: Sets the speed of the character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>playglobalsound</strong>: Plays a sound globally for all players. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>playsound</strong>: Plays a sound for the invoking player. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>charsetscale</strong>: Sets the scale of the character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>charsetjump</strong>: Sets the jump height of the character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>charaddmoney</strong>: Adds money to the character's account. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>charban</strong>: Bans a character from the server. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>charsetdesc</strong>: Sets the description of the character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>charsetname</strong>: Sets the name of the character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>chargetmodel</strong>: Sets the target model for a character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>charsetmodel</strong>: Sets the model of the character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>charsetbodygroup</strong>: Sets the bodygroup of the character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>charsetskin</strong>: Sets the skin of the character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>chargetmoney</strong>: Sets the target money for a character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>charsetmoney</strong>: Sets the money of the character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>clearinv</strong>: Clears the inventory of the character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>flaggive</strong>: Gives a flag to a character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>flaggiveall</strong>: Gives a flag to all characters. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>flagtakeall</strong>: Removes all flags from all characters. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>flagtake</strong>: Removes a flag from a character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>charkick</strong>: Kicks a character from the server. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>viewcoreinformation</strong>: Displays core faction information. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>charunban</strong>: Unbans a character from the server. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>flagpet</strong>: Sets a character as a pet. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>flagragdoll</strong>: Sets a character as a ragdoll. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>flags</strong>: Displays all available flags. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>freezeallprops</strong>: Freezes all props on the map. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>checkmoney</strong>: Checks the money of a character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>status</strong>: Displays your character's status information.</p></li>
-    <li><p><strong>redownloadlightmaps</strong>: Forces a redownload of lightmaps. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>cleanitems</strong>: Cleans up all dropped items on the map. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>cleanprops</strong>: Cleans up all props on the map. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>forcesave</strong>: Forces a save of server data. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>cleannpcs</strong>: Cleans up all NPCs on the map. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>checkallmoney</strong>: Checks the money of all characters. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>return</strong>: Returns to a previous position. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>findallflags</strong>: Finds all characters with a specific flag. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>chargiveitem</strong>: Gives an item to a character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>announce</strong>: Announces a message to all players. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>listents</strong>: Lists all entities on the server. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>flip</strong>: Flips a coin.</p></li>
-    <li><p><strong>liststaff</strong>: Lists all staff members on the server.</p></li>
-    <li><p><strong>listondutystaff</strong>: Lists all staff members currently on duty.</p></li>
-    <li><p><strong>listvip</strong>: Lists all VIP members on the server.</p></li>
-    <li><p><strong>listusers</strong>: Lists all users on the server.</p></li>
-    <li><p><strong>rolld</strong>: Rolls a specific-sided die. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>vieweventlog</strong>: Views the server's event log. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>editeventlog</strong>: Edits the server's event log. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>roll</strong>: Rolls a die.</p></li>
-    <li><p><strong>chardesc</strong>: Sets the description of a character.</p></li>
-    <li><p><strong>chargetup</strong>: Sets the target usergroup of a character.</p></li>
-    <li><p><strong>givemoney</strong>: Gives money to a character.</p></li>
-    <li><p><strong>bringlostitems</strong>: Brings lost items back to the character's inventory. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>carddraw</strong>: Draws a card from a deck.</p></li>
-    <li><p><strong>fallover</strong>: Causes an entity to fall over.</p></li>
-    <li><p><strong>getpos</strong>: Gets the position of an entity.</p></li>
-    <li><p><strong>entname</strong>: Gets the name of an entity.</p></li>
-    <li><p><strong>permflaggive</strong>: Gives a flag permanently to a character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>permflagtake</strong>: Removes a flag permanently from a character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>permflags</strong>: Displays all permanent flags. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>flagblacklist</strong>: Adds a flag to the blacklist. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>flagunblacklist</strong>: Removes a flag from the blacklist. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>flagblacklists</strong>: Displays all flags on the blacklist. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>dropmoney</strong>: Drops money at the character's position.</p></li>
-    <li><p><strong>membercount</strong>: Displays the count of members in the server.</p></li>
-    <li><p><strong>charsetattrib</strong>: Sets the attributes of the character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>charaddattrib</strong>: Adds attributes to the character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>viewBodygroups</strong>: Displays the bodygroups of the character. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>storagelock</strong>: Locks the storage container.</p></li>
-    <li><p><strong>trunk</strong>: Accesses the trunk of a vehicle.</p></li>
-    <li><p><strong>pktoggle</strong>: Toggles the player's PK mode. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>toggleraise</strong>: Toggles whether the player raises their weapon.</p></li>
-    <li><p><strong>fixpac</strong>: Fixes the PAC3 outfit of the player. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>pacenable</strong>: Enables PAC3 for the player. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>pacdisable</strong>: Disables PAC3 for the player. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>cleardecals</strong>: Clears all decals from the world. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>playtime</strong>: Displays the playtime of the player. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>3dradioclean</strong>: Cleans up 3D radio entities on the map. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>auditmoney</strong>: Audits the money transactions on the server. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>report</strong>: Reports a player to the staff team. | <strong>Player Command</strong>.</p></li>
-    <li><p><strong>spawnadd</strong>: Adds a spawn point to the map. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>respawn</strong>: Respawns the player at their last location. | <strong>Player Command</strong>.</p></li>
-    <li><p><strong>spawnremove</strong>: Removes a spawn point from the map. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>returnitems</strong>: Returns lost items to the player's inventory. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>classwhitelist</strong>: Whitelists a class for spawning. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>plytransfer</strong>: Transfers a player to a different server. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>plywhitelist</strong>: Whitelists a player for spawning. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>plyunwhitelist</strong>: Removes a player from the whitelist. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>beclass</strong>: Sets the player's class.</p></li>
-    <li><p><strong>setclass</strong>: Sets the player's class. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>classunwhitelist</strong>: Removes a class from the whitelist. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>factionlist</strong>: Displays a list of factions.</p></li>
-    <li><p><strong>charvoiceunban</strong>: Unbans a character's voice. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>charvoiceban</strong>: Bans a character's voice. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>voicetoggle</strong>: Toggles the player's voice. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>banooc</strong>: Bans OOC chat for the player. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>unbanooc</strong>: Unbans OOC chat for the player. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>blockooc</strong>: Blocks OOC chat for the player. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>refreshfonts</strong>: Refreshes the fonts for the player. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>clearchat</strong>: Clears the chat for the player. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>doorsell</strong>: Sells a door to the player. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>doorsetlocked</strong>: Sets the door as locked. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>doorbuy</strong>: Buys a door for the player. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>doorsetunownable</strong>: Sets the door as unownable. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>doorsetownable</strong>: Sets the door as ownable. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>dooraddfaction</strong>: Adds a faction to the door. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>doorremovefaction</strong>: Removes a faction from the door. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>doorsetdisabled</strong>: Sets the door as disabled. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>doorsettitle</strong>: Sets the title of the door. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>doorsetparent</strong>: Sets the parent of the door. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>doorsetchild</strong>: Sets the child of the door. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>doorremovechild</strong>: Removes the child from the door. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>doorsetclass</strong>: Sets the class of the door. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>savedoors</strong>: Saves the state of the doors. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>legacylogs</strong>: Views the legacy logs. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>logger</strong>: Views the server's log. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>deletelogs</strong>: Deletes the logs. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>netlogs</strong>: Views the network logs. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>concommandlogs</strong>: Views the concommand logs. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>restockallvendors</strong>: Restocks all vendors on the map. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>resetallvendormoney</strong>: Resets all vendor money on the map. | <strong>Staff Command</strong>.</p></li>
-    <li><p><strong>savevendors</strong>: Saves the state of the vendors. | <strong>Staff Command</strong>.</p></li>
-</ul>
-</p>
+					<h3>Fields</h3>
 
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">CommandStructure</span>
+
+
+
+								<p>[] List of commands with their descriptions and access levels.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CommandStructure">
+					<h1><span class="realm shared"></span></span>CommandStructure</h1>
+				</a>
+
+					<p>When registering commands with <code>lia.command.add</code>, you'll need to pass in a valid command structure.  This is simply a table
+ with various fields defined to describe the functionality of the command.</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">onRun</span>
+
+									<span class="tag"><span class="type">function</span></span>
+
+
+								<p> This function is called when the command has passed all the checks and can execute. The
+ arguments will be the calling player and subsequent argument list.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">adminOnly</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Provides an additional check to see if the user is an admin before running.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">superAdminOnly</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Provides an additional check to see if the user is a superadmin before running.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">privilege</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+									<span class="tag default">default: nil</span>
+
+								<p> Manually specify a privilege name for this command. It will always be prefixed with
+ <code>&quot;Commands - &quot;</code>. This is used in the case that you want to group commands under the same privilege, or use a privilege that
+ you've already defined (i.e grouping <code>/charban</code> and <code>/charunban</code> into the <code>Commands - Ban Characters</code> privilege).</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">onCheckAccess</span>
+
+									<span class="tag"><span class="type">function</span></span>
+
+									<span class="tag default">default: nil</span>
+
+								<p> This callback checks whether or not the player is allowed to run the command.
+ This callback should <strong>NOT</strong> be used in conjunction with <code>adminOnly</code> or <code>superAdminOnly</code>, as populating those
+ fields create a custom a <code>OnCheckAccess</code> callback for you internally. This is used in cases where you want more fine-grained
+ access control for your command.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
 
 					</div>
 			</article>
