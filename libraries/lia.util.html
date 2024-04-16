@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Faction - Lilia Documentation</title>
+		<title>lia.util - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Faction - Lilia Documentation" />
+		<meta property="og:title" content="lia.util - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Faction setup hooks." />
+			<meta property="og:description" content="Various useful helper functions." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -63,7 +63,7 @@ onSpawn											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../hooks/Faction.html">Faction</a></summary>
 
 									<ul>
@@ -556,7 +556,7 @@ verifyModuleValidity											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../libraries/lia.util.html">lia.util</a></summary>
 
 									<ul>
@@ -1469,25 +1469,24 @@ takeMoney											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Faction</h1>
-	<h2>Faction setup hooks.</h2>
+	<h1>lia.util</h1>
+	<h2>Various useful helper functions.</h2>
 </header>
 
-<p>Factions have their own hooks that are called for various reasons, with the most common being to set up a character
-once it's created and assigned to a certain faction. For example, giving a police faction character a weapon upon creation.
-These hooks are used in faction tables that are created in <code>schema/factions/sfactionname.lua</code> and cannot be used like
-regular gamemode hooks.</p>
+<p>
+
+</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="getDefaultDesc">
-					<h1><span class="realm shared"></span></span>FACTION:getDefaultDesc(client, faction)</h1>
+				<a class="anchor" id="lia.util.drawBlur">
+					<h1><span class="realm client"></span></span>lia.util.drawBlur(panel, amount, passes)</h1>
 				</a>
 
-					<p>Called when the default description for a character needs to be retrieved.
- This function allows factions to define custom default descriptions for characters.</p>
+					<p>Blurs the content underneath the given panel.  This will fall back to a simple darkened rectangle if the player has
+ blurring disabled.</p>
 			</header>
 
 
@@ -1497,24 +1496,534 @@ regular gamemode hooks.</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">client</span>
+								<span class="tag parameter">panel</span>
 
-									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+									<span class="tag"><span class="type">panel</span></span>
 
 
-								<p> The client for whom the default description is being retrieved</p>
+								<p> Panel to draw the blur for</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">faction</span>
+								<span class="tag parameter">amount</span>
 
-									<span class="tag"><a class="type" href="../classes/Character.html#">Character</a></span>
+									<span class="tag"><span class="type">number</span></span>
+
+									<span class="tag default">default: 5</span>
+
+								<p> Intensity of the blur. This should be kept between 0 and 10 for performance reasons</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">passes</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+									<span class="tag default">default: 0.2</span>
+
+								<p> Quality of the blur. This should be kept as default</p>
+							</li>
+					</ul>
 
 
-								<p> The faction ID for which the default description is being retrieved</p>
+				<h3>Example Usage</h3>
+					<pre><code>function PANEL:Paint(width, height)
+	lia.util.drawBlur(self)
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.util.drawBlurAt">
+					<h1><span class="realm client"></span></span>lia.util.drawBlurAt(x, y, w, h, amount, passes)</h1>
+				</a>
+
+					<p>Draws a blurred rectangle with the given position and bounds.  This shouldn't be used for panels, see <a href="../libraries/lia.util.html#lia.util.drawBlur">lia.util.drawBlur</a>
+ instead.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">x</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> X-position of the rectangle</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">y</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> Y-position of the rectangle</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">w</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> Width of the rectangle</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">h</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> Height of the rectangle</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">amount</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+									<span class="tag default">default: 5</span>
+
+								<p> Intensity of the blur. This should be kept between 0 and 10 for performance reasons</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">passes</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+									<span class="tag default">default: 0.2</span>
+
+								<p> Quality of the blur. This should be kept as default</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>hook.Add("HUDPaint", "MyHUDPaint", function()
+	lia.util.drawBlurAt(0, 0, ScrW(), ScrH())
+end)
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.util.drawText">
+					<h1><span class="realm client"></span></span>lia.util.drawText(text, x, y, color, alignX, alignY, font, alpha)</h1>
+				</a>
+
+					<p>Draws some text with a shadow.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">text</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Text to draw</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">x</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> X-position of the text</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">y</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> Y-position of the text</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">color</span>
+
+									<span class="tag"><span class="type">color</span></span>
+
+
+								<p> Color of the text to draw</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">alignX</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+									<span class="tag default">default: TEXT_ALIGN_LEFT</span>
+
+								<p> Horizontal alignment of the text, using one of the <code>TEXT_ALIGN_*</code> constants</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">alignY</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+									<span class="tag default">default: TEXT_ALIGN_LEFT</span>
+
+								<p> Vertical alignment of the text, using one of the <code>TEXT_ALIGN_*</code> constants</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">font</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+									<span class="tag default">default: &quot;ixGenericFont&quot;</span>
+
+								<p> Font to use for the text</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">alpha</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+									<span class="tag default">default: color.a * 0.575</span>
+
+								<p> Alpha of the shadow</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.util.emitQueuedSounds">
+					<h1><span class="realm shared"></span></span>lia.util.emitQueuedSounds(entity, sounds, delay, spacing, volume, pitch)</h1>
+				</a>
+
+					<p>Emits sounds one after the other from an entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../classes/Entity.html#">Entity</a></span>
+
+
+								<p> Entity to play sounds from</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">sounds</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> Sound paths to play</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delay</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p>[opt=0] How long to wait before starting to play the sounds</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">spacing</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p>[opt=0.1] How long to wait between playing each sound</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">volume</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p>[opt=75] The sound level of each sound</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">pitch</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p>[opt=100] Pitch percentage of each sound</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">number</span>
+
+								<p>How long the entire sequence of sounds will take to play</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.util.findPlayer">
+					<h1><span class="realm shared"></span></span>lia.util.findPlayer(identifier, allowPatterns)</h1>
+				</a>
+
+					<p>Attempts to find a player by matching their name or Steam ID.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">identifier</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Search query</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">allowPatterns</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether or not to accept Lua patterns in <code>identifier</code></p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">player</span>
+
+								<p>Player that matches the given search query - this will be <code>nil</code> if a player could not be found</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.util.getMaterial">
+					<h1><span class="realm shared"></span></span>lia.util.getMaterial(materialPath)</h1>
+				</a>
+
+					<p>Returns a cached copy of the given material, or creates and caches one if it doesn't exist.  This is a quick helper function
+ if you aren't locally storing a <code>Material()</code> call.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">materialPath</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Path to the material</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">material</span>
+
+								<p>The cached material</p>
+							</li>
+
+							<div class="or"><span>OR</span></div>
+
+							<li>
+									<span class="type">nil</span>
+
+								<p>If the material doesn't exist in the filesystem</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.util.stringMatches">
+					<h1><span class="realm shared"></span></span>lia.util.stringMatches(a, b)</h1>
+				</a>
+
+					<p>Checks to see if two strings are equivalent using a fuzzy manner.  Both strings will be lowered, and will return <code>true</code> if
+ the strings are identical, or if <code>b</code> is a substring of <code>a</code>.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">a</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> First string to check</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">b</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Second string to check</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not the strings are equivalent</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.util.stripRealmPrefix">
+					<h1><span class="realm shared"></span></span>lia.util.stripRealmPrefix(name)</h1>
+				</a>
+
+					<p>Removes the realm prefix from a file name.  The returned string will be unchanged if there is no prefix found.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">name</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> String to strip prefix from</p>
 							</li>
 					</ul>
 
@@ -1525,25 +2034,25 @@ regular gamemode hooks.</p>
 							<li>
 									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
 
-								<p>The default description for the newly created character</p>
+								<p>String stripped of prefix</p>
 							</li>
 
 				</ul>
 
 				<h3>Example Usage</h3>
-					<pre><code>function FACTION:getDefaultDesc(client, faction)
-	return "A police officer"
-end
+					<pre><code>print(lia.util.stripRealmPrefix("sv_init.lua"))
+ > init.lua
 </code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="getDefaultName">
-					<h1><span class="realm shared"></span></span>FACTION:getDefaultName(client)</h1>
+				<a class="anchor" id="lia.util.wrapText">
+					<h1><span class="realm client"></span></span>lia.util.wrapText(text, width, font)</h1>
 				</a>
 
-					<p>Called when the default name for a character needs to be retrieved (i.e., upon initial creation).</p>
+					<p>Wraps text so it does not pass a certain width.  This function will try and break lines between words if it can,
+ otherwise it will break a word if it's too long.</p>
 			</header>
 
 
@@ -1553,145 +2062,41 @@ end
 					<ul>
 
 							<li>
-								<span class="tag parameter">client</span>
+								<span class="tag parameter">text</span>
 
-									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
-
-
-								<p> The client for whom the default name is being retrieved</p>
-							</li>
-					</ul>
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
-
-								<p>The default name for the newly created character</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:getDefaultName(client)
-	return "CT-" .. math.random(111111, 999999)
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="onCharCreated">
-					<h1><span class="realm server"></span></span>FACTION:onCharCreated(client, character)</h1>
-				</a>
-
-					<p>Called when a character has been initially created and assigned to this faction.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
-
-
-								<p> The client that owns the character</p>
+								<p> Text to wrap</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">character</span>
+								<span class="tag parameter">width</span>
 
-									<span class="tag"><a class="type" href="../classes/Character.html#">Character</a></span>
+									<span class="tag"><span class="type">number</span></span>
 
 
-								<p> The character that has been created</p>
+								<p> Maximum allowed width in pixels</p>
 							</li>
 					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:onCharCreated(client, character)
-	local inventory = character:getInv()
-	inventory:add("fancy_suit")
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="onSpawn">
-					<h1><span class="realm server"></span></span>FACTION:onSpawn(client)</h1>
-				</a>
-
-					<p>Called when a character in this faction has spawned in the world.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">client</span>
+								<span class="tag parameter">font</span>
 
-									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
+									<span class="tag default">default: &quot;liaChatFont&quot;</span>
 
-								<p> The player that has just spawned</p>
+								<p> Font to use for the text</p>
 							</li>
 					</ul>
 
 
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:onSpawn(client)
-	client:ChatPrint("You have spawned!")
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="onTransferred">
-					<h1><span class="realm server"></span></span>FACTION:onTransferred(character)</h1>
-				</a>
-
-					<p>Called when a player's character has been transferred to this faction.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">character</span>
-
-									<span class="tag"><a class="type" href="../classes/Character.html#">Character</a></span>
-
-
-								<p> The character that was transferred</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:onTransferred(character)
-	local randomModelIndex = math.random(1, #self.models)
-	character:setModel(self.models[randomModelIndex])
-end
-</code></pre>
 
 		</section>
 
