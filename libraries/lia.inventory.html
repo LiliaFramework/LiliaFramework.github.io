@@ -2,15 +2,13 @@
 
 <html>
 	<head>
-		<title>sam - Lilia Documentation</title>
+		<title>lia.inventory - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="sam - Lilia Documentation" />
+		<meta property="og:title" content="lia.inventory - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Compatibility - SAM Admin Mod
-
-**Configuration Values:**." />
+			<meta property="og:description" content="Inventory manipulation and helper functions." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -153,7 +151,7 @@ onTransferred											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../module configuration/sam.html">sam</a></summary>
 
 									<ul>
@@ -365,7 +363,7 @@ takeFlags											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../libraries/lia.inventory.html">lia.inventory</a></summary>
 
 									<ul>
@@ -986,12 +984,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -1283,20 +1281,400 @@ takeMoney											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>sam</h1>
-	<h2>Compatibility - SAM Admin Mod</p>
-
-<p><strong>Configuration Values:</strong>.</h2>
+	<h1>lia.inventory</h1>
+	<h2>Inventory manipulation and helper functions.</h2>
 </header>
 
 <p>
 
-
-<ul>
-    <li><strong>DefaultStaff</strong>: List of Default Staff and correspondent usergroups | <strong>table</strong>.</li>
-</ul>
 </p>
 
+	<h1 class="title">Functions</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.inventory.cleanUpForCharacter">
+					<h1><span class="realm server"></span></span>lia.inventory.cleanUpForCharacter(character)</h1>
+				</a>
+
+					<p>Cleans up all inventory instances associated with a character.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../classes/Character.html#">Character</a></span>
+
+
+								<p> The character for which to clean up inventory instances.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.inventory.deleteByID">
+					<h1><span class="realm server"></span></span>lia.inventory.deleteByID(id)</h1>
+				</a>
+
+					<p>Deletes an inventory instance by its ID from the database and cache.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">id</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> The ID of the inventory to delete.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.inventory.instance">
+					<h1><span class="realm server"></span></span>lia.inventory.instance(typeID, initialData)</h1>
+				</a>
+
+					<p>Creates and initializes a new inventory instance based on the specified type ID and initial data.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">typeID</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The ID of the inventory type.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">initialData</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+									<span class="tag default">optional</span>
+
+								<p> Initial data to be assigned to the inventory.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">Deferred</span>
+
+								<p>A deferred object that resolves with the created inventory instance.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.inventory.loadAllFromCharID">
+					<h1><span class="realm server"></span></span>lia.inventory.loadAllFromCharID(charID)</h1>
+				</a>
+
+					<p>Loads all inventory instances associated with a character ID.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">charID</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> The character ID to load inventory instances for.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">Deferred</span>
+
+								<p>A deferred object that resolves with an array of loaded inventory instances.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.inventory.loadByID">
+					<h1><span class="realm server"></span></span>lia.inventory.loadByID(id, noCache)</h1>
+				</a>
+
+					<p>Loads an inventory instance by its ID from cache or default storage if not cached.
+ If the inventory is found in the cache and <code>noCache</code> is not set, it will return the cached instance.
+ If the inventory is not found in the cache or <code>noCache</code> is set, it attempts to load it from storage.
+ If the inventory is not found in storage, it falls back to the default storage.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">id</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> The ID of the inventory to load.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">noCache</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> If true, forces loading from storage even if cached.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">Deferred</span>
+
+								<p>A deferred object that resolves with the loaded inventory instance or nil if not found.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.inventory.loadFromDefaultStorage">
+					<h1><span class="realm server"></span></span>lia.inventory.loadFromDefaultStorage(id, noCache)</h1>
+				</a>
+
+					<p>Loads an inventory instance from the default storage.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">id</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> The ID of the inventory to load.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">noCache</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> If true, forces loading from storage even if cached.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">Deferred</span>
+
+								<p>A deferred object that resolves with the loaded inventory instance or nil if not found.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.inventory.new">
+					<h1><span class="realm shared"></span></span>lia.inventory.new(typeID)</h1>
+				</a>
+
+					<p>Creates a new inventory instance of the specified type.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">typeID</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The unique identifier for the type of inventory to create.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="../classes/Inventory.html#">Inventory</a>
+
+								<p>A new instance of the specified inventory type.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.inventory.newType">
+					<h1><span class="realm shared"></span></span>lia.inventory.newType(typeID, invTypeStruct)</h1>
+				</a>
+
+					<p>Creates a new inventory type.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">typeID</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The unique identifier for the new inventory type.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">invTypeStruct</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> The structure defining the behavior and configuration of the new inventory type.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.inventory.show">
+					<h1><span class="realm client"></span></span>lia.inventory.show(inventory, parent)</h1>
+				</a>
+
+					<p>Displays the graphical representation of an inventory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">inventory</span>
+
+									<span class="tag"><a class="type" href="../classes/Inventory.html#">Inventory</a></span>
+
+
+								<p> The inventory to display.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">parent</span>
+
+									<span class="tag"><span class="type">Panel</span></span>
+
+
+								<p> The parent panel to attach the inventory to.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">Panel</span>
+
+								<p>The panel displaying the inventory.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
 
 					</div>
 			</article>
