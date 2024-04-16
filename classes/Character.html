@@ -487,6 +487,121 @@ verifyModuleValidity											</a>
 									<ul>
 
 
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#__eq">
+__eq											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#__tostring">
+__tostring											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#addBoost">
+addBoost											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#ban">
+ban											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#delete">
+delete											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#destroy">
+destroy											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#getAttrib">
+getAttrib											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#getBoost">
+getBoost											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#getBoosts">
+getBoosts											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#getItemWeapon">
+getItemWeapon											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#getPlayer">
+getPlayer											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#giveMoney">
+giveMoney											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#hasMoney">
+hasMoney											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#isFaction">
+isFaction											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#joinClass">
+joinClass											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#kick">
+kick											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#kickClass">
+kickClass											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#removeBoost">
+removeBoost											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#save">
+save											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#setAttrib">
+setAttrib											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#sync">
+sync											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#takeMoney">
+takeMoney											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#updateAttrib">
+updateAttrib											</a>
+										</li>
 
 									</ul>
 									</details>
@@ -551,6 +666,31 @@ setNetVar											</a>
 									<ul>
 
 
+										<li>
+											<span class="realm client"></span>
+											<a href="../classes/Player.html#getLiliaData">
+getLiliaData											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Player.html#getLiliaData">
+getLiliaData											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Player.html#loadLiliaData">
+loadLiliaData											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Player.html#saveLiliaData">
+saveLiliaData											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Player.html#setLiliaData">
+setLiliaData											</a>
+										</li>
 
 									</ul>
 									</details>
@@ -633,6 +773,828 @@ part, you'll want to keep all information stored on the character since it will 
 player switches to another character. An easy way to do this is to use <code>lia.char.registerVar</code> to easily create accessor functions
 for variables that automatically save to the character object.</p>
 
+	<h1 class="title">Functions</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="__eq">
+					<h1><span class="realm shared"></span></span>Character:__eq(other)</h1>
+				</a>
+
+					<p>Returns true if this character is equal to another character.  Internally, this checks character IDs.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">other</span>
+
+									<span class="tag"><a class="type" href="../classes/Character.html#">Character</a></span>
+
+
+								<p> Character to compare to</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>bool Whether or not this character is equal to the given character</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>print(lia.char.loaded[1] == lia.char.loaded[2])
+ > false
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="__tostring">
+					<h1><span class="realm shared"></span></span>Character:__tostring()</h1>
+				</a>
+
+					<p>Returns a string representation of this character</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>string String representation</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>print(lia.char.loaded[1])
+ > "character[1]"
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="addBoost">
+					<h1><span class="realm server"></span></span>Character:addBoost(boostID, attribID, boostAmount)</h1>
+				</a>
+
+					<p>Adds a boost to the character's attributes.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">boostID</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The ID of the boost to add.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">attribID</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The ID of the attribute to which the boost should be added.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">boostAmount</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> The amount of boost to add to the attribute.</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>char:removeBoost("some_boost_id", "some_attribute_id", 10)
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ban">
+					<h1><span class="realm server"></span></span>Character:ban(time)</h1>
+				</a>
+
+					<p>Forces a player off their current character, and prevents them from using the character for the specified amount of time.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">time</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+									<span class="tag default">optional</span>
+
+								<p> Amount of seconds to ban the character for. If left as <code>nil</code>, the character will be banned permanently</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="delete">
+					<h1><span class="realm shared"></span></span>Character:delete()</h1>
+				</a>
+
+					<p>Deletes the character from the character database and removes it from memory.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="destroy">
+					<h1><span class="realm shared"></span></span>Character:destroy()</h1>
+				</a>
+
+					<p>Destroys the character, removing it from memory and notifying clients to remove it.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getAttrib">
+					<h1><span class="realm shared"></span></span>Character:getAttrib(key, default)</h1>
+				</a>
+
+					<p>Retrieves the value of a character attribute, including applied boosts.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The key of the attribute to retrieve.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">default</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+									<span class="tag default">default: 0</span>
+
+								<p> The default value to return if the attribute is not found.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The value of the specified attribute, including applied boosts.</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>local attributeValue = char:getAttrib("some_attribute_key")
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getBoost">
+					<h1><span class="realm shared"></span></span>Character:getBoost(attribID)</h1>
+				</a>
+
+					<p>Retrieves the boost value for a specific attribute.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">attribID</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> The ID of the attribute for which to retrieve the boost.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number|nil The boost value for the specified attribute, or nil if no boost is found.</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>local boostValue = char:getBoost("some_attribute_id")
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getBoosts">
+					<h1><span class="realm shared"></span></span>Character:getBoosts()</h1>
+				</a>
+
+					<p>Retrieves all boosts applied to the character's attributes.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>table A table containing all boosts applied to the character's attributes.</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>local boostsTable = char:getBoosts()
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getItemWeapon">
+					<h1><span class="realm shared"></span></span>Character:getItemWeapon()</h1>
+				</a>
+
+					<p>Retrieves the character's equipped weapon and its corresponding item from the inventory.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>Entity|false The equipped weapon entity, or false if no weapon is equipped.</p>
+							</li>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>Item|false The corresponding item from the character's inventory, or false if no corresponding item is found.</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>local weapon, item = char:getItemWeapon()
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getPlayer">
+					<h1><span class="realm shared"></span></span>Character:getPlayer()</h1>
+				</a>
+
+					<p>Returns the player that owns this character.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>player Player that owns this character</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="giveMoney">
+					<h1><span class="realm shared"></span></span>Character:giveMoney(amount, takingMoney)</h1>
+				</a>
+
+					<p>Gives or takes money from the character's wallet.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">amount</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> The amount of money to give or take.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">takingMoney</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether the operation is to take money from the character.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>bool Whether the operation was successful.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="hasMoney">
+					<h1><span class="realm shared"></span></span>Character:hasMoney(amount)</h1>
+				</a>
+
+					<p>Checks if the character has at least the specified amount of money.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">amount</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> The amount of money to check for.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>bool Whether the character has at least the specified amount of money.</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>local hasEnoughMoney = char:hasMoney(100)
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isFaction">
+					<h1><span class="realm shared"></span></span>Character:isFaction(faction)</h1>
+				</a>
+
+					<p>Checks if the character belongs to the specified faction.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">faction</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> Index of the faction to check against.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>bool Whether the character belongs to the specified faction.</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>local isInFaction = char:isFaction("some_faction")
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="joinClass">
+					<h1><span class="realm shared"></span></span>Character:joinClass(class, isForced)</h1>
+				</a>
+
+					<p>Sets the character's class to the specified class.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">class</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The class to join.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isForced</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether to force the character to join the class even if conditions are not met.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>bool Whether the character successfully joined the class.</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>local success = char:joinClass("some_class")
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="kick">
+					<h1><span class="realm server"></span></span>Character:kick()</h1>
+				</a>
+
+					<p>Forces a player off their current character, and sends them to the character menu to select a character.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="kickClass">
+					<h1><span class="realm shared"></span></span>Character:kickClass()</h1>
+				</a>
+
+					<p>Kicks the character from their current class and joins them to the default class of their faction.</p>
+			</header>
+
+
+
+				<h3>Example Usage</h3>
+					<pre><code>char:kickClass()
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="removeBoost">
+					<h1><span class="realm server"></span></span>Character:removeBoost(boostID, attribID)</h1>
+				</a>
+
+					<p>Removes a boost from the character's attributes.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">boostID</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The ID of the boost to remove.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">attribID</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The ID of the attribute from which the boost should be removed.</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>char:removeBoost("some_boost_id", "some_attribute_id")
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="save">
+					<h1><span class="realm server"></span></span>Character:save(callback)</h1>
+				</a>
+
+					<p>Saves this character's info to the database.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">callback</span>
+
+									<span class="tag"><span class="type">function</span></span>
+
+									<span class="tag default">default: nil</span>
+
+								<p> Function to call when the save has completed.</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>lia.char.loaded[1]:save(function()
+	print("Done saving " .. lia.char.loaded[1] .. "!")
+end)
+> Done saving character[1]! -- after a moment
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="setAttrib">
+					<h1><span class="realm server"></span></span>Character:setAttrib(key, value)</h1>
+				</a>
+
+					<p>Sets the value of a character attribute.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The key of the attribute to set.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">value</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> The value to set for the attribute.</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>char:setAttrib("some_attribute_key", 10)
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="sync">
+					<h1><span class="realm server"></span></span>Character:sync(receiver)</h1>
+				</a>
+
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
+					<p>Networks this character's information to make the given player aware of this character's existence.  If the receiver is
+ not the owner of this character, it will only be sent a limited amount of data (as it does not need anything else).
+ This is done automatically by the framework.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">receiver</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+									<span class="tag default">default: nil</span>
+
+								<p> Player to send the information to. This will sync to all connected players if set to <code>nil</code>.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="takeMoney">
+					<h1><span class="realm shared"></span></span>Character:takeMoney(amount)</h1>
+				</a>
+
+					<p>Takes money from the character's wallet.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">amount</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> The amount of money to take.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>bool Whether the operation was successful.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="updateAttrib">
+					<h1><span class="realm server"></span></span>Character:updateAttrib(key, value)</h1>
+				</a>
+
+					<p>Updates the value of a character attribute by adding a specified value to it.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The key of the attribute to update.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">value</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> The value to add to the attribute.</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>char:updateAttrib("some_attribute_key", 10)
+</code></pre>
+
+		</section>
 
 					</div>
 			</article>

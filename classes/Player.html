@@ -487,6 +487,121 @@ verifyModuleValidity											</a>
 									<ul>
 
 
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#__eq">
+__eq											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#__tostring">
+__tostring											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#addBoost">
+addBoost											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#ban">
+ban											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#delete">
+delete											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#destroy">
+destroy											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#getAttrib">
+getAttrib											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#getBoost">
+getBoost											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#getBoosts">
+getBoosts											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#getItemWeapon">
+getItemWeapon											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#getPlayer">
+getPlayer											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#giveMoney">
+giveMoney											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#hasMoney">
+hasMoney											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#isFaction">
+isFaction											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#joinClass">
+joinClass											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#kick">
+kick											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#kickClass">
+kickClass											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#removeBoost">
+removeBoost											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#save">
+save											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#setAttrib">
+setAttrib											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#sync">
+sync											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#takeMoney">
+takeMoney											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#updateAttrib">
+updateAttrib											</a>
+										</li>
 
 									</ul>
 									</details>
@@ -551,6 +666,31 @@ setNetVar											</a>
 									<ul>
 
 
+										<li>
+											<span class="realm client"></span>
+											<a href="../classes/Player.html#getLiliaData">
+getLiliaData											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Player.html#getLiliaData">
+getLiliaData											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Player.html#loadLiliaData">
+loadLiliaData											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Player.html#saveLiliaData">
+saveLiliaData											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Player.html#setLiliaData">
+setLiliaData											</a>
+										</li>
 
 									</ul>
 									</details>
@@ -628,6 +768,195 @@ object at a time that you can interface with.</p>
 
 <p>See the <a href="https://wiki.garrysmod.com/page/Category:Player">Garry's Mod Wiki</a> for all other methods that the <a href="../classes/Player.html#">Player</a> class has.</p>
 
+	<h1 class="title">Functions</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="getLiliaData">
+					<h1><span class="realm client"></span></span>Player:getLiliaData(key, default)</h1>
+				</a>
+
+					<p>Retrieves a value from the local Lilia data.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+
+
+								<p> The key for the data.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">default</span>
+
+
+
+								<p>[opt=nil] The default value to return if the key does not exist.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">any</span>
+
+								<p>The value corresponding to the key, or the default value if the key does not exist.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getLiliaData">
+					<h1><span class="realm server"></span></span>Player:getLiliaData(key, default)</h1>
+				</a>
+
+					<p>Retrieves a value from the player's Lilia data.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+
+
+								<p> The key for the data.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">default</span>
+
+
+
+								<p>[opt=nil] The default value to return if the key does not exist.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">any</span>
+
+								<p>The value corresponding to the key, or the default value if the key does not exist.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="loadLiliaData">
+					<h1><span class="realm server"></span></span>Player:loadLiliaData(callback)</h1>
+				</a>
+
+					<p>Loads Lilia data for the player from the database.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">callback</span>
+
+
+
+								<p>[opt=nil] Function to call after the data is loaded, passing the loaded data as an argument.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="saveLiliaData">
+					<h1><span class="realm server"></span></span>Player:saveLiliaData()</h1>
+				</a>
+
+					<p>Saves the player's Lilia data to the database.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="setLiliaData">
+					<h1><span class="realm server"></span></span>Player:setLiliaData(key, value, noNetworking)</h1>
+				</a>
+
+					<p>Sets a key-value pair in the player's Lilia data.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+
+
+								<p> The key for the data.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">value</span>
+
+
+
+								<p> The value to set.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">noNetworking</span>
+
+
+
+								<p>[opt=false] If true, suppresses network broadcasting of the update.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
 
 					</div>
 			</article>
