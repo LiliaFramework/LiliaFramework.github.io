@@ -2,18 +2,13 @@
 
 <html>
 	<head>
-		<title>Structure - Module - Lilia Documentation</title>
+		<title>lia.char - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Structure - Module - Lilia Documentation" />
+		<meta property="og:title" content="lia.char - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content=" Structure - Module
-
-```lua
---------------------------------------------------------------------------------------------------------------------------
-MODULE.name = &quot;Core - Permissions&quot;
-----------------------------------------------------------------------..." />
+			<meta property="og:description" content="Character creation and management." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -260,7 +255,7 @@ setup											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../libraries/lia.char.html">lia.char</a></summary>
 
 									<ul>
@@ -829,12 +824,12 @@ canSeeEntity											</a>
 clearNetVars											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
@@ -844,12 +839,12 @@ getDoorPartner											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
@@ -874,12 +869,12 @@ inTrace											</a>
 isChair											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
@@ -1233,12 +1228,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -1529,99 +1524,258 @@ takeMoney											</a>
 
 			<article>
 					<div class="wrapper">
+						<header class="module">
+	<h1>lia.char</h1>
+	<h2>Character creation and management.</h2>
+</header>
 
-<h1>Structure - Module</h1>
+<p><strong>NOTE:</strong> For the most part you shouldn't use this library unless you know what you're doing. You can very easily corrupt
+character data using these functions!</p>
 
+	<h1 class="title">Functions</h1>
 
-<pre>
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.name = <span class="string">"Core - Permissions"</span>
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.author = <span class="string">"76561198312513285"</span>
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.discord = <span class="string">"@liliaplayer"</span>
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.desc = <span class="string">"Implements CAMI Based Permissions."</span>
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.identifier = <span class="string">"RestrictionCore"</span>
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.WorkshopContent = {<span class="string">"2959728255"</span>}
-<span class="comment">-------------------------------------------f-------------------------------------------------------------------------------
-</span>MODULE.enabled = <span class="keyword">true</span>
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.CAMIPrivileges = {
-    {
-        Name = <span class="string">"Staff Permissions - One Punch Man"</span>,
-        MinAccess = <span class="string">"superadmin"</span>,
-        Description = <span class="string">"Allows access to OPM to Ragdoll Minges."</span>,
-    },
-}
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.Dependencies = {
+		<section class="method">
+			<header>
+				<a class="anchor" id="Name">
+					<h1><span class="realm shared"></span></span>Name()</h1>
+				</a>
 
-    {
-        File = MODULE.path .. <span class="string">"/permissinons.lua"</span>,
-        Realm = <span class="string">"server"</span>,
-    },
-    {
-        File = MODULE.path .. <span class="string">"/logs.lua"</span>,
-        Realm = <span class="string">"server"</span>,
-    },
-}
-
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------</span>
-</pre>
+					<p>Returns this player's current name.</p>
+			</header>
 
 
-<hr/>
 
-<p><a name="_View_source_____https___github_com_LiliaFramework_Lilia_blob_main_lilia_modules_core_permissions_module_lua_"></a></p>
-<h2><a href="https://github.com/LiliaFramework/Lilia/blob/main/lilia/modules/core/permissions/module.lua">View source »</a></h2>
+				<h3>Returns</h3>
+				<ul>
 
-<p><a name="Module_Configuration"></a></p>
-<h2>Module Configuration</h2>
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
 
-<ul>
-    <li><p>**<code>MODULE.name</code>:** Specifies the name of the module, which is "Core - Permissions" in this case. This variable identifies the module.</p></li>
-    <li><p>**<code>MODULE.author</code>:** Indicates the author of the module. It can be a STEAMID64 or Name. Replace "76561198312513285" with the actual author information.</p></li>
-    <li><p>**<code>MODULE.discord</code>:** Indicates the discord of the module creator, in this case, as shown, is liliaplayer.</p></li>
-    <li><p>**<code>MODULE.desc</code>:** Provides a brief description of the module's purpose. In this case, it states that the module adds skills functionality to the framework.</p></li>
-    <li><p>**<code>MODULE.CAMIPrivileges</code>:** An example CAMI permission that is loaded alongside the module.</p></li>
-    <li><p>**<code>MODULE.WorkshopContent</code>:** Workshop Content to be added.</p></li>
-    <li><p>**<code>MODULE.enabled</code>:** Indicates if the module is active or not. If False, then it won't be.</p></li>
-    <li><p>**<code>MODULE.Dependencies</code>:** Files and corresponding realms to be included.</p></li>
-</ul>
+								<p>Name of this player's currently loaded character</p>
+							</li>
 
-<h3>Automatically Included Files and Folders in the Module:</h3>
+							<div class="or"><span>OR</span></div>
 
-<p><strong>Files:</strong></p>
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
 
-<ul>
-    <li><p>client.lua</p></li>
-    <li><p>cl_module.lua</p></li>
-    <li><p>sv_module.lua</p></li>
-    <li><p>server.lua</p></li>
-    <li><p>config.lua</p></li>
-    <li><p>sconfig.lua</p></li>
-</ul>
+								<p>Steam name of this player if the player has no character loaded</p>
+							</li>
 
-<p><strong>Folders:</strong></p>
+				</ul>
 
-<ul>
-    <li><p>dependencies</p></li>
-    <li><p>config</p></li>
-    <li><p>permissions</p></li>
-    <li><p>libs</p></li>
-    <li><p>hooks</p></li>
-    <li><p>libraries</p></li>
-    <li><p>commands</p></li>
-    <li><p>netcalls</p></li>
-    <li><p>meta</p></li>
-    <li><p>derma</p></li>
-    <li><p>pim</p></li>
-    <li><p>concommands</p></li>
-</ul>
 
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getChar">
+					<h1><span class="realm shared"></span></span>getChar()</h1>
+				</a>
+
+					<p>Returns this player's currently possessed <a href="../classes/Character.html#">Character</a> object if it exists.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="../classes/Character.html#">Character</a>
+
+								<p>Currently loaded character</p>
+							</li>
+
+							<div class="or"><span>OR</span></div>
+
+							<li>
+									<span class="type">nil</span>
+
+								<p>If this player has no character loaded</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.char.create">
+					<h1><span class="realm server"></span></span>lia.char.create(data, callback)</h1>
+				</a>
+
+					<p>Creates a character object with its assigned properties and saves it to the database.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">data</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> Properties to assign to this character. If fields are missing from the table, then it will use the default
+ value for that property</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">callback</span>
+
+									<span class="tag"><span class="type">function</span></span>
+
+
+								<p> Function to call after the character saves</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.char.new">
+					<h1><span class="realm shared"></span></span>lia.char.new(data, id, client, steamID)</h1>
+				</a>
+
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
+					<p>Creates a new empty <a href="../classes/Character.html#">Character</a> object.  If you are looking to create a usable character, see <a href="../libraries/lia.char.html#lia.char.create">lia.char.create</a>.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">data</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> Character vars to assign</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">id</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> Unique ID of the character</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> Player that will own the character</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">steamID</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+									<span class="tag default">default: client:SteamID64()</span>
+
+								<p> SteamID64 of the player that will own the character</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.char.restore">
+					<h1><span class="realm server"></span></span>lia.char.restore(client, callback, _, id)</h1>
+				</a>
+
+					<p>Loads all of a player's characters into memory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> Player to load the characters for</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">callback</span>
+
+									<span class="tag"><span class="type">function</span></span>
+
+									<span class="tag default">default: nil</span>
+
+								<p> Function to call when the characters have been loaded</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">_</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether or not to skip the cache; players that leave and join again later will already have
+ their characters loaded which will skip the database query and load quicker</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">id</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+									<span class="tag default">default: nil</span>
+
+								<p> The ID of a specific character to load instead of all of the player's characters</p>
+							</li>
+					</ul>
+
+
+
+		</section>
 
 					</div>
 			</article>

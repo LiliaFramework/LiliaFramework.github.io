@@ -240,6 +240,52 @@ setModelClass											</a>
 									<ul>
 
 
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.attribs.html#lia.attribs.loadFromDir">
+loadFromDir											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.attribs.html#lia.attribs.setup">
+setup											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../libraries/lia.char.html">lia.char</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.char.html#Name">
+Name											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.char.html#getChar">
+getChar											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.char.html#lia.char.create">
+create											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.char.html#lia.char.new">
+new											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.char.html#lia.char.restore">
+restore											</a>
+										</li>
 
 									</ul>
 									</details>
@@ -253,8 +299,18 @@ setModelClass											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../libraries/lia.chat.html#lia.chat.parse">
+parse											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../libraries/lia.chat.html#lia.chat.register">
 register											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.chat.html#lia.chat.send">
+send											</a>
 										</li>
 
 									</ul>
@@ -768,12 +824,12 @@ canSeeEntity											</a>
 clearNetVars											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
@@ -783,12 +839,12 @@ getDoorPartner											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
@@ -813,12 +869,12 @@ inTrace											</a>
 isChair											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
@@ -1172,12 +1228,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -1583,30 +1639,6 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getDoorPartner">
-					<h1><span class="realm client"></span></span>Entity:getDoorPartner()</h1>
-				</a>
-
-					<p>Retrieves the partner door entity associated with this entity.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="../classes/Entity.html#">Entity</a>
-
-								<p>The partner door entity, if any.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getDoorPartner">
 					<h1><span class="realm server"></span></span>Entity:getDoorPartner()</h1>
 				</a>
 
@@ -1622,6 +1654,30 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 									<a class="type" href="../classes/Entity.html#">Entity</a>
 
 								<p>The partner entity of the door, if any.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getDoorPartner">
+					<h1><span class="realm client"></span></span>Entity:getDoorPartner()</h1>
+				</a>
+
+					<p>Retrieves the partner door entity associated with this entity.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="../classes/Entity.html#">Entity</a>
+
+								<p>The partner door entity, if any.</p>
 							</li>
 
 				</ul>
@@ -1646,6 +1702,56 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 									<span class="type">Vector</span>
 
 								<p>The drop position for the item.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getNetVar">
+					<h1><span class="realm client"></span></span>Entity:getNetVar(key, default)</h1>
+				</a>
+
+					<p>Retrieves the value of a networked variable associated with the entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The identifier of the networked variable.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">default</span>
+
+
+
+								<p> The default value to return if the networked variable does not exist.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">any</span>
+
+								<p>The value of the networked variable, or the default value if it doesn't exist.</p>
 							</li>
 
 				</ul>
@@ -1709,56 +1815,6 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 						<li><a href="../classes/Entity.html#setNetVar">setNetVar</a></li>
 				</ul>
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getNetVar">
-					<h1><span class="realm client"></span></span>Entity:getNetVar(key, default)</h1>
-				</a>
-
-					<p>Retrieves the value of a networked variable associated with the entity.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The identifier of the networked variable.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">default</span>
-
-
-
-								<p> The default value to return if the networked variable does not exist.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">any</span>
-
-								<p>The value of the networked variable, or the default value if it doesn't exist.</p>
-							</li>
-
-				</ul>
-
-
 		</section>
 		<section class="method">
 			<header>
@@ -1917,9 +1973,13 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="isDoor">
-					<h1><span class="realm client"></span></span>Entity:isDoor()</h1>
+					<h1><span class="realm server"></span></span>Entity:isDoor()</h1>
 				</a>
 
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
 					<p>Checks if the entity is a door.</p>
 			</header>
 
@@ -1941,13 +2001,9 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="isDoor">
-					<h1><span class="realm server"></span></span>Entity:isDoor()</h1>
+					<h1><span class="realm client"></span></span>Entity:isDoor()</h1>
 				</a>
 
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
 					<p>Checks if the entity is a door.</p>
 			</header>
 

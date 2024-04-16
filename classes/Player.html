@@ -240,6 +240,52 @@ setModelClass											</a>
 									<ul>
 
 
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.attribs.html#lia.attribs.loadFromDir">
+loadFromDir											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.attribs.html#lia.attribs.setup">
+setup											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../libraries/lia.char.html">lia.char</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.char.html#Name">
+Name											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.char.html#getChar">
+getChar											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.char.html#lia.char.create">
+create											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../libraries/lia.char.html#lia.char.new">
+new											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.char.html#lia.char.restore">
+restore											</a>
+										</li>
 
 									</ul>
 									</details>
@@ -253,8 +299,18 @@ setModelClass											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../libraries/lia.chat.html#lia.chat.parse">
+parse											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../libraries/lia.chat.html#lia.chat.register">
 register											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.chat.html#lia.chat.send">
+send											</a>
 										</li>
 
 									</ul>
@@ -768,12 +824,12 @@ canSeeEntity											</a>
 clearNetVars											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
@@ -783,12 +839,12 @@ getDoorPartner											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
@@ -813,12 +869,12 @@ inTrace											</a>
 isChair											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
@@ -1172,12 +1228,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -2005,10 +2061,10 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getLiliaData">
-					<h1><span class="realm server"></span></span>Player:getLiliaData(key, default)</h1>
+					<h1><span class="realm client"></span></span>Player:getLiliaData(key, default)</h1>
 				</a>
 
-					<p>Retrieves a value from the player's Lilia data.</p>
+					<p>Retrieves a value from the local Lilia data.</p>
 			</header>
 
 
@@ -2054,10 +2110,10 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getLiliaData">
-					<h1><span class="realm client"></span></span>Player:getLiliaData(key, default)</h1>
+					<h1><span class="realm server"></span></span>Player:getLiliaData(key, default)</h1>
 				</a>
 
-					<p>Retrieves a value from the local Lilia data.</p>
+					<p>Retrieves a value from the player's Lilia data.</p>
 			</header>
 
 
