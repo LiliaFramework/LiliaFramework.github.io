@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>ammosave - Lilia Documentation</title>
+		<title>Perfomance - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="ammosave - Lilia Documentation" />
+		<meta property="og:title" content="Perfomance - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Utilities - Ammo Save." />
+			<meta property="og:description" content="Core - Perfomance." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -108,6 +108,17 @@ onTransferred											</a>
 					<ul>
 							<li>
 									<details >
+									<summary><a href="../configurations/AmmoSave.html">AmmoSave</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
 									<summary><a href="../configurations/Commands.html">Commands</a></summary>
 
 									<ul>
@@ -118,8 +129,19 @@ onTransferred											</a>
 									</details>
 							</li>
 							<li>
+									<details >
+									<summary><a href="../configurations/InteractionMenu.html">InteractionMenu</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
 									<details open>
-									<summary><a href="../configurations/ammosave.html">ammosave</a></summary>
+									<summary><a href="../configurations/Perfomance.html">Perfomance</a></summary>
 
 									<ul>
 
@@ -130,7 +152,7 @@ onTransferred											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../configurations/interactionmenu.html">interactionmenu</a></summary>
+									<summary><a href="../configurations/Permissions.html">Permissions</a></summary>
 
 									<ul>
 
@@ -141,7 +163,7 @@ onTransferred											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../configurations/perfomance.html">perfomance</a></summary>
+									<summary><a href="../configurations/SAM.html">SAM</a></summary>
 
 									<ul>
 
@@ -152,29 +174,7 @@ onTransferred											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../configurations/permissions.html">permissions</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../configurations/sam.html">sam</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../configurations/simfphys.html">simfphys</a></summary>
+									<summary><a href="../configurations/Simfphys.html">Simfphys</a></summary>
 
 									<ul>
 
@@ -1397,8 +1397,8 @@ takeMoney											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>ammosave</h1>
-	<h2>Utilities - Ammo Save.</h2>
+	<h1>Perfomance</h1>
+	<h2>Core - Perfomance.</h2>
 </header>
 
 <p>
@@ -1407,8 +1407,11 @@ takeMoney											</a>
 <p><strong>Configuration Values:</strong>.</p>
 
 <ul>
-    <li><p><strong>KeepAmmoOnDeath</strong>: Should ammunition be kept on character death? | <strong>bool</strong>.</p></li>
-    <li><p><strong>SaveCharacterAmmo</strong>: Should ammunition be kept on character disconnection? | <strong>bool</strong>.</p></li>
+    <li><p><strong>PlayerCountCarLimitEnabled</strong>: Should Car Wipe be enabled?| <strong>bool</strong>.</p></li>
+    <li><p><strong>PlayerCountCarLimit</strong>: How many players are needed for cars to wipe | <strong>integer</strong>.</p></li>
+    <li><p><strong>tblAlwaysSend</strong>: Entities that transmit States | <strong>table</strong>.</p></li>
+    <li><p><strong>RagdollCleaningTimer</strong>: Time between Ragdolling Cleanups | <strong>integer</strong>.</p></li>
+    <li><p><strong>SoundsToMute</strong>: What sounds should be muted. | <strong>table</strong>.</p></li>
 </ul>
 </p>
 

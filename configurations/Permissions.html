@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>interactionmenu - Lilia Documentation</title>
+		<title>Permissions - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="interactionmenu - Lilia Documentation" />
+		<meta property="og:title" content="Permissions - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Core - Interaction Menu." />
+			<meta property="og:description" content="Core - Permissions." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -108,6 +108,17 @@ onTransferred											</a>
 					<ul>
 							<li>
 									<details >
+									<summary><a href="../configurations/AmmoSave.html">AmmoSave</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
 									<summary><a href="../configurations/Commands.html">Commands</a></summary>
 
 									<ul>
@@ -119,7 +130,18 @@ onTransferred											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../configurations/ammosave.html">ammosave</a></summary>
+									<summary><a href="../configurations/InteractionMenu.html">InteractionMenu</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../configurations/Perfomance.html">Perfomance</a></summary>
 
 									<ul>
 
@@ -130,7 +152,7 @@ onTransferred											</a>
 							</li>
 							<li>
 									<details open>
-									<summary><a href="../configurations/interactionmenu.html">interactionmenu</a></summary>
+									<summary><a href="../configurations/Permissions.html">Permissions</a></summary>
 
 									<ul>
 
@@ -141,7 +163,7 @@ onTransferred											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../configurations/perfomance.html">perfomance</a></summary>
+									<summary><a href="../configurations/SAM.html">SAM</a></summary>
 
 									<ul>
 
@@ -152,29 +174,7 @@ onTransferred											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../configurations/permissions.html">permissions</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../configurations/sam.html">sam</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../configurations/simfphys.html">simfphys</a></summary>
+									<summary><a href="../configurations/Simfphys.html">Simfphys</a></summary>
 
 									<ul>
 
@@ -1397,8 +1397,8 @@ takeMoney											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>interactionmenu</h1>
-	<h2>Core - Interaction Menu.</h2>
+	<h1>Permissions</h1>
+	<h2>Core - Permissions.</h2>
 </header>
 
 <p>
@@ -1407,8 +1407,16 @@ takeMoney											</a>
 <p><strong>Configuration Values:</strong>.</p>
 
 <ul>
-    <li><p><strong>MaxInteractionDistance</strong>: Maximum distance for Interaction Menu to interact with other entities | <strong>integer</strong>.</p></li>
-    <li><p><strong>CarSearchRadius</strong>: Search radius for Interaction Menu to find a car | <strong>integer</strong>.</p></li>
+    <li><p><strong>RestrictedEnts</strong>: List of entities blocked from physgun pick up and proprieties when used by regular players | <strong>table</strong>.</p></li>
+    <li><p><strong>RemoverBlockedEntities</strong>: List of entities blocked from the remover tool when used by regular players | <strong>table</strong>.</p></li>
+    <li><p><strong>DuplicatorBlackList</strong>: List of entities blocked from the duplicator tool when used by regular players | <strong>table</strong>.</p></li>
+    <li><p><strong>RestrictedVehicles</strong>: List of vehicles restricted from general spawn | <strong>table</strong>.</p></li>
+    <li><p><strong>BlackListedProps</strong>: List of props restricted from general spawn | <strong>table</strong>.</p></li>
+    <li><p><strong>CanNotPermaProp</strong>: List of entities restricted from perma propping | <strong>table</strong>.</p></li>
+    <li><p><strong>ButtonList</strong>: List of button models to prevent button spamming exploits | <strong>table</strong>.</p></li>
+    <li><p><strong>PassableOnFreeze</strong>: Makes it so that props frozen can be passed through when frozen | <strong>bool</strong>.</p></li>
+    <li><p><strong>PlayerSpawnVehicleDelay</strong>: Delay for spawning a vehicle after the previous one | <strong>integer</strong>.</p></li>
+    <li><p><strong>ToolInterval</strong>: ToolGun Usage Cooldown | <strong>integer</strong>.</p></li>
 </ul>
 </p>
 
