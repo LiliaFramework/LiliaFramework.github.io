@@ -317,11 +317,6 @@ setCharData											</a>
 parse											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
-											<a href="../libraries/lia.chat.html#lia.chat.register">
-register											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../libraries/lia.chat.html#lia.chat.send">
 send											</a>
@@ -337,11 +332,6 @@ send											</a>
 									<ul>
 
 
-										<li>
-											<span class="realm shared"></span>
-											<a href="../libraries/lia.command.html#lia.command.add">
-add											</a>
-										</li>
 										<li>
 											<span class="realm shared"></span>
 											<a href="../libraries/lia.command.html#lia.command.extractArgs">
@@ -1850,50 +1840,6 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 
 	<h1 class="title">Functions</h1>
 
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.command.add">
-					<h1><span class="realm shared"></span></span>lia.command.add(command, data)</h1>
-				</a>
-
-					<p>Creates a new command.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">command</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> Name of the command (recommended in UpperCamelCase)</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">data</span>
-
-									<span class="tag"><a class="type" href="../libraries/lia.command.html#CommandStructure">CommandStructure</a></span>
-
-
-								<p> Data describing the command</p>
-							</li>
-					</ul>
-
-
-
-				<h3>See Also</h3>
-				<ul>
-						<li><a href="../libraries/lia.command.html#CommandStructure">CommandStructure</a></li>
-				</ul>
-		</section>
 		<section class="method">
 			<header>
 				<a class="anchor" id="lia.command.extractArgs">
@@ -3636,7 +3582,7 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 					<h1><span class="realm shared"></span></span>CommandStructure</h1>
 				</a>
 
-					<p>When registering commands with <a href="../libraries/lia.command.html#lia.command.add">lia.command.add</a>, you'll need to pass in a valid command structure.  This is simply a table
+					<p>When registering commands with <code>lia.command.add</code>, you'll need to pass in a valid command structure.  This is simply a table
  with various fields defined to describe the functionality of the command.</p>
 			</header>
 
@@ -3710,12 +3656,50 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 								<p> This callback checks whether or not the player is allowed to run the command.
  This callback should NOT** be used in conjunction with <code>adminOnly</code> or <code>superAdminOnly</code>, as populating those
  fields create a custom a <code>OnCheckAccess</code> callback for you internally. This is used in cases where you want more fine-grained
- access control for your command.</p>
+ access control for your command.
+ Consider this example command:</p>
+<pre><code>lia.command.add("slap", {
+    adminOnly = true,
+    privilege = "Can Slap",
+    onRun = function(client, arguments)
+        -- WHAM!
+    end
+})
+</code></pre>
+<p> Creates a new command.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">command</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Name of the command (recommended in UpperCamelCase)</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">data</span>
+
+									<span class="tag"><a class="type" href="../libraries/lia.command.html#CommandStructure">CommandStructure</a></span>
+
+
+								<p> Data describing the command</p>
 							</li>
 					</ul>
 
 
 
+				<h3>See Also</h3>
+				<ul>
+						<li><a href="../libraries/lia.command.html#CommandStructure">CommandStructure</a></li>
+				</ul>
 		</section>
 
 					</div>
