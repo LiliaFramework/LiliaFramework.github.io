@@ -590,6 +590,11 @@ GetPreFormattedDateInGame											</a>
 									<ul>
 
 
+										<li>
+											<span class="realm server"></span>
+											<a href="../libraries/lia.db.html#lia.db.select">
+select											</a>
+										</li>
 
 									</ul>
 									</details>
@@ -2216,6 +2221,79 @@ takeMoney											</a>
 
 </p>
 
+	<h1 class="title">Functions</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.db.select">
+					<h1><span class="realm server"></span></span>lia.db.select(fields, dbTable, condition, limit)</h1>
+				</a>
+
+					<p>Selects data from a database table.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">fields</span>
+
+
+
+								<p> The fields to select, can be either a string or a table of strings</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">dbTable</span>
+
+
+
+								<p> The name of the database table</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">condition</span>
+
+
+
+								<p> The condition for the selection query</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">limit</span>
+
+
+
+								<p> The limit for the number of results to be returned</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>A deferred object that resolves to a table containing the results and last inserted ID</p>
+							</li>
+
+				</ul>
+
+
+		</section>
 
 					</div>
 			</article>
