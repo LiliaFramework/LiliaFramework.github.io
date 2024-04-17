@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia.date - Lilia Documentation</title>
+		<title>lia.currency - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia.date - Lilia Documentation" />
+		<meta property="og:title" content="lia.currency - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Date and time handling." />
+			<meta property="og:description" content="Helper library for managing currency." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -476,7 +476,7 @@ send											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../libraries/lia.currency.html">lia.currency</a></summary>
 
 									<ul>
@@ -513,7 +513,7 @@ set											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../libraries/lia.date.html">lia.date</a></summary>
 
 									<ul>
@@ -2163,410 +2163,14 @@ takeMoney											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia.date</h1>
-	<h2>Date and time handling.</h2>
+	<h1>lia.currency</h1>
+	<h2>Helper library for managing currency.</h2>
 </header>
 
-<p>All of Lua's time functions are dependent on the Unix epoch, which means we can't have dates that go further than 1970. This
-library remedies this problem. Time/date is represented by a <a href="../libraries/lia.date.html">date</a> object that is queried, instead of relying on the seconds
-since the epoch.</p>
+<p>
 
-	<h1 class="title">Functions</h1>
+</p>
 
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.date.GetFormattedDate">
-					<h1><span class="realm shared"></span></span>lia.date.GetFormattedDate(StartingMessage, includeWeekDay, includeDay, includeMonth, includeYear, includeTime)</h1>
-				</a>
-
-					<p>Generates a formatted date string based on the current system time.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">StartingMessage</span>
-
-
-
-								<p> (optional) A message to prepend to the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeWeekDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the week in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeMonth</span>
-
-
-
-								<p> (optional) Whether to include the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeYear</span>
-
-
-
-								<p> (optional) Whether to include the year in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeTime</span>
-
-
-
-								<p> (optional) Whether to include the time in the formatted date.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>The formatted date string.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.date.GetFormattedDateInGame">
-					<h1><span class="realm shared"></span></span>lia.date.GetFormattedDateInGame(StartingMessage, includeWeekDay, includeDay, includeMonth, includeYear, includeTime)</h1>
-				</a>
-
-					<p>Generates a formatted date string based on the current system time for in-game usage.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">StartingMessage</span>
-
-
-
-								<p> (optional) A message to prepend to the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeWeekDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the week in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeMonth</span>
-
-
-
-								<p> (optional) Whether to include the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeYear</span>
-
-
-
-								<p> (optional) Whether to include the year in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeTime</span>
-
-
-
-								<p> (optional) Whether to include the time in the formatted date.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>The formatted date string.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.date.GetPreFormattedDate">
-					<h1><span class="realm shared"></span></span>lia.date.GetPreFormattedDate(StartingMessage, timeToFormat, includeWeekDay, includeDay, includeMonth, includeYear, includeTime)</h1>
-				</a>
-
-					<p>Generates a pre-formatted date string based on the provided time.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">StartingMessage</span>
-
-
-
-								<p> (optional) A message to prepend to the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">timeToFormat</span>
-
-
-
-								<p> The time to format.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeWeekDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the week in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeMonth</span>
-
-
-
-								<p> (optional) Whether to include the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeYear</span>
-
-
-
-								<p> (optional) Whether to include the year in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeTime</span>
-
-
-
-								<p> (optional) Whether to include the time in the formatted date.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>The formatted date string.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.date.GetPreFormattedDateInGame">
-					<h1><span class="realm shared"></span></span>lia.date.GetPreFormattedDateInGame(StartingMessage, timeToFormat, includeWeekDay, includeDay, includeMonth, includeYear, includeTime)</h1>
-				</a>
-
-					<p>Generates a pre-formatted date string based on the provided time for in-game usage.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">StartingMessage</span>
-
-
-
-								<p> (optional) A message to prepend to the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">timeToFormat</span>
-
-
-
-								<p> The time to format.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeWeekDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the week in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeMonth</span>
-
-
-
-								<p> (optional) Whether to include the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeYear</span>
-
-
-
-								<p> (optional) Whether to include the year in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeTime</span>
-
-
-
-								<p> (optional) Whether to include the time in the formatted date.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>The formatted date string.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
 
 					</div>
 			</article>

@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia.date - Lilia Documentation</title>
+		<title>lia.net - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia.date - Lilia Documentation" />
+		<meta property="og:title" content="lia.net - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Date and time handling." />
+			<meta property="og:description" content="Networking helper functions" />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -513,7 +513,7 @@ set											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../libraries/lia.date.html">lia.date</a></summary>
 
 									<ul>
@@ -873,7 +873,7 @@ verifyModuleValidity											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../libraries/lia.net.html">lia.net</a></summary>
 
 									<ul>
@@ -2163,23 +2163,23 @@ takeMoney											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia.date</h1>
-	<h2>Date and time handling.</h2>
+	<h1>lia.net</h1>
+	<h2>Networking helper functions</h2>
 </header>
 
-<p>All of Lua's time functions are dependent on the Unix epoch, which means we can't have dates that go further than 1970. This
-library remedies this problem. Time/date is represented by a <a href="../libraries/lia.date.html">date</a> object that is queried, instead of relying on the seconds
-since the epoch.</p>
+<p>
+
+</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.date.GetFormattedDate">
-					<h1><span class="realm shared"></span></span>lia.date.GetFormattedDate(StartingMessage, includeWeekDay, includeDay, includeMonth, includeYear, includeTime)</h1>
+				<a class="anchor" id="checkBadType">
+					<h1><span class="realm server"></span></span>checkBadType(name, object)</h1>
 				</a>
 
-					<p>Generates a formatted date string based on the current system time.</p>
+					<p>Checks if the provided object or any of its nested elements contain a bad type.</p>
 			</header>
 
 
@@ -2189,66 +2189,22 @@ since the epoch.</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">StartingMessage</span>
+								<span class="tag parameter">name</span>
 
 
 
-								<p> (optional) A message to prepend to the formatted date.</p>
+								<p> The name of the networked variable</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">includeWeekDay</span>
+								<span class="tag parameter">object</span>
 
 
 
-								<p> (optional) Whether to include the day of the week in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeMonth</span>
-
-
-
-								<p> (optional) Whether to include the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeYear</span>
-
-
-
-								<p> (optional) Whether to include the year in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeTime</span>
-
-
-
-								<p> (optional) Whether to include the time in the formatted date.</p>
+								<p> The object to be checked for bad types</p>
 							</li>
 					</ul>
 
@@ -2259,7 +2215,7 @@ since the epoch.</p>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>The formatted date string.</p>
+								<p>True if a bad type is found, false otherwise</p>
 							</li>
 
 				</ul>
@@ -2268,11 +2224,11 @@ since the epoch.</p>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.date.GetFormattedDateInGame">
-					<h1><span class="realm shared"></span></span>lia.date.GetFormattedDateInGame(StartingMessage, includeWeekDay, includeDay, includeMonth, includeYear, includeTime)</h1>
+				<a class="anchor" id="getNetVar">
+					<h1><span class="realm server"></span></span>getNetVar(key, default)</h1>
 				</a>
 
-					<p>Generates a formatted date string based on the current system time for in-game usage.</p>
+					<p>Retrieves the value of a networked global variable.</p>
 			</header>
 
 
@@ -2282,66 +2238,22 @@ since the epoch.</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">StartingMessage</span>
+								<span class="tag parameter">key</span>
 
 
 
-								<p> (optional) A message to prepend to the formatted date.</p>
+								<p> The key of the networked global variable</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">includeWeekDay</span>
+								<span class="tag parameter">default</span>
 
 
 
-								<p> (optional) Whether to include the day of the week in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeMonth</span>
-
-
-
-								<p> (optional) Whether to include the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeYear</span>
-
-
-
-								<p> (optional) Whether to include the year in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeTime</span>
-
-
-
-								<p> (optional) Whether to include the time in the formatted date.</p>
+								<p> The default value to return if the variable is not found</p>
 							</li>
 					</ul>
 
@@ -2352,7 +2264,7 @@ since the epoch.</p>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>The formatted date string.</p>
+								<p>The value of the networked global variable, or the default value if not found</p>
 							</li>
 
 				</ul>
@@ -2361,11 +2273,11 @@ since the epoch.</p>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.date.GetPreFormattedDate">
-					<h1><span class="realm shared"></span></span>lia.date.GetPreFormattedDate(StartingMessage, timeToFormat, includeWeekDay, includeDay, includeMonth, includeYear, includeTime)</h1>
+				<a class="anchor" id="getNetVar">
+					<h1><span class="realm client"></span></span>getNetVar(key, default)</h1>
 				</a>
 
-					<p>Generates a pre-formatted date string based on the provided time.</p>
+					<p>Retrieves the value of a networked global variable.</p>
 			</header>
 
 
@@ -2375,77 +2287,22 @@ since the epoch.</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">StartingMessage</span>
+								<span class="tag parameter">key</span>
 
 
 
-								<p> (optional) A message to prepend to the formatted date.</p>
+								<p> The key of the networked global variable</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">timeToFormat</span>
+								<span class="tag parameter">default</span>
 
 
 
-								<p> The time to format.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeWeekDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the week in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeMonth</span>
-
-
-
-								<p> (optional) Whether to include the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeYear</span>
-
-
-
-								<p> (optional) Whether to include the year in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeTime</span>
-
-
-
-								<p> (optional) Whether to include the time in the formatted date.</p>
+								<p> The default value to return if the variable is not found</p>
 							</li>
 					</ul>
 
@@ -2456,7 +2313,7 @@ since the epoch.</p>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>The formatted date string.</p>
+								<p>The value of the networked global variable, or the default value if not found</p>
 							</li>
 
 				</ul>
@@ -2465,11 +2322,11 @@ since the epoch.</p>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.date.GetPreFormattedDateInGame">
-					<h1><span class="realm shared"></span></span>lia.date.GetPreFormattedDateInGame(StartingMessage, timeToFormat, includeWeekDay, includeDay, includeMonth, includeYear, includeTime)</h1>
+				<a class="anchor" id="setNetVar">
+					<h1><span class="realm server"></span></span>setNetVar(key, value, receiver)</h1>
 				</a>
 
-					<p>Generates a pre-formatted date string based on the provided time for in-game usage.</p>
+					<p>Sets the value of a networked global variable.</p>
 			</header>
 
 
@@ -2479,91 +2336,36 @@ since the epoch.</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">StartingMessage</span>
+								<span class="tag parameter">key</span>
 
 
 
-								<p> (optional) A message to prepend to the formatted date.</p>
+								<p> The key of the networked global variable</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">timeToFormat</span>
+								<span class="tag parameter">value</span>
 
 
 
-								<p> The time to format.</p>
+								<p> The value to set</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">includeWeekDay</span>
+								<span class="tag parameter">receiver</span>
 
 
 
-								<p> (optional) Whether to include the day of the week in the formatted date.</p>
+								<p> The receiver of the network update (optional)</p>
 							</li>
 					</ul>
 
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeMonth</span>
-
-
-
-								<p> (optional) Whether to include the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeYear</span>
-
-
-
-								<p> (optional) Whether to include the year in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeTime</span>
-
-
-
-								<p> (optional) Whether to include the time in the formatted date.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>The formatted date string.</p>
-							</li>
-
-				</ul>
 
 
 		</section>

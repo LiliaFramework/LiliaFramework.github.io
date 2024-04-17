@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia.date - Lilia Documentation</title>
+		<title>lia.bar - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia.date - Lilia Documentation" />
+		<meta property="og:title" content="lia.bar - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Date and time handling." />
+			<meta property="og:description" content="Helper library for generating bars." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -249,7 +249,7 @@ setup											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../libraries/lia.bar.html">lia.bar</a></summary>
 
 									<ul>
@@ -513,7 +513,7 @@ set											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../libraries/lia.date.html">lia.date</a></summary>
 
 									<ul>
@@ -741,12 +741,12 @@ L											</a>
 L											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../libraries/lia.lang.html#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.lang.html#L2">
 L2											</a>
 										</li>
@@ -885,12 +885,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.net.html#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../libraries/lia.net.html#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1082,12 +1082,12 @@ notifQuery											</a>
 notify											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../libraries/lia.util.html#lia.util.notify">
 notify											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.util.html#lia.util.notify">
 notify											</a>
 										</li>
@@ -1287,12 +1287,12 @@ canSeeEntity											</a>
 clearNetVars											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
@@ -1302,12 +1302,12 @@ getDoorPartner											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1332,12 +1332,12 @@ inTrace											</a>
 isChair											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
@@ -1670,12 +1670,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Item.html#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Item.html#getName">
 getName											</a>
 										</li>
@@ -1866,12 +1866,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -2163,23 +2163,23 @@ takeMoney											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia.date</h1>
-	<h2>Date and time handling.</h2>
+	<h1>lia.bar</h1>
+	<h2>Helper library for generating bars.</h2>
 </header>
 
-<p>All of Lua's time functions are dependent on the Unix epoch, which means we can't have dates that go further than 1970. This
-library remedies this problem. Time/date is represented by a <a href="../libraries/lia.date.html">date</a> object that is queried, instead of relying on the seconds
-since the epoch.</p>
+<p>
+
+</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.date.GetFormattedDate">
-					<h1><span class="realm shared"></span></span>lia.date.GetFormattedDate(StartingMessage, includeWeekDay, includeDay, includeMonth, includeYear, includeTime)</h1>
+				<a class="anchor" id="lia.bar.add">
+					<h1><span class="realm shared"></span></span>lia.bar.add(getValue, color, priority, identifier)</h1>
 				</a>
 
-					<p>Generates a formatted date string based on the current system time.</p>
+					<p>Adds a new bar or updates an existing one.</p>
 			</header>
 
 
@@ -2189,66 +2189,44 @@ since the epoch.</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">StartingMessage</span>
+								<span class="tag parameter">getValue</span>
 
 
 
-								<p> (optional) A message to prepend to the formatted date.</p>
+								<p> (function) The function to retrieve the current value of the bar.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">includeWeekDay</span>
+								<span class="tag parameter">color</span>
 
 
 
-								<p> (optional) Whether to include the day of the week in the formatted date.</p>
+								<p> (table) Optional. The color of the bar.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">includeDay</span>
+								<span class="tag parameter">priority</span>
 
 
 
-								<p> (optional) Whether to include the day of the month in the formatted date.</p>
+								<p> (number) Optional. The priority of the bar in the draw order.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">includeMonth</span>
+								<span class="tag parameter">identifier</span>
 
 
 
-								<p> (optional) Whether to include the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeYear</span>
-
-
-
-								<p> (optional) Whether to include the year in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeTime</span>
-
-
-
-								<p> (optional) Whether to include the time in the formatted date.</p>
+								<p> (any) Optional. The identifier of the bar.</p>
 							</li>
 					</ul>
 
@@ -2259,7 +2237,7 @@ since the epoch.</p>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>The formatted date string.</p>
+								<p>(number) The priority of the added or updated bar.</p>
 							</li>
 
 				</ul>
@@ -2268,11 +2246,11 @@ since the epoch.</p>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.date.GetFormattedDateInGame">
-					<h1><span class="realm shared"></span></span>lia.date.GetFormattedDateInGame(StartingMessage, includeWeekDay, includeDay, includeMonth, includeYear, includeTime)</h1>
+				<a class="anchor" id="lia.bar.draw">
+					<h1><span class="realm shared"></span></span>lia.bar.draw(x, y, w, h, value, color)</h1>
 				</a>
 
-					<p>Generates a formatted date string based on the current system time for in-game usage.</p>
+					<p>Draws a single bar with the specified parameters.</p>
 			</header>
 
 
@@ -2282,66 +2260,119 @@ since the epoch.</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">StartingMessage</span>
+								<span class="tag parameter">x</span>
 
 
 
-								<p> (optional) A message to prepend to the formatted date.</p>
+								<p> (number) The x-coordinate of the top-left corner of the bar.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">includeWeekDay</span>
+								<span class="tag parameter">y</span>
 
 
 
-								<p> (optional) Whether to include the day of the week in the formatted date.</p>
+								<p> (number) The y-coordinate of the top-left corner of the bar.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">includeDay</span>
+								<span class="tag parameter">w</span>
 
 
 
-								<p> (optional) Whether to include the day of the month in the formatted date.</p>
+								<p> (number) The width of the bar.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">includeMonth</span>
+								<span class="tag parameter">h</span>
 
 
 
-								<p> (optional) Whether to include the month in the formatted date.</p>
+								<p> (number) The height of the bar.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">includeYear</span>
+								<span class="tag parameter">value</span>
 
 
 
-								<p> (optional) Whether to include the year in the formatted date.</p>
+								<p> (number) The current value of the bar (0 to 1).</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">includeTime</span>
+								<span class="tag parameter">color</span>
 
 
 
-								<p> (optional) Whether to include the time in the formatted date.</p>
+								<p> (table) The color of the bar.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.bar.drawAction">
+					<h1><span class="realm shared"></span></span>lia.bar.drawAction()</h1>
+				</a>
+
+					<p>Draws the action bar, if applicable.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.bar.drawAll">
+					<h1><span class="realm shared"></span></span>lia.bar.drawAll()</h1>
+				</a>
+
+					<p>Draws all bars in the list.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.bar.get">
+					<h1><span class="realm shared"></span></span>lia.bar.get(identifier)</h1>
+				</a>
+
+					<p>Retrieves information about a bar identified by its identifier.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">identifier</span>
+
+
+
+								<p> (any) The identifier of the bar.</p>
 							</li>
 					</ul>
 
@@ -2352,7 +2383,7 @@ since the epoch.</p>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>The formatted date string.</p>
+								<p>(table or nil) The information about the bar if found, nil otherwise.</p>
 							</li>
 
 				</ul>
@@ -2361,11 +2392,11 @@ since the epoch.</p>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.date.GetPreFormattedDate">
-					<h1><span class="realm shared"></span></span>lia.date.GetPreFormattedDate(StartingMessage, timeToFormat, includeWeekDay, includeDay, includeMonth, includeYear, includeTime)</h1>
+				<a class="anchor" id="lia.bar.remove">
+					<h1><span class="realm shared"></span></span>lia.bar.remove(identifier)</h1>
 				</a>
 
-					<p>Generates a pre-formatted date string based on the provided time.</p>
+					<p>Removes a bar identified by its identifier.</p>
 			</header>
 
 
@@ -2375,195 +2406,14 @@ since the epoch.</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">StartingMessage</span>
+								<span class="tag parameter">identifier</span>
 
 
 
-								<p> (optional) A message to prepend to the formatted date.</p>
+								<p> (any) The identifier of the bar to remove.</p>
 							</li>
 					</ul>
 
-					<ul>
-
-							<li>
-								<span class="tag parameter">timeToFormat</span>
-
-
-
-								<p> The time to format.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeWeekDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the week in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeMonth</span>
-
-
-
-								<p> (optional) Whether to include the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeYear</span>
-
-
-
-								<p> (optional) Whether to include the year in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeTime</span>
-
-
-
-								<p> (optional) Whether to include the time in the formatted date.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>The formatted date string.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.date.GetPreFormattedDateInGame">
-					<h1><span class="realm shared"></span></span>lia.date.GetPreFormattedDateInGame(StartingMessage, timeToFormat, includeWeekDay, includeDay, includeMonth, includeYear, includeTime)</h1>
-				</a>
-
-					<p>Generates a pre-formatted date string based on the provided time for in-game usage.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">StartingMessage</span>
-
-
-
-								<p> (optional) A message to prepend to the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">timeToFormat</span>
-
-
-
-								<p> The time to format.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeWeekDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the week in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeDay</span>
-
-
-
-								<p> (optional) Whether to include the day of the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeMonth</span>
-
-
-
-								<p> (optional) Whether to include the month in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeYear</span>
-
-
-
-								<p> (optional) Whether to include the year in the formatted date.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">includeTime</span>
-
-
-
-								<p> (optional) Whether to include the time in the formatted date.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>The formatted date string.</p>
-							</li>
-
-				</ul>
 
 
 		</section>
