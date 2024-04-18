@@ -729,21 +729,6 @@ loadFromDir											</a>
 
 										<li>
 											<span class="realm shared"></span>
-											<a href="../libraries/lia.flag.html#getFlags">
-getFlags											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../libraries/lia.flag.html#giveFlags">
-giveFlags											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../libraries/lia.flag.html#hasFlags">
-hasFlags											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
 											<a href="../libraries/lia.flag.html#lia.flag.add">
 add											</a>
 										</li>
@@ -751,16 +736,6 @@ add											</a>
 											<span class="realm server"></span>
 											<a href="../libraries/lia.flag.html#lia.flag.onSpawn">
 onSpawn											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../libraries/lia.flag.html#setFlags">
-setFlags											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../libraries/lia.flag.html#takeFlags">
-takeFlags											</a>
 										</li>
 
 									</ul>
@@ -1366,6 +1341,11 @@ getBoosts											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../classes/Character.html#getFlags">
+getFlags											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../classes/Character.html#getID">
 getID											</a>
 										</li>
@@ -1381,8 +1361,18 @@ getPlayer											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../classes/Character.html#giveFlags">
+giveFlags											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../classes/Character.html#giveMoney">
 giveMoney											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Character.html#hasFlags">
+hasFlags											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -1426,8 +1416,18 @@ setAttrib											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../classes/Character.html#setFlags">
+setFlags											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../classes/Character.html#sync">
 sync											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../classes/Character.html#takeFlags">
+takeFlags											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -2710,6 +2710,31 @@ for variables that automatically save to the character object.</p>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="getFlags">
+					<h1><span class="realm shared"></span></span>Character:getFlags()</h1>
+				</a>
+
+					<p>Returns all of the flags this character has.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>Flags this character has represented as one string. You can access individual flags by iterating through
+ the string letter by letter</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="getID">
 					<h1><span class="realm shared"></span></span>Character:getID()</h1>
 				</a>
@@ -2791,6 +2816,42 @@ for variables that automatically save to the character object.</p>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="giveFlags">
+					<h1><span class="realm server"></span></span>Character:giveFlags(flags)</h1>
+				</a>
+
+					<p>Adds a flag to the list of this character's accessible flags.  This does not overwrite existing flags.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">flags</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Flag(s) this character should be given</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>character:GiveFlags("pet")
+ gives p, e, and t flags to the character
+</code></pre>
+
+				<h3>See Also</h3>
+				<ul>
+						<li><a href="../classes/Character.html#hasFlags">hasFlags</a></li>
+				</ul>
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="giveMoney">
 					<h1><span class="realm server"></span></span>Character:giveMoney(amount, takingMoney)</h1>
 				</a>
@@ -2835,6 +2896,45 @@ for variables that automatically save to the character object.</p>
 									<span class="tag type">any</span>
 
 								<p>bool Whether the operation was successful.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="hasFlags">
+					<h1><span class="realm shared"></span></span>Character:hasFlags(flags)</h1>
+				</a>
+
+					<p>Returns <code>true</code> if the character has the given flag(s).</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">flags</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Flag(s) to check access for</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not this character has access to the given flag(s)</p>
 							</li>
 
 				</ul>
@@ -3132,6 +3232,38 @@ end)
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="setFlags">
+					<h1><span class="realm server"></span></span>Character:setFlags(flags)</h1>
+				</a>
+
+					<p>Sets this character's accessible flags.  Note that this method overwrites <strong>all</strong> flags instead of adding them.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">flags</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Flag(s) this charater is allowed to have</p>
+							</li>
+					</ul>
+
+
+
+				<h3>See Also</h3>
+				<ul>
+						<li><a href="../classes/Character.html#giveFlags">giveFlags</a></li>
+				</ul>
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="sync">
 					<h1><span class="realm server"></span></span>Character:sync(receiver)</h1>
 				</a>
@@ -3163,6 +3295,39 @@ end)
 					</ul>
 
 
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="takeFlags">
+					<h1><span class="realm server"></span></span>Character:takeFlags(flags)</h1>
+				</a>
+
+					<p>Removes this character's access to the given flags.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">flags</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Flag(s) to remove from this character</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>-- for a character with "pet" flags
+character:takeFlags("p")
+-- character now has e, and t flags
+</code></pre>
 
 		</section>
 		<section class="method">
