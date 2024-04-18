@@ -1076,11 +1076,6 @@ Derma_NumericRequest											</a>
 ChatPrint											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../libraries/lia.util.html#lia.util.DrawTexture">
-DrawTexture											</a>
-										</li>
-										<li>
 											<span class="realm shared"></span>
 											<a href="../libraries/lia.util.html#lia.util.canFit">
 canFit											</a>
@@ -1129,6 +1124,11 @@ drawBlurAt											</a>
 											<span class="realm client"></span>
 											<a href="../libraries/lia.util.html#lia.util.drawText">
 drawText											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../libraries/lia.util.html#lia.util.drawTexture">
+drawTexture											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -2553,94 +2553,6 @@ takePermFlags											</a>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.util.DrawTexture">
-					<h1><span class="realm client"></span></span>lia.util.DrawTexture(material, color, x, y, w, h)</h1>
-				</a>
-
-					<p>Draws a textured rectangle with a specified material and color.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">material</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> Material to use for the texture</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">color</span>
-
-									<span class="tag"><span class="type">color</span></span>
-
-
-								<p> Color of the texture to draw</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">x</span>
-
-									<span class="tag"><span class="type">integer</span></span>
-
-
-								<p> X-position of the top-left corner of the rectangle</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">y</span>
-
-									<span class="tag"><span class="type">integer</span></span>
-
-
-								<p> Y-position of the top-left corner of the rectangle</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">w</span>
-
-									<span class="tag"><span class="type">integer</span></span>
-
-
-								<p> Width of the rectangle</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">h</span>
-
-									<span class="tag"><span class="type">integer</span></span>
-
-
-								<p> Height of the rectangle</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="lia.util.canFit">
 					<h1><span class="realm shared"></span></span>lia.util.canFit(pos, mins, maxs, filter)</h1>
 				</a>
@@ -3208,6 +3120,94 @@ end)
 									<span class="tag default">default: color.a * 0.575</span>
 
 								<p> Alpha of the shadow</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.util.drawTexture">
+					<h1><span class="realm client"></span></span>lia.util.drawTexture(material, color, x, y, w, h)</h1>
+				</a>
+
+					<p>Draws a textured rectangle with a specified material and color.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">material</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Material to use for the texture</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">color</span>
+
+									<span class="tag"><span class="type">color</span></span>
+
+
+								<p> Color of the texture to draw</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">x</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> X-position of the top-left corner of the rectangle</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">y</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> Y-position of the top-left corner of the rectangle</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">w</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> Width of the rectangle</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">h</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> Height of the rectangle</p>
 							</li>
 					</ul>
 
