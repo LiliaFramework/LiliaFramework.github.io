@@ -297,16 +297,6 @@ remove											</a>
 
 
 										<li>
-											<span class="realm shared"></span>
-											<a href="../libraries/lia.char.html#Name">
-Name											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../libraries/lia.char.html#getChar">
-getChar											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../libraries/lia.char.html#lia.char.cleanUpForPlayer">
 cleanUpForPlayer											</a>
@@ -1976,6 +1966,11 @@ transfer											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../classes/Player.html#Name">
+Name											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../classes/Player.html#RequestString">
 RequestString											</a>
 										</li>
@@ -2018,6 +2013,11 @@ doStaredAction											</a>
 											<span class="realm shared"></span>
 											<a href="../classes/Player.html#entitiesNearPlayer">
 entitiesNearPlayer											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Player.html#getChar">
+getChar											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -2414,6 +2414,7 @@ from the panel that shows up for the player.</p>
 							<li>
 								<span class="tag parameter">options</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 
 								<p> Table containing the menu options</p>
@@ -2425,6 +2426,7 @@ from the panel that shows up for the player.</p>
 							<li>
 								<span class="tag parameter">position</span>
 
+									<span class="tag"><span class="type">vector</span></span>
 
 
 								<p> Position of the menu (either a vector or an entity)</p>
@@ -2436,9 +2438,11 @@ from the panel that shows up for the player.</p>
 							<li>
 								<span class="tag parameter">onRemove</span>
 
+									<span class="tag"><span class="type">function</span></span>
 
+									<span class="tag default">optional</span>
 
-								<p> Callback function to execute when the menu is removed (optional)</p>
+								<p> Callback function to execute when the menu is removed</p>
 							</li>
 					</ul>
 
@@ -2511,6 +2515,7 @@ from the panel that shows up for the player.</p>
 							<li>
 								<span class="tag parameter">menu</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> Index of the menu to remove</p>
@@ -2522,6 +2527,7 @@ from the panel that shows up for the player.</p>
 							<li>
 								<span class="tag parameter">callback</span>
 
+									<span class="tag"><span class="type">function</span></span>
 
 
 								<p> Callback function to execute</p>

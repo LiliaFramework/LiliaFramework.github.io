@@ -297,16 +297,6 @@ remove											</a>
 
 
 										<li>
-											<span class="realm shared"></span>
-											<a href="../libraries/lia.char.html#Name">
-Name											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../libraries/lia.char.html#getChar">
-getChar											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../libraries/lia.char.html#lia.char.cleanUpForPlayer">
 cleanUpForPlayer											</a>
@@ -1976,6 +1966,11 @@ transfer											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../classes/Player.html#Name">
+Name											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../classes/Player.html#RequestString">
 RequestString											</a>
 										</li>
@@ -2018,6 +2013,11 @@ doStaredAction											</a>
 											<span class="realm shared"></span>
 											<a href="../classes/Player.html#entitiesNearPlayer">
 entitiesNearPlayer											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../classes/Player.html#getChar">
+getChar											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -2400,6 +2400,38 @@ object at a time that you can interface with.</p>
 
 		<section class="method">
 			<header>
+				<a class="anchor" id="Name">
+					<h1><span class="realm shared"></span></span>Player:Name()</h1>
+				</a>
+
+					<p>Returns this player's current name.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>Name of this player's currently loaded character</p>
+							</li>
+
+							<div class="or"><span>OR</span></div>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>Steam name of this player if the player has no character loaded</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="RequestString">
 					<h1><span class="realm shared"></span></span>Player:RequestString(title, subTitle, callback, default)</h1>
 				</a>
@@ -2416,6 +2448,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">title</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The title of the request.</p>
@@ -2427,6 +2460,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">subTitle</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The subtitle of the request.</p>
@@ -2438,6 +2472,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">callback</span>
 
+									<span class="tag"><span class="type">function</span></span>
 
 
 								<p> The function to call upon receiving the string input.</p>
@@ -2449,6 +2484,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">default</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The default value for the string input.</p>
@@ -2476,6 +2512,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">flags</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 
 								<p> The flags to add to the blacklist.</p>
@@ -2487,6 +2524,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">blacklistInfo</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 									<span class="tag default">optional</span>
 
@@ -2515,6 +2553,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">amount</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> The amount of money to add.</p>
@@ -2542,6 +2581,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">amount</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> The amount of money to check.</p>
@@ -2580,6 +2620,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">freeze</span>
 
+									<span class="tag"><span class="type">boolean</span></span>
 
 
 								<p> Whether to freeze the ragdoll initially.</p>
@@ -2603,7 +2644,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="createServerRagdoll">
-					<h1><span class="realm server"></span></span>Player:createServerRagdoll(DontSetPlayer)</h1>
+					<h1><span class="realm server"></span></span>Player:createServerRagdoll(dontSetPlayer)</h1>
 				</a>
 
 					<p>Creates a ragdoll entity for the player on the server.</p>
@@ -2616,10 +2657,11 @@ object at a time that you can interface with.</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">DontSetPlayer</span>
+								<span class="tag parameter">dontSetPlayer</span>
 
+									<span class="tag"><span class="type">boolean</span></span>
 
-									<span class="tag default">default: false</span>
+									<span class="tag default">optional</span>
 
 								<p> Determines whether to associate the player with the ragdoll.</p>
 							</li>
@@ -2657,6 +2699,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">entity</span>
 
+									<span class="tag"><a class="type" href="../classes/Entity.html#">Entity</a></span>
 
 
 								<p> The entity to calculate the distance to.</p>
@@ -2695,6 +2738,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">entity</span>
 
+									<span class="tag"><a class="type" href="../classes/Entity.html#">Entity</a></span>
 
 
 								<p> The entity towards which the player performs the stared action.</p>
@@ -2706,6 +2750,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">callback</span>
 
+									<span class="tag"><span class="type">function</span></span>
 
 
 								<p> The function to call when the stared action is completed.</p>
@@ -2717,6 +2762,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">time</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -2729,6 +2775,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">onCancel</span>
 
+									<span class="tag"><span class="type">function</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -2741,6 +2788,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">distance</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -2769,6 +2817,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">radius</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> The radius within which to search for entities.</p>
@@ -2796,6 +2845,38 @@ object at a time that you can interface with.</p>
 									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
 
 								<p>A table containing the entities near the player.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getChar">
+					<h1><span class="realm shared"></span></span>Player:getChar()</h1>
+				</a>
+
+					<p>Returns this player's currently possessed <a href="../classes/Character.html#">Character</a> object if it exists.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="../classes/Character.html#">Character</a>
+
+								<p>Currently loaded character</p>
+							</li>
+
+							<div class="or"><span>OR</span></div>
+
+							<li>
+									<span class="type">nil</span>
+
+								<p>If this player has no character loaded</p>
 							</li>
 
 				</ul>
@@ -2868,8 +2949,9 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">distance</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
-									<span class="tag default">default: 150</span>
+									<span class="tag default">optional</span>
 
 								<p> The maximum distance to consider.</p>
 							</li>
@@ -2988,10 +3070,10 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getLiliaData">
-					<h1><span class="realm client"></span></span>Player:getLiliaData(key, default)</h1>
+					<h1><span class="realm server"></span></span>Player:getLiliaData(key, default)</h1>
 				</a>
 
-					<p>Retrieves a value from the local Lilia data.</p>
+					<p>Retrieves a value from the player's Lilia data.</p>
 			</header>
 
 
@@ -3003,6 +3085,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">key</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The key for the data.</p>
@@ -3037,10 +3120,10 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getLiliaData">
-					<h1><span class="realm server"></span></span>Player:getLiliaData(key, default)</h1>
+					<h1><span class="realm client"></span></span>Player:getLiliaData(key, default)</h1>
 				</a>
 
-					<p>Retrieves a value from the player's Lilia data.</p>
+					<p>Retrieves a value from the local Lilia data.</p>
 			</header>
 
 
@@ -3052,6 +3135,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">key</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The key for the data.</p>
@@ -3064,8 +3148,9 @@ object at a time that you can interface with.</p>
 								<span class="tag parameter">default</span>
 
 
+									<span class="tag default">optional</span>
 
-								<p>[opt=nil] The default value to return if the key does not exist.</p>
+								<p> The default value to return if the key does not exist.</p>
 							</li>
 					</ul>
 
@@ -3113,7 +3198,7 @@ object at a time that you can interface with.</p>
 					<h1><span class="realm server"></span></span>Player:getPermFlags()</h1>
 				</a>
 
-					<p>Retrieves the player's permission flags.</p>
+					<p>Retrieves the player's permanent flags.</p>
 			</header>
 
 
@@ -3124,7 +3209,7 @@ object at a time that you can interface with.</p>
 							<li>
 									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
 
-								<p>The player's permission flags.</p>
+								<p>The player's permanent flags.</p>
 							</li>
 
 				</ul>
@@ -3233,7 +3318,7 @@ object at a time that you can interface with.</p>
 					<h1><span class="realm server"></span></span>Player:givePermFlags(flags)</h1>
 				</a>
 
-					<p>Grants permission flags to the player.</p>
+					<p>Grants permanent flags to the player.</p>
 			</header>
 
 
@@ -3245,9 +3330,10 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">flags</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 
-								<p> The permission flags to grant.</p>
+								<p> The permanent flags to grant.</p>
 							</li>
 					</ul>
 
@@ -3272,6 +3358,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">flags</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 
 								<p> A table containing the flags to check for in the blacklist.</p>
@@ -3310,6 +3397,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">flag</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The flag to check for in the blacklist.</p>
@@ -3336,7 +3424,7 @@ object at a time that you can interface with.</p>
 					<h1><span class="realm server"></span></span>Player:hasPermFlag(flag)</h1>
 				</a>
 
-					<p>Checks if the player has a specific permission flag.</p>
+					<p>Checks if the player has a specific permanent flag.</p>
 			</header>
 
 
@@ -3348,9 +3436,10 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">flag</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
-								<p> The permission flag to check.</p>
+								<p> The permanent flag to check.</p>
 							</li>
 					</ul>
 
@@ -3361,7 +3450,7 @@ object at a time that you can interface with.</p>
 							<li>
 									<span class="type">bool</span>
 
-								<p>Whether or not the player has the permission flag.</p>
+								<p>Whether or not the player has the permanent flag.</p>
 							</li>
 
 				</ul>
@@ -3386,6 +3475,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">skill</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The skill to check.</p>
@@ -3397,6 +3487,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">level</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> The required skill level.</p>
@@ -3435,6 +3526,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">faction</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> The faction to check for whitelisting.</p>
@@ -3521,6 +3613,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">radius</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> The radius within which to check for proximity.</p>
@@ -3532,6 +3625,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">entity</span>
 
+									<span class="tag"><a class="type" href="../classes/Entity.html#">Entity</a></span>
 
 
 								<p> The entity to check proximity to.</p>
@@ -3786,9 +3880,11 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">callback</span>
 
+									<span class="tag"><span class="type">function</span></span>
 
+									<span class="tag default">optional</span>
 
-								<p>[opt=nil] Function to call after the data is loaded, passing the loaded data as an argument.</p>
+								<p> Function to call after the data is loaded, passing the loaded data as an argument.</p>
 							</li>
 					</ul>
 
@@ -3813,6 +3909,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">requiredSkillLevels</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 
 								<p> A table containing the required skill levels.</p>
@@ -3851,6 +3948,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">message</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The message to notify the player.</p>
@@ -3878,6 +3976,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">message</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The key of the localized message to notify the player.</p>
@@ -3889,6 +3988,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">...</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 
 								<p> Additional arguments to format the localized message.</p>
@@ -3916,6 +4016,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">text</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The message to notify and print.</p>
@@ -3943,36 +4044,10 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">url</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The URL of the web page to open.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="openUI">
-					<h1><span class="realm client"></span></span>Player:openUI(panel)</h1>
-				</a>
-
-					<p>Opens a VGUI panel for the player.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">panel</span>
-
-
-
-								<p> The name of the VGUI panel to open.</p>
 							</li>
 					</ul>
 
@@ -4019,6 +4094,33 @@ object at a time that you can interface with.</p>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="openUI">
+					<h1><span class="realm client"></span></span>Player:openUI(panel)</h1>
+				</a>
+
+					<p>Opens a VGUI panel for the player.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">panel</span>
+
+
+
+								<p> The name of the VGUI panel to open.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="playSound">
 					<h1><span class="realm client"></span></span>Player:playSound(sound, pitch)</h1>
 				</a>
@@ -4035,6 +4137,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">sound</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The sound to play.</p>
@@ -4046,8 +4149,9 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">pitch</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
-									<span class="tag default">default: 100</span>
+									<span class="tag default">optional</span>
 
 								<p> The pitch of the sound.</p>
 							</li>
@@ -4074,6 +4178,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">flags</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 
 								<p> A table containing the flags to remove from the blacklist.</p>
@@ -4101,6 +4206,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">title</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The title of the string input dialog.</p>
@@ -4112,6 +4218,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">subTitle</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The subtitle or description of the string input dialog.</p>
@@ -4123,6 +4230,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">callback</span>
 
+									<span class="tag"><span class="type">function</span></span>
 
 
 								<p> The function to call with the entered string.</p>
@@ -4186,6 +4294,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">...</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 
 								<p> The message(s) to send.</p>
@@ -4269,6 +4378,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">text</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The text to display on the action bar.</p>
@@ -4280,6 +4390,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">time</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -4292,6 +4403,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">callback</span>
 
+									<span class="tag"><span class="type">function</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -4304,6 +4416,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">startTime</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -4316,6 +4429,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">finishTime</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -4344,6 +4458,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">flags</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 
 								<p> The flag blacklist to set.</p>
@@ -4371,6 +4486,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">key</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The key for the data.</p>
@@ -4393,9 +4509,11 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">noNetworking</span>
 
+									<span class="tag"><span class="type">boolean</span></span>
 
+									<span class="tag default">optional</span>
 
-								<p>[opt=false] If true, suppresses network broadcasting of the update.</p>
+								<p> If true, suppresses network broadcasting of the update.</p>
 							</li>
 					</ul>
 
@@ -4420,6 +4538,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">key</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The key of the variable.</p>
@@ -4446,7 +4565,7 @@ object at a time that you can interface with.</p>
 					<h1><span class="realm server"></span></span>Player:setPermFlags(flags)</h1>
 				</a>
 
-					<p>Sets the player's permission flags.</p>
+					<p>Sets the player's permanent flags.</p>
 			</header>
 
 
@@ -4458,9 +4577,10 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">flags</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
-								<p> The permission flags to set.</p>
+								<p> The permanent flags to set.</p>
 							</li>
 					</ul>
 
@@ -4485,6 +4605,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">state</span>
 
+									<span class="tag"><span class="type">boolean</span></span>
 
 
 								<p> Whether to set the player to a ragdolled state (<code>true</code>) or remove the ragdoll (<code>false</code>).</p>
@@ -4496,6 +4617,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">time</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -4508,6 +4630,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">getUpGrace</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -4521,7 +4644,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="setWeighPoint">
-					<h1><span class="realm client"></span></span>Player:setWeighPoint(name, vector, OnReach)</h1>
+					<h1><span class="realm client"></span></span>Player:setWeighPoint(name, vector, onReach)</h1>
 				</a>
 
 					<p>Sets a waypoint for the player.</p>
@@ -4536,6 +4659,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">name</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The name of the waypoint.</p>
@@ -4547,6 +4671,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">vector</span>
 
+									<span class="tag"><span class="type">vector</span></span>
 
 
 								<p> The position vector of the waypoint.</p>
@@ -4556,8 +4681,9 @@ object at a time that you can interface with.</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">OnReach</span>
+								<span class="tag parameter">onReach</span>
 
+									<span class="tag"><span class="type">function</span></span>
 
 
 								<p>[opt=nil] Function to call when the player reaches the waypoint.</p>
@@ -4585,6 +4711,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">faction</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> The faction ID.</p>
@@ -4596,6 +4723,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">whitelisted</span>
 
+									<span class="tag"><span class="type">boolean</span></span>
 
 
 								<p> Whether the player should be whitelisted for the faction.</p>
@@ -4634,6 +4762,7 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">entity</span>
 
+									<span class="tag"><a class="type" href="../classes/Entity.html#">Entity</a></span>
 
 
 								<p> The entity to calculate the distance to.</p>
@@ -4674,7 +4803,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="takeMoney">
-					<h1><span class="realm shared"></span></span>Player:takeMoney(amt)</h1>
+					<h1><span class="realm shared"></span></span>Player:takeMoney(amount)</h1>
 				</a>
 
 					<p>Takes money from the player's character.</p>
@@ -4687,8 +4816,9 @@ object at a time that you can interface with.</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">amt</span>
+								<span class="tag parameter">amount</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> The amount of money to take.</p>
@@ -4704,7 +4834,7 @@ object at a time that you can interface with.</p>
 					<h1><span class="realm server"></span></span>Player:takePermFlags(flags)</h1>
 				</a>
 
-					<p>Revokes permission flags from the player.</p>
+					<p>Revokes permanent flags from the player.</p>
 			</header>
 
 
@@ -4716,9 +4846,10 @@ object at a time that you can interface with.</p>
 							<li>
 								<span class="tag parameter">flags</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 
-								<p> The permission flags to revoke.</p>
+								<p> The permanent flags to revoke.</p>
 							</li>
 					</ul>
 

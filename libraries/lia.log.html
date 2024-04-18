@@ -297,16 +297,6 @@ remove											</a>
 
 
 										<li>
-											<span class="realm shared"></span>
-											<a href="../libraries/lia.char.html#Name">
-Name											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../libraries/lia.char.html#getChar">
-getChar											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../libraries/lia.char.html#lia.char.cleanUpForPlayer">
 cleanUpForPlayer											</a>
@@ -1976,6 +1966,11 @@ transfer											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../classes/Player.html#Name">
+Name											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../classes/Player.html#RequestString">
 RequestString											</a>
 										</li>
@@ -2021,6 +2016,11 @@ entitiesNearPlayer											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../classes/Player.html#getChar">
+getChar											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../classes/Player.html#getClass">
 getClass											</a>
 										</li>
@@ -2055,12 +2055,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Player.html#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -2475,6 +2475,7 @@ FLAG_DEV
 							<li>
 								<span class="tag parameter">logString</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The raw log string to add</p>
@@ -2486,6 +2487,7 @@ FLAG_DEV
 							<li>
 								<span class="tag parameter">shouldNotify</span>
 
+									<span class="tag"><span class="type">boolean</span></span>
 
 
 								<p> Whether to notify admins about this log (default: false)</p>
@@ -2497,9 +2499,11 @@ FLAG_DEV
 							<li>
 								<span class="tag parameter">flag</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
+									<span class="tag default">optional</span>
 
-								<p> The flag associated with the log (optional)</p>
+								<p> The flag associated with the log</p>
 							</li>
 					</ul>
 
@@ -2536,6 +2540,7 @@ FLAG_DEV
 							<li>
 								<span class="tag parameter">func</span>
 
+									<span class="tag"><span class="type">function</span></span>
 
 
 								<p> format callback function(client, ...)</p>
@@ -2561,8 +2566,9 @@ FLAG_DEV
 
 									<span class="tag"><span class="type">color</span></span>
 
+									<span class="tag default">optional</span>
 
-								<p> Log color (optional, defaults to Color(52, 152, 219))</p>
+								<p> Log color</p>
 							</li>
 					</ul>
 
@@ -2594,6 +2600,7 @@ FLAG_DEV
 							<li>
 								<span class="tag parameter">client</span>
 
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> The client for which the log is generated</p>
@@ -2605,6 +2612,7 @@ FLAG_DEV
 							<li>
 								<span class="tag parameter">logType</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The type of log to generate</p>
@@ -2675,6 +2683,7 @@ FLAG_DEV
 							<li>
 								<span class="tag parameter">client</span>
 
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> The client to whom the log message will be sent.</p>
@@ -2686,6 +2695,7 @@ FLAG_DEV
 							<li>
 								<span class="tag parameter">logString</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The log message to be sent.</p>
@@ -2697,48 +2707,11 @@ FLAG_DEV
 							<li>
 								<span class="tag parameter">flag</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
+									<span class="tag default">optional</span>
 
-								<p> (Optional) A flag associated with the log message.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-	<h1 class="title">Fields</h1>
-
-		<section class="method">
-			<header>
-				<a class="anchor" id="logString">
-					<h1><span class="realm client"></span></span>logString</h1>
-				</a>
-
-					<p>Hooks into the NetStream message "liaLogStream" to handle received log messages.</p>
-			</header>
-
-
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">logString</span>
-
-
-
-								<p> The log message received.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flag</span>
-
-
-
-								<p> (Optional) A flag associated with the log message.</p>
+								<p> A flag associated with the log message.</p>
 							</li>
 					</ul>
 
