@@ -1095,27 +1095,6 @@ setNetVar											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../libraries/lia.notices.html">lia.notices</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../libraries/lia.notices.html#lia.util.notify">
-lia.util.notify											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../libraries/lia.notices.html#notification.AddLegacy">
-notification.AddLegacy											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
 									<summary><a href="../libraries/lia.util.html">lia.util</a></summary>
 
 									<ul>
@@ -2640,6 +2619,10 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 					<h1><span class="realm shared"></span></span>lia.command.hasAccess(client, command, data)</h1>
 				</a>
 
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
 					<p>Returns true if a player is allowed to run a certain command.</p>
 			</header>
 
@@ -2700,6 +2683,10 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 					<h1><span class="realm server"></span></span>lia.command.parse(client, text, realCommand, arguments)</h1>
 				</a>
 
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
 					<p>Parses a command from an input string and executes it.</p>
 			</header>
 
@@ -2766,7 +2753,7 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 				</ul>
 
 				<h3>Example Usage</h3>
-					<pre><code>ix.lia.command.parse(player.GetByID(1), "/roll 10")
+					<pre><code>lia.command.parse(player.GetByID(1), "/roll 10")
 </code></pre>
 
 		</section>
