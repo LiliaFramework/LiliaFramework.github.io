@@ -2788,7 +2788,7 @@ character data using these functions!</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="lia.char.restore">
-					<h1><span class="realm server"></span></span>lia.char.restore(client, callback, _, id)</h1>
+					<h1><span class="realm server"></span></span>lia.char.restore(client, callback, id)</h1>
 				</a>
 
 					<p>Loads all of a player's characters into memory.</p>
@@ -2819,20 +2819,7 @@ character data using these functions!</p>
 
 									<span class="tag default">default: nil</span>
 
-								<p> Function to call when the characters have been loaded</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">_</span>
-
-									<span class="tag"><span class="type">boolean</span></span>
-
-									<span class="tag default">default: false</span>
-
-								<p> Whether or not to skip the cache; players that leave and join again later will already have
+								<p> Function to call when the characters have been loaded
  their characters loaded which will skip the database query and load quicker</p>
 							</li>
 					</ul>
