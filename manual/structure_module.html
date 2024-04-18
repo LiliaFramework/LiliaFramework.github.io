@@ -11,9 +11,19 @@
 			<meta property="og:description" content=" Structure - Module
 
 ```lua
---------------------------------------------------------------------------------------------------------------------------
-MODULE.name = &quot;Core - Permissions&quot;
-----------------------------------------------------------------------..." />
+MODULE.name = &quot;A Module&quot;
+
+MODULE.author = &quot;76561198312513285&quot;
+
+MODULE.discord = &quot;@liliaplayer&quot;
+
+MODULE.desc = &quot;This is a Example Module.&quot;
+
+MODULE.WorkshopContent = {&quot;2959728255&quot;}
+
+MODULE.enabled = true
+
+MODULE.CAMIPrivileges = {..." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -2343,7 +2353,7 @@ takePermFlags											</a>
 
 							</li>
 							<li>
-									<a href="../manual/info_features.html">Information - Feature List</a>
+									<a href="../manual/info_features.html">Improvements&#47;Fixes Comparing Forked Framework</a>
 
 
 
@@ -2396,49 +2406,40 @@ takePermFlags											</a>
 
 
 <pre>
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.name = <span class="string">"Core - Permissions"</span>
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.author = <span class="string">"76561198312513285"</span>
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.discord = <span class="string">"@liliaplayer"</span>
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.desc = <span class="string">"Implements CAMI Based Permissions."</span>
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.identifier = <span class="string">"RestrictionCore"</span>
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.WorkshopContent = {<span class="string">"2959728255"</span>}
-<span class="comment">-------------------------------------------f-------------------------------------------------------------------------------
-</span>MODULE.enabled = <span class="keyword">true</span>
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.CAMIPrivileges = {
+MODULE.name = <span class="string">"A Module"</span>
+
+MODULE.author = <span class="string">"76561198312513285"</span>
+
+MODULE.discord = <span class="string">"@liliaplayer"</span>
+
+MODULE.desc = <span class="string">"This is a Example Module."</span>
+
+MODULE.WorkshopContent = {<span class="string">"2959728255"</span>}
+
+MODULE.enabled = <span class="keyword">true</span>
+
+MODULE.CAMIPrivileges = {
     {
-        Name = <span class="string">"Staff Permissions - One Punch Man"</span>,
+        Name = <span class="string">"Staff Permissions - Kekw"</span>,
         MinAccess = <span class="string">"superadmin"</span>,
-        Description = <span class="string">"Allows access to OPM to Ragdoll Minges."</span>,
-    },
-}
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------
-</span>MODULE.Dependencies = {
-
-    {
-        File = MODULE.path .. <span class="string">"/permissinons.lua"</span>,
-        Realm = <span class="string">"server"</span>,
-    },
-    {
-        File = MODULE.path .. <span class="string">"/logs.lua"</span>,
-        Realm = <span class="string">"server"</span>,
+        Description = <span class="string">"Allows access to kewking."</span>,
     },
 }
 
-<span class="comment">--------------------------------------------------------------------------------------------------------------------------</span>
+MODULE.Dependencies = {
+    {
+        File = MODULE.path .. <span class="string">"/nicebogusfile.lua"</span>,
+        Realm = <span class="string">"server"</span>,
+    },
+    {
+        File = MODULE.path .. <span class="string">"/badbogusfile.lua"</span>,
+        Realm = <span class="string">"client"</span>,
+    },
+}
 </pre>
 
 
 <hr/>
-
-<p><a name="_View_source_____https___github_com_LiliaFramework_Lilia_blob_main_lilia_modules_core_permissions_module_lua_"></a></p>
-<h2><a href="https://github.com/LiliaFramework/Lilia/blob/main/lilia/modules/core/permissions/module.lua">View source »</a></h2>
 
 <p><a name="Module_Configuration"></a></p>
 <h2>Module Configuration</h2>
@@ -2448,10 +2449,11 @@ takePermFlags											</a>
     <li><p>**<code>MODULE.author</code>:** Indicates the author of the module. It can be a STEAMID64 or Name. Replace "76561198312513285" with the actual author information.</p></li>
     <li><p>**<code>MODULE.discord</code>:** Indicates the discord of the module creator, in this case, as shown, is liliaplayer.</p></li>
     <li><p>**<code>MODULE.desc</code>:** Provides a brief description of the module's purpose. In this case, it states that the module adds skills functionality to the framework.</p></li>
-    <li><p>**<code>MODULE.CAMIPrivileges</code>:** An example CAMI permission that is loaded alongside the module.</p></li>
-    <li><p>**<code>MODULE.WorkshopContent</code>:** Workshop Content to be added.</p></li>
-    <li><p>**<code>MODULE.enabled</code>:** Indicates if the module is active or not. If False, then it won't be.</p></li>
-    <li><p>**<code>MODULE.Dependencies</code>:** Files and corresponding realms to be included.</p></li>
+    <li><p>**<code>MODULE.identifier</code>:** This global variable uniquely identifies the module and allows it to be accessed from outside its scope. <strong>[OPTIONAL]</strong></p></li>
+    <li><p>**<code>MODULE.CAMIPrivileges</code>:** An example CAMI permission that is loaded alongside the module. <strong>[OPTIONAL]</strong></p></li>
+    <li><p>**<code>MODULE.WorkshopContent</code>:** Workshop Content to be added. <strong>[OPTIONAL]</strong></p></li>
+    <li><p>**<code>MODULE.enabled</code>:** Indicates if the module is active or not. If False, then it won't be. <strong>[OPTIONAL]</strong></p></li>
+    <li><p>**<code>MODULE.Dependencies</code>:** Files and corresponding realms to be included. <strong>[OPTIONAL]</strong></p></li>
 </ul>
 
 <h3>Automatically Included Files and Folders in the Module:</h3>

@@ -2340,7 +2340,7 @@ takePermFlags											</a>
 
 							</li>
 							<li>
-									<a href="../manual/info_features.html">Information - Feature List</a>
+									<a href="../manual/info_features.html">Improvements&#47;Fixes Comparing Forked Framework</a>
 
 
 
@@ -2403,26 +2403,6 @@ ITEM.name = <span class="string">"Test Item"</span> <span class="comment">-- The
 </pre>
 
 
-<p><a href="https://github.com/LiliaFramework/Lilia/blob/main/lilia/libraries/items/config/items/defaultitem.txt">View source »</a></p>
-
-<h3>Weapons Item Example:</h3>
-
-
-<pre>
-ITEM.name = <span class="string">"AR2"</span> <span class="comment">-- The name of the weapon
-</span>ITEM.desc = <span class="string">"A Weapon."</span> <span class="comment">-- A brief description of the weapon
-</span>ITEM.model = <span class="string">"models/weapons/w_IRifle.mdl"</span> <span class="comment">-- The 3D model for the weapon
-</span>ITEM.class = <span class="string">"weapon_ar2"</span> <span class="comment">-- The class used to spawn this weapon
-</span>ITEM.weaponCategory = <span class="string">"primary"</span> <span class="comment">-- The category of the weapon
-</span>ITEM.width = <span class="number">4</span> <span class="comment">-- The width of the weapon in inventory
-</span>ITEM.height = <span class="number">2</span> <span class="comment">-- The height of the weapon in inventory</span>
-</pre>
-
-
-<p><a href="https://github.com/LiliaFramework/Lilia/blob/main/lilia/libraries/items/config/items/weapons/ar2.txt">View source »</a></p>
-
-<p>If you don't wish to manually code weapons, you can enable <a href="https://github.com/LiliaFramework/Lilia/blob/2.0/lilia/modules/development/modules/easyitemgenerator/config.lua#L2">this</a></p>
-
 <h3>Vehicles Item Example:</h3>
 
 
@@ -2434,22 +2414,6 @@ ITEM.name = <span class="string">"A Vehicle"</span> <span class="comment">-- The
 </span>ITEM.vehicleid = <span class="string">"VehicleID"</span> <span class="comment">-- The identifier for the vehicle</span>
 </pre>
 
-
-<p><a href="https://github.com/LiliaFramework/Lilia/blob/2.0/lilia/modules/core/items/vehicles/vehicleexample.txt">View source »</a></p>
-
-<h3>Simfphyscars Item Example:</h3>
-
-
-<pre>
-ITEM.name = <span class="string">"A Simfphys Car"</span> <span class="comment">-- The name of the Simfphys car
-</span>ITEM.desc = <span class="string">"A Simfphys Car"</span> <span class="comment">-- A brief description of the Simfphys car
-</span>ITEM.model = <span class="string">"models/props_c17/BriefCase001a.mdl"</span> <span class="comment">-- The 3D model for the Simfphys car
-</span>ITEM.category = <span class="string">"Vehicles"</span> <span class="comment">-- The category of the Simfphys car
-</span>ITEM.vehicleid = <span class="string">"VehicleID"</span> <span class="comment">-- The identifier for the Simfphys car</span>
-</pre>
-
-
-<p><a href="https://github.com/LiliaFramework/Lilia/blob/main/lilia/libraries/items/config/items/simfphyscars/carexample.txt">View source »</a></p>
 
 <h3>Outfit Item Example:</h3>
 
@@ -2464,8 +2428,6 @@ ITEM.name = <span class="string">"Combine Armor"</span> <span class="comment">--
 </pre>
 
 
-<p><a href="https://github.com/LiliaFramework/Lilia/blob/main/lilia/libraries/items/config/items/outfit/rebel_armor.txt">View source »</a></p>
-
 <h3>Entities Item Example:</h3>
 
 
@@ -2477,8 +2439,6 @@ ITEM.name = <span class="string">"Item Suit"</span> <span class="comment">-- The
 </span>ITEM.entityid = <span class="string">"item_suit"</span> <span class="comment">-- The identifier for the entities item</span>
 </pre>
 
-
-<p><a href="https://github.com/LiliaFramework/Lilia/blob/main/lilia/libraries/items/config/items/entities/item_suit.txt">View source »</a></p>
 
 <h3>Books Item Example:</h3>
 
@@ -2499,8 +2459,6 @@ EXAMPLE PARAGRAH!
 </pre>
 
 
-<p><a href="https://github.com/LiliaFramework/Lilia/blob/main/lilia/libraries/items/config/items/books/book.txt">View source »</a></p>
-
 <h3>Ammo Item Example:</h3>
 
 
@@ -2513,7 +2471,21 @@ ITEM.name = <span class="string">".357 Ammo"</span> <span class="comment">-- The
 </pre>
 
 
-<p><a href="https://github.com/LiliaFramework/Lilia/blob/main/lilia/libraries/items/config/items/ammo/357ammo.txt">View source »</a></p>
+<h3>Weapons Item Example:</h3>
+
+
+<pre>
+ITEM.name = <span class="string">"AR2"</span> <span class="comment">-- The name of the weapon
+</span>ITEM.desc = <span class="string">"A Weapon."</span> <span class="comment">-- A brief description of the weapon
+</span>ITEM.model = <span class="string">"models/weapons/w_IRifle.mdl"</span> <span class="comment">-- The 3D model for the weapon
+</span>ITEM.class = <span class="string">"weapon_ar2"</span> <span class="comment">-- The class used to spawn this weapon
+</span>ITEM.weaponCategory = <span class="string">"primary"</span> <span class="comment">-- The category of the weapon
+</span>ITEM.width = <span class="number">4</span> <span class="comment">-- The width of the weapon in inventory
+</span>ITEM.height = <span class="number">2</span> <span class="comment">-- The height of the weapon in inventory</span>
+</pre>
+
+
+<p>If you don't wish to manually code weapons, you can enable <a href="https://github.com/LiliaFramework/Lilia/blob/main/lilia/modules/utilities/wepgenerator/config/shared.lua#L1">this</a></p>
 
 					</div>
 			</article>
