@@ -2489,9 +2489,10 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">quantity</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
-								<p> (number) The quantity to add.</p>
+								<p> The quantity to add.</p>
 							</li>
 					</ul>
 
@@ -2500,9 +2501,11 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">receivers</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
+									<span class="tag default">optional</span>
 
-								<p> (table) Optional. Players who should receive updates about the quantity change.</p>
+								<p> Players who should receive updates about the quantity change.</p>
 							</li>
 					</ul>
 
@@ -2511,9 +2514,11 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">noCheckEntity</span>
 
+									<span class="tag"><span class="type">boolean</span></span>
 
+									<span class="tag default">optional</span>
 
-								<p> (boolean) Optional. If true, entity checks will be skipped.</p>
+								<p> If true, entity checks will be skipped.</p>
 							</li>
 					</ul>
 
@@ -2574,6 +2579,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">...</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 
 								<p> Arguments to pass to the method</p>
@@ -2662,7 +2668,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 								<span class="tag parameter">default</span>
 
 
-									<span class="tag default">default: nil</span>
+									<span class="tag default">optional</span>
 
 								<p> The value to return in case there is no value stored in the key</p>
 							</li>
@@ -2721,9 +2727,9 @@ same name but different numerical IDs). You can think of items as the class, whi
 				<ul>
 
 							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+									<span class="tag type">any</span>
 
-								<p>The description of the item</p>
+								<p>string The description of the item</p>
 							</li>
 
 				</ul>
@@ -2817,9 +2823,9 @@ same name but different numerical IDs). You can think of items as the class, whi
 				<ul>
 
 							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+									<span class="tag type">any</span>
 
-								<p>The name of the item</p>
+								<p>string The name of the item</p>
 							</li>
 
 				</ul>
@@ -3004,9 +3010,10 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">action</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
-								<p> (string) The interaction action to perform.</p>
+								<p> The interaction action to perform.</p>
 							</li>
 					</ul>
 
@@ -3015,9 +3022,10 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">client</span>
 
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
-								<p> (Player) The player performing the interaction.</p>
+								<p> The player performing the interaction.</p>
 							</li>
 					</ul>
 
@@ -3026,9 +3034,10 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">entity</span>
 
+									<span class="tag"><a class="type" href="../classes/Entity.html#">Entity</a></span>
 
 
-								<p> (Entity) The entity associated with the interaction, if any.</p>
+								<p> The entity associated with the interaction, if any.</p>
 							</li>
 					</ul>
 
@@ -3037,9 +3046,11 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">data</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
+									<span class="tag default">optional</span>
 
-								<p> (table) Optional. Additional data related to the interaction.</p>
+								<p> Additional data related to the interaction.</p>
 							</li>
 					</ul>
 
@@ -3273,9 +3284,11 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">preserveItem</span>
 
+									<span class="tag"><span class="type">boolean</span></span>
 
+									<span class="tag default">optional</span>
 
-								<p> (boolean) Optional. If true, the item is not fully deleted from the database.</p>
+								<p> If true, the item is not fully deleted from the database.</p>
 							</li>
 					</ul>
 
@@ -3390,6 +3403,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">quantity</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> (number) The new quantity value.</p>
@@ -3401,6 +3415,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">receivers</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 
 								<p> (table) Optional. Players who should receive updates about the quantity change.</p>
@@ -3412,6 +3427,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">noCheckEntity</span>
 
+									<span class="tag"><span class="type">boolean</span></span>
 
 
 								<p> (boolean) Optional. If true, entity checks will be skipped.</p>
@@ -3490,9 +3506,10 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">recipient</span>
 
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
-								<p> (Player) The player to whom the item data should be synchronized. If set to nil, the data is broadcasted to all clients.</p>
+								<p> The player to whom the item data should be synchronized. If set to nil, the data is broadcasted to all clients.</p>
 							</li>
 					</ul>
 
@@ -3528,9 +3545,10 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">bBypass</span>
 
+									<span class="tag"><span class="type">boolean</span></span>
 
 
-								<p> (boolean) Whether to bypass access checks for transferring the item.</p>
+								<p> Whether to bypass access checks for transferring the item.</p>
 							</li>
 					</ul>
 

@@ -2400,7 +2400,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="lia.color.Darken">
-					<h1><span class="realm client"></span></span>lia.color.Darken(colot, amount)</h1>
+					<h1><span class="realm client"></span></span>lia.color.Darken(color, amount)</h1>
 				</a>
 
 					<p>Darkens a color by the specified amount.</p>
@@ -2413,8 +2413,9 @@ takePermFlags											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">colot</span>
+								<span class="tag parameter">color</span>
 
+									<span class="tag"><span class="type">color</span></span>
 
 
 								<p> Color: The color to darken.</p>
@@ -2426,6 +2427,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">amount</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> number: The amount by which to darken the color.</p>
@@ -2439,7 +2441,7 @@ takePermFlags											</a>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>Color: The resulting darkened color.</p>
+								<p>color The resulting darkened color.</p>
 							</li>
 
 				</ul>
@@ -2464,9 +2466,10 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">start_color</span>
 
+									<span class="tag"><span class="type">color</span></span>
 
 
-								<p> Color: The starting color.</p>
+								<p> The starting color.</p>
 							</li>
 					</ul>
 
@@ -2475,9 +2478,10 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">end_color</span>
 
+									<span class="tag"><span class="type">color</span></span>
 
 
-								<p> Color: The ending color.</p>
+								<p> The ending color.</p>
 							</li>
 					</ul>
 
@@ -2486,9 +2490,10 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">maxValue</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
-								<p> number: The maximum value to interpolate between (used for normalization).</p>
+								<p> The maximum value to interpolate between (used for normalization).</p>
 							</li>
 					</ul>
 
@@ -2497,9 +2502,10 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">currentValue</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
-								<p> number: The current value to interpolate (used for normalization).</p>
+								<p> The current value to interpolate (used for normalization).</p>
 							</li>
 					</ul>
 
@@ -2508,9 +2514,11 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">minValue</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
+									<span class="tag default">optional</span>
 
-								<p> number (optional): The minimum value to interpolate between (used for normalization). Defaults to 0.</p>
+								<p> The minimum value to interpolate between (used for normalization). Defaults to 0.</p>
 							</li>
 					</ul>
 
@@ -2521,7 +2529,7 @@ takePermFlags											</a>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>Color: The resulting interpolated color.</p>
+								<p>color The resulting interpolated color.</p>
 							</li>
 
 				</ul>
@@ -2531,7 +2539,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="lia.color.Lighten">
-					<h1><span class="realm client"></span></span>lia.color.Lighten(colot, amount)</h1>
+					<h1><span class="realm client"></span></span>lia.color.Lighten(color, amount)</h1>
 				</a>
 
 					<p>Lightens a color by the specified amount.</p>
@@ -2544,11 +2552,12 @@ takePermFlags											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">colot</span>
+								<span class="tag parameter">color</span>
+
+									<span class="tag"><span class="type">color</span></span>
 
 
-
-								<p> Color: The color to lighten.</p>
+								<p> The color to lighten.</p>
 							</li>
 					</ul>
 
@@ -2557,9 +2566,10 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">amount</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
-								<p> number: The amount by which to lighten the color.</p>
+								<p> The amount by which to lighten the color.</p>
 							</li>
 					</ul>
 
@@ -2570,7 +2580,7 @@ takePermFlags											</a>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>Color: The resulting lightened color.</p>
+								<p>color The resulting lightened color.</p>
 							</li>
 
 				</ul>
@@ -2595,9 +2605,10 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">name</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
-								<p> string: The name of the color to register.</p>
+								<p> The name of the color to register.</p>
 							</li>
 					</ul>
 
@@ -2606,9 +2617,10 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">color</span>
 
+									<span class="tag"><span class="type">color</span></span>
 
 
-								<p> Color: The color value to register.</p>
+								<p> The color value to register.</p>
 							</li>
 					</ul>
 
@@ -2617,9 +2629,10 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">force</span>
 
+									<span class="tag"><span class="type">boolean</span></span>
 
 
-								<p> boolean: If true, forces registration even if the name already exists.</p>
+								<p> If true, forces registration even if the name already exists.</p>
 							</li>
 					</ul>
 
@@ -2644,9 +2657,10 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">r</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
-								<p> number: The red component (0-255).</p>
+								<p> The red component (0-255).</p>
 							</li>
 					</ul>
 
@@ -2655,9 +2669,10 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">g</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
-								<p> number: The green component (0-255).</p>
+								<p> The green component (0-255).</p>
 							</li>
 					</ul>
 
@@ -2666,9 +2681,10 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">b</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
-								<p> number: The blue component (0-255).</p>
+								<p> The blue component (0-255).</p>
 							</li>
 					</ul>
 
@@ -2679,7 +2695,7 @@ takePermFlags											</a>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>Color: The resulting color.</p>
+								<p>color The resulting color.</p>
 							</li>
 
 				</ul>

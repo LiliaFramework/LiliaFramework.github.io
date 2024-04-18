@@ -3321,7 +3321,7 @@ end)
 		<section class="method">
 			<header>
 				<a class="anchor" id="lia.util.fetchImage">
-					<h1><span class="realm client"></span></span>lia.util.fetchImage(id, callback, _, pngParameters, imageProvider)</h1>
+					<h1><span class="realm client"></span></span>lia.util.fetchImage(id, callback, pngParameters, imageProvider)</h1>
 				</a>
 
 					<p>Fetches an image from either local data or a remote server and provides it to a callback function.</p>
@@ -3336,6 +3336,7 @@ end)
 							<li>
 								<span class="tag parameter">id</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
 								<p> The unique identifier or filename of the image</p>
@@ -3347,6 +3348,7 @@ end)
 							<li>
 								<span class="tag parameter">callback</span>
 
+									<span class="tag"><span class="type">function</span></span>
 
 
 								<p> The function to call with the loaded image material as its argument, or false if the image could not be loaded</p>
@@ -3356,20 +3358,11 @@ end)
 					<ul>
 
 							<li>
-								<span class="tag parameter">_</span>
-
-
-
-								<p> Unused parameter, kept for compatibility</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
 								<span class="tag parameter">pngParameters</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
+									<span class="tag default">optional</span>
 
 								<p> Optional parameters for loading PNG images (default is "noclamp smooth")</p>
 							</li>
@@ -3380,7 +3373,9 @@ end)
 							<li>
 								<span class="tag parameter">imageProvider</span>
 
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
+									<span class="tag default">optional</span>
 
 								<p> Optional URL for the remote image provider (default is "https://i.imgur.com/")</p>
 							</li>
@@ -3762,6 +3757,7 @@ end)
 							<li>
 								<span class="tag parameter">vec</span>
 
+									<span class="tag"><span class="type">vector</span></span>
 
 
 								<p> Vector to be rounded</p>
@@ -3773,6 +3769,7 @@ end)
 							<li>
 								<span class="tag parameter">gridSize</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
 								<p> Grid size to round to</p>
