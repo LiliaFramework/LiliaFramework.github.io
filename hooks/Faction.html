@@ -2,10 +2,10 @@
 
 <html>
 	<head>
-		<title>faction - Lilia Documentation</title>
+		<title>Faction - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="faction - Lilia Documentation" />
+		<meta property="og:title" content="Faction - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
 			<meta property="og:description" content="Faction setup hooks." />
@@ -57,6 +57,42 @@ onSet											</a>
 											<span class="realm server"></span>
 											<a href="../hooks/Class.html#onSpawn">
 onSpawn											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details open>
+									<summary><a href="../hooks/Faction.html">Faction</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/Faction.html#getDefaultDesc">
+getDefaultDesc											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/Faction.html#getDefaultName">
+getDefaultName											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/Faction.html#onCharCreated">
+onCharCreated											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/Faction.html#onSpawn">
+onSpawn											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/Faction.html#onTransferred">
+onTransferred											</a>
 										</li>
 
 									</ul>
@@ -342,42 +378,6 @@ onSpawn											</a>
 					</summary>
 
 					<ul>
-							<li>
-									<details open>
-									<summary><a href="../libraries/faction.html">faction</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm shared"></span>
-											<a href="../libraries/faction.html#getDefaultDesc">
-getDefaultDesc											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../libraries/faction.html#getDefaultName">
-getDefaultName											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../libraries/faction.html#onCharCreated">
-onCharCreated											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../libraries/faction.html#onSpawn">
-onSpawn											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../libraries/faction.html#onTransferred">
-onTransferred											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
 							<li>
 									<details >
 									<summary><a href="../libraries/lia.html">lia</a></summary>
@@ -2585,7 +2585,7 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>faction</h1>
+	<h1>Faction</h1>
 	<h2>Faction setup hooks.</h2>
 </header>
 
@@ -2599,7 +2599,7 @@ regular gamemode hooks.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getDefaultDesc">
-					<h1><span class="realm shared"></span></span>getDefaultDesc(client, faction)</h1>
+					<h1><span class="realm shared"></span></span>FACTION:getDefaultDesc(client, faction)</h1>
 				</a>
 
 					<p>Called when the default description for a character needs to be retrieved.
@@ -2656,7 +2656,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="getDefaultName">
-					<h1><span class="realm shared"></span></span>getDefaultName(client)</h1>
+					<h1><span class="realm shared"></span></span>FACTION:getDefaultName(client)</h1>
 				</a>
 
 					<p>Called when the default name for a character needs to be retrieved (i.e., upon initial creation).</p>
@@ -2700,7 +2700,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="onCharCreated">
-					<h1><span class="realm server"></span></span>onCharCreated(client, character)</h1>
+					<h1><span class="realm server"></span></span>FACTION:onCharCreated(client, character)</h1>
 				</a>
 
 					<p>Called when a character has been initially created and assigned to this faction.</p>
@@ -2746,7 +2746,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="onSpawn">
-					<h1><span class="realm server"></span></span>onSpawn(client)</h1>
+					<h1><span class="realm server"></span></span>FACTION:onSpawn(client)</h1>
 				</a>
 
 					<p>Called when a character in this faction has spawned in the world.</p>
@@ -2779,7 +2779,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="onTransferred">
-					<h1><span class="realm server"></span></span>onTransferred(character)</h1>
+					<h1><span class="realm server"></span></span>FACTION:onTransferred(character)</h1>
 				</a>
 
 					<p>Called when a player's character has been transferred to this faction.</p>
