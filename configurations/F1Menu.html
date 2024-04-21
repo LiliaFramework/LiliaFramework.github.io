@@ -2,28 +2,15 @@
 
 <html>
 	<head>
-		<title>Structure - Module - Lilia Documentation</title>
+		<title>F1Menu - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Structure - Module - Lilia Documentation" />
+		<meta property="og:title" content="F1Menu - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content=" Structure - Module
+			<meta property="og:description" content="Framework UI - F1 Menu
 
-```lua
-MODULE.name = &quot;A Module&quot;
-
-MODULE.author = &quot;76561198312513285&quot;
-
-MODULE.discord = &quot;@liliaplayer&quot;
-
-MODULE.desc = &quot;This is a Example Module.&quot;
-
-MODULE.WorkshopContent = {&quot;2959728255&quot;}
-
-MODULE.enabled = true
-
-MODULE.CAMIPrivileges = {..." />
+**Configuration Values:**." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -199,7 +186,7 @@ onTransferred											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../configurations/F1Menu.html">F1Menu</a></summary>
 
 									<ul>
@@ -1148,12 +1135,12 @@ L											</a>
 L											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../libraries/lia.lang.html#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.lang.html#L2">
 L2											</a>
 										</li>
@@ -1297,12 +1284,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.net.html#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../libraries/lia.net.html#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1458,22 +1445,22 @@ isSteamID											</a>
 notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../libraries/lia.util.html#lia.util.notify">
-notify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../libraries/lia.util.html#lia.util.notify">
 notify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../libraries/lia.util.html#lia.util.notify">
+notify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.util.html#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../libraries/lia.util.html#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
@@ -1713,12 +1700,12 @@ canSeeEntity											</a>
 clearNetVars											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
@@ -1728,12 +1715,12 @@ getDoorPartner											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1758,12 +1745,12 @@ inTrace											</a>
 isChair											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
@@ -2096,12 +2083,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Item.html#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Item.html#getName">
 getName											</a>
 										</li>
@@ -2643,90 +2630,28 @@ takePermFlags											</a>
 
 			<article>
 					<div class="wrapper">
+						<header class="module">
+	<h1>F1Menu</h1>
+	<h2>Framework UI - F1 Menu</p>
 
-<h1>Structure - Module</h1>
+<p><strong>Configuration Values:</strong>.</h2>
+</header>
 
+<p>
 
-<pre>
-MODULE.name = <span class="string">"A Module"</span>
-
-MODULE.author = <span class="string">"76561198312513285"</span>
-
-MODULE.discord = <span class="string">"@liliaplayer"</span>
-
-MODULE.desc = <span class="string">"This is a Example Module."</span>
-
-MODULE.WorkshopContent = {<span class="string">"2959728255"</span>}
-
-MODULE.enabled = <span class="keyword">true</span>
-
-MODULE.CAMIPrivileges = {
-    {
-        Name = <span class="string">"Staff Permissions - Kekw"</span>,
-        MinAccess = <span class="string">"superadmin"</span>,
-        Description = <span class="string">"Allows access to kewking."</span>,
-    },
-}
-
-MODULE.Dependencies = {
-    {
-        File = MODULE.path .. <span class="string">"/nicebogusfile.lua"</span>,
-        Realm = <span class="string">"server"</span>,
-    },
-    {
-        File = MODULE.path .. <span class="string">"/badbogusfile.lua"</span>,
-        Realm = <span class="string">"client"</span>,
-    },
-}
-</pre>
-
-
-<hr/>
-
-<p><a name="Module_Configuration"></a></p>
-<h2>Module Configuration</h2>
 
 <ul>
-    <li><p>**<code>MODULE.name</code>:** Specifies the name of the module, which is "Core - Permissions" in this case. This variable identifies the module.</p></li>
-    <li><p>**<code>MODULE.author</code>:** Indicates the author of the module. It can be a STEAMID64 or Name. Replace "76561198312513285" with the actual author information.</p></li>
-    <li><p>**<code>MODULE.discord</code>:** Indicates the discord of the module creator, in this case, as shown, is liliaplayer.</p></li>
-    <li><p>**<code>MODULE.desc</code>:** Provides a brief description of the module's purpose. In this case, it states that the module adds skills functionality to the framework.</p></li>
-    <li><p>**<code>MODULE.identifier</code>:** This global variable uniquely identifies the module and allows it to be accessed from outside its scope. <strong>[OPTIONAL]</strong></p></li>
-    <li><p>**<code>MODULE.CAMIPrivileges</code>:** An example CAMI permission that is loaded alongside the module. <strong>[OPTIONAL]</strong></p></li>
-    <li><p>**<code>MODULE.WorkshopContent</code>:** Workshop Content to be added. <strong>[OPTIONAL]</strong></p></li>
-    <li><p>**<code>MODULE.enabled</code>:** Indicates if the module is active or not. If False, then it won't be. <strong>[OPTIONAL]</strong></p></li>
-    <li><p>**<code>MODULE.Dependencies</code>:** Files and corresponding realms to be included. <strong>[OPTIONAL]</strong></p></li>
+    <li><p><strong>KickOnEnteringMainMenu</strong>: Set Music Volume on Main Menu | <strong>bool</strong>.</p></li>
+    <li><p><strong>F1ThirdPersonEnabled</strong>: Set Music Volume on Main Menu | <strong>bool</strong>.</p></li>
+    <li><p><strong>F1DisplayModel</strong>: Set Music Volume on Main Menu | <strong>bool</strong>.</p></li>
+    <li><p><strong>RulesEnabled</strong>: Set Music Volume on Main Menu | <strong>bool</strong>.</p></li>
+    <li><p><strong>TutorialEnabled</strong>: Set Music Volume on Main Menu | <strong>bool</strong>.</p></li>
+    <li><p><strong>FAQEnabled</strong>: Set Music Volume on Main Menu | <strong>bool</strong>.</p></li>
+    <li><p><strong>InfoMenuLocation</strong>: What corner does your Information appear on (TopLeft, TopRight, BottomRight, BottomCenter)| <strong>string</strong>.</p></li>
+    <li><p><strong>FAQQuestions</strong>: Set Music Volume on Main Menu | <strong>table</strong>.</p></li>
 </ul>
 
-<h3>Automatically Included Files and Folders in the Module:</h3>
-
-<p><strong>Files:</strong></p>
-
-<ul>
-    <li><p>client.lua</p></li>
-    <li><p>cl_module.lua</p></li>
-    <li><p>sv_module.lua</p></li>
-    <li><p>server.lua</p></li>
-    <li><p>config.lua</p></li>
-    <li><p>sconfig.lua</p></li>
-</ul>
-
-<p><strong>Folders:</strong></p>
-
-<ul>
-    <li><p>dependencies</p></li>
-    <li><p>config</p></li>
-    <li><p>permissions</p></li>
-    <li><p>libs</p></li>
-    <li><p>hooks</p></li>
-    <li><p>libraries</p></li>
-    <li><p>commands</p></li>
-    <li><p>netcalls</p></li>
-    <li><p>meta</p></li>
-    <li><p>derma</p></li>
-    <li><p>pim</p></li>
-    <li><p>concommands</p></li>
-</ul>
+</p>
 
 
 					</div>
