@@ -2,15 +2,13 @@
 
 <html>
 	<head>
-		<title>RealisticDamage - Lilia Documentation</title>
+		<title>Teams - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="RealisticDamage - Lilia Documentation" />
+		<meta property="og:title" content="Teams - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Characters - Realistic Damage
-
-**Configuration Values:**." />
+			<meta property="og:description" content="Core - Teams." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -296,7 +294,7 @@ onTransferred											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../configurations/RealisticDamage.html">RealisticDamage</a></summary>
 
 									<ul>
@@ -395,7 +393,7 @@ onTransferred											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../configurations/Teams.html">Teams</a></summary>
 
 									<ul>
@@ -1179,12 +1177,12 @@ L											</a>
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.lang.html#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../libraries/lia.lang.html#L2">
 L2											</a>
 										</li>
@@ -1328,12 +1326,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../libraries/lia.net.html#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.net.html#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1489,22 +1487,22 @@ isSteamID											</a>
 notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../libraries/lia.util.html#lia.util.notify">
-notify											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../libraries/lia.util.html#lia.util.notify">
 notify											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../libraries/lia.util.html#lia.util.notify">
+notify											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
 											<a href="../libraries/lia.util.html#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.util.html#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
@@ -1744,12 +1742,12 @@ canSeeEntity											</a>
 clearNetVars											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
@@ -1759,12 +1757,12 @@ getDoorPartner											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1789,12 +1787,12 @@ inTrace											</a>
 isChair											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
@@ -2127,12 +2125,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Item.html#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Item.html#getName">
 getName											</a>
 										</li>
@@ -2675,32 +2673,17 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>RealisticDamage</h1>
-	<h2>Characters - Realistic Damage</p>
-
-<p><strong>Configuration Values:</strong>.</h2>
+	<h1>Teams</h1>
+	<h2>Core - Teams.</h2>
 </header>
 
 <p>
 
 
+<p><strong>Configuration Values:</strong>.</p>
+
 <ul>
-    <li><p><strong>DrowningEnabled</strong>: Indicates whether drowning is enabled | <strong>bool</strong>.</p></li>
-    <li><p><strong>DamageScalerEnabled</strong>: Indicates whether damage scaling is enabled | <strong>bool</strong>.</p></li>
-    <li><p><strong>HurtSoundEnabled</strong>: Indicates whether hurt sounds are enabled | <strong>bool</strong>.</p></li>
-    <li><p><strong>DeathSoundEnabled</strong>: Indicates whether death sounds are enabled | <strong>bool</strong>.</p></li>
-    <li><p><strong>LimbDamage</strong>: Damage multiplier for limb hits | <strong>float</strong>.</p></li>
-    <li><p><strong>DamageScale</strong>: Global damage scale multiplier | <strong>float</strong>.</p></li>
-    <li><p><strong>HeadShotDamage</strong>: Damage multiplier for headshots | <strong>float</strong>.</p></li>
-    <li><p><strong>DrownTime</strong>: Time (in seconds) it takes for a character to drown | <strong>integer</strong>.</p></li>
-    <li><p><strong>DrownDamage</strong>: Amount of damage dealt per second while drowning | <strong>integer</strong>.</p></li>
-    <li><p><strong>LimbHitgroups</strong>: Hitgroups considered as limbs | <strong>table</strong>.</p></li>
-    <li><p><strong>MaleDeathSounds</strong>: Sounds played when a male character dies | <strong>table</strong>.</p></li>
-    <li><p><strong>MaleHurtSounds</strong>: Sounds played when a male character is hurt | <strong>table</strong>.</p></li>
-    <li><p><strong>FemaleDeathSounds</strong>: Sounds played when a female character dies | <strong>table</strong>.</p></li>
-    <li><p><strong>FemaleHurtSounds</strong>: Sounds played when a female character is hurt | <strong>table</strong>.</p></li>
-    <li><p><strong>DrownSounds</strong>: Sounds played when a character is drowning | <strong>table</strong>.</p></li>
-    <li><p><strong>InjuriesTable</strong>: Defines the text referring to condition that appears when looking at someone | <strong>table</strong>.</p></li>
+    <li><strong>PermaClass</strong>: Whether or not classes are saved in characters | <strong>bool</strong>.</li>
 </ul>
 </p>
 
