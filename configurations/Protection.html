@@ -2680,12 +2680,25 @@ takePermFlags											</a>
 <p>
 
 
-<p><strong>Configuration Values:</strong>.</p>
+<p><strong>Configuration Values</strong>:</p>
 
 <ul>
-    <li><strong>RestrictedEnts</strong>: List of entities blocked from physgun pick up and proprieties when used by regular players | <strong>table</strong>.</li>
+    <li><p><strong>FamilySharingEnabled</strong>: Indicates whether Family Sharing is enabled on this server. | <strong>bool</strong>.</p></li>
+    <li><p><strong>CarRagdoll</strong>: Determines whether being hit by a car results in ragdolling. | <strong>bool</strong>.</p></li>
+    <li><p><strong>OnDamageCharacterSwitchCooldown</strong>: Specifies whether cooldown on character switching is enabled. | <strong>bool</strong>.</p></li>
+    <li><p><strong>OnDamageCharacterSwitchCooldownTimer</strong>: Sets the cooldown duration on character switching after taking damage. | <strong>integer</strong>.</p></li>
+    <li><p><strong>SwitchCooldownOnAllEntities</strong>: Specifies whether damage cooldown applies to all entities or just humans. If false, it applies only to humans. | <strong>bool</strong>.</p></li>
+    <li><p><strong>CharacterSwitchCooldown</strong>: Indicates whether a cooldown for character switching exists. | <strong>bool</strong>.</p></li>
+    <li><p><strong>CharacterSwitchCooldownTimer</strong>: Sets the duration of the character switch cooldown. | <strong>integer</strong>.</p></li>
+    <li><p><strong>NPCsDropWeapons</strong>: Controls whether NPCs drop weapons. | <strong>bool</strong>.</p></li>
+    <li><p><strong>TimeUntilDroppedSWEPRemoved</strong>: Specifies the duration until a dropped SWEP is removed. This pertains to actual SWEPs, not weapon items. | <strong>bool</strong>.</p></li>
+    <li><p><strong>BlockedCollideEntities</strong>: Lists entities with collisions disabled. | <strong>table</strong>.</p></li>
+    <li><p><strong>KnownExploits</strong>: Lists known exploits. | <strong>table</strong>.</p></li>
+    <li><p><strong>HackCommands</strong>: Lists commands available in the hack menu. | <strong>table</strong>.</p></li>
+    <li><p><strong>HackGlobals</strong>: Lists global variables accessible in the hack menu. | <strong>table</strong>.</p></li>
+    <li><p><strong>BadCVars</strong>: Lists undesirable console variables. | <strong>table</strong>.</p></li>
+    <li><p><strong>ExploitableNetMessages</strong>: Lists exploitable Net Messages. | <strong>table</strong>.</p></li>
 </ul>
-
 </p>
 
 
