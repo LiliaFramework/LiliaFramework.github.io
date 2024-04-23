@@ -64,59 +64,6 @@ onSpawn											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../hooks/Derma.html">Derma</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm  client
- This hook can be used to implement custom checks to determine if a player is
- allowed to view their inventory."></span>
-											<a href="../hooks/Derma.html#CanPlayerViewInventory">
-CanPlayerViewInventory											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../hooks/Derma.html#PostDrawInventory">
-PostDrawInventory											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../hooks/Derma.html#ScreenResolutionChanged">
-ScreenResolutionChanged											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../hooks/Derma.html#ShouldBarDraw">
-ShouldBarDraw											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../hooks/Derma.html#ShouldDrawAmmoHUD">
-ShouldDrawAmmoHUD											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../hooks/Derma.html#ShouldDrawCrosshair">
-ShouldDrawCrosshair											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../hooks/Derma.html#ShouldHideBars">
-ShouldHideBars											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../hooks/Derma.html#ShouldShowPlayerOnScoreboard">
-ShouldShowPlayerOnScoreboard											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
 									<summary><a href="../hooks/Faction.html">Faction</a></summary>
 
 									<ul>
@@ -166,9 +113,29 @@ onTransferred											</a>
 CanItemBeTransfered											</a>
 										</li>
 										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/General.html#CanPlayerAccessDoor">
+CanPlayerAccessDoor											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#CanPlayerAccessVendor">
+CanPlayerAccessVendor											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#CanPlayerCreateCharacter">
+CanPlayerCreateCharacter											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../hooks/General.html#CanPlayerDropItem">
 CanPlayerDropItem											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#CanPlayerEarnSalary">
+CanPlayerEarnSalary											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -181,9 +148,19 @@ CanPlayerEquipItem											</a>
 CanPlayerInteractItem											</a>
 										</li>
 										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/General.html#CanPlayerJoinClass">
+CanPlayerJoinClass											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../hooks/General.html#CanPlayerTakeItem">
 CanPlayerTakeItem											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/General.html#CanPlayerThrowPunch">
+CanPlayerThrowPunch											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -194,6 +171,43 @@ CanPlayerTradeWithVendor											</a>
 											<span class="realm server"></span>
 											<a href="../hooks/General.html#CanPlayerUnequipItem">
 CanPlayerUnequipItem											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/General.html#CanPlayerUseChar">
+CanPlayerUseChar											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#CanPlayerUseDoor">
+CanPlayerUseDoor											</a>
+										</li>
+										<li>
+											<span class="realm  client
+ This hook can be used to implement custom checks to determine if a player is
+ allowed to view their inventory."></span>
+											<a href="../hooks/General.html#CanPlayerViewInventory">
+CanPlayerViewInventory											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#CharDeleted">
+CharDeleted											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/General.html#CharacterLoaded">
+CharacterLoaded											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#CharacterPostSave">
+CharacterPostSave											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/General.html#CharacterPreSave">
+CharacterPreSave											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -217,8 +231,33 @@ PlayerAccessVendor											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../hooks/General.html#PlayerLoadedChar">
+PlayerLoadedChar											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#PostCharDelete">
+PostCharDelete											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../hooks/General.html#PostDrawInventory">
+PostDrawInventory											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../hooks/General.html#PostLoadData">
 PostLoadData											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#PostPlayerLoadedChar">
+PostPlayerLoadedChar											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#PostPlayerLoadout">
+PostPlayerLoadout											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -227,8 +266,48 @@ PostPlayerSay											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../hooks/General.html#PrePlayerLoadedChar">
+PrePlayerLoadedChar											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../hooks/General.html#SaveData">
 SaveData											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../hooks/General.html#ScreenResolutionChanged">
+ScreenResolutionChanged											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../hooks/General.html#ShouldBarDraw">
+ShouldBarDraw											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#ShouldClientDrown">
+ShouldClientDrown											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../hooks/General.html#ShouldDrawAmmoHUD">
+ShouldDrawAmmoHUD											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../hooks/General.html#ShouldDrawCrosshair">
+ShouldDrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../hooks/General.html#ShouldHideBars">
+ShouldHideBars											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../hooks/General.html#ShouldShowPlayerOnScoreboard">
+ShouldShowPlayerOnScoreboard											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -245,107 +324,6 @@ VendorSellEvent											</a>
 											<span class="realm client"></span>
 											<a href="../hooks/General.html#thirdPersonToggled">
 thirdPersonToggled											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../hooks/Player.html">Player</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm shared"></span>
-											<a href="../hooks/Player.html#CanPlayerAccessDoor">
-CanPlayerAccessDoor											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#CanPlayerAccessVendor">
-CanPlayerAccessVendor											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#CanPlayerCreateCharacter">
-CanPlayerCreateCharacter											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#CanPlayerEarnSalary">
-CanPlayerEarnSalary											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../hooks/Player.html#CanPlayerJoinClass">
-CanPlayerJoinClass											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../hooks/Player.html#CanPlayerThrowPunch">
-CanPlayerThrowPunch											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../hooks/Player.html#CanPlayerUseChar">
-CanPlayerUseChar											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#CanPlayerUseDoor">
-CanPlayerUseDoor											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#CharDeleted">
-CharDeleted											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../hooks/Player.html#CharacterLoaded">
-CharacterLoaded											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#CharacterPostSave">
-CharacterPostSave											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../hooks/Player.html#CharacterPreSave">
-CharacterPreSave											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#PlayerLoadedChar">
-PlayerLoadedChar											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#PostCharDelete">
-PostCharDelete											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#PostPlayerLoadedChar">
-PostPlayerLoadedChar											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#PostPlayerLoadout">
-PostPlayerLoadout											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#PrePlayerLoadedChar">
-PrePlayerLoadedChar											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#ShouldClientDrown">
-ShouldClientDrown											</a>
 										</li>
 
 									</ul>
@@ -1430,12 +1408,12 @@ L											</a>
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.lang.html#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../libraries/lia.lang.html#L2">
 L2											</a>
 										</li>
@@ -1579,12 +1557,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../libraries/lia.net.html#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.net.html#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1740,22 +1718,22 @@ isSteamID											</a>
 notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../libraries/lia.util.html#lia.util.notify">
-notify											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../libraries/lia.util.html#lia.util.notify">
 notify											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../libraries/lia.util.html#lia.util.notify">
+notify											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
 											<a href="../libraries/lia.util.html#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../libraries/lia.util.html#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
@@ -1995,12 +1973,12 @@ canSeeEntity											</a>
 clearNetVars											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getDoorPartner">
 getDoorPartner											</a>
 										</li>
@@ -2010,12 +1988,12 @@ getDoorPartner											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2040,12 +2018,12 @@ inTrace											</a>
 isChair											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Entity.html#isDoor">
 isDoor											</a>
 										</li>
@@ -2378,12 +2356,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../classes/Item.html#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../classes/Item.html#getName">
 getName											</a>
 										</li>
@@ -3007,6 +2985,164 @@ end
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="CanPlayerAccessDoor">
+					<h1><span class="realm shared"></span></span>GENERAL:CanPlayerAccessDoor(client, door, access)</h1>
+				</a>
+
+					<p>Called when a player tries to use abilities on the door, such as locking.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> The client trying something on the door.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">door</span>
+
+									<span class="tag"><a class="type" href="../classes/Entity.html#">Entity</a></span>
+
+
+								<p> The door entity itself.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">access</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> The access level used when called.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not to allow the client access.</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerAccessDoor(client, door, access)
+    return true -- Always allow access.
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanPlayerAccessVendor">
+					<h1><span class="realm server"></span></span>GENERAL:CanPlayerAccessVendor(activator)</h1>
+				</a>
+
+					<p>Determines whether a player is allowed to access a vendor entity.
+ This hook can be used to implement custom checks to determine if a player is
+ allowed to access a specific vendor entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">activator</span>
+
+
+
+								<p> The player attempting to access the vendor</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanPlayerCreateCharacter">
+					<h1><span class="realm server"></span></span>GENERAL:CanPlayerCreateCharacter(client)</h1>
+				</a>
+
+					<p>Whether or not a player is allowed to create a new character.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> Player attempting to create a new character</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p> Whether or not the player is allowed to create the character. This function defaults to <code>true</code>, so you
+ should only ever return <code>false</code> if you're disallowing creation. Otherwise, don't return anything as you'll prevent any other
+ calls to this hook from running.</p>
+							</li>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>Language phrase to use for the error message</p>
+							</li>
+
+							<li>
+									<span class="type">...</span>
+
+								<p>Arguments to use for the language phrase</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerCreateCharacter(client)
+	if (!client:IsAdmin()) then
+		return false, "notNow" -- only allow admins to create a character
+	end
+end
+-- non-admins will see the message "You are not allowed to do this right now!"
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="CanPlayerDropItem">
 					<h1><span class="realm server"></span></span>GENERAL:CanPlayerDropItem(client, item)</h1>
 				</a>
@@ -3023,7 +3159,7 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> Player attempting to drop an item</p>
@@ -3063,6 +3199,75 @@ end
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="CanPlayerEarnSalary">
+					<h1><span class="realm server"></span></span>GENERAL:CanPlayerEarnSalary(client, faction, class)</h1>
+				</a>
+
+					<p>Whether or not a player can earn money at regular intervals.  This hook runs only if the player's character faction has
+ a salary set i.e <code>FACTION.pay</code> is set to something other than <code>0</code> for their faction.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> Player to give money to</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">faction</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> Faction of the player's character</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">class</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> Class of the player's character</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not to allow the player to earn salary</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerEarnSalary(client, faction)
+	return client:IsAdmin() -- Restricts earning salary to admins only.
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="CanPlayerEquipItem">
 					<h1><span class="realm server"></span></span>GENERAL:CanPlayerEquipItem(client, item)</h1>
 				</a>
@@ -3080,7 +3285,7 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> Player attempting to equip the item</p>
@@ -3142,7 +3347,7 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> Player attempting interaction</p>
@@ -3193,6 +3398,74 @@ end
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="CanPlayerJoinClass">
+					<h1><span class="realm shared"></span></span>GENERAL:CanPlayerJoinClass(client, class, info)</h1>
+				</a>
+
+					<p>Whether or not a plyer is allowed to join a class.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> Player attempting to join</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">class</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> ID of the class</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">info</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> The class table</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not to allow the player to join the class</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerJoinClass(client, class, info)
+	return client:IsAdmin() -- Restrict joining classes to admins only.
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="CanPlayerTakeItem">
 					<h1><span class="realm server"></span></span>GENERAL:CanPlayerTakeItem(client, item)</h1>
 				</a>
@@ -3209,7 +3482,7 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> Player attempting to take the item</p>
@@ -3249,6 +3522,50 @@ end
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="CanPlayerThrowPunch">
+					<h1><span class="realm shared"></span></span>GENERAL:CanPlayerThrowPunch(client)</h1>
+				</a>
+
+					<p>Whether or not the player is allowed to punch with the hands SWEP.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> Player attempting throw a punch</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not to allow the player to punch</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerThrowPunch(client)
+	return client:GetCharacter():GetAttribute("str", 0) > 0 -- Only allow players with strength to punch.
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="CanPlayerTradeWithVendor">
 					<h1><span class="realm server"></span></span>GENERAL:CanPlayerTradeWithVendor(client, entity, uniqueID, isSellingToVendor)</h1>
 				</a>
@@ -3265,7 +3582,7 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> Player attempting to trade</p>
@@ -3345,7 +3662,7 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> Player attempting to unequip an item</p>
@@ -3389,6 +3706,266 @@ end
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="CanPlayerUseChar">
+					<h1><span class="realm shared"></span></span>GENERAL:CanPlayerUseChar(client, character)</h1>
+				</a>
+
+					<p>Determines whether a player is allowed to use a specific character.
+ This hook can be used to implement custom checks to determine if a player is
+ allowed to use a particular character.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> The player attempting to use the character</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+
+
+								<p> The character being considered for use</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>Whether the player is allowed to use the character</p>
+							</li>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a> or <span class="type">nil</span>
+
+								<p>If disallowed, a reason for the disallowance; otherwise, nil</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanPlayerUseDoor">
+					<h1><span class="realm server"></span></span>GENERAL:CanPlayerUseDoor(client, entity)</h1>
+				</a>
+
+					<p>Determines whether a player is allowed to use a door entity.
+ This hook can be used to implement custom checks to determine if a player is
+ allowed to use a specific door entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> The player attempting to use the door</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+
+
+								<p> The door entity being considered for use</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>Whether the player is allowed to use the door</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanPlayerViewInventory">
+					<h1><span class="realm  client
+ This hook can be used to implement custom checks to determine if a player is
+ allowed to view their inventory."></span></span>GENERAL:CanPlayerViewInventory()</h1>
+				</a>
+
+					<p>Determines whether a player is allowed to view their inventory.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean Whether the player is allowed to view their inventory</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CharDeleted">
+					<h1><span class="realm server"></span></span>GENERAL:CharDeleted(client, character)</h1>
+				</a>
+
+					<p>Called after a character is deleted.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> The player entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../classes/Character.html#">Character</a></span>
+
+
+								<p> The character being deleted.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CharacterLoaded">
+					<h1><span class="realm shared"></span></span>GENERAL:CharacterLoaded(character)</h1>
+				</a>
+
+					<p>Called when a character is loaded.
+ This function is called after a character has been successfully loaded.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+
+
+								<p> The character that has been loaded</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CharacterPostSave">
+					<h1><span class="realm server"></span></span>GENERAL:CharacterPostSave(character)</h1>
+				</a>
+
+					<p>Called after a character has been saved.
+ This function is called after a character has been successfully saved.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+
+
+								<p> The character that has been saved</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CharacterPreSave">
+					<h1><span class="realm shared"></span></span>GENERAL:CharacterPreSave(character)</h1>
+				</a>
+
+					<p>Called before a character is saved.
+ This function is called before a character is about to be saved.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+
+
+								<p> The character about to be saved</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="CharacterVendorTraded">
 					<h1><span class="realm shared"></span></span>GENERAL:CharacterVendorTraded(client, entity, uniqueID, isSellingToVendor)</h1>
 				</a>
@@ -3407,7 +3984,7 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> The player character trading with the vendor</p>
@@ -3549,6 +4126,126 @@ end
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="PlayerLoadedChar">
+					<h1><span class="realm server"></span></span>GENERAL:PlayerLoadedChar(client, character, currentChar)</h1>
+				</a>
+
+					<p>Called when a player's character is loaded.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> The player entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../classes/Character.html#">Character</a></span>
+
+
+								<p> The character being loaded.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">currentChar</span>
+
+									<span class="tag"><a class="type" href="../classes/Character.html#">Character</a></span>
+
+
+								<p> The current character of the player.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PostCharDelete">
+					<h1><span class="realm server"></span></span>GENERAL:PostCharDelete(client, character)</h1>
+				</a>
+
+					<p>Called after a character is deleted.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> The player entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../classes/Character.html#">Character</a></span>
+
+
+								<p> The character being deleted.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PostDrawInventory">
+					<h1><span class="realm client"></span></span>GENERAL:PostDrawInventory(panel)</h1>
+				</a>
+
+					<p>Called after the player's inventory is drawn.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">panel</span>
+
+									<span class="tag"><span class="type">panel</span></span>
+
+
+								<p> The panel containing the inventory.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="PostLoadData">
 					<h1><span class="realm server"></span></span>GENERAL:PostLoadData()</h1>
 				</a>
@@ -3556,6 +4253,86 @@ end
 					<p>Called after data has been loaded.</p>
 			</header>
 
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PostPlayerLoadedChar">
+					<h1><span class="realm server"></span></span>GENERAL:PostPlayerLoadedChar(client, character, currentChar)</h1>
+				</a>
+
+					<p>Called after a player's character is loaded.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> The player entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../classes/Character.html#">Character</a></span>
+
+
+								<p> The character being loaded.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">currentChar</span>
+
+									<span class="tag"><a class="type" href="../classes/Character.html#">Character</a></span>
+
+
+								<p> The current character of the player.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PostPlayerLoadout">
+					<h1><span class="realm server"></span></span>GENERAL:PostPlayerLoadout(client)</h1>
+				</a>
+
+					<p>Called after a player's loadout is applied.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> The player entity.</p>
+							</li>
+					</ul>
 
 
 
@@ -3578,7 +4355,7 @@ end
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> The player entity who sent the message.</p>
@@ -3626,6 +4403,58 @@ end
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="PrePlayerLoadedChar">
+					<h1><span class="realm server"></span></span>GENERAL:PrePlayerLoadedChar(client, character, currentChar)</h1>
+				</a>
+
+					<p>Called before a player's character is loaded.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> The player entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../classes/Character.html#">Character</a></span>
+
+
+								<p> The character being loaded.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">currentChar</span>
+
+									<span class="tag"><a class="type" href="../classes/Character.html#">Character</a></span>
+
+
+								<p> The current character of the player.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="SaveData">
 					<h1><span class="realm server"></span></span>GENERAL:SaveData()</h1>
 				</a>
@@ -3634,6 +4463,284 @@ end
 			</header>
 
 
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ScreenResolutionChanged">
+					<h1><span class="realm client"></span></span>GENERAL:ScreenResolutionChanged(width, height)</h1>
+				</a>
+
+					<p>Called when the screen resolution changes.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">width</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> number The new width of the screen.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">height</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> number The new height of the screen.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldBarDraw">
+					<h1><span class="realm client"></span></span>GENERAL:ShouldBarDraw(bar)</h1>
+				</a>
+
+					<p>Determines whether a bar should be drawn.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">bar</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> The bar object.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean True if the bar should be drawn, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldClientDrown">
+					<h1><span class="realm server"></span></span>GENERAL:ShouldClientDrown(client)</h1>
+				</a>
+
+					<p>Determines whether a client should drown.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> The player entity.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean True if the client should drown, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldDrawAmmoHUD">
+					<h1><span class="realm client"></span></span>GENERAL:ShouldDrawAmmoHUD(weapon)</h1>
+				</a>
+
+					<p>Whether or not the ammo HUD should be drawn.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">weapon</span>
+
+									<span class="tag"><a class="type" href="../classes/Entity.html#">Entity</a></span>
+
+
+								<p> Weapon the player currently is holding</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not to draw the ammo hud</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:ShouldDrawAmmoHUD(weapon)
+	if (weapon:GetClass() == "weapon_frag") then
+		return false
+	end
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldDrawCrosshair">
+					<h1><span class="realm client"></span></span>GENERAL:ShouldDrawCrosshair(client, weapon)</h1>
+				</a>
+
+					<p>Determines whether the crosshair should be drawn for a specific client and weapon.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> The player entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">weapon</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The weapon entity.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean True if the crosshair should be drawn, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldHideBars">
+					<h1><span class="realm client"></span></span>GENERAL:ShouldHideBars()</h1>
+				</a>
+
+					<p>Determines whether bars should be hidden.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean True if bars should be hidden, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldShowPlayerOnScoreboard">
+					<h1><span class="realm client"></span></span>GENERAL:ShouldShowPlayerOnScoreboard(client)</h1>
+				</a>
+
+					<p>Determines whether a player should be shown on the scoreboard.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
+
+
+								<p> The player entity to be evaluated.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>bool True if the player should be shown on the scoreboard, false otherwise.</p>
+							</li>
+
+				</ul>
 
 
 		</section>
@@ -3718,12 +4825,6 @@ end
 					</ul>
 
 
-				<h3>Example Usage</h3>
-					<pre><code>function MODULE:VendorBuyEvent(client, vendor, itemType, isSellingToVendor, character, price)
-    -- Implement logic to handle a successful purchase from a vendor
-    -- This could involve deducting money, adding the item to the player's inventory, and logging the transaction
-end
-</code></pre>
 
 		</section>
 		<section class="method">
@@ -3807,13 +4908,6 @@ end
 					</ul>
 
 
-				<h3>Example Usage</h3>
-					<pre><code>function MODULE:VendorSellEvent(client, vendor, itemType, _, character, price)
-    -- Implement logic to handle the event where a player sells an item to a vendor
-    -- For example, deducting money from the vendor and adding it to the player's character
-    -- Also, remove the sold item from the player's inventory and update vendor's stock
-end
-</code></pre>
 
 		</section>
 		<section class="method">

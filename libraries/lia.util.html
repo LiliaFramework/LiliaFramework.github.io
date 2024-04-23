@@ -64,59 +64,6 @@ onSpawn											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../hooks/Derma.html">Derma</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm  client
- This hook can be used to implement custom checks to determine if a player is
- allowed to view their inventory."></span>
-											<a href="../hooks/Derma.html#CanPlayerViewInventory">
-CanPlayerViewInventory											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../hooks/Derma.html#PostDrawInventory">
-PostDrawInventory											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../hooks/Derma.html#ScreenResolutionChanged">
-ScreenResolutionChanged											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../hooks/Derma.html#ShouldBarDraw">
-ShouldBarDraw											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../hooks/Derma.html#ShouldDrawAmmoHUD">
-ShouldDrawAmmoHUD											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../hooks/Derma.html#ShouldDrawCrosshair">
-ShouldDrawCrosshair											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../hooks/Derma.html#ShouldHideBars">
-ShouldHideBars											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../hooks/Derma.html#ShouldShowPlayerOnScoreboard">
-ShouldShowPlayerOnScoreboard											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
 									<summary><a href="../hooks/Faction.html">Faction</a></summary>
 
 									<ul>
@@ -166,9 +113,29 @@ onTransferred											</a>
 CanItemBeTransfered											</a>
 										</li>
 										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/General.html#CanPlayerAccessDoor">
+CanPlayerAccessDoor											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#CanPlayerAccessVendor">
+CanPlayerAccessVendor											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#CanPlayerCreateCharacter">
+CanPlayerCreateCharacter											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../hooks/General.html#CanPlayerDropItem">
 CanPlayerDropItem											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#CanPlayerEarnSalary">
+CanPlayerEarnSalary											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -181,9 +148,19 @@ CanPlayerEquipItem											</a>
 CanPlayerInteractItem											</a>
 										</li>
 										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/General.html#CanPlayerJoinClass">
+CanPlayerJoinClass											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../hooks/General.html#CanPlayerTakeItem">
 CanPlayerTakeItem											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/General.html#CanPlayerThrowPunch">
+CanPlayerThrowPunch											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -194,6 +171,43 @@ CanPlayerTradeWithVendor											</a>
 											<span class="realm server"></span>
 											<a href="../hooks/General.html#CanPlayerUnequipItem">
 CanPlayerUnequipItem											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/General.html#CanPlayerUseChar">
+CanPlayerUseChar											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#CanPlayerUseDoor">
+CanPlayerUseDoor											</a>
+										</li>
+										<li>
+											<span class="realm  client
+ This hook can be used to implement custom checks to determine if a player is
+ allowed to view their inventory."></span>
+											<a href="../hooks/General.html#CanPlayerViewInventory">
+CanPlayerViewInventory											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#CharDeleted">
+CharDeleted											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/General.html#CharacterLoaded">
+CharacterLoaded											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#CharacterPostSave">
+CharacterPostSave											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/General.html#CharacterPreSave">
+CharacterPreSave											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -217,8 +231,33 @@ PlayerAccessVendor											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../hooks/General.html#PlayerLoadedChar">
+PlayerLoadedChar											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#PostCharDelete">
+PostCharDelete											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../hooks/General.html#PostDrawInventory">
+PostDrawInventory											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../hooks/General.html#PostLoadData">
 PostLoadData											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#PostPlayerLoadedChar">
+PostPlayerLoadedChar											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#PostPlayerLoadout">
+PostPlayerLoadout											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -227,8 +266,48 @@ PostPlayerSay											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../hooks/General.html#PrePlayerLoadedChar">
+PrePlayerLoadedChar											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../hooks/General.html#SaveData">
 SaveData											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../hooks/General.html#ScreenResolutionChanged">
+ScreenResolutionChanged											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../hooks/General.html#ShouldBarDraw">
+ShouldBarDraw											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../hooks/General.html#ShouldClientDrown">
+ShouldClientDrown											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../hooks/General.html#ShouldDrawAmmoHUD">
+ShouldDrawAmmoHUD											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../hooks/General.html#ShouldDrawCrosshair">
+ShouldDrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../hooks/General.html#ShouldHideBars">
+ShouldHideBars											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../hooks/General.html#ShouldShowPlayerOnScoreboard">
+ShouldShowPlayerOnScoreboard											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -245,107 +324,6 @@ VendorSellEvent											</a>
 											<span class="realm client"></span>
 											<a href="../hooks/General.html#thirdPersonToggled">
 thirdPersonToggled											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../hooks/Player.html">Player</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm shared"></span>
-											<a href="../hooks/Player.html#CanPlayerAccessDoor">
-CanPlayerAccessDoor											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#CanPlayerAccessVendor">
-CanPlayerAccessVendor											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#CanPlayerCreateCharacter">
-CanPlayerCreateCharacter											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#CanPlayerEarnSalary">
-CanPlayerEarnSalary											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../hooks/Player.html#CanPlayerJoinClass">
-CanPlayerJoinClass											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../hooks/Player.html#CanPlayerThrowPunch">
-CanPlayerThrowPunch											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../hooks/Player.html#CanPlayerUseChar">
-CanPlayerUseChar											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#CanPlayerUseDoor">
-CanPlayerUseDoor											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#CharDeleted">
-CharDeleted											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../hooks/Player.html#CharacterLoaded">
-CharacterLoaded											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#CharacterPostSave">
-CharacterPostSave											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../hooks/Player.html#CharacterPreSave">
-CharacterPreSave											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#PlayerLoadedChar">
-PlayerLoadedChar											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#PostCharDelete">
-PostCharDelete											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#PostPlayerLoadedChar">
-PostPlayerLoadedChar											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#PostPlayerLoadout">
-PostPlayerLoadout											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#PrePlayerLoadedChar">
-PrePlayerLoadedChar											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../hooks/Player.html#ShouldClientDrown">
-ShouldClientDrown											</a>
 										</li>
 
 									</ul>
@@ -3068,7 +3046,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">target</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> The player to receive the chat message</p>
@@ -3977,7 +3955,7 @@ end)
 							<li>
 								<span class="tag parameter">entity</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> The client to find empty spaces around</p>
@@ -4141,7 +4119,7 @@ end)
 				<ul>
 
 							<li>
-									<span class="type">Player</span>
+									<a class="type" href="../classes/Player.html#">Player</a>
 
 								<p>The player object if found, nil otherwise</p>
 							</li>
@@ -4180,7 +4158,7 @@ end)
 				<ul>
 
 							<li>
-									<span class="type">Player</span>
+									<a class="type" href="../classes/Player.html#">Player</a>
 
 								<p>The player object if found, nil otherwise</p>
 							</li>
@@ -4255,7 +4233,7 @@ end)
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> The player for which to determine the color</p>
@@ -4543,7 +4521,7 @@ end)
 							<li>
 								<span class="tag parameter">recipient</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> The player to receive the notification</p>
@@ -4611,7 +4589,7 @@ end)
 							<li>
 								<span class="tag parameter">recipient</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><a class="type" href="../classes/Player.html#">Player</a></span>
 
 
 								<p> The player to receive the notification</p>
