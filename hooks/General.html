@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia.class - Lilia Documentation</title>
+		<title>General - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia.class - Lilia Documentation" />
+		<meta property="og:title" content="General - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Helper library for loading&#47;getting class information." />
+			<meta property="og:description" content="General Hooks." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -152,7 +152,7 @@ onTransferred											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../hooks/General.html">General</a></summary>
 
 									<ul>
@@ -911,7 +911,7 @@ timestamp											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../libraries/lia.class.html">lia.class</a></summary>
 
 									<ul>
@@ -2926,25 +2926,92 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia.class</h1>
-	<h2>Helper library for loading/getting class information.</h2>
+	<h1>General</h1>
+	<h2>General Hooks.</h2>
 </header>
 
-<p>Classes are temporary assignments for characters - analogous to a "job" in a faction. For example, you may have a police faction
-in your schema, and have "police recruit" and "police chief" as different classes in your faction. Anyone can join a class in
-their faction by default, but you can restrict this as you need with <code>CLASS.onCanBe</code>.</p>
-
-<p>If you are looking for the class structure, you can find it <a href="https://liliaframework.github.io/manual/structure_class.html">here</a>.</p>
+<p>These hooks are regular hooks that can be used in your schema with <code>SCHEMA:HookName(args)</code>, in your module with
+<code>MODULE:HookName(args)</code>, or in your addon with <code>hook.Add(&quot;HookName&quot;, function(args) end)</code>.
+They can be used for an assorted of reasons, depending on what you are trying to achieve.</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.class.canBe">
-					<h1><span class="realm shared"></span></span>lia.class.canBe(client, class)</h1>
+				<a class="anchor" id="CanItemBeTransfered">
+					<h1><span class="realm  shared
+ This hook allows custom logic to be implemented to determine if an item can be transferred
+ from one inventory to another. It can be used to impose restrictions on item transfers."></span></span>GENERAL:CanItemBeTransfered(item, currentInv, oldInv)</h1>
 				</a>
 
-					<p>Checks if a player can join a particular class.</p>
+					<p>Determines whether an item can be transferred between inventories.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">item</span>
+
+
+
+								<p> The item being transferred</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">currentInv</span>
+
+
+
+								<p> The current inventory from which the item is being transferred</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">oldInv</span>
+
+
+
+								<p> The old inventory to which the item belonged</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean|string Whether the item can be transferred, or false and a reason if not</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function CanItemBeTransfered(item, currentInv, oldInv)
+    -- Implement custom logic to determine if the item can be transferred
+    -- For example, check if the item is allowed to be transferred based on specific conditions
+    -- If allowed, return true; otherwise, return false and a reason
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanPlayerDropItem">
+					<h1><span class="realm server"></span></span>GENERAL:CanPlayerDropItem(client, item)</h1>
+				</a>
+
+					<p>Whether or not a player is allowed to drop the given <code>item</code>.</p>
 			</header>
 
 
@@ -2959,19 +3026,19 @@ their faction by default, but you can restrict this as you need with <code>CLASS
 									<span class="tag"><span class="type">Player</span></span>
 
 
-								<p> The player wanting to join the class.</p>
+								<p> Player attempting to drop an item</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">class</span>
+								<span class="tag parameter">item</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">number</span></span>
 
 
-								<p> The identifier of the class.</p>
+								<p> instance ID of the item being dropped</p>
 							</li>
 					</ul>
 
@@ -2980,28 +3047,28 @@ their faction by default, but you can restrict this as you need with <code>CLASS
 				<ul>
 
 							<li>
-									<span class="tag type">any</span>
+									<span class="type">bool</span>
 
-								<p>bool Whether the player can join the class.</p>
-							</li>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>string Reason for the failure, if any.</p>
+								<p>Whether or not to allow the player to drop the item</p>
 							</li>
 
 				</ul>
 
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerDropItem(client, item)
+	return false -- Never allow dropping items.
+end
+</code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.class.get">
-					<h1><span class="realm shared"></span></span>lia.class.get(identifier)</h1>
+				<a class="anchor" id="CanPlayerEquipItem">
+					<h1><span class="realm server"></span></span>GENERAL:CanPlayerEquipItem(client, item)</h1>
 				</a>
 
-					<p>Retrieves information about a class.</p>
+					<p>Whether or not a player can equip the given <code>item</code>.  This is called for items with <code>outfit</code>, <code>pacoutfit</code>, or <code>weapons</code> as
+ their base. Schemas/modules can utilize this hook for their items.</p>
 			</header>
 
 
@@ -3011,12 +3078,24 @@ their faction by default, but you can restrict this as you need with <code>CLASS
 					<ul>
 
 							<li>
-								<span class="tag parameter">identifier</span>
+								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Player</span></span>
 
 
-								<p> The identifier of the class.</p>
+								<p> Player attempting to equip the item</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">item</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> Item being equipped</p>
 							</li>
 					</ul>
 
@@ -3025,22 +3104,33 @@ their faction by default, but you can restrict this as you need with <code>CLASS
 				<ul>
 
 							<li>
-									<span class="tag type">any</span>
+									<span class="type">bool</span>
 
-								<p>tab Information about the class.</p>
+								<p>Whether or not to allow the player to equip the item</p>
 							</li>
 
 				</ul>
 
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerEquipItem(client, item)
+	return client:IsAdmin() -- Restrict equipping items to admins only.
+end
+</code></pre>
 
+				<h3>See Also</h3>
+				<ul>
+						<li><a href="../hooks/General.html#CanPlayerUnequipItem">CanPlayerUnequipItem</a></li>
+				</ul>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.class.getPlayerCount">
-					<h1><span class="realm shared"></span></span>lia.class.getPlayerCount(class)</h1>
+				<a class="anchor" id="CanPlayerInteractItem">
+					<h1><span class="realm server"></span></span>GENERAL:CanPlayerInteractItem(client, action, item)</h1>
 				</a>
 
-					<p>Retrieves the count of players belonging to a specific class.</p>
+					<p>Whether or not a player is allowed to interact with an item via an inventory action (e.g picking up, dropping, transferring
+ inventories, etc).  Note that this is for an item <em>table</em>, not an item <em>entity</em>. This is called after <a href="../hooks/General.html#CanPlayerDropItem">CanPlayerDropItem</a>
+ and <a href="../hooks/General.html#CanPlayerTakeItem">CanPlayerTakeItem</a>.</p>
 			</header>
 
 
@@ -3050,103 +3140,64 @@ their faction by default, but you can restrict this as you need with <code>CLASS
 					<ul>
 
 							<li>
-								<span class="tag parameter">class</span>
+								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Player</span></span>
 
 
-								<p> The identifier of the class.</p>
+								<p> Player attempting interaction</p>
 							</li>
 					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>int The count of players belonging to the class.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.class.getPlayers">
-					<h1><span class="realm shared"></span></span>lia.class.getPlayers(class)</h1>
-				</a>
-
-					<p>Retrieves a list of players belonging to a specific class.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">class</span>
-
-									<span class="tag"><span class="type">integer</span></span>
-
-
-								<p> The identifier of the class.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>tab List of players belonging to the class.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.class.loadFromDir">
-					<h1><span class="realm shared"></span></span>lia.class.loadFromDir(directory)</h1>
-				</a>
-
-					<p>Loads class information from Lua files in the specified directory.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">directory</span>
+								<span class="tag parameter">action</span>
 
 									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
-								<p> The directory path from which to load class Lua files.</p>
+								<p> The action being performed</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">item</span>
+
+
+
+								<p> Item's instance ID or item table</p>
 							</li>
 					</ul>
 
 
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not to allow the player to interact with the item</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerInteractItem(client, action, item, data)
+	return false -- Disallow interacting with any item.
+end
+</code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.class.retrieveClass">
-					<h1><span class="realm shared"></span></span>lia.class.retrieveClass(class)</h1>
+				<a class="anchor" id="CanPlayerTakeItem">
+					<h1><span class="realm server"></span></span>GENERAL:CanPlayerTakeItem(client, item)</h1>
 				</a>
 
-					<p>Retrieves the identifier of a class based on its unique ID or name.</p>
+					<p>Whether or not a player is allowed to take an item and put it in their inventory.</p>
 			</header>
 
 
@@ -3156,12 +3207,24 @@ their faction by default, but you can restrict this as you need with <code>CLASS
 					<ul>
 
 							<li>
-								<span class="tag parameter">class</span>
+								<span class="tag parameter">client</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">Player</span></span>
 
 
-								<p> The unique ID or name of the class.</p>
+								<p> Player attempting to take the item</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">item</span>
+
+									<span class="tag"><a class="type" href="../classes/Entity.html#">Entity</a></span>
+
+
+								<p> Entity corresponding to the item</p>
 							</li>
 					</ul>
 
@@ -3170,12 +3233,614 @@ their faction by default, but you can restrict this as you need with <code>CLASS
 				<ul>
 
 							<li>
-									<span class="tag type">any</span>
+									<span class="type">bool</span>
 
-								<p>int The identifier of the class if found, nil otherwise.</p>
+								<p>Whether or not to allow the player to take the item</p>
 							</li>
 
 				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerTakeItem(client, item)
+	return !(client:GetMoveType() == MOVETYPE_NOCLIP and !client:InVehicle()) -- Disallow players in observer taking items.
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanPlayerTradeWithVendor">
+					<h1><span class="realm server"></span></span>GENERAL:CanPlayerTradeWithVendor(client, entity, uniqueID, isSellingToVendor)</h1>
+				</a>
+
+					<p>Whether or not a player can trade with a vendor.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><span class="type">Player</span></span>
+
+
+								<p> Player attempting to trade</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../classes/Entity.html#">Entity</a></span>
+
+
+								<p> Vendor entity</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">uniqueID</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The uniqueID of the item being traded.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isSellingToVendor</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+
+								<p> If the client is selling to the vendor</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not to allow the client to trade with the vendor</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerTradeWithVendor(client, entity, uniqueID, isSellingToVendor)
+	return false -- Disallow trading with vendors outright.
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanPlayerUnequipItem">
+					<h1><span class="realm server"></span></span>GENERAL:CanPlayerUnequipItem(client, item)</h1>
+				</a>
+
+					<p>Whether or not a player can unequip an item.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><span class="type">Player</span></span>
+
+
+								<p> Player attempting to unequip an item</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">item</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> Item being unequipped</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not to allow the player to unequip the item</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerUnequipItem(client, item)
+	return false -- Disallow unequipping items.
+end
+</code></pre>
+
+				<h3>See Also</h3>
+				<ul>
+						<li><a href="../hooks/General.html#CanPlayerEquipItem">CanPlayerEquipItem</a></li>
+				</ul>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CharacterVendorTraded">
+					<h1><span class="realm shared"></span></span>GENERAL:CharacterVendorTraded(client, entity, uniqueID, isSellingToVendor)</h1>
+				</a>
+
+					<p>Called when a character trades with a vendor entity.
+ This function can be used to perform additional actions when a character trades
+ with a vendor entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><span class="type">Player</span></span>
+
+
+								<p> The player character trading with the vendor</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+
+
+								<p> The vendor entity being traded with</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">uniqueID</span>
+
+
+
+								<p> The unique identifier of the traded item</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isSellingToVendor</span>
+
+
+
+								<p> Whether the trade involves selling to the vendor</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>function CharacterVendorTraded(client, entity, uniqueID, isSellingToVendor)
+    -- Perform additional actions when a character trades with the vendor
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ItemShowEntityMenu">
+					<h1><span class="realm client"></span></span>GENERAL:ItemShowEntityMenu(entity)</h1>
+				</a>
+
+					<p>Displays the context menu for interacting with an item entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../classes/Entity.html#">Entity</a></span>
+
+
+								<p> The item entity for which the context menu is displayed.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="LoadData">
+					<h1><span class="realm server"></span></span>GENERAL:LoadData()</h1>
+				</a>
+
+					<p>Loads the server data.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PlayerAccessVendor">
+					<h1><span class="realm shared"></span></span>GENERAL:PlayerAccessVendor(client, entity)</h1>
+				</a>
+
+					<p>Called when a player interacts with a vendor entity.
+ This function adds the player to the vendor's receivers list and notifies the player
+ about accessing the vendor.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+
+
+								<p> The player accessing the vendor</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+
+
+								<p> The vendor</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>function PlayerAccessVendor(client, entity)
+    -- Add the player to the vendor's receivers list
+    entity.receivers[#entity.receivers + 1] = client
+
+    -- Notify the player about accessing the vendor
+    if entity.messages[VENDOR_WELCOME] then
+        client:notify(entity:getNetVar("name") .. ": " .. entity.messages[VENDOR_WELCOME])
+    end
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PostLoadData">
+					<h1><span class="realm server"></span></span>GENERAL:PostLoadData()</h1>
+				</a>
+
+					<p>Called after data has been loaded.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PostPlayerSay">
+					<h1><span class="realm server"></span></span>GENERAL:PostPlayerSay(client, message, chatType, anonymous)</h1>
+				</a>
+
+					<p>Called after a player sends a chat message.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><span class="type">Player</span></span>
+
+
+								<p> The player entity who sent the message.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">message</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The message sent by the player.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">chatType</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The type of chat message (e.g., "ic" for in-character, "ooc" for out-of-character).</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">anonymous</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+
+								<p> Whether the message was sent anonymously (true) or not (false).</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="SaveData">
+					<h1><span class="realm server"></span></span>GENERAL:SaveData()</h1>
+				</a>
+
+					<p>Saves the server data.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorBuyEvent">
+					<h1><span class="realm shared"></span></span>GENERAL:VendorBuyEvent(client, vendor, itemType, isSellingToVendor, character, price)</h1>
+				</a>
+
+					<p>Called when a player successfully buys an item from a vendor.
+ This function is called when a player successfully completes a purchase from a vendor.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+
+
+								<p> The player who made the purchase</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">vendor</span>
+
+
+
+								<p> The vendor entity from which the item was bought</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemType</span>
+
+
+
+								<p> The type of item being bought</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isSellingToVendor</span>
+
+
+
+								<p> Indicates whether the player is selling to the vendor (always false in this context)</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+
+
+								<p> The character of the player involved in the trade</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">price</span>
+
+
+
+								<p> The price of the item being bought</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:VendorBuyEvent(client, vendor, itemType, isSellingToVendor, character, price)
+    -- Implement logic to handle a successful purchase from a vendor
+    -- This could involve deducting money, adding the item to the player's inventory, and logging the transaction
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorSellEvent">
+					<h1><span class="realm shared
+ This function handles the event where a player sells an item to a vendor."></span></span>GENERAL:VendorSellEvent(client, vendor, itemType, isSellingToVendor, character, price)</h1>
+				</a>
+
+					<p>Called when a player sells an item to a vendor.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+
+
+								<p> The player selling the item</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">vendor</span>
+
+
+
+								<p> The vendor entity</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemType</span>
+
+
+
+								<p> The type of item being sold</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isSellingToVendor</span>
+
+
+
+								<p> Indicates whether the player is selling to the vendor (always false in this context)</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+
+
+								<p> The character of the player selling the item</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">price</span>
+
+
+
+								<p> The price at which the item is sold</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:VendorSellEvent(client, vendor, itemType, _, character, price)
+    -- Implement logic to handle the event where a player sells an item to a vendor
+    -- For example, deducting money from the vendor and adding it to the player's character
+    -- Also, remove the sold item from the player's inventory and update vendor's stock
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="thirdPersonToggled">
+					<h1><span class="realm client"></span></span>GENERAL:thirdPersonToggled(state)</h1>
+				</a>
+
+					<p>Called when the third person mode is toggled.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">state</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+
+								<p> Indicates whether the third person mode is enabled (<code>true</code>) or disabled (<code>false</code>).</p>
+							</li>
+					</ul>
+
 
 
 		</section>

@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia.class - Lilia Documentation</title>
+		<title>Derma - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia.class - Lilia Documentation" />
+		<meta property="og:title" content="Derma - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Helper library for loading&#47;getting class information." />
+			<meta property="og:description" content="Player Derma." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../ldoc.css" />
@@ -63,7 +63,7 @@ onSpawn											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../hooks/Derma.html">Derma</a></summary>
 
 									<ul>
@@ -911,7 +911,7 @@ timestamp											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../libraries/lia.class.html">lia.class</a></summary>
 
 									<ul>
@@ -2926,25 +2926,213 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia.class</h1>
-	<h2>Helper library for loading/getting class information.</h2>
+	<h1>Derma</h1>
+	<h2>Player Derma.</h2>
 </header>
 
-<p>Classes are temporary assignments for characters - analogous to a "job" in a faction. For example, you may have a police faction
-in your schema, and have "police recruit" and "police chief" as different classes in your faction. Anyone can join a class in
-their faction by default, but you can restrict this as you need with <code>CLASS.onCanBe</code>.</p>
-
-<p>If you are looking for the class structure, you can find it <a href="https://liliaframework.github.io/manual/structure_class.html">here</a>.</p>
+<p>These hooks are meant for derma drawing events. They can be used in your schema with <code>SCHEMA:HookName(args)</code>, in your module with
+<code>MODULE:HookName(args)</code>, or in your addon with <code>hook.Add(&quot;HookName&quot;, function(args) end)</code>.
+They can be used for an assorted of reasons, depending on what you are trying to achieve.</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.class.canBe">
-					<h1><span class="realm shared"></span></span>lia.class.canBe(client, class)</h1>
+				<a class="anchor" id="CanPlayerViewInventory">
+					<h1><span class="realm  client
+ This hook can be used to implement custom checks to determine if a player is
+ allowed to view their inventory."></span></span>DERMA:CanPlayerViewInventory()</h1>
 				</a>
 
-					<p>Checks if a player can join a particular class.</p>
+					<p>Determines whether a player is allowed to view their inventory.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean Whether the player is allowed to view their inventory</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function CanPlayerViewInventory()
+    -- Implement custom logic to determine if the player can view their inventory
+    if not SomeCustomCondition() then
+        return false
+    end
+
+    -- If allowed, return true
+    return true
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PostDrawInventory">
+					<h1><span class="realm client"></span></span>DERMA:PostDrawInventory(panel)</h1>
+				</a>
+
+					<p>Called after the player's inventory is drawn.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">panel</span>
+
+									<span class="tag"><span class="type">panel</span></span>
+
+
+								<p> The panel containing the inventory.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ScreenResolutionChanged">
+					<h1><span class="realm client"></span></span>DERMA:ScreenResolutionChanged(width, height)</h1>
+				</a>
+
+					<p>Called when the screen resolution changes.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">width</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> number The new width of the screen.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">height</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> number The new height of the screen.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldBarDraw">
+					<h1><span class="realm client"></span></span>DERMA:ShouldBarDraw(bar)</h1>
+				</a>
+
+					<p>Determines whether a bar should be drawn.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">bar</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> The bar object.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean True if the bar should be drawn, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldDrawAmmoHUD">
+					<h1><span class="realm client"></span></span>DERMA:ShouldDrawAmmoHUD(weapon)</h1>
+				</a>
+
+					<p>Whether or not the ammo HUD should be drawn.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">weapon</span>
+
+									<span class="tag"><a class="type" href="../classes/Entity.html#">Entity</a></span>
+
+
+								<p> Weapon the player currently is holding</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not to draw the ammo hud</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:ShouldDrawAmmoHUD(weapon)
+	if (weapon:GetClass() == "weapon_frag") then
+		return false
+	end
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldDrawCrosshair">
+					<h1><span class="realm client"></span></span>DERMA:ShouldDrawCrosshair(client, weapon)</h1>
+				</a>
+
+					<p>Determines whether the crosshair should be drawn for a specific client and weapon.</p>
 			</header>
 
 
@@ -2959,209 +3147,19 @@ their faction by default, but you can restrict this as you need with <code>CLASS
 									<span class="tag"><span class="type">Player</span></span>
 
 
-								<p> The player wanting to join the class.</p>
+								<p> The player entity.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">class</span>
-
-									<span class="tag"><span class="type">integer</span></span>
-
-
-								<p> The identifier of the class.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>bool Whether the player can join the class.</p>
-							</li>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>string Reason for the failure, if any.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.class.get">
-					<h1><span class="realm shared"></span></span>lia.class.get(identifier)</h1>
-				</a>
-
-					<p>Retrieves information about a class.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">identifier</span>
-
-									<span class="tag"><span class="type">integer</span></span>
-
-
-								<p> The identifier of the class.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>tab Information about the class.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.class.getPlayerCount">
-					<h1><span class="realm shared"></span></span>lia.class.getPlayerCount(class)</h1>
-				</a>
-
-					<p>Retrieves the count of players belonging to a specific class.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">class</span>
-
-									<span class="tag"><span class="type">integer</span></span>
-
-
-								<p> The identifier of the class.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>int The count of players belonging to the class.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.class.getPlayers">
-					<h1><span class="realm shared"></span></span>lia.class.getPlayers(class)</h1>
-				</a>
-
-					<p>Retrieves a list of players belonging to a specific class.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">class</span>
-
-									<span class="tag"><span class="type">integer</span></span>
-
-
-								<p> The identifier of the class.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>tab List of players belonging to the class.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.class.loadFromDir">
-					<h1><span class="realm shared"></span></span>lia.class.loadFromDir(directory)</h1>
-				</a>
-
-					<p>Loads class information from Lua files in the specified directory.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">directory</span>
+								<span class="tag parameter">weapon</span>
 
 									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
-								<p> The directory path from which to load class Lua files.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.class.retrieveClass">
-					<h1><span class="realm shared"></span></span>lia.class.retrieveClass(class)</h1>
-				</a>
-
-					<p>Retrieves the identifier of a class based on its unique ID or name.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">class</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The unique ID or name of the class.</p>
+								<p> The weapon entity.</p>
 							</li>
 					</ul>
 
@@ -3172,7 +3170,70 @@ their faction by default, but you can restrict this as you need with <code>CLASS
 							<li>
 									<span class="tag type">any</span>
 
-								<p>int The identifier of the class if found, nil otherwise.</p>
+								<p>boolean True if the crosshair should be drawn, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldHideBars">
+					<h1><span class="realm client"></span></span>DERMA:ShouldHideBars()</h1>
+				</a>
+
+					<p>Determines whether bars should be hidden.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean True if bars should be hidden, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldShowPlayerOnScoreboard">
+					<h1><span class="realm client"></span></span>DERMA:ShouldShowPlayerOnScoreboard(client)</h1>
+				</a>
+
+					<p>Determines whether a player should be shown on the scoreboard.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><span class="type">Player</span></span>
+
+
+								<p> The player entity to be evaluated.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>bool True if the player should be shown on the scoreboard, false otherwise.</p>
 							</li>
 
 				</ul>
