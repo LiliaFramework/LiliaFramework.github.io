@@ -9,12 +9,11 @@
 		<meta property="og:site_name" content="Lilia Documentation" />
 
 			<meta property="og:description" content="
+- Fixed Vendor Crash Exploit that used Item Spawning Spam.
 
-- Fixed Vendor Crash Exploit that used Item Spawning Spam
+- Limited Commands to Permissions, rather than just [IsAdmin](https:&#47;&#47;wiki.facepunch.com&#47;gmod&#47;Player:IsAdmin) or [IsSuperAdmin](https:&#47;&#47;wiki.facepunch.com&#47;gmod&#47;Player:IsSuperAdmin).
 
-- Limited Commands to UserGroups, rather than just [IsAdmin](https:&#47;&#47;wiki.facepunch.com&#47;gmod&#47;Player:IsAdmin) or [IsSuperAdmin](https:&#47;&#47;wiki.facepunch.com&#47;gmod&#47;Player:IsSuperAdmin)
-
-- Added Seve..." />
+- Added Sev..." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -3101,44 +3100,48 @@ takePermFlags											</a>
 					<div class="wrapper">
 
 <h1>Improves &amp; Fixes</h1>
+<p>- Fixed Vendor Crash Exploit that used Item Spawning Spam.</p>
 
 <ul>
-    <li><p>Fixed Vendor Crash Exploit that used Item Spawning Spam </p></li>
-    <li><p>Limited Commands to UserGroups, rather than just <a href="https://wiki.facepunch.com/gmod/Player:IsAdmin">IsAdmin</a> or <a href="https://wiki.facepunch.com/gmod/Player:IsSuperAdmin">IsSuperAdmin</a></p></li>
-    <li><p>Added Several New Commands, both for utility as well as adminstration</p></li>
-    <li><p>Added New Chat Types</p></li>
-    <li><p>Made Config Hardcoded, avoiding any potential lack of sync on configuration</p></li>
-    <li><p>Improved Logging System, adding an log viewing menu</p></li>
-    <li><p>Moved all permissions to CAMI, tying them with UserGroups by doing such.</p></li>
-    <li><p>Made PlayerModel animations default, instead of Citizen animations</p></li>
-    <li><p>Improved F1 Menu and Main Menu, allowing for a extreme customization by simply modifying your config files.</p></li>
-    <li><p>Rewrote Notification Derma</p></li>
-    <li><p>Expanded on Faction and Classes System</p></li>
-    <li><p>Fixed Several Exploits within the Inventory, like equipping weapons within inventories that aren't directly connected to the player </p></li>
-    <li><p>Added Multiple Player, Character and Entity Meta to allow for simpler coding.</p></li>
-    <li><p>Improved Recognition, adding the ability to use Fake Names</p></li>
-    <li><p>Adding Voice Tones, allowing for you to Yell, Whisper and Talk normally over Voice Chat</p></li>
-    <li><p>Added an Interaction Menu, allowing players to run customizable tasks by simply walking up to a player and holding tab</p></li>
-    <li><p>Improved Scoreboard, adding Players Online, Staff on Duty Online and Staff Online</p></li>
-    <li><p>Added a Crash Screen</p></li>
-    <li><p>Added Multi Faction Support to Doors</p></li>
-    <li><p>Added a Third Person Bind</p></li>
-    <li><p>Added an Weapon Item Generator</p></li>
-    <li><p>Bettered Protection towards several exploits, both originally on the forked framework as well on GMOD</p></li>
-    <li><p>Categorized Permissions, allowing for stuff like limiting PhysGun Pickups to certain entities or using certain tools</p></li>
-    <li><p>Added an Anti Alting System</p></li>
-    <li><p>Added an Anti Cheat</p></li>
-    <li><p>Improved Perfomance by Tweaking Rendering</p></li>
-    <li><p>Limited Vendor Editting</p></li>
-    <li><p>Added Blacklisting and Whitelisting</p></li>
-    <li><p>Added Workshop Downloader</p></li>
-    <li><p>Added NetMessage Logging </p></li>
-    <li><p>Added Console Command Logging  </p></li>
-    <li><p>Created an Expanded Wiki for Players to be able to understand the framework easily</p></li>
+    <li><p>Limited Commands to Permissions, rather than just <a href="https://wiki.facepunch.com/gmod/Player:IsAdmin">IsAdmin</a> or <a href="https://wiki.facepunch.com/gmod/Player:IsSuperAdmin">IsSuperAdmin</a>.</p></li>
+    <li><p>Added Several New Commands, both for utility as well as administration.</p></li>
+    <li><p>Added New Chat Types.</p></li>
+    <li><p>Made Config Hardcoded, avoiding any potential lack of sync on configuration.</p></li>
+    <li><p>Improved Logging System, adding a log viewing menu.</p></li>
+    <li><p>Moved all permissions to CAMI, tying them with UserGroups by doing so.</p></li>
+    <li><p>Made PlayerModel animations default, instead of Citizen animations, effectively making all models with player animations work by default.</p></li>
+    <li><p>Improved F1 Menu and Main Menu, allowing for extreme customization by simply modifying your config files.</p></li>
+    <li><p>Rewrote Notification Derma.</p></li>
+    <li><p>Expanded on Faction and Classes System, by adding several new parameters for customization. Check <a href="https://liliaframework.github.io/manual/structure_faction/">Faction Structure</a> and <a href="https://liliaframework.github.io/manual/structure_class/">Class Structure</a> for more information.</p></li>
+    <li><p>Fixed Several Exploits within the Inventory, like equipping weapons within inventories that aren't directly connected to the player.</p></li>
+    <li><p>Added Multiple Player, Character, and Entity Meta to allow for simpler coding.</p></li>
+    <li><p>Improved Recognition, adding the ability to use Fake Names.</p></li>
+    <li><p>Adding Voice Tones, allowing for you to Yell, Whisper, and Talk normally over Voice Chat.</p></li>
+    <li><p>Added an Interaction Menu, allowing players to run customizable tasks by simply walking up to a player and holding tab.</p></li>
+    <li><p>Improved Scoreboard, adding Players Online, Staff on Duty Online, and Staff Online.</p></li>
+    <li><p>Added a Crash Screen.</p></li>
+    <li><p>Added Multi-Faction Support to Doors.</p></li>
+    <li><p>Added a Third-Person Bind.</p></li>
+    <li><p>Added a Weapon Item Generator.</p></li>
+    <li><p>Bettered Protection towards several exploits, both originally on the forked framework as well as on GMOD.</p></li>
+    <li><p>Categorized Permissions, allowing for stuff like limiting PhysGun Pickups to certain entities or using certain tools.</p></li>
+    <li><p>Added an Anti-Alting System.</p></li>
+    <li><p>Added an Anti-Cheat.</p></li>
+    <li><p>Improved Clientside Performance by Tweaking Rendering.</p></li>
+    <li><p>Improved Serverside Performance by Optimizing several functions, as well as loops.</p></li>
+    <li><p>Limited Vendor Editing to Permissions.</p></li>
+    <li><p>Added Blacklisting and Whitelisting.</p></li>
+    <li><p>Added Workshop Downloader.</p></li>
+    <li><p>Added NetMessage Logging.</p></li>
+    <li><p>Added Console Command Logging.</p></li>
+    <li><p>Added Downtime Notifier.</p></li>
+    <li><p>Added Modules Configuration explanations to wiki.</p></li>
+    <li><p>Added Command List to wiki.</p></li>
+    <li><p>Added new item bases. Check <a href="https://liliaframework.github.io/manual/structure_items/">Item Structure</a> for more information.</p></li>
+    <li><p>Created an extremely detailed wiki so that even the average joe can understand the framework easily.</p></li>
 </ul>
 
-<p><a name="__Addons_with_Improved_Compatibility"></a></p>
-<h2># Addons with Improved Compatibility</h2>
+<h3>Addons with Improved Compatibility</h3>
 
 <h4>Prone Mod</h4>
 
