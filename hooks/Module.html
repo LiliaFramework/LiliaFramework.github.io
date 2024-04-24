@@ -196,6 +196,11 @@ CharDeleted											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../hooks/Module.html#CharPreSave">
+CharPreSave											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../hooks/Module.html#CharacterLoaded">
 CharacterLoaded											</a>
 										</li>
@@ -203,11 +208,6 @@ CharacterLoaded											</a>
 											<span class="realm server"></span>
 											<a href="../hooks/Module.html#CharacterPostSave">
 CharacterPostSave											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../hooks/Module.html#CharacterPreSave">
-CharacterPreSave											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -3917,6 +3917,34 @@ end
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="CharPreSave">
+					<h1><span class="realm shared"></span></span>MODULE:CharPreSave(character)</h1>
+				</a>
+
+					<p>Called before a character is saved.
+ This function is called before a character is about to be saved.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+
+
+								<p> The character about to be saved</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="CharacterLoaded">
 					<h1><span class="realm shared"></span></span>MODULE:CharacterLoaded(character)</h1>
 				</a>
@@ -3965,34 +3993,6 @@ end
 
 
 								<p> The character that has been saved</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="CharacterPreSave">
-					<h1><span class="realm shared"></span></span>MODULE:CharacterPreSave(character)</h1>
-				</a>
-
-					<p>Called before a character is saved.
- This function is called before a character is about to be saved.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">character</span>
-
-
-
-								<p> The character about to be saved</p>
 							</li>
 					</ul>
 
