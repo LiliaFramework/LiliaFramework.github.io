@@ -196,18 +196,18 @@ CharDeleted											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
-											<a href="../hooks/Module.html#CharPreSave">
-CharPreSave											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../hooks/Module.html#CharacterLoaded">
-CharacterLoaded											</a>
+											<a href="../hooks/Module.html#CharLoaded">
+CharLoaded											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../hooks/Module.html#CharacterPostSave">
-CharacterPostSave											</a>
+											<a href="../hooks/Module.html#CharPostSave">
+CharPostSave											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../hooks/Module.html#CharPreSave">
+CharPreSave											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -3917,36 +3917,8 @@ end
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="CharPreSave">
-					<h1><span class="realm shared"></span></span>MODULE:CharPreSave(character)</h1>
-				</a>
-
-					<p>Called before a character is saved.
- This function is called before a character is about to be saved.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">character</span>
-
-
-
-								<p> The character about to be saved</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="CharacterLoaded">
-					<h1><span class="realm shared"></span></span>MODULE:CharacterLoaded(character)</h1>
+				<a class="anchor" id="CharLoaded">
+					<h1><span class="realm shared"></span></span>MODULE:CharLoaded(character)</h1>
 				</a>
 
 					<p>Called when a character is loaded.
@@ -3973,8 +3945,8 @@ end
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="CharacterPostSave">
-					<h1><span class="realm server"></span></span>MODULE:CharacterPostSave(character)</h1>
+				<a class="anchor" id="CharPostSave">
+					<h1><span class="realm server"></span></span>MODULE:CharPostSave(character)</h1>
 				</a>
 
 					<p>Called after a character has been saved.
@@ -3993,6 +3965,34 @@ end
 
 
 								<p> The character that has been saved</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CharPreSave">
+					<h1><span class="realm shared"></span></span>MODULE:CharPreSave(character)</h1>
+				</a>
+
+					<p>Called before a character is saved.
+ This function is called before a character is about to be saved.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+
+
+								<p> The character about to be saved</p>
 							</li>
 					</ul>
 
