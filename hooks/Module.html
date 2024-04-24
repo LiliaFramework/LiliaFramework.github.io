@@ -4496,6 +4496,11 @@ end
 end
 </code></pre>
 
+				<h3>See Also</h3>
+				<ul>
+						<li><a href="../hooks/Module.html#VendorSellEvent">VendorSellEvent</a></li>
+						<li><a href="../hooks/Module.html#VendorBuyEvent">VendorBuyEvent</a></li>
+				</ul>
 		</section>
 		<section class="method">
 			<header>
@@ -4617,6 +4622,10 @@ end
 					<h1><span class="realm server"></span></span>MODULE:DatabaseConnected()</h1>
 				</a>
 
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
 					<p>Called when the database has been successfully connected.</p>
 			</header>
 
@@ -5013,6 +5022,10 @@ end
 					<h1><span class="realm client"></span></span>MODULE:LoadLiliaFonts(font, genericFont)</h1>
 				</a>
 
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
 					<p>Loads Core Lilia fonts for the client.</p>
 			</header>
 
@@ -5386,6 +5399,10 @@ end
 					<h1><span class="realm server"></span></span>MODULE:OnWipeTables()</h1>
 				</a>
 
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
 					<p>Called after wiping tables.</p>
 			</header>
 
@@ -5432,6 +5449,17 @@ end
 							</li>
 					</ul>
 
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the player can access the vendor.</p>
+							</li>
+
+				</ul>
 
 				<h3>Example Usage</h3>
 					<pre><code>function PlayerAccessVendor(client, entity)
@@ -5959,6 +5987,10 @@ end
 					<h1><span class="realm server"></span></span>MODULE:SetupDatabase()</h1>
 				</a>
 
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
 					<p>Sets up the database.</p>
 			</header>
 
@@ -6317,6 +6349,10 @@ end
 
 
 
+				<h3>See Also</h3>
+				<ul>
+						<li><a href="../hooks/Module.html#VendorSellEvent">VendorSellEvent</a></li>
+				</ul>
 		</section>
 		<section class="method">
 			<header>
@@ -6406,6 +6442,10 @@ end
 
 
 
+				<h3>See Also</h3>
+				<ul>
+						<li><a href="../hooks/Module.html#VendorBuyEvent">VendorBuyEvent</a></li>
+				</ul>
 		</section>
 		<section class="method">
 			<header>
