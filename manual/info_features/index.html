@@ -1603,12 +1603,12 @@ L											</a>
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -1752,12 +1752,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1913,22 +1913,22 @@ isSteamID											</a>
 notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.util/#lia.util.notify">
-notify											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#lia.util.notify">
 notify											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../../libraries/lia.util/#lia.util.notify">
+notify											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
@@ -2168,12 +2168,12 @@ canSeeEntity											</a>
 clearNetVars											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../classes/entity/#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../classes/entity/#getDoorPartner">
 getDoorPartner											</a>
 										</li>
@@ -2183,12 +2183,12 @@ getDoorPartner											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../classes/entity/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../classes/entity/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2213,12 +2213,12 @@ inTrace											</a>
 isChair											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../classes/entity/#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../classes/entity/#isDoor">
 isDoor											</a>
 										</li>
@@ -2551,12 +2551,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../classes/item/#getName">
 getName											</a>
 										</li>
@@ -3044,6 +3044,12 @@ takePermFlags											</a>
 
 					<ul>
 							<li>
+									<a href="../../manual/info_compatibility/">Addons with Improved Compatibility</a>
+
+
+
+							</li>
+							<li>
 									<a href="../../manual/info_converting-from-nutscript/">Information - Porting From NS</a>
 
 
@@ -3108,7 +3114,7 @@ takePermFlags											</a>
     <li><p>Added New Chat Types.</p></li>
     <li><p>Made Config Hardcoded, avoiding any potential lack of sync on configuration.</p></li>
     <li><p>Improved Logging System, adding a log viewing menu.</p></li>
-    <li><p>Moved all permissions to CAMI, tying them with UserGroups by doing so.</p></li>
+    <li><p>Moved all permissions to <a href="https://github.com/glua/CAMI">CAMI</a>, tying them with UserGroups by doing so.</p></li>
     <li><p>Made PlayerModel animations default, instead of Citizen animations, effectively making all models with player animations work by default.</p></li>
     <li><p>Improved F1 Menu and Main Menu, allowing for extreme customization by simply modifying your config files.</p></li>
     <li><p>Rewrote Notification Derma.</p></li>
@@ -3139,106 +3145,7 @@ takePermFlags											</a>
     <li><p>Added Command List to wiki.</p></li>
     <li><p>Added new item bases. Check <a href="https://liliaframework.github.io/manual/structure_items/">Item Structure</a> for more information.</p></li>
     <li><p>Created an extremely detailed wiki so that even the average joe can understand the framework easily.</p></li>
-</ul>
-
-<h3>Addons with Improved Compatibility</h3>
-
-<h4>Prone Mod</h4>
-
-<ul>
-    <li><p><strong>Addon URL:</strong> <a href="https://github.com/gspetrou/Prone-Mod">Prone Mod</a></p></li>
-    <li><p><strong>Compatibility Added:</strong> Made animations reset at proper times.</p></li>
-</ul>
-
-<h4>ULX</h4>
-
-<ul>
-    <li><p><strong>Addon URL:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=557962280">ULX</a></p></li>
-    <li><p><strong>Compatibility Added:</strong> Removed obsolete hooks.</p></li>
-</ul>
-
-<h4>SAM</h4>
-
-<ul>
-    <li><p><strong>Addon URL:</strong> <a href="https://www.gmodstore.com/market/view/sam">SAM</a></p></li>
-    <li><p><strong>Compatibility Added:</strong> Implemented an auto administrator setter and fixed prop limits to work with SAM.</p></li>
-</ul>
-
-<h4>Serverguard</h4>
-
-<ul>
-    <li><p><strong>Addon URL:</strong> <a href="https://www.gmodstore.com/market/view/serverguard">Serverguard</a></p></li>
-    <li><p><strong>Compatibility Added:</strong> Allowed CAMI (permissions system) to work with Lilia and Serverguard.</p></li>
-</ul>
-
-<h4>Advanced Dupe 2</h4>
-
-<ul>
-    <li><p><strong>Addon URL:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=773402917">Advanced Dupe 2</a></p></li>
-    <li><p><strong>Compatibility Added:</strong> Fixed several crashing exploits.</p></li>
-</ul>
-
-<h4>Advanced Dupe 1</h4>
-
-<ul>
-    <li><p><strong>Addon URL:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=163806212">Advanced Dupe 1</a></p></li>
-    <li><p><strong>Compatibility Added:</strong> Fixed several crashing exploits.</p></li>
-</ul>
-
-<h4>PermaProps</h4>
-
-<ul>
-    <li><p><strong>Addon URL:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=220336312">PermaProps</a></p></li>
-    <li><p><strong>Compatibility Added:</strong> Removed the ability to PermaProp certain restricted entities.</p></li>
-</ul>
-
-<h4>PAC3</h4>
-
-<ul>
-    <li><p><strong>Addon URL:</strong> <a href="https://steamcommunity.com/workshop/filedetails/?id=104691717">PAC3</a></p></li>
-    <li><p><strong>Compatibility Added:</strong> Restricted PAC to a flag and permission, and made it reset when needed.</p></li>
-</ul>
-
-<h4>Simfphys Vehicles</h4>
-
-<ul>
-    <li><p><strong>Addon URL:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=771487490">Simfphys Vehicles</a></p></li>
-    <li><p><strong>Compatibility Added:</strong> Added car crash damage and implemented some console commands for performance.</p></li>
-</ul>
-
-<h4>Sit Anywhere</h4>
-
-<ul>
-    <li><p><strong>Addon URL:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=108176967">Sit Anywhere</a></p></li>
-    <li><p><strong>Compatibility Added:</strong> Removed the ability to sit on certain mingy locations and added damage on seats by default.</p></li>
-</ul>
-
-<h4>Stormfox 2</h4>
-
-<ul>
-    <li><p><strong>Addon URL:</strong> <a href="https://steamcommunity.com/workshop/filedetails/?id=2447774443">Stormfox 2</a></p></li>
-    <li><p><strong>Compatibility Added:</strong> Improved SF2 lighting reload.</p></li>
-</ul>
-
-<h4>3D Stream Radio</h4>
-
-<ul>
-    <li><p><strong>Addon URL:</strong> <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=246756300">3D Stream Radio</a></p></li>
-    <li><p><strong>Compatibility Added:</strong> Added ability for radios to save on the map.</p></li>
-</ul>
-
-<h4>VCMod</h4>
-
-<ul>
-    <li><p><strong>Addon URL:</strong> <a href="https://www.gmodstore.com/market/view/vcmod-main">VCMod Main</a></p></li>
-    <li><p><strong>Compatibility Added:</strong> Added monetary compatibility.</p></li>
-</ul>
-
-<h4>VJBase</h4>
-
-<ul>
-    <li><p><strong>Addon URL:</strong> <a href="https://steamcommunity.com/workshop/filedetails/?id=131759821">VJBase</a></p></li>
-    <li><p><strong>Compatibility Added:</strong> Made the server enable certain settings by default, improving performance, and removed some harmful hooks.</p></li>
+    <li><p>Extensive <a href="https://liliaframework.github.io/manual/info_compatibility">Compatibility List</a></p></li>
 </ul>
 
 					</div>
