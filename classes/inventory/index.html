@@ -3313,7 +3313,7 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 		<section class="method">
 			<header>
 				<a class="anchor" id="addItem">
-					<h1><span class="realm server"></span></span>Inventory:addItem(item)</h1>
+					<h1><span class="realm server"></span></span>Inventory:addItem(item, noReplicate)</h1>
 				</a>
 
 					<p>Adds an item to the inventory.</p>
@@ -3328,10 +3328,22 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 							<li>
 								<span class="tag parameter">item</span>
 
-									<span class="tag"><a class="type" href="../../classes/item/#">Item</a></span>
+									<span class="tag"><span class="type">item</span></span>
 
 
-								<p> The item to add to the inventory.</p>
+								<p> to add to the inventory.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">noReplicate</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+
+								<p> Set to true to prevent OnItemAdded to be called on the added item.</p>
 							</li>
 					</ul>
 
