@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>AmmoSave - Lilia Documentation</title>
+		<title>DatableConnection - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="AmmoSave - Lilia Documentation" />
+		<meta property="og:title" content="DatableConnection - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="**Configuration Values:**." />
+			<meta property="og:description" content="**Connection Details:**" />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -528,7 +528,7 @@ thirdPersonToggled											</a>
 
 					<ul>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../configurations/ammosave/">AmmoSave</a></summary>
 
 									<ul>
@@ -583,7 +583,7 @@ thirdPersonToggled											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/datableconnection/">DatableConnection</a></summary>
 
 									<ul>
@@ -1620,12 +1620,12 @@ L											</a>
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -1769,12 +1769,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1930,22 +1930,22 @@ isSteamID											</a>
 notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.util/#lia.util.notify">
-notify											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#lia.util.notify">
 notify											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../../libraries/lia.util/#lia.util.notify">
+notify											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
@@ -2563,12 +2563,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../classes/item/#getName">
 getName											</a>
 										</li>
@@ -3117,19 +3117,99 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>AmmoSave</h1>
-	<h2><strong>Configuration Values:</strong>.</h2>
+	<h1>DatableConnection</h1>
+	<h2><strong>Connection Details:</strong></h2>
 </header>
 
 <p>
 
-
-<ul>
-    <li><p>KeepAmmoOnDeath: Should ammunition be kept on character death? | bool.</p></li>
-    <li><p>SaveCharacterAmmo: Should ammunition be kept on character disconnection? | bool.</p></li>
-</ul>
 </p>
 
+	<h1 class="title">Tables</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="DefaultDatabaseDetails">
+					<h1><span class="realm server"></span></span>DefaultDatabaseDetails</h1>
+				</a>
+
+					<p>Default database configuration for Lilia.
+ This table defines the default settings for connecting to the database used in Lilia.</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">module</span>
+
+
+
+								<p> Database module to be used (sqlite or mysqloo)</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">hostname</span>
+
+
+
+								<p> Hostname of the database server</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">username</span>
+
+
+
+								<p> Username for accessing the database</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">password</span>
+
+
+
+								<p> Password for accessing the database</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">database</span>
+
+
+
+								<p> Name of the database to connect to</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">port</span>
+
+
+
+								<p> Port number for the database server</p>
+							</li>
+					</ul>
+
+
+
+		</section>
 
 					</div>
 			</article>

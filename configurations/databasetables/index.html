@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>AmmoSave - Lilia Documentation</title>
+		<title>DatabaseTables - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="AmmoSave - Lilia Documentation" />
+		<meta property="og:title" content="DatabaseTables - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="**Configuration Values:**." />
+			<meta property="og:description" content="**Default Values:**" />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -528,7 +528,7 @@ thirdPersonToggled											</a>
 
 					<ul>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../configurations/ammosave/">AmmoSave</a></summary>
 
 									<ul>
@@ -572,7 +572,7 @@ thirdPersonToggled											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/databasetables/">DatabaseTables</a></summary>
 
 									<ul>
@@ -3117,19 +3117,77 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>AmmoSave</h1>
-	<h2><strong>Configuration Values:</strong>.</h2>
+	<h1>DatabaseTables</h1>
+	<h2><strong>Default Values:</strong></h2>
 </header>
 
 <p>
 
-
-<ul>
-    <li><p>KeepAmmoOnDeath: Should ammunition be kept on character death? | bool.</p></li>
-    <li><p>SaveCharacterAmmo: Should ammunition be kept on character disconnection? | bool.</p></li>
-</ul>
 </p>
 
+	<h1 class="title">Tables</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="DatabaseTables">
+					<h1><span class="realm server"></span></span>DatabaseTables</h1>
+				</a>
+
+					<p>Default tables for database tables.
+ These tables define the structure of the database tables used in Lilia.</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">MySQLTableCreate</span>
+
+
+
+								<p> SQL query for creating tables in MySQL database | string</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">SqlLiteTableCreate</span>
+
+
+
+								<p> SQL query for creating tables in SQLite database | string</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">SqlLiteTableDrop</span>
+
+
+
+								<p> SQL query for dropping tables in SQLite database | string</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">MySQLTableDrop</span>
+
+
+
+								<p> SQL query for dropping tables in MySQL database | string</p>
+							</li>
+					</ul>
+
+
+
+		</section>
 
 					</div>
 			</article>
