@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>F1Menu - Lilia Documentation</title>
+		<title>items - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="F1Menu - Lilia Documentation" />
+		<meta property="og:title" content="items - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for F1Menu Module." />
+			<meta property="og:description" content="Structure of Bag Item Base." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -627,7 +627,7 @@ thirdPersonToggled											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../configurations/f1menu/">F1Menu</a></summary>
 
 									<ul>
@@ -902,7 +902,7 @@ thirdPersonToggled											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/items/">items</a></summary>
 
 									<ul>
@@ -913,7 +913,7 @@ thirdPersonToggled											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/items/">items</a></summary>
 
 									<ul>
@@ -924,7 +924,7 @@ thirdPersonToggled											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/items/">items</a></summary>
 
 									<ul>
@@ -1653,12 +1653,12 @@ L											</a>
 L											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -1802,12 +1802,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1963,22 +1963,22 @@ isSteamID											</a>
 notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.util/#lia.util.notify">
-notify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#lia.util.notify">
 notify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../libraries/lia.util/#lia.util.notify">
+notify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
@@ -2596,12 +2596,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../classes/item/#getName">
 getName											</a>
 										</li>
@@ -3150,8 +3150,8 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>F1Menu</h1>
-	<h2>Configuration for F1Menu Module.</h2>
+	<h1>items</h1>
+	<h2>Structure of Bag Item Base.</h2>
 </header>
 
 <p>
@@ -3166,7 +3166,7 @@ takePermFlags											</a>
 					<h1><span class="realm shared"></span></span>Configuration</h1>
 				</a>
 
-					<p>This table defines the default settings for the F1Menu Module.</p>
+					<p>This table defines the default structure of the bag item base.</p>
 			</header>
 
 
@@ -3176,88 +3176,121 @@ takePermFlags											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">KickOnEnteringMainMenu</span>
+								<span class="tag parameter">name</span>
 
 
 
-								<p> Set Music Volume on Main Menu | <strong>bool</strong></p>
+								<p> Name of the item | <strong>string</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">F1ThirdPersonEnabled</span>
+								<span class="tag parameter">desc</span>
 
 
 
-								<p> Set Music Volume on Main Menu | <strong>bool</strong></p>
+								<p> Description of the item | <strong>string</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">F1DisplayModel</span>
+								<span class="tag parameter">model</span>
 
 
 
-								<p> Set Music Volume on Main Menu | <strong>bool</strong></p>
+								<p> Model path of the item | <strong>string</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">RulesEnabled</span>
+								<span class="tag parameter">width</span>
 
 
 
-								<p> Set Music Volume on Main Menu | <strong>bool</strong></p>
+								<p> Width of the item | <strong>number</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">TutorialEnabled</span>
+								<span class="tag parameter">height</span>
 
 
 
-								<p> Set Music Volume on Main Menu | <strong>bool</strong></p>
+								<p> Height of the item | <strong>number</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">FAQEnabled</span>
+								<span class="tag parameter">invWidth</span>
 
 
 
-								<p> Set Music Volume on Main Menu | <strong>bool</strong></p>
+								<p> Inventory Width of the bag | <strong>number</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">InfoMenuLocation</span>
+								<span class="tag parameter">invHeight</span>
 
 
 
-								<p> What corner does your Information appear on (TopLeft, TopRight, BottomRight, BottomCenter)| <strong>string</strong></p>
+								<p> Inventory Height of the bag | <strong>number</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">FAQQuestions</span>
+								<span class="tag parameter">category</span>
 
 
 
-								<p> Set Music Volume on Main Menu | <strong>table</strong></p>
+								<p> Category of the item | <strong>string</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">RequiredSkillLevels</span>
+
+
+
+								<p> Required attribute levels for using the item | <strong>table</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">BagSound</span>
+
+
+
+								<p> Sound that plays when opening the bag | <strong>string</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">pacData</span>
+
+
+
+								<p> PAC3 data that gets implemented when equipping the bag | <strong>table</strong></p>
 							</li>
 					</ul>
 
