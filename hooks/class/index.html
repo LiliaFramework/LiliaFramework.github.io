@@ -40,23 +40,23 @@
 
 										<li>
 											<span class="realm shared"></span>
-											<a href="../../hooks/class/#onCanBe">
-onCanBe											</a>
+											<a href="../../hooks/class/#OnCanBe">
+OnCanBe											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks/class/#onLeave">
-onLeave											</a>
+											<a href="../../hooks/class/#OnLeave">
+OnLeave											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks/class/#onSet">
-onSet											</a>
+											<a href="../../hooks/class/#OnSet">
+OnSet											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks/class/#onSpawn">
-onSpawn											</a>
+											<a href="../../hooks/class/#OnSpawn">
+OnSpawn											</a>
 										</li>
 
 									</ul>
@@ -70,6 +70,21 @@ onSpawn											</a>
 
 
 										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks/faction/#OnCharCreated">
+OnCharCreated											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks/faction/#OnSpawn">
+OnSpawn											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks/faction/#OnTransferred">
+OnTransferred											</a>
+										</li>
+										<li>
 											<span class="realm shared"></span>
 											<a href="../../hooks/faction/#getDefaultDesc">
 getDefaultDesc											</a>
@@ -78,21 +93,6 @@ getDefaultDesc											</a>
 											<span class="realm shared"></span>
 											<a href="../../hooks/faction/#getDefaultName">
 getDefaultName											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../hooks/faction/#onCharCreated">
-onCharCreated											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../hooks/faction/#onSpawn">
-onSpawn											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../hooks/faction/#onTransferred">
-onTransferred											</a>
 										</li>
 
 									</ul>
@@ -3229,8 +3229,8 @@ valid in class tables that are created in <code>schema/classes/classname.lua</co
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="onCanBe">
-					<h1><span class="realm shared"></span></span>CLASS:onCanBe(client)</h1>
+				<a class="anchor" id="OnCanBe">
+					<h1><span class="realm shared"></span></span>CLASS:OnCanBe(client)</h1>
 				</a>
 
 					<p>Whether or not a player can switch to this class.</p>
@@ -3265,7 +3265,7 @@ valid in class tables that are created in <code>schema/classes/classname.lua</co
 				</ul>
 
 				<h3>Example Usage</h3>
-					<pre><code>function CLASS:onCanBe(client)
+					<pre><code>function CLASS:OnCanBe(client)
 	return client:IsAdmin() or client:getChar():hasFlags("Z") -- Only admins or people with the Z flag are allowed in this class!
 end
 </code></pre>
@@ -3273,8 +3273,8 @@ end
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="onLeave">
-					<h1><span class="realm server"></span></span>CLASS:onLeave(client)</h1>
+				<a class="anchor" id="OnLeave">
+					<h1><span class="realm server"></span></span>CLASS:OnLeave(client)</h1>
 				</a>
 
 					<p>Called when a character has left this class and has joined a different one.</p>
@@ -3298,7 +3298,7 @@ end
 
 
 				<h3>Example Usage</h3>
-					<pre><code>function CLASS:onLeave(client)
+					<pre><code>function CLASS:OnLeave(client)
 	local character = client:getChar()
 	character:setModel("models/player/alyx.mdl")
 end
@@ -3307,8 +3307,8 @@ end
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="onSet">
-					<h1><span class="realm server"></span></span>CLASS:onSet(client)</h1>
+				<a class="anchor" id="OnSet">
+					<h1><span class="realm server"></span></span>CLASS:OnSet(client)</h1>
 				</a>
 
 					<p>Called when a character has joined this class.</p>
@@ -3332,7 +3332,7 @@ end
 
 
 				<h3>Example Usage</h3>
-					<pre><code>function CLASS:onSet(client)
+					<pre><code>function CLASS:OnSet(client)
 	client:setModel("models/police.mdl")
 end
 </code></pre>
@@ -3340,8 +3340,8 @@ end
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="onSpawn">
-					<h1><span class="realm server"></span></span>CLASS:onSpawn(client)</h1>
+				<a class="anchor" id="OnSpawn">
+					<h1><span class="realm server"></span></span>CLASS:OnSpawn(client)</h1>
 				</a>
 
 					<p>Called when a character in this class has spawned in the world.</p>
@@ -3365,7 +3365,7 @@ end
 
 
 				<h3>Example Usage</h3>
-					<pre><code>function CLASS:onSpawn(client)
+					<pre><code>function CLASS:OnSpawn(client)
 	client:SetMaxHealth(500) -- Sets your Max Health to 500.
 	client:SetHealth(500) -- Subsequently sets your Health to 500.
 end

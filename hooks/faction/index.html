@@ -40,23 +40,23 @@
 
 										<li>
 											<span class="realm shared"></span>
-											<a href="../../hooks/class/#onCanBe">
-onCanBe											</a>
+											<a href="../../hooks/class/#OnCanBe">
+OnCanBe											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks/class/#onLeave">
-onLeave											</a>
+											<a href="../../hooks/class/#OnLeave">
+OnLeave											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks/class/#onSet">
-onSet											</a>
+											<a href="../../hooks/class/#OnSet">
+OnSet											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks/class/#onSpawn">
-onSpawn											</a>
+											<a href="../../hooks/class/#OnSpawn">
+OnSpawn											</a>
 										</li>
 
 									</ul>
@@ -70,6 +70,21 @@ onSpawn											</a>
 
 
 										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks/faction/#OnCharCreated">
+OnCharCreated											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks/faction/#OnSpawn">
+OnSpawn											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks/faction/#OnTransferred">
+OnTransferred											</a>
+										</li>
+										<li>
 											<span class="realm shared"></span>
 											<a href="../../hooks/faction/#getDefaultDesc">
 getDefaultDesc											</a>
@@ -78,21 +93,6 @@ getDefaultDesc											</a>
 											<span class="realm shared"></span>
 											<a href="../../hooks/faction/#getDefaultName">
 getDefaultName											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../hooks/faction/#onCharCreated">
-onCharCreated											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../hooks/faction/#onSpawn">
-onSpawn											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../hooks/faction/#onTransferred">
-onTransferred											</a>
 										</li>
 
 									</ul>
@@ -3231,6 +3231,119 @@ regular gamemode hooks.</p>
 
 		<section class="method">
 			<header>
+				<a class="anchor" id="OnCharCreated">
+					<h1><span class="realm server"></span></span>FACTION:OnCharCreated(client, character)</h1>
+				</a>
+
+					<p>Called when a character has been initially created and assigned to this faction.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
+
+
+								<p> The client that owns the character</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../classes/character/#">Character</a></span>
+
+
+								<p> The character that has been created</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>function FACTION:OnCharCreated(client, character)
+	local inventory = character:getInv()
+	inventory:add("fancy_suit")
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="OnSpawn">
+					<h1><span class="realm server"></span></span>FACTION:OnSpawn(client)</h1>
+				</a>
+
+					<p>Called when a character in this faction has spawned in the world.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
+
+
+								<p> The player that has just spawned</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>function FACTION:OnSpawn(client)
+	client:ChatPrint("You have spawned!")
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="OnTransferred">
+					<h1><span class="realm server"></span></span>FACTION:OnTransferred(character)</h1>
+				</a>
+
+					<p>Called when a player's character has been transferred to this faction.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../classes/character/#">Character</a></span>
+
+
+								<p> The character that was transferred</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>function FACTION:OnTransferred(character)
+	local randomModelIndex = math.random(1, #self.models)
+	character:setModel(self.models[randomModelIndex])
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="getDefaultDesc">
 					<h1><span class="realm shared"></span></span>FACTION:getDefaultDesc(client, faction)</h1>
 				</a>
@@ -3326,119 +3439,6 @@ end
 				<h3>Example Usage</h3>
 					<pre><code>function FACTION:getDefaultName(client)
 	return "CT-" .. math.random(111111, 999999)
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="onCharCreated">
-					<h1><span class="realm server"></span></span>FACTION:onCharCreated(client, character)</h1>
-				</a>
-
-					<p>Called when a character has been initially created and assigned to this faction.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
-
-
-								<p> The client that owns the character</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">character</span>
-
-									<span class="tag"><a class="type" href="../../classes/character/#">Character</a></span>
-
-
-								<p> The character that has been created</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:onCharCreated(client, character)
-	local inventory = character:getInv()
-	inventory:add("fancy_suit")
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="onSpawn">
-					<h1><span class="realm server"></span></span>FACTION:onSpawn(client)</h1>
-				</a>
-
-					<p>Called when a character in this faction has spawned in the world.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
-
-
-								<p> The player that has just spawned</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:onSpawn(client)
-	client:ChatPrint("You have spawned!")
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="onTransferred">
-					<h1><span class="realm server"></span></span>FACTION:onTransferred(character)</h1>
-				</a>
-
-					<p>Called when a player's character has been transferred to this faction.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">character</span>
-
-									<span class="tag"><a class="type" href="../../classes/character/#">Character</a></span>
-
-
-								<p> The character that was transferred</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:onTransferred(character)
-	local randomModelIndex = math.random(1, #self.models)
-	character:setModel(self.models[randomModelIndex])
 end
 </code></pre>
 
