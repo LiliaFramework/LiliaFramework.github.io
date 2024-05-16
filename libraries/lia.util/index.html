@@ -540,6 +540,17 @@ thirdPersonToggled											</a>
 							</li>
 							<li>
 									<details >
+									<summary><a href="../../items/ammunition/">Ammunition</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
 									<summary><a href="../../items/backpack/">Backpack</a></summary>
 
 									<ul>
@@ -1716,12 +1727,12 @@ L											</a>
 L											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -1865,12 +1876,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2026,22 +2037,22 @@ isSteamID											</a>
 notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.util/#lia.util.notify">
-notify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#lia.util.notify">
 notify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../libraries/lia.util/#lia.util.notify">
+notify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
@@ -2659,12 +2670,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../classes/item/#getName">
 getName											</a>
 										</li>
@@ -4797,6 +4808,34 @@ end)
 		<section class="method">
 			<header>
 				<a class="anchor" id="lia.util.notify">
+					<h1><span class="realm client"></span></span>lia.util.notify(message)</h1>
+				</a>
+
+					<p>Displays a notification message in the chat.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">message</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The message to display</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.util.notify">
 					<h1><span class="realm server"></span></span>lia.util.notify(message, recipient)</h1>
 				</a>
 
@@ -4836,11 +4875,11 @@ end)
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.util.notify">
-					<h1><span class="realm client"></span></span>lia.util.notify(message)</h1>
+				<a class="anchor" id="lia.util.notifyLocalized">
+					<h1><span class="realm client"></span></span>lia.util.notifyLocalized(message, ...)</h1>
 				</a>
 
-					<p>Displays a notification message in the chat.</p>
+					<p>Displays a localized notification message in the chat.</p>
 			</header>
 
 
@@ -4855,7 +4894,18 @@ end)
 									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
-								<p> The message to display</p>
+								<p> The message to display (localized)</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">...</span>
+
+
+
+								<p> Additional parameters for string formatting</p>
 							</li>
 					</ul>
 
@@ -4907,45 +4957,6 @@ end)
 
 
 								<p> Additional parameters for message formatting</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.util.notifyLocalized">
-					<h1><span class="realm client"></span></span>lia.util.notifyLocalized(message, ...)</h1>
-				</a>
-
-					<p>Displays a localized notification message in the chat.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">message</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The message to display (localized)</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">...</span>
-
-
-
-								<p> Additional parameters for string formatting</p>
 							</li>
 					</ul>
 

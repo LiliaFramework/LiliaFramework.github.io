@@ -540,6 +540,17 @@ thirdPersonToggled											</a>
 							</li>
 							<li>
 									<details >
+									<summary><a href="../../items/ammunition/">Ammunition</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
 									<summary><a href="../../items/backpack/">Backpack</a></summary>
 
 									<ul>
@@ -1716,12 +1727,12 @@ L											</a>
 L											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -1865,12 +1876,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2026,22 +2037,22 @@ isSteamID											</a>
 notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.util/#lia.util.notify">
-notify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#lia.util.notify">
 notify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../libraries/lia.util/#lia.util.notify">
+notify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
@@ -2659,12 +2670,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../classes/item/#getName">
 getName											</a>
 										</li>
@@ -3631,30 +3642,6 @@ same name but different numerical IDs). You can think of items as the class, whi
 		<section class="method">
 			<header>
 				<a class="anchor" id="getName">
-					<h1><span class="realm server"></span></span>Item:getName()</h1>
-				</a>
-
-					<p>Returns the name of the item.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
-
-								<p>The name of the item</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getName">
 					<h1><span class="realm client"></span></span>Item:getName()</h1>
 				</a>
 
@@ -3670,6 +3657,30 @@ same name but different numerical IDs). You can think of items as the class, whi
 									<span class="tag type">any</span>
 
 								<p>string The name of the item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getName">
+					<h1><span class="realm server"></span></span>Item:getName()</h1>
+				</a>
+
+					<p>Returns the name of the item.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>The name of the item</p>
 							</li>
 
 				</ul>
