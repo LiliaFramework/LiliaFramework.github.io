@@ -70,6 +70,16 @@ OnSpawn											</a>
 
 
 										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks/faction/#GetDefaultDesc">
+GetDefaultDesc											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks/faction/#GetDefaultName">
+GetDefaultName											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks/faction/#OnCharCreated">
 OnCharCreated											</a>
@@ -83,16 +93,6 @@ OnSpawn											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks/faction/#OnTransferred">
 OnTransferred											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../hooks/faction/#getDefaultDesc">
-getDefaultDesc											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../hooks/faction/#getDefaultName">
-getDefaultName											</a>
 										</li>
 
 									</ul>
@@ -3231,6 +3231,107 @@ regular gamemode hooks.</p>
 
 		<section class="method">
 			<header>
+				<a class="anchor" id="GetDefaultDesc">
+					<h1><span class="realm shared"></span></span>FACTION:GetDefaultDesc(client, faction)</h1>
+				</a>
+
+					<p>Called when the default description for a character needs to be retrieved.
+ This function allows factions to define custom default descriptions for characters.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
+
+
+								<p> The client for whom the default description is being retrieved</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">faction</span>
+
+									<span class="tag"><a class="type" href="../../classes/character/#">Character</a></span>
+
+
+								<p> The faction ID for which the default description is being retrieved</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>The default description for the newly created character</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function FACTION:GetDefaultDesc(client, faction)
+	return "A police officer"
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="GetDefaultName">
+					<h1><span class="realm shared"></span></span>FACTION:GetDefaultName(client)</h1>
+				</a>
+
+					<p>Called when the default name for a character needs to be retrieved (i.e., upon initial creation).</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
+
+
+								<p> The client for whom the default name is being retrieved</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>The default name for the newly created character</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function FACTION:GetDefaultName(client)
+	return "CT-" .. math.random(111111, 999999)
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="OnCharCreated">
 					<h1><span class="realm server"></span></span>FACTION:OnCharCreated(client, character)</h1>
 				</a>
@@ -3338,107 +3439,6 @@ end
 					<pre><code>function FACTION:OnTransferred(character)
 	local randomModelIndex = math.random(1, #self.models)
 	character:setModel(self.models[randomModelIndex])
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getDefaultDesc">
-					<h1><span class="realm shared"></span></span>FACTION:getDefaultDesc(client, faction)</h1>
-				</a>
-
-					<p>Called when the default description for a character needs to be retrieved.
- This function allows factions to define custom default descriptions for characters.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
-
-
-								<p> The client for whom the default description is being retrieved</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">faction</span>
-
-									<span class="tag"><a class="type" href="../../classes/character/#">Character</a></span>
-
-
-								<p> The faction ID for which the default description is being retrieved</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
-
-								<p>The default description for the newly created character</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:getDefaultDesc(client, faction)
-	return "A police officer"
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getDefaultName">
-					<h1><span class="realm shared"></span></span>FACTION:getDefaultName(client)</h1>
-				</a>
-
-					<p>Called when the default name for a character needs to be retrieved (i.e., upon initial creation).</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
-
-
-								<p> The client for whom the default name is being retrieved</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
-
-								<p>The default name for the newly created character</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:getDefaultName(client)
-	return "CT-" .. math.random(111111, 999999)
 end
 </code></pre>
 
