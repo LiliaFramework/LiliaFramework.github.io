@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>DownTimeNotifier - Lilia Documentation</title>
+		<title>Weapon - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="DownTimeNotifier - Lilia Documentation" />
+		<meta property="og:title" content="Weapon - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for DownTime Notifier Module." />
+			<meta property="og:description" content="Structure of Weapon Item Base." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -605,7 +605,7 @@ thirdPersonToggled											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../items/weapon/">Weapon</a></summary>
 
 									<ul>
@@ -701,7 +701,7 @@ thirdPersonToggled											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../configurations/downtimenotifier/">DownTimeNotifier</a></summary>
 
 									<ul>
@@ -3213,8 +3213,8 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>DownTimeNotifier</h1>
-	<h2>Configuration for DownTime Notifier Module.</h2>
+	<h1>Weapon</h1>
+	<h2>Structure of Weapon Item Base.</h2>
 </header>
 
 <p>
@@ -3229,7 +3229,7 @@ takePermFlags											</a>
 					<h1><span class="realm shared"></span></span>Configuration</h1>
 				</a>
 
-					<p>This table defines the default settings for the DownTimeNotifier Module.</p>
+					<p>This table defines the default structure of the weapon item base.</p>
 			</header>
 
 
@@ -3239,22 +3239,99 @@ takePermFlags											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">RPMinimumPlayerCount</span>
+								<span class="tag parameter">name</span>
 
 
 
-								<p> Minimum Players To Start RP | <strong>number</strong></p>
+								<p> Name of the item | <strong>string</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">EnableDownTime</span>
+								<span class="tag parameter">desc</span>
 
 
 
-								<p> Should DownTime be Enabled | <strong>bool</strong></p>
+								<p> Description of the item | <strong>string</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">model</span>
+
+
+
+								<p> Model path of the item | <strong>string</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">width</span>
+
+
+
+								<p> Width of the item | <strong>number</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">height</span>
+
+
+
+								<p> Height of the item | <strong>number</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">category</span>
+
+
+
+								<p> Category of the item | <strong>string</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">RequiredSkillLevels</span>
+
+
+
+								<p> Required attribute levels for using the item | <strong>table</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">class</span>
+
+
+
+								<p> The class of the weapon | <strong>string</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">weaponCategory</span>
+
+
+
+								<p> The weapon category of the item. This prevents you from equipping 2 of the same weapon category types. | <strong>string</strong></p>
 							</li>
 					</ul>
 
