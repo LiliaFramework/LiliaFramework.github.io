@@ -8,7 +8,7 @@
 		<meta property="og:title" content="items - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Structure of Bag Item Base." />
+			<meta property="og:description" content="Structure of Book Item Base." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -934,6 +934,39 @@ thirdPersonToggled											</a>
 									</ul>
 									</details>
 							</li>
+							<li>
+									<details open>
+									<summary><a href="../../configurations/items/">items</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details open>
+									<summary><a href="../../configurations/items/">items</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details open>
+									<summary><a href="../../configurations/items/">items</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
 					</ul>
 				</details>
 				<details class="category" open>
@@ -1653,12 +1686,12 @@ L											</a>
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -1802,12 +1835,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1963,22 +1996,22 @@ isSteamID											</a>
 notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.util/#lia.util.notify">
-notify											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#lia.util.notify">
 notify											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../../libraries/lia.util/#lia.util.notify">
+notify											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
@@ -2596,12 +2629,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../classes/item/#getName">
 getName											</a>
 										</li>
@@ -3151,7 +3184,7 @@ takePermFlags											</a>
 					<div class="wrapper">
 						<header class="module">
 	<h1>items</h1>
-	<h2>Structure of Bag Item Base.</h2>
+	<h2>Structure of Book Item Base.</h2>
 </header>
 
 <p>
@@ -3166,7 +3199,7 @@ takePermFlags											</a>
 					<h1><span class="realm shared"></span></span>Configuration</h1>
 				</a>
 
-					<p>This table defines the default structure of the bag item base.</p>
+					<p>This table defines the default structure of the book item base.</p>
 			</header>
 
 
@@ -3231,28 +3264,6 @@ takePermFlags											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">invWidth</span>
-
-
-
-								<p> Inventory Width of the bag | <strong>number</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">invHeight</span>
-
-
-
-								<p> Inventory Height of the bag | <strong>number</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
 								<span class="tag parameter">category</span>
 
 
@@ -3264,33 +3275,11 @@ takePermFlags											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">RequiredSkillLevels</span>
+								<span class="tag parameter">contents</span>
 
 
 
-								<p> Required attribute levels for using the item | <strong>table</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">BagSound</span>
-
-
-
-								<p> Sound that plays when opening the bag | <strong>string</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">pacData</span>
-
-
-
-								<p> PAC3 data that gets implemented when equipping the bag | <strong>table</strong></p>
+								<p> Contents of the book item as HTML | <strong>table</strong></p>
 							</li>
 					</ul>
 
