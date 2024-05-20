@@ -124,8 +124,8 @@ CanPlayerAccessVendor											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks/module/#CanPlayerCreateCharacter">
-CanPlayerCreateCharacter											</a>
+											<a href="../../hooks/module/#CanPlayerCreateChar">
+CanPlayerCreateChar											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -281,8 +281,8 @@ FactionPostLoadout											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
-											<a href="../../hooks/module/#GetMaxPlayerCharacter">
-GetMaxPlayerCharacter											</a>
+											<a href="../../hooks/module/#GetMaxPlayerChar">
+GetMaxPlayerChar											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -3395,8 +3395,8 @@ end
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="CanPlayerCreateCharacter">
-					<h1><span class="realm server"></span></span>MODULE:CanPlayerCreateCharacter(client)</h1>
+				<a class="anchor" id="CanPlayerCreateChar">
+					<h1><span class="realm server"></span></span>MODULE:CanPlayerCreateChar(client)</h1>
 				</a>
 
 					<p>Whether or not a player is allowed to create a new character.</p>
@@ -3445,7 +3445,7 @@ end
 				</ul>
 
 				<h3>Example Usage</h3>
-					<pre><code>function MODULE:CanPlayerCreateCharacter(client)
+					<pre><code>function MODULE:CanPlayerCreateChar(client)
 	if (!client:IsAdmin()) then
 		return false, "notNow" -- only allow admins to create a character
 	end
@@ -4862,8 +4862,8 @@ end
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="GetMaxPlayerCharacter">
-					<h1><span class="realm shared"></span></span>MODULE:GetMaxPlayerCharacter(client)</h1>
+				<a class="anchor" id="GetMaxPlayerChar">
+					<h1><span class="realm shared"></span></span>MODULE:GetMaxPlayerChar(client)</h1>
 				</a>
 
 					<p>Retrieves the maximum number of characters a player can have.</p>
