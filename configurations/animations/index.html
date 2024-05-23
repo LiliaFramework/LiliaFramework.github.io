@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Spawns - Lilia Documentation</title>
+		<title>Animations - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Spawns - Lilia Documentation" />
+		<meta property="og:title" content="Animations - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Spawns Module." />
+			<meta property="og:description" content="Default animation configurations for Lilia." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -646,7 +646,7 @@ thirdPersonToggled											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/animations/">Animations</a></summary>
 
 									<ul>
@@ -932,7 +932,7 @@ thirdPersonToggled											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../configurations/spawns/">Spawns</a></summary>
 
 									<ul>
@@ -3234,8 +3234,8 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Spawns</h1>
-	<h2>Configuration for Spawns Module.</h2>
+	<h1>Animations</h1>
+	<h2>Default animation configurations for Lilia.</h2>
 </header>
 
 <p>
@@ -3246,11 +3246,13 @@ takePermFlags											</a>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="lia.anim.CitizenModelPaths">
+					<h1><span class="realm shared"></span></span>lia.anim.CitizenModelPaths</h1>
 				</a>
 
-					<p>This table defines the default settings for the Spawns Module.</p>
+					<p>This table defines the default paths for citizen models in Lilia.
+ These paths are used to determine which models should use citizen animations.
+ You can override these settings by placing a modified version in your config folder within the schema.</p>
 			</header>
 
 
@@ -3260,57 +3262,94 @@ takePermFlags											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">LoseWeapononDeathNPC</span>
+								<span class="tag parameter">models&#47;thespireroleplay&#47;humans</span>
 
 
 
-								<p> Determine if weapons are lost on death by NPCs | <strong>bool</strong></p>
+								<p>
+
+</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">LoseWeapononDeathHuman</span>
+								<span class="tag parameter">models&#47;suits&#47;humans</span>
 
 
 
-								<p> Determine if weapons are lost on death by Humans | <strong>bool</strong></p>
+								<p>
+
+</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">LoseWeapononDeathWorld</span>
+								<span class="tag parameter">models&#47;Humans&#47;Group01</span>
 
 
 
-								<p> Determine if weapons are lost on death by World | <strong>bool</strong></p>
+								<p>
+
+</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">WhitelistedSteamID64</span>
+								<span class="tag parameter">models&#47;Humans&#47;Group02</span>
 
 
 
-								<p> Enable or disable the death information popup | <strong>bool</strong></p>
+								<p>
+
+</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">StaffHasGodMode</span>
+								<span class="tag parameter">models&#47;Humans&#47;Group03</span>
 
 
 
-								<p> Whether or not Staff On Duty has God Mode | <strong>bool</strong></p>
+								<p>
+
+</p>
 							</li>
 					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">models&#47;Humans&#47;Group03m</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.anim.DefaultTposingFixer">
+					<h1><span class="realm shared"></span></span>lia.anim.DefaultTposingFixer</h1>
+				</a>
+
+					<p>This table defines the default model-to-animation type mappings used to fix T-posing issues in Lilia.
+ You can override these settings by placing a modified version in your config folder within the schema.</p>
+			</header>
+
 
 
 
