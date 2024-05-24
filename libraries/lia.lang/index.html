@@ -724,17 +724,6 @@ thirdPersonToggled											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../configurations/downtimenotifier/">DownTimeNotifier</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
 									<summary><a href="../../configurations/easyweapons/">EasyWeapons</a></summary>
 
 									<ul>
@@ -1743,12 +1732,12 @@ L											</a>
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -1892,12 +1881,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2053,22 +2042,22 @@ isSteamID											</a>
 notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.util/#lia.util.notify">
-notify											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#lia.util.notify">
 notify											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../../libraries/lia.util/#lia.util.notify">
+notify											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#lia.util.notifyLocalized">
 notifyLocalized											</a>
 										</li>
@@ -2686,12 +2675,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../classes/item/#getName">
 getName											</a>
 										</li>
@@ -2812,6 +2801,16 @@ transfer											</a>
 
 
 										<li>
+											<span class="realm client"></span>
+											<a href="../../classes/player/#ChatNotify">
+ChatNotify											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../classes/player/#ChatNotifyLocalized">
+ChatNotifyLocalized											</a>
+										</li>
+										<li>
 											<span class="realm shared"></span>
 											<a href="../../classes/player/#Name">
 Name											</a>
@@ -2835,6 +2834,16 @@ addMoney											</a>
 											<span class="realm shared"></span>
 											<a href="../../classes/player/#canAfford">
 canAfford											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../classes/player/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../classes/player/#chatNotifyLocalized">
+chatNotifyLocalized											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -2902,12 +2911,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3388,7 +3397,7 @@ formatting arguments:</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="L2">
-					<h1><span class="realm server"></span></span>L2(key, client, ...)</h1>
+					<h1><span class="realm client"></span></span>L2(key, ...)</h1>
 				</a>
 
 					<p>Retrieves a localized string based on the specified key and client's language setting.
@@ -3408,18 +3417,6 @@ formatting arguments:</p>
 
 
 								<p> The key corresponding to the desired localized string.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
-
-
-								<p> The client for whom the localized string is intended.</p>
 							</li>
 					</ul>
 
@@ -3452,7 +3449,7 @@ formatting arguments:</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="L2">
-					<h1><span class="realm client"></span></span>L2(key, ...)</h1>
+					<h1><span class="realm server"></span></span>L2(key, client, ...)</h1>
 				</a>
 
 					<p>Retrieves a localized string based on the specified key and client's language setting.
@@ -3472,6 +3469,18 @@ formatting arguments:</p>
 
 
 								<p> The key corresponding to the desired localized string.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
+
+
+								<p> The client for whom the localized string is intended.</p>
 							</li>
 					</ul>
 
