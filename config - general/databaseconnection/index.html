@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Animations - Lilia Documentation</title>
+		<title>DatabaseConnection - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Animations - Lilia Documentation" />
+		<meta property="og:title" content="DatabaseConnection - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Default animation configurations for Lilia." />
+			<meta property="og:description" content="Default database configuration for Lilia." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -483,13 +483,24 @@
 				</details>
 				<details class="category" open>
 					<summary>
-						<h2>Confg - General</h2>
+						<h2>Config - General</h2>
 					</summary>
 
 					<ul>
 							<li>
+									<details >
+									<summary><a href="../../config - general/animations/">Animations</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
 									<details open>
-									<summary><a href="../../confg - general/animations/">Animations</a></summary>
+									<summary><a href="../../config - general/databaseconnection/">DatabaseConnection</a></summary>
 
 									<ul>
 
@@ -500,18 +511,7 @@
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../confg - general/databaseconnection/">DatabaseConnection</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../confg - general/databasetables/">DatabaseTables</a></summary>
+									<summary><a href="../../config - general/databasetables/">DatabaseTables</a></summary>
 
 									<ul>
 
@@ -1899,12 +1899,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2060,22 +2060,22 @@ lia.util.isSteamID											</a>
 lia.util.notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../core - libraries/lia.util/#lia.util.notify">
-lia.util.notify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notify">
 lia.util.notify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.notify">
+lia.util.notify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
@@ -2723,12 +2723,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3004,12 +3004,12 @@ getMoney											</a>
 getPermFlags											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm shared"></span>
 											<a href="../../core - classes/player/#getPlayTime">
 getPlayTime											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getPlayTime">
 getPlayTime											</a>
 										</li>
@@ -3366,8 +3366,8 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Animations</h1>
-	<h2>Default animation configurations for Lilia.</h2>
+	<h1>DatabaseConnection</h1>
+	<h2>Default database configuration for Lilia.</h2>
 </header>
 
 <p>
@@ -3378,13 +3378,11 @@ takePermFlags											</a>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.anim.CitizenModelPaths">
-					<h1><span class="realm shared"></span></span>lia.anim.CitizenModelPaths</h1>
+				<a class="anchor" id="Configuration">
+					<h1><span class="realm server"></span></span>Configuration</h1>
 				</a>
 
-					<p>This table defines the default paths for citizen models in Lilia.
- These paths are used to determine which models should use citizen animations.
- You can override these settings by placing a modified version in your config folder within the schema.</p>
+					<p>This table defines the default settings for connecting to the database used in Lilia.</p>
 			</header>
 
 
@@ -3394,94 +3392,68 @@ takePermFlags											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">models&#47;thespireroleplay&#47;humans</span>
+								<span class="tag parameter">module</span>
 
 
 
-								<p>
-
-</p>
+								<p> Database module to be used (sqlite or mysqloo) | <strong>string</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">models&#47;suits&#47;humans</span>
+								<span class="tag parameter">hostname</span>
 
 
 
-								<p>
-
-</p>
+								<p> Hostname of the database server | <strong>string</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">models&#47;Humans&#47;Group01</span>
+								<span class="tag parameter">username</span>
 
 
 
-								<p>
-
-</p>
+								<p> Username for accessing the database | <strong>string</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">models&#47;Humans&#47;Group02</span>
+								<span class="tag parameter">password</span>
 
 
 
-								<p>
-
-</p>
+								<p> Password for accessing the database | <strong>string</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">models&#47;Humans&#47;Group03</span>
+								<span class="tag parameter">database</span>
 
 
 
-								<p>
-
-</p>
+								<p> Name of the database to connect to | <strong>string</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">models&#47;Humans&#47;Group03m</span>
+								<span class="tag parameter">port</span>
 
 
 
-								<p>
-
-</p>
+								<p> Port number for the database server | <strong>number</strong></p>
 							</li>
 					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.anim.DefaultTposingFixer">
-					<h1><span class="realm shared"></span></span>lia.anim.DefaultTposingFixer</h1>
-				</a>
-
-					<p>This table defines the default model-to-animation type mappings used to fix T-posing issues in Lilia.
- You can override these settings by placing a modified version in your config folder within the schema.</p>
-			</header>
-
 
 
 
