@@ -1245,6 +1245,11 @@ getPlayers											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.class/#lia.class.hasWhitelist">
+hasWhitelist											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.class/#lia.class.loadFromDir">
 loadFromDir											</a>
 										</li>
@@ -1731,12 +1736,12 @@ spawn											</a>
 
 
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
@@ -1754,6 +1759,11 @@ L2											</a>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L3">
 L3											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.lang/#lia.lang.AddTable">
+AddTable											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -2136,6 +2146,21 @@ wrapText											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../classes/character/#WhitelistAllClasses">
+WhitelistAllClasses											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../classes/character/#WhitelistAllFactions">
+WhitelistAllFactions											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../classes/character/#WhitelistEverything">
+WhitelistEverything											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../classes/character/#__eq">
 __eq											</a>
 										</li>
@@ -2153,6 +2178,16 @@ addBoost											</a>
 											<span class="realm server"></span>
 											<a href="../../classes/character/#ban">
 ban											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../classes/character/#classUnWhitelist">
+classUnWhitelist											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../classes/character/#classWhitelist">
+classWhitelist											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -2208,6 +2243,11 @@ giveFlags											</a>
 											<span class="realm server"></span>
 											<a href="../../classes/character/#giveMoney">
 giveMoney											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../classes/character/#hasClassWhitelist">
+hasClassWhitelist											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -2830,6 +2870,21 @@ Name											</a>
 RequestString											</a>
 										</li>
 										<li>
+											<span class="realm shared"></span>
+											<a href="../../classes/player/#WhitelistAllClasses">
+WhitelistAllClasses											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../classes/player/#WhitelistAllFactions">
+WhitelistAllFactions											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../classes/player/#WhitelistEverything">
+WhitelistEverything											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../classes/player/#addFlagBlacklist">
 addFlagBlacklist											</a>
@@ -2853,6 +2908,16 @@ chatNotify											</a>
 											<span class="realm server"></span>
 											<a href="../../classes/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../classes/player/#classUnWhitelist">
+classUnWhitelist											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../classes/player/#classWhitelist">
+classWhitelist											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -2968,6 +3033,11 @@ givePermFlags											</a>
 											<span class="realm server"></span>
 											<a href="../../classes/player/#hasAnyFlagBlacklist">
 hasAnyFlagBlacklist											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../classes/player/#hasClassWhitelist">
+hasClassWhitelist											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -3280,6 +3350,7 @@ CLASS_STEVE = CLASS.index
     <li><p><strong>CLASS.name</strong>: The name of your class.</p></li>
     <li><p><strong>CLASS.desc</strong>: A description of your class.</p></li>
     <li><p><strong>CLASS.isDefault</strong>: Indicates whether this is the default class. Set to true if it's the default class, allowing anyone to join.</p></li>
+    <li><p><strong>CLASS.isWhitelisted</strong>: Indicates whether this is a whitelist class. Set to true if it is a class that needs whitelisting.</p></li>
     <li><p><strong>CLASS.color</strong>: The color associated with your class. This can be used for class-specific coloring.</p></li>
     <li><p><strong>CLASS.weapons</strong>: Weapons that players in this class can use. This can include weapon IDs or references to the weapons available to class members. <strong>Optional</strong></p></li>
     <li><p><strong>CLASS.pay</strong>: The payment amount associated with the class. This represents any in-game currency or rewards tied to being a member of this class. <strong>Optional</strong></p></li>
@@ -3296,7 +3367,7 @@ CLASS_STEVE = CLASS.index
     <li><p><strong>CLASS.jumpPowerMultiplier</strong>: When set to true, jumpPower is multiplied by the default jump power configured in the game. When set to false, it directly sets the jump power for class members. <strong>Optional</strong></p></li>
     <li><p><strong>CLASS.bloodcolor</strong>: This variable allows you to specify the blood color of players in the class when they take damage. You can use the blood enums provided by Garry's Mod, which are listed in <a href="https://wiki.facepunch.com/gmod/Enums/BLOOD_COLOR">Blood Color ENUMS</a>. For example, you can set it to BLOOD<em>COLOR</em>YELLOW to make the class's blood appear yellow when they are injured. <strong>Optional</strong></p></li>
     <li><p><strong>CLASS.bodyGroups</strong>: This variable allows you to define class-specific bodygroups for player models upon spawn. Bodygroups control the appearance and configuration of specific parts of the player model. You can specify the bodygroups using a table format. Each entry in the table represents a bodygroup and its corresponding value.b<strong>Optional</strong></p></li>
-    <li><p><strong>CLASS.model</strong>: This variable allows you to define class-specific models that get set on spawn. <strong>Optional</strong> </p></li>
+    <li><p><strong>CLASS.model</strong>: This variable allows you to define class-specific models that get set on spawn. <strong>Optional</strong></p></li>
     <li><p><strong>CLASS.index</strong>: The Unique ID (UniqueID) of the class. This is a unique identifier used to distinguish this class from others.</p></li>
 </ul>
 
