@@ -1930,11 +1930,6 @@ setNetVar											</a>
 Derma_NumericRequest											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../core - libraries/lia.util/#lia.util.ChatNotify">
-lia.util.ChatNotify											</a>
-										</li>
-										<li>
 											<span class="realm shared"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.canFit">
 lia.util.canFit											</a>
@@ -1943,6 +1938,11 @@ lia.util.canFit											</a>
 											<span class="realm shared"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.chance">
 lia.util.chance											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.chatNotify">
+lia.util.chatNotify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -2849,16 +2849,6 @@ transfer											</a>
 
 
 										<li>
-											<span class="realm client"></span>
-											<a href="../../core - classes/player/#ChatNotify">
-ChatNotify											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../core - classes/player/#ChatNotifyLocalized">
-ChatNotifyLocalized											</a>
-										</li>
-										<li>
 											<span class="realm shared"></span>
 											<a href="../../core - classes/player/#Name">
 Name											</a>
@@ -2904,7 +2894,17 @@ canAfford											</a>
 chatNotify											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../core - classes/player/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
+											<a href="../../core - classes/player/#chatNotifyLocalized">
+chatNotifyLocalized											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3379,73 +3379,6 @@ object at a time that you can interface with.</p>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="ChatNotify">
-					<h1><span class="realm client"></span></span>ChatNotify(message)</h1>
-				</a>
-
-					<p>Displays a notification for this player in the chatbox.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">message</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> Text to display in the notification</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="ChatNotifyLocalized">
-					<h1><span class="realm client"></span></span>ChatNotifyLocalized(message, ...)</h1>
-				</a>
-
-					<p>Displays a notification for this player in the chatbox with the given language phrase.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">message</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> ID of the phrase to display to the player</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">...</span>
-
-
-
-								<p> Arguments to pass to the phrase</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="Name">
 					<h1><span class="realm shared"></span></span>Name()</h1>
 				</a>
@@ -3717,8 +3650,75 @@ object at a time that you can interface with.</p>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="chatNotify">
+					<h1><span class="realm client"></span></span>chatNotify(message)</h1>
+				</a>
+
+					<p>Displays a notification for this player in the chatbox.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">message</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> Text to display in the notification</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="chatNotifyLocalized">
 					<h1><span class="realm server"></span></span>chatNotifyLocalized(message, ...)</h1>
+				</a>
+
+					<p>Displays a notification for this player in the chatbox with the given language phrase.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">message</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> ID of the phrase to display to the player</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">...</span>
+
+
+
+								<p> Arguments to pass to the phrase</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="chatNotifyLocalized">
+					<h1><span class="realm client"></span></span>chatNotifyLocalized(message, ...)</h1>
 				</a>
 
 					<p>Displays a notification for this player in the chatbox with the given language phrase.</p>

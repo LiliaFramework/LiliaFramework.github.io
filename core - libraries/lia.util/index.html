@@ -1930,11 +1930,6 @@ setNetVar											</a>
 Derma_NumericRequest											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../core - libraries/lia.util/#lia.util.ChatNotify">
-lia.util.ChatNotify											</a>
-										</li>
-										<li>
 											<span class="realm shared"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.canFit">
 lia.util.canFit											</a>
@@ -1943,6 +1938,11 @@ lia.util.canFit											</a>
 											<span class="realm shared"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.chance">
 lia.util.chance											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.chatNotify">
+lia.util.chatNotify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -2849,16 +2849,6 @@ transfer											</a>
 
 
 										<li>
-											<span class="realm client"></span>
-											<a href="../../core - classes/player/#ChatNotify">
-ChatNotify											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../core - classes/player/#ChatNotifyLocalized">
-ChatNotifyLocalized											</a>
-										</li>
-										<li>
 											<span class="realm shared"></span>
 											<a href="../../core - classes/player/#Name">
 Name											</a>
@@ -2904,7 +2894,17 @@ canAfford											</a>
 chatNotify											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../core - classes/player/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
+											<a href="../../core - classes/player/#chatNotifyLocalized">
+chatNotifyLocalized											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3492,46 +3492,6 @@ takePermFlags											</a>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.util.ChatNotify">
-					<h1><span class="realm server"></span></span>lia.util.ChatNotify(target, ...)</h1>
-				</a>
-
-					<p>Prints a message to a player's chat.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">target</span>
-
-									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
-
-
-								<p> The player to receive the chat message</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">...</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
-
-
-								<p> The message or messages to print</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="lia.util.canFit">
 					<h1><span class="realm shared"></span></span>lia.util.canFit(pos, mins, maxs, filter)</h1>
 				</a>
@@ -3644,6 +3604,46 @@ takePermFlags											</a>
 							</li>
 
 				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.util.chatNotify">
+					<h1><span class="realm server"></span></span>lia.util.chatNotify(target, ...)</h1>
+				</a>
+
+					<p>Prints a message to a player's chat.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">target</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player to receive the chat message</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">...</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> The message or messages to print</p>
+							</li>
+					</ul>
+
 
 
 		</section>
