@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>HUD - Lilia Documentation</title>
+		<title>Recognition - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="HUD - Lilia Documentation" />
+		<meta property="og:title" content="Recognition - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for HUD Module." />
+			<meta property="og:description" content="Hook Documentation for Recognition Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -216,7 +216,7 @@
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../config - module/hud/">HUD</a></summary>
 
 									<ul>
@@ -326,7 +326,7 @@
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../config - module/recognition/">Recognition</a></summary>
 
 									<ul>
@@ -926,7 +926,7 @@ copyParentDoor											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../hooks - module/recognition/">Recognition</a></summary>
 
 									<ul>
@@ -3792,117 +3792,368 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>HUD</h1>
-	<h2>Configuration for HUD Module.</h2>
+	<h1>Recognition</h1>
+	<h2>Hook Documentation for Recognition Module.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="CharRecognize">
+					<h1><span class="realm shared"></span></span>CharRecognize(level, name)</h1>
 				</a>
 
-					<p>This table defines the default settings for the HUD Module.</p>
+					<p>Initiates character recognition process.</p>
 			</header>
 
 
-					<h3>Fields</h3>
+					<h3>Parameters</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">Vignette</span>
+								<span class="tag parameter">level</span>
+
+									<span class="tag"><span class="type">integer</span></span>
 
 
-
-								<p> Enable Vignette Effect | <strong>bool</strong></p>
+								<p> The recognition level.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">BranchWarning</span>
+								<span class="tag parameter">name</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The name of the character to be recognized.</p>
+							</li>
+					</ul>
 
 
 
-								<p> Activate Branch Warning | <strong>bool</strong></p>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="GetDisplayedDescription">
+					<h1><span class="realm shared"></span></span>GetDisplayedDescription(entity, isHUD)</h1>
+				</a>
+
+					<p>Retrieves the displayed description of an entity.
+ This hook is used to get the description that should be displayed for an entity, either on the HUD or in another context.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The entity whose description is being retrieved.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">CrosshairEnabled</span>
+								<span class="tag parameter">isHUD</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
 
 
+								<p> Whether the description is being displayed on the HUD.</p>
+							</li>
+					</ul>
 
-								<p> Enable Crosshair | <strong>bool</strong></p>
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>The description to be displayed.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="GetDisplayedName">
+					<h1><span class="realm shared"></span></span>GetDisplayedName(client, chatType)</h1>
+				</a>
+
+					<p>Retrieves the displayed name of a client.
+ This hook is used to get the name that should be displayed for a client in a specific chat type.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The client whose displayed name is being retrieved.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">BarsDisabled</span>
+								<span class="tag parameter">chatType</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
+								<p> The type of chat where the name will be displayed.</p>
+							</li>
+					</ul>
 
-								<p> Disable Bars | <strong>bool</strong></p>
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>The name to be displayed.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="OnCharRecognized">
+					<h1><span class="realm shared"></span></span>OnCharRecognized(client, id)</h1>
+				</a>
+
+					<p>Called when a character is recognized.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The client whose character is recognized.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">NoDrawCrosshairWeapon</span>
+								<span class="tag parameter">id</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> Identifier for the recognized character.</p>
+							</li>
+					</ul>
 
 
 
-								<p> Weapons with No Crosshair | <strong>table</strong></p>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isCharFakeRecognized">
+					<h1><span class="realm shared"></span></span>isCharFakeRecognized(character, id)</h1>
+				</a>
+
+					<p>Checks if a character is fake recognized.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character to check.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">AmmoDrawEnabled</span>
+								<span class="tag parameter">id</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> Identifier for the character.</p>
+							</li>
+					</ul>
 
 
 
-								<p> Enable Ammo Draw | <strong>bool</strong></p>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isCharRecognized">
+					<h1><span class="realm shared"></span></span>isCharRecognized(character, id)</h1>
+				</a>
+
+					<p>Checks if a character is recognized.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character to check.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">DarkTheme</span>
+								<span class="tag parameter">id</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> Identifier for the character.</p>
+							</li>
+					</ul>
 
 
 
-								<p> Toggle Dark Theme | <strong>bool</strong></p>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isFakeNameExistant">
+					<h1><span class="realm shared"></span></span>isFakeNameExistant(name, nameList)</h1>
+				</a>
+
+					<p>Checks if a fake name exists in the given character name list.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">name</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The name to check.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">HiddenHUDElements</span>
+								<span class="tag parameter">nameList</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 
-
-								<p> Disabled Sandbox HUD Elements | <strong>table</strong></p>
+								<p> A list of character names.</p>
 							</li>
 					</ul>
 
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">True</span>
+
+								<p>if the name exists in the list, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isRecognizedChatType">
+					<h1><span class="realm shared"></span></span>isRecognizedChatType(chatType)</h1>
+				</a>
+
+					<p>Determines if a chat type is recognized.
+ This hook is used to check if a specific chat type is recognized within the system.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">chatType</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The chat type being checked for recognition.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if the chat type is recognized, false otherwise.</p>
+							</li>
+
+				</ul>
 
 
 		</section>
