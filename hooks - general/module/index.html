@@ -733,11 +733,6 @@ PostLoadData											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks - general/module/#PostPlayerSay">
-PostPlayerSay											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#SaveData">
 SaveData											</a>
 										</li>
@@ -864,6 +859,47 @@ PlayerStaminaGained											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/attributes/#PlayerStaminaLost">
 PlayerStaminaLost											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/chatbox/">ChatBox</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/chatbox/#ChatAddText">
+ChatAddText											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/chatbox/#ChatTextChanged">
+ChatTextChanged											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/chatbox/#FinishChat">
+FinishChat											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/chatbox/#OnChatReceived">
+OnChatReceived											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/chatbox/#PostPlayerSay">
+PostPlayerSay											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/chatbox/#StartChat">
+StartChat											</a>
 										</li>
 
 									</ul>
@@ -1182,22 +1218,6 @@ VendorBuyEvent											</a>
  This function handles the event where a player sells an item to a vendor."></span>
 											<a href="../../hooks - module/vendor/#VendorSellEvent">
 VendorSellEvent											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
 										</li>
 
 									</ul>
@@ -4537,70 +4557,6 @@ end
 					<p>Called after data has been loaded.</p>
 			</header>
 
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="PostPlayerSay">
-					<h1><span class="realm server"></span></span>PostPlayerSay(client, message, chatType, anonymous)</h1>
-				</a>
-
-					<p>Called after a player sends a chat message.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
-
-
-								<p> The player entity who sent the message.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">message</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The message sent by the player.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">chatType</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The type of chat message (e.g., "ic" for in-character, "ooc" for out-of-character).</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">anonymous</span>
-
-									<span class="tag"><span class="type">boolean</span></span>
-
-
-								<p> Whether the message was sent anonymously (true) or not (false).</p>
-							</li>
-					</ul>
 
 
 

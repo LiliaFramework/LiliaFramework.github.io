@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Class - Lilia Documentation</title>
+		<title>ChatBox - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Class - Lilia Documentation" />
+		<meta property="og:title" content="ChatBox - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Class setup hooks." />
+			<meta property="og:description" content="Hook Documentation for ChatBox Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -529,7 +529,7 @@
 
 					<ul>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../hooks - general/class/">Class</a></summary>
 
 									<ul>
@@ -865,7 +865,7 @@ PlayerStaminaLost											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../hooks - module/chatbox/">ChatBox</a></summary>
 
 									<ul>
@@ -3657,22 +3657,24 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Class</h1>
-	<h2>Class setup hooks.</h2>
+	<h1>ChatBox</h1>
+	<h2>Hook Documentation for ChatBox Module.</h2>
 </header>
 
-<p>As with <a href="../../hooks - general/faction/#">Faction</a>s, <a href="../../hooks - general/class/#">Class</a>es get their own hooks for when players leave/join a class, etc. These hooks are only
-valid in class tables that are created in <code>schema/classes/classname.lua</code>, and cannot be used like regular gamemode hooks.</p>
+<p>
+
+</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="OnCanBe">
-					<h1><span class="realm shared"></span></span>OnCanBe(client)</h1>
+				<a class="anchor" id="ChatAddText">
+					<h1><span class="realm client"></span></span>ChatAddText(text, ...)</h1>
 				</a>
 
-					<p>Whether or not a player can switch to this class.</p>
+					<p>Called to add text to the chat.
+ This hook allows for customization of the text being added to the chat. It can be used to modify or format the text before it is displayed.</p>
 			</header>
 
 
@@ -3682,12 +3684,22 @@ valid in class tables that are created in <code>schema/classes/classname.lua</co
 					<ul>
 
 							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+								<span class="tag parameter">text</span>
 
 
-								<p> Player who wants to switch to this class</p>
+
+								<p> The initial text markup string.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">...</span>
+
+
+
+								<p> Additional arguments containing the text elements to be added to the chat.</p>
 							</li>
 					</ul>
 
@@ -3696,27 +3708,125 @@ valid in class tables that are created in <code>schema/classes/classname.lua</co
 				<ul>
 
 							<li>
-									<span class="type">bool</span>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
 
-								<p>True if the player is allowed to switch to this class</p>
+								<p>The modified text markup string to be displayed in the chat.</p>
 							</li>
 
 				</ul>
 
-				<h3>Example Usage</h3>
-					<pre><code>function CLASS:OnCanBe(client)
-	return client:IsAdmin() or client:getChar():hasFlags("Z") -- Only admins or people with the Z flag are allowed in this class!
-end
-</code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="OnLeave">
-					<h1><span class="realm server"></span></span>OnLeave(client)</h1>
+				<a class="anchor" id="ChatTextChanged">
+					<h1><span class="realm client"></span></span>ChatTextChanged(text)</h1>
 				</a>
 
-					<p>Called when a character has left this class and has joined a different one.</p>
+					<p>Called when the text in the chat input box changes.
+ This hook allows for additional actions or modifications to be made whenever the chat input text changes.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">text</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The current text in the chat input box.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="FinishChat">
+					<h1><span class="realm client"></span></span>FinishChat()</h1>
+				</a>
+
+					<p>Called when the chat input box is closed.
+ This hook allows for any cleanup or additional actions to be performed when the chat input box is closed.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="OnChatReceived">
+					<h1><span class="realm server"></span></span>OnChatReceived(client, message, chatType, anonymous)</h1>
+				</a>
+
+					<p>Called after a player sends a chat message.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+
+
+								<p> (Player) The player entity who sent the message.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">message</span>
+
+
+
+								<p> (string) The message sent by the player.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">chatType</span>
+
+
+
+								<p> (string) The type of chat message (e.g., "ic" for in-character, "ooc" for out-of-character).</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">anonymous</span>
+
+
+
+								<p> (boolean) Whether the message was sent anonymously (true) or not (false).</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PostPlayerSay">
+					<h1><span class="realm server"></span></span>PostPlayerSay(client, message, chatType, anonymous)</h1>
+				</a>
+
+					<p>Called after a player sends a chat message.</p>
 			</header>
 
 
@@ -3731,84 +3841,61 @@ end
 									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
 
 
-								<p> Player who left this class</p>
+								<p> The player entity who sent the message.</p>
 							</li>
 					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>function CLASS:OnLeave(client)
-	local character = client:getChar()
-	character:setModel("models/player/alyx.mdl")
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="OnSet">
-					<h1><span class="realm server"></span></span>OnSet(client)</h1>
-				</a>
-
-					<p>Called when a character has joined this class.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">client</span>
+								<span class="tag parameter">message</span>
 
-									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
-								<p> Player who has joined this class</p>
+								<p> The message sent by the player.</p>
 							</li>
 					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>function CLASS:OnSet(client)
-	client:setModel("models/police.mdl")
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="OnSpawn">
-					<h1><span class="realm server"></span></span>OnSpawn(client)</h1>
-				</a>
-
-					<p>Called when a character in this class has spawned in the world.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">client</span>
+								<span class="tag parameter">chatType</span>
 
-									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
-								<p> Player that has just spawned</p>
+								<p> The type of chat message (e.g., "ic" for in-character, "ooc" for out-of-character).</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">anonymous</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+
+								<p> Whether the message was sent anonymously (true) or not (false).</p>
 							</li>
 					</ul>
 
 
-				<h3>Example Usage</h3>
-					<pre><code>function CLASS:OnSpawn(client)
-	client:SetMaxHealth(500) -- Sets your Max Health to 500.
-	client:SetHealth(500) -- Subsequently sets your Health to 500.
-end
-</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="StartChat">
+					<h1><span class="realm client"></span></span>StartChat()</h1>
+				</a>
+
+					<p>Called when the chat input box is opened.
+ This hook allows for any setup or additional actions to be performed when the chat input box is opened.</p>
+			</header>
+
+
+
 
 		</section>
 
