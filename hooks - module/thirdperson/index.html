@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Salary - Lilia Documentation</title>
+		<title>ThirdPerson - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Salary - Lilia Documentation" />
+		<meta property="og:title" content="ThirdPerson - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Salary Module." />
+			<meta property="og:description" content="Hook Documentation for Third Person Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -348,7 +348,7 @@
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../config - module/salary/">Salary</a></summary>
 
 									<ul>
@@ -425,7 +425,7 @@
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../config - module/thirdperson/">ThirdPerson</a></summary>
 
 									<ul>
@@ -1020,7 +1020,7 @@ isFakeNameExistant											</a>
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../hooks - module/thirdperson/">ThirdPerson</a></summary>
 
 									<ul>
@@ -3647,48 +3647,38 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Salary</h1>
-	<h2>Configuration for Salary Module.</h2>
+	<h1>ThirdPerson</h1>
+	<h2>Hook Documentation for Third Person Module.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="thirdPersonToggled">
+					<h1><span class="realm client"></span></span>thirdPersonToggled(state)</h1>
 				</a>
 
-					<p>This table defines the default settings for the Salary Module.</p>
+					<p>Called when the third person mode is toggled.</p>
 			</header>
 
 
-					<h3>Fields</h3>
+					<h3>Parameters</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">SalaryInterval</span>
+								<span class="tag parameter">state</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
 
 
-
-								<p> Default Time interval between salary payments in seconds | <strong>number</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">SalaryThreshold</span>
-
-
-
-								<p> Money threshold above which salaries will not be given | <strong>number</strong></p>
+								<p> Indicates whether the third person mode is enabled (<code>true</code>) or disabled (<code>false</code>).</p>
 							</li>
 					</ul>
 
