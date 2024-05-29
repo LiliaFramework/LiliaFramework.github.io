@@ -640,13 +640,6 @@ CanPlayerTakeItem											</a>
 CanPlayerUnequipItem											</a>
 										</li>
 										<li>
-											<span class="realm  client
- This hook can be used to implement custom checks to determine if a player is
- allowed to view their inventory."></span>
-											<a href="../../hooks - general/module/#CanPlayerViewInventory">
-CanPlayerViewInventory											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../hooks - general/module/#CreateMenuButtons">
 CreateMenuButtons											</a>
@@ -655,11 +648,6 @@ CreateMenuButtons											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#DatabaseConnected">
 DatabaseConnected											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#DrawLiliaModelView">
-DrawLiliaModelView											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -675,11 +663,6 @@ InitializedModules											</a>
 											<span class="realm shared"></span>
 											<a href="../../hooks - general/module/#InitializedSchema">
 InitializedSchema											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ItemShowEntityMenu">
-ItemShowEntityMenu											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -722,11 +705,6 @@ OnWipeTables											</a>
 PlayerModelChanged											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#PostDrawInventory">
-PostDrawInventory											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#PostLoadData">
 PostLoadData											</a>
@@ -747,11 +725,6 @@ ScreenResolutionChanged											</a>
 SetupDatabase											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldBarDraw">
-ShouldBarDraw											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#ShouldClientDrown">
 ShouldClientDrown											</a>
@@ -760,21 +733,6 @@ ShouldClientDrown											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#ShouldDataBeSaved">
 ShouldDataBeSaved											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldDrawAmmoHUD">
-ShouldDrawAmmoHUD											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldDrawCrosshair">
-ShouldDrawCrosshair											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldHideBars">
-ShouldHideBars											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -956,6 +914,148 @@ callOnDoorChildren											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/doors/#copyParentDoor">
 copyParentDoor											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/hud/">HUD</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client
+ This function allows you to modify the blur amount before it's applied."></span>
+											<a href="../../hooks - module/hud/#AdjustBlurAmount">
+AdjustBlurAmount											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawAmmo">
+DrawAmmo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawBlur">
+DrawBlur											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawBranchWarning">
+DrawBranchWarning											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawCrosshair">
+DrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawEntityInfo">
+DrawEntityInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawLiliaModelView">
+DrawLiliaModelView											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawVignette">
+DrawVignette											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ItemShowEntityMenu">
+ItemShowEntityMenu											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#SetupQuickMenu">
+SetupQuickMenu											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldBarDraw">
+ShouldBarDraw											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawAmmo">
+ShouldDrawAmmo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawAmmoHUD">
+ShouldDrawAmmoHUD											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawBlur">
+ShouldDrawBlur											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawBranchWarning">
+ShouldDrawBranchWarning											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCharInfo">
+ShouldDrawCharInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCrosshair">
+ShouldDrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCrosshair">
+ShouldDrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawEntityInfo">
+ShouldDrawEntityInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawPlayerInfo">
+ShouldDrawPlayerInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawVignette">
+ShouldDrawVignette											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldHideBars">
+ShouldHideBars											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldHideBars">
+ShouldHideBars											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipInitialize">
+TooltipInitialize											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipLayout">
+TooltipLayout											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipPaint">
+TooltipPaint											</a>
 										</li>
 
 									</ul>
@@ -1218,38 +1318,6 @@ VendorBuyEvent											</a>
  This function handles the event where a player sells an item to a vendor."></span>
 											<a href="../../hooks - module/vendor/#VendorSellEvent">
 VendorSellEvent											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
 										</li>
 
 									</ul>
@@ -2170,12 +2238,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2331,22 +2399,22 @@ lia.util.isSteamID											</a>
 lia.util.notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../core - libraries/lia.util/#lia.util.notify">
-lia.util.notify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notify">
 lia.util.notify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.notify">
+lia.util.notify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
@@ -3004,12 +3072,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3265,12 +3333,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3685,7 +3753,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">strTitle</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The title of the dialog window</p>
@@ -3697,7 +3765,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">strText</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The text to display in the dialog</p>
@@ -3709,7 +3777,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">strDefaultText</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The default text to display in the input field</p>
@@ -3721,7 +3789,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">fnEnter</span>
 
-									<span class="tag"><span class="type">function</span></span>
+									<span class="tag"><span class="type">Function</span></span>
 
 
 								<p> The function to call when the Enter key is pressed, with the input value as its argument</p>
@@ -3733,7 +3801,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">fnCancel</span>
 
-									<span class="tag"><span class="type">function</span></span>
+									<span class="tag"><span class="type">Function</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -3746,7 +3814,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">strButtonText</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -3759,7 +3827,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">strButtonCancelText</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -3799,7 +3867,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">pos</span>
 
-									<span class="tag"><span class="type">vector</span></span>
+									<span class="tag"><span class="type">Vector</span></span>
 
 
 								<p> The position to check</p>
@@ -3811,7 +3879,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">mins</span>
 
-									<span class="tag"><span class="type">vector</span></span>
+									<span class="tag"><span class="type">Vector</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -3824,7 +3892,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">maxs</span>
 
-									<span class="tag"><span class="type">vector</span></span>
+									<span class="tag"><span class="type">Vector</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -3837,7 +3905,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">filter</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -3877,7 +3945,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">chance</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The probability of success in percentage</p>
@@ -3928,7 +3996,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">...</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 
 								<p> The message or messages to print</p>
@@ -3956,7 +4024,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">color</span>
 
-									<span class="tag"><span class="type">color</span></span>
+									<span class="tag"><span class="type">Color</span></span>
 
 
 								<p> The color object to convert</p>
@@ -3995,7 +4063,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">message</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The warning message string</p>
@@ -4007,7 +4075,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">...</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 
 								<p> Additional parameters for message formatting</p>
@@ -4035,7 +4103,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">str</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The date string in the format "YYYY-MM-DD HH:MM:SS"</p>
@@ -4074,7 +4142,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">str</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The message to be logged</p>
@@ -4102,7 +4170,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">msg</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The debug message string</p>
@@ -4114,7 +4182,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">...</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 
 								<p> Additional parameters for message formatting</p>
@@ -4298,7 +4366,7 @@ end)
 							<li>
 								<span class="tag parameter">text</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> Text to draw</p>
@@ -4334,7 +4402,7 @@ end)
 							<li>
 								<span class="tag parameter">color</span>
 
-									<span class="tag"><span class="type">color</span></span>
+									<span class="tag"><span class="type">Color</span></span>
 
 
 								<p> Color of the text to draw</p>
@@ -4372,7 +4440,7 @@ end)
 							<li>
 								<span class="tag parameter">font</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 									<span class="tag default">default: &quot;ixGenericFont&quot;</span>
 
@@ -4414,7 +4482,7 @@ end)
 							<li>
 								<span class="tag parameter">material</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> Material to use for the texture</p>
@@ -4426,7 +4494,7 @@ end)
 							<li>
 								<span class="tag parameter">color</span>
 
-									<span class="tag"><span class="type">color</span></span>
+									<span class="tag"><span class="type">Color</span></span>
 
 
 								<p> Color of the texture to draw</p>
@@ -4438,7 +4506,7 @@ end)
 							<li>
 								<span class="tag parameter">x</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> X-position of the top-left corner of the rectangle</p>
@@ -4450,7 +4518,7 @@ end)
 							<li>
 								<span class="tag parameter">y</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> Y-position of the top-left corner of the rectangle</p>
@@ -4462,7 +4530,7 @@ end)
 							<li>
 								<span class="tag parameter">w</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> Width of the rectangle</p>
@@ -4474,7 +4542,7 @@ end)
 							<li>
 								<span class="tag parameter">h</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> Height of the rectangle</p>
@@ -4514,7 +4582,7 @@ end)
 							<li>
 								<span class="tag parameter">sounds</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 
 								<p> Sound paths to play</p>
@@ -4601,7 +4669,7 @@ end)
 							<li>
 								<span class="tag parameter">text</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The caption text to display</p>
@@ -4613,7 +4681,7 @@ end)
 							<li>
 								<span class="tag parameter">duration</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -4642,7 +4710,7 @@ end)
 							<li>
 								<span class="tag parameter">id</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The unique identifier or filename of the image</p>
@@ -4654,7 +4722,7 @@ end)
 							<li>
 								<span class="tag parameter">callback</span>
 
-									<span class="tag"><span class="type">function</span></span>
+									<span class="tag"><span class="type">Function</span></span>
 
 
 								<p> The function to call with the loaded image material as its argument, or false if the image could not be loaded</p>
@@ -4666,7 +4734,7 @@ end)
 							<li>
 								<span class="tag parameter">pngParameters</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -4679,7 +4747,7 @@ end)
 							<li>
 								<span class="tag parameter">imageProvider</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -4720,7 +4788,7 @@ end)
 							<li>
 								<span class="tag parameter">filter</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -4733,7 +4801,7 @@ end)
 							<li>
 								<span class="tag parameter">spacing</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> Spacing between empty spaces (default is 32 units)</p>
@@ -4745,7 +4813,7 @@ end)
 							<li>
 								<span class="tag parameter">size</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> Size of the search grid (default is 3)</p>
@@ -4757,7 +4825,7 @@ end)
 							<li>
 								<span class="tag parameter">height</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> Height of the search grid (default is 36 units)</p>
@@ -4769,7 +4837,7 @@ end)
 							<li>
 								<span class="tag parameter">tolerance</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> Tolerance for collision checking (default is 5 units)</p>
@@ -4808,7 +4876,7 @@ end)
 							<li>
 								<span class="tag parameter">identifier</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> Search query</p>
@@ -4820,7 +4888,7 @@ end)
 							<li>
 								<span class="tag parameter">allowPatterns</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 									<span class="tag default">default: false</span>
 
@@ -4860,7 +4928,7 @@ end)
 							<li>
 								<span class="tag parameter">SteamID</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The SteamID of the player to find</p>
@@ -4899,7 +4967,7 @@ end)
 							<li>
 								<span class="tag parameter">SteamID64</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The SteamID64 of the player to find</p>
@@ -5026,7 +5094,7 @@ end)
 							<li>
 								<span class="tag parameter">materialPath</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> Path to the material</p>
@@ -5073,7 +5141,7 @@ end)
 							<li>
 								<span class="tag parameter">vec</span>
 
-									<span class="tag"><span class="type">vector</span></span>
+									<span class="tag"><span class="type">Vector</span></span>
 
 
 								<p> Vector to be rounded</p>
@@ -5085,7 +5153,7 @@ end)
 							<li>
 								<span class="tag parameter">gridSize</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> Grid size to round to</p>
@@ -5124,7 +5192,7 @@ end)
 							<li>
 								<span class="tag parameter">value</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The value to check</p>
@@ -5163,7 +5231,7 @@ end)
 							<li>
 								<span class="tag parameter">question</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The question or prompt to display</p>
@@ -5175,7 +5243,7 @@ end)
 							<li>
 								<span class="tag parameter">option1</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The text for the first option</p>
@@ -5187,7 +5255,7 @@ end)
 							<li>
 								<span class="tag parameter">option2</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The text for the second option</p>
@@ -5199,7 +5267,7 @@ end)
 							<li>
 								<span class="tag parameter">manualDismiss</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 
 								<p> If true, the panel requires manual dismissal</p>
@@ -5211,7 +5279,7 @@ end)
 							<li>
 								<span class="tag parameter">notifType</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The type of notification</p>
@@ -5223,7 +5291,7 @@ end)
 							<li>
 								<span class="tag parameter">callback</span>
 
-									<span class="tag"><span class="type">function</span></span>
+									<span class="tag"><span class="type">Function</span></span>
 
 
 								<p> The function to call when an option is selected, with the option index and the notice panel as arguments</p>
@@ -5247,6 +5315,34 @@ end)
 		<section class="method">
 			<header>
 				<a class="anchor" id="lia.util.notify">
+					<h1><span class="realm client"></span></span>lia.util.notify(message)</h1>
+				</a>
+
+					<p>Displays a notification message in the chat.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">message</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The message to display</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.util.notify">
 					<h1><span class="realm server"></span></span>lia.util.notify(message, recipient)</h1>
 				</a>
 
@@ -5262,7 +5358,7 @@ end)
 							<li>
 								<span class="tag parameter">message</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The message to be notified</p>
@@ -5286,11 +5382,11 @@ end)
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.util.notify">
-					<h1><span class="realm client"></span></span>lia.util.notify(message)</h1>
+				<a class="anchor" id="lia.util.notifyLocalized">
+					<h1><span class="realm client"></span></span>lia.util.notifyLocalized(message, ...)</h1>
 				</a>
 
-					<p>Displays a notification message in the chat.</p>
+					<p>Displays a localized notification message in the chat.</p>
 			</header>
 
 
@@ -5302,10 +5398,21 @@ end)
 							<li>
 								<span class="tag parameter">message</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
-								<p> The message to display</p>
+								<p> The message to display (localized)</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">...</span>
+
+
+
+								<p> Additional parameters for string formatting</p>
 							</li>
 					</ul>
 
@@ -5330,7 +5437,7 @@ end)
 							<li>
 								<span class="tag parameter">message</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The localized message to be notified</p>
@@ -5365,45 +5472,6 @@ end)
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="lia.util.notifyLocalized">
-					<h1><span class="realm client"></span></span>lia.util.notifyLocalized(message, ...)</h1>
-				</a>
-
-					<p>Displays a localized notification message in the chat.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">message</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The message to display (localized)</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">...</span>
-
-
-
-								<p> Additional parameters for string formatting</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="lia.util.playerInRadius">
 					<h1><span class="realm shared"></span></span>lia.util.playerInRadius(pos, dist)</h1>
 				</a>
@@ -5420,7 +5488,7 @@ end)
 							<li>
 								<span class="tag parameter">pos</span>
 
-									<span class="tag"><span class="type">vector</span></span>
+									<span class="tag"><span class="type">Vector</span></span>
 
 
 								<p> The center position</p>
@@ -5432,7 +5500,7 @@ end)
 							<li>
 								<span class="tag parameter">dist</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The maximum distance from the center</p>
@@ -5471,7 +5539,7 @@ end)
 							<li>
 								<span class="tag parameter">n</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The value to scale</p>
@@ -5483,7 +5551,7 @@ end)
 							<li>
 								<span class="tag parameter">bool</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 
 								<p> If true, scales based on vertical resolution; if false or nil, scales based on default values</p>
@@ -5522,7 +5590,7 @@ end)
 							<li>
 								<span class="tag parameter">name</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> Name of the skin function to call</p>
@@ -5657,7 +5725,7 @@ end)
 							<li>
 								<span class="tag parameter">entityTable</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 
 								<p> Table containing entity-position pairs</p>
@@ -5685,7 +5753,7 @@ end)
 							<li>
 								<span class="tag parameter">model</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> Model of the prop to spawn</p>
@@ -5697,7 +5765,7 @@ end)
 							<li>
 								<span class="tag parameter">position</span>
 
-									<span class="tag"><span class="type">vector</span></span>
+									<span class="tag"><span class="type">Vector</span></span>
 
 
 								<p> Position to spawn the prop</p>
@@ -5721,7 +5789,7 @@ end)
 							<li>
 								<span class="tag parameter">lifetime</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -5734,7 +5802,7 @@ end)
 							<li>
 								<span class="tag parameter">angles</span>
 
-									<span class="tag"><span class="type">angle</span></span>
+									<span class="tag"><span class="type">Angle</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -5786,7 +5854,7 @@ end)
 							<li>
 								<span class="tag parameter">text</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The caption text to display</p>
@@ -5798,7 +5866,7 @@ end)
 							<li>
 								<span class="tag parameter">duration</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -5828,7 +5896,7 @@ end)
 							<li>
 								<span class="tag parameter">a</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> First string to check</p>
@@ -5840,7 +5908,7 @@ end)
 							<li>
 								<span class="tag parameter">b</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> Second string to check</p>
@@ -5879,7 +5947,7 @@ end)
 							<li>
 								<span class="tag parameter">name</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> String to strip prefix from</p>
@@ -5923,7 +5991,7 @@ end)
 							<li>
 								<span class="tag parameter">text</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> Text to wrap</p>
@@ -5947,7 +6015,7 @@ end)
 							<li>
 								<span class="tag parameter">font</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 									<span class="tag default">default: &quot;liaChatFont&quot;</span>
 

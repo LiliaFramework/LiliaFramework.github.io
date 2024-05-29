@@ -640,13 +640,6 @@ CanPlayerTakeItem											</a>
 CanPlayerUnequipItem											</a>
 										</li>
 										<li>
-											<span class="realm  client
- This hook can be used to implement custom checks to determine if a player is
- allowed to view their inventory."></span>
-											<a href="../../hooks - general/module/#CanPlayerViewInventory">
-CanPlayerViewInventory											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../hooks - general/module/#CreateMenuButtons">
 CreateMenuButtons											</a>
@@ -655,11 +648,6 @@ CreateMenuButtons											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#DatabaseConnected">
 DatabaseConnected											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#DrawLiliaModelView">
-DrawLiliaModelView											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -675,11 +663,6 @@ InitializedModules											</a>
 											<span class="realm shared"></span>
 											<a href="../../hooks - general/module/#InitializedSchema">
 InitializedSchema											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ItemShowEntityMenu">
-ItemShowEntityMenu											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -722,11 +705,6 @@ OnWipeTables											</a>
 PlayerModelChanged											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#PostDrawInventory">
-PostDrawInventory											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#PostLoadData">
 PostLoadData											</a>
@@ -747,11 +725,6 @@ ScreenResolutionChanged											</a>
 SetupDatabase											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldBarDraw">
-ShouldBarDraw											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#ShouldClientDrown">
 ShouldClientDrown											</a>
@@ -760,21 +733,6 @@ ShouldClientDrown											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#ShouldDataBeSaved">
 ShouldDataBeSaved											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldDrawAmmoHUD">
-ShouldDrawAmmoHUD											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldDrawCrosshair">
-ShouldDrawCrosshair											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldHideBars">
-ShouldHideBars											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -956,6 +914,148 @@ callOnDoorChildren											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/doors/#copyParentDoor">
 copyParentDoor											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/hud/">HUD</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client
+ This function allows you to modify the blur amount before it's applied."></span>
+											<a href="../../hooks - module/hud/#AdjustBlurAmount">
+AdjustBlurAmount											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawAmmo">
+DrawAmmo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawBlur">
+DrawBlur											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawBranchWarning">
+DrawBranchWarning											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawCrosshair">
+DrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawEntityInfo">
+DrawEntityInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawLiliaModelView">
+DrawLiliaModelView											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawVignette">
+DrawVignette											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ItemShowEntityMenu">
+ItemShowEntityMenu											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#SetupQuickMenu">
+SetupQuickMenu											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldBarDraw">
+ShouldBarDraw											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawAmmo">
+ShouldDrawAmmo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawAmmoHUD">
+ShouldDrawAmmoHUD											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawBlur">
+ShouldDrawBlur											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawBranchWarning">
+ShouldDrawBranchWarning											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCharInfo">
+ShouldDrawCharInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCrosshair">
+ShouldDrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCrosshair">
+ShouldDrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawEntityInfo">
+ShouldDrawEntityInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawPlayerInfo">
+ShouldDrawPlayerInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawVignette">
+ShouldDrawVignette											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldHideBars">
+ShouldHideBars											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldHideBars">
+ShouldHideBars											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipInitialize">
+TooltipInitialize											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipLayout">
+TooltipLayout											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipPaint">
+TooltipPaint											</a>
 										</li>
 
 									</ul>
@@ -1218,38 +1318,6 @@ VendorBuyEvent											</a>
  This function handles the event where a player sells an item to a vendor."></span>
 											<a href="../../hooks - module/vendor/#VendorSellEvent">
 VendorSellEvent											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
 										</li>
 
 									</ul>
@@ -2170,12 +2238,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2331,22 +2399,22 @@ lia.util.isSteamID											</a>
 lia.util.notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../core - libraries/lia.util/#lia.util.notify">
-lia.util.notify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notify">
 lia.util.notify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.notify">
+lia.util.notify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
@@ -3004,12 +3072,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3265,12 +3333,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3697,7 +3765,7 @@ class, simply add to the <a href="../../core - libraries/lia.anim/#">lia.anim</a
 							<li>
 								<span class="tag parameter">model</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> Model to get the animation class for</p>
@@ -3748,7 +3816,7 @@ class, simply add to the <a href="../../core - libraries/lia.anim/#">lia.anim</a
 							<li>
 								<span class="tag parameter">model</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> Model name to set the animation class for</p>
@@ -3760,7 +3828,7 @@ class, simply add to the <a href="../../core - libraries/lia.anim/#">lia.anim</a
 							<li>
 								<span class="tag parameter">class</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> Animation class to assign to the model</p>

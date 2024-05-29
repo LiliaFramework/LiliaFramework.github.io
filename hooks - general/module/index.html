@@ -640,13 +640,6 @@ CanPlayerTakeItem											</a>
 CanPlayerUnequipItem											</a>
 										</li>
 										<li>
-											<span class="realm  client
- This hook can be used to implement custom checks to determine if a player is
- allowed to view their inventory."></span>
-											<a href="../../hooks - general/module/#CanPlayerViewInventory">
-CanPlayerViewInventory											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../hooks - general/module/#CreateMenuButtons">
 CreateMenuButtons											</a>
@@ -655,11 +648,6 @@ CreateMenuButtons											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#DatabaseConnected">
 DatabaseConnected											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#DrawLiliaModelView">
-DrawLiliaModelView											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -675,11 +663,6 @@ InitializedModules											</a>
 											<span class="realm shared"></span>
 											<a href="../../hooks - general/module/#InitializedSchema">
 InitializedSchema											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ItemShowEntityMenu">
-ItemShowEntityMenu											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -722,11 +705,6 @@ OnWipeTables											</a>
 PlayerModelChanged											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#PostDrawInventory">
-PostDrawInventory											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#PostLoadData">
 PostLoadData											</a>
@@ -747,11 +725,6 @@ ScreenResolutionChanged											</a>
 SetupDatabase											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldBarDraw">
-ShouldBarDraw											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#ShouldClientDrown">
 ShouldClientDrown											</a>
@@ -760,21 +733,6 @@ ShouldClientDrown											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#ShouldDataBeSaved">
 ShouldDataBeSaved											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldDrawAmmoHUD">
-ShouldDrawAmmoHUD											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldDrawCrosshair">
-ShouldDrawCrosshair											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldHideBars">
-ShouldHideBars											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -956,6 +914,148 @@ callOnDoorChildren											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/doors/#copyParentDoor">
 copyParentDoor											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/hud/">HUD</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client
+ This function allows you to modify the blur amount before it's applied."></span>
+											<a href="../../hooks - module/hud/#AdjustBlurAmount">
+AdjustBlurAmount											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawAmmo">
+DrawAmmo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawBlur">
+DrawBlur											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawBranchWarning">
+DrawBranchWarning											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawCrosshair">
+DrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawEntityInfo">
+DrawEntityInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawLiliaModelView">
+DrawLiliaModelView											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawVignette">
+DrawVignette											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ItemShowEntityMenu">
+ItemShowEntityMenu											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#SetupQuickMenu">
+SetupQuickMenu											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldBarDraw">
+ShouldBarDraw											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawAmmo">
+ShouldDrawAmmo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawAmmoHUD">
+ShouldDrawAmmoHUD											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawBlur">
+ShouldDrawBlur											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawBranchWarning">
+ShouldDrawBranchWarning											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCharInfo">
+ShouldDrawCharInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCrosshair">
+ShouldDrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCrosshair">
+ShouldDrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawEntityInfo">
+ShouldDrawEntityInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawPlayerInfo">
+ShouldDrawPlayerInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawVignette">
+ShouldDrawVignette											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldHideBars">
+ShouldHideBars											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldHideBars">
+ShouldHideBars											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipInitialize">
+TooltipInitialize											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipLayout">
+TooltipLayout											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipPaint">
+TooltipPaint											</a>
 										</li>
 
 									</ul>
@@ -1218,38 +1318,6 @@ VendorBuyEvent											</a>
  This function handles the event where a player sells an item to a vendor."></span>
 											<a href="../../hooks - module/vendor/#VendorSellEvent">
 VendorSellEvent											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
 										</li>
 
 									</ul>
@@ -3816,7 +3884,7 @@ end
 							<li>
 								<span class="tag parameter">item</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 
 								<p> Item being equipped</p>
@@ -3878,7 +3946,7 @@ end
 							<li>
 								<span class="tag parameter">action</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The action being performed</p>
@@ -3957,7 +4025,7 @@ end
 							<li>
 								<span class="tag parameter">data</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 
 								<p> Additional data related to the container being spawned.</p>
@@ -4069,7 +4137,7 @@ end
 							<li>
 								<span class="tag parameter">item</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 
 								<p> Item being unequipped</p>
@@ -4101,32 +4169,6 @@ end
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="CanPlayerViewInventory">
-					<h1><span class="realm  client
- This hook can be used to implement custom checks to determine if a player is
- allowed to view their inventory."></span></span>CanPlayerViewInventory()</h1>
-				</a>
-
-					<p>Determines whether a player is allowed to view their inventory.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">boolean</span>
-
-								<p>Whether the player is allowed to view their inventory</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="CreateMenuButtons">
 					<h1><span class="realm client"></span></span>CreateMenuButtons(tabs)</h1>
 				</a>
@@ -4143,7 +4185,7 @@ end
 							<li>
 								<span class="tag parameter">tabs</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 
 								<p> A table to store the created buttons.</p>
@@ -4166,46 +4208,6 @@ end
 					<p>Called when the database has been successfully connected.</p>
 			</header>
 
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="DrawLiliaModelView">
-					<h1><span class="realm client"></span></span>DrawLiliaModelView(panel, entity)</h1>
-				</a>
-
-					<p>Called to draw additional content within the model view panel.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">panel</span>
-
-									<span class="tag"><span class="type">panel</span></span>
-
-
-								<p> The panel containing the model view</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">entity</span>
-
-									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
-
-
-								<p> The entity being drawn.</p>
-							</li>
-					</ul>
 
 
 
@@ -4251,34 +4253,6 @@ end
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="ItemShowEntityMenu">
-					<h1><span class="realm client"></span></span>ItemShowEntityMenu(entity)</h1>
-				</a>
-
-					<p>Displays the context menu for interacting with an item entity.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">entity</span>
-
-									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
-
-
-								<p> The item entity for which the context menu is displayed.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="LoadData">
 					<h1><span class="realm server"></span></span>LoadData()</h1>
 				</a>
@@ -4308,7 +4282,7 @@ end
 							<li>
 								<span class="tag parameter">font</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The path to the font file.</p>
@@ -4320,7 +4294,7 @@ end
 							<li>
 								<span class="tag parameter">genericFont</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The path to the generic font file.</p>
@@ -4352,7 +4326,7 @@ end
 							<li>
 								<span class="tag parameter">font</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The path to the font file.</p>
@@ -4364,7 +4338,7 @@ end
 							<li>
 								<span class="tag parameter">genericFont</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The path to the generic font file.</p>
@@ -4510,38 +4484,10 @@ end
 							<li>
 								<span class="tag parameter">model</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The new model path.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="PostDrawInventory">
-					<h1><span class="realm client"></span></span>PostDrawInventory(panel)</h1>
-				</a>
-
-					<p>Called after the player's inventory is drawn.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">panel</span>
-
-									<span class="tag"><span class="type">panel</span></span>
-
-
-								<p> The panel containing the inventory</p>
 							</li>
 					</ul>
 
@@ -4592,7 +4538,7 @@ end
 							<li>
 								<span class="tag parameter">width</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> number The new width of the screen.</p>
@@ -4604,7 +4550,7 @@ end
 							<li>
 								<span class="tag parameter">height</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> number The new height of the screen.</p>
@@ -4628,45 +4574,6 @@ end
 			</header>
 
 
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="ShouldBarDraw">
-					<h1><span class="realm client"></span></span>ShouldBarDraw(bar)</h1>
-				</a>
-
-					<p>Determines whether a bar should be drawn.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">bar</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
-
-
-								<p> The bar object.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">boolean</span>
-
-								<p>True if the bar should be drawn, false otherwise.</p>
-							</li>
-
-				</ul>
 
 
 		</section>
@@ -4728,127 +4635,6 @@ end
 									<span class="type">boolean</span>
 
 								<p>True if data should be saved, false otherwise</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="ShouldDrawAmmoHUD">
-					<h1><span class="realm client"></span></span>ShouldDrawAmmoHUD(weapon)</h1>
-				</a>
-
-					<p>Whether or not the ammo HUD should be drawn.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">weapon</span>
-
-									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
-
-
-								<p> Weapon the player currently is holding</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>Whether or not to draw the ammo hud</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>function MODULE:ShouldDrawAmmoHUD(weapon)
-	if (weapon:GetClass() == "weapon_frag") then
-		return false
-	end
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="ShouldDrawCrosshair">
-					<h1><span class="realm client"></span></span>ShouldDrawCrosshair(client, weapon)</h1>
-				</a>
-
-					<p>Determines whether the crosshair should be drawn for a specific client and weapon.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
-
-
-								<p> The player entity.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">weapon</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The weapon entity.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">boolean</span>
-
-								<p>True if the crosshair should be drawn, false otherwise.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="ShouldHideBars">
-					<h1><span class="realm client"></span></span>ShouldHideBars()</h1>
-				</a>
-
-					<p>Determines whether bars should be hidden.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">boolean</span>
-
-								<p>True if bars should be hidden, false otherwise.</p>
 							</li>
 
 				</ul>

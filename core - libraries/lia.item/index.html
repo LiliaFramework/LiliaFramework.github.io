@@ -640,13 +640,6 @@ CanPlayerTakeItem											</a>
 CanPlayerUnequipItem											</a>
 										</li>
 										<li>
-											<span class="realm  client
- This hook can be used to implement custom checks to determine if a player is
- allowed to view their inventory."></span>
-											<a href="../../hooks - general/module/#CanPlayerViewInventory">
-CanPlayerViewInventory											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../hooks - general/module/#CreateMenuButtons">
 CreateMenuButtons											</a>
@@ -655,11 +648,6 @@ CreateMenuButtons											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#DatabaseConnected">
 DatabaseConnected											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#DrawLiliaModelView">
-DrawLiliaModelView											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -675,11 +663,6 @@ InitializedModules											</a>
 											<span class="realm shared"></span>
 											<a href="../../hooks - general/module/#InitializedSchema">
 InitializedSchema											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ItemShowEntityMenu">
-ItemShowEntityMenu											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -722,11 +705,6 @@ OnWipeTables											</a>
 PlayerModelChanged											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#PostDrawInventory">
-PostDrawInventory											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#PostLoadData">
 PostLoadData											</a>
@@ -747,11 +725,6 @@ ScreenResolutionChanged											</a>
 SetupDatabase											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldBarDraw">
-ShouldBarDraw											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#ShouldClientDrown">
 ShouldClientDrown											</a>
@@ -760,21 +733,6 @@ ShouldClientDrown											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#ShouldDataBeSaved">
 ShouldDataBeSaved											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldDrawAmmoHUD">
-ShouldDrawAmmoHUD											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldDrawCrosshair">
-ShouldDrawCrosshair											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldHideBars">
-ShouldHideBars											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -956,6 +914,148 @@ callOnDoorChildren											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/doors/#copyParentDoor">
 copyParentDoor											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/hud/">HUD</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client
+ This function allows you to modify the blur amount before it's applied."></span>
+											<a href="../../hooks - module/hud/#AdjustBlurAmount">
+AdjustBlurAmount											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawAmmo">
+DrawAmmo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawBlur">
+DrawBlur											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawBranchWarning">
+DrawBranchWarning											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawCrosshair">
+DrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawEntityInfo">
+DrawEntityInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawLiliaModelView">
+DrawLiliaModelView											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawVignette">
+DrawVignette											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ItemShowEntityMenu">
+ItemShowEntityMenu											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#SetupQuickMenu">
+SetupQuickMenu											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldBarDraw">
+ShouldBarDraw											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawAmmo">
+ShouldDrawAmmo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawAmmoHUD">
+ShouldDrawAmmoHUD											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawBlur">
+ShouldDrawBlur											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawBranchWarning">
+ShouldDrawBranchWarning											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCharInfo">
+ShouldDrawCharInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCrosshair">
+ShouldDrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCrosshair">
+ShouldDrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawEntityInfo">
+ShouldDrawEntityInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawPlayerInfo">
+ShouldDrawPlayerInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawVignette">
+ShouldDrawVignette											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldHideBars">
+ShouldHideBars											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldHideBars">
+ShouldHideBars											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipInitialize">
+TooltipInitialize											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipLayout">
+TooltipLayout											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipPaint">
+TooltipPaint											</a>
 										</li>
 
 									</ul>
@@ -1218,38 +1318,6 @@ VendorBuyEvent											</a>
  This function handles the event where a player sells an item to a vendor."></span>
 											<a href="../../hooks - module/vendor/#VendorSellEvent">
 VendorSellEvent											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
 										</li>
 
 									</ul>
@@ -2170,12 +2238,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2331,22 +2399,22 @@ lia.util.isSteamID											</a>
 lia.util.notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../core - libraries/lia.util/#lia.util.notify">
-lia.util.notify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notify">
 lia.util.notify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.notify">
+lia.util.notify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
@@ -3004,12 +3072,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3265,12 +3333,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3683,7 +3751,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">w</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The width of the inventory.</p>
@@ -3695,7 +3763,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">h</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The height of the inventory.</p>
@@ -3707,7 +3775,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">id</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The ID of the inventory.</p>
@@ -3746,7 +3814,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">id</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The ID of the item.</p>
@@ -3774,7 +3842,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">identifier</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> Unique ID of the item</p>
@@ -3817,7 +3885,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">invID</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The ID of the inventory.</p>
@@ -3856,7 +3924,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">index</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p>
@@ -3887,7 +3955,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">itemData</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 
 								<p> The item data.</p>
@@ -3899,7 +3967,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">x</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The x-coordinate.</p>
@@ -3911,7 +3979,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">y</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The y-coordinate.</p>
@@ -3923,7 +3991,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">callback</span>
 
-									<span class="tag"><span class="type">function</span></span>
+									<span class="tag"><span class="type">Function</span></span>
 
 
 								<p> The callback function.</p>
@@ -3962,7 +4030,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">object</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 
 								<p> The object to check.</p>
@@ -4001,7 +4069,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">path</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The path to the Lua file.</p>
@@ -4013,7 +4081,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">baseID</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The base ID of the item.</p>
@@ -4025,7 +4093,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">isBaseItem</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 
 								<p> Whether the item is a base item.</p>
@@ -4053,7 +4121,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">directory</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The directory path.</p>
@@ -4108,7 +4176,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">uniqueID</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The unique ID of the item.</p>
@@ -4120,7 +4188,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">id</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The ID of the item.</p>
@@ -4159,7 +4227,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">owner</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The owner of the inventory.</p>
@@ -4171,7 +4239,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">invType</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The inventory type.</p>
@@ -4183,7 +4251,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">callback</span>
 
-									<span class="tag"><span class="type">function</span></span>
+									<span class="tag"><span class="type">Function</span></span>
 
 
 								<p> The callback function.</p>
@@ -4211,7 +4279,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">uniqueID</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The unique ID of the item.</p>
@@ -4223,7 +4291,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">baseID</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The base ID of the item.</p>
@@ -4235,7 +4303,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">isBaseItem</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 
 								<p> Indicates if the item is a base item.</p>
@@ -4247,7 +4315,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">path</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The file path of the item.</p>
@@ -4259,7 +4327,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">luaGenerated</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 
 								<p> Indicates if the item is Lua-generated.</p>
@@ -4298,7 +4366,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">invType</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The inventory type.</p>
@@ -4310,7 +4378,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">w</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The width of the inventory.</p>
@@ -4322,7 +4390,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">h</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The height of the inventory.</p>
@@ -4350,7 +4418,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">invID</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The inventory ID.</p>
@@ -4362,7 +4430,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">w</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The width of the inventory.</p>
@@ -4374,7 +4442,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">h</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The height of the inventory.</p>
@@ -4386,7 +4454,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">callback</span>
 
-									<span class="tag"><span class="type">function</span></span>
+									<span class="tag"><span class="type">Function</span></span>
 
 
 								<p> The callback function.</p>
@@ -4414,7 +4482,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">uniqueID</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> Unique ID of the item</p>
@@ -4426,7 +4494,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">position</span>
 
-									<span class="tag"><span class="type">vector</span></span>
+									<span class="tag"><span class="type">Vector</span></span>
 
 
 								<p> The position in which the item's entity will be spawned</p>
@@ -4438,7 +4506,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">callback</span>
 
-									<span class="tag"><span class="type">function</span></span>
+									<span class="tag"><span class="type">Function</span></span>
 
 									<span class="tag default">default: nil</span>
 
@@ -4451,7 +4519,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">angles</span>
 
-									<span class="tag"><span class="type">angle</span></span>
+									<span class="tag"><span class="type">Angle</span></span>
 
 									<span class="tag default">default: angle_zero</span>
 
@@ -4464,7 +4532,7 @@ takePermFlags											</a>
 							<li>
 								<span class="tag parameter">data</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 									<span class="tag default">default: nil</span>
 

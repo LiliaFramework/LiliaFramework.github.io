@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Character - Lilia Documentation</title>
+		<title>HUD - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Character - Lilia Documentation" />
+		<meta property="og:title" content="HUD - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Contains information about a player&#39;s current game state." />
+			<meta property="og:description" content="Hook Documentation for HUD Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -216,7 +216,7 @@
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../config - module/hud/">HUD</a></summary>
 
 									<ul>
@@ -920,7 +920,7 @@ copyParentDoor											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../hooks - module/hud/">HUD</a></summary>
 
 									<ul>
@@ -2238,12 +2238,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2399,22 +2399,22 @@ lia.util.isSteamID											</a>
 lia.util.notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../core - libraries/lia.util/#lia.util.notify">
-lia.util.notify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notify">
 lia.util.notify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.notify">
+lia.util.notify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
@@ -2476,7 +2476,7 @@ lia.util.wrapText											</a>
 
 					<ul>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../core - classes/character/">Character</a></summary>
 
 									<ul>
@@ -3072,12 +3072,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3333,12 +3333,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3725,68 +3725,24 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Character</h1>
-	<h2>Contains information about a player's current game state.</h2>
+	<h1>HUD</h1>
+	<h2>Hook Documentation for HUD Module.</h2>
 </header>
 
-<p>Characters are a fundamental object type in Lilia. They are distinct from players, where players are the representation of a
-person's existence in the server that owns a character, and their character is their currently selected persona. All the
-characters that a player owns will be loaded into memory once they connect to the server. Characters are saved during a regular
-interval (lia.config.CharacterDataSaveInterval), and during specific events (e.g when the owning player switches away from one character to another).</p>
+<p>
 
-<p>They contain all information that is not persistent with the player; names, descriptions, model, currency, etc. For the most
-part, you'll want to keep all information stored on the character since it will probably be different or change if the
-player switches to another character. An easy way to do this is to use <a href="../../core - libraries/lia.char/#lia.char.registerVar">lia.char.registerVar</a> to easily create accessor functions
-for variables that automatically save to the character object.</p>
+</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="WhitelistAllClasses">
-					<h1><span class="realm shared"></span></span>WhitelistAllClasses()</h1>
+				<a class="anchor" id="AdjustBlurAmount">
+					<h1><span class="realm client
+ This function allows you to modify the blur amount before it's applied."></span></span>AdjustBlurAmount(blurGoal)</h1>
 				</a>
 
-					<p>Whitelists all classes for the character.</p>
-			</header>
-
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="WhitelistAllFactions">
-					<h1><span class="realm shared"></span></span>WhitelistAllFactions()</h1>
-				</a>
-
-					<p>Whitelists all factions for the character.</p>
-			</header>
-
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="WhitelistEverything">
-					<h1><span class="realm shared"></span></span>WhitelistEverything()</h1>
-				</a>
-
-					<p>Whitelists everything (all classes and factions) for the character.</p>
-			</header>
-
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="__eq">
-					<h1><span class="realm shared"></span></span>__eq(other)</h1>
-				</a>
-
-					<p>Returns true if this character is equal to another character.  Internally, this checks character IDs.</p>
+					<p>Adjusts the amount of blur applied to the screen.</p>
 			</header>
 
 
@@ -3796,12 +3752,455 @@ for variables that automatically save to the character object.</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">other</span>
+								<span class="tag parameter">blurGoal</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The current target blur amount.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">number</span>
+
+								<p>The adjusted blur amount to be applied.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="DrawAmmo">
+					<h1><span class="realm client"></span></span>DrawAmmo(weapon)</h1>
+				</a>
+
+					<p>Draws the ammo display for the given weapon.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">weapon</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The weapon for which the ammo display is being drawn.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="DrawBlur">
+					<h1><span class="realm client"></span></span>DrawBlur()</h1>
+				</a>
+
+					<p>Draws the blur effect.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="DrawBranchWarning">
+					<h1><span class="realm client"></span></span>DrawBranchWarning()</h1>
+				</a>
+
+					<p>Draws a warning about a branching path.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="DrawCrosshair">
+					<h1><span class="realm client"></span></span>DrawCrosshair()</h1>
+				</a>
+
+					<p>Draws the crosshair.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="DrawEntityInfo">
+					<h1><span class="realm client"></span></span>DrawEntityInfo(entity, alpha)</h1>
+				</a>
+
+					<p>Draws information about the given entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+
+
+								<p> The entity for which information is being drawn.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">alpha</span>
+
+
+
+								<p> The alpha value to use for drawing the entity information.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="DrawLiliaModelView">
+					<h1><span class="realm client"></span></span>DrawLiliaModelView(panel, entity)</h1>
+				</a>
+
+					<p>Called to draw additional content within the model view panel.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">panel</span>
+
+									<span class="tag"><span class="type">Panel</span></span>
+
+
+								<p> The panel containing the model view</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The entity being drawn.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="DrawVignette">
+					<h1><span class="realm client"></span></span>DrawVignette()</h1>
+				</a>
+
+					<p>Draws the vignette effect.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ItemShowEntityMenu">
+					<h1><span class="realm client"></span></span>ItemShowEntityMenu(entity)</h1>
+				</a>
+
+					<p>Displays the context menu for interacting with an item entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The item entity for which the context menu is displayed.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="SetupQuickMenu">
+					<h1><span class="realm client"></span></span>SetupQuickMenu(panel)</h1>
+				</a>
+
+					<p>Sets up the quick menu by adding buttons, sliders, spacers, etc.
+ This function is called during the initialization of the quick menu panel.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">panel</span>
+
+									<span class="tag"><span class="type">Panel</span></span>
+
+
+								<p> The panel representing the quick menu.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldBarDraw">
+					<h1><span class="realm client"></span></span>ShouldBarDraw(bar)</h1>
+				</a>
+
+					<p>Determines whether a bar should be drawn.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">bar</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> The bar object.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if the bar should be drawn, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldDrawAmmo">
+					<h1><span class="realm client"></span></span>ShouldDrawAmmo(weapon)</h1>
+				</a>
+
+					<p>Determines whether the ammo display should be drawn for the given weapon.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">weapon</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The weapon for which the ammo display is being considered.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if the ammo display should be drawn, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldDrawAmmoHUD">
+					<h1><span class="realm client"></span></span>ShouldDrawAmmoHUD(weapon)</h1>
+				</a>
+
+					<p>Whether or not the ammo HUD should be drawn.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">weapon</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> Weapon the player currently is holding</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not to draw the ammo hud</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldDrawBlur">
+					<h1><span class="realm client"></span></span>ShouldDrawBlur()</h1>
+				</a>
+
+					<p>Determines whether the blur effect should be drawn.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if the blur effect should be drawn, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldDrawBranchWarning">
+					<h1><span class="realm client"></span></span>ShouldDrawBranchWarning()</h1>
+				</a>
+
+					<p>Determines whether a warning about a branching path should be drawn.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if the branching path warning should be drawn, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldDrawCharInfo">
+					<h1><span class="realm client"></span></span>ShouldDrawCharInfo(entity, character, charInfo)</h1>
+				</a>
+
+					<p>Determines whet character information should be drawn for the given entity and character.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The entity associated with the character.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
 
 									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
 
 
-								<p> Character to compare to</p>
+								<p> The character for which information is being considered.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">charInfo</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> Additional information about the character.</p>
 							</li>
 					</ul>
 
@@ -3810,26 +4209,22 @@ for variables that automatically save to the character object.</p>
 				<ul>
 
 							<li>
-									<span class="tag type">any</span>
+									<span class="type">boolean</span>
 
-								<p>bool Whether or not this character is equal to the given character</p>
+								<p>True if character information should be drawn, false otherwise.</p>
 							</li>
 
 				</ul>
 
-				<h3>Example Usage</h3>
-					<pre><code>print(lia.char.loaded[1] == lia.char.loaded[2])
- > false
-</code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="__tostring">
-					<h1><span class="realm shared"></span></span>__tostring()</h1>
+				<a class="anchor" id="ShouldDrawCrosshair">
+					<h1><span class="realm client"></span></span>ShouldDrawCrosshair()</h1>
 				</a>
 
-					<p>Returns a string representation of this character</p>
+					<p>Determines whether the crosshair should be drawn.</p>
 			</header>
 
 
@@ -3838,328 +4233,9 @@ for variables that automatically save to the character object.</p>
 				<ul>
 
 							<li>
-									<span class="tag type">any</span>
+									<span class="type">boolean</span>
 
-								<p>string String representation</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>print(lia.char.loaded[1])
- > "character[1]"
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="addBoost">
-					<h1><span class="realm server"></span></span>addBoost(boostID, attribID, boostAmount)</h1>
-				</a>
-
-					<p>Adds a boost to the character's attributes.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">boostID</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The ID of the boost to add.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">attribID</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The ID of the attribute to which the boost should be added.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">boostAmount</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The amount of boost to add to the attribute.</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>character:removeBoost("some_boost_id", "some_attribute_id", 10)
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="ban">
-					<h1><span class="realm server"></span></span>ban(time)</h1>
-				</a>
-
-					<p>Forces a player off their current character, and prevents them from using the character for the specified amount of time.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">time</span>
-
-									<span class="tag"><span class="type">number</span></span>
-
-									<span class="tag default">optional</span>
-
-								<p> Amount of seconds to ban the character for. If left as <code>nil</code>, the character will be banned permanently</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="classUnWhitelist">
-					<h1><span class="realm shared"></span></span>classUnWhitelist(class)</h1>
-				</a>
-
-					<p>Removes the whitelist for a specific class from the character.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">class</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The class to remove the whitelist status for.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="classWhitelist">
-					<h1><span class="realm shared"></span></span>classWhitelist(class)</h1>
-				</a>
-
-					<p>Whitelists the character for a specific class.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">class</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The class to whitelist the character for.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="delete">
-					<h1><span class="realm server"></span></span>delete()</h1>
-				</a>
-
-					<p>Deletes the character from the character database and removes it from memory.</p>
-			</header>
-
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="destroy">
-					<h1><span class="realm server"></span></span>destroy()</h1>
-				</a>
-
-					<p>Destroys the character, removing it from memory and notifying clients to remove it.</p>
-			</header>
-
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getAttrib">
-					<h1><span class="realm shared"></span></span>getAttrib(key, default)</h1>
-				</a>
-
-					<p>Retrieves the value of a character attribute, including applied boosts.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The key of the attribute to retrieve.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">default</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-									<span class="tag default">default: 0</span>
-
-								<p> The default value to return if the attribute is not found.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>number The value of the specified attribute, including applied boosts.</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>local attributeValue = character:getAttrib("some_attribute_key")
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getBoost">
-					<h1><span class="realm shared"></span></span>getBoost(attribID)</h1>
-				</a>
-
-					<p>Retrieves the boost value for a specific attribute.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">attribID</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The ID of the attribute for which to retrieve the boost.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>number|nil The boost value for the specified attribute, or nil if no boost is found.</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>local boostValue = character:getBoost("some_attribute_id")
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getBoosts">
-					<h1><span class="realm shared"></span></span>getBoosts()</h1>
-				</a>
-
-					<p>Retrieves all boosts applied to the character's attributes.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>table A table containing all boosts applied to the character's attributes.</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>local boostsTable = character:getBoosts()
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getFlags">
-					<h1><span class="realm shared"></span></span>getFlags()</h1>
-				</a>
-
-					<p>Returns all of the flags this character has.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
-
-								<p>Flags this character has represented as one string. You can access individual flags by iterating through
- the string letter by letter</p>
+								<p>True if the crosshair should be drawn, false otherwise.</p>
 							</li>
 
 				</ul>
@@ -4168,92 +4244,11 @@ for variables that automatically save to the character object.</p>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="getID">
-					<h1><span class="realm shared"></span></span>getID()</h1>
+				<a class="anchor" id="ShouldDrawCrosshair">
+					<h1><span class="realm client"></span></span>ShouldDrawCrosshair(client, weapon)</h1>
 				</a>
 
-					<p>Returns this character's database ID.  This is guaranteed to be unique.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>number Unique ID of character</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getItemWeapon">
-					<h1><span class="realm shared"></span></span>getItemWeapon()</h1>
-				</a>
-
-					<p>Retrieves the character's equipped weapon and its corresponding item from the inventory.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>Entity|false The equipped weapon entity, or false if no weapon is equipped.</p>
-							</li>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>Item|false The corresponding item from the character's inventory, or false if no corresponding item is found.</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>local weapon, item = character:getItemWeapon()
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getPlayer">
-					<h1><span class="realm shared"></span></span>getPlayer()</h1>
-				</a>
-
-					<p>Returns the player that owns this character.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>player Player that owns this character</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="giveFlags">
-					<h1><span class="realm server"></span></span>giveFlags(flags)</h1>
-				</a>
-
-					<p>Adds a flag to the list of this character's accessible flags.  This does not overwrite existing flags.</p>
+					<p>Determines whether the crosshair should be drawn for a specific client and weapon.</p>
 			</header>
 
 
@@ -4263,645 +4258,24 @@ for variables that automatically save to the character object.</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">flags</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> Flag(s) this character should be given</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>character:GiveFlags("pet")
- gives p, e, and t flags to the character
-</code></pre>
-
-				<h3>See Also</h3>
-				<ul>
-						<li><a href="../../core - classes/character/#hasFlags">hasFlags</a></li>
-				</ul>
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="giveMoney">
-					<h1><span class="realm server"></span></span>giveMoney(amount, takingMoney)</h1>
-				</a>
-
-					<p>Gives or takes money from the character's wallet.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">amount</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The amount of money to give or take.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">takingMoney</span>
-
-									<span class="tag"><span class="type">Boolean</span></span>
-
-									<span class="tag default">default: false</span>
-
-								<p> Whether the operation is to take money from the character.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>bool Whether the operation was successful.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="hasClassWhitelist">
-					<h1><span class="realm shared"></span></span>hasClassWhitelist(class)</h1>
-				</a>
-
-					<p>Checks if the player has whitelisted access to a class.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">class</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The class to check for whitelisting.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>Whether the player has whitelisted access to the specified faction.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="hasFlags">
-					<h1><span class="realm shared"></span></span>hasFlags(flags)</h1>
-				</a>
-
-					<p>Returns <code>true</code> if the character has the given flag(s).</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flags</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> Flag(s) to check access for</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>Whether or not this character has access to the given flag(s)</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="hasMoney">
-					<h1><span class="realm shared"></span></span>hasMoney(amount)</h1>
-				</a>
-
-					<p>Checks if the character has at least the specified amount of money.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">amount</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The amount of money to check for.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>bool Whether the character has at least the specified amount of money.</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>local hasEnoughMoney = character:hasMoney(100)
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="isClass">
-					<h1><span class="realm shared"></span></span>isClass(class)</h1>
-				</a>
-
-					<p>Checks if the player belongs to the specified class.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">class</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The class to check against.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>Whether the player belongs to the specified class.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="isFaction">
-					<h1><span class="realm shared"></span></span>isFaction(faction)</h1>
-				</a>
-
-					<p>Checks if the player belongs to the specified faction.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">faction</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The faction to check against.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>Whether the player belongs to the specified faction.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="isFaction">
-					<h1><span class="realm shared"></span></span>isFaction(faction)</h1>
-				</a>
-
-					<p>Checks if the character belongs to the specified faction.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">faction</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> Index of the faction to check against.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>bool Whether the character belongs to the specified faction.</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>local isInFaction = character:isFaction("some_faction")
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="joinClass">
-					<h1><span class="realm shared"></span></span>joinClass(class, isForced)</h1>
-				</a>
-
-					<p>Sets the character's class to the specified class.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">class</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The class to join.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">isForced</span>
-
-									<span class="tag"><span class="type">Boolean</span></span>
-
-									<span class="tag default">default: false</span>
-
-								<p> Whether to force the character to join the class even if conditions are not met.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>bool Whether the character successfully joined the class.</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>local success = character:joinClass("some_class")
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="kick">
-					<h1><span class="realm server"></span></span>kick()</h1>
-				</a>
-
-					<p>Forces a player off their current character, and sends them to the character menu to select a character.</p>
-			</header>
-
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="kickClass">
-					<h1><span class="realm shared"></span></span>kickClass()</h1>
-				</a>
-
-					<p>Kicks the character from their current class and joins them to the default class of their faction.</p>
-			</header>
-
-
-
-				<h3>Example Usage</h3>
-					<pre><code>character:kickClass()
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="removeBoost">
-					<h1><span class="realm server"></span></span>removeBoost(boostID, attribID)</h1>
-				</a>
-
-					<p>Removes a boost from the character's attributes.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">boostID</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The ID of the boost to remove.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">attribID</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The ID of the attribute from which the boost should be removed.</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>character:removeBoost("some_boost_id", "some_attribute_id")
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="save">
-					<h1><span class="realm server"></span></span>save(callback)</h1>
-				</a>
-
-					<p>Saves this character's info to the database.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">callback</span>
-
-									<span class="tag"><span class="type">Function</span></span>
-
-									<span class="tag default">default: nil</span>
-
-								<p> Function to call when the save has completed.</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>lia.char.loaded[1]:save(function()
-	print("Done saving " .. lia.char.loaded[1] .. "!")
-end)
-> Done saving character[1]! -- after a moment
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="setAttrib">
-					<h1><span class="realm server"></span></span>setAttrib(key, value)</h1>
-				</a>
-
-					<p>Sets the value of a character attribute.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The key of the attribute to set.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">value</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The value to set for the attribute.</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>character:setAttrib("some_attribute_key", 10)
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="setFlags">
-					<h1><span class="realm server"></span></span>setFlags(flags)</h1>
-				</a>
-
-					<p>Sets this character's accessible flags.  Note that this method overwrites <strong>all</strong> flags instead of adding them.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flags</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> Flag(s) this charater is allowed to have</p>
-							</li>
-					</ul>
-
-
-
-				<h3>See Also</h3>
-				<ul>
-						<li><a href="../../core - classes/character/#giveFlags">giveFlags</a></li>
-				</ul>
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="sync">
-					<h1><span class="realm server"></span></span>sync(receiver)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Networks this character's information to make the given player aware of this character's existence.  If the receiver is
- not the owner of this character, it will only be sent a limited amount of data (as it does not need anything else).
- This is done automatically by the framework.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">receiver</span>
+								<span class="tag parameter">client</span>
 
 									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
 
-									<span class="tag default">default: nil</span>
 
-								<p> Player to send the information to. This will sync to all connected players if set to <code>nil</code>.</p>
+								<p> The player entity.</p>
 							</li>
 					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="takeFlags">
-					<h1><span class="realm server"></span></span>takeFlags(flags)</h1>
-				</a>
-
-					<p>Removes this character's access to the given flags.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">flags</span>
+								<span class="tag parameter">weapon</span>
 
 									<span class="tag"><span class="type">String</span></span>
 
 
-								<p> Flag(s) to remove from this character</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>-- for a character with "pet" flags
-character:takeFlags("p")
--- character now has e, and t flags
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="takeMoney">
-					<h1><span class="realm server"></span></span>takeMoney(amount)</h1>
-				</a>
-
-					<p>Takes money from the character's wallet.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">amount</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The amount of money to take.</p>
+								<p> The weapon entity.</p>
 							</li>
 					</ul>
 
@@ -4910,9 +4284,9 @@ character:takeFlags("p")
 				<ul>
 
 							<li>
-									<span class="tag type">any</span>
+									<span class="type">boolean</span>
 
-								<p>bool Whether the operation was successful.</p>
+								<p>True if the crosshair should be drawn, false otherwise.</p>
 							</li>
 
 				</ul>
@@ -4921,11 +4295,11 @@ character:takeFlags("p")
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="updateAttrib">
-					<h1><span class="realm server"></span></span>updateAttrib(key, value)</h1>
+				<a class="anchor" id="ShouldDrawEntityInfo">
+					<h1><span class="realm client"></span></span>ShouldDrawEntityInfo(entity)</h1>
 				</a>
 
-					<p>Updates the value of a character attribute by adding a specified value to it.</p>
+					<p>Determines whether entity information should be drawn for the given entity.</p>
 			</header>
 
 
@@ -4935,31 +4309,243 @@ character:takeFlags("p")
 					<ul>
 
 							<li>
-								<span class="tag parameter">key</span>
+								<span class="tag parameter">entity</span>
 
-									<span class="tag"><span class="type">String</span></span>
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
 
 
-								<p> The key of the attribute to update.</p>
+								<p> The entity for which information is being considered.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if entity information should be drawn, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldDrawPlayerInfo">
+					<h1><span class="realm client"></span></span>ShouldDrawPlayerInfo()</h1>
+				</a>
+
+					<p>Determines whether player information should be drawn.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if player information should be drawn, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldDrawVignette">
+					<h1><span class="realm client"></span></span>ShouldDrawVignette()</h1>
+				</a>
+
+					<p>Determines whether the vignette effect should be drawn.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if the vignette effect should be drawn, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldHideBars">
+					<h1><span class="realm client"></span></span>ShouldHideBars()</h1>
+				</a>
+
+					<p>Determines whether bars should be hidden.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if bars should be hidden, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldHideBars">
+					<h1><span class="realm client"></span></span>ShouldHideBars()</h1>
+				</a>
+
+					<p>Determines whether bars should be hidden.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if bars should be hidden, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="TooltipInitialize">
+					<h1><span class="realm client"></span></span>TooltipInitialize(panel, targetPanel)</h1>
+				</a>
+
+					<p>Initializes the tooltip before it is displayed.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">panel</span>
+
+									<span class="tag"><span class="type">Panel</span></span>
+
+
+								<p> The tooltip panel.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">value</span>
+								<span class="tag parameter">targetPanel</span>
 
-									<span class="tag"><span class="type">Integer</span></span>
+									<span class="tag"><span class="type">Panel</span></span>
 
 
-								<p> The value to add to the attribute.</p>
+								<p> The panel for which the tooltip is being displayed.</p>
 							</li>
 					</ul>
 
 
-				<h3>Example Usage</h3>
-					<pre><code>character:updateAttrib("some_attribute_key", 10)
-</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="TooltipLayout">
+					<h1><span class="realm client"></span></span>TooltipLayout(panel)</h1>
+				</a>
+
+					<p>Handles the layout of the tooltip.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">panel</span>
+
+									<span class="tag"><span class="type">Panel</span></span>
+
+
+								<p> The tooltip panel.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="TooltipPaint">
+					<h1><span class="realm client"></span></span>TooltipPaint(panel, w, h)</h1>
+				</a>
+
+					<p>Handles the painting of the tooltip.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">panel</span>
+
+									<span class="tag"><span class="type">Panel</span></span>
+
+
+								<p> The tooltip panel.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">w</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The width of the tooltip.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">h</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The height of the tooltip.</p>
+							</li>
+					</ul>
+
+
 
 		</section>
 

@@ -640,13 +640,6 @@ CanPlayerTakeItem											</a>
 CanPlayerUnequipItem											</a>
 										</li>
 										<li>
-											<span class="realm  client
- This hook can be used to implement custom checks to determine if a player is
- allowed to view their inventory."></span>
-											<a href="../../hooks - general/module/#CanPlayerViewInventory">
-CanPlayerViewInventory											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../hooks - general/module/#CreateMenuButtons">
 CreateMenuButtons											</a>
@@ -655,11 +648,6 @@ CreateMenuButtons											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#DatabaseConnected">
 DatabaseConnected											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#DrawLiliaModelView">
-DrawLiliaModelView											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -675,11 +663,6 @@ InitializedModules											</a>
 											<span class="realm shared"></span>
 											<a href="../../hooks - general/module/#InitializedSchema">
 InitializedSchema											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ItemShowEntityMenu">
-ItemShowEntityMenu											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -722,11 +705,6 @@ OnWipeTables											</a>
 PlayerModelChanged											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#PostDrawInventory">
-PostDrawInventory											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#PostLoadData">
 PostLoadData											</a>
@@ -747,11 +725,6 @@ ScreenResolutionChanged											</a>
 SetupDatabase											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldBarDraw">
-ShouldBarDraw											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#ShouldClientDrown">
 ShouldClientDrown											</a>
@@ -760,21 +733,6 @@ ShouldClientDrown											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#ShouldDataBeSaved">
 ShouldDataBeSaved											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldDrawAmmoHUD">
-ShouldDrawAmmoHUD											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldDrawCrosshair">
-ShouldDrawCrosshair											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldHideBars">
-ShouldHideBars											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -956,6 +914,148 @@ callOnDoorChildren											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/doors/#copyParentDoor">
 copyParentDoor											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/hud/">HUD</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client
+ This function allows you to modify the blur amount before it's applied."></span>
+											<a href="../../hooks - module/hud/#AdjustBlurAmount">
+AdjustBlurAmount											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawAmmo">
+DrawAmmo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawBlur">
+DrawBlur											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawBranchWarning">
+DrawBranchWarning											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawCrosshair">
+DrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawEntityInfo">
+DrawEntityInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawLiliaModelView">
+DrawLiliaModelView											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#DrawVignette">
+DrawVignette											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ItemShowEntityMenu">
+ItemShowEntityMenu											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#SetupQuickMenu">
+SetupQuickMenu											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldBarDraw">
+ShouldBarDraw											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawAmmo">
+ShouldDrawAmmo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawAmmoHUD">
+ShouldDrawAmmoHUD											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawBlur">
+ShouldDrawBlur											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawBranchWarning">
+ShouldDrawBranchWarning											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCharInfo">
+ShouldDrawCharInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCrosshair">
+ShouldDrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawCrosshair">
+ShouldDrawCrosshair											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawEntityInfo">
+ShouldDrawEntityInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawPlayerInfo">
+ShouldDrawPlayerInfo											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldDrawVignette">
+ShouldDrawVignette											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldHideBars">
+ShouldHideBars											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#ShouldHideBars">
+ShouldHideBars											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipInitialize">
+TooltipInitialize											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipLayout">
+TooltipLayout											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/hud/#TooltipPaint">
+TooltipPaint											</a>
 										</li>
 
 									</ul>
@@ -1218,38 +1318,6 @@ VendorBuyEvent											</a>
  This function handles the event where a player sells an item to a vendor."></span>
 											<a href="../../hooks - module/vendor/#VendorSellEvent">
 VendorSellEvent											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
 										</li>
 
 									</ul>
@@ -2170,12 +2238,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2331,22 +2399,22 @@ lia.util.isSteamID											</a>
 lia.util.notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../core - libraries/lia.util/#lia.util.notify">
-lia.util.notify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notify">
 lia.util.notify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.notify">
+lia.util.notify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
@@ -3004,12 +3072,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3265,12 +3333,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3759,7 +3827,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">quantity</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The quantity to add.</p>
@@ -3771,7 +3839,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">receivers</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -3784,7 +3852,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">noCheckEntity</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -3813,7 +3881,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">method</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The method to be called</p>
@@ -3849,7 +3917,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">...</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 
 								<p> Arguments to pass to the method</p>
@@ -3925,7 +3993,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">key</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The key in which the value is stored</p>
@@ -4081,30 +4149,6 @@ same name but different numerical IDs). You can think of items as the class, whi
 		<section class="method">
 			<header>
 				<a class="anchor" id="getName">
-					<h1><span class="realm server"></span></span>getName()</h1>
-				</a>
-
-					<p>Returns the name of the item.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
-
-								<p>The name of the item</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getName">
 					<h1><span class="realm client"></span></span>getName()</h1>
 				</a>
 
@@ -4120,6 +4164,30 @@ same name but different numerical IDs). You can think of items as the class, whi
 									<span class="tag type">any</span>
 
 								<p>string The name of the item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getName">
+					<h1><span class="realm server"></span></span>getName()</h1>
+				</a>
+
+					<p>Returns the name of the item.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>The name of the item</p>
 							</li>
 
 				</ul>
@@ -4240,7 +4308,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">name</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The name of the hook</p>
@@ -4252,7 +4320,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">func</span>
 
-									<span class="tag"><span class="type">function</span></span>
+									<span class="tag"><span class="type">Function</span></span>
 
 
 								<p> The function to call once the event occurs</p>
@@ -4280,7 +4348,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">action</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The interaction action to perform.</p>
@@ -4316,7 +4384,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">data</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -4421,7 +4489,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">name</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The name of the hook</p>
@@ -4433,7 +4501,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">func</span>
 
-									<span class="tag"><span class="type">function</span></span>
+									<span class="tag"><span class="type">Function</span></span>
 
 
 								<p> The function to call after the original hook was called</p>
@@ -4461,7 +4529,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">detail</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 									<span class="tag default">default: false</span>
 
@@ -4503,7 +4571,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">bNoReplication</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 
 								<p> Whether or not the item's removal should not be replicated.</p>
@@ -4515,7 +4583,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">bNoDelete</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 
 								<p> Whether or not the item should not be fully deleted</p>
@@ -4554,7 +4622,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">preserveItem</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -4594,7 +4662,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">key</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p> The key to store the value within</p>
@@ -4618,7 +4686,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">receivers</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 									<span class="tag default">default: nil</span>
 
@@ -4631,7 +4699,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">noSave</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 									<span class="tag default">default: false</span>
 
@@ -4644,7 +4712,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">noCheckEntity</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 									<span class="tag default">default: false</span>
 
@@ -4673,7 +4741,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">quantity</span>
 
-									<span class="tag"><span class="type">integer</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
 								<p> The new quantity value.</p>
@@ -4685,7 +4753,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">receivers</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><span class="type">Table</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -4698,7 +4766,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">noCheckEntity</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 									<span class="tag default">optional</span>
 
@@ -4727,7 +4795,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">position</span>
 
-									<span class="tag"><span class="type">vector</span></span>
+									<span class="tag"><span class="type">Vector</span></span>
 
 
 								<p> The position in which the item's entity will be spawned</p>
@@ -4739,7 +4807,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">angles</span>
 
-									<span class="tag"><span class="type">angle</span></span>
+									<span class="tag"><span class="type">Angle</span></span>
 
 
 								<p> The angles at which the item's entity will spawn</p>
@@ -4817,7 +4885,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 								<span class="tag parameter">bBypass</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">Boolean</span></span>
 
 
 								<p> Whether to bypass access checks for transferring the item.</p>
