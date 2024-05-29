@@ -635,16 +635,6 @@ CanPlayerSpawnStorage											</a>
 CanPlayerTakeItem											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
-											<a href="../../hooks - general/module/#CanPlayerThrowPunch">
-CanPlayerThrowPunch											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../hooks - general/module/#CanPlayerThrowPunch">
-CanPlayerThrowPunch											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#CanPlayerUnequipItem">
 CanPlayerUnequipItem											</a>
@@ -3816,101 +3806,6 @@ end
 	return !(client:GetMoveType() == MOVETYPE_NOCLIP and !client:InVehicle()) -- Disallow players in observer taking items.
 end
 </code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="CanPlayerThrowPunch">
-					<h1><span class="realm shared"></span></span>CanPlayerThrowPunch(client)</h1>
-				</a>
-
-					<p>Whether or not the player is allowed to punch with the hands SWEP.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
-
-
-								<p> Player attempting throw a punch</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>Whether or not to allow the player to punch</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>function MODULE:CanPlayerThrowPunch(client)
-	return client:GetCharacter():GetAttribute("str", 0) > 0 -- Only allow players with strength to punch.
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="CanPlayerThrowPunch">
-					<h1><span class="realm shared"></span></span>CanPlayerThrowPunch(client, trace)</h1>
-				</a>
-
-					<p>Determines if a player can throw a punch with a weapon.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
-
-
-								<p> The player attempting to throw a punch.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">trace</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
-
-
-								<p> The trace result.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">True</span>
-
-								<p>if the player can throw a punch, false otherwise.</p>
-							</li>
-
-				</ul>
-
 
 		</section>
 		<section class="method">
