@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Permakill - Lilia Documentation</title>
+		<title>Vendor - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Permakill - Lilia Documentation" />
+		<meta property="og:title" content="Vendor - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Permakill Module." />
+			<meta property="og:description" content="Hook Documentation for Vendor Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -260,7 +260,7 @@
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../config - module/permakill/">Permakill</a></summary>
 
 									<ul>
@@ -1074,7 +1074,7 @@ thirdPersonToggled											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../hooks - module/vendor/">Vendor</a></summary>
 
 									<ul>
@@ -1122,11 +1122,6 @@ VendorSellEvent											</a>
 									<ul>
 
 
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
-										</li>
 
 									</ul>
 									</details>
@@ -1282,6 +1277,11 @@ SampleFunction											</a>
 									<ul>
 
 
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
+SampleFunction											</a>
+										</li>
 
 									</ul>
 									</details>
@@ -2265,12 +2265,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2426,22 +2426,22 @@ lia.util.isSteamID											</a>
 lia.util.notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../core - libraries/lia.util/#lia.util.notify">
-lia.util.notify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notify">
 lia.util.notify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.notify">
+lia.util.notify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
@@ -3099,12 +3099,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3360,12 +3360,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3752,42 +3752,451 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Permakill</h1>
-	<h2>Configuration for Permakill Module.</h2>
+	<h1>Vendor</h1>
+	<h2>Hook Documentation for Vendor Module.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="CanPlayerAccessVendor">
+					<h1><span class="realm server"></span></span>CanPlayerAccessVendor(client)</h1>
 				</a>
 
-					<p>This table defines the default settings for the Permakill Module.</p>
+					<p>Determines whether a player is allowed to access a vendor entity.
+ This hook can be used to implement custom checks to determine if a player is
+ allowed to access a specific vendor entity.</p>
 			</header>
 
 
-					<h3>Fields</h3>
+					<h3>Parameters</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">PKWorld</span>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
 
 
-
-								<p> When marked for Perma Kill, does world deaths count as perma killing? | <strong>bool</strong></p>
+								<p> The player attempting to access the vendor</p>
 							</li>
 					</ul>
 
 
 
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanPlayerTradeWithVendor">
+					<h1><span class="realm server"></span></span>CanPlayerTradeWithVendor(client, entity, uniqueID, isSellingToVendor)</h1>
+				</a>
+
+					<p>Whether or not a player can trade with a vendor.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> Player attempting to trade</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> Vendor entity</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">uniqueID</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The uniqueID of the item being traded.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isSellingToVendor</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+
+								<p> If the client is selling to the vendor</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not to allow the client to trade with the vendor</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerTradeWithVendor(client, entity, uniqueID, isSellingToVendor)
+	return false -- Disallow trading with vendors outright.
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CharacterVendorTraded">
+					<h1><span class="realm shared"></span></span>CharacterVendorTraded(client, entity, uniqueID, isSellingToVendor)</h1>
+				</a>
+
+					<p>Called when a character trades with a vendor entity.
+ This function can be used to perform additional actions when a character trades
+ with a vendor entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player character trading with the vendor</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity being traded with</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">uniqueID</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The unique identifier of the traded item</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isSellingToVendor</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+
+								<p> Whether the trade involves selling to the vendor</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>function CharacterVendorTraded(client, entity, uniqueID, isSellingToVendor)
+    -- Perform additional actions when a character trades with the vendor
+end
+</code></pre>
+
+				<h3>See Also</h3>
+				<ul>
+						<li><a href="../../hooks - module/vendor/#VendorSellEvent">VendorSellEvent</a></li>
+						<li><a href="../../hooks - module/vendor/#VendorBuyEvent">VendorBuyEvent</a></li>
+				</ul>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PlayerAccessVendor">
+					<h1><span class="realm shared"></span></span>PlayerAccessVendor(client, entity)</h1>
+				</a>
+
+					<p>Called when a player interacts with a vendor entity.
+ This function adds the player to the vendor's receivers list and notifies the player
+ about accessing the vendor.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player accessing the vendor</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the player can access the vendor.</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function PlayerAccessVendor(client, entity)
+    -- Add the player to the vendor's receivers list
+    entity.receivers[#entity.receivers + 1] = client
+
+    -- Notify the player about accessing the vendor
+    if entity.messages[VENDOR_WELCOME] then
+        client:notify(entity:getNetVar("name") .. ": " .. entity.messages[VENDOR_WELCOME])
+    end
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorBuyEvent">
+					<h1><span class="realm shared"></span></span>VendorBuyEvent(client, vendor, itemType, isSellingToVendor, character, price)</h1>
+				</a>
+
+					<p>Called when a player successfully buys an item from a vendor.
+ This function is called when a player successfully completes a purchase from a vendor.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player who made the purchase</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">vendor</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity from which the item was bought</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemType</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The uniqueID of item being sold</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isSellingToVendor</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+
+								<p> Indicates whether the player is selling to the vendor (always false in this context)</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character of the player involved in the trade</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">price</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> The price of the item being bought</p>
+							</li>
+					</ul>
+
+
+
+				<h3>See Also</h3>
+				<ul>
+						<li><a href="../../hooks - module/vendor/#VendorSellEvent">VendorSellEvent</a></li>
+				</ul>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorSellEvent">
+					<h1><span class="realm shared
+ This function handles the event where a player sells an item to a vendor."></span></span>VendorSellEvent(client, vendor, itemType, isSellingToVendor, character, price)</h1>
+				</a>
+
+					<p>Called when a player sells an item to a vendor.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player selling the item</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">vendor</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemType</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The uniqueID of item being sold</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isSellingToVendor</span>
+
+									<span class="tag"><span class="type">boolean</span></span>
+
+
+								<p> Indicates whether the player is selling to the vendor (always false in this context)</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character of the player selling the item</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">price</span>
+
+									<span class="tag"><span class="type">integer</span></span>
+
+
+								<p> The price at which the item is sold</p>
+							</li>
+					</ul>
+
+
+
+				<h3>See Also</h3>
+				<ul>
+						<li><a href="../../hooks - module/vendor/#VendorBuyEvent">VendorBuyEvent</a></li>
+				</ul>
 		</section>
 
 					</div>

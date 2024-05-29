@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Permakill - Lilia Documentation</title>
+		<title>Spawns - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Permakill - Lilia Documentation" />
+		<meta property="og:title" content="Spawns - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Permakill Module." />
+			<meta property="og:description" content="Hook Documentation for Spawns Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -260,7 +260,7 @@
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../config - module/permakill/">Permakill</a></summary>
 
 									<ul>
@@ -392,7 +392,7 @@
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../config - module/spawns/">Spawns</a></summary>
 
 									<ul>
@@ -957,7 +957,7 @@ GetSalaryLimit											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../hooks - module/spawns/">Spawns</a></summary>
 
 									<ul>
@@ -1122,11 +1122,6 @@ VendorSellEvent											</a>
 									<ul>
 
 
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
-										</li>
 
 									</ul>
 									</details>
@@ -1282,6 +1277,11 @@ SampleFunction											</a>
 									<ul>
 
 
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
+SampleFunction											</a>
+										</li>
 
 									</ul>
 									</details>
@@ -2265,12 +2265,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2426,22 +2426,22 @@ lia.util.isSteamID											</a>
 lia.util.notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../core - libraries/lia.util/#lia.util.notify">
-lia.util.notify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notify">
 lia.util.notify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.notify">
+lia.util.notify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
@@ -3099,12 +3099,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3360,12 +3360,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3752,37 +3752,756 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Permakill</h1>
-	<h2>Configuration for Permakill Module.</h2>
+	<h1>Spawns</h1>
+	<h2>Hook Documentation for Spawns Module.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="CanPlayerCreateChar">
+					<h1><span class="realm server"></span></span>CanPlayerCreateChar(client)</h1>
 				</a>
 
-					<p>This table defines the default settings for the Permakill Module.</p>
+					<p>Whether or not a player is allowed to create a new character.</p>
 			</header>
 
 
-					<h3>Fields</h3>
+					<h3>Parameters</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">PKWorld</span>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> Player attempting to create a new character</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p> Whether or not the player is allowed to create the chacter. This function defaults to <code>true</code>, so you
+ should only ever return <code>false</code> if you're disallowing creation. Othwise, don't return anything as you'll prevent any other
+ calls to this hook from running.</p>
+							</li>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>Language phrase to use for the error message</p>
+							</li>
+
+							<li>
+									<span class="type">...</span>
+
+								<p>Arguments to use for the language phrase</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerCreateChar(client)
+	if (!client:IsAdmin()) then
+		return false, "notNow" -- only allow admins to create a characr
+	end
+end
+-- non-admins will see the message "You are not allowed to do this ght now!"
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanPlayerJoinClass">
+					<h1><span class="realm shared"></span></span>CanPlayerJoinClass(client, class, info)</h1>
+				</a>
+
+					<p>Whether or not a player is allowed to join a class.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> Player attempting to join</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">class</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> ID of the class</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">info</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+
+
+								<p> The class table</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not to allow the player to join the class</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerJoinClass(client, class, info)
+	return client:IsAdmin() -- Restrict joining classes to admins only.
+end
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanPlayerUseChar">
+					<h1><span class="realm shared"></span></span>CanPlayerUseChar(client, character)</h1>
+				</a>
+
+					<p>Determines whether a player is allowed to use a specific character.
+ This hook can be used to implement custom checks to determine if a player is
+ allowed to use a particular character.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player attempting to use the character</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character being considered for use</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>Whether the player is allowed to use the character</p>
+							</li>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a> or <span class="type">nil</span>
+
+								<p>If disallowed, a reason for the disallowance; otherwise, nil</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CharDeleted">
+					<h1><span class="realm server"></span></span>CharDeleted(client, character)</h1>
+				</a>
+
+					<p>Called after a character is deleted.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character being deleted.</p>
+							</li>
+					</ul>
 
 
 
-								<p> When marked for Perma Kill, does world deaths count as perma killing? | <strong>bool</strong></p>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CharHasFlags">
+					<h1><span class="realm shared"></span></span>CharHasFlags(character, flags)</h1>
+				</a>
+
+					<p>Determines if a character has the given flag(s).</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character to check for flags.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">flags</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The flag(s) to check access for.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not this character has access to the given flag(s).</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CharLoaded">
+					<h1><span class="realm shared"></span></span>CharLoaded(character)</h1>
+				</a>
+
+					<p>Called when a character is loaded.
+ This function is called after a character has been successfully loaded.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character that has been loaded</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CharPostSave">
+					<h1><span class="realm server"></span></span>CharPostSave(character)</h1>
+				</a>
+
+					<p>Called after a character has been saved.
+ This function is called after a character has been successfully saved.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character that has been saved</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CharPreSave">
+					<h1><span class="realm shared"></span></span>CharPreSave(character)</h1>
+				</a>
+
+					<p>Called before a character is saved.
+ This function is called before a character is about to be saved.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character about to be saved</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ClassOnLoadout">
+					<h1><span class="realm server"></span></span>ClassOnLoadout(client)</h1>
+				</a>
+
+					<p>Called after FactionOnLoadout is executed.
+ This hook is called after a player's class loadout has been applied.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player entity for whom the class loadout was applied.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ClassPostLoadout">
+					<h1><span class="realm server"></span></span>ClassPostLoadout(client)</h1>
+				</a>
+
+					<p>Called after FactionPostLoadout is executed.
+ This hook is called after additional actions related to a player's class loadout have been performed.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player entity for whom the class loadout was applied.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="FactionOnLoadout">
+					<h1><span class="realm server"></span></span>FactionOnLoadout(client)</h1>
+				</a>
+
+					<p>Called after PlayerLoadout is executed.
+ This hook is called after a player's faction loadout has been applied.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player entity for whom the faction loadout was applied.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="FactionPostLoadout">
+					<h1><span class="realm server"></span></span>FactionPostLoadout(client)</h1>
+				</a>
+
+					<p>Called after PostPlayerLoadout is executed.
+ This hook is called after additional actions related to a player's faction loadout have been performed.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player entity for whom the faction loadout was applied.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="GetMaxPlayerChar">
+					<h1><span class="realm shared"></span></span>GetMaxPlayerChar(client)</h1>
+				</a>
+
+					<p>Retrieves the maximum number of characters a player can have.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player for whom to retrieve the maximum number of characters.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">int</span>
+
+								<p>The maximum number of characters the player can have.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PlayerLoadedChar">
+					<h1><span class="realm server"></span></span>PlayerLoadedChar(client, character, currentChar)</h1>
+				</a>
+
+					<p>Called when a player's character is loaded.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character being loaded.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">currentChar</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The current character of the player.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PostCharDelete">
+					<h1><span class="realm server"></span></span>PostCharDelete(client, character)</h1>
+				</a>
+
+					<p>Called after a character is deleted.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character being deleted.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PostPlayerLoadedChar">
+					<h1><span class="realm server"></span></span>PostPlayerLoadedChar(client, character, currentChar)</h1>
+				</a>
+
+					<p>Called after a player's character is loaded.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character being loaded.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">currentChar</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The current character of the player.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PostPlayerLoadout">
+					<h1><span class="realm server"></span></span>PostPlayerLoadout(client)</h1>
+				</a>
+
+					<p>Called after all of the player's loadout hooks are executed (PlayerLoadout, FactionOnLoadout, ClassOnLoadout).
+ This hook is called after a player's loadout has been fully applied, including faction and class loadouts.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player entity for whom the loadout was applied.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PrePlayerLoadedChar">
+					<h1><span class="realm server"></span></span>PrePlayerLoadedChar(client, character, currentChar)</h1>
+				</a>
+
+					<p>Called before a player's character is loaded.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character being loaded.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">currentChar</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The current character of the player.</p>
 							</li>
 					</ul>
 
