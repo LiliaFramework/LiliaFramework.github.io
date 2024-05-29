@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Inventory - Lilia Documentation</title>
+		<title>Attributes - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Inventory - Lilia Documentation" />
+		<meta property="og:title" content="Attributes - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Holds items within a grid layout." />
+			<meta property="og:description" content="Hook Documentation for Attributes Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -150,7 +150,7 @@
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../config - module/attributes/">Attributes</a></summary>
 
 									<ul>
@@ -799,7 +799,7 @@ ShouldShowPlayerOnScoreboard											</a>
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../hooks - module/attributes/">Attributes</a></summary>
 
 									<ul>
@@ -2698,7 +2698,7 @@ setNetVar											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../core - classes/inventory/">Inventory</a></summary>
 
 									<ul>
@@ -3620,34 +3620,24 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Inventory</h1>
-	<h2>Holds items within a grid layout.</h2>
+	<h1>Attributes</h1>
+	<h2>Hook Documentation for Attributes Module.</h2>
 </header>
 
-<p>Inventories are an object that contains <a href="../../core - classes/item/#">Item</a>s in a grid layout. Every <a href="../../core - classes/character/#">Character</a> will have exactly one inventory attached to
-it, which is the only inventory that is allowed to hold bags - any item that has its own inventory (i.e a suitcase). Inventories
-can be owned by a character, or it can be individually interacted with as a standalone object. For example, the container plugin
-attaches inventories to props, allowing for items to be stored outside of any character inventories and remain "in the world".</p>
+<p>
 
-<p>You may be looking for the following common functions:</p>
-
-<p><a href="../../core - classes/inventory/#add">add</a> Which adds an item to the inventory.</p>
-
-<p><a href="../../core - classes/inventory/#getItems">getItems</a> Which gets all of the items inside the inventory.</p>
-
-<p><a href="../../core - classes/inventory/#getID">getID</a> Which gets the inventory's ID.</p>
-
-<p><a href="../../core - classes/inventory/#hasItem">hasItem</a> Which checks if the inventory has an item.</p>
+</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="__eq">
-					<h1><span class="realm shared"></span></span>__eq(other)</h1>
+				<a class="anchor" id="AdjustStaminaOffset">
+					<h1><span class="realm shared"></span></span>AdjustStaminaOffset(client, offset)</h1>
 				</a>
 
-					<p>Checks if two inventories are equal based on their IDs.</p>
+					<p>Adjusts the stamina offset otherwise.
+ This hook can be used to apply additional modifications to the stamina offset, whether the player is running or regenerating stamina.</p>
 			</header>
 
 
@@ -3657,509 +3647,24 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 					<ul>
 
 							<li>
-								<span class="tag parameter">other</span>
+								<span class="tag parameter">client</span>
 
-									<span class="tag"><a class="type" href="../../core - classes/inventory/#">Inventory</a></span>
-
-
-								<p> The other inventory to compare with.</p>
-							</li>
-					</ul>
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
 
 
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">boolean</span>
-
-								<p>Returns true if the inventories have the same ID, otherwise false.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="__tostring">
-					<h1><span class="realm shared"></span></span>__tostring()</h1>
-				</a>
-
-					<p>Returns a string representation of the inventory.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
-
-								<p>A string representation of the inventory, including its class name and ID.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="add">
-					<h1><span class="realm server"></span></span>add(item)</h1>
-				</a>
-
-					<p>Alias for <a href="../../core - classes/inventory/#addItem">addItem</a> function.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">item</span>
-
-									<span class="tag"><a class="type" href="../../core - classes/item/#">Item</a></span>
-
-
-								<p> The item to add to the inventory.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="../../core - classes/inventory/#">Inventory</a>
-
-								<p>Returns the inventory itself.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="addAccessRule">
-					<h1><span class="realm server"></span></span>addAccessRule(rule, priority)</h1>
-				</a>
-
-					<p>Adds an access rule to the inventory.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">rule</span>
-
-									<span class="tag"><span class="type">function</span></span>
-
-
-								<p> The access rule function.</p>
+								<p> The player whose stamina is being adjusted.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">priority</span>
+								<span class="tag parameter">offset</span>
 
 									<span class="tag"><span class="type">number</span></span>
 
-									<span class="tag default">optional</span>
 
-								<p> The priority of the access rule.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="../../core - classes/inventory/#">Inventory</a>
-
-								<p>Returns the inventory itself.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="addDataProxy">
-					<h1><span class="realm shared"></span></span>addDataProxy(key, onChange)</h1>
-				</a>
-
-					<p>Adds a data proxy to the inventory for a specified key.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><span class="type">any</span></span>
-
-
-								<p> The key for the data proxy.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">onChange</span>
-
-									<span class="tag"><span class="type">function</span></span>
-
-
-								<p> The function to call when the data associated with the key changes.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="addItem">
-					<h1><span class="realm server"></span></span>addItem(item, noReplicate)</h1>
-				</a>
-
-					<p>Adds an item to the inventory.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">item</span>
-
-									<span class="tag"><span class="type">item</span></span>
-
-
-								<p> to add to the inventory.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">noReplicate</span>
-
-									<span class="tag"><span class="type">boolean</span></span>
-
-
-								<p> Set to true to prevent OnItemAdded to be called on the added item.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="../../core - classes/inventory/#">Inventory</a>
-
-								<p>Returns the inventory itself.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="canAccess">
-					<h1><span class="realm server"></span></span>canAccess(action, context)</h1>
-				</a>
-
-					<p>Checks if a certain action is permitted for the inventory.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">action</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The action to check for access.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">context</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
-
-									<span class="tag default">optional</span>
-
-								<p> Additional context for the access check.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">boolean</span> or <span class="type">nil</span>
-
-								<p>Returns true if the action is permitted, false if denied, or nil if not applicable.</p>
-							</li>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
-
-								<p>A reason for the access result.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="configure">
-					<h1><span class="realm shared
- This function is meant to be overridden in subclasses to define specific configurations."></span></span>configure()</h1>
-				</a>
-
-					<p>Configures the inventory.</p>
-			</header>
-
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="delete">
-					<h1><span class="realm server"></span></span>delete()</h1>
-				</a>
-
-					<p>Deletes the inventory.</p>
-			</header>
-
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="destroy">
-					<h1><span class="realm server"></span></span>destroy()</h1>
-				</a>
-
-					<p>Destroys the inventory and its associated items.</p>
-			</header>
-
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="extend">
-					<h1><span class="realm shared"></span></span>extend(className)</h1>
-				</a>
-
-					<p>Extends the inventory to create a subclass with a specified class name.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">className</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The name of the subclass.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
-
-								<p>A subclass of the Inventory class.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getData">
-					<h1><span class="realm shared"></span></span>getData(key, default)</h1>
-				</a>
-
-					<p>Retrieves data associated with a specified key from the inventory.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The key for the data.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">default</span>
-
-
-									<span class="tag default">optional</span>
-
-								<p> The default value to return if the key does not exist.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">any</span>
-
-								<p>The value associated with the key, or the default value if the key does not exist.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getFirstItemOfType">
-					<h1><span class="realm shared"></span></span>getFirstItemOfType(itemType)</h1>
-				</a>
-
-					<p>Retrieves the first item of a specific type from the inventory.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">itemType</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> The type of item to retrieve.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a> or <span class="type">nil</span>
-
-								<p>The first item of the specified type, or nil if not found.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getID">
-					<h1><span class="realm shared"></span></span>getID()</h1>
-				</a>
-
-					<p>Retrieves the ID of the inventory.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">any</span>
-
-								<p>The ID of the inventory.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getItemCount">
-					<h1><span class="realm shared"></span></span>getItemCount(itemType)</h1>
-				</a>
-
-					<p>Retrieves the total count of items in the inventory, optionally filtered by item type.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">itemType</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-									<span class="tag default">optional</span>
-
-								<p> The type of item to count. If nil, counts all items.</p>
+								<p> The current stamina offset.</p>
 							</li>
 					</ul>
 
@@ -4170,7 +3675,7 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 							<li>
 									<span class="type">number</span>
 
-								<p>The total count of items in the inventory, optionally filtered by item type.</p>
+								<p>The modified stamina offset.</p>
 							</li>
 
 				</ul>
@@ -4179,35 +3684,12 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="getItems">
-					<h1><span class="realm shared"></span></span>getItems()</h1>
+				<a class="anchor" id="AdjustStaminaOffsetRunning">
+					<h1><span class="realm shared"></span></span>AdjustStaminaOffsetRunning(client, offset)</h1>
 				</a>
 
-					<p>Retrieves all items in the inventory.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
-
-								<p>An array containing all items in the inventory.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getItemsByUniqueID">
-					<h1><span class="realm shared"></span></span>getItemsByUniqueID(uniqueID, onlyMain)</h1>
-				</a>
-
-					<p>Retrieves items with a specified unique ID from the inventory.</p>
+					<p>Adjusts the stamina offset when a player is running.
+ This hook can be used to modify the stamina consumption rate while the player is running.</p>
 			</header>
 
 
@@ -4217,25 +3699,24 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 					<ul>
 
 							<li>
-								<span class="tag parameter">uniqueID</span>
+								<span class="tag parameter">client</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
 
 
-								<p> The unique ID of the items to retrieve.</p>
+								<p> The player who is running.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">onlyMain</span>
+								<span class="tag parameter">offset</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><span class="type">number</span></span>
 
-									<span class="tag default">default: false</span>
 
-								<p> Whether to retrieve only main items.</p>
+								<p> The current stamina offset.</p>
 							</li>
 					</ul>
 
@@ -4244,9 +3725,9 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 				<ul>
 
 							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
+									<span class="type">number</span>
 
-								<p>An array containing the items with the specified unique ID.</p>
+								<p>The modified stamina offset.</p>
 							</li>
 
 				</ul>
@@ -4255,11 +3736,12 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="getItemsOfType">
-					<h1><span class="realm shared"></span></span>getItemsOfType(itemType)</h1>
+				<a class="anchor" id="AdjustStaminaRegeneration">
+					<h1><span class="realm shared"></span></span>AdjustStaminaRegeneration(client, offset)</h1>
 				</a>
 
-					<p>Retrieves items of a specific type from the inventory.</p>
+					<p>Adjusts the stamina regeneration rate.
+ This hook can be used to modify the rate at which a player regenerates stamina.</p>
 			</header>
 
 
@@ -4269,12 +3751,24 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 					<ul>
 
 							<li>
-								<span class="tag parameter">itemType</span>
+								<span class="tag parameter">client</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
 
 
-								<p> The type of items to retrieve.</p>
+								<p> The player whose stamina is regenerating.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">offset</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> The current stamina regeneration offset.</p>
 							</li>
 					</ul>
 
@@ -4283,9 +3777,9 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 				<ul>
 
 							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
+									<span class="type">number</span>
 
-								<p>An array containing items of the specified type.</p>
+								<p>The modified stamina regeneration offset.</p>
 							</li>
 
 				</ul>
@@ -4294,59 +3788,12 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="getRecipients">
-					<h1><span class="realm server"></span></span>getRecipients()</h1>
+				<a class="anchor" id="CalcStaminaChange">
+					<h1><span class="realm shared"></span></span>CalcStaminaChange(client)</h1>
 				</a>
 
-					<p>Retrieves the recipients for synchronization.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
-
-								<p>An array containing the recipients for synchronization.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getType">
-					<h1><span class="realm shared"></span></span>getType()</h1>
-				</a>
-
-					<p>Retrieves the type of the inventory.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
-
-								<p>The type of the inventory.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="hasItem">
-					<h1><span class="realm shared"></span></span>hasItem(itemType)</h1>
-				</a>
-
-					<p>Checks if the inventory contains an item of a specific type.</p>
+					<p>Called to calculate the change in a player's stamina.
+ This function determines the change in stamina based on the player's actions, such as running or regenerating stamina.</p>
 			</header>
 
 
@@ -4356,12 +3803,91 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 					<ul>
 
 							<li>
-								<span class="tag parameter">itemType</span>
+								<span class="tag parameter">client</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
 
 
-								<p> The type of item to check for.</p>
+								<p> The player whose stamina is being calculated.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">number</span>
+
+								<p>The change in stamina, which can be positive (regeneration) or negative (consumption).</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanPlayerThrowPunch">
+					<h1><span class="realm shared"></span></span>CanPlayerThrowPunch(client)</h1>
+				</a>
+
+					<p>Determines if a player can throw a punch.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player attempting to throw a punch.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">True</span>
+
+								<p>if the player can throw a punch, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanPlayerViewAttributes">
+					<h1><span class="realm client"></span></span>CanPlayerViewAttributes(client)</h1>
+				</a>
+
+					<p>Determines if a player can view their attributes.
+ This hook is used to check if a player is allowed to view their attributes.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player attempting to view attributes.</p>
 							</li>
 					</ul>
 
@@ -4372,7 +3898,7 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 							<li>
 									<span class="type">boolean</span>
 
-								<p>Returns true if the inventory contains an item of the specified type, otherwise false.</p>
+								<p>True if the player can view attributes, false otherwise.</p>
 							</li>
 
 				</ul>
@@ -4381,11 +3907,12 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="initializeStorage">
-					<h1><span class="realm server"></span></span>initializeStorage(initialData)</h1>
+				<a class="anchor" id="CharMaxStamina">
+					<h1><span class="realm shared"></span></span>CharMaxStamina(character)</h1>
 				</a>
 
-					<p>Initializes the storage for the inventory.</p>
+					<p>Determines the maximum stamina for a character.
+ This hook is used to get the maximum stamina value for a character.</p>
 			</header>
 
 
@@ -4395,12 +3922,12 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 					<ul>
 
 							<li>
-								<span class="tag parameter">initialData</span>
+								<span class="tag parameter">character</span>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
 
 
-								<p> Initial data for the inventory.</p>
+								<p> The character whose maximum stamina is being determined.</p>
 							</li>
 					</ul>
 
@@ -4409,9 +3936,9 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 				<ul>
 
 							<li>
-									<span class="type">Deferred</span>
+									<span class="type">number</span>
 
-								<p>A deferred promise.</p>
+								<p>The maximum stamina value for the character.</p>
 							</li>
 
 				</ul>
@@ -4420,11 +3947,12 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="instance">
-					<h1><span class="realm server"></span></span>instance(initialData)</h1>
+				<a class="anchor" id="GetStartAttribPoints">
+					<h1><span class="realm client"></span></span>GetStartAttribPoints(client, context)</h1>
 				</a>
 
-					<p>Instantiates a new inventory instance.</p>
+					<p>Retrieves the starting attribute points for a player.
+ This hook is used to determine the initial number of attribute points a player starts with.</p>
 			</header>
 
 
@@ -4434,12 +3962,24 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 					<ul>
 
 							<li>
-								<span class="tag parameter">initialData</span>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player whose starting attribute points are being determined.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">context</span>
 
 									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
 
 
-								<p> Initial data for the inventory instance.</p>
+								<p> The context in which the starting attribute points are being determined.</p>
 							</li>
 					</ul>
 
@@ -4448,9 +3988,9 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 				<ul>
 
 							<li>
-									<a class="type" href="../../core - classes/inventory/#">Inventory</a>
+									<span class="type">number</span>
 
-								<p>The newly instantiated inventory instance.</p>
+								<p>The number of starting attribute points.</p>
 							</li>
 
 				</ul>
@@ -4459,321 +3999,50 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="loadItems">
-					<h1><span class="realm server"></span></span>loadItems()</h1>
+				<a class="anchor" id="OnCharAttribBoosted">
+					<h1><span class="realm shared"></span></span>OnCharAttribBoosted(client, character, key, value)</h1>
 				</a>
 
-					<p>Loads items from the database into the inventory.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">Deferred</span>
-
-								<p>A deferred promise.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="new">
-					<h1><span class="realm shared"></span></span>new()</h1>
-				</a>
-
-					<p>Creates a new instance of the inventory.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
-
-								<p>A new instance of the Inventory class.</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>local newInventory = Inventory:new()
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="onDataChanged">
-					<h1><span class="realm shared"></span></span>onDataChanged(key, oldValue, newValue)</h1>
-				</a>
-
-					<p>Callback function called when data associated with a key changes.</p>
+					<p>Called when a character's attribute is updated.</p>
 			</header>
 
 
 					<h3>Parameters</h3>
 
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The client associated with the character.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/character/#">Character</a></span>
+
+
+								<p> The character whose attribute is updated.</p>
+							</li>
+					</ul>
 
 					<ul>
 
 							<li>
 								<span class="tag parameter">key</span>
-
-									<span class="tag"><span class="type">any</span></span>
-
-
-								<p> The key whose data has changed.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">oldValue</span>
-
-
-
-								<p> The old value of the data.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">newValue</span>
-
-
-
-								<p> The new value of the data.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="onInstanced">
-					<h1><span class="realm server"></span></span>onInstanced()</h1>
-				</a>
-
-					<p>Initializes an instance of the inventory.</p>
-			</header>
-
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="onItemsLoaded">
-					<h1><span class="realm server"></span></span>onItemsLoaded()</h1>
-				</a>
-
-					<p>Callback function called when items are loaded into the inventory.</p>
-			</header>
-
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="onLoaded">
-					<h1><span class="realm server"></span></span>onLoaded()</h1>
-				</a>
-
-					<p>Callback function called when the inventory is loaded.</p>
-			</header>
-
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="register">
-					<h1><span class="realm shared"></span></span>register(typeID)</h1>
-				</a>
-
-					<p>Registers the inventory with a specified type ID.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">typeID</span>
 
 									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
-								<p> The type ID to register the inventory with.</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>inventory:register("grid")
-</code></pre>
-
-				<h3>See Also</h3>
-				<ul>
-						<li><a href="../../core - libraries/lia.inventory/#lia.inventory.newType">lia.inventory.newType</a></li>
-				</ul>
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="remove">
-					<h1><span class="realm server"></span></span>remove(itemID)</h1>
-				</a>
-
-					<p>Alias for <a href="../../core - classes/inventory/#removeItem">removeItem</a> function.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">itemID</span>
-
-
-
-								<p>
-
-</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="removeAccessRule">
-					<h1><span class="realm server"></span></span>removeAccessRule(rule)</h1>
-				</a>
-
-					<p>Removes an access rule from the inventory.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">rule</span>
-
-									<span class="tag"><span class="type">function</span></span>
-
-
-								<p> The access rule function to remove.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="../../core - classes/inventory/#">Inventory</a>
-
-								<p>Returns the inventory itself.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="removeItem">
-					<h1><span class="realm server"></span></span>removeItem(itemID, preserveItem)</h1>
-				</a>
-
-					<p>Removes an item from the inventory.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">itemID</span>
-
-									<span class="tag"><span class="type">number</span></span>
-
-
-								<p> The ID of the item to remove.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">preserveItem</span>
-
-									<span class="tag"><span class="type">boolean</span></span>
-
-									<span class="tag default">optional</span>
-
-								<p> Whether to preserve the item's data in the database.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">Deferred</span>
-
-								<p>A deferred promise.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="setData">
-					<h1><span class="realm server"></span></span>setData(key, value)</h1>
-				</a>
-
-					<p>Sets data associated with a key in the inventory.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><span class="type">any</span></span>
-
-
-								<p> The key to associate the data with.</p>
+								<p> The key of the attribute being updated.</p>
 							</li>
 					</ul>
 
@@ -4782,33 +4051,24 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 							<li>
 								<span class="tag parameter">value</span>
 
+									<span class="tag"><span class="type">integer</span></span>
 
 
-								<p> The value to set for the key.</p>
+								<p> The new value of the attribute.</p>
 							</li>
 					</ul>
 
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="../../core - classes/inventory/#">Inventory</a>
-
-								<p>Returns the inventory itself.</p>
-							</li>
-
-				</ul>
 
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="show">
-					<h1><span class="realm client"></span></span>show(parent)</h1>
+				<a class="anchor" id="PlayerCanPickupItem">
+					<h1><span class="realm shared"></span></span>PlayerCanPickupItem(client, item)</h1>
 				</a>
 
-					<p>Displays the inventory UI to the specified parent element.</p>
+					<p>Determines if a player can pick up an item with his hands.
+ This hook is used to check if a player is allowed to pick up a specific item.</p>
 			</header>
 
 
@@ -4818,112 +4078,14 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 					<ul>
 
 							<li>
-								<span class="tag parameter">parent</span>
+								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">any</span></span>
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
 
-									<span class="tag default">optional</span>
 
-								<p> The parent element to which the inventory UI will be displayed.</p>
+								<p> The player attempting to pick up the item.</p>
 							</li>
 					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>The result of the <a href="../../core - libraries/lia.inventory/#lia.inventory.show">lia.inventory.show</a> function.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="sync">
-					<h1><span class="realm server"></span></span>sync(recipients)</h1>
-				</a>
-
-					<p>Synchronizes the inventory with clients.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">recipients</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
-
-									<span class="tag default">optional</span>
-
-								<p> The recipients to synchronize with.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="syncData">
-					<h1><span class="realm server"></span></span>syncData(key, recipients)</h1>
-				</a>
-
-					<p>Synchronizes data changes with clients.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><span class="type">any</span></span>
-
-
-								<p> The key whose data has changed.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">recipients</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a></span>
-
-									<span class="tag default">optional</span>
-
-								<p> The recipients to synchronize with.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="syncItemAdded">
-					<h1><span class="realm server"></span></span>syncItemAdded(item)</h1>
-				</a>
-
-					<p>Synchronizes the addition of an item with clients.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
 
 					<ul>
 
@@ -4933,7 +4095,74 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 									<span class="tag"><a class="type" href="../../core - classes/item/#">Item</a></span>
 
 
-								<p> The item being added.</p>
+								<p> The item being picked up.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if the player can pick up the item, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PlayerStaminaGained">
+					<h1><span class="realm server"></span></span>PlayerStaminaGained(client)</h1>
+				</a>
+
+					<p>Called when a player gains stamina.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player who gained stamina.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="PlayerStaminaLost">
+					<h1><span class="realm server"></span></span>PlayerStaminaLost(client)</h1>
+				</a>
+
+					<p>Called when a player loses stamina.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player who lost stamina.</p>
 							</li>
 					</ul>
 
