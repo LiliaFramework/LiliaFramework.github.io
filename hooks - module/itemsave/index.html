@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Outfit - Lilia Documentation</title>
+		<title>ItemSave - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Outfit - Lilia Documentation" />
+		<meta property="og:title" content="ItemSave - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Structure of Outfit Item Base." />
+			<meta property="og:description" content="Hook Documentation for Item Save Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -87,7 +87,7 @@
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../structures - items/outfit/">Outfit</a></summary>
 
 									<ul>
@@ -926,7 +926,7 @@ copyParentDoor											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../hooks - module/itemsave/">ItemSave</a></summary>
 
 									<ul>
@@ -2310,12 +2310,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2471,22 +2471,22 @@ lia.util.isSteamID											</a>
 lia.util.notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../core - libraries/lia.util/#lia.util.notify">
-lia.util.notify											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notify">
 lia.util.notify											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.notify">
+lia.util.notify											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
@@ -3144,12 +3144,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3405,12 +3405,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3797,128 +3797,67 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Outfit</h1>
-	<h2>Structure of Outfit Item Base.</h2>
+	<h1>ItemSave</h1>
+	<h2>Hook Documentation for Item Save Module.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="OnSavedItemLoaded">
+					<h1><span class="realm server"></span></span>OnSavedItemLoaded(loadedItems)</h1>
 				</a>
 
-					<p>This table defines the default structure of the outfit item base.</p>
+					<p>Called when saved items are loaded from the database.
+ This hook is called after the saved items have been successfully loaded from the database.
+ It can be used to perform additional actions with the loaded items.</p>
 			</header>
 
 
-					<h3>Fields</h3>
+					<h3>Parameters</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">name</span>
+								<span class="tag parameter">loadedItems</span>
 
 
 
-								<p> Name of the item | <strong>string</strong></p>
+								<p> A table containing the loaded item entities.</p>
 							</li>
 					</ul>
 
-					<ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldDeleteSavedItems">
+					<h1><span class="realm server"></span></span>ShouldDeleteSavedItems()</h1>
+				</a>
+
+					<p>Determines if saved items should be deleted on server restart.
+ This hook is called to check whether saved items should be deleted when the server restarts.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
 
 							<li>
-								<span class="tag parameter">desc</span>
+									<span class="type">boolean</span>
 
-
-
-								<p> Description of the item | <strong>string</strong></p>
+								<p>True if saved items should be deleted, false otherwise.</p>
 							</li>
-					</ul>
 
-					<ul>
-
-							<li>
-								<span class="tag parameter">model</span>
-
-
-
-								<p> Model path of the item | <strong>string</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">width</span>
-
-
-
-								<p> Width of the item | <strong>number</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">height</span>
-
-
-
-								<p> Height of the item | <strong>number</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">category</span>
-
-
-
-								<p> Category of the item | <strong>string</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">RequiredSkillLevels</span>
-
-
-
-								<p> Required attribute levels for using the item | <strong>table</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">outfitCategory</span>
-
-
-
-								<p> The category of clothing of the item. This prevents you from equipping 2 of the same outfit types | <strong>string</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">pacData</span>
-
-
-
-								<p> PAC3 data that gets implemented when equipping the outfit | <strong>table</strong></p>
-							</li>
-					</ul>
-
+				</ul>
 
 
 		</section>
