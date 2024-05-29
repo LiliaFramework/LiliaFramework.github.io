@@ -626,11 +626,6 @@ CanPlayerInteractItem											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks - general/module/#CanPlayerSpawnStorage">
-CanPlayerSpawnStorage											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#CanPlayerTakeItem">
 CanPlayerTakeItem											</a>
 										</li>
@@ -1063,6 +1058,29 @@ TooltipPaint											</a>
 							</li>
 							<li>
 									<details >
+									<summary><a href="../../hooks - module/inventory/">Inventory</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm  client
+ This hook can be used to implement custom checks to determine if a player is
+ allowed to view their inventory."></span>
+											<a href="../../hooks - module/inventory/#CanPlayerViewInventory">
+CanPlayerViewInventory											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#PostDrawInventory">
+PostDrawInventory											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
 									<summary><a href="../../hooks - module/itemsave/">ItemSave</a></summary>
 
 									<ul>
@@ -1260,6 +1278,22 @@ PostPlayerLoadout											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/spawns/#PrePlayerLoadedChar">
 PrePlayerLoadedChar											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/storage/">Storage</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#CanPlayerSpawnStorage">
+CanPlayerSpawnStorage											</a>
 										</li>
 
 									</ul>
@@ -3817,22 +3851,11 @@ takePermFlags											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">RequiredSkillLevels</span>
+								<span class="tag parameter">health</span>
 
 
 
-								<p> Required attribute levels for using the item | <strong>table</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">ammo</span>
-
-
-
-								<p> Type of ammunition contained in the item | <strong>string</strong></p>
+								<p> Amount of health given to a player| <strong>number</strong></p>
 							</li>
 					</ul>
 

@@ -626,11 +626,6 @@ CanPlayerInteractItem											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks - general/module/#CanPlayerSpawnStorage">
-CanPlayerSpawnStorage											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#CanPlayerTakeItem">
 CanPlayerTakeItem											</a>
 										</li>
@@ -1063,6 +1058,29 @@ TooltipPaint											</a>
 							</li>
 							<li>
 									<details >
+									<summary><a href="../../hooks - module/inventory/">Inventory</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm  client
+ This hook can be used to implement custom checks to determine if a player is
+ allowed to view their inventory."></span>
+											<a href="../../hooks - module/inventory/#CanPlayerViewInventory">
+CanPlayerViewInventory											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#PostDrawInventory">
+PostDrawInventory											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
 									<summary><a href="../../hooks - module/itemsave/">ItemSave</a></summary>
 
 									<ul>
@@ -1260,6 +1278,22 @@ PostPlayerLoadout											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/spawns/#PrePlayerLoadedChar">
 PrePlayerLoadedChar											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/storage/">Storage</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#CanPlayerSpawnStorage">
+CanPlayerSpawnStorage											</a>
 										</li>
 
 									</ul>
@@ -3979,74 +4013,6 @@ end
 				<h3>Example Usage</h3>
 					<pre><code>function MODULE:CanPlayerInteractItem(client, action, item, data)
 	return false -- Disallow interacting with any item.
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="CanPlayerSpawnStorage">
-					<h1><span class="realm server"></span></span>CanPlayerSpawnStorage(client, entity, data)</h1>
-				</a>
-
-					<p>Whether or not a player is allowed to spawn a container entity.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
-
-
-								<p> The player attempting to spawn a container.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">entity</span>
-
-									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
-
-
-								<p> The container entity being spawned.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">data</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> Additional data related to the container being spawned.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>Whether or not to allow the player to spawn the container.</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>function MODULE:CanPlayerSpawnStorage(client, entity, data)
-    return client:IsAdmin() -- Restrict spawning containers to admins.
 end
 </code></pre>
 

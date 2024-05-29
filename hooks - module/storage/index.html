@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Chatbox - Lilia Documentation</title>
+		<title>Storage - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Chatbox - Lilia Documentation" />
+		<meta property="og:title" content="Storage - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Chatbox Module." />
+			<meta property="og:description" content="Hook Documentation for Inventory Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -172,7 +172,7 @@
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../config - module/chatbox/">Chatbox</a></summary>
 
 									<ul>
@@ -403,7 +403,7 @@
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../config - module/storage/">Storage</a></summary>
 
 									<ul>
@@ -1284,7 +1284,7 @@ PrePlayerLoadedChar											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../hooks - module/storage/">Storage</a></summary>
 
 									<ul>
@@ -2272,12 +2272,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2433,22 +2433,22 @@ lia.util.isSteamID											</a>
 lia.util.notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../core - libraries/lia.util/#lia.util.notify">
-lia.util.notify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notify">
 lia.util.notify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.notify">
+lia.util.notify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
@@ -3106,12 +3106,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3367,12 +3367,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3759,151 +3759,82 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Chatbox</h1>
-	<h2>Configuration for Chatbox Module.</h2>
+	<h1>Storage</h1>
+	<h2>Hook Documentation for Inventory Module.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="CanPlayerSpawnStorage">
+					<h1><span class="realm server"></span></span>CanPlayerSpawnStorage(client, entity, data)</h1>
 				</a>
 
-					<p>This table defines the default settings for the ChatBox Module.</p>
+					<p>Whether or not a player is allowed to spawn a container entity.</p>
 			</header>
 
 
-					<h3>Fields</h3>
+					<h3>Parameters</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">CustomChatSound</span>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
 
 
-
-								<p> Change Chat Sound on Message Send | <strong>bool</strong></p>
+								<p> The player attempting to spawn a container.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">ChatColor</span>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
 
 
-
-								<p> Chat Color | <strong>color</strong></p>
+								<p> The container entity being spawned.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">ChatRange</span>
+								<span class="tag parameter">data</span>
+
+									<span class="tag"><span class="type">Table</span></span>
 
 
-
-								<p> Range of Chat can be heard | <strong>integer</strong></p>
+								<p> Additional data related to the container being spawned.</p>
 							</li>
 					</ul>
 
-					<ul>
+
+				<h3>Returns</h3>
+				<ul>
 
 							<li>
-								<span class="tag parameter">ChatShowTime</span>
+									<span class="type">bool</span>
 
-
-
-								<p> Should chat show timestamp | <strong>bool</strong></p>
+								<p>Whether or not to allow the player to spawn the container.</p>
 							</li>
-					</ul>
 
-					<ul>
+				</ul>
 
-							<li>
-								<span class="tag parameter">OOCLimit</span>
-
-
-
-								<p> Limit of characters on OOC | <strong>integer</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">ChatListenColor</span>
-
-
-
-								<p> Color of chat when directly working at someone | <strong>color</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">OOCDelayAdmin</span>
-
-
-
-								<p> Should Admins to have OOC Delay | <strong>bool</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">LOOCDelayAdmin</span>
-
-
-
-								<p> Should Admins to have LOOC Delay | <strong>bool</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">OOCDelay</span>
-
-
-
-								<p> Set OOC Text Delay | <strong>integer</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">LOOCDelay</span>
-
-
-
-								<p> Set LOOC Text Delay | <strong>integer</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">ChatSizeDiff</span>
-
-
-
-								<p> Enable Different Chat Size Diff | <strong>bool</strong></p>
-							</li>
-					</ul>
-
-
+				<h3>Example Usage</h3>
+					<pre><code>function MODULE:CanPlayerSpawnStorage(client, entity, data)
+    return client:IsAdmin() -- Restrict spawning containers to admins.
+end
+</code></pre>
 
 		</section>
 

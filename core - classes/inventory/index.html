@@ -626,11 +626,6 @@ CanPlayerInteractItem											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks - general/module/#CanPlayerSpawnStorage">
-CanPlayerSpawnStorage											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#CanPlayerTakeItem">
 CanPlayerTakeItem											</a>
 										</li>
@@ -1062,6 +1057,29 @@ TooltipPaint											</a>
 									</details>
 							</li>
 							<li>
+									<details open>
+									<summary><a href="../../hooks - module/inventory/">Inventory</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm  client
+ This hook can be used to implement custom checks to determine if a player is
+ allowed to view their inventory."></span>
+											<a href="../../hooks - module/inventory/#CanPlayerViewInventory">
+CanPlayerViewInventory											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#PostDrawInventory">
+PostDrawInventory											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
 									<details >
 									<summary><a href="../../hooks - module/itemsave/">ItemSave</a></summary>
 
@@ -1260,6 +1278,22 @@ PostPlayerLoadout											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/spawns/#PrePlayerLoadedChar">
 PrePlayerLoadedChar											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/storage/">Storage</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#CanPlayerSpawnStorage">
+CanPlayerSpawnStorage											</a>
 										</li>
 
 									</ul>
@@ -3764,7 +3798,7 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 							<li>
 								<span class="tag parameter">other</span>
 
-									<span class="tag"><a class="type" href="../../core - classes/inventory/#">Inventory</a></span>
+									<span class="tag"><span class="type">Inventory</span></span>
 
 
 								<p> The other inventory to compare with.</p>
@@ -3839,7 +3873,7 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 				<ul>
 
 							<li>
-									<a class="type" href="../../core - classes/inventory/#">Inventory</a>
+									<span class="type">Inventory</span>
 
 								<p>Returns the inventory itself.</p>
 							</li>
@@ -3891,7 +3925,7 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 				<ul>
 
 							<li>
-									<a class="type" href="../../core - classes/inventory/#">Inventory</a>
+									<span class="type">Inventory</span>
 
 								<p>Returns the inventory itself.</p>
 							</li>
@@ -3982,7 +4016,7 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 				<ul>
 
 							<li>
-									<a class="type" href="../../core - classes/inventory/#">Inventory</a>
+									<span class="type">Inventory</span>
 
 								<p>Returns the inventory itself.</p>
 							</li>
@@ -4553,7 +4587,7 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 				<ul>
 
 							<li>
-									<a class="type" href="../../core - classes/inventory/#">Inventory</a>
+									<span class="type">Inventory</span>
 
 								<p>The newly instantiated inventory instance.</p>
 							</li>
@@ -4796,7 +4830,7 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 				<ul>
 
 							<li>
-									<a class="type" href="../../core - classes/inventory/#">Inventory</a>
+									<span class="type">Inventory</span>
 
 								<p>Returns the inventory itself.</p>
 							</li>
@@ -4898,7 +4932,7 @@ attaches inventories to props, allowing for items to be stored outside of any ch
 				<ul>
 
 							<li>
-									<a class="type" href="../../core - classes/inventory/#">Inventory</a>
+									<span class="type">Inventory</span>
 
 								<p>Returns the inventory itself.</p>
 							</li>

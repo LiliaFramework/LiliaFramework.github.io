@@ -625,11 +625,6 @@ CanPlayerInteractItem											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="hooks - general/module/#CanPlayerSpawnStorage">
-CanPlayerSpawnStorage											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
 											<a href="hooks - general/module/#CanPlayerTakeItem">
 CanPlayerTakeItem											</a>
 										</li>
@@ -1062,6 +1057,29 @@ TooltipPaint											</a>
 							</li>
 							<li>
 									<details >
+									<summary><a href="hooks - module/inventory/">Inventory</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm  client
+ This hook can be used to implement custom checks to determine if a player is
+ allowed to view their inventory."></span>
+											<a href="hooks - module/inventory/#CanPlayerViewInventory">
+CanPlayerViewInventory											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="hooks - module/inventory/#PostDrawInventory">
+PostDrawInventory											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
 									<summary><a href="hooks - module/itemsave/">ItemSave</a></summary>
 
 									<ul>
@@ -1259,6 +1277,22 @@ PostPlayerLoadout											</a>
 											<span class="realm server"></span>
 											<a href="hooks - module/spawns/#PrePlayerLoadedChar">
 PrePlayerLoadedChar											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="hooks - module/storage/">Storage</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm server"></span>
+											<a href="hooks - module/storage/#CanPlayerSpawnStorage">
+CanPlayerSpawnStorage											</a>
 										</li>
 
 									</ul>
