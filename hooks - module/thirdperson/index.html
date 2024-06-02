@@ -1184,6 +1184,32 @@ GetSalaryLimit											</a>
 							</li>
 							<li>
 									<details >
+									<summary><a href="../../hooks - module/scoreboard/">Scoreboard</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/scoreboard/#ShouldAllowScoreboardOverride">
+ShouldAllowScoreboardOverride											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/scoreboard/#ShouldShowPlayerOnScoreboard">
+ShouldShowPlayerOnScoreboard											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/scoreboard/#ShowPlayerOptions">
+ShowPlayerOptions											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
 									<summary><a href="../../hooks - module/spawns/">Spawns</a></summary>
 
 									<ul>
@@ -1329,16 +1355,16 @@ CanPlayerAccessVendor											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks - module/vendor/#CanPlayerTradeWithVendor">
-CanPlayerTradeWithVendor											</a>
+											<a href="../../hooks - module/vendor/#OnCharTradeVendor">
+OnCharTradeVendor											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
-											<a href="../../hooks - module/vendor/#CharacterVendorTraded">
-CharacterVendorTraded											</a>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#OnOpenVendorMenu">
+OnOpenVendorMenu											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm server"></span>
 											<a href="../../hooks - module/vendor/#PlayerAccessVendor">
 PlayerAccessVendor											</a>
 										</li>
@@ -1348,26 +1374,65 @@ PlayerAccessVendor											</a>
 VendorBuyEvent											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorClassUpdated">
+VendorClassUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorEdited">
+VendorEdited											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorFactionUpdated">
+VendorFactionUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorItemMaxStockUpdated">
+VendorItemMaxStockUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorItemModeUpdated">
+VendorItemModeUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorItemPriceUpdated">
+VendorItemPriceUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorItemStockUpdated">
+VendorItemStockUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorMoneyUpdated">
+VendorMoneyUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorOpened">
+VendorOpened											</a>
+										</li>
+										<li>
 											<span class="realm shared
  This function handles the event where a player sells an item to a vendor."></span>
 											<a href="../../hooks - module/vendor/#VendorSellEvent">
 VendorSellEvent											</a>
 										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
 										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/vendor/#VendorTradeAttempt">
+VendorTradeAttempt											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/vendor/#getPriceOverride">
+getPriceOverride											</a>
 										</li>
 
 									</ul>
@@ -2272,12 +2337,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2418,6 +2483,16 @@ lia.util.getAdmins											</a>
 lia.util.getAllChar											</a>
 										</li>
 										<li>
+											<span class="realm shared"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.getAllCitizenModels">
+lia.util.getAllCitizenModels											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.getAllFilesInDirectory">
+lia.util.getAllFilesInDirectory											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.getInjuredColor">
 lia.util.getInjuredColor											</a>
@@ -2453,12 +2528,12 @@ lia.util.notify											</a>
 lia.util.notify											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notifyLocalized">
 lia.util.notifyLocalized											</a>
 										</li>
@@ -3116,12 +3191,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3377,12 +3452,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>

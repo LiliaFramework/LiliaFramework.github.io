@@ -1184,6 +1184,32 @@ GetSalaryLimit											</a>
 							</li>
 							<li>
 									<details >
+									<summary><a href="../../hooks - module/scoreboard/">Scoreboard</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/scoreboard/#ShouldAllowScoreboardOverride">
+ShouldAllowScoreboardOverride											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/scoreboard/#ShouldShowPlayerOnScoreboard">
+ShouldShowPlayerOnScoreboard											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/scoreboard/#ShowPlayerOptions">
+ShowPlayerOptions											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
 									<summary><a href="../../hooks - module/spawns/">Spawns</a></summary>
 
 									<ul>
@@ -1329,16 +1355,16 @@ CanPlayerAccessVendor											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks - module/vendor/#CanPlayerTradeWithVendor">
-CanPlayerTradeWithVendor											</a>
+											<a href="../../hooks - module/vendor/#OnCharTradeVendor">
+OnCharTradeVendor											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
-											<a href="../../hooks - module/vendor/#CharacterVendorTraded">
-CharacterVendorTraded											</a>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#OnOpenVendorMenu">
+OnOpenVendorMenu											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm server"></span>
 											<a href="../../hooks - module/vendor/#PlayerAccessVendor">
 PlayerAccessVendor											</a>
 										</li>
@@ -1348,26 +1374,65 @@ PlayerAccessVendor											</a>
 VendorBuyEvent											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorClassUpdated">
+VendorClassUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorEdited">
+VendorEdited											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorFactionUpdated">
+VendorFactionUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorItemMaxStockUpdated">
+VendorItemMaxStockUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorItemModeUpdated">
+VendorItemModeUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorItemPriceUpdated">
+VendorItemPriceUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorItemStockUpdated">
+VendorItemStockUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorMoneyUpdated">
+VendorMoneyUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorOpened">
+VendorOpened											</a>
+										</li>
+										<li>
 											<span class="realm shared
  This function handles the event where a player sells an item to a vendor."></span>
 											<a href="../../hooks - module/vendor/#VendorSellEvent">
 VendorSellEvent											</a>
 										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
 										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/vendor/#VendorTradeAttempt">
+VendorTradeAttempt											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/vendor/#getPriceOverride">
+getPriceOverride											</a>
 										</li>
 
 									</ul>
@@ -2418,6 +2483,16 @@ lia.util.getAdmins											</a>
 lia.util.getAllChar											</a>
 										</li>
 										<li>
+											<span class="realm shared"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.getAllCitizenModels">
+lia.util.getAllCitizenModels											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.getAllFilesInDirectory">
+lia.util.getAllFilesInDirectory											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.getInjuredColor">
 lia.util.getInjuredColor											</a>
@@ -2443,12 +2518,12 @@ lia.util.isSteamID											</a>
 lia.util.notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notify">
 lia.util.notify											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notify">
 lia.util.notify											</a>
 										</li>
@@ -5172,6 +5247,81 @@ end)
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="lia.util.getAllCitizenModels">
+					<h1><span class="realm shared"></span></span>lia.util.getAllCitizenModels()</h1>
+				</a>
+
+					<p>Retrieves all citizen models by searching in predefined directories.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
+
+								<p>A table containing the paths of all found citizen models.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.util.getAllFilesInDirectory">
+					<h1><span class="realm shared"></span></span>lia.util.getAllFilesInDirectory(directory, extension)</h1>
+				</a>
+
+					<p>Recursively retrieves all files with a specific extension in a given directory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">directory</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The path of the directory to search in.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">extension</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The file extension to filter by.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
+
+								<p>A table containing the paths of all found files with the specified extension.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="lia.util.getInjuredColor">
 					<h1><span class="realm client"></span></span>lia.util.getInjuredColor(client)</h1>
 				</a>
@@ -5517,6 +5667,45 @@ end)
 		<section class="method">
 			<header>
 				<a class="anchor" id="lia.util.notifyLocalized">
+					<h1><span class="realm client"></span></span>lia.util.notifyLocalized(message, ...)</h1>
+				</a>
+
+					<p>Displays a localized notification message in the chat.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">message</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The message to display (localized)</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">...</span>
+
+
+
+								<p> Additional parameters for string formatting</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="lia.util.notifyLocalized">
 					<h1><span class="realm server"></span></span>lia.util.notifyLocalized(message, recipient, ...)</h1>
 				</a>
 
@@ -5559,45 +5748,6 @@ end)
 
 
 								<p> Additional parameters for message formatting</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="lia.util.notifyLocalized">
-					<h1><span class="realm client"></span></span>lia.util.notifyLocalized(message, ...)</h1>
-				</a>
-
-					<p>Displays a localized notification message in the chat.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">message</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The message to display (localized)</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">...</span>
-
-
-
-								<p> Additional parameters for string formatting</p>
 							</li>
 					</ul>
 

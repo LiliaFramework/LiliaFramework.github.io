@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>DatabaseConnection - Lilia Documentation</title>
+		<title>Scoreboard - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="DatabaseConnection - Lilia Documentation" />
+		<meta property="og:title" content="Scoreboard - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Default database configuration for Lilia." />
+			<meta property="og:description" content="Hook Documentation for Scoreboard Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -370,7 +370,7 @@
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../config - module/scoreboard/">Scoreboard</a></summary>
 
 									<ul>
@@ -499,7 +499,7 @@
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../config - general/databaseconnection/">DatabaseConnection</a></summary>
 
 									<ul>
@@ -1183,7 +1183,7 @@ GetSalaryLimit											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../hooks - module/scoreboard/">Scoreboard</a></summary>
 
 									<ul>
@@ -2337,12 +2337,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -3191,12 +3191,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3452,12 +3452,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3844,92 +3844,140 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>DatabaseConnection</h1>
-	<h2>Default database configuration for Lilia.</h2>
+	<h1>Scoreboard</h1>
+	<h2>Hook Documentation for Scoreboard Module.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm server"></span></span>Configuration</h1>
+				<a class="anchor" id="ShouldAllowScoreboardOverride">
+					<h1><span class="realm client"></span></span>ShouldAllowScoreboardOverride(client, var)</h1>
 				</a>
 
-					<p>This table defines the default settings for connecting to the database used in Lilia.</p>
+					<p>Determines whether a scoreboard value should be overridden.</p>
 			</header>
 
 
-					<h3>Fields</h3>
+					<h3>Parameters</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">module</span>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
 
 
-
-								<p> Database module to be used (sqlite or mysqloo) | <strong>string</strong></p>
+								<p> The player entity being checked.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">hostname</span>
+								<span class="tag parameter">var</span>
+
+									<span class="tag"><span class="type">String</span></span>
 
 
+								<p> The variable being checked for override (e.g., "name" or "desc").</p>
+							</li>
+					</ul>
 
-								<p> Hostname of the database server | <strong>string</strong></p>
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if the variable should be overridden, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShouldShowPlayerOnScoreboard">
+					<h1><span class="realm client"></span></span>ShouldShowPlayerOnScoreboard(client)</h1>
+				</a>
+
+					<p>Determines whether a player should be shown on the scoreboard.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player entity being checked.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if the player should be shown on the scoreboard, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ShowPlayerOptions">
+					<h1><span class="realm client"></span></span>ShowPlayerOptions(client, options)</h1>
+				</a>
+
+					<p>Provides options for the player context menu on the scoreboard.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player entity for whom the options are being provided.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">username</span>
+								<span class="tag parameter">options</span>
+
+									<span class="tag"><span class="type">Table</span></span>
 
 
-
-								<p> Username for accessing the database | <strong>string</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">password</span>
-
-
-
-								<p> Password for accessing the database | <strong>string</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">database</span>
-
-
-
-								<p> Name of the database to connect to | <strong>string</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">port</span>
-
-
-
-								<p> Port number for the database server | <strong>number</strong></p>
+								<p> A table to which new options can be added. Each option should be a table with the format {icon, callback}.</p>
 							</li>
 					</ul>
 

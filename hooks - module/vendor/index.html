@@ -1184,6 +1184,32 @@ GetSalaryLimit											</a>
 							</li>
 							<li>
 									<details >
+									<summary><a href="../../hooks - module/scoreboard/">Scoreboard</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/scoreboard/#ShouldAllowScoreboardOverride">
+ShouldAllowScoreboardOverride											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/scoreboard/#ShouldShowPlayerOnScoreboard">
+ShouldShowPlayerOnScoreboard											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/scoreboard/#ShowPlayerOptions">
+ShowPlayerOptions											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
 									<summary><a href="../../hooks - module/spawns/">Spawns</a></summary>
 
 									<ul>
@@ -1329,16 +1355,16 @@ CanPlayerAccessVendor											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks - module/vendor/#CanPlayerTradeWithVendor">
-CanPlayerTradeWithVendor											</a>
+											<a href="../../hooks - module/vendor/#OnCharTradeVendor">
+OnCharTradeVendor											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
-											<a href="../../hooks - module/vendor/#CharacterVendorTraded">
-CharacterVendorTraded											</a>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#OnOpenVendorMenu">
+OnOpenVendorMenu											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm server"></span>
 											<a href="../../hooks - module/vendor/#PlayerAccessVendor">
 PlayerAccessVendor											</a>
 										</li>
@@ -1348,26 +1374,65 @@ PlayerAccessVendor											</a>
 VendorBuyEvent											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorClassUpdated">
+VendorClassUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorEdited">
+VendorEdited											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorFactionUpdated">
+VendorFactionUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorItemMaxStockUpdated">
+VendorItemMaxStockUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorItemModeUpdated">
+VendorItemModeUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorItemPriceUpdated">
+VendorItemPriceUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorItemStockUpdated">
+VendorItemStockUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorMoneyUpdated">
+VendorMoneyUpdated											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/vendor/#VendorOpened">
+VendorOpened											</a>
+										</li>
+										<li>
 											<span class="realm shared
  This function handles the event where a player sells an item to a vendor."></span>
 											<a href="../../hooks - module/vendor/#VendorSellEvent">
 VendorSellEvent											</a>
 										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
 										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/vendor/#VendorTradeAttempt">
+VendorTradeAttempt											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/vendor/#getPriceOverride">
+getPriceOverride											</a>
 										</li>
 
 									</ul>
@@ -2272,12 +2337,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2418,6 +2483,16 @@ lia.util.getAdmins											</a>
 lia.util.getAllChar											</a>
 										</li>
 										<li>
+											<span class="realm shared"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.getAllCitizenModels">
+lia.util.getAllCitizenModels											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../core - libraries/lia.util/#lia.util.getAllFilesInDirectory">
+lia.util.getAllFilesInDirectory											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.getInjuredColor">
 lia.util.getInjuredColor											</a>
@@ -2443,12 +2518,12 @@ lia.util.isSteamID											</a>
 lia.util.notifQuery											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notify">
 lia.util.notify											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.util/#lia.util.notify">
 lia.util.notify											</a>
 										</li>
@@ -3116,12 +3191,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3377,12 +3452,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3782,12 +3857,10 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="CanPlayerAccessVendor">
-					<h1><span class="realm server"></span></span>CanPlayerAccessVendor(client)</h1>
+					<h1><span class="realm server"></span></span>CanPlayerAccessVendor(client, entity)</h1>
 				</a>
 
-					<p>Determines whether a player is allowed to access a vendor entity.
- This hook can be used to implement custom checks to determine if a player is
- allowed to access a specific vendor entity.</p>
+					<p>Determines whether a player can access a vendor.</p>
 			</header>
 
 
@@ -3802,35 +3875,7 @@ takePermFlags											</a>
 									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
 
 
-								<p> The player attempting to access the vendor</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="CanPlayerTradeWithVendor">
-					<h1><span class="realm server"></span></span>CanPlayerTradeWithVendor(client, entity, uniqueID, isSellingToVendor)</h1>
-				</a>
-
-					<p>Whether or not a player can trade with a vendor.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
-
-
-								<p> Player attempting to trade</p>
+								<p> The player attempting to access the vendor.</p>
 							</li>
 					</ul>
 
@@ -3842,31 +3887,7 @@ takePermFlags											</a>
 									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
 
 
-								<p> Vendor entity</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">uniqueID</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The uniqueID of the item being traded.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">isSellingToVendor</span>
-
-									<span class="tag"><span class="type">Boolean</span></span>
-
-
-								<p> If the client is selling to the vendor</p>
+								<p> The vendor entity.</p>
 							</li>
 					</ul>
 
@@ -3877,27 +3898,20 @@ takePermFlags											</a>
 							<li>
 									<span class="type">bool</span>
 
-								<p>Whether or not to allow the client to trade with the vendor</p>
+								<p>Whether the player is allowed to access the vendor.</p>
 							</li>
 
 				</ul>
 
-				<h3>Example Usage</h3>
-					<pre><code>function MODULE:CanPlayerTradeWithVendor(client, entity, uniqueID, isSellingToVendor)
-	return false -- Disallow trading with vendors outright.
-end
-</code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="CharacterVendorTraded">
-					<h1><span class="realm shared"></span></span>CharacterVendorTraded(client, entity, uniqueID, isSellingToVendor)</h1>
+				<a class="anchor" id="OnCharTradeVendor">
+					<h1><span class="realm server"></span></span>OnCharTradeVendor(client, vendor, item, isSellingToVendor, character)</h1>
 				</a>
 
-					<p>Called when a character trades with a vendor entity.
- This function can be used to perform additional actions when a character trades
- with a vendor entity.</p>
+					<p>Called when a character trades with a vendor.</p>
 			</header>
 
 
@@ -3912,31 +3926,31 @@ end
 									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
 
 
-								<p> The player character trading with the vendor</p>
+								<p> The player character trading with the vendor.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">entity</span>
+								<span class="tag parameter">vendor</span>
 
 									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
 
 
-								<p> The vendor entity being traded with</p>
+								<p> The vendor entity being traded with.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">uniqueID</span>
+								<span class="tag parameter">item</span>
 
-									<span class="tag"><span class="type">String</span></span>
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
 
 
-								<p> The unique identifier of the traded item</p>
+								<p> The item being traded.</p>
 							</li>
 					</ul>
 
@@ -3948,32 +3962,60 @@ end
 									<span class="tag"><span class="type">Boolean</span></span>
 
 
-								<p> Whether the trade involves selling to the vendor</p>
+								<p> Indicates if the trade involves selling to the vendor.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">character</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The character entity of the player.</p>
 							</li>
 					</ul>
 
 
-				<h3>Example Usage</h3>
-					<pre><code>function CharacterVendorTraded(client, entity, uniqueID, isSellingToVendor)
-    -- Perform additional actions when a character trades with the vendor
-end
-</code></pre>
 
-				<h3>See Also</h3>
-				<ul>
-						<li><a href="../../hooks - module/vendor/#VendorSellEvent">VendorSellEvent</a></li>
-						<li><a href="../../hooks - module/vendor/#VendorBuyEvent">VendorBuyEvent</a></li>
-				</ul>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="OnOpenVendorMenu">
+					<h1><span class="realm client"></span></span>OnOpenVendorMenu(self)</h1>
+				</a>
+
+					<p>Called when the vendor menu is opened.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">self</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity.</p>
+							</li>
+					</ul>
+
+
+
 		</section>
 		<section class="method">
 			<header>
 				<a class="anchor" id="PlayerAccessVendor">
-					<h1><span class="realm shared"></span></span>PlayerAccessVendor(client, entity)</h1>
+					<h1><span class="realm server"></span></span>PlayerAccessVendor(activator, self)</h1>
 				</a>
 
-					<p>Called when a player interacts with a vendor entity.
- This function adds the player to the vendor's receivers list and notifies the player
- about accessing the vendor.</p>
+					<p>Called when a player accesses a vendor.</p>
 			</header>
 
 
@@ -3983,50 +4025,28 @@ end
 					<ul>
 
 							<li>
-								<span class="tag parameter">client</span>
+								<span class="tag parameter">activator</span>
 
 									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
 
 
-								<p> The player accessing the vendor</p>
+								<p> The player accessing the vendor.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">entity</span>
+								<span class="tag parameter">self</span>
 
 									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
 
 
-								<p> The vendor</p>
+								<p> The vendor entity.</p>
 							</li>
 					</ul>
 
 
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>True if the player can access the vendor.</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>function PlayerAccessVendor(client, entity)
-    -- Add the player to the vendor's receivers list
-    entity.receivers[#entity.receivers + 1] = client
-
-    -- Notify the player about accessing the vendor
-    if entity.messages[VENDOR_WELCOME] then
-        client:notify(entity:getNetVar("name") .. ": " .. entity.messages[VENDOR_WELCOME])
-    end
-end
-</code></pre>
 
 		</section>
 		<section class="method">
@@ -4124,6 +4144,438 @@ end
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="VendorClassUpdated">
+					<h1><span class="realm client"></span></span>VendorClassUpdated(vendor, id, allowed)</h1>
+				</a>
+
+					<p>Called when a vendor's allowed classes are updated.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">vendor</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity whose classes were updated.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">id</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The ID of the class.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">allowed</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Whether the class is allowed or not.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorEdited">
+					<h1><span class="realm client"></span></span>VendorEdited(vendor, key)</h1>
+				</a>
+
+					<p>Called when a vendor entity is edited.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">vendor</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity that was edited.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The key that was edited.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorFactionUpdated">
+					<h1><span class="realm client"></span></span>VendorFactionUpdated(vendor, id, allowed)</h1>
+				</a>
+
+					<p>Called when a vendor's allowed factions are updated.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">vendor</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity whose factions were updated.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">id</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The ID of the faction.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">allowed</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Whether the faction is allowed or not.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorItemMaxStockUpdated">
+					<h1><span class="realm client"></span></span>VendorItemMaxStockUpdated(vendor, itemType, value)</h1>
+				</a>
+
+					<p>Called when a vendor's item maximum stock is updated.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">vendor</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemType</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The type of the item.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">value</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The new maximum stock value.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorItemModeUpdated">
+					<h1><span class="realm client"></span></span>VendorItemModeUpdated(vendor, itemType, value)</h1>
+				</a>
+
+					<p>Called when a vendor's item mode is updated.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">vendor</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemType</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The type of the item.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">value</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The new mode value.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorItemPriceUpdated">
+					<h1><span class="realm client"></span></span>VendorItemPriceUpdated(vendor, itemType, value)</h1>
+				</a>
+
+					<p>Called when a vendor's item price is updated.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">vendor</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemType</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The type of the item.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">value</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The new price value.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorItemStockUpdated">
+					<h1><span class="realm client"></span></span>VendorItemStockUpdated(vendor, itemType, value)</h1>
+				</a>
+
+					<p>Called when a vendor's item stock is updated.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">vendor</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemType</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The type of the item.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">value</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The new stock value.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorMoneyUpdated">
+					<h1><span class="realm client"></span></span>VendorMoneyUpdated(vendor, money, oldMoney)</h1>
+				</a>
+
+					<p>Called when a vendor's money is updated.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">vendor</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">money</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The new money value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">oldMoney</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The previous money value.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorOpened">
+					<h1><span class="realm client"></span></span>VendorOpened(vendor)</h1>
+				</a>
+
+					<p>Called when a vendor is opened.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">vendor</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity that was opened.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="VendorSellEvent">
 					<h1><span class="realm shared
  This function handles the event where a player sells an item to a vendor."></span></span>VendorSellEvent(client, vendor, itemType, isSellingToVendor, character, price)</h1>
@@ -4214,6 +4666,145 @@ end
 				<ul>
 						<li><a href="../../hooks - module/vendor/#VendorBuyEvent">VendorBuyEvent</a></li>
 				</ul>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorTradeAttempt">
+					<h1><span class="realm server"></span></span>VendorTradeAttempt(client, entity, uniqueID, isSellingToVendor)</h1>
+				</a>
+
+					<p>Called when a player attempts to trade with a vendor.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player attempting to trade.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">uniqueID</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The unique ID of the item being traded.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isSellingToVendor</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Indicates if the player is selling to the vendor.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getPriceOverride">
+					<h1><span class="realm shared"></span></span>getPriceOverride(self, uniqueID, price, isSellingToVendor)</h1>
+				</a>
+
+					<p>Gets the price override for an item.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">self</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The vendor entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">uniqueID</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The unique ID of the item.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">price</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The original price of the item.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isSellingToVendor</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Indicates if the player is selling to the vendor.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">int</span>
+
+								<p>The overridden price.</p>
+							</li>
+
+				</ul>
+
+
 		</section>
 
 					</div>
