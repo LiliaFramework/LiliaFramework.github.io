@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>WorkshopDownloader - Lilia Documentation</title>
+		<title>Bodygrouper - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="WorkshopDownloader - Lilia Documentation" />
+		<meta property="og:title" content="Bodygrouper - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Hook Documentation for TEMPTEXT Module." />
+			<meta property="og:description" content="Hook Documentation for Bodygrouper Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -161,7 +161,7 @@
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../config - module/bodygrouper/">Bodygrouper</a></summary>
 
 									<ul>
@@ -469,7 +469,7 @@
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../config - module/workshopdownloader/">WorkshopDownloader</a></summary>
 
 									<ul>
@@ -603,13 +603,6 @@ OnTransferred											</a>
 
 
 										<li>
-											<span class="realm  shared
- This hook allows custom logic to be implemented to determine if an em can be transferred
- from one inventory to another. It can be used to impose restrictionon item transfers."></span>
-											<a href="../../hooks - general/module/#CanItemBeTransfered">
-CanItemBeTransfered											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#CanPlayerDropItem">
 CanPlayerDropItem											</a>
@@ -633,11 +626,6 @@ CanPlayerTakeItem											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#CanPlayerUnequipItem">
 CanPlayerUnequipItem											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#CreateMenuButtons">
-CreateMenuButtons											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -729,11 +717,6 @@ ShouldClientDrown											</a>
 											<a href="../../hooks - general/module/#ShouldDataBeSaved">
 ShouldDataBeSaved											</a>
 										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldShowPlayerOnScoreboard">
-ShouldShowPlayerOnScoreboard											</a>
-										</li>
 
 									</ul>
 									</details>
@@ -812,6 +795,29 @@ PlayerStaminaGained											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/attributes/#PlayerStaminaLost">
 PlayerStaminaLost											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details open>
+									<summary><a href="../../hooks - module/bodygrouper/">Bodygrouper</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared
+ This hook is triggered when a player is added to a bodygrouper closet."></span>
+											<a href="../../hooks - module/bodygrouper/#BodygrouperClosetAddUser">
+BodygrouperClosetAddUser											</a>
+										</li>
+										<li>
+											<span class="realm shared
+ This hook is triggered when a player is removed from a bodygrouper closet."></span>
+											<a href="../../hooks - module/bodygrouper/#BodygrouperClosetRemoveUser">
+BodygrouperClosetRemoveUser											</a>
 										</li>
 
 									</ul>
@@ -909,6 +915,37 @@ callOnDoorChildren											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/doors/#copyParentDoor">
 copyParentDoor											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/f1menu/">F1Menu</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/f1menu/#BuildHelpMenu">
+BuildHelpMenu											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/f1menu/#CanPlayerViewInventory">
+CanPlayerViewInventory											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/f1menu/#CreateMenuButtons">
+CreateMenuButtons											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/f1menu/#PostDrawInventory">
+PostDrawInventory											</a>
 										</li>
 
 									</ul>
@@ -1064,7 +1101,9 @@ TooltipPaint											</a>
 
 
 										<li>
-											<span class="realm server"></span>
+											<span class="realm  shared
+ This hook allows custom logic to be implemented to determine if an em can be transferred
+ from one inventory to another. It can be used to impose restrictionon item transfers."></span>
 											<a href="../../hooks - module/inventory/#CanItemBeTransfered">
 CanItemBeTransfered											</a>
 										</li>
@@ -1140,6 +1179,22 @@ OnSavedItemLoaded											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/itemsave/#ShouldDeleteSavedItems">
 ShouldDeleteSavedItems											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/mainmenu/">MainMenu</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/mainmenu/#Temp">
+Temp											</a>
 										</li>
 
 									</ul>
@@ -1528,22 +1583,6 @@ VendorTradeAttempt											</a>
 											<span class="realm shared"></span>
 											<a href="../../hooks - module/vendor/#getPriceOverride">
 getPriceOverride											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details open>
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
 										</li>
 
 									</ul>
@@ -3939,8 +3978,8 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>WorkshopDownloader</h1>
-	<h2>Hook Documentation for TEMPTEXT Module.</h2>
+	<h1>Bodygrouper</h1>
+	<h2>Hook Documentation for Bodygrouper Module.</h2>
 </header>
 
 <p>
@@ -3951,11 +3990,12 @@ takePermFlags											</a>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="SampleFunction">
-					<h1><span class="realm client"></span></span>SampleFunction(state)</h1>
+				<a class="anchor" id="BodygrouperClosetAddUser">
+					<h1><span class="realm shared
+ This hook is triggered when a player is added to a bodygrouper closet."></span></span>BodygrouperClosetAddUser(closet, client)</h1>
 				</a>
 
-					<p>Called when the third person mode is toggled.</p>
+					<p>Called when a user enters a bodygrouper closet.</p>
 			</header>
 
 
@@ -3965,12 +4005,65 @@ takePermFlags											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">state</span>
+								<span class="tag parameter">closet</span>
 
-									<span class="tag"><span class="type">Boolean</span></span>
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
 
 
-								<p> Indicates whether the third person mode is enabled (<code>true</code>) or disabled (<code>false</code>).</p>
+								<p> The bodygrouper closet entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player who was added to the closet.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="BodygrouperClosetRemoveUser">
+					<h1><span class="realm shared
+ This hook is triggered when a player is removed from a bodygrouper closet."></span></span>BodygrouperClosetRemoveUser(closet, client)</h1>
+				</a>
+
+					<p>Called when a user leaves a bodygrouper closet.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">closet</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The bodygrouper closet entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player who was removed from the closet.</p>
 							</li>
 					</ul>
 

@@ -603,13 +603,6 @@ OnTransferred											</a>
 
 
 										<li>
-											<span class="realm  shared
- This hook allows custom logic to be implemented to determine if an em can be transferred
- from one inventory to another. It can be used to impose restrictionon item transfers."></span>
-											<a href="../../hooks - general/module/#CanItemBeTransfered">
-CanItemBeTransfered											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#CanPlayerDropItem">
 CanPlayerDropItem											</a>
@@ -633,11 +626,6 @@ CanPlayerTakeItem											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#CanPlayerUnequipItem">
 CanPlayerUnequipItem											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#CreateMenuButtons">
-CreateMenuButtons											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -729,11 +717,6 @@ ShouldClientDrown											</a>
 											<a href="../../hooks - general/module/#ShouldDataBeSaved">
 ShouldDataBeSaved											</a>
 										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldShowPlayerOnScoreboard">
-ShouldShowPlayerOnScoreboard											</a>
-										</li>
 
 									</ul>
 									</details>
@@ -812,6 +795,29 @@ PlayerStaminaGained											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/attributes/#PlayerStaminaLost">
 PlayerStaminaLost											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/bodygrouper/">Bodygrouper</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared
+ This hook is triggered when a player is added to a bodygrouper closet."></span>
+											<a href="../../hooks - module/bodygrouper/#BodygrouperClosetAddUser">
+BodygrouperClosetAddUser											</a>
+										</li>
+										<li>
+											<span class="realm shared
+ This hook is triggered when a player is removed from a bodygrouper closet."></span>
+											<a href="../../hooks - module/bodygrouper/#BodygrouperClosetRemoveUser">
+BodygrouperClosetRemoveUser											</a>
 										</li>
 
 									</ul>
@@ -909,6 +915,37 @@ callOnDoorChildren											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/doors/#copyParentDoor">
 copyParentDoor											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/f1menu/">F1Menu</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/f1menu/#BuildHelpMenu">
+BuildHelpMenu											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/f1menu/#CanPlayerViewInventory">
+CanPlayerViewInventory											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/f1menu/#CreateMenuButtons">
+CreateMenuButtons											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/f1menu/#PostDrawInventory">
+PostDrawInventory											</a>
 										</li>
 
 									</ul>
@@ -1064,7 +1101,9 @@ TooltipPaint											</a>
 
 
 										<li>
-											<span class="realm server"></span>
+											<span class="realm  shared
+ This hook allows custom logic to be implemented to determine if an em can be transferred
+ from one inventory to another. It can be used to impose restrictionon item transfers."></span>
 											<a href="../../hooks - module/inventory/#CanItemBeTransfered">
 CanItemBeTransfered											</a>
 										</li>
@@ -1140,6 +1179,22 @@ OnSavedItemLoaded											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/itemsave/#ShouldDeleteSavedItems">
 ShouldDeleteSavedItems											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/mainmenu/">MainMenu</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/mainmenu/#Temp">
+Temp											</a>
 										</li>
 
 									</ul>
@@ -1528,22 +1583,6 @@ VendorTradeAttempt											</a>
 											<span class="realm shared"></span>
 											<a href="../../hooks - module/vendor/#getPriceOverride">
 getPriceOverride											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
 										</li>
 
 									</ul>
@@ -2432,12 +2471,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -3286,12 +3325,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3547,12 +3586,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>

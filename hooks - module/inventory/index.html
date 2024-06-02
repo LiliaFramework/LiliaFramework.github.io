@@ -603,13 +603,6 @@ OnTransferred											</a>
 
 
 										<li>
-											<span class="realm  shared
- This hook allows custom logic to be implemented to determine if an em can be transferred
- from one inventory to another. It can be used to impose restrictionon item transfers."></span>
-											<a href="../../hooks - general/module/#CanItemBeTransfered">
-CanItemBeTransfered											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#CanPlayerDropItem">
 CanPlayerDropItem											</a>
@@ -633,11 +626,6 @@ CanPlayerTakeItem											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - general/module/#CanPlayerUnequipItem">
 CanPlayerUnequipItem											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#CreateMenuButtons">
-CreateMenuButtons											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -729,11 +717,6 @@ ShouldClientDrown											</a>
 											<a href="../../hooks - general/module/#ShouldDataBeSaved">
 ShouldDataBeSaved											</a>
 										</li>
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - general/module/#ShouldShowPlayerOnScoreboard">
-ShouldShowPlayerOnScoreboard											</a>
-										</li>
 
 									</ul>
 									</details>
@@ -812,6 +795,29 @@ PlayerStaminaGained											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/attributes/#PlayerStaminaLost">
 PlayerStaminaLost											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/bodygrouper/">Bodygrouper</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared
+ This hook is triggered when a player is added to a bodygrouper closet."></span>
+											<a href="../../hooks - module/bodygrouper/#BodygrouperClosetAddUser">
+BodygrouperClosetAddUser											</a>
+										</li>
+										<li>
+											<span class="realm shared
+ This hook is triggered when a player is removed from a bodygrouper closet."></span>
+											<a href="../../hooks - module/bodygrouper/#BodygrouperClosetRemoveUser">
+BodygrouperClosetRemoveUser											</a>
 										</li>
 
 									</ul>
@@ -909,6 +915,37 @@ callOnDoorChildren											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/doors/#copyParentDoor">
 copyParentDoor											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/f1menu/">F1Menu</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/f1menu/#BuildHelpMenu">
+BuildHelpMenu											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/f1menu/#CanPlayerViewInventory">
+CanPlayerViewInventory											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/f1menu/#CreateMenuButtons">
+CreateMenuButtons											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/f1menu/#PostDrawInventory">
+PostDrawInventory											</a>
 										</li>
 
 									</ul>
@@ -1064,7 +1101,9 @@ TooltipPaint											</a>
 
 
 										<li>
-											<span class="realm server"></span>
+											<span class="realm  shared
+ This hook allows custom logic to be implemented to determine if an em can be transferred
+ from one inventory to another. It can be used to impose restrictionon item transfers."></span>
 											<a href="../../hooks - module/inventory/#CanItemBeTransfered">
 CanItemBeTransfered											</a>
 										</li>
@@ -1140,6 +1179,22 @@ OnSavedItemLoaded											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/itemsave/#ShouldDeleteSavedItems">
 ShouldDeleteSavedItems											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../hooks - module/mainmenu/">MainMenu</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/mainmenu/#Temp">
+Temp											</a>
 										</li>
 
 									</ul>
@@ -1528,22 +1583,6 @@ VendorTradeAttempt											</a>
 											<span class="realm shared"></span>
 											<a href="../../hooks - module/vendor/#getPriceOverride">
 getPriceOverride											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../hooks - module/workshopdownloader/">WorkshopDownloader</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm client"></span>
-											<a href="../../hooks - module/workshopdownloader/#SampleFunction">
-SampleFunction											</a>
 										</li>
 
 									</ul>
@@ -3952,7 +3991,9 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="CanItemBeTransfered">
-					<h1><span class="realm server"></span></span>CanItemBeTransfered(item, currentInv, newInv, client)</h1>
+					<h1><span class="realm  shared
+ This hook allows custom logic to be implemented to determine if an em can be transferred
+ from one inventory to another. It can be used to impose restrictionon item transfers."></span></span>CanItemBeTransfered(item, currentInv, oldInv)</h1>
 				</a>
 
 					<p>Determines whether an item can be transferred between inventories.</p>
@@ -3980,29 +4021,18 @@ takePermFlags											</a>
 
 
 
-								<p> The inventory from which the item is being transferred</p>
+								<p> The current inventory from which the item is beintransferred</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">newInv</span>
+								<span class="tag parameter">oldInv</span>
 
 
 
-								<p> The inventory to which the item is being transferred</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-
-
-								<p> The client initiating the transfer</p>
+								<p> The old inventory to which the item belonged</p>
 							</li>
 					</ul>
 
@@ -4011,9 +4041,9 @@ takePermFlags											</a>
 				<ul>
 
 							<li>
-									<span class="type">boolean</span>
+									<span class="type">boolean</span> or <a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
 
-								<p>Whether the item can be transferred</p>
+								<p>Whether the item can be transferred, or fal and a reason if not</p>
 							</li>
 
 				</ul>

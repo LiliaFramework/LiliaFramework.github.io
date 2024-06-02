@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Structure - Module - Lilia Documentation</title>
+		<title>MainMenu - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Structure - Module - Lilia Documentation" />
+		<meta property="og:title" content="MainMenu - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="" />
+			<meta property="og:description" content="Hook Documentation for MainMenu Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -238,7 +238,7 @@
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../config - module/mainmenu/">MainMenu</a></summary>
 
 									<ul>
@@ -1185,7 +1185,7 @@ ShouldDeleteSavedItems											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../hooks - module/mainmenu/">MainMenu</a></summary>
 
 									<ul>
@@ -3960,7 +3960,7 @@ takePermFlags											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../core - manual/structure_module/">Structure - Module</a></summary>
 
 									<ul>
@@ -3977,91 +3977,41 @@ takePermFlags											</a>
 
 			<article>
 					<div class="wrapper">
+						<header class="module">
+	<h1>MainMenu</h1>
+	<h2>Hook Documentation for MainMenu Module.</h2>
+</header>
 
-<h1>Structure - Module</h1>
+<p>
 
+</p>
 
-<pre>
-MODULE.name = <span class="string">"A Module"</span>
+	<h1 class="title">Functions</h1>
 
-MODULE.author = <span class="string">"76561198312513285"</span>
+		<section class="method">
+			<header>
+				<a class="anchor" id="Temp">
+					<h1><span class="realm client"></span></span>Temp()</h1>
+				</a>
 
-MODULE.discord = <span class="string">"@liliaplayer"</span>
-
-MODULE.desc = <span class="string">"This is a Example Module."</span>
-
-MODULE.WorkshopContent = {<span class="string">"2959728255"</span>}
-
-MODULE.enabled = <span class="keyword">true</span>
-
-MODULE.CAMIPrivileges = {
-    {
-        Name = <span class="string">"Staff Permissions - Kekw"</span>,
-        MinAccess = <span class="string">"superadmin"</span>,
-        Description = <span class="string">"Allows access to kewking."</span>,
-    },
-}
-
-MODULE.Dependencies = {
-    {
-        File = MODULE.path .. <span class="string">"/nicebogusfile.lua"</span>,
-        Realm = <span class="string">"server"</span>,
-    },
-    {
-        File = MODULE.path .. <span class="string">"/badbogusfile.lua"</span>,
-        Realm = <span class="string">"client"</span>,
-    },
-}
-</pre>
+					<p>Called when the player wants to view their inventory.</p>
+			</header>
 
 
-<hr/>
 
-<p><a name="Module_Configuration"></a></p>
-<h2>Module Configuration</h2>
+				<h3>Returns</h3>
+				<ul>
 
-<ul>
-    <li><p>**<code>MODULE.name</code>:** Specifies the name of the module, which is "Core - Permissions" in this case. This variable identifies the module.</p></li>
-    <li><p>**<code>MODULE.author</code>:** Indicates the author of the module. It can be a STEAMID64 or Name. Replace "76561198312513285" with the actual author information.</p></li>
-    <li><p>**<code>MODULE.discord</code>:** Indicates the discord of the module creator, in this case, as shown, is liliaplayer.</p></li>
-    <li><p>**<code>MODULE.desc</code>:** Provides a brief description of the module's purpose. In this case, it states that the module adds skills functionality to the framework.</p></li>
-    <li><p>**<code>MODULE.identifier</code>:** This global variable uniquely identifies the module and allows it to be accessed from outside its scope. <strong>Optional</strong></p></li>
-    <li><p>**<code>MODULE.CAMIPrivileges</code>:** An example CAMI permission that is loaded alongside the module. <strong>Optional</strong></p></li>
-    <li><p>**<code>MODULE.WorkshopContent</code>:** Workshop Content to be added. <strong>Optional</strong></p></li>
-    <li><p>**<code>MODULE.enabled</code>:** Indicates if the module is active or not. If False, then it won't be. <strong>Optional</strong></p></li>
-    <li><p>**<code>MODULE.Dependencies</code>:** Files and corresponding realms to be included. <strong>Optional</strong></p></li>
-</ul>
+							<li>
+									<span class="type">boolean</span>
 
-<h3>Automatically Included Files and Folders in the Module:</h3>
+								<p>Whether the player is allowed to view their inventory.</p>
+							</li>
 
-<p><strong>Files:</strong></p>
+				</ul>
 
-<ul>
-    <li><p>client.lua</p></li>
-    <li><p>cl_module.lua</p></li>
-    <li><p>sv_module.lua</p></li>
-    <li><p>server.lua</p></li>
-    <li><p>config.lua</p></li>
-    <li><p>sconfig.lua</p></li>
-</ul>
 
-<p><strong>Folders:</strong></p>
-
-<ul>
-    <li><p>dependencies</p></li>
-    <li><p>config</p></li>
-    <li><p>permissions</p></li>
-    <li><p>libs</p></li>
-    <li><p>hooks</p></li>
-    <li><p>libraries</p></li>
-    <li><p>commands</p></li>
-    <li><p>netcalls</p></li>
-    <li><p>meta</p></li>
-    <li><p>derma</p></li>
-    <li><p>pim</p></li>
-    <li><p>concommands</p></li>
-</ul>
-
+		</section>
 
 					</div>
 			</article>
