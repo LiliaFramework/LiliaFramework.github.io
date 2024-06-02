@@ -1064,11 +1064,56 @@ TooltipPaint											</a>
 
 
 										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/inventory/#CanItemBeTransfered">
+CanItemBeTransfered											</a>
+										</li>
+										<li>
 											<span class="realm  client
  This hook can be used to implement custom checks to determine if a player is
  allowed to view their inventory."></span>
 											<a href="../../hooks - module/inventory/#CanPlayerViewInventory">
 CanPlayerViewInventory											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#CanRunItemAction">
+CanRunItemAction											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#InterceptClickItemIcon">
+InterceptClickItemIcon											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/inventory/#ItemDraggedOutOfInventory">
+ItemDraggedOutOfInventory											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#ItemPaintOver">
+ItemPaintOver											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/inventory/#ItemTransfered">
+ItemTransfered											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#OnCreateItemInteractionMenu">
+OnCreateItemInteractionMenu											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/inventory/#OnPlayerLostStackItem">
+OnPlayerLostStackItem											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#OnRequestItemTransfer">
+OnRequestItemTransfer											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -1108,7 +1153,7 @@ ShouldDeleteSavedItems											</a>
 
 
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm client"></span>
 											<a href="../../hooks - module/recognition/#CharRecognize">
 CharRecognize											</a>
 										</li>
@@ -1320,6 +1365,56 @@ PrePlayerLoadedChar											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/storage/#CanPlayerSpawnStorage">
 CanPlayerSpawnStorage											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#CanPlayerSpawnStorage">
+CanPlayerSpawnStorage											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#CanSaveData">
+CanSaveData											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/storage/#OnCreateStoragePanel">
+OnCreateStoragePanel											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#StorageCanTransferItem">
+StorageCanTransferItem											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#StorageEntityRemoved">
+StorageEntityRemoved											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/storage/#StorageInventorySet">
+StorageInventorySet											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/storage/#StorageOpen">
+StorageOpen											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#StorageRestored">
+StorageRestored											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/storage/#StorageUnlockPrompt">
+StorageUnlockPrompt											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/storage/#isSuitableForTrunk">
+isSuitableForTrunk											</a>
 										</li>
 
 									</ul>
@@ -3856,6 +3951,77 @@ takePermFlags											</a>
 
 		<section class="method">
 			<header>
+				<a class="anchor" id="CanItemBeTransfered">
+					<h1><span class="realm server"></span></span>CanItemBeTransfered(item, currentInv, newInv, client)</h1>
+				</a>
+
+					<p>Determines whether an item can be transferred between inventories.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">item</span>
+
+
+
+								<p> The item being transferred</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">currentInv</span>
+
+
+
+								<p> The inventory from which the item is being transferred</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">newInv</span>
+
+
+
+								<p> The inventory to which the item is being transferred</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+
+
+								<p> The client initiating the transfer</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>Whether the item can be transferred</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="CanPlayerViewInventory">
 					<h1><span class="realm  client
  This hook can be used to implement custom checks to determine if a player is
@@ -3877,6 +4043,395 @@ takePermFlags											</a>
 							</li>
 
 				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanRunItemAction">
+					<h1><span class="realm client"></span></span>CanRunItemAction(itemTable, action)</h1>
+				</a>
+
+					<p>Determines whether a specific action can be run on an item.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemTable</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> The table representing the item</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">action</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The action of the action being checked</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>Whether the action can be run on the item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="InterceptClickItemIcon">
+					<h1><span class="realm client"></span></span>InterceptClickItemIcon(self, itemIcon, keyCode)</h1>
+				</a>
+
+					<p>Called when a player clicks on an item icon.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">self</span>
+
+									<span class="tag"><span class="type">Panel</span></span>
+
+
+								<p> The panel that received the click</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemIcon</span>
+
+									<span class="tag"><span class="type">Panel</span></span>
+
+
+								<p> The item icon that was clicked</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">keyCode</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The key code associated with the click</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ItemDraggedOutOfInventory">
+					<h1><span class="realm server"></span></span>ItemDraggedOutOfInventory(client, item)</h1>
+				</a>
+
+					<p>Called when an item is dragged out of an inventory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The client dragging the item</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">item</span>
+
+
+
+								<p> The item being dragged</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ItemPaintOver">
+					<h1><span class="realm client"></span></span>ItemPaintOver(self, itemTable, w, h)</h1>
+				</a>
+
+					<p>Called when an item is being painted over.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">self</span>
+
+									<span class="tag"><span class="type">Panel</span></span>
+
+
+								<p> The panel being painted</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemTable</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> The table representing the item being painted</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">w</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The width of the panel</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">h</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The height of the panel</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ItemTransfered">
+					<h1><span class="realm server"></span></span>ItemTransfered(context)</h1>
+				</a>
+
+					<p>Called when an item is transferred between inventories.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">context</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> The context of the item transfer</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="OnCreateItemInteractionMenu">
+					<h1><span class="realm client"></span></span>OnCreateItemInteractionMenu(self, menu, itemTable)</h1>
+				</a>
+
+					<p>Called when an item interaction menu is being created.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">self</span>
+
+									<span class="tag"><span class="type">Panel</span></span>
+
+
+								<p> The panel on which the menu is being created</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">menu</span>
+
+									<span class="tag"><span class="type">Panel</span></span>
+
+
+								<p> The menu being created</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemTable</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> The table representing the item for which the menu is being created</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="OnPlayerLostStackItem">
+					<h1><span class="realm shared"></span></span>OnPlayerLostStackItem(itemTypeOrItem)</h1>
+				</a>
+
+					<p>Called when a player drops a stackable item.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemTypeOrItem</span>
+
+
+
+								<p> The type or instance of the item being lost</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="OnRequestItemTransfer">
+					<h1><span class="realm client"></span></span>OnRequestItemTransfer(self, itemID, inventoryID, x, y)</h1>
+				</a>
+
+					<p>Called when an item transfer is requested.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">self</span>
+
+									<span class="tag"><span class="type">Panel</span></span>
+
+
+								<p> The panel from which the transfer is requested</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemID</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The ID of the item being transferred</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">inventoryID</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The ID of the inventory from which the item is being transferred</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">x</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The x-coordinate of the transfer request</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">y</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The y-coordinate of the transfer request</p>
+							</li>
+					</ul>
+
 
 
 		</section>

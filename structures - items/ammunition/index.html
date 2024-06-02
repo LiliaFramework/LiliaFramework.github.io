@@ -1064,11 +1064,56 @@ TooltipPaint											</a>
 
 
 										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/inventory/#CanItemBeTransfered">
+CanItemBeTransfered											</a>
+										</li>
+										<li>
 											<span class="realm  client
  This hook can be used to implement custom checks to determine if a player is
  allowed to view their inventory."></span>
 											<a href="../../hooks - module/inventory/#CanPlayerViewInventory">
 CanPlayerViewInventory											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#CanRunItemAction">
+CanRunItemAction											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#InterceptClickItemIcon">
+InterceptClickItemIcon											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/inventory/#ItemDraggedOutOfInventory">
+ItemDraggedOutOfInventory											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#ItemPaintOver">
+ItemPaintOver											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/inventory/#ItemTransfered">
+ItemTransfered											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#OnCreateItemInteractionMenu">
+OnCreateItemInteractionMenu											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/inventory/#OnPlayerLostStackItem">
+OnPlayerLostStackItem											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#OnRequestItemTransfer">
+OnRequestItemTransfer											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -1108,7 +1153,7 @@ ShouldDeleteSavedItems											</a>
 
 
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm client"></span>
 											<a href="../../hooks - module/recognition/#CharRecognize">
 CharRecognize											</a>
 										</li>
@@ -1320,6 +1365,56 @@ PrePlayerLoadedChar											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/storage/#CanPlayerSpawnStorage">
 CanPlayerSpawnStorage											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#CanPlayerSpawnStorage">
+CanPlayerSpawnStorage											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#CanSaveData">
+CanSaveData											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/storage/#OnCreateStoragePanel">
+OnCreateStoragePanel											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#StorageCanTransferItem">
+StorageCanTransferItem											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#StorageEntityRemoved">
+StorageEntityRemoved											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/storage/#StorageInventorySet">
+StorageInventorySet											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/storage/#StorageOpen">
+StorageOpen											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#StorageRestored">
+StorageRestored											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/storage/#StorageUnlockPrompt">
+StorageUnlockPrompt											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/storage/#isSuitableForTrunk">
+isSuitableForTrunk											</a>
 										</li>
 
 									</ul>
@@ -3936,22 +4031,11 @@ takePermFlags											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">RequiredSkillLevels</span>
+								<span class="tag parameter">health</span>
 
 
 
-								<p> Required attribute levels for using the item | <strong>table</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">ammo</span>
-
-
-
-								<p> Type of ammunition contained in the item | <strong>string</strong></p>
+								<p> Amount of health given to a player| <strong>number</strong></p>
 							</li>
 					</ul>
 

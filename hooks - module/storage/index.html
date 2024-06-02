@@ -1064,11 +1064,56 @@ TooltipPaint											</a>
 
 
 										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/inventory/#CanItemBeTransfered">
+CanItemBeTransfered											</a>
+										</li>
+										<li>
 											<span class="realm  client
  This hook can be used to implement custom checks to determine if a player is
  allowed to view their inventory."></span>
 											<a href="../../hooks - module/inventory/#CanPlayerViewInventory">
 CanPlayerViewInventory											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#CanRunItemAction">
+CanRunItemAction											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#InterceptClickItemIcon">
+InterceptClickItemIcon											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/inventory/#ItemDraggedOutOfInventory">
+ItemDraggedOutOfInventory											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#ItemPaintOver">
+ItemPaintOver											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/inventory/#ItemTransfered">
+ItemTransfered											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#OnCreateItemInteractionMenu">
+OnCreateItemInteractionMenu											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/inventory/#OnPlayerLostStackItem">
+OnPlayerLostStackItem											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/inventory/#OnRequestItemTransfer">
+OnRequestItemTransfer											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -1108,7 +1153,7 @@ ShouldDeleteSavedItems											</a>
 
 
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm client"></span>
 											<a href="../../hooks - module/recognition/#CharRecognize">
 CharRecognize											</a>
 										</li>
@@ -1320,6 +1365,56 @@ PrePlayerLoadedChar											</a>
 											<span class="realm server"></span>
 											<a href="../../hooks - module/storage/#CanPlayerSpawnStorage">
 CanPlayerSpawnStorage											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#CanPlayerSpawnStorage">
+CanPlayerSpawnStorage											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#CanSaveData">
+CanSaveData											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/storage/#OnCreateStoragePanel">
+OnCreateStoragePanel											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#StorageCanTransferItem">
+StorageCanTransferItem											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#StorageEntityRemoved">
+StorageEntityRemoved											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/storage/#StorageInventorySet">
+StorageInventorySet											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/storage/#StorageOpen">
+StorageOpen											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../hooks - module/storage/#StorageRestored">
+StorageRestored											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks - module/storage/#StorageUnlockPrompt">
+StorageUnlockPrompt											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../hooks - module/storage/#isSuitableForTrunk">
+isSuitableForTrunk											</a>
 										</li>
 
 									</ul>
@@ -3920,6 +4015,483 @@ takePermFlags											</a>
     return client:IsAdmin() -- Restrict spawning containers to admins.
 end
 </code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanPlayerSpawnStorage">
+					<h1><span class="realm server"></span></span>CanPlayerSpawnStorage(client, entity, data)</h1>
+				</a>
+
+					<p>Determines whether a player is allowed to spawn a container entity.
+ This hook allows customization of permissions for players to spawn containers.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player attempting to spawn a container.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The container entity being spawned.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">data</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> Additional data related to the container being spawned.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether the player is allowed to spawn the container.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CanSaveData">
+					<h1><span class="realm server"></span></span>CanSaveData(entity, inventory)</h1>
+				</a>
+
+					<p>Determines whether data associated with a storage entity should be saved.
+ This hook allows customization of conditions for saving data associated with a storage entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The storage entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">inventory</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The inventory associated with the storage entity.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>Whether the data should be saved.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="OnCreateStoragePanel">
+					<h1><span class="realm client"></span></span>OnCreateStoragePanel(localInvPanel, storageInvPanel, storage)</h1>
+				</a>
+
+					<p>Called when a storage panel is created.
+ This hook is triggered when a panel for displaying storage inventory is created.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">localInvPanel</span>
+
+									<span class="tag"><span class="type">Panel</span></span>
+
+
+								<p> The panel displaying the local inventory.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">storageInvPanel</span>
+
+									<span class="tag"><span class="type">Panel</span></span>
+
+
+								<p> The panel displaying the storage inventory.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">storage</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The storage entity.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="StorageCanTransferItem">
+					<h1><span class="realm server"></span></span>StorageCanTransferItem(client, storage, item)</h1>
+				</a>
+
+					<p>Determines whether a player is allowed to transfer an item to a storage entity.
+ This hook allows customization of permissions for transferring items to a storage entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/player/#">Player</a></span>
+
+
+								<p> The player attempting to transfer the item.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">storage</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The storage entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">item</span>
+
+
+
+								<p> The item being transferred.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>Whether the player is allowed to transfer the item.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="StorageEntityRemoved">
+					<h1><span class="realm server"></span></span>StorageEntityRemoved(entity, inventory)</h1>
+				</a>
+
+					<p>Called when a storage entity is removed.
+ This hook is triggered when a storage entity is removed from the world.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The storage entity being removed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">inventory</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The inventory associated with the storage entity.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="StorageInventorySet">
+					<h1><span class="realm shared"></span></span>StorageInventorySet(entity, inventory, isInitial)</h1>
+				</a>
+
+					<p>Called when the inventory of a storage entity is set.
+ This hook is triggered when the inventory of a storage entity is set, either initially or after modifications.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The storage entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">inventory</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The inventory associated with the storage entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isInitial</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Whether the inventory setting is occurring during initialization.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="StorageOpen">
+					<h1><span class="realm shared"></span></span>StorageOpen(entity, isCar)</h1>
+				</a>
+
+					<p>Called when a storage is opened.
+ This hook is triggered when a storage is opened, either a car trunk or another storage entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The storage entity being opened.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isCar</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Whether the storage entity is a car trunk.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="StorageRestored">
+					<h1><span class="realm server"></span></span>StorageRestored(storage, inventory)</h1>
+				</a>
+
+					<p>Called when a storage entity is restored.
+ This hook is triggered when a storage entity is restored.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">storage</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The storage entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">inventory</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The inventory associated with the storage entity.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="StorageUnlockPrompt">
+					<h1><span class="realm client"></span></span>StorageUnlockPrompt(entity)</h1>
+				</a>
+
+					<p>Called when a prompt to unlock storage is displayed.
+ This hook is triggered when a prompt to unlock storage is displayed, typically for locked containers.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The storage entity.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isSuitableForTrunk">
+					<h1><span class="realm shared"></span></span>isSuitableForTrunk(entity)</h1>
+				</a>
+
+					<p>Determines whether an entity is suitable for use as storage.
+ This hook allows customization of conditions for considering an entity as suitable storage.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><a class="type" href="../../core - classes/entity/#">Entity</a></span>
+
+
+								<p> The entity being checked.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>Whether the entity is suitable for use as storage.</p>
+							</li>
+
+				</ul>
+
 
 		</section>
 
