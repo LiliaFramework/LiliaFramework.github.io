@@ -2,10 +2,10 @@
 
 <html>
 	<head>
-		<title>Information - Installation Tutorial - Lilia Documentation</title>
+		<title>Structure - Command - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Information - Installation Tutorial - Lilia Documentation" />
+		<meta property="og:title" content="Structure - Command - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
 			<meta property="og:description" content="" />
@@ -2369,12 +2369,12 @@ lia.module.verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -3223,12 +3223,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/item/#getName">
 getName											</a>
 										</li>
@@ -3484,12 +3484,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../core - classes/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3776,68 +3776,13 @@ takePermFlags											</a>
 				</details>
 				<details class="category" open>
 					<summary>
-						<h2>Core - Information</h2>
+						<h2>Information</h2>
 					</summary>
 
 					<ul>
 							<li>
 									<details >
-									<summary><a href="../../core - information/class/">Structure - Class</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../core - information/command/">Structure - Command</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../core - information/faction/">Structure - Faction</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../core - information/info_compatibility/">Addons with Improved Compatibility</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../core - information/info_converting-from-nutscript/">Information - Porting From NS</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../core - information/info_features/">Improvements &amp; Fixes</a></summary>
+									<summary><a href="../../information/class/">Structure - Class</a></summary>
 
 									<ul>
 
@@ -3848,7 +3793,7 @@ takePermFlags											</a>
 							</li>
 							<li>
 									<details open>
-									<summary><a href="../../core - information/info_installation/">Information - Installation Tutorial</a></summary>
+									<summary><a href="../../information/command/">Structure - Command</a></summary>
 
 									<ul>
 
@@ -3859,7 +3804,7 @@ takePermFlags											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../core - information/module/">Structure - Module</a></summary>
+									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
 
 									<ul>
 
@@ -3870,7 +3815,7 @@ takePermFlags											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../core - information/store_contents/">Store : Contents</a></summary>
+									<summary><a href="../../information/contents/">Store : Contents</a></summary>
 
 									<ul>
 
@@ -3881,7 +3826,51 @@ takePermFlags											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../core - information/store_tos/">Store - Terms of Service Agreement</a></summary>
+									<summary><a href="../../information/converting-from-nutscript/">Information - Porting From NS</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/faction/">Structure - Faction</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/installation/">Information - Installation Tutorial</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/module/">Structure - Module</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/tos/">Store - Terms of Service Agreement</a></summary>
 
 									<ul>
 
@@ -3898,98 +3887,53 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 
-<h1>Information - Installation Tutorial</h1>
+<h1>Structure - Command</h1>
 
-<p>Lilia is a versatile roleplaying framework for the Garry's Mod game. This tutorial will guide you through the process of installing Lilia for your Garry's Mod server.</p>
 
-<p><a name="Prerequisites"></a></p>
-<h2>Prerequisites</h2>
+<pre>
+lia.command.add(<span class="string">"charsetskin"</span>, {
+    <span class="comment">-- This command is restricted to administrators only by default. CAMI can change this
+</span>    adminOnly = <span class="keyword">true</span>,
 
-<p>Before you begin, make sure you have the following:</p>
+    <span class="comment">-- Specifies the required privilege for using this command
+</span>    privilege = <span class="string">"Change Skin"</span>, <span class="comment">-- This would end up being the permission "Commands - Change Skin"
+</span>
+    <span class="comment">-- Command syntax with name and an optional skin number
+</span>    syntax = <span class="string">"&lt;string name&gt; [number skin]"</span>,
 
-<ul>
-    <li><p>A working Garry's Mod server.</p></li>
-    <li><p>Basic knowledge of Garry's Mod server administration.</p></li>
-    <li><p>An understanding of how to use the command line.</p></li>
-    <li><p>An Admin Menu (we recommend <a href="https://www.gmodstore.com/market/view/sam">SAM</a>).</p></li>
-</ul>
+    <span class="comment">-- Execute this function when the command is used
+</span>    onRun = <span class="keyword">function</span>(client, arguments)
+        <span class="comment">-- Parse the second argument as a number (skin)
+</span>        <span class="keyword">local</span> skin = <span class="global">tonumber</span>(arguments[<span class="number">2</span>])
 
-<p><a name="Step_1__Setting_Up_Your_Garry_s_Mod_Server"></a></p>
-<h2>Step 1: Setting Up Your Garry's Mod Server</h2>
+        <span class="comment">-- Find the player specified by name in the first argument
+</span>        <span class="keyword">local</span> target = lia.command.findPlayer(client, arguments[<span class="number">1</span>])
 
-<p>If you haven't already, set up your Garry's Mod server and ensure it's running without any issues.</p>
+        <span class="comment">-- Check if the target player is valid and has a character
+</span>        <span class="keyword">if</span> IsValid(target) <span class="keyword">and</span> target:getChar() <span class="keyword">then</span>
+            <span class="comment">-- Set the "skin" data attribute of the target's character
+</span>            target:getChar():setData(<span class="string">"skin"</span>, skin)
 
-<p><a name="Step_2__Downloading_Lilia"></a></p>
-<h2>Step 2: Downloading Lilia</h2>
+            <span class="comment">-- Change the skin of the target player, defaulting to 0 if skin is not provided
+</span>            target:SetSkin(skin <span class="keyword">or</span> <span class="number">0</span>)
 
-<ul>
-    <li><p>After downloading the ZIP file, visit the Lilia GitHub repository: <a href="https://github.com/LiliaFramework/Lilia">Lilia GitHub Repo</a>.</p></li>
-    <li><p>Click on the green "Code" button and select "Download ZIP."</p></li>
-    <li><p>Save the ZIP file to a location on your computer.</p></li>
-</ul>
+            <span class="comment">-- Notify the client about the skin change
+</span>            client:notifyLocalized(<span class="string">"cChangeSkin"</span>, client:Name(), target:Name(), skin <span class="keyword">or</span> <span class="number">0</span>)
+        <span class="keyword">end</span>
+    }
+})
+</pre>
 
-<p><a name="Step_3__Extracting_Lilia"></a></p>
-<h2>Step 3: Extracting Lilia</h2>
 
-<ul>
-    <li><p>After downloading, locate the ZIP file and extract its contents to a temporary folder on your computer.</p></li>
-    <li><p>You should now have a folder named something like "Lilia-main.zip."</p></li>
-    <li><p>Extract the contents inside to a folder within your desktop.</p></li>
-    <li><p>You will be faced with several files alongside with 2 folders: <code>docs</code> and <code>lilia</code>. Move <code>lilia</code> into a separate folder.</p></li>
-</ul>
-
-<p><a name="Step_4__Uploading_Lilia_to_Your_Server"></a></p>
-<h2>Step 4: Uploading Lilia to Your Server</h2>
+<p><a name="Command_Variables"></a></p>
+<h2>Command Variables</h2>
 
 <ul>
-    <li><p>Connect to your server using a tool like FTP or SFTP.</p></li>
-    <li><p>Navigate to the <code>garrysmod/gamemodes</code> directory within your server.</p></li>
-    <li><p>Upload the previously mentioned "lilia" folder into the <code>gamemodes</code> directory.</p></li>
+    <li><p><strong>privilege</strong>: This variable specifies the permission associated with the command. It determines who is allowed to use the command and what actions they can perform.</p></li>
+    <li><p><strong>adminOnly</strong> or <strong>superAdminOnly</strong>: These variables are used to categorize the privilege into different levels. You can choose either one of them, and if set to false, it means that the command can be used by regular users as well.</p></li>
+    <li><p><strong>syntax</strong>: This variable provides information about the command's syntax. It helps users understand how to correctly structure their input when using the command.</p></li>
+    <li><p><strong>onRun</strong>: This is a function that defines what actions should be executed when the command is used. It specifies the actual behavior of the command, including any processing or tasks it should perform.</p></li>
 </ul>
-
-<p><a name="Step_5__Configuring_Lilia"></a></p>
-<h2>Step 5: Configuring Lilia</h2>
-
-<ul>
-    <li><p>Before making any changes, consider making a backup of the default configuration.</p></li>
-    <li><p>Edit this <a href="https://github.com/LiliaFramework/Skeleton/blob/main/skeleton/schema/config/shared.lua">configuration</a> to override any default values you wish.</p></li>
-</ul>
-
-<p><a name="Step_6__Starting_Lilia_on_Your_Server"></a></p>
-<h2>Step 6: Starting Lilia on Your Server</h2>
-
-<ul>
-    <li><p>Restart your Garry's Mod server for the changes to take effect.</p></li>
-    <li><p>If you encounter any issues, refer to the troubleshooting tips in the documentation.</p></li>
-</ul>
-
-<p><a name="Step_7__Installing_Roleplay_Schemas"></a></p>
-<h2>Step 7: Installing Roleplay Schemas</h2>
-
-<p>To install a roleplay schema for your Lilia framework, follow these steps:</p>
-
-<ul>
-    <li><p>Download one of the available schemas from the repositories listed below, based on your server's theme:</p></li>
-    <li><p><a href="https://github.com/LiliaFramework/Lilia">Framework</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/Skeleton">Skeleton Schema</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/MafiaRP">MafiaRP Schema</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/1942RP">1942RP Schema</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/HL2RP">HL2RP Schema</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/MetroRP">MetroRP Schema</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/SCPRP">SCPRP Schema</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/KaiserReichRP">KaiserReichRP Schema</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/FalloutRP">FalloutRP Schema</a></p></li>
-    <li><p><a href="https://github.com/LiliaFramework/Modules">Public Modules</a></p></li>
-    <li><p>Set up factions, items, and modules as required.</p></li>
-    <li><p>Set the startup gamemode to the schema folder ID within your server's startup configuration.</p></li>
-</ul>
-
-<p>That's it! You've successfully installed a roleplay schema using Lilia. Enjoy your customized roleplaying experience!</p>
-
-<p><a name="Conclusion"></a></p>
-<h2>Conclusion</h2>
-
-<p>Congratulations! You've successfully installed Lilia and set up your own roleplaying schema on your Garry's Mod server. Remember that Lilia offers a wide range of features and customization options, so be sure to explore its documentation and community resources to make the most out of your roleplaying experience.</p>
 
 					</div>
 			</article>

@@ -2,10 +2,10 @@
 
 <html>
 	<head>
-		<title>Information - Porting From NS - Lilia Documentation</title>
+		<title>Addons with Improved Compatibility - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Information - Porting From NS - Lilia Documentation" />
+		<meta property="og:title" content="Addons with Improved Compatibility - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
 			<meta property="og:description" content="" />
@@ -3776,13 +3776,13 @@ takePermFlags											</a>
 				</details>
 				<details class="category" open>
 					<summary>
-						<h2>Core - Information</h2>
+						<h2>Information</h2>
 					</summary>
 
 					<ul>
 							<li>
 									<details >
-									<summary><a href="../../core - information/class/">Structure - Class</a></summary>
+									<summary><a href="../../information/class/">Structure - Class</a></summary>
 
 									<ul>
 
@@ -3793,29 +3793,7 @@ takePermFlags											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../core - information/command/">Structure - Command</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../core - information/faction/">Structure - Faction</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../core - information/info_compatibility/">Addons with Improved Compatibility</a></summary>
+									<summary><a href="../../information/command/">Structure - Command</a></summary>
 
 									<ul>
 
@@ -3826,7 +3804,7 @@ takePermFlags											</a>
 							</li>
 							<li>
 									<details open>
-									<summary><a href="../../core - information/info_converting-from-nutscript/">Information - Porting From NS</a></summary>
+									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
 
 									<ul>
 
@@ -3837,7 +3815,7 @@ takePermFlags											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../core - information/info_features/">Improvements &amp; Fixes</a></summary>
+									<summary><a href="../../information/contents/">Store : Contents</a></summary>
 
 									<ul>
 
@@ -3848,7 +3826,7 @@ takePermFlags											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../core - information/info_installation/">Information - Installation Tutorial</a></summary>
+									<summary><a href="../../information/converting-from-nutscript/">Information - Porting From NS</a></summary>
 
 									<ul>
 
@@ -3859,7 +3837,7 @@ takePermFlags											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../core - information/module/">Structure - Module</a></summary>
+									<summary><a href="../../information/faction/">Structure - Faction</a></summary>
 
 									<ul>
 
@@ -3870,7 +3848,7 @@ takePermFlags											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../core - information/store_contents/">Store : Contents</a></summary>
+									<summary><a href="../../information/installation/">Information - Installation Tutorial</a></summary>
 
 									<ul>
 
@@ -3881,7 +3859,18 @@ takePermFlags											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../core - information/store_tos/">Store - Terms of Service Agreement</a></summary>
+									<summary><a href="../../information/module/">Structure - Module</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/tos/">Store - Terms of Service Agreement</a></summary>
 
 									<ul>
 
@@ -3898,32 +3887,118 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 
-<h1>Information - Porting From NS</h1>
+<h1>Addons with Improved Compatibility</h1>
 
-<p>If you're considering porting Nutscript Plugins to Lilia Modules, here are some helpful pointers on replaceable variables. It's worth noting that while porting from Nutscript to Lilia is feasible and supported, going the other way around can be complex and may lead to long-term issues, as certain key hooks used in Lilia are not present in Nutscript.</p>
-
-
-<pre><code> |  **Nutscript**   |    **Lilia**      |
- |:---------------: |:---------------:  |
- |       nut        |       lia         |
- |      PLUGIN      |      MODULE       |
- |    sh_plugin     |      module       |
- |    sh_schema     |      schema       |
- | nut.plugin.list  | lia.module.list   |
- |    sh_itemid     |      itemid       |
- |   sh_factionid   |    factionid      |
- |  sh_attributeid  |     attribid      |
-</code></pre>
-
-
-
-<p>Make sure to check the following available content to get assistance with your porting:</p>
+<p><a name="Prone_Mod"></a></p>
+<h2>Prone Mod</h2>
 
 <ul>
-    <li><p><a href="https://LiliaFramework.github.io/Lilia/manual/structure_class/">Class Structure</a></p></li>
-    <li><p><a href="https://LiliaFramework.github.io/Lilia/manual/structure_command/">Command Structure</a></p></li>
-    <li><p><a href="https://LiliaFramework.github.io/Lilia/manual/structure_faction/">Faction Structure</a></p></li>
-    <li><p><a href="https://LiliaFramework.github.io/Lilia/manual/structure_module">Module Structure</a></p></li>
+    <li><p>Addon URL: <a href="https://github.com/gspetrou/Prone-Mod">Prone Mod</a></p></li>
+    <li><p>Compatibility Added: Made animations reset at proper times.</p></li>
+</ul>
+
+<p><a name="ULX"></a></p>
+<h2>ULX</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=557962280">ULX</a></p></li>
+    <li><p>Compatibility Added: Removed obsolete hooks.</p></li>
+</ul>
+
+<p><a name="SAM"></a></p>
+<h2>SAM</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://www.gmodstore.com/market/view/sam">SAM</a></p></li>
+    <li><p>Compatibility Added: Implemented an auto administrator setter and fixed prop limits to work with SAM.</p></li>
+</ul>
+
+<p><a name="Serverguard"></a></p>
+<h2>Serverguard</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://www.gmodstore.com/market/view/serverguard">Serverguard</a></p></li>
+    <li><p>Compatibility Added: Allowed CAMI (permissions system) to work with Lilia and Serverguard.</p></li>
+</ul>
+
+<p><a name="Advanced_Dupe_2"></a></p>
+<h2>Advanced Dupe 2</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=773402917">Advanced Dupe 2</a></p></li>
+    <li><p>Compatibility Added: Fixed several crashing exploits.</p></li>
+</ul>
+
+<p><a name="Advanced_Dupe_1"></a></p>
+<h2>Advanced Dupe 1</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=163806212">Advanced Dupe 1</a></p></li>
+    <li><p>Compatibility Added: Fixed several crashing exploits.</p></li>
+</ul>
+
+<p><a name="PermaProps"></a></p>
+<h2>PermaProps</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=220336312">PermaProps</a></p></li>
+    <li><p>Compatibility Added: Removed the ability to PermaProp certain restricted entities.</p></li>
+</ul>
+
+<p><a name="PAC3"></a></p>
+<h2>PAC3</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/workshop/filedetails/?id=104691717">PAC3</a></p></li>
+    <li><p>Compatibility Added: Restricted PAC to a flag and permission, and made it reset when needed.</p></li>
+</ul>
+
+<p><a name="Simfphys_Vehicles"></a></p>
+<h2>Simfphys Vehicles</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=771487490">Simfphys Vehicles</a></p></li>
+    <li><p>Compatibility Added: Added car crash damage and implemented some console commands for performance.</p></li>
+</ul>
+
+<p><a name="Sit_Anywhere"></a></p>
+<h2>Sit Anywhere</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=108176967">Sit Anywhere</a></p></li>
+    <li><p>Compatibility Added: Removed the ability to sit on certain mingy locations and added damage on seats by default.</p></li>
+</ul>
+
+<p><a name="Stormfox_2"></a></p>
+<h2>Stormfox 2</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/workshop/filedetails/?id=2447774443">Stormfox 2</a></p></li>
+    <li><p>Compatibility Added: Improved SF2 lighting reload.</p></li>
+</ul>
+
+<p><a name="3D_Stream_Radio"></a></p>
+<h2>3D Stream Radio</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=246756300">3D Stream Radio</a></p></li>
+    <li><p>Compatibility Added: Added ability for radios to save on the map.</p></li>
+</ul>
+
+<p><a name="VCMod"></a></p>
+<h2>VCMod</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://www.gmodstore.com/market/view/vcmod-main">VCMod Main</a></p></li>
+    <li><p>Compatibility Added: Added monetary compatibility.</p></li>
+</ul>
+
+<p><a name="VJBase"></a></p>
+<h2>VJBase</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/workshop/filedetails/?id=131759821">VJBase</a></p></li>
+    <li><p>Compatibility Added: Made the server enable certain settings by default, improving performance, and removed some harmful hooks.</p></li>
 </ul>
 
 					</div>
