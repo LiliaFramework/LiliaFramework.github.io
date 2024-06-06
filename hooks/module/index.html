@@ -3878,7 +3878,7 @@ They can be used for an assorted of reasons, depending on what you are trying to
 		<section class="method">
 			<header>
 				<a class="anchor" id="CanPlayerDropItem">
-					<h1><span class="realm server"></span></span>CanPlayerDropItem(client, item)</h1>
+					<h1><span class="realm server"></span></span>MODULE:CanPlayerDropItem(client, item)</h1>
 				</a>
 
 					<p>Whether or not a player is allowed to drop the given <code>item</code>.</p>
@@ -3934,7 +3934,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="CanPlayerEquipItem">
-					<h1><span class="realm server"></span></span>CanPlayerEquipItem(client, item)</h1>
+					<h1><span class="realm server"></span></span>MODULE:CanPlayerEquipItem(client, item)</h1>
 				</a>
 
 					<p>Whether or not a player can equip the given <code>item</code>.  This is called for items with <code>outfit</code>, <code>pacoutfit</code>, or <code>weapons</code> as
@@ -3995,7 +3995,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="CanPlayerInteractItem">
-					<h1><span class="realm server"></span></span>CanPlayerInteractItem(client, action, item)</h1>
+					<h1><span class="realm server"></span></span>MODULE:CanPlayerInteractItem(client, action, item)</h1>
 				</a>
 
 					<p>Whether or not a player is allowed to interact with an item via an inventory action (e.g picking up, dropping, transferring
@@ -4064,7 +4064,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="CanPlayerTakeItem">
-					<h1><span class="realm server"></span></span>CanPlayerTakeItem(client, item)</h1>
+					<h1><span class="realm server"></span></span>MODULE:CanPlayerTakeItem(client, item)</h1>
 				</a>
 
 					<p>Whether or not a player is allowed to take an item and put it in their inventory.</p>
@@ -4120,7 +4120,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="CanPlayerUnequipItem">
-					<h1><span class="realm server"></span></span>CanPlayerUnequipItem(client, item)</h1>
+					<h1><span class="realm server"></span></span>MODULE:CanPlayerUnequipItem(client, item)</h1>
 				</a>
 
 					<p>Whether or not a player can unequip an item.</p>
@@ -4180,7 +4180,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="DatabaseConnected">
-					<h1><span class="realm server"></span></span>DatabaseConnected()</h1>
+					<h1><span class="realm server"></span></span>MODULE:DatabaseConnected()</h1>
 				</a>
 
 					<div class="notice error">
@@ -4197,7 +4197,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="InitializedConfig">
-					<h1><span class="realm shared"></span></span>InitializedConfig()</h1>
+					<h1><span class="realm shared"></span></span>MODULE:InitializedConfig()</h1>
 				</a>
 
 					<p>Called when lia.config has been initialized.</p>
@@ -4210,7 +4210,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="InitializedModules">
-					<h1><span class="realm shared"></span></span>InitializedModules()</h1>
+					<h1><span class="realm shared"></span></span>MODULE:InitializedModules()</h1>
 				</a>
 
 					<p>Called when all the modules have been initialized.</p>
@@ -4223,7 +4223,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="InitializedSchema">
-					<h1><span class="realm shared"></span></span>InitializedSchema()</h1>
+					<h1><span class="realm shared"></span></span>MODULE:InitializedSchema()</h1>
 				</a>
 
 					<p>Called when the schema has been initialized.</p>
@@ -4236,7 +4236,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="LoadData">
-					<h1><span class="realm server"></span></span>LoadData()</h1>
+					<h1><span class="realm server"></span></span>MODULE:LoadData()</h1>
 				</a>
 
 					<p>Loads the server data.</p>
@@ -4249,7 +4249,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="LoadFonts">
-					<h1><span class="realm client"></span></span>LoadFonts(font, genericFont)</h1>
+					<h1><span class="realm client"></span></span>MODULE:LoadFonts(font, genericFont)</h1>
 				</a>
 
 					<p>Loads custom fonts for the client.</p>
@@ -4289,7 +4289,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="LoadLiliaFonts">
-					<h1><span class="realm client"></span></span>LoadLiliaFonts(font, genericFont)</h1>
+					<h1><span class="realm client"></span></span>MODULE:LoadLiliaFonts(font, genericFont)</h1>
 				</a>
 
 					<div class="notice error">
@@ -4333,7 +4333,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="ModuleLoaded">
-					<h1><span class="realm shared"></span></span>ModuleLoaded()</h1>
+					<h1><span class="realm shared"></span></span>MODULE:ModuleLoaded()</h1>
 				</a>
 
 					<p>Called when a module has finished loading.</p>
@@ -4346,7 +4346,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="OnItemSpawned">
-					<h1><span class="realm server"></span></span>OnItemSpawned(entity)</h1>
+					<h1><span class="realm server"></span></span>MODULE:OnItemSpawned(entity)</h1>
 				</a>
 
 					<p>Called whenever an item entity has spawned in the world.  You can access the entity's item table with
@@ -4381,7 +4381,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="OnPickupMoney">
-					<h1><span class="realm server"></span></span>OnPickupMoney(client, moneyEntity)</h1>
+					<h1><span class="realm server"></span></span>MODULE:OnPickupMoney(client, moneyEntity)</h1>
 				</a>
 
 					<p>Called when a player picks up money.
@@ -4422,7 +4422,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="OnWipeTables">
-					<h1><span class="realm server"></span></span>OnWipeTables()</h1>
+					<h1><span class="realm server"></span></span>MODULE:OnWipeTables()</h1>
 				</a>
 
 					<div class="notice error">
@@ -4439,7 +4439,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="PlayerModelChanged">
-					<h1><span class="realm shared"></span></span>PlayerModelChanged(client, model)</h1>
+					<h1><span class="realm shared"></span></span>MODULE:PlayerModelChanged(client, model)</h1>
 				</a>
 
 					<p>Called when a player's model is changed.</p>
@@ -4479,7 +4479,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="PostLoadData">
-					<h1><span class="realm server"></span></span>PostLoadData()</h1>
+					<h1><span class="realm server"></span></span>MODULE:PostLoadData()</h1>
 				</a>
 
 					<p>Called after data has been loaded.</p>
@@ -4492,7 +4492,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="SaveData">
-					<h1><span class="realm server"></span></span>SaveData()</h1>
+					<h1><span class="realm server"></span></span>MODULE:SaveData()</h1>
 				</a>
 
 					<p>Saves the server data.</p>
@@ -4505,7 +4505,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="ScreenResolutionChanged">
-					<h1><span class="realm client"></span></span>ScreenResolutionChanged(width, height)</h1>
+					<h1><span class="realm client"></span></span>MODULE:ScreenResolutionChanged(width, height)</h1>
 				</a>
 
 					<p>Called when the screen resolution changes.</p>
@@ -4545,7 +4545,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="SetupDatabase">
-					<h1><span class="realm server"></span></span>SetupDatabase()</h1>
+					<h1><span class="realm server"></span></span>MODULE:SetupDatabase()</h1>
 				</a>
 
 					<div class="notice error">
@@ -4562,7 +4562,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="ShouldClientDrown">
-					<h1><span class="realm server"></span></span>ShouldClientDrown(client)</h1>
+					<h1><span class="realm server"></span></span>MODULE:ShouldClientDrown(client)</h1>
 				</a>
 
 					<p>Determines whether a client should drown.</p>
@@ -4601,7 +4601,7 @@ end
 		<section class="method">
 			<header>
 				<a class="anchor" id="ShouldDataBeSaved">
-					<h1><span class="realm server"></span></span>ShouldDataBeSaved()</h1>
+					<h1><span class="realm server"></span></span>MODULE:ShouldDataBeSaved()</h1>
 				</a>
 
 					<p>Called to determine whether data should be saved before shutting down the server.
