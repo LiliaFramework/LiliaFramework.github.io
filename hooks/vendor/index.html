@@ -3878,7 +3878,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="CanPlayerAccessVendor">
-					<h1><span class="realm server"></span></span>VENDOR:CanPlayerAccessVendor(client, entity)</h1>
+					<h1><span class="realm server"></span></span>MODULE:CanPlayerAccessVendor(client, entity)</h1>
 				</a>
 
 					<p>Determines whether a player can access a vendor.</p>
@@ -3929,7 +3929,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="OnCharTradeVendor">
-					<h1><span class="realm server"></span></span>VENDOR:OnCharTradeVendor(client, vendor, item, isSellingToVendor, character)</h1>
+					<h1><span class="realm server"></span></span>MODULE:OnCharTradeVendor(client, vendor, item, isSellingToVendor, character)</h1>
 				</a>
 
 					<p>Called when a character trades with a vendor.</p>
@@ -4005,7 +4005,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="OnOpenVendorMenu">
-					<h1><span class="realm client"></span></span>VENDOR:OnOpenVendorMenu(self)</h1>
+					<h1><span class="realm client"></span></span>MODULE:OnOpenVendorMenu(self)</h1>
 				</a>
 
 					<p>Called when the vendor menu is opened.</p>
@@ -4033,7 +4033,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="PlayerAccessVendor">
-					<h1><span class="realm server"></span></span>VENDOR:PlayerAccessVendor(activator, self)</h1>
+					<h1><span class="realm server"></span></span>MODULE:PlayerAccessVendor(activator, self)</h1>
 				</a>
 
 					<p>Called when a player accesses a vendor.</p>
@@ -4073,7 +4073,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="VendorBuyEvent">
-					<h1><span class="realm shared"></span></span>VENDOR:VendorBuyEvent(client, vendor, itemType, isSellingToVendor, character, price)</h1>
+					<h1><span class="realm shared"></span></span>MODULE:VendorBuyEvent(client, vendor, itemType, isSellingToVendor, character, price)</h1>
 				</a>
 
 					<p>Called when a player successfully buys an item from a vendor.
@@ -4166,7 +4166,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="VendorClassUpdated">
-					<h1><span class="realm client"></span></span>VENDOR:VendorClassUpdated(vendor, id, allowed)</h1>
+					<h1><span class="realm client"></span></span>MODULE:VendorClassUpdated(vendor, id, allowed)</h1>
 				</a>
 
 					<p>Called when a vendor's allowed classes are updated.</p>
@@ -4218,7 +4218,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="VendorEdited">
-					<h1><span class="realm client"></span></span>VENDOR:VendorEdited(vendor, key)</h1>
+					<h1><span class="realm client"></span></span>MODULE:VendorEdited(vendor, key)</h1>
 				</a>
 
 					<p>Called when a vendor entity is edited.</p>
@@ -4258,7 +4258,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="VendorFactionUpdated">
-					<h1><span class="realm client"></span></span>VENDOR:VendorFactionUpdated(vendor, id, allowed)</h1>
+					<h1><span class="realm client"></span></span>MODULE:VendorFactionUpdated(vendor, id, allowed)</h1>
 				</a>
 
 					<p>Called when a vendor's allowed factions are updated.</p>
@@ -4310,7 +4310,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="VendorItemMaxStockUpdated">
-					<h1><span class="realm client"></span></span>VENDOR:VendorItemMaxStockUpdated(vendor, itemType, value)</h1>
+					<h1><span class="realm client"></span></span>MODULE:VendorItemMaxStockUpdated(vendor, itemType, value)</h1>
 				</a>
 
 					<p>Called when a vendor's item maximum stock is updated.</p>
@@ -4362,7 +4362,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="VendorItemModeUpdated">
-					<h1><span class="realm client"></span></span>VENDOR:VendorItemModeUpdated(vendor, itemType, value)</h1>
+					<h1><span class="realm client"></span></span>MODULE:VendorItemModeUpdated(vendor, itemType, value)</h1>
 				</a>
 
 					<p>Called when a vendor's item mode is updated.</p>
@@ -4414,7 +4414,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="VendorItemPriceUpdated">
-					<h1><span class="realm client"></span></span>VENDOR:VendorItemPriceUpdated(vendor, itemType, value)</h1>
+					<h1><span class="realm client"></span></span>MODULE:VendorItemPriceUpdated(vendor, itemType, value)</h1>
 				</a>
 
 					<p>Called when a vendor's item price is updated.</p>
@@ -4466,7 +4466,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="VendorItemStockUpdated">
-					<h1><span class="realm client"></span></span>VENDOR:VendorItemStockUpdated(vendor, itemType, value)</h1>
+					<h1><span class="realm client"></span></span>MODULE:VendorItemStockUpdated(vendor, itemType, value)</h1>
 				</a>
 
 					<p>Called when a vendor's item stock is updated.</p>
@@ -4518,7 +4518,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="VendorMoneyUpdated">
-					<h1><span class="realm client"></span></span>VENDOR:VendorMoneyUpdated(vendor, money, oldMoney)</h1>
+					<h1><span class="realm client"></span></span>MODULE:VendorMoneyUpdated(vendor, money, oldMoney)</h1>
 				</a>
 
 					<p>Called when a vendor's money is updated.</p>
@@ -4570,7 +4570,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="VendorOpened">
-					<h1><span class="realm client"></span></span>VENDOR:VendorOpened(vendor)</h1>
+					<h1><span class="realm client"></span></span>MODULE:VendorOpened(vendor)</h1>
 				</a>
 
 					<p>Called when a vendor is opened.</p>
@@ -4599,7 +4599,7 @@ takePermFlags											</a>
 			<header>
 				<a class="anchor" id="VendorSellEvent">
 					<h1><span class="realm shared
- This function handles the event where a player sells an item to a vendor."></span></span>VENDOR:VendorSellEvent(client, vendor, itemType, isSellingToVendor, character, price)</h1>
+ This function handles the event where a player sells an item to a vendor."></span></span>MODULE:VendorSellEvent(client, vendor, itemType, isSellingToVendor, character, price)</h1>
 				</a>
 
 					<p>Called when a player sells an item to a vendor.</p>
@@ -4691,7 +4691,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="VendorTradeAttempt">
-					<h1><span class="realm server"></span></span>VENDOR:VendorTradeAttempt(client, entity, uniqueID, isSellingToVendor)</h1>
+					<h1><span class="realm server"></span></span>MODULE:VendorTradeAttempt(client, entity, uniqueID, isSellingToVendor)</h1>
 				</a>
 
 					<p>Called when a player attempts to trade with a vendor.</p>
@@ -4755,7 +4755,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getPriceOverride">
-					<h1><span class="realm shared"></span></span>VENDOR:getPriceOverride(self, uniqueID, price, isSellingToVendor)</h1>
+					<h1><span class="realm shared"></span></span>MODULE:getPriceOverride(self, uniqueID, price, isSellingToVendor)</h1>
 				</a>
 
 					<p>Gets the price override for an item.</p>

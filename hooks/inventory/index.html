@@ -3880,7 +3880,7 @@ takePermFlags											</a>
 				<a class="anchor" id="CanItemBeTransfered">
 					<h1><span class="realm  shared
  This hook allows custom logic to be implemented to determine if an em can be transferred
- from one inventory to another. It can be used to impose restrictionon item transfers."></span></span>INVENTORY:CanItemBeTransfered(item, currentInv, oldInv)</h1>
+ from one inventory to another. It can be used to impose restrictionon item transfers."></span></span>MODULE:CanItemBeTransfered(item, currentInv, oldInv)</h1>
 				</a>
 
 					<p>Determines whether an item can be transferred between inventories.</p>
@@ -3942,7 +3942,7 @@ takePermFlags											</a>
 				<a class="anchor" id="CanPlayerViewInventory">
 					<h1><span class="realm  client
  This hook can be used to implement custom checks to determine if a player is
- allowed to view their inventory."></span></span>INVENTORY:CanPlayerViewInventory()</h1>
+ allowed to view their inventory."></span></span>MODULE:CanPlayerViewInventory()</h1>
 				</a>
 
 					<p>Determines whether a player is allowed to view their inventory.</p>
@@ -3966,7 +3966,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="CanRunItemAction">
-					<h1><span class="realm client"></span></span>INVENTORY:CanRunItemAction(itemTable, action)</h1>
+					<h1><span class="realm client"></span></span>MODULE:CanRunItemAction(itemTable, action)</h1>
 				</a>
 
 					<p>Determines whether a specific action can be run on an item.</p>
@@ -4017,7 +4017,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="InterceptClickItemIcon">
-					<h1><span class="realm client"></span></span>INVENTORY:InterceptClickItemIcon(self, itemIcon, keyCode)</h1>
+					<h1><span class="realm client"></span></span>MODULE:InterceptClickItemIcon(self, itemIcon, keyCode)</h1>
 				</a>
 
 					<p>Called when a player clicks on an item icon.</p>
@@ -4069,7 +4069,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="ItemDraggedOutOfInventory">
-					<h1><span class="realm server"></span></span>INVENTORY:ItemDraggedOutOfInventory(client, item)</h1>
+					<h1><span class="realm server"></span></span>MODULE:ItemDraggedOutOfInventory(client, item)</h1>
 				</a>
 
 					<p>Called when an item is dragged out of an inventory.</p>
@@ -4108,7 +4108,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="ItemPaintOver">
-					<h1><span class="realm client"></span></span>INVENTORY:ItemPaintOver(self, itemTable, w, h)</h1>
+					<h1><span class="realm client"></span></span>MODULE:ItemPaintOver(self, itemTable, w, h)</h1>
 				</a>
 
 					<p>Called when an item is being painted over.</p>
@@ -4172,7 +4172,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="ItemTransfered">
-					<h1><span class="realm server"></span></span>INVENTORY:ItemTransfered(context)</h1>
+					<h1><span class="realm server"></span></span>MODULE:ItemTransfered(context)</h1>
 				</a>
 
 					<p>Called when an item is transferred between inventories.</p>
@@ -4200,7 +4200,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="OnCreateItemInteractionMenu">
-					<h1><span class="realm client"></span></span>INVENTORY:OnCreateItemInteractionMenu(self, menu, itemTable)</h1>
+					<h1><span class="realm client"></span></span>MODULE:OnCreateItemInteractionMenu(self, menu, itemTable)</h1>
 				</a>
 
 					<p>Called when an item interaction menu is being created.</p>
@@ -4252,7 +4252,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="OnPlayerLostStackItem">
-					<h1><span class="realm shared"></span></span>INVENTORY:OnPlayerLostStackItem(itemTypeOrItem)</h1>
+					<h1><span class="realm shared"></span></span>MODULE:OnPlayerLostStackItem(itemTypeOrItem)</h1>
 				</a>
 
 					<p>Called when a player drops a stackable item.</p>
@@ -4279,7 +4279,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="OnRequestItemTransfer">
-					<h1><span class="realm client"></span></span>INVENTORY:OnRequestItemTransfer(self, itemID, inventoryID, x, y)</h1>
+					<h1><span class="realm client"></span></span>MODULE:OnRequestItemTransfer(self, itemID, inventoryID, x, y)</h1>
 				</a>
 
 					<p>Called when an item transfer is requested.</p>
@@ -4355,7 +4355,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="PostDrawInventory">
-					<h1><span class="realm client"></span></span>INVENTORY:PostDrawInventory(panel)</h1>
+					<h1><span class="realm client"></span></span>MODULE:PostDrawInventory(panel)</h1>
 				</a>
 
 					<p>Called after the player's inventory is drawn.</p>
