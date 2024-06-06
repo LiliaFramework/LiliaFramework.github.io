@@ -2,10 +2,10 @@
 
 <html>
 	<head>
-		<title>Structure - Module - Lilia Documentation</title>
+		<title>class - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Structure - Module - Lilia Documentation" />
+		<meta property="og:title" content="class - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
 			<meta property="og:description" content="" />
@@ -1439,6 +1439,88 @@ VendorTradeAttempt											</a>
 											<a href="../../hooks/vendor/#getPriceOverride">
 getPriceOverride											</a>
 										</li>
+
+									</ul>
+									</details>
+							</li>
+					</ul>
+				</details>
+				<details class="category" open>
+					<summary>
+						<h2>Structures</h2>
+					</summary>
+
+					<ul>
+							<li>
+									<details open>
+									<summary><a href="../../structures/class/">class</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../structures/command/">command</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../structures/faction/">faction</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../structures/module/">module</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+					</ul>
+				</details>
+				<details class="category" open>
+					<summary>
+						<h2>Store</h2>
+					</summary>
+
+					<ul>
+							<li>
+									<details >
+									<summary><a href="../../store/contents/">contents</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../store/tos/">tos</a></summary>
+
+									<ul>
+
+
 
 									</ul>
 									</details>
@@ -3744,40 +3826,7 @@ takePermFlags											</a>
 					<ul>
 							<li>
 									<details >
-									<summary><a href="../../information/class/">Structure - Class</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/command/">Structure - Command</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
 									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/contents/">Store : Contents</a></summary>
 
 									<ul>
 
@@ -3799,40 +3848,7 @@ takePermFlags											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../information/faction/">Structure - Faction</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
 									<summary><a href="../../information/installation/">Information - Installation Tutorial</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details open>
-									<summary><a href="../../information/module/">Structure - Module</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/tos/">Store - Terms of Service Agreement</a></summary>
 
 									<ul>
 
@@ -3849,90 +3865,49 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 
-<h1>Structure - Module</h1>
+<h1>Structure - Class</h1>
 
 
 <pre>
-MODULE.name = <span class="string">"A Module"</span>
-
-MODULE.author = <span class="string">"76561198312513285"</span>
-
-MODULE.discord = <span class="string">"@liliaplayer"</span>
-
-MODULE.desc = <span class="string">"This is a Example Module."</span>
-
-MODULE.WorkshopContent = {<span class="string">"2959728255"</span>}
-
-MODULE.enabled = <span class="keyword">true</span>
-
-MODULE.CAMIPrivileges = {
-    {
-        Name = <span class="string">"Staff Permissions - Kekw"</span>,
-        MinAccess = <span class="string">"superadmin"</span>,
-        Description = <span class="string">"Allows access to kewking."</span>,
-    },
-}
-
-MODULE.Dependencies = {
-    {
-        File = MODULE.path .. <span class="string">"/nicebogusfile.lua"</span>,
-        Realm = <span class="string">"server"</span>,
-    },
-    {
-        File = MODULE.path .. <span class="string">"/badbogusfile.lua"</span>,
-        Realm = <span class="string">"client"</span>,
-    },
-}
+CLASS.name = <span class="string">"Steve"</span>
+CLASS.desc = <span class="string">"The Steves of the Minecrafter Faction."</span>
+CLASS.isDefault = <span class="keyword">true</span>
+CLASS.faction = FACTION_MINECRAFTER
+CLASS.color = Color(<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>)
+CLASS.weapons = {<span class="string">"gold_pickaxe"</span>, <span class="string">"netherite_spade"</span>}
+CLASS.pay = <span class="number">50</span>
+CLASS.payTimer = <span class="number">3600</span>
+CLASS_STEVE = CLASS.index
 </pre>
 
 
-<hr/>
-
-<p><a name="Module_Configuration"></a></p>
-<h2>Module Configuration</h2>
+<p><a name="CLASS_Variables"></a></p>
+<h2>CLASS Variables</h2>
 
 <ul>
-    <li><p>**<code>MODULE.name</code>:** Specifies the name of the module, which is "Core - Permissions" in this case. This variable identifies the module.</p></li>
-    <li><p>**<code>MODULE.author</code>:** Indicates the author of the module. It can be a STEAMID64 or Name. Replace "76561198312513285" with the actual author information.</p></li>
-    <li><p>**<code>MODULE.discord</code>:** Indicates the discord of the module creator, in this case, as shown, is liliaplayer.</p></li>
-    <li><p>**<code>MODULE.desc</code>:** Provides a brief description of the module's purpose. In this case, it states that the module adds skills functionality to the framework.</p></li>
-    <li><p>**<code>MODULE.identifier</code>:** This global variable uniquely identifies the module and allows it to be accessed from outside its scope. <strong>Optional</strong></p></li>
-    <li><p>**<code>MODULE.CAMIPrivileges</code>:** An example CAMI permission that is loaded alongside the module. <strong>Optional</strong></p></li>
-    <li><p>**<code>MODULE.WorkshopContent</code>:** Workshop Content to be added. <strong>Optional</strong></p></li>
-    <li><p>**<code>MODULE.enabled</code>:** Indicates if the module is active or not. If False, then it won't be. <strong>Optional</strong></p></li>
-    <li><p>**<code>MODULE.Dependencies</code>:** Files and corresponding realms to be included. <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.name</strong>: The name of your class.</p></li>
+    <li><p><strong>CLASS.desc</strong>: A description of your class.</p></li>
+    <li><p><strong>CLASS.isDefault</strong>: Indicates whether this is the default class. Set to true if it's the default class, allowing anyone to join.</p></li>
+    <li><p><strong>CLASS.isWhitelisted</strong>: Indicates whether this is a whitelist class. Set to true if it is a class that needs whitelisting.</p></li>
+    <li><p><strong>CLASS.color</strong>: The color associated with your class. This can be used for class-specific coloring.</p></li>
+    <li><p><strong>CLASS.weapons</strong>: Weapons that players in this class can use. This can include weapon IDs or references to the weapons available to class members. <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.pay</strong>: The payment amount associated with the class. This represents any in-game currency or rewards tied to being a member of this class. <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.payTimer</strong>: The timer or schedule for payments. Specify the interval in seconds for payments to occur. For example, if payments are made every 30 minutes, set this value to 1800 (30 minutes * 60 seconds). <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.limit</strong>: The limit of players in this class at a given time. This restricts how many players can be members of this class simultaneously. <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.health</strong>: This variable represents the default health of players in the class. You can set a numerical value, such as 100, to specify the default health. Players in this class will start with this amount of health unless modified by other in-game factors. <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.armor</strong>: Similar to health, this variable represents the default armor value of players in the class. Armor can provide additional protection against damage. Set a numerical value, such as 50, to determine the default armor value for class members. <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.scale</strong>: Scale affects the size of the player model. You can set a value like 1.2 to make class members slightly larger or 0.8 to make them smaller. This can be used for visual customization. <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.runSpeed</strong>: This variable determines the default running speed of players in the class. You can set a numerical value like 300 to specify the speed in units per second. <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.runSpeedMultiplier</strong>: When set to true, this indicates that the runSpeed value should be multiplied by the default speed set in the game configuration. When set to false, it means that the runSpeed value should directly set the running speed, overriding the game's default. <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.walkSpeed</strong>: Similar to runSpeed, this variable sets the default walking speed of players in the class. You can set a numerical value like 150 to specify the walking speed in units per second.<strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.walkSpeedMultiplier</strong>: Like runSpeedMultiplier, when set to true, it multiplies the walkSpeed value by the default walk speed set in the game configuration. When set to false, it directly sets the walking speed. <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.jumpPower</strong>: This variable determines the default jump power of players in the class. Jump power controls how high a player can jump. You can set a numerical value like 200 to specify the jump power. <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.jumpPowerMultiplier</strong>: When set to true, jumpPower is multiplied by the default jump power configured in the game. When set to false, it directly sets the jump power for class members. <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.bloodcolor</strong>: This variable allows you to specify the blood color of players in the class when they take damage. You can use the blood enums provided by Garry's Mod, which are listed in <a href="https://wiki.facepunch.com/gmod/Enums/BLOOD_COLOR">Blood Color ENUMS</a>. For example, you can set it to BLOOD<em>COLOR</em>YELLOW to make the class's blood appear yellow when they are injured. <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.bodyGroups</strong>: This variable allows you to define class-specific bodygroups for player models upon spawn. Bodygroups control the appearance and configuration of specific parts of the player model. You can specify the bodygroups using a table format. Each entry in the table represents a bodygroup and its corresponding value.b<strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.model</strong>: This variable allows you to define class-specific models that get set on spawn. <strong>Optional</strong></p></li>
+    <li><p><strong>CLASS.index</strong>: The Unique ID (UniqueID) of the class. This is a unique identifier used to distinguish this class from others.</p></li>
 </ul>
-
-<h3>Automatically Included Files and Folders in the Module:</h3>
-
-<p><strong>Files:</strong></p>
-
-<ul>
-    <li><p>client.lua</p></li>
-    <li><p>cl_module.lua</p></li>
-    <li><p>sv_module.lua</p></li>
-    <li><p>server.lua</p></li>
-    <li><p>config.lua</p></li>
-    <li><p>sconfig.lua</p></li>
-</ul>
-
-<p><strong>Folders:</strong></p>
-
-<ul>
-    <li><p>dependencies</p></li>
-    <li><p>config</p></li>
-    <li><p>permissions</p></li>
-    <li><p>libs</p></li>
-    <li><p>hooks</p></li>
-    <li><p>libraries</p></li>
-    <li><p>commands</p></li>
-    <li><p>netcalls</p></li>
-    <li><p>meta</p></li>
-    <li><p>derma</p></li>
-    <li><p>pim</p></li>
-    <li><p>concommands</p></li>
-</ul>
-
 
 					</div>
 			</article>

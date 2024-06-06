@@ -2,10 +2,10 @@
 
 <html>
 	<head>
-		<title>Store - Terms of Service Agreement - Lilia Documentation</title>
+		<title>command - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Store - Terms of Service Agreement - Lilia Documentation" />
+		<meta property="og:title" content="command - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
 			<meta property="og:description" content="" />
@@ -1439,6 +1439,88 @@ VendorTradeAttempt											</a>
 											<a href="../../hooks/vendor/#getPriceOverride">
 getPriceOverride											</a>
 										</li>
+
+									</ul>
+									</details>
+							</li>
+					</ul>
+				</details>
+				<details class="category" open>
+					<summary>
+						<h2>Structures</h2>
+					</summary>
+
+					<ul>
+							<li>
+									<details >
+									<summary><a href="../../structures/class/">class</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details open>
+									<summary><a href="../../structures/command/">command</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../structures/faction/">faction</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../structures/module/">module</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+					</ul>
+				</details>
+				<details class="category" open>
+					<summary>
+						<h2>Store</h2>
+					</summary>
+
+					<ul>
+							<li>
+									<details >
+									<summary><a href="../../store/contents/">contents</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../store/tos/">tos</a></summary>
+
+									<ul>
+
+
 
 									</ul>
 									</details>
@@ -3744,40 +3826,7 @@ takePermFlags											</a>
 					<ul>
 							<li>
 									<details >
-									<summary><a href="../../information/class/">Structure - Class</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/command/">Structure - Command</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
 									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/contents/">Store : Contents</a></summary>
 
 									<ul>
 
@@ -3799,40 +3848,7 @@ takePermFlags											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../information/faction/">Structure - Faction</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
 									<summary><a href="../../information/installation/">Information - Installation Tutorial</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/module/">Structure - Module</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details open>
-									<summary><a href="../../information/tos/">Store - Terms of Service Agreement</a></summary>
 
 									<ul>
 
@@ -3849,41 +3865,53 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 
-<h1>Store - Terms of Service Agreement</h1>
+<h1>Structure - Command</h1>
 
-<p>This Terms of Service ("Agreement") constitutes a legally binding contract between Leonheart ("Provider," "we," "us," or "our") and the user ("User," "you," or "your"). By accessing or utilizing our non-refundable virtual piece of code ("Product"), you expressly agree to adhere to and be bound by the terms outlined in this Agreement.</p>
 
-<p><a name="1__License"></a></p>
-<h2>1. License</h2>
+<pre>
+lia.command.add(<span class="string">"charsetskin"</span>, {
+    <span class="comment">-- This command is restricted to administrators only by default. CAMI can change this
+</span>    adminOnly = <span class="keyword">true</span>,
 
-<p>The Provider grants the User a non-exclusive, non-transferable license to use the Product for personal purposes. This license is contingent upon the conditions detailed in this Agreement and does not confer ownership of the Product.</p>
+    <span class="comment">-- Specifies the required privilege for using this command
+</span>    privilege = <span class="string">"Change Skin"</span>, <span class="comment">-- This would end up being the permission "Commands - Change Skin"
+</span>
+    <span class="comment">-- Command syntax with name and an optional skin number
+</span>    syntax = <span class="string">"&lt;string name&gt; [number skin]"</span>,
 
-<p><a name="2__Ownership"></a></p>
-<h2>2. Ownership</h2>
+    <span class="comment">-- Execute this function when the command is used
+</span>    onRun = <span class="keyword">function</span>(client, arguments)
+        <span class="comment">-- Parse the second argument as a number (skin)
+</span>        <span class="keyword">local</span> skin = <span class="global">tonumber</span>(arguments[<span class="number">2</span>])
 
-<p>All rights, title, and interest in and to the Product, including intellectual property rights, remain the exclusive property of the Provider. Purchasing the Product does not constitute a transfer of ownership.</p>
+        <span class="comment">-- Find the player specified by name in the first argument
+</span>        <span class="keyword">local</span> target = lia.command.findPlayer(client, arguments[<span class="number">1</span>])
 
-<p><a name="3__Payment_and_Refunds"></a></p>
-<h2>3. Payment and Refunds</h2>
+        <span class="comment">-- Check if the target player is valid and has a character
+</span>        <span class="keyword">if</span> IsValid(target) <span class="keyword">and</span> target:getChar() <span class="keyword">then</span>
+            <span class="comment">-- Set the "skin" data attribute of the target's character
+</span>            target:getChar():setData(<span class="string">"skin"</span>, skin)
 
-<p>All transactions involving the Product are final and non-refundable. By acquiring the Product, you agree to the specified payment amount, and no refunds will be provided.</p>
+            <span class="comment">-- Change the skin of the target player, defaulting to 0 if skin is not provided
+</span>            target:SetSkin(skin <span class="keyword">or</span> <span class="number">0</span>)
 
-<p><a name="4__Support"></a></p>
-<h2>4. Support</h2>
+            <span class="comment">-- Notify the client about the skin change
+</span>            client:notifyLocalized(<span class="string">"cChangeSkin"</span>, client:Name(), target:Name(), skin <span class="keyword">or</span> <span class="number">0</span>)
+        <span class="keyword">end</span>
+    }
+})
+</pre>
 
-<p>The Provider will make reasonable efforts to provide support for the Product. However, the provision of support is entirely at the discretion of the Provider and is provided free of charge. Users must request support as needed.</p>
 
-<p><a name="5__Limitation_of_Liability"></a></p>
-<h2>5. Limitation of Liability</h2>
+<p><a name="Command_Variables"></a></p>
+<h2>Command Variables</h2>
 
-<p>The Provider shall not be held liable for any indirect, incidental, special, consequential, or punitive damages, nor for any loss of profits or revenues.</p>
-
-<p><a name="6__Contact_Information"></a></p>
-<h2>6. Contact Information</h2>
-
-<p>For inquiries related to this Agreement, please contact us on Discord under the username @liliaplayer.</p>
-
-<p>By accessing or utilizing the Product, you acknowledge that you have thoroughly read, comprehended, and willingly agreed to abide by the terms stipulated in this Agreement.</p>
+<ul>
+    <li><p><strong>privilege</strong>: This variable specifies the permission associated with the command. It determines who is allowed to use the command and what actions they can perform.</p></li>
+    <li><p><strong>adminOnly</strong> or <strong>superAdminOnly</strong>: These variables are used to categorize the privilege into different levels. You can choose either one of them, and if set to false, it means that the command can be used by regular users as well.</p></li>
+    <li><p><strong>syntax</strong>: This variable provides information about the command's syntax. It helps users understand how to correctly structure their input when using the command.</p></li>
+    <li><p><strong>onRun</strong>: This is a function that defines what actions should be executed when the command is used. It specifies the actual behavior of the command, including any processing or tasks it should perform.</p></li>
+</ul>
 
 					</div>
 			</article>
