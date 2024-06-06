@@ -2,10 +2,10 @@
 
 <html>
 	<head>
-		<title>Structure - Module - Lilia Documentation</title>
+		<title>converting-from-nutscript - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Structure - Module - Lilia Documentation" />
+		<meta property="og:title" content="converting-from-nutscript - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
 			<meta property="og:description" content="" />
@@ -1186,6 +1186,68 @@ VendorSellEvent											</a>
 											<a href="../../hooks/vendor/#VendorBuyEvent">
 VendorBuyEvent											</a>
 										</li>
+
+							</li>
+					</ul>
+				</details>
+				<details class="category" open>
+					<summary>
+						<h2>Store</h2>
+					</summary>
+
+					<ul>
+							<li>
+									<a href="../../store/class/">class</a>
+
+
+
+							</li>
+							<li>
+									<a href="../../store/command/">command</a>
+
+
+
+							</li>
+							<li>
+									<a href="../../store/compatibility/">compatibility</a>
+
+
+
+							</li>
+							<li>
+									<a href="../../store/contents/">contents</a>
+
+
+
+							</li>
+							<li>
+									<a href="../../store/converting-from-nutscript/">converting-from-nutscript</a>
+
+
+
+							</li>
+							<li>
+									<a href="../../store/faction/">faction</a>
+
+
+
+							</li>
+							<li>
+									<a href="../../store/installation/">installation</a>
+
+
+
+							</li>
+							<li>
+									<a href="../../store/module/">module</a>
+
+
+
+							</li>
+							<li>
+									<a href="../../store/tos/">tos</a>
+
+
 
 							</li>
 					</ul>
@@ -3336,158 +3398,39 @@ getLiliaData											</a>
 							</li>
 					</ul>
 				</details>
-				<details class="category" open>
-					<summary>
-						<h2>Information</h2>
-					</summary>
-
-					<ul>
-							<li>
-									<a href="../../information/class/">Structure - Class</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../information/command/">Structure - Command</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../information/compatibility/">Addons with Improved Compatibility</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../information/contents/">Store : Contents</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../information/converting-from-nutscript/">Information - Porting From NS</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../information/faction/">Structure - Faction</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../information/installation/">Information - Installation Tutorial</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../information/module/">Structure - Module</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../information/tos/">Store - Terms of Service Agreement</a>
-
-
-
-							</li>
-					</ul>
-				</details>
 	</section>
 </nav>
 
 			<article>
 					<div class="wrapper">
 
-<h1>Structure - Module</h1>
+<h1>Information - Porting From NS</h1>
+
+<p>If you're considering porting Nutscript Plugins to Lilia Modules, here are some helpful pointers on replaceable variables. It's worth noting that while porting from Nutscript to Lilia is feasible and supported, going the other way around can be complex and may lead to long-term issues, as certain key hooks used in Lilia are not present in Nutscript.</p>
 
 
-<pre>
-MODULE.name = <span class="string">"A Module"</span>
-
-MODULE.author = <span class="string">"76561198312513285"</span>
-
-MODULE.discord = <span class="string">"@liliaplayer"</span>
-
-MODULE.desc = <span class="string">"This is a Example Module."</span>
-
-MODULE.WorkshopContent = {<span class="string">"2959728255"</span>}
-
-MODULE.enabled = <span class="keyword">true</span>
-
-MODULE.CAMIPrivileges = {
-    {
-        Name = <span class="string">"Staff Permissions - Kekw"</span>,
-        MinAccess = <span class="string">"superadmin"</span>,
-        Description = <span class="string">"Allows access to kewking."</span>,
-    },
-}
-
-MODULE.Dependencies = {
-    {
-        File = MODULE.path .. <span class="string">"/nicebogusfile.lua"</span>,
-        Realm = <span class="string">"server"</span>,
-    },
-    {
-        File = MODULE.path .. <span class="string">"/badbogusfile.lua"</span>,
-        Realm = <span class="string">"client"</span>,
-    },
-}
-</pre>
+<pre><code> |  **Nutscript**   |    **Lilia**      |
+ |:---------------: |:---------------:  |
+ |       nut        |       lia         |
+ |      PLUGIN      |      MODULE       |
+ |    sh_plugin     |      module       |
+ |    sh_schema     |      schema       |
+ | nut.plugin.list  | lia.module.list   |
+ |    sh_itemid     |      itemid       |
+ |   sh_factionid   |    factionid      |
+ |  sh_attributeid  |     attribid      |
+</code></pre>
 
 
-<hr/>
 
-<p><a name="Module_Configuration"></a></p>
-<h2>Module Configuration</h2>
+<p>Make sure to check the following available content to get assistance with your porting:</p>
 
 <ul>
-    <li><p>**<code>MODULE.name</code>:** Specifies the name of the module, which is "Core - Permissions" in this case. This variable identifies the module.</p></li>
-    <li><p>**<code>MODULE.author</code>:** Indicates the author of the module. It can be a STEAMID64 or Name. Replace "76561198312513285" with the actual author information.</p></li>
-    <li><p>**<code>MODULE.discord</code>:** Indicates the discord of the module creator, in this case, as shown, is liliaplayer.</p></li>
-    <li><p>**<code>MODULE.desc</code>:** Provides a brief description of the module's purpose. In this case, it states that the module adds skills functionality to the framework.</p></li>
-    <li><p>**<code>MODULE.identifier</code>:** This global variable uniquely identifies the module and allows it to be accessed from outside its scope. <strong>Optional</strong></p></li>
-    <li><p>**<code>MODULE.CAMIPrivileges</code>:** An example CAMI permission that is loaded alongside the module. <strong>Optional</strong></p></li>
-    <li><p>**<code>MODULE.WorkshopContent</code>:** Workshop Content to be added. <strong>Optional</strong></p></li>
-    <li><p>**<code>MODULE.enabled</code>:** Indicates if the module is active or not. If False, then it won't be. <strong>Optional</strong></p></li>
-    <li><p>**<code>MODULE.Dependencies</code>:** Files and corresponding realms to be included. <strong>Optional</strong></p></li>
+    <li><p><a href="https://LiliaFramework.github.io/Lilia/manual/structure_class/"><strong>Class Structure</strong></a></p></li>
+    <li><p><a href="https://LiliaFramework.github.io/Lilia/manual/structure_command/"><strong>Command Structure</strong></a></p></li>
+    <li><p><a href="https://LiliaFramework.github.io/Lilia/manual/structure_faction/"><strong>Faction Structure</strong></a></p></li>
+    <li><p><a href="https://LiliaFramework.github.io/Lilia/manual/structure_module"><strong>Module Structure</strong></a></p></li>
 </ul>
-
-<h3>Automatically Included Files and Folders in the Module:</h3>
-
-<p><strong>Files:</strong></p>
-
-<ul>
-    <li><p>client.lua</p></li>
-    <li><p>cl_module.lua</p></li>
-    <li><p>sv_module.lua</p></li>
-    <li><p>server.lua</p></li>
-    <li><p>config.lua</p></li>
-    <li><p>sconfig.lua</p></li>
-</ul>
-
-<p><strong>Folders:</strong></p>
-
-<ul>
-    <li><p>dependencies</p></li>
-    <li><p>config</p></li>
-    <li><p>permissions</p></li>
-    <li><p>libs</p></li>
-    <li><p>hooks</p></li>
-    <li><p>libraries</p></li>
-    <li><p>commands</p></li>
-    <li><p>netcalls</p></li>
-    <li><p>meta</p></li>
-    <li><p>derma</p></li>
-    <li><p>pim</p></li>
-    <li><p>concommands</p></li>
-</ul>
-
 
 					</div>
 			</article>
