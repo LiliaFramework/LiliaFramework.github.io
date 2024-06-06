@@ -2,10 +2,10 @@
 
 <html>
 	<head>
-		<title>command - Lilia Documentation</title>
+		<title>Addons with Improved Compatibility - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="command - Lilia Documentation" />
+		<meta property="og:title" content="Addons with Improved Compatibility - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
 			<meta property="og:description" content="" />
@@ -1186,68 +1186,6 @@ VendorSellEvent											</a>
 											<a href="../../hooks/vendor/#VendorBuyEvent">
 VendorBuyEvent											</a>
 										</li>
-
-							</li>
-					</ul>
-				</details>
-				<details class="category" open>
-					<summary>
-						<h2>Store</h2>
-					</summary>
-
-					<ul>
-							<li>
-									<a href="../../store/class/">class</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../store/command/">command</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../store/compatibility/">compatibility</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../store/contents/">contents</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../store/converting-from-nutscript/">converting-from-nutscript</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../store/faction/">faction</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../store/installation/">installation</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../store/module/">module</a>
-
-
-
-							</li>
-							<li>
-									<a href="../../store/tos/">tos</a>
-
-
 
 							</li>
 					</ul>
@@ -3398,58 +3336,150 @@ getLiliaData											</a>
 							</li>
 					</ul>
 				</details>
+				<details class="category" open>
+					<summary>
+						<h2>Information</h2>
+					</summary>
+
+					<ul>
+							<li>
+									<a href="../../information/compatibility/">Addons with Improved Compatibility</a>
+
+
+
+							</li>
+							<li>
+									<a href="../../information/converting-from-nutscript/">Information - Porting From NS</a>
+
+
+
+							</li>
+							<li>
+									<a href="../../information/installation/">Information - Installation Tutorial</a>
+
+
+
+							</li>
+					</ul>
+				</details>
 	</section>
 </nav>
 
 			<article>
 					<div class="wrapper">
 
-<h1>Structure - Command</h1>
+<h1>Addons with Improved Compatibility</h1>
 
-
-<pre>
-lia.command.add(<span class="string">"charsetskin"</span>, {
-    <span class="comment">-- This command is restricted to administrators only by default. CAMI can change this
-</span>    adminOnly = <span class="keyword">true</span>,
-
-    <span class="comment">-- Specifies the required privilege for using this command
-</span>    privilege = <span class="string">"Change Skin"</span>, <span class="comment">-- This would end up being the permission "Commands - Change Skin"
-</span>
-    <span class="comment">-- Command syntax with name and an optional skin number
-</span>    syntax = <span class="string">"&lt;string name&gt; [number skin]"</span>,
-
-    <span class="comment">-- Execute this function when the command is used
-</span>    onRun = <span class="keyword">function</span>(client, arguments)
-        <span class="comment">-- Parse the second argument as a number (skin)
-</span>        <span class="keyword">local</span> skin = <span class="global">tonumber</span>(arguments[<span class="number">2</span>])
-
-        <span class="comment">-- Find the player specified by name in the first argument
-</span>        <span class="keyword">local</span> target = lia.command.findPlayer(client, arguments[<span class="number">1</span>])
-
-        <span class="comment">-- Check if the target player is valid and has a character
-</span>        <span class="keyword">if</span> IsValid(target) <span class="keyword">and</span> target:getChar() <span class="keyword">then</span>
-            <span class="comment">-- Set the "skin" data attribute of the target's character
-</span>            target:getChar():setData(<span class="string">"skin"</span>, skin)
-
-            <span class="comment">-- Change the skin of the target player, defaulting to 0 if skin is not provided
-</span>            target:SetSkin(skin <span class="keyword">or</span> <span class="number">0</span>)
-
-            <span class="comment">-- Notify the client about the skin change
-</span>            client:notifyLocalized(<span class="string">"cChangeSkin"</span>, client:Name(), target:Name(), skin <span class="keyword">or</span> <span class="number">0</span>)
-        <span class="keyword">end</span>
-    }
-})
-</pre>
-
-
-<p><a name="Command_Variables"></a></p>
-<h2>Command Variables</h2>
+<p><a name="Prone_Mod"></a></p>
+<h2>Prone Mod</h2>
 
 <ul>
-    <li><p><strong>privilege</strong>: This variable specifies the permission associated with the command. It determines who is allowed to use the command and what actions they can perform.</p></li>
-    <li><p><strong>adminOnly</strong> or <strong>superAdminOnly</strong>: These variables are used to categorize the privilege into different levels. You can choose either one of them, and if set to false, it means that the command can be used by regular users as well.</p></li>
-    <li><p><strong>syntax</strong>: This variable provides information about the command's syntax. It helps users understand how to correctly structure their input when using the command.</p></li>
-    <li><p><strong>onRun</strong>: This is a function that defines what actions should be executed when the command is used. It specifies the actual behavior of the command, including any processing or tasks it should perform.</p></li>
+    <li><p>Addon URL: <a href="https://github.com/gspetrou/Prone-Mod">Prone Mod</a></p></li>
+    <li><p>Compatibility Added: Made animations reset at proper times.</p></li>
+</ul>
+
+<p><a name="ULX"></a></p>
+<h2>ULX</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=557962280">ULX</a></p></li>
+    <li><p>Compatibility Added: Removed obsolete hooks.</p></li>
+</ul>
+
+<p><a name="SAM"></a></p>
+<h2>SAM</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://www.gmodstore.com/market/view/sam">SAM</a></p></li>
+    <li><p>Compatibility Added: Implemented an auto administrator setter and fixed prop limits to work with SAM.</p></li>
+</ul>
+
+<p><a name="Serverguard"></a></p>
+<h2>Serverguard</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://www.gmodstore.com/market/view/serverguard">Serverguard</a></p></li>
+    <li><p>Compatibility Added: Allowed CAMI (permissions system) to work with Lilia and Serverguard.</p></li>
+</ul>
+
+<p><a name="Advanced_Dupe_2"></a></p>
+<h2>Advanced Dupe 2</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=773402917">Advanced Dupe 2</a></p></li>
+    <li><p>Compatibility Added: Fixed several crashing exploits.</p></li>
+</ul>
+
+<p><a name="Advanced_Dupe_1"></a></p>
+<h2>Advanced Dupe 1</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=163806212">Advanced Dupe 1</a></p></li>
+    <li><p>Compatibility Added: Fixed several crashing exploits.</p></li>
+</ul>
+
+<p><a name="PermaProps"></a></p>
+<h2>PermaProps</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=220336312">PermaProps</a></p></li>
+    <li><p>Compatibility Added: Removed the ability to PermaProp certain restricted entities.</p></li>
+</ul>
+
+<p><a name="PAC3"></a></p>
+<h2>PAC3</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/workshop/filedetails/?id=104691717">PAC3</a></p></li>
+    <li><p>Compatibility Added: Restricted PAC to a flag and permission, and made it reset when needed.</p></li>
+</ul>
+
+<p><a name="Simfphys_Vehicles"></a></p>
+<h2>Simfphys Vehicles</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=771487490">Simfphys Vehicles</a></p></li>
+    <li><p>Compatibility Added: Added car crash damage and implemented some console commands for performance.</p></li>
+</ul>
+
+<p><a name="Sit_Anywhere"></a></p>
+<h2>Sit Anywhere</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=108176967">Sit Anywhere</a></p></li>
+    <li><p>Compatibility Added: Removed the ability to sit on certain mingy locations and added damage on seats by default.</p></li>
+</ul>
+
+<p><a name="Stormfox_2"></a></p>
+<h2>Stormfox 2</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/workshop/filedetails/?id=2447774443">Stormfox 2</a></p></li>
+    <li><p>Compatibility Added: Improved SF2 lighting reload.</p></li>
+</ul>
+
+<p><a name="3D_Stream_Radio"></a></p>
+<h2>3D Stream Radio</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=246756300">3D Stream Radio</a></p></li>
+    <li><p>Compatibility Added: Added ability for radios to save on the map.</p></li>
+</ul>
+
+<p><a name="VCMod"></a></p>
+<h2>VCMod</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://www.gmodstore.com/market/view/vcmod-main">VCMod Main</a></p></li>
+    <li><p>Compatibility Added: Added monetary compatibility.</p></li>
+</ul>
+
+<p><a name="VJBase"></a></p>
+<h2>VJBase</h2>
+
+<ul>
+    <li><p>Addon URL: <a href="https://steamcommunity.com/workshop/filedetails/?id=131759821">VJBase</a></p></li>
+    <li><p>Compatibility Added: Made the server enable certain settings by default, improving performance, and removed some harmful hooks.</p></li>
 </ul>
 
 					</div>
