@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Bodygrouper - Lilia Documentation</title>
+		<title>Entity - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Bodygrouper - Lilia Documentation" />
+		<meta property="og:title" content="Entity - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Bodygrouper Module." />
+			<meta property="og:description" content="Physical object in the game world." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -752,22 +752,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -911,12 +911,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1240,7 +1240,7 @@ PlayerStaminaLost											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../hooks/bodygrouper/">Bodygrouper</a></summary>
 
 									<ul>
@@ -2425,7 +2425,7 @@ updateAttrib											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../meta/entity/">Entity</a></summary>
 
 									<ul>
@@ -2825,12 +2825,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
@@ -3086,12 +3086,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3416,7 +3416,7 @@ takePermFlags											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../configurations/bodygrouper/">Bodygrouper</a></summary>
 
 									<ul>
@@ -3843,64 +3843,870 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Bodygrouper</h1>
-	<h2>Configuration for Bodygrouper Module.</h2>
+	<h1>Entity</h1>
+	<h2>Physical object in the game world.</h2>
 </header>
 
-<p>
+<p>Entities are physical representations of objects in the game world. Lilia extends the functionality of entities to interface
+between Lilia's own classes, and to reduce boilerplate code.</p>
 
-</p>
+<p>See the <a href="https://wiki.garrysmod.com/page/Category:Entity">Garry's Mod Wiki</a> for all other methods that the <a href="../../meta/player/#">Player</a> class has.</p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="assignCreator">
+					<h1><span class="realm server"></span></span>Entity:assignCreator(client)</h1>
 				</a>
 
-					<p>This table defines the default settings for the Bodygrouper Module.</p>
+					<p>Assigns a creator to the entity.</p>
 			</header>
 
 
-					<h3>Fields</h3>
+					<h3>Parameters</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">BodygrouperOpenSound</span>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><span class="type">Player</span></span>
+
+
+								<p> The player to assign as the creator of the entity.</p>
+							</li>
+					</ul>
 
 
 
-								<p> Sound played when the Bodygrouper Closet opens | <strong>string</strong></p>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="canSeeEntity">
+					<h1><span class="realm shared"></span></span>Entity:canSeeEntity(entity)</h1>
+				</a>
+
+					<p>Checks if the entity can see another entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><span class="type">Entity</span></span>
+
+
+								<p> The entity to check visibility against.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the entity can see the target entity, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="clearNetVars">
+					<h1><span class="realm server"></span></span>Entity:clearNetVars(receiver)</h1>
+				</a>
+
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
+					<p>Clears all of the networked variables.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">receiver</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+									<span class="tag default">default: nil</span>
+
+								<p> The players to clear the networked variable for</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getDoorPartner">
+					<h1><span class="realm server"></span></span>Entity:getDoorPartner()</h1>
+				</a>
+
+					<p>Retrieves the partner entity of the door.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">Entity</span>
+
+								<p>The partner entity of the door, if any.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getDoorPartner">
+					<h1><span class="realm client"></span></span>Entity:getDoorPartner()</h1>
+				</a>
+
+					<p>Retrieves the partner door entity associated with this entity.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">Entity</span>
+
+								<p>The partner door entity, if any.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getEntItemDropPos">
+					<h1><span class="realm shared"></span></span>Entity:getEntItemDropPos()</h1>
+				</a>
+
+					<p>Retrieves the drop position for an item associated with the entity.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">Vector</span>
+
+								<p>The drop position for the item.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getNetVar">
+					<h1><span class="realm client"></span></span>Entity:getNetVar(key, default)</h1>
+				</a>
+
+					<p>Retrieves the value of a networked variable associated with the entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The identifier of the networked variable.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">BodygrouperCloseSound</span>
+								<span class="tag parameter">default</span>
 
 
 
-								<p> Sound played when the Bodygrouper Closet closes | <strong>string</strong></p>
+								<p> The default value to return if the networked variable does not exist.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">any</span>
+
+								<p>The value of the networked variable, or the default value if it doesn't exist.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getNetVar">
+					<h1><span class="realm server"></span></span>Entity:getNetVar(key, default)</h1>
+				</a>
+
+					<p>Retrieves a networked variable.  If it is not set, it'll return the default that you've specified.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> Identifier of the networked variable</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">BodygrouperModel</span>
+								<span class="tag parameter">default</span>
 
 
 
-								<p> Model used for the Bodygrouper Closet | <strong>string</strong></p>
+								<p> Default value to return if the networked variable is not set</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>value associated with the key, or the default that was given if it doesn't exist</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>print(client:getNetVar("example"))
+ > Hello World!
+</code></pre>
+
+				<h3>See Also</h3>
+				<ul>
+						<li><a href="../../meta/entity/#setNetVar">setNetVar</a></li>
+				</ul>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getViewAngle">
+					<h1><span class="realm shared"></span></span>Entity:getViewAngle(pos)</h1>
+				</a>
+
+					<p>Gets the view angle between the entity and a specified position.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">pos</span>
+
+									<span class="tag"><span class="type">Vector</span></span>
+
+
+								<p> The position to calculate the view angle towards.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">number</span>
+
+								<p>The view angle in degrees.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="inFov">
+					<h1><span class="realm shared"></span></span>Entity:inFov(entity, fov)</h1>
+				</a>
+
+					<p>Checks if the entity is within the field of view of another entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><span class="type">Entity</span></span>
+
+
+								<p> The entity to check the field of view against.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">fov</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+									<span class="tag default">default: 88</span>
+
+								<p> The field of view angle in degrees.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the entity is within the field of view, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="inTrace">
+					<h1><span class="realm shared"></span></span>Entity:inTrace(entity)</h1>
+				</a>
+
+					<p>Checks if the entity is in line of sight of another entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><span class="type">Entity</span></span>
+
+
+								<p> The entity to check line of sight against.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the entity is in line of sight, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isChair">
+					<h1><span class="realm shared"></span></span>Entity:isChair()</h1>
+				</a>
+
+					<p>Checks if the entity is a chair.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the entity is a chair, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isDoor">
+					<h1><span class="realm server"></span></span>Entity:isDoor()</h1>
+				</a>
+
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
+					<p>Checks if the entity is a door.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the entity is a door, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isDoor">
+					<h1><span class="realm client"></span></span>Entity:isDoor()</h1>
+				</a>
+
+					<p>Checks if the entity is a door.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the entity is a door, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isDoorLocked">
+					<h1><span class="realm shared"></span></span>Entity:isDoorLocked()</h1>
+				</a>
+
+					<p>Checks if the entity is locked (pertaining to doors).</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the entity is locked, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isInRoom">
+					<h1><span class="realm shared"></span></span>Entity:isInRoom(target)</h1>
+				</a>
+
+					<p>Checks if the entity is inside a room (i.e., not blocked by world geometry) with another target entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">target</span>
+
+									<span class="tag"><span class="type">Entity</span></span>
+
+
+								<p> The target entity to check for room visibility.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the entity is in the same room as the target entity, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isItem">
+					<h1><span class="realm shared"></span></span>Entity:isItem()</h1>
+				</a>
+
+					<p>Checks if the entity is an item entity.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the entity is an item entity, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isMoney">
+					<h1><span class="realm shared"></span></span>Entity:isMoney()</h1>
+				</a>
+
+					<p>Checks if the entity is a money entity.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the entity is a money entity, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isProp">
+					<h1><span class="realm shared"></span></span>Entity:isProp()</h1>
+				</a>
+
+					<p>Checks if the entity is a physics prop.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the entity is a physics prop, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isScreenVisible">
+					<h1><span class="realm shared"></span></span>Entity:isScreenVisible(entity, maxDist, fov)</h1>
+				</a>
+
+					<p>Checks if the entity has a clear line of sight to another entity and is within a specified distance and field of view angle.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><span class="type">Entity</span></span>
+
+
+								<p> The entity to check visibility against.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">maxDist</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+									<span class="tag default">default: 512^2</span>
+
+								<p> The maximum distance squared within which the entity can see the other entity.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">fov</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+									<span class="tag default">default: 88</span>
+
+								<p> The field of view angle in degrees.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the entity has a clear line of sight to the other entity within the specified distance and field of view angle, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isSimfphysCar">
+					<h1><span class="realm shared"></span></span>Entity:isSimfphysCar()</h1>
+				</a>
+
+					<p>Checks if the entity is a simfphys car.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the entity is a simfphys car, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="nearEntity">
+					<h1><span class="realm shared"></span></span>Entity:nearEntity(radius)</h1>
+				</a>
+
+					<p>Checks if there is an entity near the current entity within a specified radius.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">radius</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+									<span class="tag default">default: 96</span>
+
+								<p> The radius within which to check for nearby entities.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if there is an entity nearby, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="sendNetVar">
+					<h1><span class="realm server"></span></span>Entity:sendNetVar(key, receiver)</h1>
+				</a>
+
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
+					<p>Sends a networked variable.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> Identifier of the networked variable</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">receiver</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+									<span class="tag default">default: nil</span>
+
+								<p> The players to send the networked variable to</p>
 							</li>
 					</ul>
 
 
 
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="setNetVar">
+					<h1><span class="realm server"></span></span>Entity:setNetVar(key, value, receiver)</h1>
+				</a>
+
+					<p>Sets the value of a networked variable.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> Identifier of the networked variable</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">value</span>
+
+
+
+								<p> New value to assign to the networked variable</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">receiver</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+									<span class="tag default">default: nil</span>
+
+								<p> The players to send the networked variable to</p>
+							</li>
+					</ul>
+
+
+				<h3>Example Usage</h3>
+					<pre><code>client:setNetVar("example", "Hello World!")
+</code></pre>
+
+				<h3>See Also</h3>
+				<ul>
+						<li><a href="../../meta/entity/#getNetVar">getNetVar</a></li>
+				</ul>
 		</section>
 
 					</div>

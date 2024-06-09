@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Bodygrouper - Lilia Documentation</title>
+		<title>Item - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Bodygrouper - Lilia Documentation" />
+		<meta property="og:title" content="Item - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Bodygrouper Module." />
+			<meta property="og:description" content="Interactable entities that can be held in inventories." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -752,22 +752,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -911,12 +911,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1240,7 +1240,7 @@ PlayerStaminaLost											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../hooks/bodygrouper/">Bodygrouper</a></summary>
 
 									<ul>
@@ -2758,7 +2758,7 @@ syncItemAdded											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../meta/item/">Item</a></summary>
 
 									<ul>
@@ -2825,12 +2825,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
@@ -3086,12 +3086,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3416,7 +3416,7 @@ takePermFlags											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../configurations/bodygrouper/">Bodygrouper</a></summary>
 
 									<ul>
@@ -3843,62 +3843,1184 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Bodygrouper</h1>
-	<h2>Configuration for Bodygrouper Module.</h2>
+	<h1>Item</h1>
+	<h2>Interactable entities that can be held in inventories.</h2>
 </header>
 
-<p>
+<p>Items are objects that are contained inside of an <a href="../../hooks/inventory/#">Inventory</a>, or as standalone entities if they are dropped in the world. They
+usually have functionality that provides more gameplay aspects to the schema.</p>
 
-</p>
+<p>For an item to have an actual presence, they need to be instanced (usually by spawning them). Items describe the
+properties, while instances are a clone of these properties that can have their own unique data (e.g an ID card will have the
+same name but different numerical IDs). You can think of items as the class, while instances are objects of the <a href="../../meta/item/#">Item</a> class.</p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="__eq">
+					<h1><span class="realm shared"></span></span>Item:__eq(other)</h1>
 				</a>
 
-					<p>This table defines the default settings for the Bodygrouper Module.</p>
+					<p>Returns true if this item is equal to another item.  Internally, this checks item IDs.</p>
 			</header>
 
 
-					<h3>Fields</h3>
+					<h3>Parameters</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">BodygrouperOpenSound</span>
+								<span class="tag parameter">other</span>
+
+									<span class="tag"><span class="type">Item</span></span>
+
+
+								<p> Item to compare to</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not this item is equal to the given item</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>print(lia.item.instances[1] == lia.item.instances[2])
+ > falsefunction ITEM:__eq(other)
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="__tostring">
+					<h1><span class="realm shared"></span></span>Item:__tostring()</h1>
+				</a>
+
+					<p>Returns a string representation of this item.</p>
+			</header>
 
 
 
-								<p> Sound played when the Bodygrouper Closet opens | <strong>string</strong></p>
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>String representation</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>print(lia.item.instances[1])
+ > "item[1]"
+</code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="addQuantity">
+					<h1><span class="realm server"></span></span>Item:addQuantity(quantity, receivers, noCheckEntity)</h1>
+				</a>
+
+					<p>Adds a specified quantity to the item's current quantity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">quantity</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The quantity to add.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">BodygrouperCloseSound</span>
+								<span class="tag parameter">receivers</span>
 
+									<span class="tag"><span class="type">Table</span></span>
 
+									<span class="tag default">optional</span>
 
-								<p> Sound played when the Bodygrouper Closet closes | <strong>string</strong></p>
+								<p> Players who should receive updates about the quantity change.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">BodygrouperModel</span>
+								<span class="tag parameter">noCheckEntity</span>
 
+									<span class="tag"><span class="type">Boolean</span></span>
 
+									<span class="tag default">optional</span>
 
-								<p> Model used for the Bodygrouper Closet | <strong>string</strong></p>
+								<p> If true, entity checks will be skipped.</p>
 							</li>
 					</ul>
 
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="call">
+					<h1><span class="realm shared"></span></span>Item:call(method, client, entity, ...)</h1>
+				</a>
+
+					<p>Calls one of the item's methods.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">method</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The method to be called</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><span class="type">Player</span></span>
+
+
+								<p> The client to pass when calling the method, if applicable</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><span class="type">Entity</span></span>
+
+
+								<p> The eneity to pass when calling the method, if applicable</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">...</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> Arguments to pass to the method</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>The values returned by the method</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="delete">
+					<h1><span class="realm server"></span></span>Item:delete()</h1>
+				</a>
+
+					<p>Deletes the item from the database and performs cleanup.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>(deferred) A deferred object representing the asynchronous operation of deleting the item from the database.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="destroy">
+					<h1><span class="realm server"></span></span>Item:destroy()</h1>
+				</a>
+
+					<p>Destroys the item instance, removing it from the game world and notifying all clients.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getData">
+					<h1><span class="realm shared"></span></span>Item:getData(key, default)</h1>
+				</a>
+
+					<p>Returns the value stored on a key within the item's data.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The key in which the value is stored</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">default</span>
+
+
+									<span class="tag default">optional</span>
+
+								<p> The value to return in case there is no value stored in the key</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>The value stored within the key</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getDesc">
+					<h1><span class="realm server"></span></span>Item:getDesc()</h1>
+				</a>
+
+					<p>Returns the description of the item.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>The description of the item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getDesc">
+					<h1><span class="realm client"></span></span>Item:getDesc()</h1>
+				</a>
+
+					<p>Returns the description of the item.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>string The description of the item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getEntity">
+					<h1><span class="realm server"></span></span>Item:getEntity()</h1>
+				</a>
+
+					<p>Returns the item's entity.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">entity</span>
+
+								<p>The entity of the item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getID">
+					<h1><span class="realm shared"></span></span>Item:getID()</h1>
+				</a>
+
+					<p>Returns this item's database ID.  This is guaranteed to be unique.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">number</span>
+
+								<p>Unique ID of item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getModel">
+					<h1><span class="realm shared"></span></span>Item:getModel()</h1>
+				</a>
+
+					<p>Returns the model of the item.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>The model of the item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getName">
+					<h1><span class="realm server"></span></span>Item:getName()</h1>
+				</a>
+
+					<p>Returns the name of the item.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>The name of the item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getName">
+					<h1><span class="realm client"></span></span>Item:getName()</h1>
+				</a>
+
+					<p>Returns the name of the item.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>string The name of the item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getOwner">
+					<h1><span class="realm shared"></span></span>Item:getOwner()</h1>
+				</a>
+
+					<p>Returns the player that owns this item.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">player</span>
+
+								<p>Player owning this item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getPrice">
+					<h1><span class="realm shared"></span></span>Item:getPrice()</h1>
+				</a>
+
+					<p>Returns the price of the item.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+
+								<p>The price of the item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getQuantity">
+					<h1><span class="realm shared"></span></span>Item:getQuantity()</h1>
+				</a>
+
+					<p>Returns the quantity of the item.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">number</span>
+
+								<p>The quantity of the item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getSkin">
+					<h1><span class="realm shared"></span></span>Item:getSkin()</h1>
+				</a>
+
+					<p>Returns the skin of the item.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">number</span>
+
+								<p>The skin of the item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="hook">
+					<h1><span class="realm shared"></span></span>Item:hook(name, func)</h1>
+				</a>
+
+					<p>Changes the function called on specific events for the item.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">name</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The name of the hook</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">func</span>
+
+									<span class="tag"><span class="type">Function</span></span>
+
+
+								<p> The function to call once the event occurs</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="interact">
+					<h1><span class="realm server"></span></span>Item:interact(action, client, entity, data)</h1>
+				</a>
+
+					<p>Performs an interaction action with the item.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">action</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The interaction action to perform.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><span class="type">Player</span></span>
+
+
+								<p> The player performing the interaction.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><span class="type">Entity</span></span>
+
+
+								<p> The entity associated with the interaction, if any.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">data</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+									<span class="tag default">optional</span>
+
+								<p> Additional data related to the interaction.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>bool Whether the interaction was successful.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="onDisposed">
+					<h1><span class="realm server"></span></span>Item:onDisposed()</h1>
+				</a>
+
+					<p>Gets called upon destroying an item.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="onInstanced">
+					<h1><span class="realm server"></span></span>Item:onInstanced()</h1>
+				</a>
+
+					<p>Gets called upon creating (instancing) an item.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="onRemoved">
+					<h1><span class="realm server"></span></span>Item:onRemoved()</h1>
+				</a>
+
+					<p>Gets called upon removing an item.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="onRestored">
+					<h1><span class="realm server"></span></span>Item:onRestored()</h1>
+				</a>
+
+					<p>Gets called upon restoring an item.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="onSync">
+					<h1><span class="realm server"></span></span>Item:onSync()</h1>
+				</a>
+
+					<p>Gets called upon syncing an item.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="postHook">
+					<h1><span class="realm shared"></span></span>Item:postHook(name, func)</h1>
+				</a>
+
+					<p>Changes the function called after hooks for specific events for the item.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">name</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The name of the hook</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">func</span>
+
+									<span class="tag"><span class="type">Function</span></span>
+
+
+								<p> The function to call after the original hook was called</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="print">
+					<h1><span class="realm shared"></span></span>Item:print(detail)</h1>
+				</a>
+
+					<p>A utility function which prints the item's details.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">detail</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether additional detail should be printed or not(Owner, X position, Y position)</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="printData">
+					<h1><span class="realm shared"></span></span>Item:printData()</h1>
+				</a>
+
+					<p>A utility function printing the item's stored data.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="remove">
+					<h1><span class="realm server"></span></span>Item:remove(bNoReplication, bNoDelete)</h1>
+				</a>
+
+					<p>Removes the item.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">bNoReplication</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Whether or not the item's removal should not be replicated.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">bNoDelete</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Whether or not the item should not be fully deleted</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether the item was successfully deleted or not</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="removeFromInventory">
+					<h1><span class="realm server"></span></span>Item:removeFromInventory(preserveItem)</h1>
+				</a>
+
+					<p>Removes the item from its current inventory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">preserveItem</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+									<span class="tag default">optional</span>
+
+								<p> If true, the item is not fully deleted from the database.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>(deferred) A deferred object representing the asynchronous operation of removing the item.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="setData">
+					<h1><span class="realm server"></span></span>Item:setData(key, value, receivers, noSave, noCheckEntity)</h1>
+				</a>
+
+					<p>Sets a key within the item's data.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The key to store the value within</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">value</span>
+
+
+									<span class="tag default">default: nil</span>
+
+								<p> The value to store within the key</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">receivers</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+									<span class="tag default">default: nil</span>
+
+								<p> The players to replicate the data on</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">noSave</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether to disable saving the data on the database or not</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">noCheckEntity</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether to disable setting the data on the entity, if applicable</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="setQuantity">
+					<h1><span class="realm server"></span></span>Item:setQuantity(quantity, receivers, noCheckEntity)</h1>
+				</a>
+
+					<p>Sets the quantity of the item to the specified value.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">quantity</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The new quantity value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">receivers</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+									<span class="tag default">optional</span>
+
+								<p> Players who should receive updates about the quantity change.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">noCheckEntity</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+									<span class="tag default">optional</span>
+
+								<p> If true, entity checks will be skipped.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="spawn">
+					<h1><span class="realm server"></span></span>Item:spawn(position, angles)</h1>
+				</a>
+
+					<p>Spawn an item entity based off the item table.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">position</span>
+
+									<span class="tag"><span class="type">Vector</span></span>
+
+
+								<p> The position in which the item's entity will be spawned</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">angles</span>
+
+									<span class="tag"><span class="type">Angle</span></span>
+
+
+								<p> The angles at which the item's entity will spawn</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">entity</span>
+
+								<p>The spawned entity</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="sync">
+					<h1><span class="realm server"></span></span>Item:sync(recipient)</h1>
+				</a>
+
+					<p>Synchronizes the item data with the specified recipient or broadcasts it to all clients if no recipient is specified.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">recipient</span>
+
+									<span class="tag"><span class="type">Player</span></span>
+
+
+								<p> The player to whom the item data should be synchronized. If set to nil, the data is broadcasted to all clients.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="transfer">
+					<h1><span class="realm server"></span></span>Item:transfer(newInventory, bBypass)</h1>
+				</a>
+
+					<p>Transfers the item to another inventory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">newInventory</span>
+
+
+
+								<p> The inventory to which the item should be transferred.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">bBypass</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Whether to bypass access checks for transferring the item.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>Whether the item was successfully transferred or not.</p>
+							</li>
+
+				</ul>
 
 
 		</section>
