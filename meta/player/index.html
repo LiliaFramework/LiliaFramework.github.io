@@ -27,6 +27,47 @@
 	<section>
 				<details class="category" open>
 					<summary>
+						<h2>Information</h2>
+					</summary>
+
+					<ul>
+							<li>
+									<details >
+									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/converting-from-nutscript/">Porting From NutScript</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/installation/">Installation Tutorial</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+					</ul>
+				</details>
+				<details class="category" open>
+					<summary>
 						<h2>Libraries</h2>
 					</summary>
 
@@ -752,22 +793,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -911,12 +952,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2825,12 +2866,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
@@ -3086,12 +3127,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3841,47 +3882,6 @@ takePermFlags											</a>
 							<li>
 									<details >
 									<summary><a href="../../store/ui/">HUDs&#47;UIs</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-					</ul>
-				</details>
-				<details class="category" open>
-					<summary>
-						<h2>Topics</h2>
-					</summary>
-
-					<ul>
-							<li>
-									<details >
-									<summary><a href="../../topics/compatibility/">Addons with Improved Compatibility</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../topics/converting-from-nutscript/">Porting From NutScript</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../topics/installation/">Installation Tutorial</a></summary>
 
 									<ul>
 
@@ -4810,6 +4810,56 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getLiliaData">
+					<h1><span class="realm server"></span></span>Player:getLiliaData(key, default)</h1>
+				</a>
+
+					<p>Retrieves a value from the player's Lilia data.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The key for the data.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">default</span>
+
+
+
+								<p>[opt=nil] The default value to return if the key does not exist.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">any</span>
+
+								<p>The value corresponding to the key, or the default value if the key does not exist.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getLiliaData">
 					<h1><span class="realm client"></span></span>Player:getLiliaData(key, default)</h1>
 				</a>
 
@@ -4841,56 +4891,6 @@ object at a time that you can interface with.</p>
 									<span class="tag default">optional</span>
 
 								<p> The default value to return if the key does not exist.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">any</span>
-
-								<p>The value corresponding to the key, or the default value if the key does not exist.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getLiliaData">
-					<h1><span class="realm server"></span></span>Player:getLiliaData(key, default)</h1>
-				</a>
-
-					<p>Retrieves a value from the player's Lilia data.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The key for the data.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">default</span>
-
-
-
-								<p>[opt=nil] The default value to return if the key does not exist.</p>
 							</li>
 					</ul>
 
@@ -5917,6 +5917,33 @@ object at a time that you can interface with.</p>
 					<h1><span class="realm client"></span></span>Player:openUI(panel)</h1>
 				</a>
 
+					<p>Opens a VGUI panel for the player.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">panel</span>
+
+
+
+								<p> The name of the VGUI panel to open.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="openUI">
+					<h1><span class="realm client"></span></span>Player:openUI(panel)</h1>
+				</a>
+
 					<p>Opens a UI panel for the player.</p>
 			</header>
 
@@ -5946,33 +5973,6 @@ object at a time that you can interface with.</p>
 							</li>
 
 				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="openUI">
-					<h1><span class="realm client"></span></span>Player:openUI(panel)</h1>
-				</a>
-
-					<p>Opens a VGUI panel for the player.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">panel</span>
-
-
-
-								<p> The name of the VGUI panel to open.</p>
-							</li>
-					</ul>
-
 
 
 		</section>

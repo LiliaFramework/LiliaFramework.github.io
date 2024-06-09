@@ -27,6 +27,47 @@
 	<section>
 				<details class="category" open>
 					<summary>
+						<h2>Information</h2>
+					</summary>
+
+					<ul>
+							<li>
+									<details >
+									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/converting-from-nutscript/">Porting From NutScript</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/installation/">Installation Tutorial</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+					</ul>
+				</details>
+				<details class="category" open>
+					<summary>
 						<h2>Libraries</h2>
 					</summary>
 
@@ -752,22 +793,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -911,12 +952,12 @@ verifyModuleValidity											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2825,12 +2866,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
@@ -3086,12 +3127,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3851,47 +3892,6 @@ takePermFlags											</a>
 							</li>
 					</ul>
 				</details>
-				<details class="category" open>
-					<summary>
-						<h2>Topics</h2>
-					</summary>
-
-					<ul>
-							<li>
-									<details >
-									<summary><a href="../../topics/compatibility/">Addons with Improved Compatibility</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../topics/converting-from-nutscript/">Porting From NutScript</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../topics/installation/">Installation Tutorial</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-					</ul>
-				</details>
 	</section>
 </nav>
 
@@ -3965,7 +3965,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getNetVar">
-					<h1><span class="realm server"></span></span>getNetVar(key, default)</h1>
+					<h1><span class="realm client"></span></span>getNetVar(key, default)</h1>
 				</a>
 
 					<p>Retrieves the value of a networked global variable.</p>
@@ -4014,7 +4014,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getNetVar">
-					<h1><span class="realm client"></span></span>getNetVar(key, default)</h1>
+					<h1><span class="realm server"></span></span>getNetVar(key, default)</h1>
 				</a>
 
 					<p>Retrieves the value of a networked global variable.</p>
