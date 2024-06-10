@@ -3032,22 +3032,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
+											<span class="realm server"></span>
+											<a href="../../meta/player/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../meta/player/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../meta/player/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3127,12 +3127,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3147,14 +3147,19 @@ getMoney											</a>
 getPermFlags											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../meta/player/#getPlayTime">
+getPlayTime											</a>
+										</li>
+										<li>
 											<span class="realm shared"></span>
 											<a href="../../meta/player/#getPlayTime">
 getPlayTime											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../meta/player/#getPlayTime">
-getPlayTime											</a>
+											<span class="realm shared"></span>
+											<a href="../../meta/player/#getRagdoll">
+getRagdoll											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -3190,6 +3195,11 @@ hasFlagBlacklist											</a>
 											<span class="realm server"></span>
 											<a href="../../meta/player/#hasPermFlag">
 hasPermFlag											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../meta/player/#hasRagdoll">
+hasRagdoll											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -3370,6 +3380,11 @@ setLocalVar											</a>
 											<span class="realm server"></span>
 											<a href="../../meta/player/#setPermFlags">
 setPermFlags											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../meta/player/#setRagdoll">
+setRagdoll											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -4959,7 +4974,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getPlayTime">
-					<h1><span class="realm shared"></span></span>Player:getPlayTime()</h1>
+					<h1><span class="realm client"></span></span>Player:getPlayTime()</h1>
 				</a>
 
 					<p>Retrieves the player's total playtime.</p>
@@ -4983,7 +4998,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getPlayTime">
-					<h1><span class="realm client"></span></span>Player:getPlayTime()</h1>
+					<h1><span class="realm shared"></span></span>Player:getPlayTime()</h1>
 				</a>
 
 					<p>Retrieves the player's total playtime.</p>
@@ -4998,6 +5013,30 @@ object at a time that you can interface with.</p>
 									<span class="type">number</span>
 
 								<p>The total playtime of the player.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getRagdoll">
+					<h1><span class="realm shared"></span></span>Player:getRagdoll()</h1>
+				</a>
+
+					<p>Returns the player's ragdoll entity if valid.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">Entity</span> or <span class="type">nil</span>
+
+								<p>The player's ragdoll entity if it exists and is valid, otherwise nil.</p>
 							</li>
 
 				</ul>
@@ -5230,6 +5269,30 @@ object at a time that you can interface with.</p>
 									<span class="type">bool</span>
 
 								<p>Whether or not the player has the permanent flag.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="hasRagdoll">
+					<h1><span class="realm shared"></span></span>Player:hasRagdoll()</h1>
+				</a>
+
+					<p>Checks if the player has a valid ragdoll entity.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether the player has a valid ragdoll entity.</p>
 							</li>
 
 				</ul>
@@ -6438,6 +6501,34 @@ object at a time that you can interface with.</p>
 
 
 								<p> The permanent flags to set.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="setRagdoll">
+					<h1><span class="realm shared"></span></span>Player:setRagdoll(entity)</h1>
+				</a>
+
+					<p>Sets the player's ragdoll entity.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entity</span>
+
+									<span class="tag"><span class="type">Entity</span></span>
+
+
+								<p> The entity to set as the player's ragdoll.</p>
 							</li>
 					</ul>
 
