@@ -922,6 +922,11 @@ load											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.module/#loadDependencies">
+loadDependencies											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.module/#loadExtras">
 loadExtras											</a>
 										</li>
@@ -929,6 +934,16 @@ loadExtras											</a>
 											<span class="realm shared"></span>
 											<a href="../../libraries/lia.module/#loadFromDir">
 loadFromDir											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.module/#loadPermissions">
+loadPermissions											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.module/#loadWorkshop">
+loadWorkshop											</a>
 										</li>
 
 									</ul>
@@ -4045,6 +4060,37 @@ takePermFlags											</a>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="loadDependencies">
+					<h1><span class="realm shared"></span></span>loadDependencies(Dependencies)</h1>
+				</a>
+
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
+					<p>Loads module dependencies.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">Dependencies</span>
+
+
+
+								<p> The dependencies to load.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="loadExtras">
 					<h1><span class="realm shared"></span></span>loadExtras(path)</h1>
 				</a>
@@ -4115,6 +4161,68 @@ takePermFlags											</a>
 
 
 								<p> The group of the modules (e.g., "schema" or "module").</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="loadPermissions">
+					<h1><span class="realm shared"></span></span>loadPermissions(Privileges)</h1>
+				</a>
+
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
+					<p>Loads permissions.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">Privileges</span>
+
+
+
+								<p> The privileges to load. This is the MODULE.CAMIPrivileges.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="loadWorkshop">
+					<h1><span class="realm server"></span></span>loadWorkshop(Workshop)</h1>
+				</a>
+
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
+					<p>Loads workshop content.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">Workshop</span>
+
+
+
+								<p> The workshop content to load. This is the MODULE.WorkshopContent.</p>
 							</li>
 					</ul>
 
