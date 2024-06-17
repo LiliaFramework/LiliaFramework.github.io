@@ -907,6 +907,11 @@ onButtonPressed											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.module/#OnFinishLoad">
+OnFinishLoad											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.module/#get">
 get											</a>
 										</li>
@@ -1028,11 +1033,6 @@ dateToNumber											</a>
 debugLog											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.util/#debugMessage">
-debugMessage											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#drawBlur">
 drawBlur											</a>
@@ -1143,22 +1143,22 @@ isSteamID											</a>
 notifQuery											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.util/#notify">
+notify											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#notify">
 notify											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.util/#notify">
-notify											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#notifyLocalized">
 notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#notifyLocalized">
 notifyLocalized											</a>
 										</li>
@@ -3931,6 +3931,50 @@ takePermFlags											</a>
 
 	<h1 class="title">Functions</h1>
 
+		<section class="method">
+			<header>
+				<a class="anchor" id="OnFinishLoad">
+					<h1><span class="realm shared"></span></span>OnFinishLoad(uniqueID, path)</h1>
+				</a>
+
+					<div class="notice error">
+						<div class="title">Internal</div>
+						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
+					</div>
+					<p>Loads a module's submodules if present.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">uniqueID</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The unique identifier for the module.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">path</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The path to the module.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
 		<section class="method">
 			<header>
 				<a class="anchor" id="get">

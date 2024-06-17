@@ -907,6 +907,11 @@ onButtonPressed											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.module/#OnFinishLoad">
+OnFinishLoad											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.module/#get">
 get											</a>
 										</li>
@@ -1026,11 +1031,6 @@ dateToNumber											</a>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#debugLog">
 debugLog											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.util/#debugMessage">
-debugMessage											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -4059,10 +4059,9 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 							<li>
 								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">Player</span></span>
 
 
-								<p> to give a notification to if the player could not be found</p>
+								<p> Player The client to give a notification to if the player could not be found.</p>
 							</li>
 					</ul>
 
@@ -4071,10 +4070,9 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 							<li>
 								<span class="tag parameter">name</span>
 
-									<span class="tag"><span class="type">String</span></span>
 
 
-								<p> Search query</p>
+								<p> string Search query</p>
 							</li>
 					</ul>
 
@@ -4083,17 +4081,9 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 				<ul>
 
 							<li>
-									<span class="type">player</span>
+									<span class="type">player</span> or <span class="type">nil</span>
 
-								<p>Player that matches the given search query</p>
-							</li>
-
-							<div class="or"><span>OR</span></div>
-
-							<li>
-									<span class="type">nil</span>
-
-								<p>If a player could not be found</p>
+								<p>Player that matches the given search query, or nil if a player could not be found</p>
 							</li>
 
 				</ul>
