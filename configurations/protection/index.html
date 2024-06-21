@@ -3949,17 +3949,6 @@ takePermFlags											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">FamilySharingEnabled</span>
-
-
-
-								<p> Indicates whether Family Sharing is enabled on this server | <strong>bool</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
 								<span class="tag parameter">CarRagdoll</span>
 
 
@@ -3975,7 +3964,7 @@ takePermFlags											</a>
 
 
 
-								<p> Specifies whether cooldown on character switching is enabled | <strong>bool</strong></p>
+								<p> Specifies whether cooldown on character switching is enabled after taking damage | <strong>bool</strong></p>
 							</li>
 					</ul>
 
@@ -3986,7 +3975,7 @@ takePermFlags											</a>
 
 
 
-								<p> Sets the cooldown duration on character switching after taking damage | <strong>integer</strong></p>
+								<p> Sets the cooldown duration (in seconds) on character switching after taking damage | <strong>integer</strong></p>
 							</li>
 					</ul>
 
@@ -4019,7 +4008,7 @@ takePermFlags											</a>
 
 
 
-								<p> Sets the duration of the character switch cooldown | <strong>integer</strong></p>
+								<p> Sets the duration (in seconds) of the character switch cooldown | <strong>integer</strong></p>
 							</li>
 					</ul>
 
@@ -4030,7 +4019,7 @@ takePermFlags											</a>
 
 
 
-								<p> Controls whether NPCs drop weapons | <strong>bool</strong></p>
+								<p> Controls whether NPCs drop weapons upon death | <strong>bool</strong></p>
 							</li>
 					</ul>
 
@@ -4041,7 +4030,7 @@ takePermFlags											</a>
 
 
 
-								<p> Specifies the duration until a dropped SWEP is removed. This pertains to actual SWEPs, not weapon items | <strong>bool</strong></p>
+								<p> Specifies the duration (in seconds) until a dropped SWEP is removed. This pertains to actual SWEPs, not weapon items | <strong>integer</strong></p>
 							</li>
 					</ul>
 
@@ -4063,7 +4052,7 @@ takePermFlags											</a>
 
 
 
-								<p> Lists known exploits | <strong>table</strong></p>
+								<p> Lists known exploits that the protection module is aware of | <strong>table</strong></p>
 							</li>
 					</ul>
 
@@ -4096,7 +4085,7 @@ takePermFlags											</a>
 
 
 
-								<p> Lists undesirable console variables | <strong>table</strong></p>
+								<p> Lists undesirable console variables that should be monitored or blocked | <strong>table</strong></p>
 							</li>
 					</ul>
 
@@ -4107,7 +4096,7 @@ takePermFlags											</a>
 
 
 
-								<p> Lists exploitable Net Messages | <strong>table</strong></p>
+								<p> Lists exploitable Net Messages that should be monitored or blocked | <strong>table</strong></p>
 							</li>
 					</ul>
 
@@ -4119,6 +4108,138 @@ takePermFlags											</a>
 
 
 								<p> Specifies the duration (in seconds) a player remains unable to deal damage after using an "act" command | <strong>integer</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">DefaultNets</span>
+
+
+
+								<p> Lists the default net messages that do not get logged | <strong>table</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">AltsDisabled</span>
+
+
+
+								<p> Whether or not alting is permitted | <strong>bool</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">PassableOnFreeze</span>
+
+
+
+								<p> Makes it so that props frozen can be passed through when frozen | <strong>bool</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">CanNotPermaProp</span>
+
+
+
+								<p> List of entities restricted from perma propping | <strong>table</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">DuplicatorBlackList</span>
+
+
+
+								<p> List of entities blocked from the duplicator tool when used by regular players | <strong>table</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">RemoverBlockedEntities</span>
+
+
+
+								<p> List of entities blocked from the remover tool when used by regular players | <strong>table</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">BlackListedProps</span>
+
+
+
+								<p> List of props restricted from general spawn | <strong>table</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">RestrictedEnts</span>
+
+
+
+								<p> List of entities blocked from physgun pick up and proprieties when used by regular players | <strong>table</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">RestrictedVehicles</span>
+
+
+
+								<p> List of vehicles restricted from general spawn | <strong>table</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">PlayerSpawnVehicleDelay</span>
+
+
+
+								<p> Delay for spawning a vehicle after the previous one | <strong>integer</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">ToolInterval</span>
+
+
+
+								<p> ToolGun Usage Cooldown | <strong>integer</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">ButtonList</span>
+
+
+
+								<p> List of button models to prevent button spamming exploits | <strong>table</strong></p>
 							</li>
 					</ul>
 

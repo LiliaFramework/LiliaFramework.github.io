@@ -3934,14 +3934,15 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="OnFinishLoad">
-					<h1><span class="realm shared"></span></span>OnFinishLoad(uniqueID, path)</h1>
+					<h1><span class="realm shared"></span></span>OnFinishLoad(uniqueID, path, category, firstLoad)</h1>
 				</a>
 
 					<div class="notice error">
 						<div class="title">Internal</div>
 						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
 					</div>
-					<p>Loads a module's submodules if present.</p>
+					<p>Loads a module's submodules if present.
+ This function handles the loading of a module's submodules, if they exist.</p>
 			</header>
 
 
@@ -3969,6 +3970,30 @@ takePermFlags											</a>
 
 
 								<p> The path to the module.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">category</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The category of the module.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">firstLoad</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Indicates if this is the first load of the module.</p>
 							</li>
 					</ul>
 
@@ -4018,7 +4043,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="initialize">
-					<h1><span class="realm shared"></span></span>initialize()</h1>
+					<h1><span class="realm shared"></span></span>initialize(firstLoad)</h1>
 				</a>
 
 					<div class="notice error">
@@ -4030,13 +4055,28 @@ takePermFlags											</a>
 			</header>
 
 
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">firstLoad</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Indicates if this is the first load of the modules.</p>
+							</li>
+					</ul>
+
 
 
 		</section>
 		<section class="method">
 			<header>
 				<a class="anchor" id="load">
-					<h1><span class="realm shared"></span></span>load(uniqueID, path, isSingleFile, variable)</h1>
+					<h1><span class="realm shared"></span></span>load(uniqueID, path, isSingleFile, variable, category, firstLoad)</h1>
 				</a>
 
 					<div class="notice error">
@@ -4059,7 +4099,7 @@ takePermFlags											</a>
 									<span class="tag"><span class="type">String</span></span>
 
 
-								<p> string The unique identifier of the module.</p>
+								<p> The unique identifier of the module.</p>
 							</li>
 					</ul>
 
@@ -4071,7 +4111,7 @@ takePermFlags											</a>
 									<span class="tag"><span class="type">String</span></span>
 
 
-								<p> string The path to the module.</p>
+								<p> The path to the module.</p>
 							</li>
 					</ul>
 
@@ -4083,7 +4123,7 @@ takePermFlags											</a>
 									<span class="tag"><span class="type">Boolean</span></span>
 
 
-								<p> boolean Specifies if the module is contained in a single file.</p>
+								<p> Specifies if the module is contained in a single file.</p>
 							</li>
 					</ul>
 
@@ -4095,7 +4135,31 @@ takePermFlags											</a>
 									<span class="tag"><span class="type">String</span></span>
 
 
-								<p> string The variable name to assign the module to.</p>
+								<p> The variable name to assign the module to.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">category</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The category of the module.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">firstLoad</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Indicates if this is the first load of the module.</p>
 							</li>
 					</ul>
 
@@ -4112,7 +4176,8 @@ takePermFlags											</a>
 						<div class="title">Internal</div>
 						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
 					</div>
-					<p>Loads module dependencies.</p>
+					<p>Loads module dependencies.
+ This function loads the dependencies for the module.</p>
 			</header>
 
 
@@ -4169,7 +4234,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="loadFromDir">
-					<h1><span class="realm shared"></span></span>loadFromDir(directory, group)</h1>
+					<h1><span class="realm shared"></span></span>loadFromDir(directory, group, category, firstLoad)</h1>
 				</a>
 
 					<div class="notice error">
@@ -4208,6 +4273,30 @@ takePermFlags											</a>
 							</li>
 					</ul>
 
+					<ul>
+
+							<li>
+								<span class="tag parameter">category</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The category of the modules.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">firstLoad</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Indicates if this is the first load of the modules.</p>
+							</li>
+					</ul>
+
 
 
 		</section>
@@ -4221,7 +4310,8 @@ takePermFlags											</a>
 						<div class="title">Internal</div>
 						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
 					</div>
-					<p>Loads permissions.</p>
+					<p>Loads permissions.
+ This function loads permissions for the module.</p>
 			</header>
 
 
@@ -4252,7 +4342,8 @@ takePermFlags											</a>
 						<div class="title">Internal</div>
 						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
 					</div>
-					<p>Loads workshop content.</p>
+					<p>Loads workshop content.
+ This function loads workshop content for the module.</p>
 			</header>
 
 
