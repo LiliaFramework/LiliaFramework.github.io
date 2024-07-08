@@ -580,6 +580,11 @@ getClasses											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.faction/#getDefaultClass">
+getDefaultClass											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.faction/#getIndex">
 getIndex											</a>
 										</li>
@@ -4030,6 +4035,46 @@ takePermFlags											</a>
 									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
 
 								<p>A table containing the indices of the classes associated with the faction</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getDefaultClass">
+					<h1><span class="realm shared"></span></span>getDefaultClass(id)</h1>
+				</a>
+
+					<p>Retrieves the default class of a specified faction.
+ The default class is determined based on the faction index and the 'isDefault' flag set for each class.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">id</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The index of the faction for which to retrieve the default class.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>tab|nil Information about the default class if found, nil otherwise.</p>
 							</li>
 
 				</ul>
