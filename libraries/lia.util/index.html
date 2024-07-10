@@ -2217,7 +2217,7 @@ OnOpenVendorMenu											</a>
 PlayerAccessVendor											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm server"></span>
 											<a href="../../hooks/vendor/#VendorBuyEvent">
 VendorBuyEvent											</a>
 										</li>
@@ -2230,6 +2230,11 @@ VendorClassUpdated											</a>
 											<span class="realm client"></span>
 											<a href="../../hooks/vendor/#VendorEdited">
 VendorEdited											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks/vendor/#VendorExited">
+VendorExited											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -2267,10 +2272,15 @@ VendorMoneyUpdated											</a>
 VendorOpened											</a>
 										</li>
 										<li>
-											<span class="realm shared
+											<span class="realm server
  This function handles the event where a player sells an item to a vendor."></span>
 											<a href="../../hooks/vendor/#VendorSellEvent">
 VendorSellEvent											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks/vendor/#VendorSynchronized">
+VendorSynchronized											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>

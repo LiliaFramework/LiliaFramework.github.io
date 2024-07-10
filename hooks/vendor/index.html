@@ -2217,7 +2217,7 @@ OnOpenVendorMenu											</a>
 PlayerAccessVendor											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm server"></span>
 											<a href="../../hooks/vendor/#VendorBuyEvent">
 VendorBuyEvent											</a>
 										</li>
@@ -2230,6 +2230,11 @@ VendorClassUpdated											</a>
 											<span class="realm client"></span>
 											<a href="../../hooks/vendor/#VendorEdited">
 VendorEdited											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks/vendor/#VendorExited">
+VendorExited											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -2267,10 +2272,15 @@ VendorMoneyUpdated											</a>
 VendorOpened											</a>
 										</li>
 										<li>
-											<span class="realm shared
+											<span class="realm server
  This function handles the event where a player sells an item to a vendor."></span>
 											<a href="../../hooks/vendor/#VendorSellEvent">
 VendorSellEvent											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../hooks/vendor/#VendorSynchronized">
+VendorSynchronized											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -4146,7 +4156,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="VendorBuyEvent">
-					<h1><span class="realm shared"></span></span>MODULE:VendorBuyEvent(client, vendor, itemType, isSellingToVendor, character, price)</h1>
+					<h1><span class="realm server"></span></span>MODULE:VendorBuyEvent(client, vendor, itemType, isSellingToVendor, character, price)</h1>
 				</a>
 
 					<p>Called when a player successfully buys an item from a vendor.
@@ -4294,7 +4304,7 @@ takePermFlags											</a>
 					<h1><span class="realm client"></span></span>MODULE:VendorEdited(vendor, key)</h1>
 				</a>
 
-					<p>Called when a vendor entity is edited.</p>
+					<p>Called after a delay when a vendor's data is edited.</p>
 			</header>
 
 
@@ -4309,7 +4319,7 @@ takePermFlags											</a>
 									<span class="tag"><span class="type">Entity</span></span>
 
 
-								<p> The vendor entity that was edited.</p>
+								<p> The vendor entity whose data is being edited.</p>
 							</li>
 					</ul>
 
@@ -4321,9 +4331,22 @@ takePermFlags											</a>
 									<span class="tag"><span class="type">String</span></span>
 
 
-								<p> The key that was edited.</p>
+								<p> The key related to the specific data being edited.</p>
 							</li>
 					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorExited">
+					<h1><span class="realm client"></span></span>MODULE:VendorExited()</h1>
+				</a>
+
+					<p>Called when a player exits from interacting with a vendor.</p>
+			</header>
+
 
 
 
@@ -4671,7 +4694,7 @@ takePermFlags											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="VendorSellEvent">
-					<h1><span class="realm shared
+					<h1><span class="realm server
  This function handles the event where a player sells an item to a vendor."></span></span>MODULE:VendorSellEvent(client, vendor, itemType, isSellingToVendor, character, price)</h1>
 				</a>
 
@@ -4760,6 +4783,34 @@ takePermFlags											</a>
 				<ul>
 						<li><a href="../../hooks/vendor/#VendorBuyEvent">VendorBuyEvent</a></li>
 				</ul>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="VendorSynchronized">
+					<h1><span class="realm client"></span></span>MODULE:VendorSynchronized(vendor)</h1>
+				</a>
+
+					<p>Called when vendor synchronization data is received.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">vendor</span>
+
+									<span class="tag"><span class="type">Entity</span></span>
+
+
+								<p> The vendor entity whose data has been synchronized.</p>
+							</li>
+					</ul>
+
+
+
 		</section>
 		<section class="method">
 			<header>
