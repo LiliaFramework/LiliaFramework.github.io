@@ -2217,11 +2217,6 @@ OnOpenVendorMenu											</a>
 PlayerAccessVendor											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../hooks/vendor/#VendorBuyEvent">
-VendorBuyEvent											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../hooks/vendor/#VendorClassUpdated">
 VendorClassUpdated											</a>
@@ -2270,11 +2265,6 @@ VendorMoneyUpdated											</a>
 											<span class="realm client"></span>
 											<a href="../../hooks/vendor/#VendorOpened">
 VendorOpened											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../hooks/vendor/#VendorSellEvent">
-VendorSellEvent											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -4154,103 +4144,6 @@ takePermFlags											</a>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="VendorBuyEvent">
-					<h1><span class="realm server"></span></span>MODULE:VendorBuyEvent(client, vendor, itemType, isSellingToVendor, character, price)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Called when a player successfully buys an item from a vendor.
- This function is called when a player successfully completes a purchase from a vendor.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The player who made the purchase</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">vendor</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity from which the item was bought</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">itemType</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The uniqueID of item being sold</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">isSellingToVendor</span>
-
-									<span class="tag"><span class="type">Boolean</span></span>
-
-
-								<p> Indicates whether the player is selling to the vendor (always false in this context)</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">character</span>
-
-									<span class="tag"><span class="type">Character</span></span>
-
-
-								<p> The character of the player involved in the trade</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">price</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The price of the item being bought</p>
-							</li>
-					</ul>
-
-
-
-				<h3>See Also</h3>
-				<ul>
-						<li><a href="../../hooks/vendor/#VendorSellEvent">VendorSellEvent</a></li>
-				</ul>
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="VendorClassUpdated">
 					<h1><span class="realm client"></span></span>MODULE:VendorClassUpdated(vendor, id, allowed)</h1>
 				</a>
@@ -4725,102 +4618,6 @@ takePermFlags											</a>
 
 
 
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="VendorSellEvent">
-					<h1><span class="realm server"></span></span>MODULE:VendorSellEvent(client, vendor, itemType, isSellingToVendor, character, price)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Called when a player sells an item to a vendor.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The player selling the item</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">vendor</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">itemType</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The uniqueID of item being sold</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">isSellingToVendor</span>
-
-									<span class="tag"><span class="type">Boolean</span></span>
-
-
-								<p> Indicates whether the player is selling to the vendor (always false in this context)</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">character</span>
-
-									<span class="tag"><span class="type">Character</span></span>
-
-
-								<p> The character of the player selling the item</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">price</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The price at which the item is sold</p>
-							</li>
-					</ul>
-
-
-
-				<h3>See Also</h3>
-				<ul>
-						<li><a href="../../hooks/vendor/#VendorBuyEvent">VendorBuyEvent</a></li>
-				</ul>
 		</section>
 		<section class="method">
 			<header>
