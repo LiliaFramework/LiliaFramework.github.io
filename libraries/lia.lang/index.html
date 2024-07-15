@@ -27,47 +27,6 @@
 	<section>
 				<details class="category" open>
 					<summary>
-						<h2>Information</h2>
-					</summary>
-
-					<ul>
-							<li>
-									<details >
-									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/converting-from-nutscript/">Porting From NutScript</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/installation/">Installation Tutorial</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-					</ul>
-				</details>
-				<details class="category" open>
-					<summary>
 						<h2>Libraries</h2>
 					</summary>
 
@@ -803,22 +762,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -977,12 +936,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1181,6 +1140,11 @@ playerInRadius											</a>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#screenScaleH">
 screenScaleH											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.util/#screenScaleW">
+screenScaleW											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -2273,8 +2237,8 @@ VendorSynchronized											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks/vendor/#VendorTradeAttempt">
-VendorTradeAttempt											</a>
+											<a href="../../hooks/vendor/#VendorTradeEvent">
+VendorTradeEvent											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -2890,12 +2854,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
@@ -3056,22 +3020,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
+											<span class="realm server"></span>
+											<a href="../../meta/player/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../meta/player/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../meta/player/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3848,6 +3812,47 @@ takePermFlags											</a>
 				</details>
 				<details class="category" open>
 					<summary>
+						<h2>Information</h2>
+					</summary>
+
+					<ul>
+							<li>
+									<details >
+									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/converting-from-nutscript/">Porting From NutScript</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/installation/">Installation Tutorial</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+					</ul>
+				</details>
+				<details class="category" open>
+					<summary>
 						<h2>Store</h2>
 					</summary>
 
@@ -4012,57 +4017,6 @@ formatting arguments:</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="L">
-					<h1><span class="realm client"></span></span>L(key, ...)</h1>
-				</a>
-
-					<p>Creates a client-side ConVar to store the language setting and retrieves a localized string based on it.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The key corresponding to the desired localized string.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">...</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> Additional parameters to format the localized string.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>The formatted localized string.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="L">
 					<h1><span class="realm server"></span></span>L(key, client, ...)</h1>
 				</a>
 
@@ -4125,6 +4079,109 @@ formatting arguments:</p>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="L">
+					<h1><span class="realm client"></span></span>L(key, ...)</h1>
+				</a>
+
+					<p>Creates a client-side ConVar to store the language setting and retrieves a localized string based on it.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The key corresponding to the desired localized string.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">...</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> Additional parameters to format the localized string.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>The formatted localized string.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="L2">
+					<h1><span class="realm client"></span></span>L2(key, ...)</h1>
+				</a>
+
+					<p>Retrieves a localized string based on the specified key and client's language setting.
+ Similar to L(), but returns nil if the key is not found in the language table.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The key corresponding to the desired localized string.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">...</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> Additional parameters to format the localized string.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>The formatted localized string, or nil if the key is not found.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="L2">
 					<h1><span class="realm server"></span></span>L2(key, client, ...)</h1>
 				</a>
@@ -4158,58 +4215,6 @@ formatting arguments:</p>
 
 
 								<p> The client for whom the localized string is intended.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">...</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> Additional parameters to format the localized string.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>The formatted localized string, or nil if the key is not found.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="L2">
-					<h1><span class="realm client"></span></span>L2(key, ...)</h1>
-				</a>
-
-					<p>Retrieves a localized string based on the specified key and client's language setting.
- Similar to L(), but returns nil if the key is not found in the language table.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The key corresponding to the desired localized string.</p>
 							</li>
 					</ul>
 

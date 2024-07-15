@@ -27,47 +27,6 @@
 	<section>
 				<details class="category" open>
 					<summary>
-						<h2>Information</h2>
-					</summary>
-
-					<ul>
-							<li>
-									<details >
-									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/converting-from-nutscript/">Porting From NutScript</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/installation/">Installation Tutorial</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-					</ul>
-				</details>
-				<details class="category" open>
-					<summary>
 						<h2>Libraries</h2>
 					</summary>
 
@@ -803,22 +762,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -977,12 +936,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1181,6 +1140,11 @@ playerInRadius											</a>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#screenScaleH">
 screenScaleH											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.util/#screenScaleW">
+screenScaleW											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -2273,8 +2237,8 @@ VendorSynchronized											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks/vendor/#VendorTradeAttempt">
-VendorTradeAttempt											</a>
+											<a href="../../hooks/vendor/#VendorTradeEvent">
+VendorTradeEvent											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -2890,12 +2854,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
@@ -3056,22 +3020,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../meta/player/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../meta/player/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../meta/player/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3848,6 +3812,47 @@ takePermFlags											</a>
 				</details>
 				<details class="category" open>
 					<summary>
+						<h2>Information</h2>
+					</summary>
+
+					<ul>
+							<li>
+									<details >
+									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/converting-from-nutscript/">Porting From NutScript</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/installation/">Installation Tutorial</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+					</ul>
+				</details>
+				<details class="category" open>
+					<summary>
 						<h2>Store</h2>
 					</summary>
 
@@ -4130,7 +4135,7 @@ takePermFlags											</a>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the position can fit the collision hull, false otherwise</p>
 							</li>
@@ -4169,7 +4174,7 @@ takePermFlags											</a>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the chance is successful, false otherwise</p>
 							</li>
@@ -5556,7 +5561,7 @@ end)
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the value is a SteamID, false otherwise</p>
 							</li>
@@ -5926,6 +5931,57 @@ end)
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="screenScaleW">
+					<h1><span class="realm client"></span></span>screenScaleW(n, bool)</h1>
+				</a>
+
+					<p>Scales a value proportionally based on the screen width.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">n</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The value to scale</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">bool</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> If true, scales based on horizontal resolution; if false or nil, scales based on default values</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>The scaled value</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="skinFunc">
 					<h1><span class="realm client"></span></span>skinFunc(name, panel, a, b, c, d, e, f, g)</h1>
 				</a>
@@ -6272,7 +6328,7 @@ end)
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>Whether or not the strings are equivalent</p>
 							</li>

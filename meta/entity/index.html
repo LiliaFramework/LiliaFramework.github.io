@@ -27,47 +27,6 @@
 	<section>
 				<details class="category" open>
 					<summary>
-						<h2>Information</h2>
-					</summary>
-
-					<ul>
-							<li>
-									<details >
-									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/converting-from-nutscript/">Porting From NutScript</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/installation/">Installation Tutorial</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-					</ul>
-				</details>
-				<details class="category" open>
-					<summary>
 						<h2>Libraries</h2>
 					</summary>
 
@@ -803,22 +762,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -977,12 +936,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1181,6 +1140,11 @@ playerInRadius											</a>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#screenScaleH">
 screenScaleH											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.util/#screenScaleW">
+screenScaleW											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -2273,8 +2237,8 @@ VendorSynchronized											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks/vendor/#VendorTradeAttempt">
-VendorTradeAttempt											</a>
+											<a href="../../hooks/vendor/#VendorTradeEvent">
+VendorTradeEvent											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -2890,12 +2854,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
@@ -3056,22 +3020,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
+											<span class="realm server"></span>
+											<a href="../../meta/player/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../meta/player/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../meta/player/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3848,6 +3812,47 @@ takePermFlags											</a>
 				</details>
 				<details class="category" open>
 					<summary>
+						<h2>Information</h2>
+					</summary>
+
+					<ul>
+							<li>
+									<details >
+									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/converting-from-nutscript/">Porting From NutScript</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/installation/">Installation Tutorial</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+					</ul>
+				</details>
+				<details class="category" open>
+					<summary>
 						<h2>Store</h2>
 					</summary>
 
@@ -4006,7 +4011,7 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the entity can see the target entity, false otherwise.</p>
 							</li>
@@ -4310,7 +4315,7 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the entity is within the field of view, false otherwise.</p>
 							</li>
@@ -4349,7 +4354,7 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the entity is in line of sight, false otherwise.</p>
 							</li>
@@ -4373,7 +4378,7 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the entity is a chair, false otherwise.</p>
 							</li>
@@ -4401,7 +4406,7 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the entity is a door, false otherwise.</p>
 							</li>
@@ -4425,7 +4430,7 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the entity is a door, false otherwise.</p>
 							</li>
@@ -4449,7 +4454,7 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the entity is locked, false otherwise.</p>
 							</li>
@@ -4488,7 +4493,7 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the entity is in the same room as the target entity, false otherwise.</p>
 							</li>
@@ -4512,7 +4517,7 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the entity is an item entity, false otherwise.</p>
 							</li>
@@ -4536,7 +4541,7 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the entity is a money entity, false otherwise.</p>
 							</li>
@@ -4560,7 +4565,7 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the entity is a physics prop, false otherwise.</p>
 							</li>
@@ -4625,7 +4630,7 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the entity has a clear line of sight to the other entity within the specified distance and field of view angle, false otherwise.</p>
 							</li>
@@ -4649,7 +4654,7 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if the entity is a simfphys car, false otherwise.</p>
 							</li>
@@ -4689,7 +4694,7 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>True if there is an entity nearby, false otherwise.</p>
 							</li>

@@ -27,47 +27,6 @@
 	<section>
 				<details class="category" open>
 					<summary>
-						<h2>Information</h2>
-					</summary>
-
-					<ul>
-							<li>
-									<details >
-									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/converting-from-nutscript/">Porting From NutScript</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/installation/">Installation Tutorial</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-					</ul>
-				</details>
-				<details class="category" open>
-					<summary>
 						<h2>Libraries</h2>
 					</summary>
 
@@ -803,22 +762,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -977,12 +936,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1181,6 +1140,11 @@ playerInRadius											</a>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#screenScaleH">
 screenScaleH											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.util/#screenScaleW">
+screenScaleW											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -2273,8 +2237,8 @@ VendorSynchronized											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks/vendor/#VendorTradeAttempt">
-VendorTradeAttempt											</a>
+											<a href="../../hooks/vendor/#VendorTradeEvent">
+VendorTradeEvent											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -2890,12 +2854,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
@@ -3056,22 +3020,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../meta/player/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../meta/player/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../meta/player/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3848,6 +3812,47 @@ takePermFlags											</a>
 				</details>
 				<details class="category" open>
 					<summary>
+						<h2>Information</h2>
+					</summary>
+
+					<ul>
+							<li>
+									<details >
+									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/converting-from-nutscript/">Porting From NutScript</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/installation/">Installation Tutorial</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+					</ul>
+				</details>
+				<details class="category" open>
+					<summary>
 						<h2>Store</h2>
 					</summary>
 
@@ -4024,7 +4029,7 @@ for variables that automatically save to the character object.</p>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>Boolean Whether or not this character is equal to the given character</p>
+								<p>bool Whether or not this character is equal to the given character</p>
 							</li>
 
 				</ul>
@@ -4540,7 +4545,7 @@ for variables that automatically save to the character object.</p>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>Boolean Whether the operation was successful.</p>
+								<p>bool Whether the operation was successful.</p>
 							</li>
 
 				</ul>
@@ -4577,7 +4582,7 @@ for variables that automatically save to the character object.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>Whether the player has whitelisted access to the specified faction.</p>
 							</li>
@@ -4616,7 +4621,7 @@ for variables that automatically save to the character object.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>Whether or not this character has access to the given flag(s)</p>
 							</li>
@@ -4657,7 +4662,7 @@ for variables that automatically save to the character object.</p>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>Boolean Whether the character has at least the specified amount of money.</p>
+								<p>bool Whether the character has at least the specified amount of money.</p>
 							</li>
 
 				</ul>
@@ -4697,48 +4702,9 @@ for variables that automatically save to the character object.</p>
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>Whether the player belongs to the specified class.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="isFaction">
-					<h1><span class="realm shared"></span></span>Character:isFaction(faction)</h1>
-				</a>
-
-					<p>Checks if the player belongs to the specified faction.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">faction</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The faction to check against.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">Boolean</span>
-
-								<p>Whether the player belongs to the specified faction.</p>
 							</li>
 
 				</ul>
@@ -4777,7 +4743,7 @@ for variables that automatically save to the character object.</p>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>Boolean Whether the character belongs to the specified faction.</p>
+								<p>bool Whether the character belongs to the specified faction.</p>
 							</li>
 
 				</ul>
@@ -4785,6 +4751,45 @@ for variables that automatically save to the character object.</p>
 				<h3>Example Usage</h3>
 					<pre><code>local isInFaction = character:isFaction("some_faction")
 </code></pre>
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isFaction">
+					<h1><span class="realm shared"></span></span>Character:isFaction(faction)</h1>
+				</a>
+
+					<p>Checks if the player belongs to the specified faction.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">faction</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The faction to check against.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether the player belongs to the specified faction.</p>
+							</li>
+
+				</ul>
+
 
 		</section>
 		<section class="method">
@@ -4832,7 +4837,7 @@ for variables that automatically save to the character object.</p>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>Boolean Whether the character successfully joined the class.</p>
+								<p>bool Whether the character successfully joined the class.</p>
 							</li>
 
 				</ul>
@@ -5124,7 +5129,7 @@ character:takeFlags("p")
 							<li>
 									<span class="tag type">any</span>
 
-								<p>Boolean Whether the operation was successful.</p>
+								<p>bool Whether the operation was successful.</p>
 							</li>
 
 				</ul>

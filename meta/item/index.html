@@ -27,47 +27,6 @@
 	<section>
 				<details class="category" open>
 					<summary>
-						<h2>Information</h2>
-					</summary>
-
-					<ul>
-							<li>
-									<details >
-									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/converting-from-nutscript/">Porting From NutScript</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../information/installation/">Installation Tutorial</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-					</ul>
-				</details>
-				<details class="category" open>
-					<summary>
 						<h2>Libraries</h2>
 					</summary>
 
@@ -803,22 +762,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -977,12 +936,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1181,6 +1140,11 @@ playerInRadius											</a>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#screenScaleH">
 screenScaleH											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.util/#screenScaleW">
+screenScaleW											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
@@ -2273,8 +2237,8 @@ VendorSynchronized											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks/vendor/#VendorTradeAttempt">
-VendorTradeAttempt											</a>
+											<a href="../../hooks/vendor/#VendorTradeEvent">
+VendorTradeEvent											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -2890,12 +2854,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
@@ -3056,22 +3020,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
+											<span class="realm server"></span>
+											<a href="../../meta/player/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../meta/player/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../meta/player/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3848,6 +3812,47 @@ takePermFlags											</a>
 				</details>
 				<details class="category" open>
 					<summary>
+						<h2>Information</h2>
+					</summary>
+
+					<ul>
+							<li>
+									<details >
+									<summary><a href="../../information/compatibility/">Addons with Improved Compatibility</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/converting-from-nutscript/">Porting From NutScript</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../information/installation/">Installation Tutorial</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+					</ul>
+				</details>
+				<details class="category" open>
+					<summary>
 						<h2>Store</h2>
 					</summary>
 
@@ -3980,7 +3985,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>Whether or not this item is equal to the given item</p>
 							</li>
@@ -4361,30 +4366,6 @@ same name but different numerical IDs). You can think of items as the class, whi
 		<section class="method">
 			<header>
 				<a class="anchor" id="getName">
-					<h1><span class="realm client"></span></span>Item:getName()</h1>
-				</a>
-
-					<p>Returns the name of the item.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>string The name of the item</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getName">
 					<h1><span class="realm server"></span></span>Item:getName()</h1>
 				</a>
 
@@ -4400,6 +4381,30 @@ same name but different numerical IDs). You can think of items as the class, whi
 									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
 
 								<p>The name of the item</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getName">
+					<h1><span class="realm client"></span></span>Item:getName()</h1>
+				</a>
+
+					<p>Returns the name of the item.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>string The name of the item</p>
 							</li>
 
 				</ul>
@@ -4611,7 +4616,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 							<li>
 									<span class="tag type">any</span>
 
-								<p>Boolean Whether the interaction was successful.</p>
+								<p>bool Whether the interaction was successful.</p>
 							</li>
 
 				</ul>
@@ -4807,7 +4812,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>Whether the item was successfully deleted or not</p>
 							</li>
@@ -5109,7 +5114,7 @@ same name but different numerical IDs). You can think of items as the class, whi
 				<ul>
 
 							<li>
-									<span class="type">Boolean</span>
+									<span class="type">bool</span>
 
 								<p>Whether the item was successfully transferred or not.</p>
 							</li>
