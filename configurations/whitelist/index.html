@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Vendor - Lilia Documentation</title>
+		<title>Whitelist - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Vendor - Lilia Documentation" />
+		<meta property="og:title" content="Whitelist - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Hook Documentation for Vendor Module." />
+			<meta property="og:description" content="Configuration for Server Whitelist Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -2154,7 +2154,7 @@ thirdPersonToggled											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../hooks/vendor/">Vendor</a></summary>
 
 									<ul>
@@ -3757,7 +3757,7 @@ takePermFlags											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/whitelist/">Whitelist</a></summary>
 
 									<ul>
@@ -3953,856 +3953,73 @@ takePermFlags											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Vendor</h1>
-	<h2>Hook Documentation for Vendor Module.</h2>
+	<h1>Whitelist</h1>
+	<h2>Configuration for Server Whitelist Module.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Functions</h1>
+	<h1 class="title">Tables</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="CanPlayerAccessVendor">
-					<h1><span class="realm server"></span></span>MODULE:CanPlayerAccessVendor(client, entity)</h1>
+				<a class="anchor" id="Configuration">
+					<h1><span class="realm shared"></span></span>Configuration</h1>
 				</a>
 
-					<p>Determines whether a player can access a vendor.</p>
+					<p>This table defines the default settings for the Whitelist Module.</p>
 			</header>
 
 
-					<h3>Parameters</h3>
+					<h3>Fields</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
+								<span class="tag parameter">WhitelistEnabled</span>
 
 
-								<p> The player attempting to access the vendor.</p>
+
+								<p> Enable or disable the Whitelist | <strong>bool</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">entity</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
+								<span class="tag parameter">BlacklistedEnabled</span>
 
 
-								<p> The vendor entity.</p>
-							</li>
-					</ul>
 
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>Whether the player is allowed to access the vendor.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="OnCharTradeVendor">
-					<h1><span class="realm server"></span></span>MODULE:OnCharTradeVendor(client, vendor, item, isSellingToVendor, character)</h1>
-				</a>
-
-					<p>Called when a character trades with a vendor.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The player character trading with the vendor.</p>
+								<p> Enable or disable the Blacklist | <strong>bool</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">vendor</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
+								<span class="tag parameter">BlacklistedSteamID64</span>
 
 
-								<p> The vendor entity being traded with.</p>
+
+								<p> Specify SteamID64s to be blacklisted from your server | <strong>table</strong></p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">item</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
+								<span class="tag parameter">WhitelistedSteamID64</span>
 
 
-								<p> The item being traded.</p>
+
+								<p> Specify SteamID64s to be whitelisted from your server | <strong>table</strong></p>
 							</li>
 					</ul>
 
-					<ul>
-
-							<li>
-								<span class="tag parameter">isSellingToVendor</span>
-
-									<span class="tag"><span class="type">Boolean</span></span>
-
-
-								<p> Indicates if the trade involves selling to the vendor.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">character</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The character entity of the player.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="OnOpenVendorMenu">
-					<h1><span class="realm client"></span></span>MODULE:OnOpenVendorMenu(self)</h1>
-				</a>
-
-					<p>Called when the vendor menu is opened.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">self</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="PlayerAccessVendor">
-					<h1><span class="realm server"></span></span>MODULE:PlayerAccessVendor(activator, self)</h1>
-				</a>
-
-					<p>Called when a player accesses a vendor.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">activator</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The player accessing the vendor.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">self</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="VendorClassUpdated">
-					<h1><span class="realm client"></span></span>MODULE:VendorClassUpdated(vendor, id, allowed)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Called when a vendor's allowed classes are updated.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">vendor</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity whose classes were updated.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">id</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The ID of the class.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">allowed</span>
-
-									<span class="tag"><span class="type">Boolean</span></span>
-
-
-								<p> Whether the class is allowed or not.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="VendorEdited">
-					<h1><span class="realm client"></span></span>MODULE:VendorEdited(vendor, key)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Called after a delay when a vendor's data is edited.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">vendor</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity whose data is being edited.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The key related to the specific data being edited.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="VendorExited">
-					<h1><span class="realm client"></span></span>MODULE:VendorExited()</h1>
-				</a>
-
-					<p>Called when a player exits from interacting with a vendor.</p>
-			</header>
-
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="VendorFactionUpdated">
-					<h1><span class="realm client"></span></span>MODULE:VendorFactionUpdated(vendor, id, allowed)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Called when a vendor's allowed factions are updated.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">vendor</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity whose factions were updated.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">id</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The ID of the faction.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">allowed</span>
-
-									<span class="tag"><span class="type">Boolean</span></span>
-
-
-								<p> Whether the faction is allowed or not.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="VendorItemMaxStockUpdated">
-					<h1><span class="realm client"></span></span>MODULE:VendorItemMaxStockUpdated(vendor, itemType, value)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Called when a vendor's item maximum stock is updated.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">vendor</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">itemType</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The type of the item.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">value</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The new maximum stock value.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="VendorItemModeUpdated">
-					<h1><span class="realm client"></span></span>MODULE:VendorItemModeUpdated(vendor, itemType, value)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Called when a vendor's item mode is updated.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">vendor</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">itemType</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The type of the item.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">value</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The new mode value.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="VendorItemPriceUpdated">
-					<h1><span class="realm client"></span></span>MODULE:VendorItemPriceUpdated(vendor, itemType, value)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Called when a vendor's item price is updated.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">vendor</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">itemType</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The type of the item.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">value</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The new price value.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="VendorItemStockUpdated">
-					<h1><span class="realm client"></span></span>MODULE:VendorItemStockUpdated(vendor, itemType, value)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Called when a vendor's item stock is updated.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">vendor</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">itemType</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The type of the item.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">value</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The new stock value.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="VendorMoneyUpdated">
-					<h1><span class="realm client"></span></span>MODULE:VendorMoneyUpdated(vendor, money, oldMoney)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Called when a vendor's money is updated.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">vendor</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">money</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The new money value.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">oldMoney</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The previous money value.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="VendorOpened">
-					<h1><span class="realm client"></span></span>MODULE:VendorOpened(vendor)</h1>
-				</a>
-
-					<p>Called when a vendor is opened.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">vendor</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity that was opened.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="VendorSynchronized">
-					<h1><span class="realm client"></span></span>MODULE:VendorSynchronized(vendor)</h1>
-				</a>
-
-					<p>Called when vendor synchronization data is received.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">vendor</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity whose data has been synchronized.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="VendorTradeEvent">
-					<h1><span class="realm server"></span></span>MODULE:VendorTradeEvent(client, entity, uniqueID, isSellingToVendor)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Called when a player attempts to trade with a vendor.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The player attempting to trade.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">entity</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">uniqueID</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The unique ID of the item being traded.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">isSellingToVendor</span>
-
-									<span class="tag"><span class="type">Boolean</span></span>
-
-
-								<p> Indicates if the player is selling to the vendor.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getPriceOverride">
-					<h1><span class="realm shared"></span></span>MODULE:getPriceOverride(self, uniqueID, price, isSellingToVendor)</h1>
-				</a>
-
-					<p>Gets the price override for an item.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">self</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The vendor entity.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">uniqueID</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The unique ID of the item.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">price</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The original price of the item.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">isSellingToVendor</span>
-
-									<span class="tag"><span class="type">Boolean</span></span>
-
-
-								<p> Indicates if the player is selling to the vendor.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">int</span>
-
-								<p>The overridden price.</p>
-							</li>
-
-				</ul>
 
 
 		</section>
