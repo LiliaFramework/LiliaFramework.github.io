@@ -3030,12 +3030,12 @@ chatNotify											</a>
 chatNotify											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3088,6 +3088,11 @@ getClass											</a>
 											<span class="realm shared"></span>
 											<a href="../../meta/player/#getClassData">
 getClassData											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../meta/player/#getCurrentVehicle">
+getCurrentVehicle											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -3193,6 +3198,11 @@ hasRagdoll											</a>
 											<span class="realm shared"></span>
 											<a href="../../meta/player/#hasSkillLevel">
 hasSkillLevel											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../meta/player/#hasValidVehicle">
+hasValidVehicle											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -4266,7 +4276,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="chatNotifyLocalized">
-					<h1><span class="realm client"></span></span>Player:chatNotifyLocalized(message, ...)</h1>
+					<h1><span class="realm server"></span></span>Player:chatNotifyLocalized(message, ...)</h1>
 				</a>
 
 					<p>Displays a notification for this player in the chatbox with the given language phrase.</p>
@@ -4305,7 +4315,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="chatNotifyLocalized">
-					<h1><span class="realm server"></span></span>Player:chatNotifyLocalized(message, ...)</h1>
+					<h1><span class="realm client"></span></span>Player:chatNotifyLocalized(message, ...)</h1>
 				</a>
 
 					<p>Displays a notification for this player in the chatbox with the given language phrase.</p>
@@ -4728,6 +4738,30 @@ object at a time that you can interface with.</p>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="getCurrentVehicle">
+					<h1><span class="realm shared"></span></span>Player:getCurrentVehicle()</h1>
+				</a>
+
+					<p>Gets the current vehicle the player is in, if any.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">Entity</span> or <span class="type">nil</span>
+
+								<p>The current vehicle entity, or nil if the player is not in a vehicle.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="getEyeEnt">
 					<h1><span class="realm shared"></span></span>Player:getEyeEnt(distance)</h1>
 				</a>
@@ -5014,7 +5048,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getPlayTime">
-					<h1><span class="realm client"></span></span>Player:getPlayTime()</h1>
+					<h1><span class="realm shared"></span></span>Player:getPlayTime()</h1>
 				</a>
 
 					<p>Retrieves the player's total playtime.</p>
@@ -5038,7 +5072,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getPlayTime">
-					<h1><span class="realm shared"></span></span>Player:getPlayTime()</h1>
+					<h1><span class="realm client"></span></span>Player:getPlayTime()</h1>
 				</a>
 
 					<p>Retrieves the player's total playtime.</p>
@@ -5384,6 +5418,30 @@ object at a time that you can interface with.</p>
 									<span class="type">bool</span>
 
 								<p>Whether the player's skill level meets or exceeds the specified level.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="hasValidVehicle">
+					<h1><span class="realm shared"></span></span>Player:hasValidVehicle()</h1>
+				</a>
+
+					<p>Checks if the player is in a valid vehicle.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>true if the player is in a valid vehicle, false otherwise.</p>
 							</li>
 
 				</ul>
@@ -6020,33 +6078,6 @@ object at a time that you can interface with.</p>
 					<h1><span class="realm client"></span></span>Player:openUI(panel)</h1>
 				</a>
 
-					<p>Opens a VGUI panel for the player.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">panel</span>
-
-
-
-								<p> The name of the VGUI panel to open.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="openUI">
-					<h1><span class="realm client"></span></span>Player:openUI(panel)</h1>
-				</a>
-
 					<p>Opens a UI panel for the player.</p>
 			</header>
 
@@ -6076,6 +6107,33 @@ object at a time that you can interface with.</p>
 							</li>
 
 				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="openUI">
+					<h1><span class="realm client"></span></span>Player:openUI(panel)</h1>
+				</a>
+
+					<p>Opens a VGUI panel for the player.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">panel</span>
+
+
+
+								<p> The name of the VGUI panel to open.</p>
+							</li>
+					</ul>
+
 
 
 		</section>
