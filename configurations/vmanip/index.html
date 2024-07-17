@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Porting From NutScript - Lilia Documentation</title>
+		<title>VManip - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Porting From NutScript - Lilia Documentation" />
+		<meta property="og:title" content="VManip - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="" />
+			<meta property="og:description" content="Configuration for VManip Compatibility Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -762,22 +762,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -936,12 +936,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1112,22 +1112,22 @@ isSteamID											</a>
 notifQuery											</a>
 										</li>
 										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.util/#notify">
+notify											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#notify">
 notify											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.util/#notify">
-notify											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#notifyLocalized">
 notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#notifyLocalized">
 notifyLocalized											</a>
 										</li>
@@ -2854,12 +2854,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../meta/item/#getName">
 getName											</a>
 										</li>
@@ -3020,22 +3020,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../meta/player/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../meta/player/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../meta/player/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3140,12 +3140,12 @@ getMoney											</a>
 getPermFlags											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm shared"></span>
 											<a href="../../meta/player/#getPlayTime">
 getPlayTime											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#getPlayTime">
 getPlayTime											</a>
 										</li>
@@ -3745,7 +3745,7 @@ takePermFlags											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/vmanip/">VManip</a></summary>
 
 									<ul>
@@ -3860,7 +3860,7 @@ takePermFlags											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../information/converting-from-nutscript/">Porting From NutScript</a></summary>
 
 									<ul>
@@ -3973,34 +3973,44 @@ takePermFlags											</a>
 
 			<article>
 					<div class="wrapper">
+						<header class="module">
+	<h1>VManip</h1>
+	<h2>Configuration for VManip Compatibility Module.</h2>
+</header>
 
-<h1>Porting From NutScript</h1>
+<p>
 
-<p>If you're considering porting Nutscript Plugins to Lilia Modules, here are some helpful pointers on replaceable variables. It's worth noting that while porting from Nutscript to Lilia is feasible and supported, going the other way around can be complex and may lead to long-term issues, as certain key hooks used in Lilia are not present in Nutscript.</p>
+</p>
 
+	<h1 class="title">Tables</h1>
 
-<pre><code> |  **Nutscript**   |    **Lilia**      |
- |:---------------: |:---------------:  |
- |       nut        |       lia         |
- |      PLUGIN      |      MODULE       |
- |    sh_plugin     |      module       |
- |    sh_schema     |      schema       |
- | nut.plugin.list  | lia.module.list   |
- |    sh_itemid     |      itemid       |
- |   sh_factionid   |    factionid      |
- |  sh_attributeid  |     attribid      |
-</code></pre>
+		<section class="method">
+			<header>
+				<a class="anchor" id="Configuration">
+					<h1><span class="realm shared"></span></span>Configuration</h1>
+				</a>
+
+					<p>This table defines the default settings for the VManip Module.</p>
+			</header>
 
 
+					<h3>Fields</h3>
 
-<p>Make sure to check the following available content to get assistance with your porting:</p>
 
-<ul>
-    <li><p><a href="https://LiliaFramework.github.io/Lilia/manual/structure_class/"><strong>Class Structure</strong></a></p></li>
-    <li><p><a href="https://LiliaFramework.github.io/Lilia/manual/structure_command/"><strong>Command Structure</strong></a></p></li>
-    <li><p><a href="https://LiliaFramework.github.io/Lilia/manual/structure_faction/"><strong>Faction Structure</strong></a></p></li>
-    <li><p><a href="https://LiliaFramework.github.io/Lilia/manual/structure_module"><strong>Module Structure</strong></a></p></li>
-</ul>
+					<ul>
+
+							<li>
+								<span class="tag parameter">VManipTakeBlacklist</span>
+
+
+
+								<p> implements a list of items that do not interact with VManip. This requires you to use Unique IDs | <strong>table</strong></p>
+							</li>
+					</ul>
+
+
+
+		</section>
 
 					</div>
 			</article>
