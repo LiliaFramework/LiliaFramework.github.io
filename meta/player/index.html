@@ -2981,6 +2981,11 @@ transfer											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../meta/player/#HasPrivilege">
+HasPrivilege											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../meta/player/#Name">
 Name											</a>
 										</li>
@@ -3140,12 +3145,12 @@ getMoney											</a>
 getPermFlags											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm shared"></span>
 											<a href="../../meta/player/#getPlayTime">
 getPlayTime											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm client"></span>
 											<a href="../../meta/player/#getPlayTime">
 getPlayTime											</a>
 										</li>
@@ -3987,6 +3992,44 @@ object at a time that you can interface with.</p>
 
 		<section class="method">
 			<header>
+				<a class="anchor" id="HasPrivilege">
+					<h1><span class="realm shared"></span></span>Player:HasPrivilege(privilegeName)</h1>
+				</a>
+
+					<p>Checks if the player has a specified CAMI privilege.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">privilegeName</span>
+
+
+
+								<p> string The name of the privilege to check.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if the player has the privilege, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="Name">
 					<h1><span class="realm shared"></span></span>Player:Name()</h1>
 				</a>
@@ -4231,34 +4274,6 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="chatNotify">
-					<h1><span class="realm server"></span></span>Player:chatNotify(message)</h1>
-				</a>
-
-					<p>Displays a notification for this player in the chatbox.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">message</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> Text to display in the notification</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="chatNotify">
 					<h1><span class="realm client"></span></span>Player:chatNotify(message)</h1>
 				</a>
 
@@ -4286,8 +4301,36 @@ object at a time that you can interface with.</p>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="chatNotify">
+					<h1><span class="realm server"></span></span>Player:chatNotify(message)</h1>
+				</a>
+
+					<p>Displays a notification for this player in the chatbox.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">message</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> Text to display in the notification</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="chatNotifyLocalized">
-					<h1><span class="realm server"></span></span>Player:chatNotifyLocalized(message, ...)</h1>
+					<h1><span class="realm client"></span></span>Player:chatNotifyLocalized(message, ...)</h1>
 				</a>
 
 					<p>Displays a notification for this player in the chatbox with the given language phrase.</p>
@@ -4326,7 +4369,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="chatNotifyLocalized">
-					<h1><span class="realm client"></span></span>Player:chatNotifyLocalized(message, ...)</h1>
+					<h1><span class="realm server"></span></span>Player:chatNotifyLocalized(message, ...)</h1>
 				</a>
 
 					<p>Displays a notification for this player in the chatbox with the given language phrase.</p>
@@ -4910,56 +4953,6 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getLiliaData">
-					<h1><span class="realm server"></span></span>Player:getLiliaData(key, default)</h1>
-				</a>
-
-					<p>Retrieves a value from the player's Lilia data.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The key for the data.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">default</span>
-
-
-
-								<p>[opt=nil] The default value to return if the key does not exist.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">any</span>
-
-								<p>The value corresponding to the key, or the default value if the key does not exist.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getLiliaData">
 					<h1><span class="realm client"></span></span>Player:getLiliaData(key, default)</h1>
 				</a>
 
@@ -4991,6 +4984,56 @@ object at a time that you can interface with.</p>
 									<span class="tag default">optional</span>
 
 								<p> The default value to return if the key does not exist.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">any</span>
+
+								<p>The value corresponding to the key, or the default value if the key does not exist.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getLiliaData">
+					<h1><span class="realm server"></span></span>Player:getLiliaData(key, default)</h1>
+				</a>
+
+					<p>Retrieves a value from the player's Lilia data.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The key for the data.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">default</span>
+
+
+
+								<p>[opt=nil] The default value to return if the key does not exist.</p>
 							</li>
 					</ul>
 
