@@ -3976,7 +3976,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="WhitelistAllClasses">
-					<h1><span class="realm shared"></span></span>Character:WhitelistAllClasses()</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:WhitelistAllClasses()</h1>
 				</a>
 
 					<p>Whitelists all classes for the character.</p>
@@ -3989,7 +3989,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="WhitelistAllFactions">
-					<h1><span class="realm shared"></span></span>Character:WhitelistAllFactions()</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:WhitelistAllFactions()</h1>
 				</a>
 
 					<p>Whitelists all factions for the character.</p>
@@ -4002,7 +4002,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="WhitelistEverything">
-					<h1><span class="realm shared"></span></span>Character:WhitelistEverything()</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:WhitelistEverything()</h1>
 				</a>
 
 					<p>Whitelists everything (all classes and factions) for the character.</p>
@@ -4015,7 +4015,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="__eq">
-					<h1><span class="realm shared"></span></span>Character:__eq(other)</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:__eq(other)</h1>
 				</a>
 
 					<p>Returns true if this character is equal to another character.  Internally, this checks character IDs.</p>
@@ -4058,7 +4058,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="__tostring">
-					<h1><span class="realm shared"></span></span>Character:__tostring()</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:__tostring()</h1>
 				</a>
 
 					<p>Returns a string representation of this character</p>
@@ -4086,7 +4086,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="addBoost">
-					<h1><span class="realm server"></span></span>Character:addBoost(boostID, attribID, boostAmount)</h1>
+					<h1><span class="realm server"></span></span>characterMeta:addBoost(boostID, attribID, boostAmount)</h1>
 				</a>
 
 					<p>Adds a boost to the character's attributes.</p>
@@ -4141,7 +4141,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="ban">
-					<h1><span class="realm server"></span></span>Character:ban(time)</h1>
+					<h1><span class="realm server"></span></span>characterMeta:ban(time)</h1>
 				</a>
 
 					<p>Forces a player off their current character, and prevents them from using the character for the specified amount of time.</p>
@@ -4170,7 +4170,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="classUnWhitelist">
-					<h1><span class="realm shared"></span></span>Character:classUnWhitelist(class)</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:classUnWhitelist(class)</h1>
 				</a>
 
 					<p>Removes the whitelist for a specific class from the character.</p>
@@ -4198,7 +4198,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="classWhitelist">
-					<h1><span class="realm shared"></span></span>Character:classWhitelist(class)</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:classWhitelist(class)</h1>
 				</a>
 
 					<p>Whitelists the character for a specific class.</p>
@@ -4226,7 +4226,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="delete">
-					<h1><span class="realm server"></span></span>Character:delete()</h1>
+					<h1><span class="realm server"></span></span>characterMeta:delete()</h1>
 				</a>
 
 					<p>Deletes the character from the character database and removes it from memory.</p>
@@ -4239,7 +4239,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="destroy">
-					<h1><span class="realm server"></span></span>Character:destroy()</h1>
+					<h1><span class="realm server"></span></span>characterMeta:destroy()</h1>
 				</a>
 
 					<p>Destroys the character, removing it from memory and notifying clients to remove it.</p>
@@ -4252,7 +4252,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getAttrib">
-					<h1><span class="realm shared"></span></span>Character:getAttrib(key, default)</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:getAttrib(key, default)</h1>
 				</a>
 
 					<p>Retrieves the value of a character attribute, including applied boosts.</p>
@@ -4307,7 +4307,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getBoost">
-					<h1><span class="realm shared"></span></span>Character:getBoost(attribID)</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:getBoost(attribID)</h1>
 				</a>
 
 					<p>Retrieves the boost value for a specific attribute.</p>
@@ -4349,7 +4349,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getBoosts">
-					<h1><span class="realm shared"></span></span>Character:getBoosts()</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:getBoosts()</h1>
 				</a>
 
 					<p>Retrieves all boosts applied to the character's attributes.</p>
@@ -4376,7 +4376,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getFlags">
-					<h1><span class="realm shared"></span></span>Character:getFlags()</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:getFlags()</h1>
 				</a>
 
 					<p>Returns all of the flags this character has.</p>
@@ -4401,7 +4401,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getID">
-					<h1><span class="realm shared"></span></span>Character:getID()</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:getID()</h1>
 				</a>
 
 					<p>Returns this character's database ID.  This is guaranteed to be unique.</p>
@@ -4425,7 +4425,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getItemWeapon">
-					<h1><span class="realm shared"></span></span>Character:getItemWeapon()</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:getItemWeapon()</h1>
 				</a>
 
 					<p>Retrieves the character's equipped weapon and its corresponding item from the inventory.</p>
@@ -4458,7 +4458,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getPlayer">
-					<h1><span class="realm shared"></span></span>Character:getPlayer()</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:getPlayer()</h1>
 				</a>
 
 					<p>Returns the player that owns this character.</p>
@@ -4482,7 +4482,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="giveFlags">
-					<h1><span class="realm server"></span></span>Character:giveFlags(flags)</h1>
+					<h1><span class="realm server"></span></span>characterMeta:giveFlags(flags)</h1>
 				</a>
 
 					<p>Adds a flag to the list of this character's accessible flags.  This does not overwrite existing flags.</p>
@@ -4518,7 +4518,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="giveMoney">
-					<h1><span class="realm server"></span></span>Character:giveMoney(amount, takingMoney)</h1>
+					<h1><span class="realm server"></span></span>characterMeta:giveMoney(amount, takingMoney)</h1>
 				</a>
 
 					<p>Gives or takes money from the character's wallet.</p>
@@ -4570,7 +4570,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="hasClassWhitelist">
-					<h1><span class="realm shared"></span></span>Character:hasClassWhitelist(class)</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:hasClassWhitelist(class)</h1>
 				</a>
 
 					<p>Checks if the player has whitelisted access to a class.</p>
@@ -4609,7 +4609,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="hasFlags">
-					<h1><span class="realm shared"></span></span>Character:hasFlags(flags)</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:hasFlags(flags)</h1>
 				</a>
 
 					<p>Returns <code>true</code> if the character has the given flag(s).</p>
@@ -4648,7 +4648,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="hasMoney">
-					<h1><span class="realm shared"></span></span>Character:hasMoney(amount)</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:hasMoney(amount)</h1>
 				</a>
 
 					<p>Checks if the character has at least the specified amount of money.</p>
@@ -4690,7 +4690,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="isClass">
-					<h1><span class="realm shared"></span></span>Character:isClass(class)</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:isClass(class)</h1>
 				</a>
 
 					<p>Checks if the player belongs to the specified class.</p>
@@ -4729,7 +4729,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="isFaction">
-					<h1><span class="realm shared"></span></span>Character:isFaction(faction)</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:isFaction(faction)</h1>
 				</a>
 
 					<p>Checks if the character belongs to the specified faction.</p>
@@ -4771,7 +4771,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="isFaction">
-					<h1><span class="realm shared"></span></span>Character:isFaction(faction)</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:isFaction(faction)</h1>
 				</a>
 
 					<p>Checks if the player belongs to the specified faction.</p>
@@ -4810,7 +4810,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="joinClass">
-					<h1><span class="realm shared"></span></span>Character:joinClass(class, isForced)</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:joinClass(class, isForced)</h1>
 				</a>
 
 					<p>Sets the character's class to the specified class.</p>
@@ -4865,7 +4865,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="kick">
-					<h1><span class="realm server"></span></span>Character:kick()</h1>
+					<h1><span class="realm server"></span></span>characterMeta:kick()</h1>
 				</a>
 
 					<p>Forces a player off their current character, and sends them to the character menu to select a character.</p>
@@ -4878,7 +4878,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="kickClass">
-					<h1><span class="realm shared"></span></span>Character:kickClass()</h1>
+					<h1><span class="realm shared"></span></span>characterMeta:kickClass()</h1>
 				</a>
 
 					<p>Kicks the character from their current class and joins them to the default class of their faction.</p>
@@ -4894,7 +4894,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="removeBoost">
-					<h1><span class="realm server"></span></span>Character:removeBoost(boostID, attribID)</h1>
+					<h1><span class="realm server"></span></span>characterMeta:removeBoost(boostID, attribID)</h1>
 				</a>
 
 					<p>Removes a boost from the character's attributes.</p>
@@ -4937,7 +4937,7 @@ for variables that automatically save to the character object.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="save">
-					<h1><span class="realm server"></span></span>Character:save(callback)</h1>
+					<h1><span class="realm server"></span></span>characterMeta:save(callback)</h1>
 				</a>
 
 					<p>Saves this character's info to the database.</p>
@@ -4972,7 +4972,7 @@ end)
 		<section class="method">
 			<header>
 				<a class="anchor" id="setAttrib">
-					<h1><span class="realm server"></span></span>Character:setAttrib(key, value)</h1>
+					<h1><span class="realm server"></span></span>characterMeta:setAttrib(key, value)</h1>
 				</a>
 
 					<p>Sets the value of a character attribute.</p>
@@ -5015,7 +5015,7 @@ end)
 		<section class="method">
 			<header>
 				<a class="anchor" id="setFlags">
-					<h1><span class="realm server"></span></span>Character:setFlags(flags)</h1>
+					<h1><span class="realm server"></span></span>characterMeta:setFlags(flags)</h1>
 				</a>
 
 					<p>Sets this character's accessible flags.  Note that this method overwrites <strong>all</strong> flags instead of adding them.</p>
@@ -5047,7 +5047,7 @@ end)
 		<section class="method">
 			<header>
 				<a class="anchor" id="sync">
-					<h1><span class="realm server"></span></span>Character:sync(receiver)</h1>
+					<h1><span class="realm server"></span></span>characterMeta:sync(receiver)</h1>
 				</a>
 
 					<div class="notice error">
@@ -5082,7 +5082,7 @@ end)
 		<section class="method">
 			<header>
 				<a class="anchor" id="takeFlags">
-					<h1><span class="realm server"></span></span>Character:takeFlags(flags)</h1>
+					<h1><span class="realm server"></span></span>characterMeta:takeFlags(flags)</h1>
 				</a>
 
 					<p>Removes this character's access to the given flags.</p>
@@ -5115,7 +5115,7 @@ character:takeFlags("p")
 		<section class="method">
 			<header>
 				<a class="anchor" id="takeMoney">
-					<h1><span class="realm server"></span></span>Character:takeMoney(amount)</h1>
+					<h1><span class="realm server"></span></span>characterMeta:takeMoney(amount)</h1>
 				</a>
 
 					<p>Takes money from the character's wallet.</p>
@@ -5154,7 +5154,7 @@ character:takeFlags("p")
 		<section class="method">
 			<header>
 				<a class="anchor" id="updateAttrib">
-					<h1><span class="realm server"></span></span>Character:updateAttrib(key, value)</h1>
+					<h1><span class="realm server"></span></span>characterMeta:updateAttrib(key, value)</h1>
 				</a>
 
 					<p>Updates the value of a character attribute by adding a specified value to it.</p>
