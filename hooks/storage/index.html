@@ -2080,11 +2080,6 @@ CanPlayerSpawnStorage											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../hooks/storage/#CanPlayerSpawnStorage">
-CanPlayerSpawnStorage											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
 											<a href="../../hooks/storage/#CanSaveData">
 CanSaveData											</a>
 										</li>
@@ -4044,70 +4039,6 @@ takePermFlags											</a>
     return client:IsAdmin() -- Restrict spawning containers to admins.
 end
 </code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="CanPlayerSpawnStorage">
-					<h1><span class="realm server"></span></span>MODULE:CanPlayerSpawnStorage(client, entity, data)</h1>
-				</a>
-
-					<p>Determines whether a player is allowed to spawn a container entity.
- This hook allows customization of permissions for players to spawn containers.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The player attempting to spawn a container.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">entity</span>
-
-									<span class="tag"><span class="type">Entity</span></span>
-
-
-								<p> The container entity being spawned.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">data</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> Additional data related to the container being spawned.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>Whether the player is allowed to spawn the container.</p>
-							</li>
-
-				</ul>
-
 
 		</section>
 		<section class="method">
