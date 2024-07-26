@@ -687,8 +687,23 @@ get											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.item/#getInstancedItemByID">
+getInstancedItemByID											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.item/#getInv">
 getInv											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.item/#getItemByID">
+getItemByID											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.item/#getItemDataByID">
+getItemDataByID											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -739,6 +754,11 @@ registerInv											</a>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.item/#restoreInv">
 restoreInv											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.item/#setItemDataByID">
+setItemDataByID											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -4123,6 +4143,45 @@ syncItemAdded											</a>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="getInstancedItemByID">
+					<h1><span class="realm shared"></span></span>getInstancedItemByID(itemID)</h1>
+				</a>
+
+					<p>Retrieves an instanced item by its ID.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemID</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The ID of the item instance.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>tab The item instance.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="getInv">
 					<h1><span class="realm shared"></span></span>getInv(invID)</h1>
 				</a>
@@ -4154,6 +4213,84 @@ syncItemAdded											</a>
 									<span class="tag type">any</span>
 
 								<p>tab The inventory object.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getItemByID">
+					<h1><span class="realm shared"></span></span>getItemByID(itemID)</h1>
+				</a>
+
+					<p>Retrieves an item instance by its ID and determines its location.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemID</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The ID of the item instance.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>tab The item instance along with its location.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getItemDataByID">
+					<h1><span class="realm shared"></span></span>getItemDataByID(itemID)</h1>
+				</a>
+
+					<p>Retrieves an item's data by its ID.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemID</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The ID of the item instance.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>tab The item's data.</p>
 							</li>
 
 				</ul>
@@ -4194,6 +4331,7 @@ syncItemAdded											</a>
 							<li>
 								<span class="tag parameter">uniqueID</span>
 
+									<span class="tag"><span class="type">String</span></span>
 
 
 								<p>
@@ -4715,6 +4853,104 @@ syncItemAdded											</a>
 							</li>
 					</ul>
 
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="setItemDataByID">
+					<h1><span class="realm server"></span></span>setItemDataByID(itemID, key, value, receivers, noSave, noCheckEntity)</h1>
+				</a>
+
+					<p>Sets the data of an item by its ID.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemID</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The ID of the item instance.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The data key to set.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">value</span>
+
+
+
+								<p> The value to set for the data key.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">receivers</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> Optional table of receivers for network updates.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">noSave</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Optional flag to skip database saving.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">noCheckEntity</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> Optional flag to skip entity checks.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean Success status.</p>
+							</li>
+
+				</ul>
 
 
 		</section>
