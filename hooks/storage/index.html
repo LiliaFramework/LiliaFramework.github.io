@@ -4077,7 +4077,7 @@ syncItemAdded											</a>
 
 				<h3>Example Usage</h3>
 					<pre><code>function MODULE:CanPlayerSpawnStorage(client, entity, data)
-    return client:IsAdmin() -- Restrict spawning containers to admins.
+    return client:isStaff() -- Restrict spawning containers to staff.
 end
 </code></pre>
 

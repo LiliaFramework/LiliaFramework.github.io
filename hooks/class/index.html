@@ -4052,7 +4052,7 @@ valid in class tables that are created in <code>schema/classes/classname.lua</co
 
 				<h3>Example Usage</h3>
 					<pre><code>function CLASS:OnCanBe(client)
-	return client:IsAdmin() or client:getChar():hasFlags("Z") -- Only admins or people with the Z flag are allowed in this class!
+	return client:isStaff() or client:getChar():hasFlags("Z") -- Only staff or people with the Z flag are allowed in this class!
 end
 </code></pre>
 

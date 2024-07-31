@@ -4067,8 +4067,8 @@ syncItemAdded											</a>
 
 				<h3>Example Usage</h3>
 					<pre><code>function MODULE:CanPlayerCreateChar(client)
-	if (!client:IsAdmin()) then
-		return false, "notNow" -- only allow admins to create a characr
+	if (!client:isStaff()) then
+		return false, "notNow" -- only allow staff to create a character
 	end
 end
 -- non-admins will see the message "You are not allowed to do this ght now!"
@@ -4138,7 +4138,7 @@ end
 
 				<h3>Example Usage</h3>
 					<pre><code>function MODULE:CanPlayerJoinClass(client, class, info)
-	return client:IsAdmin() -- Restrict joining classes to admins only.
+	return client:isStaff() -- Restrict joining classes to staff only.
 end
 </code></pre>
 
