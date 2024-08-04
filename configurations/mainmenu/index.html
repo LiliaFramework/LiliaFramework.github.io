@@ -2828,6 +2828,11 @@ Name											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../player meta/framework/#RequestDropdown">
+RequestDropdown											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#RequestString">
 RequestString											</a>
 										</li>
@@ -2862,22 +2867,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../player meta/framework/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../player meta/framework/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -2962,12 +2967,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -2982,12 +2987,12 @@ getMoney											</a>
 getPermFlags											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#getPlayTime">
 getPlayTime											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#getPlayTime">
 getPlayTime											</a>
 										</li>
@@ -4056,18 +4061,7 @@ syncItemAdded											</a>
 
 
 
-								<p> Set Background Image URL (if applicable) | <strong>string</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">BackgroundIsYoutubeVideo</span>
-
-
-
-								<p> Set If Background Screen is a YT video | <strong>boolean</strong></p>
+								<p> Set Background Image | <strong>string</strong></p>
 							</li>
 					</ul>
 
@@ -4085,11 +4079,22 @@ syncItemAdded											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">CharCreationTransparentBackground</span>
+								<span class="tag parameter">CanSelectBodygroups</span>
 
 
 
-								<p> Set Transparent Background during Character Creation | <strong>boolean</strong></p>
+								<p> Enable or disable selection of bodygroups in the character menu | <strong>boolean</strong></p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">CanSelectSkins</span>
+
+
+
+								<p> Enable or disable selection of skins in the character menu | <strong>boolean</strong></p>
 							</li>
 					</ul>
 

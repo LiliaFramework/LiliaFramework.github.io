@@ -2828,6 +2828,11 @@ Name											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../player meta/framework/#RequestDropdown">
+RequestDropdown											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#RequestString">
 RequestString											</a>
 										</li>
@@ -2862,22 +2867,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../player meta/framework/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../player meta/framework/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -2962,12 +2967,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -2982,12 +2987,12 @@ getMoney											</a>
 getPermFlags											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#getPlayTime">
 getPlayTime											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#getPlayTime">
 getPlayTime											</a>
 										</li>
@@ -4087,6 +4092,70 @@ object at a time that you can interface with.</p>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="RequestDropdown">
+					<h1><span class="realm shared"></span></span>playerMeta:RequestDropdown(title, subTitle, options, callback)</h1>
+				</a>
+
+					<p>Requests a dropdown selection from the player.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">title</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The title of the request.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">subTitle</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The subtitle of the request.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">options</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> The table of options to choose from.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">callback</span>
+
+									<span class="tag"><span class="type">Function</span></span>
+
+
+								<p> The function to call upon receiving the selected option.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="RequestString">
 					<h1><span class="realm shared"></span></span>playerMeta:RequestString(title, subTitle, callback, default)</h1>
 				</a>
@@ -4355,7 +4424,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="chatNotifyLocalized">
-					<h1><span class="realm client"></span></span>playerMeta:chatNotifyLocalized(message, ...)</h1>
+					<h1><span class="realm server"></span></span>playerMeta:chatNotifyLocalized(message, ...)</h1>
 				</a>
 
 					<p>Displays a notification for this player in the chatbox with the given language phrase.</p>
@@ -4394,7 +4463,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="chatNotifyLocalized">
-					<h1><span class="realm server"></span></span>playerMeta:chatNotifyLocalized(message, ...)</h1>
+					<h1><span class="realm client"></span></span>playerMeta:chatNotifyLocalized(message, ...)</h1>
 				</a>
 
 					<p>Displays a notification for this player in the chatbox with the given language phrase.</p>
@@ -4978,56 +5047,6 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getLiliaData">
-					<h1><span class="realm server"></span></span>playerMeta:getLiliaData(key, default)</h1>
-				</a>
-
-					<p>Retrieves a value from the player's Lilia data.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The key for the data.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">default</span>
-
-
-
-								<p>[opt=nil] The default value to return if the key does not exist.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">any</span>
-
-								<p>The value corresponding to the key, or the default value if the key does not exist.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getLiliaData">
 					<h1><span class="realm client"></span></span>playerMeta:getLiliaData(key, default)</h1>
 				</a>
 
@@ -5059,6 +5078,56 @@ object at a time that you can interface with.</p>
 									<span class="tag default">optional</span>
 
 								<p> The default value to return if the key does not exist.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">any</span>
+
+								<p>The value corresponding to the key, or the default value if the key does not exist.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getLiliaData">
+					<h1><span class="realm server"></span></span>playerMeta:getLiliaData(key, default)</h1>
+				</a>
+
+					<p>Retrieves a value from the player's Lilia data.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The key for the data.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">default</span>
+
+
+
+								<p>[opt=nil] The default value to return if the key does not exist.</p>
 							</li>
 					</ul>
 
@@ -5127,7 +5196,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getPlayTime">
-					<h1><span class="realm shared"></span></span>playerMeta:getPlayTime()</h1>
+					<h1><span class="realm client"></span></span>playerMeta:getPlayTime()</h1>
 				</a>
 
 					<p>Retrieves the player's total playtime.</p>
@@ -5151,7 +5220,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getPlayTime">
-					<h1><span class="realm client"></span></span>playerMeta:getPlayTime()</h1>
+					<h1><span class="realm shared"></span></span>playerMeta:getPlayTime()</h1>
 				</a>
 
 					<p>Retrieves the player's total playtime.</p>
