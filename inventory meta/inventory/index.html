@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Index - Lilia Documentation</title>
+		<title>Inventory - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Index - Lilia Documentation" />
+		<meta property="og:title" content="Inventory - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="" />
+			<meta property="og:description" content="The Inventory Meta for the Grid Inventory Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -787,22 +787,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -961,12 +961,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1137,22 +1137,22 @@ isSteamID											</a>
 notifQuery											</a>
 										</li>
 										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.util/#notify">
+notify											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#notify">
 notify											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.util/#notify">
-notify											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#notifyLocalized">
 notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#notifyLocalized">
 notifyLocalized											</a>
 										</li>
@@ -1650,7 +1650,7 @@ TooltipPaint											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../hooks/inventory/">Inventory</a></summary>
 
 									<ul>
@@ -2761,12 +2761,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
@@ -2956,22 +2956,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../player meta/framework/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../player meta/framework/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3674,7 +3674,7 @@ syncItemAdded											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../inventory meta/inventory/">Inventory</a></summary>
 
 									<ul>
@@ -4215,7 +4215,7 @@ wipeItems											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../store/index/">Index</a></summary>
 
 									<ul>
@@ -4287,18 +4287,716 @@ wipeItems											</a>
 
 			<article>
 					<div class="wrapper">
+						<header class="module">
+	<h1>Inventory</h1>
+	<h2>The Inventory Meta for the Grid Inventory Module.</h2>
+</header>
 
-<h1>Index</h1>
+<p>
 
-<p>The catalog is divided into five categories:</p>
+</p>
 
-<ul>
-    <li><p><strong><a href="https://liliaframework.github.io/store/mechanics/">General Mechanics</a></strong>: A diverse array of mechanics, ranging from passive to active ones. This category includes various features designed to help run a server and keep it active.</p></li>
-    <li><p><strong><a href="https://liliaframework.github.io/store/npcs/">Talkable NPCs</a></strong>: Submodules tied to a framework of talkable NPCs, offering alternative dialogue and optional voice line outputs.</p></li>
-    <li><p><strong><a href="https://liliaframework.github.io/store/management/">Management</a></strong>: Management modules aimed at assisting admins with tasks, including NPC spawns, daily rewards, and other minor management features.</p></li>
-    <li><p><strong><a href="https://liliaframework.github.io/store/ui/">HUDs/UIs</a></strong>: Various user interfaces designed to enhance the visual appeal of your game mode.</p></li>
-    <li><p><strong><a href="https://liliaframework.github.io/store/compatibility/">Compatibility</a></strong>: Various modules to implement compatibility with non-Lilia native content.</p></li>
-</ul>
+	<h1 class="title">Functions</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="add">
+					<h1><span class="realm server"></span></span>inventoryMeta:add(itemTypeOrItem, xOrQuantity, yOrData, noReplicate)</h1>
+				</a>
+
+					<p>Adds an item to the inventory.
+ Handles both adding a single item or stacking multiple items if applicable.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemTypeOrItem</span>
+
+
+
+								<p> The type of the item or the item object to add.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">xOrQuantity</span>
+
+
+
+								<p> The X position in the grid or the quantity of items to add.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">yOrData</span>
+
+
+
+								<p> The Y position in the grid or additional data for the item.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">noReplicate</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> If true, the addition will not be replicated to clients.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">deferred</span>
+
+								<p>A deferred object that resolves when the item is added.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="canItemFitInInventory">
+					<h1><span class="realm shared"></span></span>inventoryMeta:canItemFitInInventory(item, x, y)</h1>
+				</a>
+
+					<p>Checks if an item can fit in the inventory at a given position.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">item</span>
+
+
+
+								<p> The item to check.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">x</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The X position in the inventory grid.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">y</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The Y position in the inventory grid.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>Whether the item can fit in the inventory.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="configure">
+					<h1><span class="realm shared"></span></span>inventoryMeta:configure()</h1>
+				</a>
+
+					<p>Configures the inventory with specific access rules.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="doesFitInventory">
+					<h1><span class="realm shared"></span></span>inventoryMeta:doesFitInventory(item)</h1>
+				</a>
+
+					<p>Checks if an item can fit in the inventory, including within bags.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">item</span>
+
+
+
+								<p> The item to check.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>Whether the item can fit in the inventory.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="doesItemFitAtPos">
+					<h1><span class="realm shared"></span></span>inventoryMeta:doesItemFitAtPos(testItem, x, y)</h1>
+				</a>
+
+					<p>Checks if an item fits at a specific position in the inventory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">testItem</span>
+
+
+
+								<p> The item to check.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">x</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The X position in the inventory grid.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">y</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The Y position in the inventory grid.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>Whether the item fits at the given position.</p>
+							</li>
+
+							<li>
+									<span class="type">item</span>
+
+								<p>The item it overlaps with, if any.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="doesItemOverlapWithOther">
+					<h1><span class="realm shared"></span></span>inventoryMeta:doesItemOverlapWithOther(testItem, x, y, item)</h1>
+				</a>
+
+					<p>Checks if an item overlaps with another item in the inventory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">testItem</span>
+
+
+
+								<p> The item to test for overlap.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">x</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The X position of the test item in the inventory grid.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">y</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The Y position of the test item in the inventory grid.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">item</span>
+
+
+
+								<p> The item to check against.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>Whether the test item overlaps with the given item.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="findFreePosition">
+					<h1><span class="realm shared"></span></span>inventoryMeta:findFreePosition(item)</h1>
+				</a>
+
+					<p>Finds a free position in the inventory where an item can fit.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">item</span>
+
+
+
+								<p> The item to find a position for.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">int</span>
+
+								<p>The X position in the inventory grid.</p>
+							</li>
+
+							<li>
+									<span class="type">int</span>
+
+								<p>The Y position in the inventory grid.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getHeight">
+					<h1><span class="realm shared"></span></span>inventoryMeta:getHeight()</h1>
+				</a>
+
+					<p>Retrieves the height of the inventory grid.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">integer</span>
+
+								<p>The height of the inventory grid.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getItems">
+					<h1><span class="realm shared"></span></span>inventoryMeta:getItems(noRecurse)</h1>
+				</a>
+
+					<p>Retrieves all items in the inventory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">noRecurse</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether to include items inside bags (nested inventories).</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
+
+								<p>A table of all items in the inventory.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getSize">
+					<h1><span class="realm shared"></span></span>inventoryMeta:getSize()</h1>
+				</a>
+
+					<p>Retrieves the size (width and height) of the inventory grid.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">integer</span>
+
+								<p>The width of the inventory grid.</p>
+							</li>
+
+							<li>
+									<span class="type">integer</span>
+
+								<p>The height of the inventory grid.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getWidth">
+					<h1><span class="realm shared"></span></span>inventoryMeta:getWidth()</h1>
+				</a>
+
+					<p>Retrieves the width of the inventory grid.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">integer</span>
+
+								<p>The width of the inventory grid.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="remove">
+					<h1><span class="realm server"></span></span>inventoryMeta:remove(itemTypeOrID, quantity)</h1>
+				</a>
+
+					<p>Removes an item or a quantity of items from the inventory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemTypeOrID</span>
+
+
+
+								<p> The type of the item or its ID to remove.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">quantity</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+									<span class="tag default">default: 1</span>
+
+								<p> The quantity of items to remove.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">deferred</span>
+
+								<p>A deferred object that resolves when the item is removed.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="requestTransfer">
+					<h1><span class="realm client"></span></span>inventoryMeta:requestTransfer(itemID, destinationID, x, y)</h1>
+				</a>
+
+					<p>Requests a transfer of an item to another inventory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">itemID</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The ID of the item to transfer.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">destinationID</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The ID of the destination inventory.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">x</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The X position in the destination grid.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">y</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The Y position in the destination grid.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="setOwner">
+					<h1><span class="realm server"></span></span>inventoryMeta:setOwner(owner, fullUpdate)</h1>
+				</a>
+
+					<p>Sets the owner of the inventory.
+ If the owner is a player, it sets the inventory's owner to the player's character ID.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">owner</span>
+
+
+
+								<p> The new owner of the inventory (Player or number).</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">fullUpdate</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether to sync the inventory to the client.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="setSize">
+					<h1><span class="realm server"></span></span>inventoryMeta:setSize(w, h)</h1>
+				</a>
+
+					<p>Sets the size of the inventory grid.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">w</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The width of the grid.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">h</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The height of the grid.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="wipeItems">
+					<h1><span class="realm server"></span></span>inventoryMeta:wipeItems()</h1>
+				</a>
+
+					<p>Removes all items from the inventory.</p>
+			</header>
+
+
+
+
+		</section>
 
 					</div>
 			</article>
