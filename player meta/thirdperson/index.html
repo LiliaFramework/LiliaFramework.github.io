@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>RaiseWeapons - Lilia Documentation</title>
+		<title>ThirdPerson - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="RaiseWeapons - Lilia Documentation" />
+		<meta property="og:title" content="ThirdPerson - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="The Player Meta for the Raise Weapons Module." />
+			<meta property="og:description" content="The Player Meta for the Third Person Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -787,22 +787,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -961,12 +961,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1137,22 +1137,22 @@ isSteamID											</a>
 notifQuery											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.util/#notify">
+notify											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#notify">
 notify											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.util/#notify">
-notify											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.util/#notifyLocalized">
 notifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.util/#notifyLocalized">
 notifyLocalized											</a>
 										</li>
@@ -2153,7 +2153,7 @@ isSuitableForTrunk											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../hooks/thirdperson/">ThirdPerson</a></summary>
 
 									<ul>
@@ -2761,12 +2761,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
@@ -2956,22 +2956,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../../player meta/framework/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3411,32 +3411,6 @@ syncParts											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
-									<summary><a href="../../player meta/raiseweapons/">RaiseWeapons</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/raiseweapons/#isWepRaised">
-isWepRaised											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/raiseweapons/#setWepRaised">
-setWepRaised											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/raiseweapons/#toggleWepRaised">
-toggleWepRaised											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
 									<details >
 									<summary><a href="../../player meta/spawns/">Spawns</a></summary>
 
@@ -3452,6 +3426,22 @@ HasDeathTimer											</a>
 											<span class="realm server"></span>
 											<a href="../../player meta/spawns/#SetDeathTimer">
 SetDeathTimer											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details open>
+									<summary><a href="../../player meta/thirdperson/">ThirdPerson</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/thirdperson/#CanOverrideView">
+CanOverrideView											</a>
 										</li>
 
 									</ul>
@@ -4080,7 +4070,7 @@ wipeItems											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/thirdperson/">ThirdPerson</a></summary>
 
 									<ul>
@@ -4298,8 +4288,8 @@ wipeItems											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>RaiseWeapons</h1>
-	<h2>The Player Meta for the Raise Weapons Module.</h2>
+	<h1>ThirdPerson</h1>
+	<h2>The Player Meta for the Third Person Module.</h2>
 </header>
 
 <p>
@@ -4310,12 +4300,12 @@ wipeItems											</a>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="isWepRaised">
-					<h1><span class="realm shared"></span></span>playerMeta:isWepRaised()</h1>
+				<a class="anchor" id="CanOverrideView">
+					<h1><span class="realm shared"></span></span>playerMeta:CanOverrideView()</h1>
 				</a>
 
-					<p>Checks if the player's weapon is raised.
- This function determines whether the player's currently active weapon is raised based on various conditions.</p>
+					<p>Checks if a player can override the view to third-person.
+ This function checks various conditions to determine if the player can switch to a third-person view.</p>
 			</header>
 
 
@@ -4326,66 +4316,10 @@ wipeItems											</a>
 							<li>
 									<span class="type">boolean</span>
 
-								<p>true if the weapon is raised, false otherwise.</p>
+								<p>True if the player can override the view to third-person, false otherwise.</p>
 							</li>
 
 				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="setWepRaised">
-					<h1><span class="realm server"></span></span>playerMeta:setWepRaised(state, notification)</h1>
-				</a>
-
-					<p>Sets the raised state of the player's weapon.
- This function sets whether the player's active weapon should be raised or lowered and optionally sends a notification.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">state</span>
-
-									<span class="tag"><span class="type">Boolean</span></span>
-
-
-								<p> The desired raised state (true for raised, false for lowered).</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">notification</span>
-
-									<span class="tag"><span class="type">Boolean</span></span>
-
-									<span class="tag default">optional</span>
-
-								<p> Whether to send a notification about the action.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="toggleWepRaised">
-					<h1><span class="realm server"></span></span>playerMeta:toggleWepRaised()</h1>
-				</a>
-
-					<p>Toggles the raised state of the player's weapon.
- This function toggles the weapon's raised state and triggers corresponding events.</p>
-			</header>
-
-
 
 
 		</section>
