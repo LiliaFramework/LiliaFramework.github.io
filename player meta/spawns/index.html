@@ -3419,8 +3419,8 @@ syncParts											</a>
 
 										<li>
 											<span class="realm shared"></span>
-											<a href="../../player meta/spawns/#HasDeathTimer">
-HasDeathTimer											</a>
+											<a href="../../player meta/spawns/#IsOnDeathTimer">
+IsOnDeathTimer											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -4300,13 +4300,12 @@ wipeItems											</a>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="HasDeathTimer">
-					<h1><span class="realm shared"></span></span>playerMeta:HasDeathTimer()</h1>
+				<a class="anchor" id="IsOnDeathTimer">
+					<h1><span class="realm shared"></span></span>playerMeta:IsOnDeathTimer()</h1>
 				</a>
 
-					<p>Checks if the player has an active death timer.
- This function restores a certain amount of stamina to the player, clamping the value between 0 and the character's maximum stamina.
- If stamina is restored above a certain threshold, it may trigger the removal of a breathless state.</p>
+					<p>Checks if the player is still within the spawn timer period after death.
+ This function checks if the current time is less than the death time, indicating that the spawn timer is still active.</p>
 			</header>
 
 
@@ -4317,7 +4316,7 @@ wipeItems											</a>
 							<li>
 									<span class="type">boolean</span>
 
-								<p>True if the death timer is active, false otherwise.</p>
+								<p>True if the death timer is active and within the spawn time, false otherwise.</p>
 							</li>
 
 				</ul>
@@ -4330,9 +4329,8 @@ wipeItems											</a>
 					<h1><span class="realm server"></span></span>playerMeta:SetDeathTimer()</h1>
 				</a>
 
-					<p>Sets the player's death timer.
- This function decreases the player's stamina by a specified amount, clamping the value between 0 and the character's maximum stamina.
- If stamina is depleted, it may trigger a breathless state.</p>
+					<p>Sets the player's death timer to the current time plus the configured spawn time.
+ This function records the time of death for the player, setting the death timer to expire after the spawn time.</p>
 			</header>
 
 
