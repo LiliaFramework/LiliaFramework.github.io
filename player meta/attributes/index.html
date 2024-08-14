@@ -2425,16 +2425,6 @@ getMaxStamina											</a>
 getStamina											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
-											<a href="../../character meta/attributes/#hasSkillLevel">
-hasSkillLevel											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../character meta/attributes/#meetsRequiredSkills">
-meetsRequiredSkills											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../character meta/attributes/#removeBoost">
 removeBoost											</a>
@@ -2968,6 +2958,16 @@ transfer											</a>
 											<span class="realm server"></span>
 											<a href="../../player meta/attributes/#consumeStamina">
 consumeStamina											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/attributes/#hasSkillLevel">
+hasSkillLevel											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/attributes/#meetsRequiredSkills">
+meetsRequiredSkills											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -4451,6 +4451,96 @@ wipeItems											</a>
 							</li>
 					</ul>
 
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="hasSkillLevel">
+					<h1><span class="realm shared"></span></span>playerMeta:hasSkillLevel(skill, level)</h1>
+				</a>
+
+					<p>Checks if the player has a skill level equal to or greater than the specified level.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">skill</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The skill to check.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">level</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The required skill level.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether the player's skill level meets or exceeds the specified level.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="meetsRequiredSkills">
+					<h1><span class="realm shared"></span></span>playerMeta:meetsRequiredSkills(requiredSkillLevels)</h1>
+				</a>
+
+					<p>Checks if the player meets the required skill levels.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">requiredSkillLevels</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> A table containing the required skill levels.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether the player meets all the required skill levels.</p>
+							</li>
+
+				</ul>
 
 
 		</section>
