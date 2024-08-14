@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Faction - Lilia Documentation</title>
+		<title>Permissions - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Faction - Lilia Documentation" />
+		<meta property="og:title" content="Permissions - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Faction setup hooks." />
+			<meta property="og:description" content="The Player Meta for the Permissions Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -1582,7 +1582,7 @@ PostDrawInventory											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../hooks/faction/">Faction</a></summary>
 
 									<ul>
@@ -3391,7 +3391,7 @@ syncParts											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../player meta/permissions/">Permissions</a></summary>
 
 									<ul>
@@ -3476,23 +3476,8 @@ classWhitelist											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#getClass">
-getClass											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#getClassData">
-getClassData											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
 											<a href="../../player meta/teams/#hasClassWhitelist">
 hasClassWhitelist											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#hasWhitelist">
-hasWhitelist											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -3505,9 +3490,14 @@ isClass											</a>
 isFaction											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/teams/#setWhitelisted">
-setWhitelisted											</a>
+											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#joinClass">
+joinClass											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#kickClass">
+kickClass											</a>
 										</li>
 
 									</ul>
@@ -3547,8 +3537,23 @@ classWhitelist											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#getClass">
+getClass											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#getClassData">
+getClassData											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../player meta/teams/#hasClassWhitelist">
 hasClassWhitelist											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#hasWhitelist">
+hasWhitelist											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -3561,14 +3566,9 @@ isClass											</a>
 isFaction											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#joinClass">
-joinClass											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#kickClass">
-kickClass											</a>
+											<span class="realm server"></span>
+											<a href="../../player meta/teams/#setWhitelisted">
+setWhitelisted											</a>
 										</li>
 
 									</ul>
@@ -4043,7 +4043,7 @@ wipeItems											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/permissions/">Permissions</a></summary>
 
 									<ul>
@@ -4415,229 +4415,110 @@ wipeItems											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Faction</h1>
-	<h2>Faction setup hooks.</h2>
+	<h1>Permissions</h1>
+	<h2>The Player Meta for the Permissions Module.</h2>
 </header>
 
-<p>Factions have their own hooks that are called for various reasons, with the most common being to set up a character
-once it's created and assigned to a certain faction. For example, giving a police faction character a weapon upon creation.
-These hooks are used in faction tables that are created in <code>schema/factions/sfactionname.lua</code> and cannot be used like
-regular gamemode hooks.</p>
+<p>
+
+</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="GetDefaultDesc">
-					<h1><span class="realm shared"></span></span>FACTION:GetDefaultDesc(client, faction)</h1>
+				<a class="anchor" id="isStaff">
+					<h1><span class="realm shared"></span></span>playerMeta:isStaff()</h1>
 				</a>
 
-					<p>Called when the default description for a character needs to be retrieved.
- This function allows factions to define custom default descriptions for characters.</p>
+					<p>Checks if the player is a staff member.</p>
 			</header>
 
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The client for whom the default description is being retrieved</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">faction</span>
-
-									<span class="tag"><span class="type">Character</span></span>
-
-
-								<p> The faction ID for which the default description is being retrieved</p>
-							</li>
-					</ul>
 
 
 				<h3>Returns</h3>
 				<ul>
 
 							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+									<span class="type">bool</span>
 
-								<p>The default description for the newly created character</p>
+								<p>Whether the player is a staff member.</p>
 							</li>
 
 				</ul>
 
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:GetDefaultDesc(client, faction)
-	return "A police officer"
-end
-</code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="GetDefaultName">
-					<h1><span class="realm shared"></span></span>FACTION:GetDefaultName(client)</h1>
+				<a class="anchor" id="isStaffOnDuty">
+					<h1><span class="realm shared"></span></span>playerMeta:isStaffOnDuty()</h1>
 				</a>
 
-					<p>Called when the default name for a character needs to be retrieved (i.e., upon initial creation).</p>
+					<p>Checks if the staff member is currently on duty (FACTION_STAFF).</p>
 			</header>
 
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The client for whom the default name is being retrieved</p>
-							</li>
-					</ul>
 
 
 				<h3>Returns</h3>
 				<ul>
 
 							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+									<span class="type">bool</span>
 
-								<p>The default name for the newly created character</p>
+								<p>Whether the staff member is currently on duty.</p>
 							</li>
 
 				</ul>
 
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:GetDefaultName(client)
-	return "CT-" .. math.random(111111, 999999)
-end
-</code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="OnCharCreated">
-					<h1><span class="realm server"></span></span>FACTION:OnCharCreated(client, character)</h1>
+				<a class="anchor" id="isUser">
+					<h1><span class="realm shared"></span></span>playerMeta:isUser()</h1>
 				</a>
 
-					<p>Called when a character has been initially created and assigned to this faction.</p>
+					<p>Checks if the player belongs to the "user" user group.</p>
 			</header>
 
 
-					<h3>Parameters</h3>
 
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The client that owns the character</p>
-							</li>
-					</ul>
-
-					<ul>
+				<h3>Returns</h3>
+				<ul>
 
 							<li>
-								<span class="tag parameter">character</span>
+									<span class="type">bool</span>
 
-									<span class="tag"><span class="type">Character</span></span>
-
-
-								<p> The character that has been created</p>
+								<p>Whether the player belongs to the "user" user group.</p>
 							</li>
-					</ul>
 
+				</ul>
 
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:OnCharCreated(client, character)
-	local inventory = character:getInv()
-	inventory:add("fancy_suit")
-end
-</code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="OnSpawn">
-					<h1><span class="realm server"></span></span>FACTION:OnSpawn(client)</h1>
+				<a class="anchor" id="isVIP">
+					<h1><span class="realm shared"></span></span>playerMeta:isVIP()</h1>
 				</a>
 
-					<p>Called when a character in this faction has spawned in the world.</p>
+					<p>Checks if the player is a VIP.</p>
 			</header>
 
 
-					<h3>Parameters</h3>
 
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The player that has just spawned</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:OnSpawn(client)
-	client:chatNotify("You have spawned!")
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="OnTransferred">
-					<h1><span class="realm server"></span></span>FACTION:OnTransferred(character)</h1>
-				</a>
-
-					<p>Called when a player's character has been transferred to this faction.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
+				<h3>Returns</h3>
+				<ul>
 
 							<li>
-								<span class="tag parameter">character</span>
+									<span class="type">bool</span>
 
-									<span class="tag"><span class="type">Character</span></span>
-
-
-								<p> The character that was transferred</p>
+								<p>Whether the player is a VIP.</p>
 							</li>
-					</ul>
 
+				</ul>
 
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:OnTransferred(character)
-	local randomModelIndex = math.random(1, #self.models)
-	character:setModel(self.models[randomModelIndex])
-end
-</code></pre>
 
 		</section>
 

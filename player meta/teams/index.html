@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Faction - Lilia Documentation</title>
+		<title>Teams - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Faction - Lilia Documentation" />
+		<meta property="og:title" content="Teams - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Faction setup hooks." />
+			<meta property="og:description" content="The Character Meta for the Teams Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -787,22 +787,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -961,12 +961,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1582,7 +1582,7 @@ PostDrawInventory											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../hooks/faction/">Faction</a></summary>
 
 									<ul>
@@ -2677,12 +2677,12 @@ clearNetVars											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../entity meta/framework/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/framework/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2831,12 +2831,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
@@ -3011,12 +3011,12 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
@@ -3091,12 +3091,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3443,7 +3443,68 @@ SetDeathTimer											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
+									<summary><a href="../../player meta/teams/">Teams</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#WhitelistAllClasses">
+WhitelistAllClasses											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#WhitelistAllFactions">
+WhitelistAllFactions											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#WhitelistEverything">
+WhitelistEverything											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#classUnWhitelist">
+classUnWhitelist											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#classWhitelist">
+classWhitelist											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#hasClassWhitelist">
+hasClassWhitelist											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#isClass">
+isClass											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#isFaction">
+isFaction											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#joinClass">
+joinClass											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../player meta/teams/#kickClass">
+kickClass											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details open>
 									<summary><a href="../../player meta/teams/">Teams</a></summary>
 
 									<ul>
@@ -3508,67 +3569,6 @@ isFaction											</a>
 											<span class="realm server"></span>
 											<a href="../../player meta/teams/#setWhitelisted">
 setWhitelisted											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
-									<summary><a href="../../player meta/teams/">Teams</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#WhitelistAllClasses">
-WhitelistAllClasses											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#WhitelistAllFactions">
-WhitelistAllFactions											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#WhitelistEverything">
-WhitelistEverything											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#classUnWhitelist">
-classUnWhitelist											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#classWhitelist">
-classWhitelist											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#hasClassWhitelist">
-hasClassWhitelist											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#isClass">
-isClass											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#isFaction">
-isFaction											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#joinClass">
-joinClass											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#kickClass">
-kickClass											</a>
 										</li>
 
 									</ul>
@@ -4186,7 +4186,7 @@ wipeItems											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/teams/">Teams</a></summary>
 
 									<ul>
@@ -4415,25 +4415,62 @@ wipeItems											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Faction</h1>
-	<h2>Faction setup hooks.</h2>
+	<h1>Teams</h1>
+	<h2>The Character Meta for the Teams Module.</h2>
 </header>
 
-<p>Factions have their own hooks that are called for various reasons, with the most common being to set up a character
-once it's created and assigned to a certain faction. For example, giving a police faction character a weapon upon creation.
-These hooks are used in faction tables that are created in <code>schema/factions/sfactionname.lua</code> and cannot be used like
-regular gamemode hooks.</p>
+<p>
+
+</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="GetDefaultDesc">
-					<h1><span class="realm shared"></span></span>FACTION:GetDefaultDesc(client, faction)</h1>
+				<a class="anchor" id="WhitelistAllClasses">
+					<h1><span class="realm shared"></span></span>playerMeta:WhitelistAllClasses()</h1>
 				</a>
 
-					<p>Called when the default description for a character needs to be retrieved.
- This function allows factions to define custom default descriptions for characters.</p>
+					<p>Whitelists all classes for the character.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="WhitelistAllFactions">
+					<h1><span class="realm shared"></span></span>playerMeta:WhitelistAllFactions()</h1>
+				</a>
+
+					<p>Whitelists all factions for the character.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="WhitelistEverything">
+					<h1><span class="realm shared"></span></span>playerMeta:WhitelistEverything()</h1>
+				</a>
+
+					<p>Whitelists everything (all classes and factions) for the character.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="classUnWhitelist">
+					<h1><span class="realm shared"></span></span>playerMeta:classUnWhitelist(class)</h1>
+				</a>
+
+					<p>Removes the whitelist for a specific class from the character.</p>
 			</header>
 
 
@@ -4443,24 +4480,146 @@ regular gamemode hooks.</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">client</span>
+								<span class="tag parameter">class</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
-								<p> The client for whom the default description is being retrieved</p>
+								<p> The class to remove the whitelist status for.</p>
 							</li>
 					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="classWhitelist">
+					<h1><span class="realm shared"></span></span>playerMeta:classWhitelist(class)</h1>
+				</a>
+
+					<p>Whitelists the character for a specific class.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">class</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The class to whitelist the character for.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="hasClassWhitelist">
+					<h1><span class="realm shared"></span></span>playerMeta:hasClassWhitelist(class)</h1>
+				</a>
+
+					<p>Checks if the player has whitelisted access to a class.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">class</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The class to check for whitelisting.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether the player has whitelisted access to the specified faction.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isClass">
+					<h1><span class="realm shared"></span></span>playerMeta:isClass(class)</h1>
+				</a>
+
+					<p>Checks if the player belongs to the specified class.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">class</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The class to check against.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether the player belongs to the specified class.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isFaction">
+					<h1><span class="realm shared"></span></span>playerMeta:isFaction(faction)</h1>
+				</a>
+
+					<p>Checks if the player belongs to the specified faction.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
 
 					<ul>
 
 							<li>
 								<span class="tag parameter">faction</span>
 
-									<span class="tag"><span class="type">Character</span></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
-								<p> The faction ID for which the default description is being retrieved</p>
+								<p> The faction to check against.</p>
 							</li>
 					</ul>
 
@@ -4469,27 +4628,22 @@ regular gamemode hooks.</p>
 				<ul>
 
 							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+									<span class="type">bool</span>
 
-								<p>The default description for the newly created character</p>
+								<p>Whether the player belongs to the specified faction.</p>
 							</li>
 
 				</ul>
 
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:GetDefaultDesc(client, faction)
-	return "A police officer"
-end
-</code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="GetDefaultName">
-					<h1><span class="realm shared"></span></span>FACTION:GetDefaultName(client)</h1>
+				<a class="anchor" id="joinClass">
+					<h1><span class="realm shared"></span></span>playerMeta:joinClass(class, isForced)</h1>
 				</a>
 
-					<p>Called when the default name for a character needs to be retrieved (i.e., upon initial creation).</p>
+					<p>Sets the character's class to the specified class.</p>
 			</header>
 
 
@@ -4499,12 +4653,25 @@ end
 					<ul>
 
 							<li>
-								<span class="tag parameter">client</span>
+								<span class="tag parameter">class</span>
 
-									<span class="tag"><span class="type">Player</span></span>
+									<span class="tag"><span class="type">String</span></span>
 
 
-								<p> The client for whom the default name is being retrieved</p>
+								<p> The class to join.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isForced</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether to force the character to join the class even if conditions are not met.</p>
 							</li>
 					</ul>
 
@@ -4513,130 +4680,31 @@ end
 				<ul>
 
 							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
+									<span class="tag type">any</span>
 
-								<p>The default name for the newly created character</p>
+								<p>bool Whether the character successfully joined the class.</p>
 							</li>
 
 				</ul>
 
 				<h3>Example Usage</h3>
-					<pre><code>function FACTION:GetDefaultName(client)
-	return "CT-" .. math.random(111111, 999999)
-end
+					<pre><code>local success = character:joinClass("some_class")
 </code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="OnCharCreated">
-					<h1><span class="realm server"></span></span>FACTION:OnCharCreated(client, character)</h1>
+				<a class="anchor" id="kickClass">
+					<h1><span class="realm shared"></span></span>playerMeta:kickClass()</h1>
 				</a>
 
-					<p>Called when a character has been initially created and assigned to this faction.</p>
+					<p>Kicks the character from their current class and joins them to the default class of their faction.</p>
 			</header>
 
 
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The client that owns the character</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">character</span>
-
-									<span class="tag"><span class="type">Character</span></span>
-
-
-								<p> The character that has been created</p>
-							</li>
-					</ul>
-
 
 				<h3>Example Usage</h3>
-					<pre><code>function FACTION:OnCharCreated(client, character)
-	local inventory = character:getInv()
-	inventory:add("fancy_suit")
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="OnSpawn">
-					<h1><span class="realm server"></span></span>FACTION:OnSpawn(client)</h1>
-				</a>
-
-					<p>Called when a character in this faction has spawned in the world.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The player that has just spawned</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:OnSpawn(client)
-	client:chatNotify("You have spawned!")
-end
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="OnTransferred">
-					<h1><span class="realm server"></span></span>FACTION:OnTransferred(character)</h1>
-				</a>
-
-					<p>Called when a player's character has been transferred to this faction.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">character</span>
-
-									<span class="tag"><span class="type">Character</span></span>
-
-
-								<p> The character that was transferred</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>function FACTION:OnTransferred(character)
-	local randomModelIndex = math.random(1, #self.models)
-	character:setModel(self.models[randomModelIndex])
-end
+					<pre><code>character:kickClass()
 </code></pre>
 
 		</section>
