@@ -1083,6 +1083,11 @@ findPlayerBySteamID64											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.util/#findPlayerEntities">
+findPlayerEntities											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.util/#findPlayerItems">
 findPlayerItems											</a>
 										</li>
@@ -5505,6 +5510,58 @@ end)
 									<span class="type">Player</span>
 
 								<p>The player object if found, nil otherwise</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="findPlayerEntities">
+					<h1><span class="realm shared"></span></span>findPlayerEntities(client, class)</h1>
+				</a>
+
+					<p>Finds all entities of a specific class owned by a specified player.
+ If no class is specified, finds all entities owned by the player.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><span class="type">Player</span></span>
+
+
+								<p> The player whose entities are being searched for.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">class</span>
+
+
+									<span class="tag default">optional</span>
+
+								<p> The class of the entities being searched for. If not provided, all entities owned by the player are returned.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
+
+								<p>A table containing all entities of the specified class (or all entities if no class is specified) owned by the given player.</p>
 							</li>
 
 				</ul>
