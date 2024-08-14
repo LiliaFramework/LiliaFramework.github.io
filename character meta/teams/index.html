@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia.char - Lilia Documentation</title>
+		<title>Teams - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia.char - Lilia Documentation" />
+		<meta property="og:title" content="Teams - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Character creation and management." />
+			<meta property="og:description" content="The Character Meta for the Teams Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -141,7 +141,7 @@ remove											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../libraries/lia.char/">lia.char</a></summary>
 
 									<ul>
@@ -2576,7 +2576,7 @@ recognize											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../character meta/teams/">Teams</a></summary>
 
 									<ul>
@@ -3504,7 +3504,7 @@ SetDeathTimer											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../player meta/teams/">Teams</a></summary>
 
 									<ul>
@@ -4186,7 +4186,7 @@ wipeItems											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../configurations/teams/">Teams</a></summary>
 
 									<ul>
@@ -4415,95 +4415,62 @@ wipeItems											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia.char</h1>
-	<h2>Character creation and management.</h2>
+	<h1>Teams</h1>
+	<h2>The Character Meta for the Teams Module.</h2>
 </header>
 
-<p><strong>NOTE:</strong> For the most part you shouldn't use this library unless you know what you're doing. You can very easily corrupt
-character data using these functions!</p>
+<p>
+
+</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="cleanUpForPlayer">
-					<h1><span class="realm server"></span></span>cleanUpForPlayer(client)</h1>
+				<a class="anchor" id="WhitelistAllClasses">
+					<h1><span class="realm shared"></span></span>characterMeta:WhitelistAllClasses()</h1>
 				</a>
 
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Cleans up a player's characters, removing them from memory and database.</p>
+					<p>Whitelists all classes for the character.</p>
 			</header>
 
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The player whose characters to clean up.</p>
-							</li>
-					</ul>
 
 
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="create">
-					<h1><span class="realm server"></span></span>create(data, callback)</h1>
+				<a class="anchor" id="WhitelistAllFactions">
+					<h1><span class="realm shared"></span></span>characterMeta:WhitelistAllFactions()</h1>
 				</a>
 
-					<p>Creates a character object with its assigned properties and saves it to the database.</p>
+					<p>Whitelists all factions for the character.</p>
 			</header>
 
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">data</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> Properties to assign to this character. If fields are missing from the table, then it will use the default
- value for that property</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">callback</span>
-
-									<span class="tag"><span class="type">Function</span></span>
-
-
-								<p> Function to call after the character saves</p>
-							</li>
-					</ul>
 
 
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="delete">
-					<h1><span class="realm server"></span></span>delete(id, client)</h1>
+				<a class="anchor" id="WhitelistEverything">
+					<h1><span class="realm shared"></span></span>characterMeta:WhitelistEverything()</h1>
 				</a>
 
-					<p>Deletes a character from memory and database.</p>
+					<p>Whitelists everything (all classes and factions) for the character.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="classUnWhitelist">
+					<h1><span class="realm shared"></span></span>characterMeta:classUnWhitelist(class)</h1>
+				</a>
+
+					<p>Removes the whitelist for a specific class from the character.</p>
 			</header>
 
 
@@ -4513,24 +4480,12 @@ character data using these functions!</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">id</span>
+								<span class="tag parameter">class</span>
 
 									<span class="tag"><span class="type">Integer</span></span>
 
 
-								<p> The ID of the character to delete.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The player associated with the character.</p>
+								<p> The class to remove the whitelist status for.</p>
 							</li>
 					</ul>
 
@@ -4539,11 +4494,11 @@ character data using these functions!</p>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="getCharData">
-					<h1><span class="realm shared"></span></span>getCharData(charID, key)</h1>
+				<a class="anchor" id="classWhitelist">
+					<h1><span class="realm shared"></span></span>characterMeta:classWhitelist(class)</h1>
 				</a>
 
-					<p>Loads data for a character from the database.</p>
+					<p>Whitelists the character for a specific class.</p>
 			</header>
 
 
@@ -4553,25 +4508,170 @@ character data using these functions!</p>
 					<ul>
 
 							<li>
-								<span class="tag parameter">charID</span>
+								<span class="tag parameter">class</span>
 
 									<span class="tag"><span class="type">Integer</span></span>
 
 
-								<p> The ID of the character to load data for.</p>
+								<p> The class to whitelist the character for.</p>
 							</li>
 					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="hasClassWhitelist">
+					<h1><span class="realm shared"></span></span>characterMeta:hasClassWhitelist(class)</h1>
+				</a>
+
+					<p>Checks if the player has whitelisted access to a class.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">key</span>
+								<span class="tag parameter">class</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The class to check for whitelisting.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether the player has whitelisted access to the specified faction.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isClass">
+					<h1><span class="realm shared"></span></span>characterMeta:isClass(class)</h1>
+				</a>
+
+					<p>Checks if the player belongs to the specified class.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">class</span>
 
 									<span class="tag"><span class="type">String</span></span>
 
-									<span class="tag default">optional</span>
 
-								<p> key to retrieve a specific value from the character's data.</p>
+								<p> The class to check against.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether the player belongs to the specified class.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isFaction">
+					<h1><span class="realm shared"></span></span>characterMeta:isFaction(faction)</h1>
+				</a>
+
+					<p>Checks if the player belongs to the specified faction.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">faction</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The faction to check against.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether the player belongs to the specified faction.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="joinClass">
+					<h1><span class="realm shared"></span></span>characterMeta:joinClass(class, isForced)</h1>
+				</a>
+
+					<p>Sets the character's class to the specified class.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">class</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The class to join.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">isForced</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+									<span class="tag default">default: false</span>
+
+								<p> Whether to force the character to join the class even if conditions are not met.</p>
 							</li>
 					</ul>
 
@@ -4582,288 +4682,30 @@ character data using these functions!</p>
 							<li>
 									<span class="tag type">any</span>
 
-								<p>If key is provided, returns the value associated with that key in the character's data. Otherwise, returns the entire data table.</p>
+								<p>bool Whether the character successfully joined the class.</p>
 							</li>
 
 				</ul>
 
+				<h3>Example Usage</h3>
+					<pre><code>local success = character:joinClass("some_class")
+</code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="hookVar">
-					<h1><span class="realm shared"></span></span>hookVar(varName, hookName, func)</h1>
+				<a class="anchor" id="kickClass">
+					<h1><span class="realm shared"></span></span>characterMeta:kickClass()</h1>
 				</a>
 
-					<p>Adds a hook function to be called when a character variable is modified.</p>
+					<p>Kicks the character from their current class and joins them to the default class of their faction.</p>
 			</header>
 
 
-					<h3>Parameters</h3>
 
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">varName</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The name of the character variable.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">hookName</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The name of the hook.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">func</span>
-
-									<span class="tag"><span class="type">Function</span></span>
-
-
-								<p> The function to be called when the character variable is modified.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="new">
-					<h1><span class="realm shared"></span></span>new(data, id, client, steamID)</h1>
-				</a>
-
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Creates a new empty <code>Character</code> object.  If you are looking to create a usable character, see <a href="../../libraries/lia.char/#create">lia.char.create</a>.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">data</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> Character vars to assign</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">id</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> Unique ID of the character</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> Player that will own the character</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">steamID</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-									<span class="tag default">default: client:SteamID64()</span>
-
-								<p> SteamID64 of the player that will own the character</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="registerVar">
-					<h1><span class="realm shared"></span></span>registerVar(key, data)</h1>
-				</a>
-
-					<p>Registers a character variable with specified data and associated hooks.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-
-
-								<p> The key identifier for the character variable.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">data</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> The data associated with the character variable.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="restore">
-					<h1><span class="realm server"></span></span>restore(client, callback, id)</h1>
-				</a>
-
-					<p>Loads all of a player's characters into memory.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> Player to load the characters for</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">callback</span>
-
-									<span class="tag"><span class="type">Function</span></span>
-
-									<span class="tag default">default: nil</span>
-
-								<p> Function to call when the characters have been loaded
- their characters loaded which will skip the database query and load quicker</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">id</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-									<span class="tag default">default: nil</span>
-
-								<p> The ID of a specific character to load instead of all of the player's characters</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="setCharData">
-					<h1><span class="realm server"></span></span>setCharData(charID, key, val)</h1>
-				</a>
-
-					<p>Sets data for a character in the database and in memory.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">charID</span>
-
-									<span class="tag"><span class="type">Integer</span></span>
-
-
-								<p> The ID of the character to set data for.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The key of the data to set.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">val</span>
-
-
-
-								<p> The value to set for the specified key.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="tag type">any</span>
-
-								<p>True if the data was successfully set, false otherwise.</p>
-							</li>
-
-				</ul>
-
+				<h3>Example Usage</h3>
+					<pre><code>character:kickClass()
+</code></pre>
 
 		</section>
 

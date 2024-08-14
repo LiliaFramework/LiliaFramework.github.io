@@ -8,7 +8,7 @@
 		<meta property="og:title" content="Teams - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="The Character Meta for the Teams Module." />
+			<meta property="og:description" content="The Player Meta for the Teams Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -2575,6 +2575,67 @@ recognize											</a>
 									</ul>
 									</details>
 							</li>
+							<li>
+									<details open>
+									<summary><a href="../../character meta/teams/">Teams</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../character meta/teams/#WhitelistAllClasses">
+WhitelistAllClasses											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../character meta/teams/#WhitelistAllFactions">
+WhitelistAllFactions											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../character meta/teams/#WhitelistEverything">
+WhitelistEverything											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../character meta/teams/#classUnWhitelist">
+classUnWhitelist											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../character meta/teams/#classWhitelist">
+classWhitelist											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../character meta/teams/#hasClassWhitelist">
+hasClassWhitelist											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../character meta/teams/#isClass">
+isClass											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../character meta/teams/#isFaction">
+isFaction											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../character meta/teams/#joinClass">
+joinClass											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../character meta/teams/#kickClass">
+kickClass											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
 					</ul>
 				</details>
 				<details class="category" open>
@@ -3437,67 +3498,6 @@ IsOnDeathTimer											</a>
 											<span class="realm server"></span>
 											<a href="../../player meta/spawns/#SetDeathTimer">
 SetDeathTimer											</a>
-										</li>
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details open>
-									<summary><a href="../../player meta/teams/">Teams</a></summary>
-
-									<ul>
-
-
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#WhitelistAllClasses">
-WhitelistAllClasses											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#WhitelistAllFactions">
-WhitelistAllFactions											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#WhitelistEverything">
-WhitelistEverything											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#classUnWhitelist">
-classUnWhitelist											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#classWhitelist">
-classWhitelist											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#hasClassWhitelist">
-hasClassWhitelist											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#isClass">
-isClass											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#isFaction">
-isFaction											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#joinClass">
-joinClass											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../player meta/teams/#kickClass">
-kickClass											</a>
 										</li>
 
 									</ul>
@@ -4416,7 +4416,7 @@ wipeItems											</a>
 					<div class="wrapper">
 						<header class="module">
 	<h1>Teams</h1>
-	<h2>The Character Meta for the Teams Module.</h2>
+	<h2>The Player Meta for the Teams Module.</h2>
 </header>
 
 <p>
@@ -4431,7 +4431,7 @@ wipeItems											</a>
 					<h1><span class="realm shared"></span></span>playerMeta:WhitelistAllClasses()</h1>
 				</a>
 
-					<p>Whitelists all classes for the character.</p>
+					<p>Whitelists all classes for the player.</p>
 			</header>
 
 
@@ -4444,7 +4444,7 @@ wipeItems											</a>
 					<h1><span class="realm shared"></span></span>playerMeta:WhitelistAllFactions()</h1>
 				</a>
 
-					<p>Whitelists all factions for the character.</p>
+					<p>Whitelists all factions for the player.</p>
 			</header>
 
 
@@ -4457,7 +4457,7 @@ wipeItems											</a>
 					<h1><span class="realm shared"></span></span>playerMeta:WhitelistEverything()</h1>
 				</a>
 
-					<p>Whitelists everything (all classes and factions) for the character.</p>
+					<p>Whitelists everything (all classes and factions) for the player.</p>
 			</header>
 
 
@@ -4470,7 +4470,7 @@ wipeItems											</a>
 					<h1><span class="realm shared"></span></span>playerMeta:classUnWhitelist(class)</h1>
 				</a>
 
-					<p>Removes the whitelist for a specific class from the character.</p>
+					<p>Removes the whitelist status for a specific class from the player.</p>
 			</header>
 
 
@@ -4498,7 +4498,7 @@ wipeItems											</a>
 					<h1><span class="realm shared"></span></span>playerMeta:classWhitelist(class)</h1>
 				</a>
 
-					<p>Whitelists the character for a specific class.</p>
+					<p>Whitelists the player for a specific class.</p>
 			</header>
 
 
@@ -4513,10 +4513,58 @@ wipeItems											</a>
 									<span class="tag"><span class="type">Integer</span></span>
 
 
-								<p> The class to whitelist the character for.</p>
+								<p> The class to whitelist the player for.</p>
 							</li>
 					</ul>
 
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getClass">
+					<h1><span class="realm shared"></span></span>playerMeta:getClass()</h1>
+				</a>
+
+					<p>Retrieves the class of the player's character.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a> or <span class="type">nil</span>
+
+								<p>The class of the player's character, or nil if not found.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getClassData">
+					<h1><span class="realm shared"></span></span>playerMeta:getClassData()</h1>
+				</a>
+
+					<p>Retrieves the data of the player's character class.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a> or <span class="type">nil</span>
+
+								<p>A table containing the data of the player's character class, or nil if not found.</p>
+							</li>
+
+				</ul>
 
 
 		</section>
@@ -4542,6 +4590,45 @@ wipeItems											</a>
 
 
 								<p> The class to check for whitelisting.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether the player has whitelisted access to the specified faction.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="hasWhitelist">
+					<h1><span class="realm shared"></span></span>playerMeta:hasWhitelist(faction)</h1>
+				</a>
+
+					<p>Checks if the player has whitelisted access to a faction.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">faction</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The faction to check for whitelisting.</p>
 							</li>
 					</ul>
 
@@ -4639,11 +4726,11 @@ wipeItems											</a>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="joinClass">
-					<h1><span class="realm shared"></span></span>playerMeta:joinClass(class, isForced)</h1>
+				<a class="anchor" id="setWhitelisted">
+					<h1><span class="realm server"></span></span>playerMeta:setWhitelisted(faction, whitelisted)</h1>
 				</a>
 
-					<p>Sets the character's class to the specified class.</p>
+					<p>Sets whether the player is whitelisted for a faction.</p>
 			</header>
 
 
@@ -4653,25 +4740,24 @@ wipeItems											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">class</span>
+								<span class="tag parameter">faction</span>
 
-									<span class="tag"><span class="type">String</span></span>
+									<span class="tag"><span class="type">Integer</span></span>
 
 
-								<p> The class to join.</p>
+								<p> The faction ID.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">isForced</span>
+								<span class="tag parameter">whitelisted</span>
 
 									<span class="tag"><span class="type">Boolean</span></span>
 
-									<span class="tag default">default: false</span>
 
-								<p> Whether to force the character to join the class even if conditions are not met.</p>
+								<p> Whether the player should be whitelisted for the faction.</p>
 							</li>
 					</ul>
 
@@ -4680,32 +4766,13 @@ wipeItems											</a>
 				<ul>
 
 							<li>
-									<span class="tag type">any</span>
+									<span class="type">bool</span>
 
-								<p>bool Whether the character successfully joined the class.</p>
+								<p>Whether the operation was successful.</p>
 							</li>
 
 				</ul>
 
-				<h3>Example Usage</h3>
-					<pre><code>local success = character:joinClass("some_class")
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="kickClass">
-					<h1><span class="realm shared"></span></span>playerMeta:kickClass()</h1>
-				</a>
-
-					<p>Kicks the character from their current class and joins them to the default class of their faction.</p>
-			</header>
-
-
-
-				<h3>Example Usage</h3>
-					<pre><code>character:kickClass()
-</code></pre>
 
 		</section>
 
