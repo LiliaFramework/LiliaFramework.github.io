@@ -2652,11 +2652,6 @@ kickClass											</a>
 
 
 										<li>
-											<span class="realm shared"></span>
-											<a href="../../entity meta/doors/#IsLocked">
-IsLocked											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../entity meta/doors/#SetLocked">
 SetLocked											</a>
@@ -2677,12 +2672,12 @@ getDoorPartner											</a>
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/doors/#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../entity meta/doors/#isDoor">
 isDoor											</a>
 										</li>
@@ -2690,6 +2685,11 @@ isDoor											</a>
 											<span class="realm shared"></span>
 											<a href="../../entity meta/doors/#isDoorLocked">
 isDoorLocked											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../entity meta/doors/#isLocked">
+isLocked											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -4427,31 +4427,6 @@ wipeItems											</a>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="IsLocked">
-					<h1><span class="realm shared"></span></span>entityMeta:IsLocked()</h1>
-				</a>
-
-					<p>Checks if the door is locked.
- This function checks whether the door entity is currently locked.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">boolean</span>
-
-								<p>True if the door is locked, false otherwise.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="SetLocked">
 					<h1><span class="realm server"></span></span>entityMeta:SetLocked(state)</h1>
 				</a>
@@ -4534,30 +4509,6 @@ wipeItems											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getDoorPartner">
-					<h1><span class="realm client"></span></span>entityMeta:getDoorPartner()</h1>
-				</a>
-
-					<p>Retrieves the partner door entity associated with this entity.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">Entity</span>
-
-								<p>The partner door entity, if any.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getDoorPartner">
 					<h1><span class="realm server"></span></span>entityMeta:getDoorPartner()</h1>
 				</a>
 
@@ -4573,6 +4524,30 @@ wipeItems											</a>
 									<span class="type">Entity</span>
 
 								<p>The partner entity of the door, if any.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getDoorPartner">
+					<h1><span class="realm client"></span></span>entityMeta:getDoorPartner()</h1>
+				</a>
+
+					<p>Retrieves the partner door entity associated with this entity.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">Entity</span>
+
+								<p>The partner door entity, if any.</p>
 							</li>
 
 				</ul>
@@ -4649,6 +4624,31 @@ wipeItems											</a>
 									<span class="type">bool</span>
 
 								<p>True if the entity is locked, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isLocked">
+					<h1><span class="realm shared"></span></span>entityMeta:isLocked()</h1>
+				</a>
+
+					<p>Checks if the door is locked.
+ This function checks whether the door entity is currently locked.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">boolean</span>
+
+								<p>True if the door is locked, false otherwise.</p>
 							</li>
 
 				</ul>
