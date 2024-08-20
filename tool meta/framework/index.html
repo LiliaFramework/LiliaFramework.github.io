@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>lia.command - Lilia Documentation</title>
+		<title>Framework - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="lia.command - Lilia Documentation" />
+		<meta property="og:title" content="Framework - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Registration, parsing, and handling of commands." />
+			<meta property="og:description" content="A custom tool class based on the Base GMOD Toolgun, designed for integration with Lilia&#39;s framework." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -315,7 +315,7 @@ rgb											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../libraries/lia.command/">lia.command</a></summary>
 
 									<ul>
@@ -787,22 +787,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -961,12 +961,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2444,7 +2444,7 @@ updateAttrib											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../character meta/framework/">Framework</a></summary>
 
 									<ul>
@@ -2662,22 +2662,22 @@ SetLocked											</a>
 checkDoorAccess											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../entity meta/doors/#getDoorPartner">
-getDoorPartner											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../entity meta/doors/#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../../entity meta/doors/#getDoorPartner">
+getDoorPartner											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
 											<a href="../../entity meta/doors/#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../entity meta/doors/#isDoor">
 isDoor											</a>
 										</li>
@@ -2701,7 +2701,7 @@ removeDoorAccessData											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../entity meta/framework/">Framework</a></summary>
 
 									<ul>
@@ -2728,12 +2728,12 @@ clearNetVars											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../entity meta/framework/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/framework/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2815,7 +2815,7 @@ setNetVar											</a>
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../item meta/framework/">Framework</a></summary>
 
 									<ul>
@@ -2882,12 +2882,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
@@ -3040,7 +3040,7 @@ restoreStamina											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../player meta/framework/">Framework</a></summary>
 
 									<ul>
@@ -3072,12 +3072,12 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
@@ -3152,12 +3152,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3599,7 +3599,7 @@ CanEditVendor											</a>
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../inventory meta/framework/">Framework</a></summary>
 
 									<ul>
@@ -3900,7 +3900,7 @@ wipeItems											</a>
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../tool meta/framework/">Framework</a></summary>
 
 									<ul>
@@ -4529,117 +4529,40 @@ Think											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>lia.command</h1>
-	<h2>Registration, parsing, and handling of commands.</h2>
+	<h1>Framework</h1>
+	<h2>A custom tool class based on the Base GMOD Toolgun, designed for integration with Lilia's framework.</h2>
 </header>
 
-<p>Commands can be ran through the chat with slash commands or they can be executed through the console. Commands can be manually
-restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">CAMI</a>-compliant admin mod.</p>
+<p>The <code>ToolGun</code> class extends the functionality of the base GMOD toolgun, enabling seamless integration with Lilia's files and configuration. This custom tool class provides a flexible framework for creating and managing interactive tools within Garry's Mod, specifically tailored to work with Lilia's environment and system.</p>
 
-<p>If you are looking for the command structure, you can find it <a href="https://liliaframework.github.io/manual/structure_command">here</a>.</p>
+<p>The <code>ToolGun</code> class is designed to work in conjunction with Lilia's file system and configuration setup. It allows for the implementation of toolguns that can be dynamically loaded and configured based on Lilia's files, offering a robust solution for extending tool functionalities in a modular way.</p>
+
+<h3>Customization and Flexibility:</h3>
+<p>The <code>ToolGun</code> class provides a foundation for creating custom tools that integrate smoothly with Lilia's system. Developers can extend and modify the class to fit specific needs, leveraging Lilia's configuration files to dictate tool behavior and appearance. This approach ensures that tools can be easily adapted and updated in line with Lilia's framework, providing a consistent and maintainable tool environment.</p>
+
+<p>By integrating with Lilia's files, the <code>ToolGun</code> class enables developers to build sophisticated tools that are fully compatible with Lilia's system, enhancing the overall gameplay experience and tool management within Garry's Mod.</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="extractArgs">
-					<h1><span class="realm shared"></span></span>extractArgs(text)</h1>
+				<a class="anchor" id="Allowed">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:Allowed()</h1>
 				</a>
 
-					<p>Returns a table of arguments from a given string.
- Words separated by spaces will be considered one argument. To have an argument containing multiple words, they must be
- contained within quotation marks.</p>
+					<p>Checks if the tool is allowed on the server.
+ This method returns whether the tool is allowed based on the server convar <code>AllowedCVar</code>. It always returns true on the client-side.</p>
 			</header>
 
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">text</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> String to extract arguments from</p>
-							</li>
-					</ul>
 
 
 				<h3>Returns</h3>
 				<ul>
 
 							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
+									<span class="tag type">any</span>
 
-								<p>Arguments extracted from string</p>
-							</li>
-
-				</ul>
-
-				<h3>Example Usage</h3>
-					<pre><code>PrintTable(lia.command.extractArgs("these are \"some arguments\""))
-> 1 = these
-> 2 = are
-> 3 = some arguments
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="findFaction">
-					<h1><span class="realm server"></span></span>findFaction(client, name)</h1>
-				</a>
-
-					<p>Attempts to find a faction by an identifier.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> to give a notification to if the faction could not be found</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">name</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> Search query</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.5">table</a>
-
-								<p>Faction that matches the given search query</p>
-							</li>
-
-							<div class="or"><span>OR</span></div>
-
-							<li>
-									<span class="type">nil</span>
-
-								<p>If a faction could not be found</p>
+								<p>boolean True if the tool is allowed, false otherwise.</p>
 							</li>
 
 				</ul>
@@ -4648,103 +4571,23 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="findPlayer">
-					<h1><span class="realm server"></span></span>findPlayer(client, name)</h1>
+				<a class="anchor" id="BuildConVarList">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:BuildConVarList()</h1>
 				</a>
 
-					<p>Attempts to find a player by an identifier.  If unsuccessful, a notice will be displayed to the specified player. The
- search criteria is derived from <a href="../../libraries/lia.command/#findPlayer">lia.command.findPlayer</a>.</p>
+					<p>Builds a list of client-side convars.
+ This method constructs a table of convars by appending the mode prefix to each convar name.</p>
 			</header>
 
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-
-
-								<p> Player The client to give a notification to if the player could not be found.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">name</span>
-
-
-
-								<p> string Search query</p>
-							</li>
-					</ul>
 
 
 				<h3>Returns</h3>
 				<ul>
 
 							<li>
-									<span class="type">player</span> or <span class="type">nil</span>
+									<span class="tag type">any</span>
 
-								<p>Player that matches the given search query, or nil if a player could not be found</p>
-							</li>
-
-				</ul>
-
-
-				<h3>See Also</h3>
-				<ul>
-						<li><a href="../../libraries/lia.util/#findPlayer">lia.util.findPlayer</a></li>
-				</ul>
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="findPlayerSilent">
-					<h1><span class="realm server"></span></span>findPlayerSilent(client, name)</h1>
-				</a>
-
-					<p>Attempts to find a player by an identifier silently.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> to give a notification to if the player could not be found</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">name</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> Search query</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">player</span> or <span class="type">nil</span>
-
-								<p>Player that matches the given search query, or nil if not found</p>
+								<p>table A table containing the mode-prefixed convars.</p>
 							</li>
 
 				</ul>
@@ -4753,66 +4596,37 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="hasAccess">
-					<h1><span class="realm shared"></span></span>hasAccess(client, command, data)</h1>
+				<a class="anchor" id="CheckObjects">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:CheckObjects()</h1>
 				</a>
 
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Returns true if a player is allowed to run a certain command.</p>
+					<p>Checks the validity of objects the tool is manipulating.
+ This method iterates over the tool's objects and clears them if they are no longer valid, such as if the entity is no longer part of the world or is invalid.</p>
 			</header>
 
 
-					<h3>Parameters</h3>
 
 
-					<ul>
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="Create">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:Create()</h1>
+				</a>
 
-							<li>
-								<span class="tag parameter">client</span>
+					<p>Creates a new tool object.
+ This method initializes a new tool object with default properties. It sets up the metatable and various default values such as <code>Mode</code>, <code>SWEP</code>, <code>Owner</code>, <code>ClientConVar</code>, <code>ServerConVar</code>, <code>Objects</code>, <code>Stage</code>, <code>Message</code>, <code>LastMessage</code>, and <code>AllowedCVar</code>.</p>
+			</header>
 
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> to check access for</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">command</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> Name of the command to check access for</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">data</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-									<span class="tag default">optional</span>
-
-								<p> command data, if not provided, it will be fetched from <code>lia.command.list</code></p>
-							</li>
-					</ul>
 
 
 				<h3>Returns</h3>
 				<ul>
 
 							<li>
-									<span class="type">bool</span>
+									<span class="tag type">any</span>
 
-								<p>Whether or not the player is allowed to run the command</p>
+								<p>table A new tool object with default properties.</p>
 							</li>
 
 				</ul>
@@ -4821,15 +4635,40 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="parse">
-					<h1><span class="realm server"></span></span>parse(client, text, realCommand, arguments)</h1>
+				<a class="anchor" id="CreateConVars">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:CreateConVars()</h1>
 				</a>
 
-					<div class="notice error">
-						<div class="title">Internal</div>
-						<p>This is an internal function! You are able to use it, but you risk unintended side effects if used incorrectly.</p>
-					</div>
-					<p>Parses a command from an input string and executes it.</p>
+					<p>Creates client and server convars for the tool.
+ This method generates convars (console variables) based on the tool's mode. Client convars are created on the client-side, while server convars are created on the server-side.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="Deploy">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:Deploy()</h1>
+				</a>
+
+					<p>Deploys the tool.
+ This method is called when the player equips the tool. It releases any ghost entities associated with the tool.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="GetClientInfo">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:GetClientInfo(property)</h1>
+				</a>
+
+					<p>Retrieves client-side information for a given property.
+ This method returns the value of a client-side convar associated with the tool's mode.</p>
 			</header>
 
 
@@ -4839,50 +4678,12 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 					<ul>
 
 							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The player who is executing the command</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">text</span>
+								<span class="tag parameter">property</span>
 
 									<span class="tag"><span class="type">String</span></span>
 
 
-								<p> Input string to search for the command format</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">realCommand</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-									<span class="tag default">optional</span>
-
-								<p> Specific command to check for. If specified, it will only try to run this command</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">arguments</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-									<span class="tag default">optional</span>
-
-								<p> Array of arguments to pass to the command. If not specified, it will try to extract them from the text</p>
+								<p> The name of the property to retrieve.</p>
 							</li>
 					</ul>
 
@@ -4893,23 +4694,21 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 							<li>
 									<span class="tag type">any</span>
 
-								<p>bool Whether or not a command has been found and executed</p>
+								<p>string The value of the client convar.</p>
 							</li>
 
 				</ul>
 
-				<h3>Example Usage</h3>
-					<pre><code>lia.command.parse(player.GetByID(1), "/roll 10")
-</code></pre>
 
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="run">
-					<h1><span class="realm server"></span></span>run(client, command, arguments)</h1>
+				<a class="anchor" id="GetClientNumber">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:GetClientNumber(property, default)</h1>
 				</a>
 
-					<p>Forces a player to execute a command by name.</p>
+					<p>Retrieves a numerical value from client-side convars.
+ This method returns the value of a client-side convar as a number, or a default value if the convar does not exist.</p>
 			</header>
 
 
@@ -4919,214 +4718,286 @@ restricted to certain usergroups using a <a href="https://github.com/glua/CAMI">
 					<ul>
 
 							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> who is executing the command</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">command</span>
+								<span class="tag parameter">property</span>
 
 									<span class="tag"><span class="type">String</span></span>
 
 
-								<p> Full name of the command to be executed. This string gets lowered, but it's good practice to stick with the exact name of the command</p>
+								<p> The name of the property to retrieve.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">arguments</span>
+								<span class="tag parameter">default</span>
 
-									<span class="tag"><span class="type">Table</span></span>
+									<span class="tag"><span class="type">number</span></span>
 
 
-								<p> Array of arguments to be passed to the command</p>
+								<p> The default value to return if the convar is not found.</p>
 							</li>
 					</ul>
 
 
-				<h3>Example Usage</h3>
-					<pre><code>lia.command.run(player.GetByID(1), "Roll", {10})
-</code></pre>
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="send">
-					<h1><span class="realm client"></span></span>send(command, ...)</h1>
-				</a>
-
-					<p>Request the server to run a command.  This mimics similar functionality to the client typing <code>/CommandName</code> in the chatbox.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">command</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> Unique ID of the command</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">...</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> Arguments to pass to the command</p>
-							</li>
-					</ul>
-
-
-				<h3>Example Usage</h3>
-					<pre><code>lia.command.send("roll")
-</code></pre>
-
-		</section>
-	<h1 class="title">Tables</h1>
-
-		<section class="method">
-			<header>
-				<a class="anchor" id="CommandStructure">
-					<h1><span class="realm shared"></span></span>CommandStructure</h1>
-				</a>
-
-					<p>When registering commands with <code>lia.command.add</code>, you'll need to pass in a valid command structure.  This is simply a table
- with various fields defined to describe the functionality of the command.</p>
-			</header>
-
-
-					<h3>Fields</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">onRun</span>
-
-									<span class="tag"><span class="type">function</span></span>
-
-
-								<p> This function is called when the command has passed all the checks and can execute. The
- arguments will be the calling player and subsequent argument list.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">adminOnly</span>
-
-									<span class="tag"><span class="type">bool</span></span>
-
-									<span class="tag default">default: false</span>
-
-								<p> Provides an additional check to see if the user is an admin before running.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">superAdminOnly</span>
-
-									<span class="tag"><span class="type">bool</span></span>
-
-									<span class="tag default">default: false</span>
-
-								<p> Provides an additional check to see if the user is a superadmin before running.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">privilege</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-									<span class="tag default">default: nil</span>
-
-								<p> Manually specify a privilege name for this command. It will always be prefixed with
- <code>&quot;Commands - &quot;</code>. This is used in the case that you want to group commands under the same privilege, or use a privilege that
- you've already defined (i.e grouping <code>/charban</code> and <code>/charunban</code> into the <code>Commands - Ban Characters</code> privilege).</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">onCheckAccess</span>
-
-									<span class="tag"><span class="type">function</span></span>
-
-									<span class="tag default">default: nil</span>
-
-								<p> This callback checks whether or not the player is allowed to run the command.
- This callback should NOT** be used in conjunction with <code>adminOnly</code> or <code>superAdminOnly</code>, as populating those
- fields create a custom a <code>OnCheckAccess</code> callback for you internally. This is used in cases where you want more fine-grained
- access control for your command.
- Consider this example command:</p>
-<pre><code>lia.command.add("slap", {
-    adminOnly = true,
-    privilege = "Can Slap",
-    onRun = function(client, arguments)
-        -- WHAM!
-    end
-})
-</code></pre>
-<p> Creates a new command.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">command</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> Name of the command (recommended in UpperCamelCase)</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">data</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> Data describing the command</p>
-							</li>
-					</ul>
-
-
-
-				<h3>See Also</h3>
+				<h3>Returns</h3>
 				<ul>
-						<li><a href="../../libraries/lia.command/#CommandStructure">CommandStructure</a></li>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The numerical value of the client convar.</p>
+							</li>
+
 				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="GetMode">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:GetMode()</h1>
+				</a>
+
+					<p>Retrieves the mode of the tool.
+ This method returns the current mode of the tool, which is a string representing the specific operation the tool is set to perform.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>string The current mode of the tool.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="GetOwner">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:GetOwner()</h1>
+				</a>
+
+					<p>Retrieves the owner of the tool.
+ This method returns the player who owns the tool by accessing the SWEP's <code>Owner</code> property.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>Player The player who owns the tool.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="GetSWEP">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:GetSWEP()</h1>
+				</a>
+
+					<p>Retrieves the SWEP (Scripted Weapon) associated with the tool.
+ This method returns the SWEP object, which is typically the weapon the player is holding while using the tool.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>SWEP The SWEP object associated with the tool.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="GetServerInfo">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:GetServerInfo(property)</h1>
+				</a>
+
+					<p>Retrieves server-side information for a given property.
+ This method returns the value of a server-side convar associated with the tool's mode.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">property</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The name of the property to retrieve.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>string The value of the server convar.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="GetWeapon">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:GetWeapon()</h1>
+				</a>
+
+					<p>Retrieves the weapon associated with the tool.
+ This method returns the weapon associated with the tool by accessing the SWEP's <code>Weapon</code> property or the tool's own <code>Weapon</code> property.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>Weapon The weapon object associated with the tool.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="Holster">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:Holster()</h1>
+				</a>
+
+					<p>Holsters the tool.
+ This method is called when the player unequips the tool. It releases any ghost entities associated with the tool.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="Init">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:Init()</h1>
+				</a>
+
+					<p>Placeholder for initializing the tool.
+ This method is intended to be overridden if initialization logic is needed when the tool is created.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="LeftClick">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:LeftClick()</h1>
+				</a>
+
+					<p>Handles the left-click action with the tool.
+ This method is intended to be overridden to define what happens when the player left-clicks with the tool. By default, it does nothing and returns false.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean False by default, indicating no action was taken.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="Reload">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:Reload()</h1>
+				</a>
+
+					<p>Handles the reload action with the tool.
+ This method clears the objects that the tool is currently manipulating when the player reloads with the tool.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="RightClick">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:RightClick()</h1>
+				</a>
+
+					<p>Handles the right-click action with the tool.
+ This method is intended to be overridden to define what happens when the player right-clicks with the tool. By default, it does nothing and returns false.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean False by default, indicating no action was taken.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="Think">
+					<h1><span class="realm shared"></span></span>ToolGunMeta:Think()</h1>
+				</a>
+
+					<p>Handles the tool's "think" logic.
+ This method is called periodically to perform updates. By default, it releases any ghost entities associated with the tool.</p>
+			</header>
+
+
+
+
 		</section>
 
 					</div>
