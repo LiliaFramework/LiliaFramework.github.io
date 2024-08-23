@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Simfphys - Lilia Documentation</title>
+		<title>LVS - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Simfphys - Lilia Documentation" />
+		<meta property="og:title" content="LVS - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Simfphys Compatibility Module." />
+			<meta property="og:description" content="Configuration for LVS Compatibility Module." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -787,22 +787,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -961,12 +961,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2662,22 +2662,22 @@ SetLocked											</a>
 checkDoorAccess											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../entity meta/doors/#getDoorPartner">
-getDoorPartner											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../entity meta/doors/#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../entity meta/doors/#getDoorPartner">
+getDoorPartner											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../entity meta/doors/#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/doors/#isDoor">
 isDoor											</a>
 										</li>
@@ -2728,12 +2728,12 @@ clearNetVars											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/framework/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../entity meta/framework/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2882,12 +2882,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
@@ -3072,12 +3072,12 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
@@ -3152,12 +3152,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -4124,6 +4124,17 @@ Think											</a>
 									</details>
 							</li>
 							<li>
+									<details open>
+									<summary><a href="../../configurations/lvs/">LVS</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
 									<details >
 									<summary><a href="../../configurations/mainmenu/">MainMenu</a></summary>
 
@@ -4258,17 +4269,6 @@ Think											</a>
 							<li>
 									<details >
 									<summary><a href="../../configurations/scoreboard/">Scoreboard</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details open>
-									<summary><a href="../../configurations/simfphys/">Simfphys</a></summary>
 
 									<ul>
 
@@ -4529,8 +4529,8 @@ Think											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>Simfphys</h1>
-	<h2>Configuration for Simfphys Compatibility Module.</h2>
+	<h1>LVS</h1>
+	<h2>Configuration for LVS Compatibility Module.</h2>
 </header>
 
 <p>
@@ -4545,7 +4545,7 @@ Think											</a>
 					<h1><span class="realm shared"></span></span>Configuration</h1>
 				</a>
 
-					<p>This table defines the default settings for the Simfphys Module.</p>
+					<p>This table defines the default settings for the LVS Module.</p>
 			</header>
 
 
@@ -4560,17 +4560,6 @@ Think											</a>
 
 
 								<p> Either or not you take damage while in cars? | <strong>boolean</strong></p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">ValidCarDamages</span>
-
-
-
-								<p> The valid types of damage on cars that should apply to the client | <strong>table</strong></p>
 							</li>
 					</ul>
 
