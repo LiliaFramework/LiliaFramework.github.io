@@ -169,6 +169,11 @@ getCharData											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.char/#getCharDataRaw">
+getCharDataRaw											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.char/#hookVar">
 hookVar											</a>
 										</li>
@@ -191,6 +196,16 @@ restore											</a>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.char/#setCharData">
 setCharData											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.char/#setCharModel">
+setCharModel											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.char/#setCharName">
+setCharName											</a>
 										</li>
 
 									</ul>
@@ -4639,6 +4654,60 @@ character data using these functions!</p>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="getCharDataRaw">
+					<h1><span class="realm shared"></span></span>getCharDataRaw(charID, key)</h1>
+				</a>
+
+					<p>Loads raw data for a character from the database.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">charID</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The ID of the character to load data for.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+									<span class="tag default">optional</span>
+
+								<p> The specific key to retrieve from the character's data.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p> table|string|boolean If key is provided, returns the value associated with that key in the character's data.
+ If key is not provided, returns the entire data table for the character.
+ Returns false if the character data could not be found.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="hookVar">
 					<h1><span class="realm shared"></span></span>hookVar(varName, hookName, func)</h1>
 				</a>
@@ -4764,7 +4833,10 @@ character data using these functions!</p>
 					<h1><span class="realm shared"></span></span>registerVar(key, data)</h1>
 				</a>
 
-					<p>Registers a character variable with specified data and associated hooks.</p>
+					<p>Registers a new character variable with specified data and associated hooks.
+ This function is used to define a new character variable in the system, setting up
+ how it interacts with the database, how it is networked, and how it can be accessed
+ or modified within the game.</p>
 			</header>
 
 
@@ -4776,9 +4848,10 @@ character data using these functions!</p>
 							<li>
 								<span class="tag parameter">key</span>
 
+									<span class="tag"><span class="type">String</span></span>
 
 
-								<p> The key identifier for the character variable.</p>
+								<p> The key identifier for the character variable. This is used as the variable's name.</p>
 							</li>
 					</ul>
 
@@ -4790,7 +4863,7 @@ character data using these functions!</p>
 									<span class="tag"><span class="type">Table</span></span>
 
 
-								<p> The data associated with the character variable.</p>
+								<p> A table containing the data and configuration for the character variable.</p>
 							</li>
 					</ul>
 
@@ -4908,6 +4981,120 @@ character data using these functions!</p>
 									<span class="tag type">any</span>
 
 								<p>True if the data was successfully set, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="setCharModel">
+					<h1><span class="realm server"></span></span>setCharModel(charID, model, bg)</h1>
+				</a>
+
+					<p>Sets the model and bodygroups for a character in the database and in memory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">charID</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The ID of the character to set the model for.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">model</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The model path to set for the character.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">bg</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> A table containing bodygroup IDs and values.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean True if the model and bodygroups were successfully set, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="setCharName">
+					<h1><span class="realm server"></span></span>setCharName(charID, name)</h1>
+				</a>
+
+					<p>Sets the name for a character in the database and in memory.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">charID</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The ID of the character to set the name for.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">name</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The new name to set for the character.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean True if the name was successfully set, false otherwise.</p>
 							</li>
 
 				</ul>
