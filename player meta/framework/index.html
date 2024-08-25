@@ -3057,11 +3057,6 @@ HasPrivilege											</a>
 Name											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#addFlagBlacklist">
-addFlagBlacklist											</a>
-										</li>
-										<li>
 											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#addMoney">
 addMoney											</a>
@@ -3072,22 +3067,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../../player meta/framework/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3132,11 +3127,6 @@ getCurrentVehicle											</a>
 getEyeEnt											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#getFlagBlacklist">
-getFlagBlacklist											</a>
-										</li>
-										<li>
 											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#getItemDropPos">
 getItemDropPos											</a>
@@ -3167,11 +3157,6 @@ getLiliaData											</a>
 getMoney											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#getPermFlags">
-getPermFlags											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../player meta/framework/#getPlayTime">
 getPlayTime											</a>
@@ -3195,26 +3180,6 @@ getTrace											</a>
 											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#getTracedEntity">
 getTracedEntity											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#givePermFlags">
-givePermFlags											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#hasAnyFlagBlacklist">
-hasAnyFlagBlacklist											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#hasFlagBlacklist">
-hasFlagBlacklist											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#hasPermFlag">
-hasPermFlag											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -3307,11 +3272,6 @@ openUI											</a>
 playSound											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#removeFlagBlacklist">
-removeFlagBlacklist											</a>
-										</li>
-										<li>
 											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#requestDropdown">
 requestDropdown											</a>
@@ -3353,11 +3313,6 @@ setAction											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../player meta/framework/#setFlagBlacklist">
-setFlagBlacklist											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
 											<a href="../../player meta/framework/#setLiliaData">
 setLiliaData											</a>
 										</li>
@@ -3365,11 +3320,6 @@ setLiliaData											</a>
 											<span class="realm server"></span>
 											<a href="../../player meta/framework/#setLocalVar">
 setLocalVar											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#setPermFlags">
-setPermFlags											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -3405,11 +3355,6 @@ syncVars											</a>
 											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#takeMoney">
 takeMoney											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#takePermFlags">
-takePermFlags											</a>
 										</li>
 
 									</ul>
@@ -4026,17 +3971,6 @@ Think											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../configurations/animations/">Animations</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
 									<summary><a href="../../configurations/attributes/">Attributes</a></summary>
 
 									<ul>
@@ -4612,47 +4546,6 @@ object at a time that you can interface with.</p>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="addFlagBlacklist">
-					<h1><span class="realm server"></span></span>playerMeta:addFlagBlacklist(flags, blacklistInfo)</h1>
-				</a>
-
-					<p>Adds flags to the player's flag blacklist.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flags</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> The flags to add to the blacklist.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">blacklistInfo</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-									<span class="tag default">optional</span>
-
-								<p> Additional information about the blacklist entry.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="addMoney">
 					<h1><span class="realm shared"></span></span>playerMeta:addMoney(amount)</h1>
 				</a>
@@ -5199,30 +5092,6 @@ object at a time that you can interface with.</p>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="getFlagBlacklist">
-					<h1><span class="realm server"></span></span>playerMeta:getFlagBlacklist()</h1>
-				</a>
-
-					<p>Retrieves the player's flag blacklist.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
-
-								<p>The player's flag blacklist.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="getItemDropPos">
 					<h1><span class="realm shared"></span></span>playerMeta:getItemDropPos()</h1>
 				</a>
@@ -5296,6 +5165,56 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getLiliaData">
+					<h1><span class="realm server"></span></span>playerMeta:getLiliaData(key, default)</h1>
+				</a>
+
+					<p>Retrieves a value from the player's Lilia data.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">key</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The key for the data.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">default</span>
+
+
+
+								<p>[opt=nil] The default value to return if the key does not exist.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">any</span>
+
+								<p>The value corresponding to the key, or the default value if the key does not exist.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getLiliaData">
 					<h1><span class="realm client"></span></span>playerMeta:getLiliaData(key, default)</h1>
 				</a>
 
@@ -5346,56 +5265,6 @@ object at a time that you can interface with.</p>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="getLiliaData">
-					<h1><span class="realm server"></span></span>playerMeta:getLiliaData(key, default)</h1>
-				</a>
-
-					<p>Retrieves a value from the player's Lilia data.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The key for the data.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">default</span>
-
-
-
-								<p>[opt=nil] The default value to return if the key does not exist.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">any</span>
-
-								<p>The value corresponding to the key, or the default value if the key does not exist.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="getMoney">
 					<h1><span class="realm shared"></span></span>playerMeta:getMoney()</h1>
 				</a>
@@ -5420,32 +5289,8 @@ object at a time that you can interface with.</p>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="getPermFlags">
-					<h1><span class="realm server"></span></span>playerMeta:getPermFlags()</h1>
-				</a>
-
-					<p>Retrieves the player's permanent flags.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a>
-
-								<p>The player's permanent flags.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="getPlayTime">
-					<h1><span class="realm client"></span></span>playerMeta:getPlayTime()</h1>
+					<h1><span class="realm shared"></span></span>playerMeta:getPlayTime()</h1>
 				</a>
 
 					<p>Retrieves the player's total playtime.</p>
@@ -5469,7 +5314,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getPlayTime">
-					<h1><span class="realm shared"></span></span>playerMeta:getPlayTime()</h1>
+					<h1><span class="realm client"></span></span>playerMeta:getPlayTime()</h1>
 				</a>
 
 					<p>Retrieves the player's total playtime.</p>
@@ -5556,151 +5401,6 @@ object at a time that you can interface with.</p>
 									<span class="type">Entity</span> or <span class="type">nil</span>
 
 								<p>The entity traced by the player's aim, or nil if not found.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="givePermFlags">
-					<h1><span class="realm server"></span></span>playerMeta:givePermFlags(flags)</h1>
-				</a>
-
-					<p>Grants permanent flags to the player.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flags</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> The permanent flags to grant.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="hasAnyFlagBlacklist">
-					<h1><span class="realm server"></span></span>playerMeta:hasAnyFlagBlacklist(flags)</h1>
-				</a>
-
-					<p>Checks if the player has any of the specified flags blacklisted.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flags</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> A table containing the flags to check for in the blacklist.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>Whether the player has any of the specified flags blacklisted.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="hasFlagBlacklist">
-					<h1><span class="realm server"></span></span>playerMeta:hasFlagBlacklist(flag)</h1>
-				</a>
-
-					<p>Checks if the player has a specific flag blacklisted.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flag</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The flag to check for in the blacklist.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>Whether the player has the specified flag blacklisted.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="hasPermFlag">
-					<h1><span class="realm server"></span></span>playerMeta:hasPermFlag(flag)</h1>
-				</a>
-
-					<p>Checks if the player has a specific permanent flag.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flag</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The permanent flag to check.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>Whether or not the player has the permanent flag.</p>
 							</li>
 
 				</ul>
@@ -6235,34 +5935,6 @@ object at a time that you can interface with.</p>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="removeFlagBlacklist">
-					<h1><span class="realm server"></span></span>playerMeta:removeFlagBlacklist(flags)</h1>
-				</a>
-
-					<p>Removes flags from the player's flag blacklist.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flags</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> A table containing the flags to remove from the blacklist.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="requestDropdown">
 					<h1><span class="realm shared"></span></span>playerMeta:requestDropdown(title, subTitle, options, callback)</h1>
 				</a>
@@ -6655,34 +6327,6 @@ object at a time that you can interface with.</p>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="setFlagBlacklist">
-					<h1><span class="realm server"></span></span>playerMeta:setFlagBlacklist(flags)</h1>
-				</a>
-
-					<p>Sets the player's flag blacklist.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flags</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> The flag blacklist to set.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="setLiliaData">
 					<h1><span class="realm server"></span></span>playerMeta:setLiliaData(key, value, noNetworking)</h1>
 				</a>
@@ -6766,34 +6410,6 @@ object at a time that you can interface with.</p>
 
 
 								<p> The value of the variable.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="setPermFlags">
-					<h1><span class="realm server"></span></span>playerMeta:setPermFlags(flags)</h1>
-				</a>
-
-					<p>Sets the player's permanent flags.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flags</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> The permanent flags to set.</p>
 							</li>
 					</ul>
 
@@ -7039,34 +6655,6 @@ object at a time that you can interface with.</p>
 
 
 								<p> The amount of money to take.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="takePermFlags">
-					<h1><span class="realm server"></span></span>playerMeta:takePermFlags(flags)</h1>
-				</a>
-
-					<p>Revokes permanent flags from the player.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">flags</span>
-
-									<span class="tag"><span class="type">Table</span></span>
-
-
-								<p> The permanent flags to revoke.</p>
 							</li>
 					</ul>
 

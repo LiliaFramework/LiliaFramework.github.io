@@ -3057,11 +3057,6 @@ HasPrivilege											</a>
 Name											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#addFlagBlacklist">
-addFlagBlacklist											</a>
-										</li>
-										<li>
 											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#addMoney">
 addMoney											</a>
@@ -3072,22 +3067,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
+											<a href="../../player meta/framework/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3132,11 +3127,6 @@ getCurrentVehicle											</a>
 getEyeEnt											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#getFlagBlacklist">
-getFlagBlacklist											</a>
-										</li>
-										<li>
 											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#getItemDropPos">
 getItemDropPos											</a>
@@ -3167,11 +3157,6 @@ getLiliaData											</a>
 getMoney											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#getPermFlags">
-getPermFlags											</a>
-										</li>
-										<li>
 											<span class="realm client"></span>
 											<a href="../../player meta/framework/#getPlayTime">
 getPlayTime											</a>
@@ -3195,26 +3180,6 @@ getTrace											</a>
 											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#getTracedEntity">
 getTracedEntity											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#givePermFlags">
-givePermFlags											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#hasAnyFlagBlacklist">
-hasAnyFlagBlacklist											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#hasFlagBlacklist">
-hasFlagBlacklist											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#hasPermFlag">
-hasPermFlag											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -3307,11 +3272,6 @@ openUI											</a>
 playSound											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#removeFlagBlacklist">
-removeFlagBlacklist											</a>
-										</li>
-										<li>
 											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#requestDropdown">
 requestDropdown											</a>
@@ -3353,11 +3313,6 @@ setAction											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
-											<a href="../../player meta/framework/#setFlagBlacklist">
-setFlagBlacklist											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
 											<a href="../../player meta/framework/#setLiliaData">
 setLiliaData											</a>
 										</li>
@@ -3365,11 +3320,6 @@ setLiliaData											</a>
 											<span class="realm server"></span>
 											<a href="../../player meta/framework/#setLocalVar">
 setLocalVar											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#setPermFlags">
-setPermFlags											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
@@ -3405,11 +3355,6 @@ syncVars											</a>
 											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#takeMoney">
 takeMoney											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
-											<a href="../../player meta/framework/#takePermFlags">
-takePermFlags											</a>
 										</li>
 
 									</ul>
@@ -4026,17 +3971,6 @@ Think											</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../configurations/animations/">Animations</a></summary>
-
-									<ul>
-
-
-
-									</ul>
-									</details>
-							</li>
-							<li>
-									<details >
 									<summary><a href="../../configurations/attributes/">Attributes</a></summary>
 
 									<ul>
@@ -4643,6 +4577,584 @@ class, simply add to the <a href="../../libraries/lia.anim/#">lia.anim</a> table
 				<h3>Example Usage</h3>
 					<pre><code>lia.anim.setModelClass("models/police.mdl", "metrocop")
 </code></pre>
+
+		</section>
+	<h1 class="title">Tables</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="CitizenModelPaths">
+					<h1><span class="realm shared"></span></span>CitizenModelPaths</h1>
+				</a>
+
+					<p>This table defines the default paths for citizen models in Lilia.
+ These paths are used to determine which models should use citizen animations.
+ You can override these settings by placing a modified version in your config folder within the schema.</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">models&#47;humans&#47;factory</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">models&#47;betacz&#47;group01</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">models&#47;thespireroleplay&#47;humans</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">models&#47;suits&#47;humans</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">models&#47;humans&#47;group01</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">models&#47;humans&#47;group02</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">models&#47;humans&#47;group03</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">models&#47;humans&#47;group03m</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="DefaultTposingFixer">
+					<h1><span class="realm shared"></span></span>DefaultTposingFixer</h1>
+				</a>
+
+					<p>This table defines the default model-to-animation type mappings used to fix T-posing issues in Lilia.
+ You can override these settings by placing a modified version in your config folder within the schema.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="citizen_female">
+					<h1><span class="realm shared"></span></span>citizen_female</h1>
+				</a>
+
+					<p>This table defines the default model-to-animation type mappings used by citizen_female models.</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">normal</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">ACT_IDLE</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="citizen_male">
+					<h1><span class="realm shared"></span></span>citizen_male</h1>
+				</a>
+
+					<p>This table defines the default model-to-animation type mappings used by citizen_male models.</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">normal</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">ACT_IDLE</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="fastZombie">
+					<h1><span class="realm shared"></span></span>fastZombie</h1>
+				</a>
+
+					<p>This table defines the default model-to-animation type mappings used by fastZombie models.</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">[ACT_MP_STAND_IDLE]</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">[ACT_MP_CROUCH_IDLE]</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">[ACT_MP_CROUCHWALK]</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">[ACT_MP_WALK]</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">[ACT_MP_RUN]</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="metrocop">
+					<h1><span class="realm shared"></span></span>metrocop</h1>
+				</a>
+
+					<p>This table defines the default model-to-animation type mappings used by metrocop models.</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">normal</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">ACT_IDLE</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="overwatch">
+					<h1><span class="realm shared"></span></span>overwatch</h1>
+				</a>
+
+					<p>This table defines the default model-to-animation type mappings used by overwatch models.</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">normal</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">idle_unarmed</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="player">
+					<h1><span class="realm shared"></span></span>player</h1>
+				</a>
+
+					<p>This table defines the default model-to-animation type mappings used by player models.</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">normal</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">[ACT_MP_CROUCH_IDLE]</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">[ACT_MP_WALK]</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">[ACT_MP_RUN]</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="vort">
+					<h1><span class="realm shared"></span></span>vort</h1>
+				</a>
+
+					<p>This table defines the default model-to-animation type mappings used by vortigaunt models.</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">normal</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">ACT_IDLE</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="zombie">
+					<h1><span class="realm shared"></span></span>zombie</h1>
+				</a>
+
+					<p>This table defines the default model-to-animation type mappings used by zombie models.</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">[ACT_MP_STAND_IDLE]</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">[ACT_MP_CROUCH_IDLE]</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">[ACT_MP_CROUCHWALK]</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">[ACT_MP_WALK]</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">[ACT_MP_RUN]</span>
+
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+
 
 		</section>
 
