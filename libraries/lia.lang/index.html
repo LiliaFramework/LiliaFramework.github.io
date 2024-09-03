@@ -4553,10 +4553,10 @@ formatting arguments:</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="L">
-					<h1><span class="realm server"></span></span>L(key, client, ...)</h1>
+					<h1><span class="realm server"></span></span>L(key, ...)</h1>
 				</a>
 
-					<p>Retrieves a localized string based on the specified key and client's language setting.</p>
+					<p>Retrieves a localized string based on the specified key and the default language setting.</p>
 			</header>
 
 
@@ -4572,18 +4572,6 @@ formatting arguments:</p>
 
 
 								<p> The key corresponding to the desired localized string.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The client for whom the localized string is intended.</p>
 							</li>
 					</ul>
 
@@ -4619,7 +4607,7 @@ formatting arguments:</p>
 					<h1><span class="realm client"></span></span>L(key, ...)</h1>
 				</a>
 
-					<p>Creates a client-side ConVar to store the language setting and retrieves a localized string based on it.</p>
+					<p>Retrieves a localized string based on the specified key and the default language setting.</p>
 			</header>
 
 
@@ -4670,7 +4658,7 @@ formatting arguments:</p>
 					<h1><span class="realm client"></span></span>L2(key, ...)</h1>
 				</a>
 
-					<p>Retrieves a localized string based on the specified key and client's language setting.
+					<p>Retrieves a localized string based on the specified key and the default language setting.
  Similar to L(), but returns nil if the key is not found in the language table.</p>
 			</header>
 
@@ -4719,10 +4707,10 @@ formatting arguments:</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="L2">
-					<h1><span class="realm server"></span></span>L2(key, client, ...)</h1>
+					<h1><span class="realm server"></span></span>L2(key, ...)</h1>
 				</a>
 
-					<p>Retrieves a localized string based on the specified key and client's language setting.
+					<p>Retrieves a localized string based on the specified key and the default language setting.
  Similar to L(), but returns nil if the key is not found in the language table.</p>
 			</header>
 
@@ -4739,18 +4727,6 @@ formatting arguments:</p>
 
 
 								<p> The key corresponding to the desired localized string.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">client</span>
-
-									<span class="tag"><span class="type">Player</span></span>
-
-
-								<p> The client for whom the localized string is intended.</p>
 							</li>
 					</ul>
 
