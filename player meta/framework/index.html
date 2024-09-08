@@ -2667,19 +2667,14 @@ kickClass											</a>
 
 
 										<li>
-											<span class="realm server"></span>
-											<a href="../../entity meta/doors/#SetLocked">
-SetLocked											</a>
-										</li>
-										<li>
 											<span class="realm shared"></span>
 											<a href="../../entity meta/doors/#checkDoorAccess">
 checkDoorAccess											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../entity meta/doors/#getDoorPartner">
-getDoorPartner											</a>
+											<span class="realm shared"></span>
+											<a href="../../entity meta/doors/#getDoorOwner">
+getDoorOwner											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -2688,11 +2683,16 @@ getDoorPartner											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../entity meta/doors/#getDoorPartner">
+getDoorPartner											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../entity meta/doors/#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/doors/#isDoor">
 isDoor											</a>
 										</li>
@@ -2707,9 +2707,29 @@ isDoorLocked											</a>
 isLocked											</a>
 										</li>
 										<li>
+											<span class="realm shared"></span>
+											<a href="../../entity meta/doors/#keysLock">
+keysLock											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../entity meta/doors/#keysOwn">
+keysOwn											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../entity meta/doors/#keysUnLock">
+keysUnLock											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../entity meta/doors/#removeDoorAccessData">
 removeDoorAccessData											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../entity meta/doors/#setLocked">
+setLocked											</a>
 										</li>
 
 									</ul>
@@ -3082,22 +3102,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../player meta/framework/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../player meta/framework/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -4565,7 +4585,10 @@ object at a time that you can interface with.</p>
 					<h1><span class="realm shared"></span></span>playerMeta:addMoney(amount)</h1>
 				</a>
 
-					<p>Adds money to the player's character.</p>
+					<p>Adds money to the player's character.
+ This function uses Lilia methods to add the specified amount of money to the player.
+ It is designed to be compatible with the DarkRP <a href="../../player meta/framework/#addMoney">addMoney</a> method.
+ If the total amount exceeds the configured money limit, the excess is spawned as an item in the world.</p>
 			</header>
 
 
@@ -4593,7 +4616,9 @@ object at a time that you can interface with.</p>
 					<h1><span class="realm shared"></span></span>playerMeta:canAfford(amount)</h1>
 				</a>
 
-					<p>Checks if the player's character can afford a specified amount of money.</p>
+					<p>Checks if the player's character can afford a specified amount of money.
+ This function uses Lilia methods to determine if the player can afford the specified amount.
+ It is designed to be compatible with the DarkRP <a href="../../player meta/framework/#canAfford">canAfford</a> method.</p>
 			</header>
 
 
@@ -4629,34 +4654,6 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="chatNotify">
-					<h1><span class="realm client"></span></span>playerMeta:chatNotify(message)</h1>
-				</a>
-
-					<p>Displays a notification for this player in the chatbox.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">message</span>
-
-									<span class="tag"><span class="type">String</span></span>
-
-
-								<p> Text to display in the notification</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="chatNotify">
 					<h1><span class="realm server"></span></span>playerMeta:chatNotify(message)</h1>
 				</a>
 
@@ -4684,8 +4681,36 @@ object at a time that you can interface with.</p>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="chatNotify">
+					<h1><span class="realm client"></span></span>playerMeta:chatNotify(message)</h1>
+				</a>
+
+					<p>Displays a notification for this player in the chatbox.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">message</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> Text to display in the notification</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="chatNotifyLocalized">
-					<h1><span class="realm server"></span></span>playerMeta:chatNotifyLocalized(message, ...)</h1>
+					<h1><span class="realm client"></span></span>playerMeta:chatNotifyLocalized(message, ...)</h1>
 				</a>
 
 					<p>Displays a notification for this player in the chatbox with the given language phrase.</p>
@@ -4724,7 +4749,7 @@ object at a time that you can interface with.</p>
 		<section class="method">
 			<header>
 				<a class="anchor" id="chatNotifyLocalized">
-					<h1><span class="realm client"></span></span>playerMeta:chatNotifyLocalized(message, ...)</h1>
+					<h1><span class="realm server"></span></span>playerMeta:chatNotifyLocalized(message, ...)</h1>
 				</a>
 
 					<p>Displays a notification for this player in the chatbox with the given language phrase.</p>

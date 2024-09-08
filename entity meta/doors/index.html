@@ -2667,19 +2667,14 @@ kickClass											</a>
 
 
 										<li>
-											<span class="realm server"></span>
-											<a href="../../entity meta/doors/#SetLocked">
-SetLocked											</a>
-										</li>
-										<li>
 											<span class="realm shared"></span>
 											<a href="../../entity meta/doors/#checkDoorAccess">
 checkDoorAccess											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../entity meta/doors/#getDoorPartner">
-getDoorPartner											</a>
+											<span class="realm shared"></span>
+											<a href="../../entity meta/doors/#getDoorOwner">
+getDoorOwner											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -2688,11 +2683,16 @@ getDoorPartner											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../entity meta/doors/#getDoorPartner">
+getDoorPartner											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../entity meta/doors/#isDoor">
 isDoor											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/doors/#isDoor">
 isDoor											</a>
 										</li>
@@ -2707,9 +2707,29 @@ isDoorLocked											</a>
 isLocked											</a>
 										</li>
 										<li>
+											<span class="realm shared"></span>
+											<a href="../../entity meta/doors/#keysLock">
+keysLock											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../entity meta/doors/#keysOwn">
+keysOwn											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../entity meta/doors/#keysUnLock">
+keysUnLock											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../entity meta/doors/#removeDoorAccessData">
 removeDoorAccessData											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../entity meta/doors/#setLocked">
+setLocked											</a>
 										</li>
 
 									</ul>
@@ -3082,22 +3102,22 @@ addMoney											</a>
 canAfford											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../player meta/framework/#chatNotify">
-chatNotify											</a>
-										</li>
-										<li>
 											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
 											<span class="realm client"></span>
+											<a href="../../player meta/framework/#chatNotify">
+chatNotify											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -4490,35 +4510,6 @@ Think											</a>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="SetLocked">
-					<h1><span class="realm server"></span></span>entityMeta:SetLocked(state)</h1>
-				</a>
-
-					<p>Sets the locked state of the door.
- This function sets whether the door is locked or not.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">state</span>
-
-									<span class="tag"><span class="type">Boolean</span></span>
-
-
-								<p> The new locked state of the door (true for locked, false for unlocked).</p>
-							</li>
-					</ul>
-
-
-
-		</section>
-		<section class="method">
-			<header>
 				<a class="anchor" id="checkDoorAccess">
 					<h1><span class="realm shared"></span></span>entityMeta:checkDoorAccess(client, access)</h1>
 				</a>
@@ -4571,11 +4562,12 @@ Think											</a>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="getDoorPartner">
-					<h1><span class="realm server"></span></span>entityMeta:getDoorPartner()</h1>
+				<a class="anchor" id="getDoorOwner">
+					<h1><span class="realm shared"></span></span>entityMeta:getDoorOwner()</h1>
 				</a>
 
-					<p>Retrieves the partner entity of the door.</p>
+					<p>Retrieves the owner of the entity.
+ This function returns the player who owns the entity if it is a vehicle. It is intended for compatibility with DarkRP's vehicle ownership system.</p>
 			</header>
 
 
@@ -4584,9 +4576,9 @@ Think											</a>
 				<ul>
 
 							<li>
-									<span class="type">Entity</span>
+									<span class="type">Player</span> or <span class="type">nil</span>
 
-								<p>The partner entity of the door, if any.</p>
+								<p>The player who owns the entity, or nil if no owner is set.</p>
 							</li>
 
 				</ul>
@@ -4611,6 +4603,30 @@ Think											</a>
 									<span class="type">Entity</span>
 
 								<p>The partner door entity, if any.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getDoorPartner">
+					<h1><span class="realm server"></span></span>entityMeta:getDoorPartner()</h1>
+				</a>
+
+					<p>Retrieves the partner entity of the door.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">Entity</span>
+
+								<p>The partner entity of the door, if any.</p>
 							</li>
 
 				</ul>
@@ -4720,6 +4736,62 @@ Think											</a>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="keysLock">
+					<h1><span class="realm shared"></span></span>entityMeta:keysLock()</h1>
+				</a>
+
+					<p>Locks the entity.
+ This function locks the entity if it is a vehicle. It is intended for compatibility with DarkRP's vehicle locking system.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="keysOwn">
+					<h1><span class="realm shared"></span></span>entityMeta:keysOwn(client)</h1>
+				</a>
+
+					<p>Sets the owner of the entity.
+ This function assigns ownership of the entity to the specified player. It is intended for compatibility with DarkRP's vehicle ownership system.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+
+
+								<p> The player who will become the owner of the entity.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="keysUnLock">
+					<h1><span class="realm shared"></span></span>entityMeta:keysUnLock()</h1>
+				</a>
+
+					<p>Unlocks the entity.
+ This function unlocks the entity if it is a vehicle. It is intended for compatibility with DarkRP's vehicle unlocking system.</p>
+			</header>
+
+
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="removeDoorAccessData">
 					<h1><span class="realm server"></span></span>entityMeta:removeDoorAccessData()</h1>
 				</a>
@@ -4728,6 +4800,35 @@ Think											</a>
  This function clears all access data associated with the door and updates the clients.</p>
 			</header>
 
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="setLocked">
+					<h1><span class="realm server"></span></span>entityMeta:setLocked(state)</h1>
+				</a>
+
+					<p>Sets the locked state of the door.
+ This function sets whether the door is locked or not.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">state</span>
+
+									<span class="tag"><span class="type">Boolean</span></span>
+
+
+								<p> The new locked state of the door (true for locked, false for unlocked).</p>
+							</li>
+					</ul>
 
 
 
