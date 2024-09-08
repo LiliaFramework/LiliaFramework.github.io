@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>RaisedWeapons - Lilia Documentation</title>
+		<title>lia.math - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="RaisedWeapons - Lilia Documentation" />
+		<meta property="og:title" content="lia.math - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Raised Weapons Module." />
+			<meta property="og:description" content="Various useful mathematical functions." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -1003,7 +1003,7 @@ send											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../libraries/lia.math/">lia.math</a></summary>
 
 									<ul>
@@ -4143,7 +4143,7 @@ Think											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../configurations/raisedweapons/">RaisedWeapons</a></summary>
 
 									<ul>
@@ -4471,62 +4471,169 @@ Think											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>RaisedWeapons</h1>
-	<h2>Configuration for Raised Weapons Module.</h2>
+	<h1>lia.math</h1>
+	<h2>Various useful mathematical functions.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="UnitsToCentimeters">
+					<h1><span class="realm shared"></span></span>UnitsToCentimeters(units)</h1>
 				</a>
 
-					<p>This table defines the default settings for the RaisedWeapons Module.</p>
+					<p>Converts units to centimeters.</p>
 			</header>
 
 
-					<h3>Fields</h3>
+					<h3>Parameters</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">PermaRaisedWeapons</span>
+								<span class="tag parameter">units</span>
+
+									<span class="tag"><span class="type">number</span></span>
 
 
-
-								<p> Weapons that are always raised | <strong>table</strong></p>
+								<p> The units to convert</p>
 							</li>
 					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The equivalent measurement in centimeters</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="UnitsToInches">
+					<h1><span class="realm shared"></span></span>UnitsToInches(units)</h1>
+				</a>
+
+					<p>Converts units to inches.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">WeaponToggleDelay</span>
+								<span class="tag parameter">units</span>
+
+									<span class="tag"><span class="type">number</span></span>
 
 
-
-								<p> Time Between Weapon Toggles | <strong>number</strong></p>
+								<p> The units to convert</p>
 							</li>
 					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The equivalent measurement in inches</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="UnitsToMeters">
+					<h1><span class="realm shared"></span></span>UnitsToMeters(units)</h1>
+				</a>
+
+					<p>Converts units to meters.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">ShouldPrintMessage</span>
+								<span class="tag parameter">units</span>
+
+									<span class="tag"><span class="type">number</span></span>
 
 
-
-								<p> Wether or not weapon raising messages should print in chat | <strong>boolean</strong></p>
+								<p> The units to convert</p>
 							</li>
 					</ul>
 
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The equivalent measurement in meters</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="chance">
+					<h1><span class="realm shared"></span></span>chance(chance)</h1>
+				</a>
+
+					<p>Rolls a chance based on a given probability.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">chance</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The probability of success in percentage</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if the chance is successful, false otherwise</p>
+							</li>
+
+				</ul>
 
 
 		</section>

@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>RaisedWeapons - Lilia Documentation</title>
+		<title>lia.ease - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="RaisedWeapons - Lilia Documentation" />
+		<meta property="og:title" content="lia.ease - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for Raised Weapons Module." />
+			<meta property="og:description" content="Helper library for easing animations." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -576,7 +576,7 @@ wipeTables											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../libraries/lia.ease/">lia.ease</a></summary>
 
 									<ul>
@@ -928,22 +928,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -1133,12 +1133,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2645,12 +2645,12 @@ checkDoorAccess											</a>
 getDoorOwner											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/doors/#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../entity meta/doors/#getDoorPartner">
 getDoorPartner											</a>
 										</li>
@@ -2731,12 +2731,12 @@ clearNetVars											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/framework/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../entity meta/framework/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2885,12 +2885,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
@@ -3165,12 +3165,12 @@ getLiliaData											</a>
 getMoney											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#getPlayTime">
 getPlayTime											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#getPlayTime">
 getPlayTime											</a>
 										</li>
@@ -4143,7 +4143,7 @@ Think											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../configurations/raisedweapons/">RaisedWeapons</a></summary>
 
 									<ul>
@@ -4471,62 +4471,1213 @@ Think											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>RaisedWeapons</h1>
-	<h2>Configuration for Raised Weapons Module.</h2>
+	<h1>lia.ease</h1>
+	<h2>Helper library for easing animations.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="easeIn">
+					<h1><span class="realm client"></span></span>easeIn(t, tMax, start, delta)</h1>
 				</a>
 
-					<p>This table defines the default settings for the RaisedWeapons Module.</p>
+					<p>Eases in the value over time using an easing function.</p>
 			</header>
 
 
-					<h3>Fields</h3>
+					<h3>Parameters</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">PermaRaisedWeapons</span>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
 
 
-
-								<p> Weapons that are always raised | <strong>table</strong></p>
+								<p> Time elapsed.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">WeaponToggleDelay</span>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
 
 
-
-								<p> Time Between Weapon Toggles | <strong>number</strong></p>
+								<p> The duration of the animation.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">ShouldPrintMessage</span>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
 
 
-
-								<p> Wether or not weapon raising messages should print in chat | <strong>boolean</strong></p>
+								<p> The starting value.</p>
 							</li>
 					</ul>
 
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeInBack">
+					<h1><span class="realm client"></span></span>easeInBack(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases in the value with a back effect.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeInBounce">
+					<h1><span class="realm client"></span></span>easeInBounce(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases in the value with a bounce effect.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeInElastic">
+					<h1><span class="realm client"></span></span>easeInElastic(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases in the value with an elastic effect.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeInOut">
+					<h1><span class="realm client"></span></span>easeInOut(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases in and then out the value over time using an easing function.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeInOutBack">
+					<h1><span class="realm client"></span></span>easeInOutBack(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases in and out the value with a back effect.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeInOutBounce">
+					<h1><span class="realm client"></span></span>easeInOutBounce(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases in and out the value with a bounce effect.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeInOutElastic">
+					<h1><span class="realm client"></span></span>easeInOutElastic(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases in and out the value with an elastic effect.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeOut">
+					<h1><span class="realm client"></span></span>easeOut(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases out the value over time using an easing function.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeOutBack">
+					<h1><span class="realm client"></span></span>easeOutBack(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases out the value with a back effect.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeOutBounce">
+					<h1><span class="realm client"></span></span>easeOutBounce(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases out the value with a bounce effect.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeOutElastic">
+					<h1><span class="realm client"></span></span>easeOutElastic(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases out the value with an elastic effect.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeOutIn">
+					<h1><span class="realm client"></span></span>easeOutIn(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases out and then in the value over time using an easing function.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeOutInBack">
+					<h1><span class="realm client"></span></span>easeOutInBack(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases out and then in the value with a back effect.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeOutInBounce">
+					<h1><span class="realm client"></span></span>easeOutInBounce(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases out and then in the value with a bounce effect.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="easeOutInElastic">
+					<h1><span class="realm client"></span></span>easeOutInElastic(t, tMax, start, delta)</h1>
+				</a>
+
+					<p>Eases out and then in the value with an elastic effect.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">t</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> Time elapsed.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tMax</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The duration of the animation.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">delta</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The total change in value.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>number The eased value.</p>
+							</li>
+
+				</ul>
 
 
 		</section>
