@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>ItemSave - Lilia Documentation</title>
+		<title>lia.darkrp - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="ItemSave - Lilia Documentation" />
+		<meta property="og:title" content="lia.darkrp - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Hook Documentation for Item Save Module." />
+			<meta property="og:description" content="A library of DarkRP compatibility functions." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -423,7 +423,7 @@ spawn											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../libraries/lia.darkrp/">lia.darkrp</a></summary>
 
 									<ul>
@@ -838,22 +838,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -1012,12 +1012,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -1881,7 +1881,7 @@ PostDrawInventory											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../hooks/itemsave/">ItemSave</a></summary>
 
 									<ul>
@@ -2713,12 +2713,12 @@ checkDoorAccess											</a>
 getDoorOwner											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../entity meta/doors/#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/doors/#getDoorPartner">
 getDoorPartner											</a>
 										</li>
@@ -2799,12 +2799,12 @@ clearNetVars											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../entity meta/framework/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/framework/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2953,12 +2953,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
@@ -3148,12 +3148,12 @@ chatNotify											</a>
 chatNotify											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3228,12 +3228,12 @@ getLiliaData											</a>
 getMoney											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#getPlayTime">
 getPlayTime											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#getPlayTime">
 getPlayTime											</a>
 										</li>
@@ -4534,8 +4534,8 @@ Think											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>ItemSave</h1>
-	<h2>Hook Documentation for Item Save Module.</h2>
+	<h1>lia.darkrp</h1>
+	<h2>A library of DarkRP compatibility functions.</h2>
 </header>
 
 <p>
@@ -4546,13 +4546,12 @@ Think											</a>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="OnSavedItemLoaded">
-					<h1><span class="realm server"></span></span>MODULE:OnSavedItemLoaded(loadedItems)</h1>
+				<a class="anchor" id="findEmptyPos">
+					<h1><span class="realm server"></span></span>findEmptyPos(startPos, entitiesToIgnore, maxDistance, searchStep, checkArea)</h1>
 				</a>
 
-					<p>Called when saved items are loaded from the database.
- This hook is called after the saved items have been successfully loaded from the database.
- It can be used to perform additional actions with the loaded items.</p>
+					<p>Finds an empty position within a certain distance from a starting position.
+ This function searches for an empty position within a specified distance, checking multiple directions.</p>
 			</header>
 
 
@@ -4562,11 +4561,224 @@ Think											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">loadedItems</span>
+								<span class="tag parameter">startPos</span>
+
+									<span class="tag"><span class="type">Vector</span></span>
+
+
+								<p> The starting position to check.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entitiesToIgnore</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> A table of entities to ignore during the check.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">maxDistance</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The maximum distance to search.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">searchStep</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The step size for the search.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">checkArea</span>
+
+									<span class="tag"><span class="type">Vector</span></span>
+
+
+								<p> A vector defining the area around the position to check.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>Vector The found empty position, or the original position if none are found.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="formatMoney">
+					<h1><span class="realm shared"></span></span>formatMoney(amount)</h1>
+				</a>
+
+					<p>Formats an amount of money using the currency formatting function.
+ This function formats the specified amount of money according to the currency system.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">amount</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The amount of money to be formatted.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>string The formatted money string.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isEmpty">
+					<h1><span class="realm server"></span></span>isEmpty(position, entitiesToIgnore)</h1>
+				</a>
+
+					<p>Checks if a position is empty, considering certain entity types and ignoring specified entities.
+ This function determines if a position is clear of obstacles, entities, and certain content types.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">position</span>
+
+									<span class="tag"><span class="type">Vector</span></span>
+
+
+								<p> The position to check.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entitiesToIgnore</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> A table of entities to ignore during the check.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>bool Whether the position is considered empty.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="notify">
+					<h1><span class="realm server"></span></span>notify(client, _, _, message)</h1>
+				</a>
+
+					<p>Sends a notification message to a client.
+ This function sends a notification message to a specified client using the notify method.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
 
 
 
-								<p> A table containing the loaded item entities.</p>
+								<p> The client to receive the notification.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">_</span>
+
+
+
+								<p> Unused argument.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">_</span>
+
+
+
+								<p> Unused argument.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">message</span>
+
+
+
+								<p> The message to be sent.</p>
 							</li>
 					</ul>
 
@@ -4575,23 +4787,63 @@ Think											</a>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="ShouldDeleteSavedItems">
-					<h1><span class="realm server"></span></span>MODULE:ShouldDeleteSavedItems()</h1>
+				<a class="anchor" id="textWrap">
+					<h1><span class="realm client"></span></span>textWrap(text, fontName, maxLineWidth)</h1>
 				</a>
 
-					<p>Determines if saved items should be deleted on server restart.
- This hook is called to check whether saved items should be deleted when the server restarts.</p>
+					<p>Wraps text to fit within a specified width, breaking lines where necessary.
+ This function calculates the width of each character and word using the specified font,
+ and inserts line breaks to ensure that no line exceeds the maximum width.</p>
 			</header>
 
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">text</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The text string to be wrapped.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">fontName</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The font to be used for measuring text width.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">maxLineWidth</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The maximum width in pixels for each line of text.</p>
+							</li>
+					</ul>
 
 
 				<h3>Returns</h3>
 				<ul>
 
 							<li>
-									<span class="type">bool</span>
+									<span class="tag type">any</span>
 
-								<p>True if saved items should be deleted, false otherwise.</p>
+								<p>string The wrapped text with line breaks inserted.</p>
 							</li>
 
 				</ul>

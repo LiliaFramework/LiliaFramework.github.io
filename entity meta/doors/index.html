@@ -424,6 +424,42 @@ spawn											</a>
 							</li>
 							<li>
 									<details >
+									<summary><a href="../../libraries/lia.darkrp/">lia.darkrp</a></summary>
+
+									<ul>
+
+
+										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.darkrp/#findEmptyPos">
+findEmptyPos											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.darkrp/#formatMoney">
+formatMoney											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.darkrp/#isEmpty">
+isEmpty											</a>
+										</li>
+										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.darkrp/#notify">
+notify											</a>
+										</li>
+										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.darkrp/#textWrap">
+textWrap											</a>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
 									<summary><a href="../../libraries/lia.data/">lia.data</a></summary>
 
 									<ul>
@@ -802,22 +838,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm client"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -976,12 +1012,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2677,12 +2713,12 @@ checkDoorAccess											</a>
 getDoorOwner											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/doors/#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../entity meta/doors/#getDoorPartner">
 getDoorPartner											</a>
 										</li>
@@ -2763,12 +2799,12 @@ clearNetVars											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/framework/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../entity meta/framework/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2917,12 +2953,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
@@ -3112,12 +3148,12 @@ chatNotify											</a>
 chatNotify											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotifyLocalized">
 chatNotifyLocalized											</a>
 										</li>
@@ -3192,12 +3228,12 @@ getLiliaData											</a>
 getMoney											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm shared"></span>
 											<a href="../../player meta/framework/#getPlayTime">
 getPlayTime											</a>
 										</li>
 										<li>
-											<span class="realm shared"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#getPlayTime">
 getPlayTime											</a>
 										</li>
@@ -4588,30 +4624,6 @@ Think											</a>
 		<section class="method">
 			<header>
 				<a class="anchor" id="getDoorPartner">
-					<h1><span class="realm client"></span></span>entityMeta:getDoorPartner()</h1>
-				</a>
-
-					<p>Retrieves the partner door entity associated with this entity.</p>
-			</header>
-
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">Entity</span>
-
-								<p>The partner door entity, if any.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="getDoorPartner">
 					<h1><span class="realm server"></span></span>entityMeta:getDoorPartner()</h1>
 				</a>
 
@@ -4627,6 +4639,30 @@ Think											</a>
 									<span class="type">Entity</span>
 
 								<p>The partner entity of the door, if any.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="getDoorPartner">
+					<h1><span class="realm client"></span></span>entityMeta:getDoorPartner()</h1>
+				</a>
+
+					<p>Retrieves the partner door entity associated with this entity.</p>
+			</header>
+
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">Entity</span>
+
+								<p>The partner door entity, if any.</p>
 							</li>
 
 				</ul>
