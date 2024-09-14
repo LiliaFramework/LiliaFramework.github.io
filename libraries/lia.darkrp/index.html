@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>InteractionMenu - Lilia Documentation</title>
+		<title>lia.darkrp - Lilia Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="InteractionMenu - Lilia Documentation" />
+		<meta property="og:title" content="lia.darkrp - Lilia Documentation" />
 		<meta property="og:site_name" content="Lilia Documentation" />
 
-			<meta property="og:description" content="Configuration for InteractionMenu Module." />
+			<meta property="og:description" content="A library of DarkRP compatibility functions." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -453,7 +453,7 @@ spawn											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../libraries/lia.darkrp/">lia.darkrp</a></summary>
 
 									<ul>
@@ -964,22 +964,22 @@ spawn											</a>
 AddTable											</a>
 										</li>
 										<li>
+											<span class="realm server"></span>
+											<a href="../../libraries/lia.lang/#L">
+L											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L">
 L											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
-											<a href="../../libraries/lia.lang/#L">
-L											</a>
-										</li>
-										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.lang/#L2">
 L2											</a>
 										</li>
@@ -1209,12 +1209,12 @@ loadWorkshop											</a>
 checkBadType											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../libraries/lia.net/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2751,12 +2751,12 @@ checkDoorAccess											</a>
 getDoorOwner											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../entity meta/doors/#getDoorPartner">
 getDoorPartner											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/doors/#getDoorPartner">
 getDoorPartner											</a>
 										</li>
@@ -2837,12 +2837,12 @@ clearNetVars											</a>
 getEntItemDropPos											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../entity meta/framework/#getNetVar">
 getNetVar											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../entity meta/framework/#getNetVar">
 getNetVar											</a>
 										</li>
@@ -2991,12 +2991,12 @@ getID											</a>
 getModel											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../item meta/framework/#getName">
 getName											</a>
 										</li>
@@ -3186,12 +3186,12 @@ binaryQuestion											</a>
 canAfford											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#chatNotify">
 chatNotify											</a>
 										</li>
@@ -3266,12 +3266,12 @@ getItemWeapon											</a>
 getItems											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#getLiliaData">
 getLiliaData											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#getLiliaData">
 getLiliaData											</a>
 										</li>
@@ -3381,12 +3381,12 @@ notifyP											</a>
 openPage											</a>
 										</li>
 										<li>
-											<span class="realm server"></span>
+											<span class="realm client"></span>
 											<a href="../../player meta/framework/#openUI">
 openUI											</a>
 										</li>
 										<li>
-											<span class="realm client"></span>
+											<span class="realm server"></span>
 											<a href="../../player meta/framework/#openUI">
 openUI											</a>
 										</li>
@@ -4151,7 +4151,7 @@ Think											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../configurations/interactionmenu/">InteractionMenu</a></summary>
 
 									<ul>
@@ -4567,51 +4567,319 @@ Think											</a>
 			<article>
 					<div class="wrapper">
 						<header class="module">
-	<h1>InteractionMenu</h1>
-	<h2>Configuration for InteractionMenu Module.</h2>
+	<h1>lia.darkrp</h1>
+	<h2>A library of DarkRP compatibility functions.</h2>
 </header>
 
 <p>
 
 </p>
 
-	<h1 class="title">Tables</h1>
+	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Configuration">
-					<h1><span class="realm shared"></span></span>Configuration</h1>
+				<a class="anchor" id="findEmptyPos">
+					<h1><span class="realm server"></span></span>findEmptyPos(startPos, entitiesToIgnore, maxDistance, searchStep, checkArea)</h1>
 				</a>
 
-					<p>This table defines the default settings for the InteractionMenu Module.</p>
+					<p>Finds an empty position within a certain distance from a starting position.
+ This function searches for an empty position within a specified distance, checking multiple directions.</p>
 			</header>
 
 
-					<h3>Fields</h3>
+					<h3>Parameters</h3>
 
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">MaxInteractionDistance</span>
+								<span class="tag parameter">startPos</span>
+
+									<span class="tag"><span class="type">Vector</span></span>
 
 
-
-								<p> Maximum distance for Interaction Menu to interact with other entities | <strong>number</strong></p>
+								<p> The starting position to check.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">CarSearchRadius</span>
+								<span class="tag parameter">entitiesToIgnore</span>
+
+									<span class="tag"><span class="type">Table</span></span>
 
 
-
-								<p> Search radius for Interaction Menu to find a car | <strong>number</strong></p>
+								<p> A table of entities to ignore during the check.</p>
 							</li>
 					</ul>
 
+					<ul>
+
+							<li>
+								<span class="tag parameter">maxDistance</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The maximum distance to search.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">searchStep</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The step size for the search.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">checkArea</span>
+
+									<span class="tag"><span class="type">Vector</span></span>
+
+
+								<p> A vector defining the area around the position to check.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>Vector The found empty position, or the original position if none are found.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="formatMoney">
+					<h1><span class="realm shared"></span></span>formatMoney(amount)</h1>
+				</a>
+
+					<p>Formats an amount of money using the currency formatting function.
+ This function formats the specified amount of money according to the currency system.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">amount</span>
+
+									<span class="tag"><span class="type">Float</span></span>
+
+
+								<p> The amount of money to be formatted.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>string The formatted money string.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="isEmpty">
+					<h1><span class="realm server"></span></span>isEmpty(position, entitiesToIgnore)</h1>
+				</a>
+
+					<p>Checks if a position is empty, considering certain entity types and ignoring specified entities.
+ This function determines if a position is clear of obstacles, entities, and certain content types.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">position</span>
+
+									<span class="tag"><span class="type">Vector</span></span>
+
+
+								<p> The position to check.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">entitiesToIgnore</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> A table of entities to ignore during the check.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>bool Whether the position is considered empty.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="notify">
+					<h1><span class="realm server"></span></span>notify(client, _, _, message)</h1>
+				</a>
+
+					<p>Sends a notification message to a client.
+ This function sends a notification message to a specified client using the notify method.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+
+
+								<p> The client to receive the notification.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">_</span>
+
+
+
+								<p> Unused argument.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">_</span>
+
+
+
+								<p> Unused argument.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">message</span>
+
+
+
+								<p> The message to be sent.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="textWrap">
+					<h1><span class="realm client"></span></span>textWrap(text, fontName, maxLineWidth)</h1>
+				</a>
+
+					<p>Wraps text to fit within a specified width, breaking lines where necessary.
+ This function calculates the width of each character and word using the specified font,
+ and inserts line breaks to ensure that no line exceeds the maximum width.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">text</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The text string to be wrapped.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">fontName</span>
+
+									<span class="tag"><span class="type">String</span></span>
+
+
+								<p> The font to be used for measuring text width.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">maxLineWidth</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The maximum width in pixels for each line of text.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>string The wrapped text with line breaks inserted.</p>
+							</li>
+
+				</ul>
 
 
 		</section>
