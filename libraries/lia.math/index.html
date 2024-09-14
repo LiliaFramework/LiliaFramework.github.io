@@ -1011,6 +1011,46 @@ send											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ApproachAngleSpeed">
+ApproachAngleSpeed											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ApproachSpeed">
+ApproachSpeed											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ApproachVectorSpeed">
+ApproachVectorSpeed											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#Bias">
+Bias											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ClampAngle">
+ClampAngle											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ClampedRemap">
+ClampedRemap											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#Gain">
+Gain											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#InRange">
+InRange											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.math/#UnitsToCentimeters">
 UnitsToCentimeters											</a>
 										</li>
@@ -1160,13 +1200,33 @@ setNetVar											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.table/#Filter">
+Filter											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.table/#FullCopy">
+FullCopy											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.table/#Lookupify">
 Lookupify											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.table/#MakeAssociative">
+MakeAssociative											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.table/#Sum">
 Sum											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.table/#Unique">
+Unique											</a>
 										</li>
 
 									</ul>
@@ -4481,6 +4541,510 @@ Think											</a>
 
 	<h1 class="title">Functions</h1>
 
+		<section class="method">
+			<header>
+				<a class="anchor" id="ApproachAngleSpeed">
+					<h1><span class="realm shared"></span></span>ApproachAngleSpeed(start, dest, speed)</h1>
+				</a>
+
+					<p>Approaches an angle towards a target angle at a specified speed.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Angle</span></span>
+
+
+								<p> The starting angle.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">dest</span>
+
+									<span class="tag"><span class="type">Angle</span></span>
+
+
+								<p> The target angle.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">speed</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The speed at which to approach the target.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>Angle The approached angle.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ApproachSpeed">
+					<h1><span class="realm shared"></span></span>ApproachSpeed(start, dest, speed)</h1>
+				</a>
+
+					<p>Approaches a value towards a target value at a specified speed.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Angle</span></span>
+
+
+								<p> The starting value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">dest</span>
+
+									<span class="tag"><span class="type">Angle</span></span>
+
+
+								<p> The target value.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">speed</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The speed at which to approach the target.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>The approached value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ApproachVectorSpeed">
+					<h1><span class="realm shared"></span></span>ApproachVectorSpeed(start, dest, speed)</h1>
+				</a>
+
+					<p>Approaches a vector towards a target vector at a specified speed.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">start</span>
+
+									<span class="tag"><span class="type">Angle</span></span>
+
+
+								<p> Vector The starting vector.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">dest</span>
+
+									<span class="tag"><span class="type">Angle</span></span>
+
+
+								<p> Vector The target vector.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">speed</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The speed at which to approach the target.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>Vector The approached vector.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="Bias">
+					<h1><span class="realm shared"></span></span>Bias(x, amount)</h1>
+				</a>
+
+					<p>Applies a bias to a value based on an amount.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">x</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The value to bias.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">amount</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The bias amount.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>The biased value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ClampAngle">
+					<h1><span class="realm shared"></span></span>ClampAngle(val, min, max)</h1>
+				</a>
+
+					<p>Clamps an angle to a specified range.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">val</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The angle to clamp.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">min</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The minimum angle of the range.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">max</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The maximum angle of the range.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>Angle The clamped angle.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ClampedRemap">
+					<h1><span class="realm shared"></span></span>ClampedRemap(val, frommin, frommax, tomin, tomax)</h1>
+				</a>
+
+					<p>Remaps a value from one range to another and clamps it.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">val</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The value to remap.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">frommin</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The minimum value of the original range.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">frommax</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The maximum value of the original range.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tomin</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The minimum value of the target range.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tomax</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The maximum value of the target range.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>The remapped and clamped value.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="Gain">
+					<h1><span class="realm shared"></span></span>Gain(x, amount)</h1>
+				</a>
+
+					<p>Applies a gain to a value based on an amount.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">x</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The value to apply gain to.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">amount</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The gain amount.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>The value with applied gain.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="InRange">
+					<h1><span class="realm shared"></span></span>InRange(val, min, max)</h1>
+				</a>
+
+					<p>Checks if a value is within a specified range.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">val</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The value to check.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">min</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The minimum value of the range.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">max</span>
+
+									<span class="tag"><span class="type">Integer</span></span>
+
+
+								<p> The maximum value of the range.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>boolean True if the value is within the range, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
 		<section class="method">
 			<header>
 				<a class="anchor" id="UnitsToCentimeters">

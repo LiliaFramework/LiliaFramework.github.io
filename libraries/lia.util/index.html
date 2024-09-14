@@ -1011,6 +1011,46 @@ send											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ApproachAngleSpeed">
+ApproachAngleSpeed											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ApproachSpeed">
+ApproachSpeed											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ApproachVectorSpeed">
+ApproachVectorSpeed											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#Bias">
+Bias											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ClampAngle">
+ClampAngle											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ClampedRemap">
+ClampedRemap											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#Gain">
+Gain											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#InRange">
+InRange											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.math/#UnitsToCentimeters">
 UnitsToCentimeters											</a>
 										</li>
@@ -1160,13 +1200,33 @@ setNetVar											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.table/#Filter">
+Filter											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.table/#FullCopy">
+FullCopy											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.table/#Lookupify">
 Lookupify											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.table/#MakeAssociative">
+MakeAssociative											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.table/#Sum">
 Sum											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.table/#Unique">
+Unique											</a>
 										</li>
 
 									</ul>
@@ -4514,7 +4574,7 @@ Think											</a>
 									<span class="tag"><span class="type">Table</span></span>
 
 
-								<p> A table defining the columns in the table. Each entry should be a table with fields <code>name</code> and <code>width</code>.</p>
+								<p> A table defining the columns in the table. Each entry should be a table with fields <code>name</code> and <code>width</code>. The <code>name</code> is the column header, and <code>width</code> is the width of the column in pixels.</p>
 							</li>
 					</ul>
 
@@ -4526,7 +4586,7 @@ Think											</a>
 									<span class="tag"><span class="type">Table</span></span>
 
 
-								<p> A table containing rows of data. Each row is a table of values corresponding to the column fields.</p>
+								<p> A table containing rows of data. Each row is a table with keys corresponding to the <code>field</code> values defined in the <code>columns</code> table. Each key should have a value to be displayed in the respective column.</p>
 							</li>
 					</ul>
 
@@ -4615,7 +4675,7 @@ lia.util.CreateTableUI("Player List", columns, data)
 									<span class="tag"><span class="type">Table</span></span>
 
 
-								<p> A table defining the columns in the table. Each entry should be a table with fields <code>name</code> and <code>width</code>.</p>
+								<p> A table defining the columns in the table. Each entry should be a table with fields <code>name</code>, <code>field</code>, and <code>width</code>. The <code>name</code> is the column header, <code>field</code> is the key used to retrieve the value from the row data, and <code>width</code> is the width of the column in pixels.</p>
 							</li>
 					</ul>
 
@@ -4627,7 +4687,7 @@ lia.util.CreateTableUI("Player List", columns, data)
 									<span class="tag"><span class="type">Table</span></span>
 
 
-								<p> A table containing rows of data. Each row is a table of values corresponding to the column fields.</p>
+								<p> A table containing rows of data. Each row is a table with keys corresponding to the <code>field</code> values defined in the <code>columns</code> table. Each key should have a value to be displayed in the respective column.</p>
 							</li>
 					</ul>
 

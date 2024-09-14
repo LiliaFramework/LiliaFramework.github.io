@@ -1011,6 +1011,46 @@ send											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ApproachAngleSpeed">
+ApproachAngleSpeed											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ApproachSpeed">
+ApproachSpeed											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ApproachVectorSpeed">
+ApproachVectorSpeed											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#Bias">
+Bias											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ClampAngle">
+ClampAngle											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#ClampedRemap">
+ClampedRemap											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#Gain">
+Gain											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.math/#InRange">
+InRange											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.math/#UnitsToCentimeters">
 UnitsToCentimeters											</a>
 										</li>
@@ -1160,13 +1200,33 @@ setNetVar											</a>
 
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.table/#Filter">
+Filter											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.table/#FullCopy">
+FullCopy											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.table/#Lookupify">
 Lookupify											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../libraries/lia.table/#MakeAssociative">
+MakeAssociative											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../libraries/lia.table/#Sum">
 Sum											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.table/#Unique">
+Unique											</a>
 										</li>
 
 									</ul>
@@ -4483,6 +4543,96 @@ Think											</a>
 
 		<section class="method">
 			<header>
+				<a class="anchor" id="Filter">
+					<h1><span class="realm shared"></span></span>Filter(tab, callback)</h1>
+				</a>
+
+					<p>Filters a table based on a callback function.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tab</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> The table to filter.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">callback</span>
+
+									<span class="tag"><span class="type">Function</span></span>
+
+
+								<p> The function to call for each element; if it returns true, the element is kept.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>table The filtered table.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="FullCopy">
+					<h1><span class="realm shared"></span></span>FullCopy(tab)</h1>
+				</a>
+
+					<p>Creates a deep copy of a table.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tab</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> table The table to copy.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>table A deep copy of the table.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="Lookupify">
 					<h1><span class="realm shared"></span></span>Lookupify(tbl)</h1>
 				</a>
@@ -4522,6 +4672,45 @@ Think											</a>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="MakeAssociative">
+					<h1><span class="realm shared"></span></span>MakeAssociative(tab)</h1>
+				</a>
+
+					<p>Converts a table into an associative table where the original values are keys.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tab</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> The table to convert.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>table The associative table.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="Sum">
 					<h1><span class="realm shared"></span></span>Sum(tbl)</h1>
 				</a>
@@ -4553,6 +4742,45 @@ Think											</a>
 									<span class="tag type">any</span>
 
 								<p>number The sum of all numerical values</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="Unique">
+					<h1><span class="realm shared"></span></span>Unique(tab)</h1>
+				</a>
+
+					<p>Returns a table of unique values from the input table.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">tab</span>
+
+									<span class="tag"><span class="type">Table</span></span>
+
+
+								<p> The table to process.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="tag type">any</span>
+
+								<p>table The table of unique values.</p>
 							</li>
 
 				</ul>
