@@ -148,6 +148,11 @@ remove											</a>
 
 
 										<li>
+											<span class="realm shared"></span>
+											<a href="../../libraries/lia.char/#GetByID">
+GetByID											</a>
+										</li>
+										<li>
 											<span class="realm client"></span>
 											<a href="../../libraries/lia.char/#GetTeamColor">
 GetTeamColor											</a>
@@ -4576,6 +4581,53 @@ character data using these functions!</p>
 
 	<h1 class="title">Functions</h1>
 
+		<section class="method">
+			<header>
+				<a class="anchor" id="GetByID">
+					<h1><span class="realm shared"></span></span>GetByID(ID)</h1>
+				</a>
+
+					<p>Retrieves the client associated with a character by their character ID.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">ID</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+
+								<p> The ID of the character to find the associated client</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">player</span> or <span class="type">nil</span>
+
+								<p>The client associated with the character, or <code>nil</code> if no client is found</p>
+							</li>
+
+				</ul>
+
+				<h3>Example Usage</h3>
+					<pre><code>local client = lia.char.GetByID(123)
+if IsValid(client) then
+    print(client:Nick() .. " is the player associated with the character ID.")
+else
+    print("No client found for that character ID.")
+end
+</code></pre>
+
+		</section>
 		<section class="method">
 			<header>
 				<a class="anchor" id="GetTeamColor">
