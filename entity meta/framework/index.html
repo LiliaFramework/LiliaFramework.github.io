@@ -2888,6 +2888,11 @@ isMoney											</a>
 										</li>
 										<li>
 											<span class="realm shared"></span>
+											<a href="../../entity meta/framework/#isNearEntity">
+isNearEntity											</a>
+										</li>
+										<li>
+											<span class="realm shared"></span>
 											<a href="../../entity meta/framework/#isProp">
 isProp											</a>
 										</li>
@@ -2900,11 +2905,6 @@ isScreenVisible											</a>
 											<span class="realm shared"></span>
 											<a href="../../entity meta/framework/#isSimfphysCar">
 isSimfphysCar											</a>
-										</li>
-										<li>
-											<span class="realm shared"></span>
-											<a href="../../entity meta/framework/#nearEntity">
-nearEntity											</a>
 										</li>
 										<li>
 											<span class="realm server"></span>
@@ -5058,6 +5058,46 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 		</section>
 		<section class="method">
 			<header>
+				<a class="anchor" id="isNearEntity">
+					<h1><span class="realm shared"></span></span>entityMeta:isNearEntity(radius)</h1>
+				</a>
+
+					<p>Checks if there is an entity near the current entity within a specified radius.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">radius</span>
+
+									<span class="tag"><span class="type">number</span></span>
+
+									<span class="tag default">default: 96</span>
+
+								<p> The radius within which to check for nearby entities.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>True if there is an entity nearby, false otherwise.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
 				<a class="anchor" id="isProp">
 					<h1><span class="realm shared"></span></span>entityMeta:isProp()</h1>
 				</a>
@@ -5163,46 +5203,6 @@ between Lilia's own classes, and to reduce boilerplate code.</p>
 									<span class="type">bool</span>
 
 								<p>True if the entity is a simfphys car, false otherwise.</p>
-							</li>
-
-				</ul>
-
-
-		</section>
-		<section class="method">
-			<header>
-				<a class="anchor" id="nearEntity">
-					<h1><span class="realm shared"></span></span>entityMeta:nearEntity(radius)</h1>
-				</a>
-
-					<p>Checks if there is an entity near the current entity within a specified radius.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">radius</span>
-
-									<span class="tag"><span class="type">number</span></span>
-
-									<span class="tag default">default: 96</span>
-
-								<p> The radius within which to check for nearby entities.</p>
-							</li>
-					</ul>
-
-
-				<h3>Returns</h3>
-				<ul>
-
-							<li>
-									<span class="type">bool</span>
-
-								<p>True if there is an entity nearby, false otherwise.</p>
 							</li>
 
 				</ul>
