@@ -1,5 +1,3 @@
 # Lilia Documentation
 
-This is the repository for the WIP Lilia Wiki. 
-
-You can find lilia [here](https://github.com/LiliaFramework/Lilia)
+This is the repository for the [Lilia](https://github.com/LiliaFramework/Lilia) Wiki. 
