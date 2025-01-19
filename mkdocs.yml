@@ -1,5 +1,5 @@
 site_name: Lilia Documentation
-site_url: 'https://bleonheart.github.io/'
+site_url: 'https://liliaframework.github.io/'
 theme:
   name: material
   logo: assets/logo_small.png
