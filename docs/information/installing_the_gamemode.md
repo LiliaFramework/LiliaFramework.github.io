@@ -124,7 +124,6 @@ To enhance your roleplaying experience, install a roleplay schema compatible wit
     - [Skeleton Schema](https://github.com/LiliaFramework/Skeleton)
     - [MafiaRP Schema](https://github.com/LiliaFramework/MafiaRP)
     - [1942RP Schema](https://github.com/LiliaFramework/1942RP)
-    - [HL2RP Schema](https://github.com/LiliaFramework/HL2RP)
     - [MetroRP Schema](https://github.com/LiliaFramework/MetroRP)
     - [SCPRP Schema](https://github.com/LiliaFramework/SCPRP)
     - [KaiserReichRP Schema](https://github.com/LiliaFramework/KaiserReichRP)

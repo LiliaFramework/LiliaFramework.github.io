@@ -34,11 +34,10 @@ However, there are also numerous premade schemas that publicly exist, which you 
 
 1. [MafiaRP Schema](https://github.com/LiliaFramework/MafiaRP)
 2. [1942RP Schema](https://github.com/LiliaFramework/1942RP)
-3. [HL2RP Schema](https://github.com/LiliaFramework/HL2RP)
-4. [MetroRP Schema](https://github.com/LiliaFramework/MetroRP)
-5. [SCPRP Schema](https://github.com/LiliaFramework/SCPRP)
-6. [KaiserReichRP Schema](https://github.com/LiliaFramework/KaiserReichRP)
-7. [FalloutRP Schema](https://github.com/LiliaFramework/FalloutRP)
+3. [MetroRP Schema](https://github.com/LiliaFramework/MetroRP)
+4. [SCPRP Schema](https://github.com/LiliaFramework/SCPRP)
+5. [KaiserReichRP Schema](https://github.com/LiliaFramework/KaiserReichRP)
+6. [FalloutRP Schema](https://github.com/LiliaFramework/FalloutRP)
 
 ---
 
