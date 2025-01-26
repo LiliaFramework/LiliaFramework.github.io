@@ -113,3 +113,24 @@ end
 *In this example, the player's maximum and current health are both set to 500 when they spawn.*
 
 ---
+
+## **OnTransferred**
+
+- **Description:**  
+  Executes actions when a character is transferred to the class
+
+- **Realm:**  
+  `Server`
+
+- **Parameters:**
+  - `character` (`Character`): The character that was transferred.
+
+- **Usage Example:**
+  ```lua
+  function CLASS:OnTransferred(character)
+      local randomModelIndex = math.random(1, #self.models)
+      character:setModel(self.models[randomModelIndex])
+  end
+  ```
+
+---

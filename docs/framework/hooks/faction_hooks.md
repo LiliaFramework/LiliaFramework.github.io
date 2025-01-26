@@ -98,7 +98,7 @@ This page details the various hooks associated with a **Faction** in your schema
 ## **OnTransferred**
 
 - **Description:**  
-  Executes actions when a character is transferred to the faction. This can include changing the character's model or updating faction-specific attributes.
+  Executes actions when a character is transferred to the faction.
 
 - **Realm:**  
   `Server`
