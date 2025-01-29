@@ -8,7 +8,7 @@ See the [Garry's Mod Wiki](https://wiki.garrysmod.com/page/Category:Entity) for 
 
 ---
 
-## **isProp**
+## **entityMeta:isProp**
 
 **Description**
 
@@ -34,7 +34,7 @@ end
 
 ---
 
-## **isItem**
+## **entityMeta:isItem**
 
 **Description**
 
@@ -58,7 +58,7 @@ end
 
 ---
 
-## **isMoney**
+## **entityMeta:isMoney**
 
 **Description**
 
@@ -82,7 +82,7 @@ end
 
 ---
 
-## **isSimfphysCar**
+## **entityMeta:isSimfphysCar**
 
 **Description**
 
@@ -106,7 +106,7 @@ end
 
 ---
 
-## **getEntItemDropPos**
+## **entityMeta:getEntItemDropPos**
 
 **Description**
 
@@ -129,7 +129,7 @@ print("Item drop position:", dropPos)
 
 ---
 
-## **isNearEntity**
+## **entityMeta:isNearEntity**
 
 **Description**
 
@@ -159,7 +159,7 @@ end
 
 ---
 
-## **GetCreator**
+## **entityMeta:GetCreator**
 
 **Description**
 
@@ -184,7 +184,7 @@ end
 
 ---
 
-## **SetCreator**
+## **entityMeta:SetCreator**
 
 **Description**
 
@@ -206,7 +206,7 @@ entity:SetCreator(player)
 
 ---
 
-## **sendNetVar**
+## **entityMeta:sendNetVar**
 
 **Description**
 
@@ -233,7 +233,7 @@ entity:sendNetVar("health", player)
 
 ---
 
-## **clearNetVars**
+## **entityMeta:clearNetVars**
 
 **Description**
 
@@ -259,7 +259,7 @@ entity:clearNetVars(player)
 
 ---
 
-## **setNetVar**
+## **entityMeta:setNetVar**
 
 **Description**
 
@@ -283,7 +283,7 @@ entity:setNetVar("example", "Hello World!", player)
 
 ---
 
-## **getNetVar**
+## **entityMeta:getNetVar**
 
 **Description**
 
@@ -312,7 +312,7 @@ print(example) -- Output: "Hello World!" or "Default Value"
 
 ---
 
-## **checkDoorAccess**
+## **entityMeta:checkDoorAccess**
 
 **Description**
 
@@ -343,7 +343,7 @@ end
 
 ---
 
-## **IsLiliaPersistent**
+## **entityMeta:IsLiliaPersistent**
 
 **Description**
 
@@ -369,7 +369,7 @@ end
 
 ---
 
-## **keysOwn**
+## **entityMeta:keysOwn**
 
 **Description**
 
@@ -391,7 +391,7 @@ entity:keysOwn(player)
 
 ---
 
-## **keysLock**
+## **entityMeta:keysLock**
 
 **Description**
 
@@ -409,7 +409,7 @@ entity:keysLock()
 
 ---
 
-## **keysUnLock**
+## **entityMeta:keysUnLock**
 
 **Description**
 
@@ -427,7 +427,7 @@ entity:keysUnLock()
 
 ---
 
-## **getDoorOwner**
+## **entityMeta:getDoorOwner**
 
 **Description**
 
@@ -452,7 +452,7 @@ end
 
 ---
 
-## **isLocked**
+## **entityMeta:isLocked**
 
 **Description**
 
@@ -478,7 +478,7 @@ end
 
 ---
 
-## **isDoorLocked**
+## **entityMeta:isDoorLocked**
 
 **Description**
 
@@ -504,7 +504,7 @@ end
 
 ---
 
-## **removeDoorAccessData**
+## **entityMeta:removeDoorAccessData**
 
 **Description**
 
@@ -526,7 +526,7 @@ entity:removeDoorAccessData()
 
 ---
 
-## **setLocked**
+## **entityMeta:setLocked**
 
 **Description**
 
@@ -548,7 +548,7 @@ entity:setLocked(true)
 
 ---
 
-## **isDoor**
+## **entityMeta:isDoor**
 
 **Description**
 
@@ -580,7 +580,7 @@ end
 
 ---
 
-## **getDoorPartner**
+## **entityMeta:getDoorPartner**
 
 **Description**
 

@@ -6,7 +6,7 @@ Inventories are objects that contain `Item`s in a grid layout. Every `Character`
 
 ---
 
-## **getData**
+## **inventoryMeta:getData**
 
 **Description**
 
@@ -34,7 +34,7 @@ print("Health:", health)
 
 ---
 
-## **extend**
+## **inventoryMeta:extend**
 
 **Description**
 
@@ -60,7 +60,7 @@ local GridInventory = Inventory:extend("GridInv")
 
 ---
 
-## **configure**
+## **inventoryMeta:configure**
 
 **Description**
 
@@ -82,7 +82,7 @@ end
 
 ---
 
-## **addDataProxy**
+## **inventoryMeta:addDataProxy**
 
 **Description**
 
@@ -107,7 +107,7 @@ end)
 
 ---
 
-## **getItemsByUniqueID**
+## **inventoryMeta:getItemsByUniqueID**
 
 **Description**
 
@@ -137,7 +137,7 @@ end
 
 ---
 
-## **register**
+## **inventoryMeta:register**
 
 **Description**
 
@@ -162,7 +162,7 @@ inventory:register("grid")
 
 ---
 
-## **new**
+## **inventoryMeta:new**
 
 **Description**
 
@@ -184,7 +184,7 @@ local newInventory = Inventory:new()
 
 ---
 
-## **tostring**
+## **inventoryMeta:tostring**
 
 **Description**
 
@@ -207,7 +207,7 @@ print(tostring(inventory))
 
 ---
 
-## **getType**
+## **inventoryMeta:getType**
 
 **Description**
 
@@ -230,7 +230,7 @@ print("Inventory Type:", typeInfo.typeID)
 
 ---
 
-## **onDataChanged**
+## **inventoryMeta:onDataChanged**
 
 **Description**
 
@@ -256,7 +256,7 @@ end
 
 ---
 
-## **getItems**
+## **inventoryMeta:getItems**
 
 **Description**
 
@@ -281,7 +281,7 @@ end
 
 ---
 
-## **getItemsOfType**
+## **inventoryMeta:getItemsOfType**
 
 **Description**
 
@@ -310,7 +310,7 @@ end
 
 ---
 
-## **getFirstItemOfType**
+## **inventoryMeta:getFirstItemOfType**
 
 **Description**
 
@@ -339,7 +339,7 @@ end
 
 ---
 
-## **hasItem**
+## **inventoryMeta:hasItem**
 
 **Description**
 
@@ -369,7 +369,7 @@ end
 
 ---
 
-## **getItemCount**
+## **inventoryMeta:getItemCount**
 
 **Description**
 
@@ -398,7 +398,7 @@ print("Health Packs:", healthPackCount)
 
 ---
 
-## **getID**
+## **inventoryMeta:getID**
 
 **Description**
 
@@ -421,7 +421,7 @@ print("Inventory ID:", invID)
 
 ---
 
-## **eq**
+## **inventoryMeta:eq**
 
 **Description**
 
@@ -451,7 +451,7 @@ end
 
 ---
 
-## **addItem**
+## **inventoryMeta:addItem**
 
 **Description**
 
@@ -479,7 +479,7 @@ inventory:addItem(weapon)
 
 ---
 
-## **add**
+## **inventoryMeta:add**
 
 **Description**
 
@@ -505,7 +505,7 @@ inventory:add(weapon)
 
 ---
 
-## **syncItemAdded**
+## **inventoryMeta:syncItemAdded**
 
 **Description**
 
@@ -527,7 +527,7 @@ inventory:syncItemAdded(weapon)
 
 ---
 
-## **initializeStorage**
+## **inventoryMeta:initializeStorage**
 
 **Description**
 
@@ -556,7 +556,7 @@ end)
 
 ---
 
-## **restoreFromStorage**
+## **inventoryMeta:restoreFromStorage**
 
 **Description**
 
@@ -574,7 +574,7 @@ inventory:restoreFromStorage()
 
 ---
 
-## **removeItem**
+## **inventoryMeta:removeItem**
 
 **Description**
 
@@ -603,7 +603,7 @@ end)
 
 ---
 
-## **remove**
+## **inventoryMeta:remove**
 
 **Description**
 
@@ -631,7 +631,7 @@ end)
 
 ---
 
-## **setData**
+## **inventoryMeta:setData**
 
 **Description**
 
@@ -658,7 +658,7 @@ inventory:setData("owner", player)
 
 ---
 
-## **canAccess**
+## **inventoryMeta:canAccess**
 
 **Description**
 
@@ -691,7 +691,7 @@ end
 
 ---
 
-## **addAccessRule**
+## **inventoryMeta:addAccessRule**
 
 **Description**
 
@@ -722,7 +722,7 @@ end, 10)
 
 ---
 
-## **removeAccessRule**
+## **inventoryMeta:removeAccessRule**
 
 **Description**
 
@@ -748,7 +748,7 @@ inventory:removeAccessRule(existingRuleFunction)
 
 ---
 
-## **getRecipients**
+## **inventoryMeta:getRecipients**
 
 **Description**
 
@@ -773,7 +773,7 @@ end
 
 ---
 
-## **onInstanced**
+## **inventoryMeta:onInstanced**
 
 **Description**
 
@@ -791,7 +791,7 @@ inventory:onInstanced()
 
 ---
 
-## **onLoaded**
+## **inventoryMeta:onLoaded**
 
 **Description**
 
@@ -811,7 +811,7 @@ end
 
 ---
 
-## **loadItems**
+## **inventoryMeta:loadItems**
 
 **Description**
 
@@ -835,7 +835,7 @@ end)
 
 ---
 
-## **onItemsLoaded**
+## **inventoryMeta:onItemsLoaded**
 
 **Description**
 
@@ -855,7 +855,7 @@ end
 
 ---
 
-## **instance**
+## **inventoryMeta:instance**
 
 **Description**
 
@@ -881,7 +881,7 @@ local instance = inventory:instance({char = 1, item1 = "value1"})
 
 ---
 
-## **syncData**
+## **inventoryMeta:syncData**
 
 **Description**
 
@@ -904,7 +904,7 @@ inventory:syncData("health", {client = player})
 
 ---
 
-## **sync**
+## **inventoryMeta:sync**
 
 **Description**
 
@@ -926,7 +926,7 @@ inventory:sync()
 
 ---
 
-## **delete**
+## **inventoryMeta:delete**
 
 **Description**
 
@@ -944,7 +944,7 @@ inventory:delete()
 
 ---
 
-## **destroy**
+## **inventoryMeta:destroy**
 
 **Description**
 
@@ -962,7 +962,7 @@ inventory:destroy()
 
 ---
 
-## **show**
+## **inventoryMeta:show**
 
 **Description**
 
@@ -988,7 +988,7 @@ inventory:show(panel)
 
 ---
 
-## **getWidth**
+## **inventoryMeta:getWidth**
 
 **Description**
 
@@ -1011,7 +1011,7 @@ print("Inventory Width:", width)
 
 ---
 
-## **getHeight**
+## **inventoryMeta:getHeight**
 
 **Description**
 
@@ -1034,7 +1034,7 @@ print("Inventory Height:", height)
 
 ---
 
-## **getSize**
+## **inventoryMeta:getSize**
 
 **Description**
 
@@ -1058,7 +1058,7 @@ print("Inventory Size:", width, "x", height)
 
 ---
 
-## **canItemFitInInventory**
+## **inventoryMeta:canItemFitInInventory**
 
 **Description**
 
@@ -1091,7 +1091,7 @@ end
 
 ---
 
-## **canAdd**
+## **inventoryMeta:canAdd**
 
 **Description**
 
@@ -1124,7 +1124,7 @@ end
 
 ---
 
-## **doesItemOverlapWithOther**
+## **inventoryMeta:doesItemOverlapWithOther**
 
 **Description**
 
@@ -1158,7 +1158,7 @@ end
 
 ---
 
-## **doesFitInventory**
+## **inventoryMeta:doesFitInventory**
 
 **Description**
 
@@ -1189,7 +1189,7 @@ end
 
 ---
 
-## **doesItemFitAtPos**
+## **inventoryMeta:doesItemFitAtPos**
 
 **Description**
 
@@ -1223,7 +1223,7 @@ end
 
 ---
 
-## **findFreePosition**
+## **inventoryMeta:findFreePosition**
 
 **Description**
 
@@ -1255,7 +1255,7 @@ end
 
 ---
 
-## **setSize**
+## **inventoryMeta:setSize**
 
 **Description**
 
@@ -1279,7 +1279,7 @@ print("Inventory size set to 10x8.")
 
 ---
 
-## **wipeItems**
+## **inventoryMeta:wipeItems**
 
 **Description**
 
@@ -1298,7 +1298,7 @@ print("All items have been removed from the inventory.")
 
 ---
 
-## **setOwner**
+## **inventoryMeta:setOwner**
 
 **Description**
 
@@ -1324,7 +1324,7 @@ print("Inventory owner set to player.")
 
 ---
 
-## **requestTransfer**
+## **inventoryMeta:requestTransfer**
 
 **Description**
 

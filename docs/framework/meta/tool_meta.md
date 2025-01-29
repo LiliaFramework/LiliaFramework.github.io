@@ -12,7 +12,7 @@ By integrating with Lilia's files, the `ToolGunMeta` class enables developers to
 
 ---
 
-## **Create**
+## **toolMeta:Create**
 
 **Description**
 
@@ -35,7 +35,7 @@ tool.Mode = "builder"
 
 ---
 
-## **CreateConVars**
+## **toolMeta:CreateConVars**
 
 **Description**
 
@@ -53,7 +53,7 @@ tool:CreateConVars()
 
 ---
 
-## **GetServerInfo**
+## **toolMeta:GetServerInfo**
 
 **Description**
 
@@ -79,7 +79,7 @@ local allowUse = tool:GetServerInfo("allow_use"):GetBool()
 
 ---
 
-## **BuildConVarList**
+## **toolMeta:BuildConVarList**
 
 **Description**
 
@@ -104,7 +104,7 @@ end
 
 ---
 
-## **GetClientInfo**
+## **toolMeta:GetClientInfo**
 
 **Description**
 
@@ -131,7 +131,7 @@ print("Tool Setting:", toolSetting)
 
 ---
 
-## **GetClientNumber**
+## **toolMeta:GetClientNumber**
 
 **Description**
 
@@ -159,7 +159,7 @@ print("Tool Power:", toolPower)
 
 ---
 
-## **Allowed**
+## **toolMeta:Allowed**
 
 **Description**
 
@@ -185,7 +185,7 @@ end
 
 ---
 
-## **Init**
+## **toolMeta:Init**
 
 **Description**
 
@@ -205,7 +205,7 @@ end
 
 ---
 
-## **GetMode**
+## **toolMeta:GetMode**
 
 **Description**
 
@@ -228,7 +228,7 @@ print("Tool Mode:", mode)
 
 ---
 
-## **GetSWEP**
+## **toolMeta:GetSWEP**
 
 **Description**
 
@@ -251,7 +251,7 @@ print("Tool SWEP:", swep:GetClass())
 
 ---
 
-## **GetOwner**
+## **toolMeta:GetOwner**
 
 **Description**
 
@@ -274,7 +274,7 @@ print("Tool Owner:", owner:Nick())
 
 ---
 
-## **GetWeapon**
+## **toolMeta:GetWeapon**
 
 **Description**
 
@@ -297,7 +297,7 @@ print("Associated Weapon:", weapon:GetClass())
 
 ---
 
-## **LeftClick**
+## **toolMeta:LeftClick**
 
 **Description**
 
@@ -322,7 +322,7 @@ end
 
 ---
 
-## **RightClick**
+## **toolMeta:RightClick**
 
 **Description**
 
@@ -347,7 +347,7 @@ end
 
 ---
 
-## **Reload**
+## **toolMeta:Reload**
 
 **Description**
 
@@ -367,7 +367,7 @@ end
 
 ---
 
-## **Deploy**
+## **toolMeta:Deploy**
 
 **Description**
 
@@ -388,7 +388,7 @@ end
 
 ---
 
-## **Holster**
+## **toolMeta:Holster**
 
 **Description**
 
@@ -409,7 +409,7 @@ end
 
 ---
 
-## **Think**
+## **toolMeta:Think**
 
 **Description**
 
@@ -429,7 +429,7 @@ end
 
 ---
 
-## **CheckObjects**
+## **toolMeta:CheckObjects**
 
 **Description**
 
@@ -447,7 +447,7 @@ tool:CheckObjects()
 
 ---
 
-## **ClearObjects**
+## **toolMeta:ClearObjects**
 
 **Description**
 
@@ -465,7 +465,7 @@ tool:ClearObjects()
 
 ---
 
-## **ReleaseGhostEntity**
+## **toolMeta:ReleaseGhostEntity**
 
 **Description**
 

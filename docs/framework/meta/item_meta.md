@@ -8,7 +8,7 @@ For an item to have an actual presence, they need to be instanced (usually by sp
 
 ---
 
-## **eq**
+## **itemMeta:eq**
 
 **Description**
 
@@ -41,7 +41,7 @@ end
 
 ---
 
-## **tostring**
+## **itemMeta:tostring**
 
 **Description**
 
@@ -65,7 +65,7 @@ print(tostring(item))
 
 ---
 
-## **getQuantity**
+## **itemMeta:getQuantity**
 
 **Description**
 
@@ -89,7 +89,7 @@ print("Item quantity:", qty)
 
 ---
 
-## **getID**
+## **itemMeta:getID**
 
 **Description**
 
@@ -112,7 +112,7 @@ print("Item ID:", item:getID())
 
 ---
 
-## **getModel**
+## **itemMeta:getModel**
 
 **Description**
 
@@ -135,7 +135,7 @@ print("Item model:", item:getModel())
 
 ---
 
-## **getSkin**
+## **itemMeta:getSkin**
 
 **Description**
 
@@ -158,7 +158,7 @@ print("Item skin:", item:getSkin())
 
 ---
 
-## **getPrice**
+## **itemMeta:getPrice**
 
 **Description**
 
@@ -182,7 +182,7 @@ print("Item price:", price)
 
 ---
 
-## **call**
+## **itemMeta:call**
 
 **Description**
 
@@ -212,7 +212,7 @@ item:call("use", player, entity, "someArgument")
 
 ---
 
-## **getOwner**
+## **itemMeta:getOwner**
 
 **Description**
 
@@ -240,7 +240,7 @@ end
 
 ---
 
-## **getData**
+## **itemMeta:getData**
 
 **Description**
 
@@ -269,7 +269,7 @@ print("Item Health:", health)
 
 ---
 
-## **getAllData**
+## **itemMeta:getAllData**
 
 **Description**
 
@@ -293,7 +293,7 @@ PrintTable(fullData)
 
 ---
 
-## **hook**
+## **itemMeta:hook**
 
 **Description**
 
@@ -319,7 +319,7 @@ end)
 
 ---
 
-## **postHook**
+## **itemMeta:postHook**
 
 **Description**
 
@@ -345,7 +345,7 @@ end)
 
 ---
 
-## **onRegistered**
+## **itemMeta:onRegistered**
 
 **Description**
 
@@ -365,7 +365,7 @@ end
 
 ---
 
-## **print**
+## **itemMeta:print**
 
 **Description**
 
@@ -389,7 +389,7 @@ item:print(true)    -- Prints extended info
 
 ---
 
-## **printData**
+## **itemMeta:printData**
 
 **Description**
 
@@ -408,7 +408,7 @@ item:printData()
 
 ---
 
-## **getName**
+## **itemMeta:getName**
 
 **Description**
 
@@ -431,7 +431,7 @@ print("Item name:", item:getName())
 
 ---
 
-## **getDesc**
+## **itemMeta:getDesc**
 
 **Description**
 
@@ -454,7 +454,7 @@ print("Item description:", item:getDesc())
 
 ---
 
-## **removeFromInventory**
+## **itemMeta:removeFromInventory**
 
 **Description**
 
@@ -483,7 +483,7 @@ end)
 
 ---
 
-## **delete**
+## **itemMeta:delete**
 
 **Description**
 
@@ -508,7 +508,7 @@ end)
 
 ---
 
-## **remove**
+## **itemMeta:remove**
 
 **Description**
 
@@ -533,7 +533,7 @@ end)
 
 ---
 
-## **destroy**
+## **itemMeta:destroy**
 
 **Description**
 
@@ -553,7 +553,7 @@ item:destroy()
 
 ---
 
-## **onDisposed**
+## **itemMeta:onDisposed**
 
 **Description**
 
@@ -573,7 +573,7 @@ end
 
 ---
 
-## **getEntity**
+## **itemMeta:getEntity**
 
 **Description**
 
@@ -601,7 +601,7 @@ end
 
 ---
 
-## **spawn**
+## **itemMeta:spawn**
 
 **Description**
 
@@ -630,7 +630,7 @@ local spawnedEntity = item:spawn(spawnPos, Angle(0, 0, 0))
 
 ---
 
-## **transfer**
+## **itemMeta:transfer**
 
 **Description**
 
@@ -664,7 +664,7 @@ end
 
 ---
 
-## **onInstanced**
+## **itemMeta:onInstanced**
 
 **Description**
 
@@ -684,7 +684,7 @@ end
 
 ---
 
-## **onSync**
+## **itemMeta:onSync**
 
 **Description**
 
@@ -712,7 +712,7 @@ end
 
 ---
 
-## **onRemoved**
+## **itemMeta:onRemoved**
 
 **Description**
 
@@ -732,7 +732,7 @@ end
 
 ---
 
-## **onRestored**
+## **itemMeta:onRestored**
 
 **Description**
 
@@ -752,7 +752,7 @@ end
 
 ---
 
-## **sync**
+## **itemMeta:sync**
 
 **Description**
 
@@ -778,7 +778,7 @@ item:sync()
 
 ---
 
-## **setData**
+## **itemMeta:setData**
 
 **Description**
 
@@ -809,7 +809,7 @@ item:setData("armor", 50, {somePlayer})
 
 ---
 
-## **addQuantity**
+## **itemMeta:addQuantity**
 
 **Description**
 
@@ -834,7 +834,7 @@ item:addQuantity(5, {player1, player2})
 
 ---
 
-## **setQuantity**
+## **itemMeta:setQuantity**
 
 **Description**
 
@@ -859,7 +859,7 @@ item:setQuantity(10, {player1, player2})
 
 ---
 
-## **interact**
+## **itemMeta:interact**
 
 **Description**
 

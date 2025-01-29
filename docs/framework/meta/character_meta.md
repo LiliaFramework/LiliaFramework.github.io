@@ -11,7 +11,7 @@ They contain all information that is not persistent with the player; names, desc
 
 ---
 
-## **tostring**
+## **characterMeta:tostring**
 
 **Description**
 
@@ -34,7 +34,7 @@ print(lia.char.loaded[1])
 
 ---
 
-## **eq**
+## **characterMeta:eq**
 
 **Description**
 
@@ -63,7 +63,7 @@ print(char1 == char2)
 
 ---
 
-## **getID**
+## **characterMeta:getID**
 
 **Description**
 
@@ -87,7 +87,7 @@ print(charID)
 
 ---
 
-## **getPlayer**
+## **characterMeta:getPlayer**
 
 **Description**
 
@@ -112,7 +112,7 @@ end
 
 ---
 
-## **hasMoney**
+## **characterMeta:hasMoney**
 
 **Description**
 
@@ -143,7 +143,7 @@ end
 
 ---
 
-## **getFlags**
+## **characterMeta:getFlags**
 
 **Description**
 
@@ -169,7 +169,7 @@ end
 
 ---
 
-## **hasFlags**
+## **characterMeta:hasFlags**
 
 **Description**
 
@@ -197,7 +197,7 @@ end
 
 ---
 
-## **getItemWeapon**
+## **characterMeta:getItemWeapon**
 
 **Description**
 
@@ -225,7 +225,7 @@ end
 
 ---
 
-## **setFlags**
+## **characterMeta:setFlags**
 
 **Description**
 
@@ -250,7 +250,7 @@ character:setFlags("petr")
 
 ---
 
-## **giveFlags**
+## **characterMeta:giveFlags**
 
 **Description**
 
@@ -273,7 +273,7 @@ character:giveFlags("pet")
 
 ---
 
-## **takeFlags**
+## **characterMeta:takeFlags**
 
 **Description**
 
@@ -297,7 +297,7 @@ character:takeFlags("p")
 
 ---
 
-## **save**
+## **characterMeta:save**
 
 **Description**
 
@@ -321,7 +321,7 @@ end)
 
 ---
 
-## **sync**
+## **characterMeta:sync**
 
 **Description**
 
@@ -353,7 +353,7 @@ character:sync()
 
 ---
 
-## **setup**
+## **characterMeta:setup**
 
 **Description**
 
@@ -380,7 +380,7 @@ character:setup()
 
 ---
 
-## **kick**
+## **characterMeta:kick**
 
 **Description**
 
@@ -398,7 +398,7 @@ character:kick()
 
 ---
 
-## **ban**
+## **characterMeta:ban**
 
 **Description**
 
@@ -421,7 +421,7 @@ character:ban() -- Permanently bans the character
 
 ---
 
-## **delete**
+## **characterMeta:delete**
 
 **Description**
 
@@ -439,7 +439,7 @@ character:delete()
 
 ---
 
-## **destroy**
+## **characterMeta:destroy**
 
 **Description**
 
@@ -457,7 +457,7 @@ character:destroy()
 
 ---
 
-## **giveMoney**
+## **characterMeta:giveMoney**
 
 **Description**
 
@@ -483,7 +483,7 @@ character:giveMoney(500) -- Adds 500 to the character's wallet
 
 ---
 
-## **takeMoney**
+## **characterMeta:takeMoney**
 
 **Description**
 
@@ -509,7 +509,7 @@ character:takeMoney(100) -- Removes 100 from the character's wallet
 
 ---
 
-## **doesRecognize**
+## **characterMeta:doesRecognize**
 
 **Description**
 
@@ -540,7 +540,7 @@ end
 
 ---
 
-## **doesFakeRecognize**
+## **characterMeta:doesFakeRecognize**
 
 **Description**
 
@@ -571,7 +571,7 @@ end
 
 ---
 
-## **recognize**
+## **characterMeta:recognize**
 
 **Description**
 
@@ -600,7 +600,7 @@ character:recognize(targetCharacter, "Shadow")
 
 ---
 
-## **hasClassWhitelist**
+## **characterMeta:hasClassWhitelist**
 
 **Description**
 
@@ -629,7 +629,7 @@ end
 
 ---
 
-## **isFaction**
+## **characterMeta:isFaction**
 
 **Description**
 
@@ -657,7 +657,7 @@ end
 
 ---
 
-## **isClass**
+## **characterMeta:isClass**
 
 **Description**
 
@@ -685,7 +685,7 @@ end
 
 ---
 
-## **WhitelistAllClasses**
+## **characterMeta:WhitelistAllClasses**
 
 **Description**
 
@@ -704,7 +704,7 @@ character:WhitelistAllClasses()
 
 ---
 
-## **WhitelistAllFactions**
+## **characterMeta:WhitelistAllFactions**
 
 **Description**
 
@@ -723,7 +723,7 @@ character:WhitelistAllFactions()
 
 ---
 
-## **WhitelistEverything**
+## **characterMeta:WhitelistEverything**
 
 **Description**
 
@@ -742,7 +742,7 @@ character:WhitelistEverything()
 
 ---
 
-## **classWhitelist**
+## **characterMeta:classWhitelist**
 
 **Description**
 
@@ -766,7 +766,7 @@ character:classWhitelist(classID)
 
 ---
 
-## **classUnWhitelist**
+## **characterMeta:classUnWhitelist**
 
 **Description**
 
@@ -790,7 +790,7 @@ character:classUnWhitelist(classID)
 
 ---
 
-## **joinClass**
+## **characterMeta:joinClass**
 
 **Description**
 
@@ -822,7 +822,7 @@ end
 
 ---
 
-## **kickClass**
+## **characterMeta:kickClass**
 
 **Description**
 
@@ -841,7 +841,7 @@ character:kickClass()
 
 ---
 
-## **getMaxStamina**
+## **characterMeta:getMaxStamina**
 
 **Description**
 
@@ -864,7 +864,7 @@ print("Character's maximum stamina:", maxStamina)
 
 ---
 
-## **getStamina**
+## **characterMeta:getStamina**
 
 **Description**
 
@@ -887,7 +887,7 @@ print("Character's current stamina:", currentStamina)
 
 ---
 
-## **getAttrib**
+## **characterMeta:getAttrib**
 
 **Description**
 
@@ -915,7 +915,7 @@ print("Character's strength:", strength)
 
 ---
 
-## **getBoost**
+## **characterMeta:getBoost**
 
 **Description**
 
@@ -946,7 +946,7 @@ end
 
 ---
 
-## **getBoosts**
+## **characterMeta:getBoosts**
 
 **Description**
 
@@ -973,7 +973,7 @@ end
 
 ---
 
-## **updateAttrib**
+## **characterMeta:updateAttrib**
 
 **Description**
 
@@ -997,7 +997,7 @@ character:updateAttrib("agility", 5)
 
 ---
 
-## **setAttrib**
+## **characterMeta:setAttrib**
 
 **Description**
 
@@ -1021,7 +1021,7 @@ character:setAttrib("intelligence", 15)
 
 ---
 
-## **addBoost**
+## **characterMeta:addBoost**
 
 **Description**
 
@@ -1050,7 +1050,7 @@ character:addBoost("buff_001", "strength", 10)
 
 ---
 
-## **removeBoost**
+## **characterMeta:removeBoost**
 
 **Description**
 

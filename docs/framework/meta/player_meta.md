@@ -8,7 +8,7 @@ See the [Garry's Mod Wiki](https://wiki.garrysmod.com/page/Category:Player) for 
 
 ---
 
-## **getChar**
+## **playerMeta:getChar**
 
 **Description**
 
@@ -33,7 +33,7 @@ end
 
 ---
 
-## **Name**
+## **playerMeta:Name**
 
 **Description**
 
@@ -55,7 +55,7 @@ print("Player Name:", player:Name())
 
 ---
 
-## **hasPrivilege**
+## **playerMeta:hasPrivilege**
 
 **Description**
 
@@ -83,7 +83,7 @@ end
 
 ---
 
-## **getCurrentVehicle**
+## **playerMeta:getCurrentVehicle**
 
 **Description**
 
@@ -108,7 +108,7 @@ end
 
 ---
 
-## **hasValidVehicle**
+## **playerMeta:hasValidVehicle**
 
 **Description**
 
@@ -132,7 +132,7 @@ end
 
 ---
 
-## **isNoClipping**
+## **playerMeta:isNoClipping**
 
 **Description**
 
@@ -156,7 +156,7 @@ end
 
 ---
 
-## **hasRagdoll**
+## **playerMeta:hasRagdoll**
 
 **Description**
 
@@ -180,7 +180,7 @@ end
 
 ---
 
-## **getRagdoll**
+## **playerMeta:getRagdoll**
 
 **Description**
 
@@ -205,7 +205,7 @@ end
 
 ---
 
-## **isStuck**
+## **playerMeta:isStuck**
 
 **Description**
 
@@ -229,7 +229,7 @@ end
 
 ---
 
-## **isNearPlayer**
+## **playerMeta:isNearPlayer**
 
 **Description**
 
@@ -258,7 +258,7 @@ end
 
 ---
 
-## **entitiesNearPlayer**
+## **playerMeta:entitiesNearPlayer**
 
 **Description**
 
@@ -288,7 +288,7 @@ end
 
 ---
 
-## **getItemWeapon**
+## **playerMeta:getItemWeapon**
 
 **Description**
 
@@ -314,7 +314,7 @@ end
 
 ---
 
-## **isRunning**
+## **playerMeta:isRunning**
 
 **Description**
 
@@ -338,7 +338,7 @@ end
 
 ---
 
-## **isFemale**
+## **playerMeta:isFemale**
 
 **Description**
 
@@ -362,7 +362,7 @@ end
 
 ---
 
-## **getItemDropPos**
+## **playerMeta:getItemDropPos**
 
 **Description**
 
@@ -385,7 +385,7 @@ item:spawn(dropPos, Angle(0, 0, 0))
 
 ---
 
-## **getItems**
+## **playerMeta:getItems**
 
 **Description**
 
@@ -412,7 +412,7 @@ end
 
 ---
 
-## **getTracedEntity**
+## **playerMeta:getTracedEntity**
 
 **Description**
 
@@ -437,7 +437,7 @@ end
 
 ---
 
-## **getTrace**
+## **playerMeta:getTrace**
 
 **Description**
 
@@ -462,7 +462,7 @@ end
 
 ---
 
-## **getEyeEnt**
+## **playerMeta:getEyeEnt**
 
 **Description**
 
@@ -491,7 +491,7 @@ end
 
 ---
 
-## **loadLiliaData**
+## **playerMeta:loadLiliaData**
 
 **Description**
 
@@ -515,7 +515,7 @@ end)
 
 ---
 
-## **saveLiliaData**
+## **playerMeta:saveLiliaData**
 
 **Description**
 
@@ -533,7 +533,7 @@ player:saveLiliaData()
 
 ---
 
-## **setLiliaData**
+## **playerMeta:setLiliaData**
 
 **Description**
 
@@ -561,7 +561,7 @@ player:setLiliaData("health", 100, true)
 
 ---
 
-## **chatNotify**
+## **playerMeta:chatNotify**
 
 **Description**
 
@@ -583,7 +583,7 @@ player:chatNotify("Welcome to the server!")
 
 ---
 
-## **chatNotifyLocalized**
+## **playerMeta:chatNotifyLocalized**
 
 **Description**
 
@@ -606,7 +606,7 @@ player:chatNotifyLocalized("welcome_message", player:Nick())
 
 ---
 
-## **chatError**
+## **playerMeta:chatError**
 
 **Description**
 
@@ -628,7 +628,7 @@ player:chatError("An error occurred!")
 
 ---
 
-## **chatErrorLocalized**
+## **playerMeta:chatErrorLocalized**
 
 **Description**
 
@@ -651,7 +651,7 @@ player:chatErrorLocalized("error_message", player:Nick())
 
 ---
 
-## **getLiliaData**
+## **playerMeta:getLiliaData**
 
 **Description**
 
@@ -679,7 +679,7 @@ print("Player Level:", level)
 
 ---
 
-## **getAllLiliaData**
+## **playerMeta:getAllLiliaData**
 
 **Description**
 
@@ -703,7 +703,7 @@ PrintTable(fullData)
 
 ---
 
-## **setRagdoll**
+## **playerMeta:setRagdoll**
 
 **Description**
 
@@ -726,7 +726,7 @@ player:setRagdoll(ragdoll)
 
 ---
 
-## **setAction**
+## **playerMeta:setAction**
 
 **Description**
 
@@ -752,7 +752,7 @@ player:setAction("Processing...", 10, function(p) print("Action completed for", 
 
 ---
 
-## **stopAction**
+## **playerMeta:stopAction**
 
 **Description**
 
@@ -770,7 +770,7 @@ player:stopAction()
 
 ---
 
-## **playSound**
+## **playerMeta:playSound**
 
 **Description**
 
@@ -795,7 +795,7 @@ player:playSound("ambient/alarms/warningbell1.wav", 100, 100, false)
 
 ---
 
-## **openUI**
+## **playerMeta:openUI**
 
 **Description**
 
@@ -817,7 +817,7 @@ player:openUI("InventoryPanel")
 
 ---
 
-## **openPage**
+## **playerMeta:openPage**
 
 **Description**
 
@@ -839,7 +839,7 @@ player:openPage("https://example.com")
 
 ---
 
-## **requestDropdown**
+## **playerMeta:requestDropdown**
 
 **Description**
 
@@ -866,7 +866,7 @@ end)
 
 ---
 
-## **requestOptions**
+## **playerMeta:requestOptions**
 
 **Description**
 
@@ -894,7 +894,7 @@ end)
 
 ---
 
-## **requestString**
+## **playerMeta:requestString**
 
 **Description**
 
@@ -934,7 +934,7 @@ end
 
 ---
 
-## **binaryQuestion**
+## **playerMeta:binaryQuestion**
 
 **Description**
 
@@ -966,7 +966,7 @@ end)
 
 ---
 
-## **getPlayTime**
+## **playerMeta:getPlayTime**
 
 **Description**
 
@@ -989,7 +989,7 @@ print("Playtime:", playTime, "seconds")
 
 ---
 
-## **createServerRagdoll**
+## **playerMeta:createServerRagdoll**
 
 **Description**
 
@@ -1015,7 +1015,7 @@ local ragdoll = player:createServerRagdoll()
 
 ---
 
-## **doStaredAction**
+## **playerMeta:doStaredAction**
 
 **Description**
 
@@ -1045,7 +1045,7 @@ end, 150)
 
 ---
 
-## **notify**
+## **playerMeta:notify**
 
 **Description**
 
@@ -1067,7 +1067,7 @@ player:notify("You have received a new item!")
 
 ---
 
-## **notifyLocalized**
+## **playerMeta:notifyLocalized**
 
 **Description**
 
@@ -1090,7 +1090,7 @@ player:notifyLocalized("welcome_message", player:Nick())
 
 ---
 
-## **createRagdoll**
+## **playerMeta:createRagdoll**
 
 **Description**
 
@@ -1116,7 +1116,7 @@ local ragdoll = player:createRagdoll(true)
 
 ---
 
-## **setRagdolled**
+## **playerMeta:setRagdolled**
 
 **Description**
 
@@ -1141,7 +1141,7 @@ player:setRagdolled(true, 10, 5, "@gettingUp")
 
 ---
 
-## **syncVars**
+## **playerMeta:syncVars**
 
 **Description**
 
@@ -1159,7 +1159,7 @@ player:syncVars()
 
 ---
 
-## **setLocalVar**
+## **playerMeta:setLocalVar**
 
 **Description**
 
@@ -1182,7 +1182,7 @@ player:setLocalVar("health", 100)
 
 ---
 
-## **isFaction**
+## **playerMeta:isFaction**
 
 **Description**
 
@@ -1210,7 +1210,7 @@ end
 
 ---
 
-## **isClass**
+## **playerMeta:isClass**
 
 **Description**
 
@@ -1238,7 +1238,7 @@ end
 
 ---
 
-## **getDarkRPVar**
+## **playerMeta:getDarkRPVar**
 
 **Description**
 
@@ -1267,7 +1267,7 @@ end
 
 ---
 
-## **getMoney**
+## **playerMeta:getMoney**
 
 **Description**
 
@@ -1290,7 +1290,7 @@ print("Player Money:", money)
 
 ---
 
-## **canAfford**
+## **playerMeta:canAfford**
 
 **Description**
 
@@ -1320,7 +1320,7 @@ end
 
 ---
 
-## **addMoney**
+## **playerMeta:addMoney**
 
 **Description**
 
@@ -1346,7 +1346,7 @@ player:addMoney(1000)
 
 ---
 
-## **takeMoney**
+## **playerMeta:takeMoney**
 
 **Description**
 
@@ -1368,7 +1368,7 @@ player:takeMoney(200)
 
 ---
 
-## **hasSkillLevel**
+## **playerMeta:hasSkillLevel**
 
 **Description**
 
@@ -1397,7 +1397,7 @@ end
 
 ---
 
-## **meetsRequiredSkills**
+## **playerMeta:meetsRequiredSkills**
 
 **Description**
 
@@ -1428,7 +1428,7 @@ end
 
 ---
 
-## **restoreStamina**
+## **playerMeta:restoreStamina**
 
 **Description**
 
@@ -1450,7 +1450,7 @@ player:restoreStamina(10)
 
 ---
 
-## **consumeStamina**
+## **playerMeta:consumeStamina**
 
 **Description**
 
@@ -1472,7 +1472,7 @@ player:consumeStamina(5)
 
 ---
 
-## **CanEditVendor**
+## **playerMeta:CanEditVendor**
 
 **Description**
 
@@ -1496,7 +1496,7 @@ end
 
 ---
 
-## **CanOverrideView**
+## **playerMeta:CanOverrideView**
 
 **Description**
 
@@ -1520,7 +1520,7 @@ end
 
 ---
 
-## **IsInThirdPerson**
+## **playerMeta:IsInThirdPerson**
 
 **Description**
 
@@ -1544,7 +1544,7 @@ end
 
 ---
 
-## **isUser**
+## **playerMeta:isUser**
 
 **Description**
 
@@ -1568,7 +1568,7 @@ end
 
 ---
 
-## **isStaff**
+## **playerMeta:isStaff**
 
 **Description**
 
@@ -1592,7 +1592,7 @@ end
 
 ---
 
-## **isVIP**
+## **playerMeta:isVIP**
 
 **Description**
 
@@ -1616,7 +1616,7 @@ end
 
 ---
 
-## **isStaffOnDuty**
+## **playerMeta:isStaffOnDuty**
 
 **Description**
 
@@ -1640,7 +1640,7 @@ end
 
 ---
 
-## **hasWhitelist**
+## **playerMeta:hasWhitelist**
 
 **Description**
 
@@ -1668,7 +1668,7 @@ end
 
 ---
 
-## **getClass**
+## **playerMeta:getClass**
 
 **Description**
 
@@ -1693,7 +1693,7 @@ end
 
 ---
 
-## **hasClassWhitelist**
+## **playerMeta:hasClassWhitelist**
 
 **Description**
 
@@ -1721,7 +1721,7 @@ end
 
 ---
 
-## **getClassData**
+## **playerMeta:getClassData**
 
 **Description**
 
@@ -1746,7 +1746,7 @@ end
 
 ---
 
-## **WhitelistAllClasses**
+## **playerMeta:WhitelistAllClasses**
 
 **Description**
 
@@ -1764,7 +1764,7 @@ player:WhitelistAllClasses()
 
 ---
 
-## **WhitelistAllFactions**
+## **playerMeta:WhitelistAllFactions**
 
 **Description**
 
@@ -1782,7 +1782,7 @@ player:WhitelistAllFactions()
 
 ---
 
-## **WhitelistEverything**
+## **playerMeta:WhitelistEverything**
 
 **Description**
 
@@ -1800,7 +1800,7 @@ player:WhitelistEverything()
 
 ---
 
-## **classWhitelist**
+## **playerMeta:classWhitelist**
 
 **Description**
 
@@ -1822,7 +1822,7 @@ player:classWhitelist("Medic")
 
 ---
 
-## **classUnWhitelist**
+## **playerMeta:classUnWhitelist**
 
 **Description**
 
@@ -1844,7 +1844,7 @@ player:classUnWhitelist("Medic")
 
 ---
 
-## **setWhitelisted**
+## **playerMeta:setWhitelisted**
 
 **Description**
 
@@ -1871,7 +1871,7 @@ player:setWhitelisted(TEAM_POLICE, true)
 
 ---
 
-## **IsLiliaPersistent**
+## **playerMeta:IsLiliaPersistent**
 
 **Description**
 
