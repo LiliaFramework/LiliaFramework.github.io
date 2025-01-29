@@ -872,6 +872,22 @@ end
 ```
     
 ---
+### **InitializedOptions**
+**Description:**  
+Called when `lia.option` is fully initialized.
+    
+**Realm:** 
+`Client`
+    
+**Example:**
+```lua
+function MODULE:InitializedOptions()
+   LocalPlayer():ChatPrint("LOADED OPTIONS!")
+end
+```
+    
+---
+
 ### **ModuleLoaded**
 **Description:**  
 Called when a module has finished loading (post-load logic).

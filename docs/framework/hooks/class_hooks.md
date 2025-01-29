@@ -120,6 +120,7 @@ end
   Executes actions when a character is transferred to the class
 
 - **Realm:**  
+
   `Server`
 
 - **Parameters:**

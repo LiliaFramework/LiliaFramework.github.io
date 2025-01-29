@@ -10,6 +10,7 @@ This page details the various hooks associated with a **Faction** in your schema
   Retrieves the default name for a character upon initial creation within the faction.
 
 - **Realm:**  
+
   `Shared`
 
 - **Parameters:**
@@ -33,6 +34,7 @@ This page details the various hooks associated with a **Faction** in your schema
   Retrieves the default description for a character upon initial creation within the faction.
 
 - **Realm:**  
+
   `Shared`
 
 - **Parameters:**
@@ -81,6 +83,7 @@ This page details the various hooks associated with a **Faction** in your schema
   Executes actions when a faction member spawns in the game world. Useful for setting up player-specific settings or notifications.
 
 - **Realm:**  
+
   `Server`
 
 - **Parameters:**
@@ -101,6 +104,7 @@ This page details the various hooks associated with a **Faction** in your schema
   Executes actions when a character is transferred to the faction.
 
 - **Realm:**  
+
   `Server`
 
 - **Parameters:**
