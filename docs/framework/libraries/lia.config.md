@@ -1,13 +1,9 @@
----
 
 # lia.config
 
 ---
 
 The `lia.config` module manages configuration settings within your schema. It allows you to define, retrieve, and modify various configuration options that control different aspects of your game or application. Configurations can be global or schema-specific, and they support different data types such as booleans, numbers, colors, and generic text fields.
-
-If you need to understand how configurations are stored and handled, refer to the [configuration structure documentation](./framework/definitions/config).
-
 ---
 
 ### **lia.config.add**

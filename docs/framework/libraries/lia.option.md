@@ -1,12 +1,8 @@
----
-
 # lia.option
 
 ---
 
 The `lia.option` module manages user-specific options within your schema. It allows clients to define, retrieve, and persist various option settings tailored to individual players. Options can have different data types such as booleans, numbers, colors, and generic text fields. Additionally, options support callbacks for reacting to changes and can be categorized for better organization.
-
-If you need to understand how options are stored and handled, refer to the [option structure documentation](./framework/definitions/option).
 
 ---
 
