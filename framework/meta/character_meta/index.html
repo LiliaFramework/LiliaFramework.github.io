@@ -1,0 +1,3200 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://liliaframework.github.io/framework/meta/character_meta/">
+      
+      
+        <link rel="prev" href="../../hooks/class_hooks/">
+      
+      
+        <link rel="next" href="../entity_meta/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.1">
+    
+    
+      
+        <title>Character meta - Lilia Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lavender">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#character-object" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Lilia Documentation" class="md-header__button md-logo" aria-label="Lilia Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo_small.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lilia Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Character meta
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lavender"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="lavender"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Lilia Documentation" class="md-nav__button md-logo" aria-label="Lilia Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo_small.png" alt="logo">
+
+    </a>
+    Lilia Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Framework
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Definitions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Definitions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/faction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Faction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/attribute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Attribute
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/command/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Command
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/module/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/items/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Items
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hooks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Hooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hooks/gamemode_hooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gamemode hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hooks/faction_hooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Faction Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hooks/class_hooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Meta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Character meta
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Character meta
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetatostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:tostring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaeq" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:eq
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetid" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getPlayer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetahasmoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:hasMoney
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetflags" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getFlags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetahasflags" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:hasFlags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetitemweapon" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getItemWeapon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetasetflags" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:setFlags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagiveflags" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:giveFlags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetatakeflags" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:takeFlags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetasave" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:save
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:sync
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetasetup" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetakick" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:kick
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaban" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:ban
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetadelete" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:delete
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetadestroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:destroy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagivemoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:giveMoney
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetatakemoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:takeMoney
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetadoesrecognize" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:doesRecognize
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetadoesfakerecognize" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:doesFakeRecognize
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetarecognize" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:recognize
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetahasclasswhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:hasClassWhitelist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaisfaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:isFaction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaisclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:isClass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetawhitelistallclasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:WhitelistAllClasses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetawhitelistallfactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:WhitelistAllFactions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetawhitelisteverything" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:WhitelistEverything
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaclasswhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:classWhitelist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaclassunwhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:classUnWhitelist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetajoinclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:joinClass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetakickclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:kickClass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetmaxstamina" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getMaxStamina
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetstamina" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getStamina
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetattrib" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getAttrib
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetboost" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getBoost
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetboosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getBoosts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaupdateattrib" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:updateAttrib
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetasetattrib" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:setAttrib
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaaddboost" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:addBoost
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaremoveboost" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:removeBoost
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entity_meta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entity meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventory_meta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inventory meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item_meta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Item meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player_meta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Player meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tool_meta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tool meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Libraries
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.attrib/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.attribs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.bar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.bar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.character/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.character
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.chat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.chat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.color/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.color
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.command/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.command
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.config
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.currency/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.currency
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.darkrp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.darkrp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.db/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.db
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.ease/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.ease
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.faction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.faction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.flag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.flag
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.inventory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.inventory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.item/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.item
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.languages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.lang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.log/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.log
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.math/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.math
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.menu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.module/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.net/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.net
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.notice/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.notices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.option/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.option
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.string/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.string
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.time/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.time
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.util
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Information
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Information
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Addons with Improved Compatibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/getting_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/installing_the_gamemode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing the gamemode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetatostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:tostring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaeq" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:eq
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetid" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getPlayer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetahasmoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:hasMoney
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetflags" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getFlags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetahasflags" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:hasFlags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetitemweapon" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getItemWeapon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetasetflags" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:setFlags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagiveflags" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:giveFlags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetatakeflags" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:takeFlags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetasave" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:save
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:sync
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetasetup" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetakick" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:kick
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaban" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:ban
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetadelete" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:delete
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetadestroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:destroy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagivemoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:giveMoney
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetatakemoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:takeMoney
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetadoesrecognize" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:doesRecognize
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetadoesfakerecognize" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:doesFakeRecognize
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetarecognize" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:recognize
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetahasclasswhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:hasClassWhitelist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaisfaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:isFaction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaisclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:isClass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetawhitelistallclasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:WhitelistAllClasses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetawhitelistallfactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:WhitelistAllFactions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetawhitelisteverything" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:WhitelistEverything
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaclasswhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:classWhitelist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaclassunwhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:classUnWhitelist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetajoinclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:joinClass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetakickclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:kickClass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetmaxstamina" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getMaxStamina
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetstamina" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getStamina
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetattrib" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getAttrib
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetboost" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getBoost
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetagetboosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:getBoosts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaupdateattrib" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:updateAttrib
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetasetattrib" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:setAttrib
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaaddboost" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:addBoost
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charactermetaremoveboost" class="md-nav__link">
+    <span class="md-ellipsis">
+      characterMeta:removeBoost
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<hr />
+<p>title: <strong>Character Object Documentation</strong>
+description: Comprehensive documentation for the Character object in the Lilia game framework.</p>
+<hr />
+<h1 id="character-object"><strong>Character Object</strong></h1>
+<p>Characters are a fundamental object type in Lilia. They are distinct from players, where players are the representation of a person's existence in the server that owns a character, and their character is their currently selected persona. All the characters that a player owns will be loaded into memory once they connect to the server. Characters are saved during a regular interval (<code>lia.config.CharacterDataSaveInterval</code>), and during specific events (e.g., when the owning player switches away from one character to another).</p>
+<p>They contain all information that is not persistent with the player; names, descriptions, model, currency, etc. For the most part, you'll want to keep all information stored on the character since it will probably be different or change if the player switches to another character. An easy way to do this is to use <code>lia.char.registerVar</code> to easily create accessor functions for variables that automatically save to the character object.</p>
+<hr />
+<h2 id="charactermetatostring"><strong>characterMeta:tostring</strong></h2>
+<p><strong>Description</strong></p>
+<p>Provides a human-readable string representation of the character.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>String</strong>: A string in the format <code>"character[ID]"</code>, where <code>ID</code> is the character's unique identifier.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">print</span><span class="p">(</span><span class="nv">lia</span><span class="p">.</span><span class="py">char</span><span class="p">.</span><span class="py">loaded</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">-- Output: &quot;character[1]&quot;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetaeq"><strong>characterMeta:eq</strong></h2>
+<p><strong>Description</strong></p>
+<p>Compares this character with another character for equality based on their unique IDs.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>other</strong> (<code>Character</code>): The other character to compare against.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if both characters have the same ID; otherwise, <code>false</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">char1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">lia</span><span class="p">.</span><span class="py">char</span><span class="p">.</span><span class="py">loaded</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">char2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">lia</span><span class="p">.</span><span class="py">char</span><span class="p">.</span><span class="py">loaded</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">print</span><span class="p">(</span><span class="nv">char1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">char2</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">-- Output: false</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetagetid"><strong>characterMeta:getID</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the unique database ID of this character.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Integer</strong>: The unique identifier of the character.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">charID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">getID</span><span class="p">()</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="nv">charID</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">-- Output: 1</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetagetplayer"><strong>characterMeta:getPlayer</strong></h2>
+<p><strong>Description</strong></p>
+<p>Obtains the player object that currently owns this character.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Player|nil</strong>: The player who owns this character, or <code>nil</code> if no valid player is found.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">getPlayer</span><span class="p">()</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">owner</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character is owned by:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">owner</span><span class="p">:</span><span class="nf">Nick</span><span class="p">())</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetahasmoney"><strong>characterMeta:hasMoney</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks whether the character possesses at least a specified amount of in-game currency.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>amount</strong> (<code>float</code>): The minimum amount of currency to check for. Must be a non-negative number.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the character's current money is equal to or exceeds the specified amount; otherwise, <code>false</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">hasEnoughMoney</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">hasMoney</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">hasEnoughMoney</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character has sufficient funds.&quot;</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kr">else</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character lacks sufficient funds.&quot;</span><span class="p">)</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetagetflags"><strong>characterMeta:getFlags</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves all flags associated with this character.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>String</strong>: A concatenated string of all flags the character possesses. Each character in the string represents an individual flag.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">flags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">getFlags</span><span class="p">()</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="nv">flags</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">flags</span><span class="p">:</span><span class="nf">sub</span><span class="p">(</span><span class="nv">i</span><span class="p">,</span><span class="w"> </span><span class="nv">i</span><span class="p">)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Flag:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">flag</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetahasflags"><strong>characterMeta:hasFlags</strong></h2>
+<p><strong>Description</strong></p>
+<p>Determines if the character has one or more specified flags.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>flags</strong> (<code>String</code>): A string containing one or more flags to check.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the character has at least one of the specified flags; otherwise, <code>false</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">hasFlags</span><span class="p">(</span><span class="s2">&quot;admin&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character has admin privileges.&quot;</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetagetitemweapon"><strong>characterMeta:getItemWeapon</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the currently equipped weapon of the character along with its corresponding inventory item.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Entity|false</strong>: The equipped weapon entity if a weapon is equipped; otherwise, <code>false</code>.</li>
+<li><strong>Item|false</strong>: The corresponding item from the character's inventory if found; otherwise, <code>false</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">weapon</span><span class="p">,</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">getItemWeapon</span><span class="p">()</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">weapon</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Equipped weapon:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">weapon</span><span class="p">:</span><span class="nf">GetClass</span><span class="p">())</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kr">else</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No weapon equipped.&quot;</span><span class="p">)</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetasetflags"><strong>characterMeta:setFlags</strong></h2>
+<p><strong>Description</strong></p>
+<p>Sets the complete set of flags accessible by this character, replacing any existing flags.</p>
+<p><strong>Note:</strong> This method overwrites all existing flags and does not append to them.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>flags</strong> (<code>String</code>): A string containing one or more flags to assign to the character.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">setFlags</span><span class="p">(</span><span class="s2">&quot;petr&quot;</span><span class="p">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1">-- This sets the character&#39;s flags to &#39;p&#39;, &#39;e&#39;, &#39;t&#39;, &#39;r&#39;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetagiveflags"><strong>characterMeta:giveFlags</strong></h2>
+<p><strong>Description</strong></p>
+<p>Adds one or more flags to the character's existing set of accessible flags without removing existing ones.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>flags</strong> (<code>String</code>): A string containing one or more flags to add.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">giveFlags</span><span class="p">(</span><span class="s2">&quot;pet&quot;</span><span class="p">)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1">-- Adds &#39;p&#39;, &#39;e&#39;, and &#39;t&#39; flags to the character</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetatakeflags"><strong>characterMeta:takeFlags</strong></h2>
+<p><strong>Description</strong></p>
+<p>Removes one or more flags from the character's set of accessible flags.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>flags</strong> (<code>String</code>): A string containing one or more flags to remove.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">-- For a character with &quot;pet&quot; flags</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">character</span><span class="p">:</span><span class="nf">takeFlags</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1">-- The character now only has &#39;e&#39; and &#39;t&#39; flags</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetasave"><strong>characterMeta:save</strong></h2>
+<p><strong>Description</strong></p>
+<p>Persists the character's current state and data to the database.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>callback</strong> (<code>function</code>, optional): An optional callback function to execute after the save operation completes successfully.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">save</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character saved successfully!&quot;</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetasync"><strong>characterMeta:sync</strong></h2>
+<p><strong>Description</strong></p>
+<p>Synchronizes the character's data with clients, making them aware of the character's current state.</p>
+<p>This method handles different synchronization scenarios:
+- If <code>receiver</code> is <code>nil</code>, the character's data is synced to all connected players.
+- If <code>receiver</code> is the owner of the character, full character data is sent.
+- If <code>receiver</code> is not the owner, only limited data is sent to prevent unauthorized access.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Internal:</strong>  </p>
+<p>This function is intended for internal use and should not be called directly.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>receiver</strong> (<code>Player|nil</code>): The specific player to send the character data to. If <code>nil</code>, data is sent to all players.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">sync</span><span class="p">()</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1">-- Syncs character data to all players</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetasetup"><strong>characterMeta:setup</strong></h2>
+<p><strong>Description</strong></p>
+<p>Configures the character's appearance and synchronizes this information with the owning player. This includes setting the player's model, faction, body groups, and skin. Optionally, it can prevent networking to other clients.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Internal:</strong>  </p>
+<p>This function is intended for internal use and should not be called directly.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>noNetworking</strong> (<code>Boolean</code>, optional): If set to <code>true</code>, the character's information will not be synchronized with other players.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">setup</span><span class="p">()</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1">-- Sets up the character and syncs data with the owning player</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetakick"><strong>characterMeta:kick</strong></h2>
+<p><strong>Description</strong></p>
+<p>Forces the player to exit their current character and redirects them to the character selection menu. This is typically used when a character is banned or deleted.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">kick</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetaban"><strong>characterMeta:ban</strong></h2>
+<p><strong>Description</strong></p>
+<p>Bans the character, preventing it from being used for a specified duration or permanently if no duration is provided. This action also forces the player out of the character.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>time</strong> (<code>float</code>, optional): The duration of the ban in seconds. If omitted or <code>nil</code>, the ban is permanent.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">ban</span><span class="p">(</span><span class="mi">3600</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Bans the character for 1 hour</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nv">character</span><span class="p">:</span><span class="nf">ban</span><span class="p">()</span><span class="w"> </span><span class="c1">-- Permanently bans the character</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetadelete"><strong>characterMeta:delete</strong></h2>
+<p><strong>Description</strong></p>
+<p>Removes the character from the database and memory, effectively deleting it permanently.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">delete</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetadestroy"><strong>characterMeta:destroy</strong></h2>
+<p><strong>Description</strong></p>
+<p>Destroys the character instance, removing it from memory and ensuring it is no longer tracked by the server. This does not delete the character from the database.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">destroy</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetagivemoney"><strong>characterMeta:giveMoney</strong></h2>
+<p><strong>Description</strong></p>
+<p>Adds or subtracts money from the character's wallet. This function adds money to the wallet and optionally handles overflow by dropping excess money on the ground.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>amount</strong> (<code>float</code>): The amount of money to add or subtract.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: Always returns <code>true</code> to indicate the operation was processed.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">giveMoney</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Adds 500 to the character&#39;s wallet</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetatakemoney"><strong>characterMeta:takeMoney</strong></h2>
+<p><strong>Description</strong></p>
+<p>Specifically removes money from the character's wallet. This function ensures that only positive values are used to subtract from the wallet.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>amount</strong> (<code>float</code>): The amount of money to remove. Must be a positive number.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: Always returns <code>true</code> to indicate the operation was processed.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">takeMoney</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Removes 100 from the character&#39;s wallet</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetadoesrecognize"><strong>characterMeta:doesRecognize</strong></h2>
+<p><strong>Description</strong></p>
+<p>Determines if this character recognizes another character based on their unique ID.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>id</strong> (<code>number</code> | <code>Character</code>): The unique ID of the character to check recognition for. This can be either a numeric ID or a <code>Character</code> object.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the character recognizes the specified character; otherwise, <code>false</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">otherCharacter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">lia</span><span class="p">.</span><span class="py">char</span><span class="p">.</span><span class="py">loaded</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">doesRecognize</span><span class="p">(</span><span class="nv">otherCharacter</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character recognizes the other character.&quot;</span><span class="p">)</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="kr">else</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character does not recognize the other character.&quot;</span><span class="p">)</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetadoesfakerecognize"><strong>characterMeta:doesFakeRecognize</strong></h2>
+<p><strong>Description</strong></p>
+<p>Determines if this character recognizes another character by a fake name based on their unique ID.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>id</strong> (<code>number</code> | <code>Character</code>): The unique ID of the character to check fake recognition for. This can be either a numeric ID or a <code>Character</code> object.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the character recognizes the specified character by a fake name; otherwise, <code>false</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">otherCharacter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">lia</span><span class="p">.</span><span class="py">char</span><span class="p">.</span><span class="py">loaded</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">doesFakeRecognize</span><span class="p">(</span><span class="nv">otherCharacter</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character recognizes the other character by a fake name.&quot;</span><span class="p">)</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="kr">else</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character does not recognize the other character by a fake name.&quot;</span><span class="p">)</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetarecognize"><strong>characterMeta:recognize</strong></h2>
+<p><strong>Description</strong></p>
+<p>Allows the character to recognize another character, optionally under a specified fake name.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>character</strong> (<code>Character</code> | <code>number</code>): The character to be recognized, either as a <code>Character</code> object or by their unique ID number.</li>
+<li><strong>name</strong> (<code>string</code>, optional): The fake name under which the character is recognized. If <code>nil</code>, the character is recognized by their actual ID.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the recognition was successful.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">targetCharacter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">lia</span><span class="p">.</span><span class="py">char</span><span class="p">.</span><span class="py">loaded</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nv">character</span><span class="p">:</span><span class="nf">recognize</span><span class="p">(</span><span class="nv">targetCharacter</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Shadow&quot;</span><span class="p">)</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="c1">-- This sets the character to recognize targetCharacter by the fake name &quot;Shadow&quot;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetahasclasswhitelist"><strong>characterMeta:hasClassWhitelist</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the character has whitelisted access to a specific class.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>class</strong> (<code>number</code>): The class ID to check for whitelisting.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the character has whitelist access to the specified class; otherwise, <code>false</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">classID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">hasClassWhitelist</span><span class="p">(</span><span class="nv">classID</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character has whitelist access to class:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">classID</span><span class="p">)</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetaisfaction"><strong>characterMeta:isFaction</strong></h2>
+<p><strong>Description</strong></p>
+<p>Determines if the character belongs to a specified faction.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>faction</strong> (<code>string</code>): The name of the faction to check against.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the character belongs to the specified faction; otherwise, <code>false</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">isFaction</span><span class="p">(</span><span class="s2">&quot;Police&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character is a member of the Police faction.&quot;</span><span class="p">)</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetaisclass"><strong>characterMeta:isClass</strong></h2>
+<p><strong>Description</strong></p>
+<p>Determines if the character belongs to a specified class.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>class</strong> (<code>string</code>): The name of the class to check against.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the character belongs to the specified class; otherwise, <code>false</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">isClass</span><span class="p">(</span><span class="s2">&quot;Medic&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character is a Medic.&quot;</span><span class="p">)</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetawhitelistallclasses"><strong>characterMeta:WhitelistAllClasses</strong></h2>
+<p><strong>Description</strong></p>
+<p>Grants the character whitelist access to all available classes.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">WhitelistAllClasses</span><span class="p">()</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="c1">-- Character now has whitelist access to every class</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetawhitelistallfactions"><strong>characterMeta:WhitelistAllFactions</strong></h2>
+<p><strong>Description</strong></p>
+<p>Grants the character whitelist access to all available factions.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">WhitelistAllFactions</span><span class="p">()</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="c1">-- Character now has whitelist access to every faction</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetawhitelisteverything"><strong>characterMeta:WhitelistEverything</strong></h2>
+<p><strong>Description</strong></p>
+<p>Grants the character whitelist access to all classes and factions.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">WhitelistEverything</span><span class="p">()</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="c1">-- Character now has whitelist access to every class and faction</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetaclasswhitelist"><strong>characterMeta:classWhitelist</strong></h2>
+<p><strong>Description</strong></p>
+<p>Adds a specific class to the character's whitelist, granting access to that class.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>class</strong> (<code>number</code>): The class ID to whitelist for the character.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">classID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="nv">character</span><span class="p">:</span><span class="nf">classWhitelist</span><span class="p">(</span><span class="nv">classID</span><span class="p">)</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="c1">-- Character now has whitelist access to class 7</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetaclassunwhitelist"><strong>characterMeta:classUnWhitelist</strong></h2>
+<p><strong>Description</strong></p>
+<p>Removes a specific class from the character's whitelist, revoking access to that class.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>class</strong> (<code>number</code>): The class ID to remove from the character's whitelist.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">classID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="nv">character</span><span class="p">:</span><span class="nf">classUnWhitelist</span><span class="p">(</span><span class="nv">classID</span><span class="p">)</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="c1">-- Character no longer has whitelist access to class 7</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetajoinclass"><strong>characterMeta:joinClass</strong></h2>
+<p><strong>Description</strong></p>
+<p>Assigns the character to a specified class. Optionally forces the assignment even if conditions are not met.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>class</strong> (<code>string</code>): The name of the class to join.</li>
+<li><strong>isForced</strong> (<code>boolean</code>, optional): If set to <code>true</code>, the character is forced to join the class regardless of any restrictions. Defaults to <code>false</code>.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the character successfully joined the class; otherwise, <code>false</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">success</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">joinClass</span><span class="p">(</span><span class="s2">&quot;Sniper&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">success</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character successfully joined the Sniper class.&quot;</span><span class="p">)</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="kr">else</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character failed to join the Sniper class.&quot;</span><span class="p">)</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetakickclass"><strong>characterMeta:kickClass</strong></h2>
+<p><strong>Description</strong></p>
+<p>Removes the character from their current class and assigns them to the default class of their faction.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">kickClass</span><span class="p">()</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="c1">-- Character is now assigned to their faction&#39;s default class</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetagetmaxstamina"><strong>characterMeta:getMaxStamina</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the maximum stamina value for the character. This value can be modified by hooks or defaults to a module-defined value.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Integer</strong>: The maximum stamina value for the character.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">maxStamina</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">getMaxStamina</span><span class="p">()</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character&#39;s maximum stamina:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">maxStamina</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetagetstamina"><strong>characterMeta:getStamina</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the current stamina value of the character. This value can be a local variable or default to a module-defined value.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Integer</strong>: The current stamina value of the character.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">currentStamina</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">getStamina</span><span class="p">()</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character&#39;s current stamina:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">currentStamina</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetagetattrib"><strong>characterMeta:getAttrib</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the value of a specific attribute for the character, including any applied boosts.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>key</strong> (<code>string</code>): The key of the attribute to retrieve.</li>
+<li><strong>default</strong> (<code>number</code>, optional): The default value to return if the attribute is not found. Defaults to <code>0</code>.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Number</strong>: The value of the specified attribute, including applied boosts.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">strength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">getAttrib</span><span class="p">(</span><span class="s2">&quot;strength&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character&#39;s strength:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">strength</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetagetboost"><strong>characterMeta:getBoost</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the boost value for a specific attribute of the character.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>attribID</strong> (<code>number</code>): The ID of the attribute to retrieve the boost for.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Number | nil</strong>: The boost value for the specified attribute, or <code>nil</code> if no boost is found.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">strengthBoost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">getBoost</span><span class="p">(</span><span class="s2">&quot;strength&quot;</span><span class="p">)</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">strengthBoost</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character has a strength boost of:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">strengthBoost</span><span class="p">)</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="kr">else</span>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character has no strength boost.&quot;</span><span class="p">)</span>
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetagetboosts"><strong>characterMeta:getBoosts</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves all boosts applied to the character's attributes.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Table</strong>: A table containing all boosts applied to the character's attributes.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">allBoosts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">character</span><span class="p">:</span><span class="nf">getBoosts</span><span class="p">()</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="kr">for</span><span class="w"> </span><span class="nv">attribID</span><span class="p">,</span><span class="w"> </span><span class="nv">boosts</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">pairs</span><span class="p">(</span><span class="nv">allBoosts</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">boostID</span><span class="p">,</span><span class="w"> </span><span class="nv">amount</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">pairs</span><span class="p">(</span><span class="nv">boosts</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Attribute:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">attribID</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Boost ID:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">boostID</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Amount:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">amount</span><span class="p">)</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetaupdateattrib"><strong>characterMeta:updateAttrib</strong></h2>
+<p><strong>Description</strong></p>
+<p>Updates the value of a character's attribute by adding a specified amount to it. Ensures that the attribute does not exceed its maximum allowed value.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>key</strong> (<code>string</code>): The key of the attribute to update.</li>
+<li><strong>value</strong> (<code>number</code>): The amount to add to the attribute.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">updateAttrib</span><span class="p">(</span><span class="s2">&quot;agility&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="c1">-- Increases the character&#39;s agility by 5</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetasetattrib"><strong>characterMeta:setAttrib</strong></h2>
+<p><strong>Description</strong></p>
+<p>Sets the value of a character's attribute to a specified value.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>key</strong> (<code>string</code>): The key of the attribute to set.</li>
+<li><strong>value</strong> (<code>number</code>): The value to set for the attribute.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">setAttrib</span><span class="p">(</span><span class="s2">&quot;intelligence&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">15</span><span class="p">)</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="c1">-- Sets the character&#39;s intelligence attribute to 15</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetaaddboost"><strong>characterMeta:addBoost</strong></h2>
+<p><strong>Description</strong></p>
+<p>Adds a boost to a specific attribute of the character.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>boostID</strong> (<code>string</code>): The ID of the boost to add.</li>
+<li><strong>attribID</strong> (<code>string</code>): The ID of the attribute to which the boost should be applied.</li>
+<li><strong>boostAmount</strong> (<code>number</code>): The amount of the boost to add to the attribute.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the boost was successfully added.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">addBoost</span><span class="p">(</span><span class="s2">&quot;buff_001&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;strength&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="c1">-- Adds a boost of +10 to the character&#39;s strength attribute</span>
+</span></code></pre></div>
+<hr />
+<h2 id="charactermetaremoveboost"><strong>characterMeta:removeBoost</strong></h2>
+<p><strong>Description</strong></p>
+<p>Removes a boost from a specific attribute of the character.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>boostID</strong> (<code>string</code>): The ID of the boost to remove.</li>
+<li><strong>attribID</strong> (<code>string</code>): The ID of the attribute from which the boost should be removed.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="nv">character</span><span class="p">:</span><span class="nf">removeBoost</span><span class="p">(</span><span class="s2">&quot;buff_001&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;strength&quot;</span><span class="p">)</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="c1">-- Removes the boost &quot;buff_001&quot; from the character&#39;s strength attribute</span>
+</span></code></pre></div>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../hooks/class_hooks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Class Hooks">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Class Hooks
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../entity_meta/" class="md-footer__link md-footer__link--next" aria-label="Next: Entity meta">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Entity meta
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/LiliaFramework/Lilia" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.5090c770.min.js"></script>
+      
+    
+  </body>
+</html>
