@@ -271,7 +271,7 @@ Retrieves entities near the player within a specified radius. Can filter to only
 **Parameters**
 
 1. **radius** (`int`): The radius within which to search for entities.
-2. **playerOnly** (`Bool`): If `true`, only return player entities.
+2. **playerOnly** (`Boolean`): If `true`, only return player entities.
 
 **Returns**
 
@@ -785,7 +785,7 @@ Plays a sound for the player.
 1. **sound** (`String`): The sound to play.
 2. **volume** (`int`, optional): The volume of the sound. Defaults to `75`.
 3. **pitch** (`int`, optional): The pitch of the sound. Defaults to `100`.
-4. **shouldEmit** (`Bool`): Whether to emit the sound server-side (`true`) or send it to the client (`false`).
+4. **shouldEmit** (`Boolean`): Whether to emit the sound server-side (`true`) or send it to the client (`false`).
 
 **Example**
 
@@ -949,7 +949,7 @@ Requests a binary choice from the player.
 1. **question** (`String`): The question to present to the player.
 2. **option1** (`String`): The text for the first option.
 3. **option2** (`String`): The text for the second option.
-4. **manualDismiss** (`Bool`): Whether the notice should be manually dismissed.
+4. **manualDismiss** (`Boolean`): Whether the notice should be manually dismissed.
 5. **callback** (`function`): The function to call with the choice (`0` or `1`) when the player selects an option.
 
 **Example**
@@ -1001,7 +1001,7 @@ Creates a ragdoll entity for the player on the server.
 
 **Parameters**
 
-- **dontSetPlayer** (`Bool`): Determines whether to associate the player with the ragdoll.
+- **dontSetPlayer** (`Boolean`): Determines whether to associate the player with the ragdoll.
 
 **Returns**
 
@@ -1102,7 +1102,7 @@ Creates a ragdoll entity for the player. Can optionally freeze the ragdoll initi
 
 **Parameters**
 
-- **freeze** (`Bool`): Whether to freeze the ragdoll initially.
+- **freeze** (`Boolean`): Whether to freeze the ragdoll initially.
 
 **Returns**
 
@@ -1128,7 +1128,7 @@ Sets the player to a ragdolled state or removes the ragdoll.
 
 **Parameters**
 
-1. **state** (`Bool`): Whether to set the player to a ragdolled state (`true`) or remove the ragdoll (`false`).
+1. **state** (`Boolean`): Whether to set the player to a ragdolled state (`true`) or remove the ragdoll (`false`).
 2. **time** (`int`, optional): The duration for which the player remains ragdolled.
 3. **getUpGrace** (`int`, optional): The grace period for the player to get up before the ragdoll is removed.
 4. **getUpMessage** (`String`, optional): The message displayed when the player is getting up. Defaults to `"@wakingUp"`.

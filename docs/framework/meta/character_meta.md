@@ -369,7 +369,7 @@ This function is intended for internal use and should not be called directly.
 
 **Parameters**
 
-- **noNetworking** (`Bool`, optional): If set to `true`, the character's information will not be synchronized with other players.
+- **noNetworking** (`Boolean`, optional): If set to `true`, the character's information will not be synchronized with other players.
 
 **Example**
 

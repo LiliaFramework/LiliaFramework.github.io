@@ -25,7 +25,7 @@ end
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------|------------|---------------------------------------|
 | `ATTRIBUTE.name`                             | Specifies the display name of the attribute.                                                                    | `String`   | `ATTRIBUTE.name = "Strength"`         |
 | `ATTRIBUTE.desc`                             | Provides a short description of the attribute.                                                                  | `String`   | `ATTRIBUTE.desc = "Strength Skill."`   |
-| `ATTRIBUTE.noStartBonus` *(Optional)*        | Determines whether the attribute can receive a bonus at the start of the game.                                 | `Bool`     | `ATTRIBUTE.noStartBonus = false`      |
+| `ATTRIBUTE.noStartBonus` *(Optional)*        | Determines whether the attribute can receive a bonus at the start of the game.                                 | `Boolean`     | `ATTRIBUTE.noStartBonus = false`      |
 | `ATTRIBUTE.maxValue` *(Optional)*            | Specifies the maximum value the attribute can reach.                                                           | `Number`   | `ATTRIBUTE.maxValue = 50`              |
 | `ATTRIBUTE.startingMax` *(Optional)*         | Defines the maximum value the attribute can start with.                                                        | `Number`   | `ATTRIBUTE.startingMax = 15`           |
 | `ATTRIBUTE:OnSetup(client, value)` *(Optional)* | Executes custom logic when the attribute is set up for a player, such as notifications or additional effects. | `Function` | `ATTRIBUTE:OnSetup(client, value)`     |
@@ -72,7 +72,7 @@ end
   Determines whether the attribute can receive a bonus at the start of the game.
     
 - **Type:**  
-  `Bool`
+  `Boolean`
     
 - **Example:**
     ```lua

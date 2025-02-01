@@ -120,7 +120,7 @@ Retrieves items with a specified unique ID from the inventory.
 **Parameters**
 
 - **uniqueID** (`String`): The unique ID of the items to retrieve.
-- **onlyMain** (`Bool`): Whether to retrieve only main items.
+- **onlyMain** (`Boolean`): Whether to retrieve only main items.
 
 **Returns**
 
@@ -464,7 +464,7 @@ Adds an item to the inventory.
 **Parameters**
 
 - **item** (`Item`): The item to add to the inventory.
-- **noReplicate** (`Bool`): Set to `true` to prevent `OnItemAdded` from being called on the added item.
+- **noReplicate** (`Boolean`): Set to `true` to prevent `OnItemAdded` from being called on the added item.
 
 **Returns**
 
@@ -587,7 +587,7 @@ Removes an item from the inventory.
 **Parameters**
 
 - **itemID** (`int`): The ID of the item to remove.
-- **preserveItem** (`Bool`): Whether to preserve the item's data in the database.
+- **preserveItem** (`Boolean`): Whether to preserve the item's data in the database.
 
 **Returns**
 
@@ -1313,7 +1313,7 @@ If the owner is a player, it sets the inventory's owner to the player's characte
 **Parameters**
 
 - **owner** (`Player|Integer`): The new owner of the inventory (Player object or character ID number).
-- **fullUpdate** (`Bool`, optional): Whether to sync the inventory to the client.
+- **fullUpdate** (`Boolean`, optional): Whether to sync the inventory to the client.
 
 **Example**
 

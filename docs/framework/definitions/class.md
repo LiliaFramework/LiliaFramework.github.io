@@ -22,8 +22,8 @@ CLASS.index = CLASS_STEVE
 |----------------------------------------|------------------------------------------------------------------------------------------------------------------|--------------------------------|------------------------------------------------------------------------------------------------------|
 | `CLASS.name`                           | The displayed name of the class.                                                                                | `String`                       | `CLASS.name = "Steve"`<br>*Sets the class name to "Steve."*                                           |
 | `CLASS.desc`                           | The description or lore of the class.                                                                            | `String`                       | `CLASS.desc = "The Steves of the Minecrafter Faction."`<br>*Provides a description for the class.*     |
-| `CLASS.isDefault`                      | Determines if the class is available by default.                                                                 | `Bool`                         | `CLASS.isDefault = true`<br>*Sets the class as available by default.*                                |
-| `CLASS.isWhitelisted` *(Optional)*     | Indicates if the class requires whitelisting.                                                                    | `Bool`                         | `CLASS.isWhitelisted = false`<br>*If `true`, the class requires players to be whitelisted.*            |
+| `CLASS.isDefault`                      | Determines if the class is available by default.                                                                 | `Boolean`                         | `CLASS.isDefault = true`<br>*Sets the class as available by default.*                                |
+| `CLASS.isWhitelisted` *(Optional)*     | Indicates if the class requires whitelisting.                                                                    | `Boolean`                         | `CLASS.isWhitelisted = false`<br>*If `true`, the class requires players to be whitelisted.*            |
 | `CLASS.faction`                        | Links the class to a specific faction.                                                                            | `Number` (Faction Index)       | `CLASS.faction = FACTION_MINECRAFTER`<br>*Associates the class with the Minecrafter faction.*          |
 | `CLASS.color` *(Optional)*             | The color associated with the class.                                                                             | `Color`                        | `CLASS.color = Color(0, 255, 0)`<br>*Sets the class color to green.*                                   |
 | `CLASS.weapons` *(Optional)*           | Weapons available to class members.                                                                              | `Table` of `Strings`            | `CLASS.weapons = {"gold_pickaxe", "netherite_spade"}`<br>*Assigns specific weapons to the class.*        |
@@ -35,11 +35,11 @@ CLASS.index = CLASS_STEVE
 | `CLASS.armor` *(Optional)*             | Default armor for class members.                                                                                   | `Number`                       | `CLASS.armor = 50`<br>*Sets the default armor to 50.*                                                 |
 | `CLASS.scale` *(Optional)*             | Adjusts the player model’s size.                                                                                   | `Number`                       | `CLASS.scale = 1.2`<br>*Increases the player model size by 20%.*                                        |
 | `CLASS.runSpeed` *(Optional)*          | Default running speed for class members.                                                                          | `Number`                       | `CLASS.runSpeed = 250`<br>*Sets the running speed to 250 units.*                                      |
-| `CLASS.runSpeedMultiplier` *(Optional)*| If `true`, multiplies `runSpeed` by the base speed; if `false`, sets it directly.                                 | `Bool`                         | `CLASS.runSpeedMultiplier = true`<br>*Enables run speed multiplication.*                             |
+| `CLASS.runSpeedMultiplier` *(Optional)*| If `true`, multiplies `runSpeed` by the base speed; if `false`, sets it directly.                                 | `Boolean`                         | `CLASS.runSpeedMultiplier = true`<br>*Enables run speed multiplication.*                             |
 | `CLASS.walkSpeed` *(Optional)*         | Default walking speed for class members.                                                                          | `Number`                       | `CLASS.walkSpeed = 200`<br>*Sets the walking speed to 200 units.*                                      |
-| `CLASS.walkSpeedMultiplier` *(Optional)*| If `true`, multiplies `walkSpeed` by the base speed; if `false`, sets it directly.                                | `Bool`                         | `CLASS.walkSpeedMultiplier = false`<br>*Sets walk speed directly without multiplication.*             |
+| `CLASS.walkSpeedMultiplier` *(Optional)*| If `true`, multiplies `walkSpeed` by the base speed; if `false`, sets it directly.                                | `Boolean`                         | `CLASS.walkSpeedMultiplier = false`<br>*Sets walk speed directly without multiplication.*             |
 | `CLASS.jumpPower` *(Optional)*         | Default jump power for class members.                                                                             | `Number`                       | `CLASS.jumpPower = 200`<br>*Sets the jump power to 200.*                                               |
-| `CLASS.jumpPowerMultiplier` *(Optional)*| If `true`, multiplies `jumpPower` by the base jump power; if `false`, sets it directly.                            | `Bool`                         | `CLASS.jumpPowerMultiplier = true`<br>*Enables jump power multiplication.*                            |
+| `CLASS.jumpPowerMultiplier` *(Optional)*| If `true`, multiplies `jumpPower` by the base jump power; if `false`, sets it directly.                            | `Boolean`                         | `CLASS.jumpPowerMultiplier = true`<br>*Enables jump power multiplication.*                            |
 | `CLASS.bloodcolor` *(Optional)*        | Sets the blood color for class members.                                                                           | `Number`                       | `CLASS.bloodcolor = BLOOD_COLOR_RED`<br>*Sets the blood color to red.*                                  |
 | `CLASS.bodyGroups` *(Optional)*        | Assigns bodygroup values on spawn.                                                                                  | `Table`                        | `CLASS.bodyGroups = { [1] = 2, [3] = 1 }`<br>*Sets specific bodygroups for the class model.*             |
 | `CLASS.model` *(Optional)*             | Model(s) assigned to the class.                                                                                     | `String` or `Table` of `Strings`| `CLASS.model = "models/player/steve.mdl"`<br>*Assigns a single model to the class.*<br><br>`CLASS.model = {"models/player/steve1.mdl", "models/player/steve2.mdl"}`<br>*Assigns multiple models to the class.* |
@@ -87,7 +87,7 @@ CLASS.index = CLASS_STEVE
   Determines if the class is available by default.
 
 - **Type:**  
-  `Bool`
+  `Boolean`
 
 - **Example:**
     ```lua
@@ -103,7 +103,7 @@ CLASS.index = CLASS_STEVE
   Indicates if the class requires whitelisting.
 
 - **Type:**  
-  `Bool`
+  `Boolean`
 
 - **Example:**
     ```lua
@@ -295,7 +295,7 @@ CLASS.index = CLASS_STEVE
   If `true`, multiplies `runSpeed` by the base speed; if `false`, sets it directly.
 
 - **Type:**  
-  `Bool`
+  `Boolean`
 
 - **Example:**
     ```lua
@@ -327,7 +327,7 @@ CLASS.index = CLASS_STEVE
   If `true`, multiplies `walkSpeed` by the base speed; if `false`, sets it directly.
 
 - **Type:**  
-  `Bool`
+  `Boolean`
 
 - **Example:**
     ```lua
@@ -359,7 +359,7 @@ CLASS.index = CLASS_STEVE
   If `true`, multiplies `jumpPower` by the base jump power; if `false`, sets it directly.
 
 - **Type:**  
-  `Bool`
+  `Boolean`
 
 - **Example:**
     ```lua

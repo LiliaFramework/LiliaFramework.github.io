@@ -43,7 +43,7 @@ MODULE.Dependencies = {
 | `MODULE.identifier` *(Optional)*  | A unique identifier for external references to this module.            | `String`                         | `MODULE.identifier = "example_mod"`<br>*Helps in referencing the module externally.*         |
 | `MODULE.CAMIPrivileges` *(Optional)* | Defines CAMI permissions for the module.                             | `Table`                          | See [CAMIPrivileges Details](#7-modulecamiprivileges-optional).                                      |
 | `MODULE.WorkshopContent` *(Optional)* | Lists Workshop add-on IDs required by the module.                   | `Table` of `Strings`              | `MODULE.WorkshopContent = {"2959728255"}`<br>*Includes relevant Workshop items.*             |
-| `MODULE.enabled` *(Optional)*     | Toggles module activation.                                             | `Bool`                           | `MODULE.enabled = true`<br>*Enables the module.*                                             |
+| `MODULE.enabled` *(Optional)*     | Toggles module activation.                                             | `Boolean`                           | `MODULE.enabled = true`<br>*Enables the module.*                                             |
 | `MODULE.Dependencies` *(Optional)*| Specifies files and realms this module depends on.                     | `Table` of `Table`               | See [Dependencies Details](#10-moduledependencies-optional).                                           |
 
 ---
@@ -182,7 +182,7 @@ MODULE.Dependencies = {
   Toggles module activation. If `false`, the module may not load or function.
 
 - **Type:**  
-  `Bool`
+  `Boolean`
 
 - **Example:**
   ```lua
