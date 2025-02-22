@@ -17,6 +17,7 @@ arrange:
   - lia.flag.md
   - lia.inventory.md
   - lia.item.md
+  - lia.keybind.md
   - lia.languages.md
   - lia.log.md
   - lia.math.md

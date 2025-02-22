@@ -4646,7 +4646,7 @@ Called to retrieve the text displayed when a player is injured. Allows customiza
 
 **Example:**
 ```lua
-hook.Add("GetInjuredText", "CustomInjuryMessage", function(client, isSevere)
+hook.Add("GetInjuredText", "CustomInjuryMessage", function(client)
     if isSevere then
         return "You are critically injured! Seek medical attention immediately."
     else
