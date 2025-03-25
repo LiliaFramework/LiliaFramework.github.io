@@ -122,12 +122,7 @@ To enhance your roleplaying experience, install a roleplay schema compatible wit
     Select a schema that fits your server's theme from the available options:
 
     - [Skeleton Schema](https://github.com/LiliaFramework/Skeleton)
-    - [MafiaRP Schema](https://github.com/LiliaFramework/MafiaRP)
-    - [1942RP Schema](https://github.com/LiliaFramework/1942RP)
-    - [MetroRP Schema](https://github.com/LiliaFramework/MetroRP)
     - [SCPRP Schema](https://github.com/LiliaFramework/SCPRP)
-    - [KaiserReichRP Schema](https://github.com/LiliaFramework/KaiserReichRP)
-    - [FalloutRP Schema](https://github.com/LiliaFramework/FalloutRP)
     - [Public Modules](https://github.com/LiliaFramework/Modules)
 
 2. **Download the Schema:**
