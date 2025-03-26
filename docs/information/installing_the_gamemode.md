@@ -1,6 +1,6 @@
-## **Installation Tutorial**
+## Installation Tutorial
 
-Lilia is a versatile roleplaying framework for Garry's Mod. This tutorial will guide you through the process of installing Lilia on your Garry's Mod server, ensuring a smooth setup for your roleplaying environment.
+Lilia is a versatile roleplaying framework for Garry's Mod. This tutorial will guide you through installing Lilia on your Garry's Mod server, ensuring a smooth setup for your roleplaying environment.
 
 ---
 
@@ -8,16 +8,24 @@ Lilia is a versatile roleplaying framework for Garry's Mod. This tutorial will g
 
 Before you begin, ensure you have the following:
 
-- **A Working Garry's Mod Server:** Make sure your server is properly set up and running without any issues.
-- **Basic Knowledge of Server Administration:** Familiarity with managing a Garry's Mod server will be beneficial.
-- **Command Line Proficiency:** Understanding how to use the command line is necessary for certain installation steps.
+- **A Working Garry's Mod Server:** Ensure your server is properly set up and running without issues.
+- **Basic Knowledge of Server Administration:** Familiarity with managing a Garry's Mod server is beneficial.
+- **Command Line Proficiency:** Understanding the command line is necessary for certain installation steps.
 - **Admin Menu:** We recommend using [SAM](https://www.gmodstore.com/market/view/sam) for enhanced administrative capabilities.
+- **Code Editor (optional):**
+
+  If you do not already have one, it is highly recommended to use a code editor to develop your scripts. Recommended editors include:
+  
+  1. [Visual Studio Code](https://code.visualstudio.com/)
+  2. [Notepad++](https://notepad-plus-plus.org/)
+  3. [Sublime Text](https://www.sublimetext.com/)
+  4. [Atom](https://atom.io/)
 
 ---
 
 ## Step 1: Setting Up Your Garry's Mod Server
 
-If you haven't already, set up your Garry's Mod server. Ensure it's running smoothly before proceeding with the installation of Lilia.
+If you haven't already, set up your Garry's Mod server and ensure it is running smoothly before proceeding with the installation of Lilia.
 
 ---
 
@@ -27,15 +35,9 @@ If you haven't already, set up your Garry's Mod server. Ensure it's running smoo
 
     Navigate to the [Lilia GitHub Repository](https://github.com/LiliaFramework/Lilia).
 
-2. **Download the ZIP File:**
-
-    - Click on the green "Code" button.
-    - Select "Download ZIP."
+2. **Download the ZIP File:**  
+    - Download the latest release directly from [here](https://github.com/LiliaFramework/Lilia/releases/download/release/lilia.zip).  
     - Save the ZIP file to a convenient location on your computer.
-
-    ```plaintext
-    GitHub Repository: https://github.com/LiliaFramework/Lilia
-    ```
 
 ---
 
@@ -43,7 +45,7 @@ If you haven't already, set up your Garry's Mod server. Ensure it's running smoo
 
 1. **Locate the Downloaded ZIP File:**
 
-    Find the `Lilia-main.zip` file you downloaded.
+    Find the `Lilia.zip` file you downloaded.
 
 2. **Extract the Contents:**
 
@@ -52,7 +54,7 @@ If you haven't already, set up your Garry's Mod server. Ensure it's running smoo
 
 3. **Organize the Extracted Files:**
 
-    - After extraction, you should see several files and a folder: `lilia`.
+    - After extraction, you should see a folder named `lilia`.
     - Move the `lilia` folder to a separate location for easy access during the upload process.
 
 ---
@@ -65,11 +67,11 @@ If you haven't already, set up your Garry's Mod server. Ensure it's running smoo
 
 2. **Navigate to the Gamemodes Directory:**
 
-    - Go to `garrysmod/gamemodes` within your server's file structure.
+    Go to `garrysmod/gamemodes` within your server's file structure.
 
 3. **Upload the Lilia Folder:**
 
-    - Upload the `lilia` folder you extracted earlier into the `gamemodes` directory.
+    Upload the `lilia` folder you extracted earlier into the `gamemodes` directory.
 
     ```plaintext
     Server Directory Path:
@@ -78,94 +80,88 @@ If you haven't already, set up your Garry's Mod server. Ensure it's running smoo
 
 ---
 
-## Step 5: Configuring Lilia
+## Step 5: Starting Lilia on Your Server
 
-1. **Backup Default Configuration:**
+1. **Start Your Garry's Mod Server:**
 
-    Before making any changes, create a backup of the default configuration files to prevent data loss.
+    Once you have uploaded Lilia and completed the configuration, start your Garry's Mod server.
 
-2. **Edit the Configuration File:**
+2. **Verify Lilia is Running:**
 
-    - Locate the configuration file, typically found at `schema/config/Shared.lua`.
-    - Open the file in a text editor.
-
-3. **Override Default Values:**
-
-    Modify the configuration to suit your server's needs. For example, you can change default settings, adjust gameplay mechanics, or set up custom options.
-
----
-
-## Step 6: Starting Lilia on Your Server
-
-1. **Restart the Server:**
-
-    After uploading and configuring Lilia, restart your Garry's Mod server to apply the changes.
-
-2. **Verify the Installation:**
-
-    - Check the server console for any error messages related to Lilia.
-    - Ensure that the server starts without issues and that Lilia is active.
+    - Monitor the **server console** for any error messages related to Lilia during startup.
+    - Look for a confirmation message indicating that Lilia has loaded successfully.
+    - Ensure there are no errors and that the server is running smoothly with Lilia active.
 
     ```plaintext
-    Console Output Example:
-    [Lilia] Loaded after X seconds.
+    Example Console Output:
+    [Lilia] [Bootstrap] Loaded successfully after X seconds.
     ```
 
 ---
 
 ## Step 7: Installing Roleplay Schemas
 
-To enhance your roleplaying experience, install a roleplay schema compatible with the Lilia framework. Follow these steps:
+Enhance your roleplaying experience by installing a compatible roleplay schema for the Lilia framework. Follow the steps below:
 
-1. **Choose a Schema:**
+### 1. Choose a Schema
 
-    Select a schema that fits your server's theme from the available options:
+Select a schema that fits your server theme:
 
-    - [Skeleton Schema](https://github.com/LiliaFramework/Skeleton)
-    - [SCPRP Schema](https://github.com/LiliaFramework/SCPRP)
-    - [Public Modules](https://github.com/LiliaFramework/Modules)
+- **Skeleton Schema**
+    - [GitHub Repository](https://github.com/LiliaFramework/Skeleton)
+    - [Direct Download](https://github.com/LiliaFramework/SCPRP/releases/download/release/scprp.zip)
 
-2. **Download the Schema:**
-
-    - Visit the chosen schema's GitHub repository.
-    - Download the ZIP file or clone the repository.
-
-3. **Extract and Upload:**
-
-    - Extract the schema files to a temporary folder.
-    - Upload the schema folder to your server's `garrysmod/gamemodes` directory.
-
-    ```plaintext
-    Server Directory Path:
-    garrysmod/gamemodes/<SchemaName>
-    ```
-
-4. **Configure Factions, Items, and Modules:**
-
-    - Navigate to the schema's configuration files (e.g., `schema/config/Shared.lua`).
-    - Customize factions, items, and modules as required to match your server's gameplay mechanics.
-
-5. **Set the Startup Gamemode:**
-
-    - Edit your server's startup configuration to set the gamemode to the newly uploaded schema.
-    - This is typically done in the server's launch parameters or configuration files.
-
-    ```plaintext
-    Example Server Launch Parameter:
-    +gamemode <SchemaName>
-    ```
-
-6. **Restart the Server:**
-
-    - Restart your Garry's Mod server to apply the new schema.
-    - Verify that the schema loads correctly and that all configurations are active.
+- **SCPRP Schema**
+    - [GitHub Repository](https://github.com/LiliaFramework/SCPRP)
+    - [Direct Download](https://github.com/LiliaFramework/Skeleton/releases/download/release/skeleton.zip)
 
 ---
 
-## Conclusion
+### 2. Download the Schema
 
-Congratulations! You've successfully installed Lilia and set up a roleplaying schema on your Garry's Mod server. Lilia offers a wide range of features and customization options to enhance your roleplaying experience. Be sure to explore the [Lilia Documentation](https://github.com/LiliaFramework/Lilia/blob/main/docs/README.md) and community resources to maximize the potential of your server.
-
-Enjoy your customized roleplaying environment!
+Visit the schema's GitHub repository or use the direct download link, and download the ZIP file or clone the repository.
 
 ---
+
+### 3. Extract and Upload
+
+Extract the schema files locally, then upload the extracted folder to your server:
+
+```plaintext
+garrysmod/gamemodes/<SchemaName>
+```
+
+---
+
+### 4. Configure the Schema
+
+Customize the following directories as needed for your server’s gameplay:
+
+```plaintext
+Factions:  garrysmod/gamemodes/<SchemaName>/schema/factions/
+Classes:   garrysmod/gamemodes/<SchemaName>/schema/classes/
+Items:     garrysmod/gamemodes/<SchemaName>/schema/items/
+Modules:   garrysmod/gamemodes/<SchemaName>/modules/
+```
+
+---
+
+### 5. Set the Startup Gamemode
+
+Edit your server's startup parameters to set the gamemode:
+
+```plaintext
++gamemode <SchemaName>
+```
+
+Example:
+
+```plaintext
++gamemode scprp
+```
+
+---
+
+### 6. Restart the Server
+
+Restart your Garry's Mod server and verify that the schema loads correctly with all configurations applied.
