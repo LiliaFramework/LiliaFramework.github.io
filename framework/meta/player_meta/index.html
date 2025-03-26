@@ -1,0 +1,4426 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://liliaframework.github.io/framework/meta/player_meta/">
+      
+      
+        <link rel="prev" href="../item_meta/">
+      
+      
+        <link rel="next" href="../tool_meta/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>Player meta - Lilia Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lavender">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#playermetagetchar" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Lilia Documentation" class="md-header__button md-logo" aria-label="Lilia Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo_small.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lilia Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Player meta
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lavender"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="lavender"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Lilia Documentation" class="md-nav__button md-logo" aria-label="Lilia Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo_small.png" alt="logo">
+
+    </a>
+    Lilia Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Framework
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Definitions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Definitions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/faction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Faction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/attribute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Attribute
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/command/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Command
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/module/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/items/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Items
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hooks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Hooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hooks/gamemode_hooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gamemode hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hooks/faction_hooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Faction Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hooks/class_hooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Meta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../character_meta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Character meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entity_meta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entity meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventory_meta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inventory meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item_meta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Item meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Player meta
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Player meta
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetchar" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getChar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaname" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:Name
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetahasprivilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:hasPrivilege
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetcurrentvehicle" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getCurrentVehicle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetahasvalidvehicle" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:hasValidVehicle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisnoclipping" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isNoClipping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetahasragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:hasRagdoll
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getRagdoll
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisstuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isStuck
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisnearplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isNearPlayer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaentitiesnearplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:entitiesNearPlayer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetitemweapon" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getItemWeapon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisrunning" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isRunning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisfemale" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isFemale
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetitemdroppos" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getItemDropPos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetitems" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getItems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagettracedentity" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getTracedEntity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagettrace" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getTrace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetageteyeent" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getEyeEnt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaloadliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:loadLiliaData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasaveliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:saveLiliaData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasetliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:setLiliaData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetachatnotify" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:chatNotify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetachatnotifylocalized" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:chatNotifyLocalized
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetachaterror" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:chatError
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetachaterrorlocalized" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:chatErrorLocalized
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getLiliaData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetallliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getAllLiliaData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasetragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:setRagdoll
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasetaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:setAction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetastopaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:stopAction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaplaysound" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:playSound
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaopenui" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:openUI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaopenpage" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:openPage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetarequestdropdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:requestDropdown
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetarequestoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:requestOptions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetarequeststring" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:requestString
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetabinaryquestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:binaryQuestion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetplaytime" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getPlayTime
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetacreateserverragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:createServerRagdoll
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetadostaredaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:doStaredAction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetanotify" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:notify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetanotifylocalized" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:notifyLocalized
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetacreateragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:createRagdoll
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasetragdolled" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:setRagdolled
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasyncvars" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:syncVars
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasetlocalvar" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:setLocalVar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisfaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isFaction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isClass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetdarkrpvar" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getDarkRPVar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetmoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getMoney
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetacanafford" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:canAfford
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaaddmoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:addMoney
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetatakemoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:takeMoney
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetahasskilllevel" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:hasSkillLevel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetameetsrequiredskills" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:meetsRequiredSkills
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetarestorestamina" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:restoreStamina
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaconsumestamina" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:consumeStamina
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetacaneditvendor" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:CanEditVendor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetacanoverrideview" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:CanOverrideView
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisinthirdperson" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:IsInThirdPerson
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisuser" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isUser
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisstaff" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isStaff
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisvip" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isVIP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisstaffonduty" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isStaffOnDuty
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetahaswhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:hasWhitelist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getClass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetahasclasswhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:hasClassWhitelist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetclassdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getClassData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetawhitelistallclasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:WhitelistAllClasses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetawhitelistallfactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:WhitelistAllFactions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetawhitelisteverything" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:WhitelistEverything
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaclasswhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:classWhitelist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaclassunwhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:classUnWhitelist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasetwhitelisted" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:setWhitelisted
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisliliapersistent" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:IsLiliaPersistent
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tool_meta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tool meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Libraries
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.attrib/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.attribs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.bar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.bar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.character/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.character
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.chat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.chat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.color/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.color
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.command/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.command
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.config
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.currency/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.currency
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.darkrp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.darkrp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.db/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.db
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.ease/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.ease
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.faction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.faction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.flag/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.flag
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.inventory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.inventory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.item/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.item
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.keybind/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lia.keybind
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.languages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.lang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.log/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.log
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.math/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.math
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.menu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.module/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.net/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.net
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.notice/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.notices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.option/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.option
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.string/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.string
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.time/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.time
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lia.util
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Information
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Information
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/compatibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Addons with Improved Compatibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/installing_the_gamemode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing the gamemode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/preview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WIP Framework Previeww
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../modules/wip/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WIP Modules Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetchar" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getChar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaname" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:Name
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetahasprivilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:hasPrivilege
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetcurrentvehicle" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getCurrentVehicle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetahasvalidvehicle" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:hasValidVehicle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisnoclipping" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isNoClipping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetahasragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:hasRagdoll
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getRagdoll
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisstuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isStuck
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisnearplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isNearPlayer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaentitiesnearplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:entitiesNearPlayer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetitemweapon" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getItemWeapon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisrunning" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isRunning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisfemale" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isFemale
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetitemdroppos" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getItemDropPos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetitems" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getItems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagettracedentity" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getTracedEntity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagettrace" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getTrace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetageteyeent" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getEyeEnt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaloadliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:loadLiliaData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasaveliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:saveLiliaData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasetliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:setLiliaData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetachatnotify" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:chatNotify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetachatnotifylocalized" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:chatNotifyLocalized
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetachaterror" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:chatError
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetachaterrorlocalized" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:chatErrorLocalized
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getLiliaData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetallliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getAllLiliaData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasetragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:setRagdoll
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasetaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:setAction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetastopaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:stopAction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaplaysound" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:playSound
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaopenui" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:openUI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaopenpage" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:openPage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetarequestdropdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:requestDropdown
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetarequestoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:requestOptions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetarequeststring" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:requestString
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetabinaryquestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:binaryQuestion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetplaytime" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getPlayTime
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetacreateserverragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:createServerRagdoll
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetadostaredaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:doStaredAction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetanotify" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:notify
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetanotifylocalized" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:notifyLocalized
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetacreateragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:createRagdoll
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasetragdolled" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:setRagdolled
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasyncvars" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:syncVars
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasetlocalvar" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:setLocalVar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisfaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isFaction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isClass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetdarkrpvar" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getDarkRPVar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetmoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getMoney
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetacanafford" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:canAfford
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaaddmoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:addMoney
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetatakemoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:takeMoney
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetahasskilllevel" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:hasSkillLevel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetameetsrequiredskills" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:meetsRequiredSkills
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetarestorestamina" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:restoreStamina
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaconsumestamina" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:consumeStamina
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetacaneditvendor" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:CanEditVendor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetacanoverrideview" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:CanOverrideView
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisinthirdperson" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:IsInThirdPerson
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisuser" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isUser
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisstaff" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isStaff
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisvip" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isVIP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisstaffonduty" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:isStaffOnDuty
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetahaswhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:hasWhitelist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getClass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetahasclasswhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:hasClassWhitelist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetagetclassdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:getClassData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetawhitelistallclasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:WhitelistAllClasses
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetawhitelistallfactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:WhitelistAllFactions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetawhitelisteverything" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:WhitelistEverything
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaclasswhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:classWhitelist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaclassunwhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:classUnWhitelist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetasetwhitelisted" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:setWhitelisted
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playermetaisliliapersistent" class="md-nav__link">
+    <span class="md-ellipsis">
+      playerMeta:IsLiliaPersistent
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Player meta</h1>
+
+<hr />
+<p>Physical representation of connected players.</p>
+<p>Players are a type of Entity. They are a physical representation of a <code>Character</code> - and can possess at most one <code>Character</code> object at a time that you can interface with.</p>
+<p>See the <a href="https://wiki.garrysmod.com/page/Category:Player">Garry's Mod Wiki</a> for all other methods that the <code>Player</code> class has.</p>
+<hr />
+<h2 id="playermetagetchar"><strong>playerMeta:getChar</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves this player's currently possessed <code>Character</code> object if it exists.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Character|nil</strong>: The currently loaded character or <code>nil</code> if no character is loaded.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getChar</span><span class="p">()</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">char</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character Name:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">char</span><span class="p">:</span><span class="nf">getName</span><span class="p">())</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaname"><strong>playerMeta:Name</strong></h2>
+<p><strong>Description</strong></p>
+<p>Returns this player's current name. If the player has a character loaded, it returns the character's name; otherwise, it returns the player's Steam name.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>String</strong>: The name of the player's currently loaded character or the player's Steam name if no character is loaded.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player Name:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">Name</span><span class="p">())</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetahasprivilege"><strong>playerMeta:hasPrivilege</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player has a specified CAMI privilege.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>privilegeName</strong> (<code>String</code>): The name of the privilege to check.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player has the privilege, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">hasPrivilege</span><span class="p">(</span><span class="s2">&quot;admin&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is an admin.&quot;</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetagetcurrentvehicle"><strong>playerMeta:getCurrentVehicle</strong></h2>
+<p><strong>Description</strong></p>
+<p>Gets the current vehicle the player is in, if any.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Entity|nil</strong>: The current vehicle entity or <code>nil</code> if the player is not in a vehicle.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">vehicle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getCurrentVehicle</span><span class="p">()</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">vehicle</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is in a vehicle:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">vehicle</span><span class="p">:</span><span class="nf">GetClass</span><span class="p">())</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetahasvalidvehicle"><strong>playerMeta:hasValidVehicle</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player is in a valid vehicle.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player is in a valid vehicle, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">hasValidVehicle</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is in a valid vehicle.&quot;</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaisnoclipping"><strong>playerMeta:isNoClipping</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player is currently in noclip mode.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player is in noclip mode, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isNoClipping</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is in noclip mode.&quot;</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetahasragdoll"><strong>playerMeta:hasRagdoll</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player has a valid ragdoll entity.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player has a valid ragdoll entity, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">hasRagdoll</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player has a ragdoll.&quot;</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetagetragdoll"><strong>playerMeta:getRagdoll</strong></h2>
+<p><strong>Description</strong></p>
+<p>Returns the player's ragdoll entity if it exists and is valid.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Entity|nil</strong>: The player's ragdoll entity or <code>nil</code> if none exists.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">ragdoll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getRagdoll</span><span class="p">()</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">ragdoll</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ragdoll found:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">ragdoll</span><span class="p">:</span><span class="nf">GetClass</span><span class="p">())</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaisstuck"><strong>playerMeta:isStuck</strong></h2>
+<p><strong>Description</strong></p>
+<p>Determines whether the player is stuck using a trace.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player is stuck, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isStuck</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is stuck.&quot;</span><span class="p">)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaisnearplayer"><strong>playerMeta:isNearPlayer</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player is near another entity within a specified radius.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>radius</strong> (<code>int</code>): The radius within which to check for proximity.</li>
+<li><strong>entity</strong> (<code>Entity</code>): The entity to check proximity to.</li>
+</ol>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player is near the specified entity within the given radius, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isNearPlayer</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nv">targetPlayer</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is near the target.&quot;</span><span class="p">)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaentitiesnearplayer"><strong>playerMeta:entitiesNearPlayer</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves entities near the player within a specified radius. Can filter to only include players.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>radius</strong> (<code>int</code>): The radius within which to search for entities.</li>
+<li><strong>playerOnly</strong> (<code>Boolean</code>): If <code>true</code>, only return player entities.</li>
+</ol>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Table</strong>: A table containing the entities near the player.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">nearbyPlayers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">entitiesNearPlayer</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">p</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">nearbyPlayers</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nearby Player:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">p</span><span class="p">:</span><span class="nf">Nick</span><span class="p">())</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetagetitemweapon"><strong>playerMeta:getItemWeapon</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the active weapon item of the player along with its corresponding inventory item.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Entity|nil</strong>: The active weapon entity or <code>nil</code> if not found.</li>
+<li><strong>Item|nil</strong>: The corresponding inventory item or <code>nil</code> if not found.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">weapon</span><span class="p">,</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getItemWeapon</span><span class="p">()</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">weapon</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Active Weapon:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">weapon</span><span class="p">:</span><span class="nf">GetClass</span><span class="p">())</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaisrunning"><strong>playerMeta:isRunning</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player is running based on their velocity compared to their walk speed.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player is running, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isRunning</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is running.&quot;</span><span class="p">)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaisfemale"><strong>playerMeta:isFemale</strong></h2>
+<p><strong>Description</strong></p>
+<p>Determines if the player's character model is female based on model naming conventions.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player's character is female, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isFemale</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player character is female.&quot;</span><span class="p">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetagetitemdroppos"><strong>playerMeta:getItemDropPos</strong></h2>
+<p><strong>Description</strong></p>
+<p>Calculates the position to drop an item from the player's inventory based on their current view.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Vector</strong>: The position where the item should be dropped.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">dropPos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getItemDropPos</span><span class="p">()</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nv">item</span><span class="p">:</span><span class="nf">spawn</span><span class="p">(</span><span class="nv">dropPos</span><span class="p">,</span><span class="w"> </span><span class="nf">Angle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetagetitems"><strong>playerMeta:getItems</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the items from the player's character inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Table|nil</strong>: A table containing the items in the player's character inventory or <code>nil</code> if not found.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getItems</span><span class="p">()</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">items</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">item</span><span class="p">.</span><span class="py">uniqueID</span><span class="p">)</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetagettracedentity"><strong>playerMeta:getTracedEntity</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the entity traced by the player's aim within a short distance.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Entity|nil</strong>: The entity traced by the player's aim or <code>nil</code> if none is found.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getTracedEntity</span><span class="p">()</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">target</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Traced Entity:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">target</span><span class="p">:</span><span class="nf">GetClass</span><span class="p">())</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetagettrace"><strong>playerMeta:getTrace</strong></h2>
+<p><strong>Description</strong></p>
+<p>Performs a hull trace from the player's view and returns the trace result.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Table</strong>: A table containing the trace result.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">trace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getTrace</span><span class="p">()</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">trace</span><span class="p">.</span><span class="py">Hit</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trace hit:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">trace</span><span class="p">.</span><span class="py">Entity</span><span class="p">:</span><span class="nf">GetClass</span><span class="p">())</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetageteyeent"><strong>playerMeta:getEyeEnt</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the entity within the player's line of sight up to a specified distance.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>distance</strong> (<code>int</code>, optional): The maximum distance to consider. Defaults to <code>150</code>.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Entity|nil</strong>: The entity within the player's line of sight or <code>nil</code> if none is found.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">eyeEnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getEyeEnt</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">eyeEnt</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Entity in sight:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">eyeEnt</span><span class="p">:</span><span class="nf">GetClass</span><span class="p">())</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaloadliliadata"><strong>playerMeta:loadLiliaData</strong></h2>
+<p><strong>Description</strong></p>
+<p>Loads Lilia data for the player from the database.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>callback</strong> (<code>function</code>): A function to call after the data is loaded, receiving the loaded data as an argument.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">loadLiliaData</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">data</span><span class="p">)</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data loaded:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">data</span><span class="p">)</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetasaveliliadata"><strong>playerMeta:saveLiliaData</strong></h2>
+<p><strong>Description</strong></p>
+<p>Saves the player's Lilia data to the database.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">saveLiliaData</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetasetliliadata"><strong>playerMeta:setLiliaData</strong></h2>
+<p><strong>Description</strong></p>
+<p>Sets a key-value pair in the player's Lilia data. Optionally suppresses networking of the data update.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>key</strong> (<code>String</code>): The key for the data.</li>
+<li><strong>value</strong> (<code>any</code>, optional): The value to set for the specified key. Defaults to <code>nil</code> if not provided.</li>
+<li><strong>noNetworking</strong> (<code>boolean</code>, optional): If <code>true</code>, the data update will not be sent to clients. Defaults to <code>false</code>.</li>
+</ol>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1">-- Example 1: Setting a key-value pair with networking</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setLiliaData</span><span class="p">(</span><span class="s2">&quot;score&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1500</span><span class="p">)</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="c1">-- Example 2: Setting a key-value pair without networking</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setLiliaData</span><span class="p">(</span><span class="s2">&quot;health&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetachatnotify"><strong>playerMeta:chatNotify</strong></h2>
+<p><strong>Description</strong></p>
+<p>Notifies the player with a message in the chatbox.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code> and <strong>Client</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>message</strong> (<code>String</code>): The message to notify the player.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">chatNotify</span><span class="p">(</span><span class="s2">&quot;Welcome to the server!&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetachatnotifylocalized"><strong>playerMeta:chatNotifyLocalized</strong></h2>
+<p><strong>Description</strong></p>
+<p>Notifies the player with a localized message in the chatbox.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code> and <strong>Client</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>message</strong> (<code>String</code>): The key of the localized message to notify the player.</li>
+<li><strong>...</strong> (<code>any</code>): Additional arguments to format the localized message.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">chatNotifyLocalized</span><span class="p">(</span><span class="s2">&quot;welcome_message&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">Nick</span><span class="p">())</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetachaterror"><strong>playerMeta:chatError</strong></h2>
+<p><strong>Description</strong></p>
+<p>Notifies the player with an error message in the chatbox.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code> and <strong>Client</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>message</strong> (<code>String</code>): The error message to notify the player.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">chatError</span><span class="p">(</span><span class="s2">&quot;An error occurred!&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetachaterrorlocalized"><strong>playerMeta:chatErrorLocalized</strong></h2>
+<p><strong>Description</strong></p>
+<p>Notifies the player with a localized error message in the chatbox.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code> and <strong>Client</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>message</strong> (<code>String</code>): The key of the localized error message to notify the player.</li>
+<li><strong>...</strong> (<code>any</code>): Additional arguments to format the localized message.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">chatErrorLocalized</span><span class="p">(</span><span class="s2">&quot;error_message&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">Nick</span><span class="p">())</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetagetliliadata"><strong>playerMeta:getLiliaData</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves a value from the player's Lilia data.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code> and <strong>Client</strong></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>key</strong> (<code>String</code>): The key for the data.</li>
+<li><strong>default</strong> (<code>any</code>, optional): The default value to return if the key does not exist.</li>
+</ol>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>any</strong>: The value corresponding to the key, or the default value if the key does not exist.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getLiliaData</span><span class="p">(</span><span class="s2">&quot;level&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player Level:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">level</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetagetallliliadata"><strong>playerMeta:getAllLiliaData</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the full Lilia data table for the player.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code> and <strong>Client</strong></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>table</strong>: The entire Lilia data table for the player.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">fullData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getAllLiliaData</span><span class="p">()</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="c1">-- Print all data for debugging</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nf">PrintTable</span><span class="p">(</span><span class="nv">fullData</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetasetragdoll"><strong>playerMeta:setRagdoll</strong></h2>
+<p><strong>Description</strong></p>
+<p>Sets the player's ragdoll entity.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>entity</strong> (<code>Entity</code>): The entity to set as the player's ragdoll.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">ragdoll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">createServerRagdoll</span><span class="p">()</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setRagdoll</span><span class="p">(</span><span class="nv">ragdoll</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetasetaction"><strong>playerMeta:setAction</strong></h2>
+<p><strong>Description</strong></p>
+<p>Sets an action bar for the player with optional duration and callback.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>text</strong> (<code>String</code>): The text to display on the action bar.</li>
+<li><strong>time</strong> (<code>int</code>, optional): The duration for the action bar to display in seconds. Set to <code>0</code> or <code>nil</code> to remove the action bar immediately.</li>
+<li><strong>callback</strong> (<code>function</code>, optional): Function to execute when the action bar timer expires.</li>
+<li><strong>startTime</strong> (<code>int</code>, optional): The start time of the action bar, defaults to the current time.</li>
+<li><strong>finishTime</strong> (<code>int</code>, optional): The finish time of the action bar, defaults to <code>startTime + time</code>.</li>
+</ol>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setAction</span><span class="p">(</span><span class="s2">&quot;Processing...&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">p</span><span class="p">)</span><span class="w"> </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Action completed for&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">p</span><span class="p">:</span><span class="nf">Nick</span><span class="p">())</span><span class="w"> </span><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetastopaction"><strong>playerMeta:stopAction</strong></h2>
+<p><strong>Description</strong></p>
+<p>Stops the action bar currently being displayed for the player.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">stopAction</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaplaysound"><strong>playerMeta:playSound</strong></h2>
+<p><strong>Description</strong></p>
+<p>Plays a sound for the player.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>sound</strong> (<code>String</code>): The sound to play.</li>
+<li><strong>volume</strong> (<code>int</code>, optional): The volume of the sound. Defaults to <code>75</code>.</li>
+<li><strong>pitch</strong> (<code>int</code>, optional): The pitch of the sound. Defaults to <code>100</code>.</li>
+<li><strong>shouldEmit</strong> (<code>Boolean</code>): Whether to emit the sound server-side (<code>true</code>) or send it to the client (<code>false</code>).</li>
+</ol>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">playSound</span><span class="p">(</span><span class="s2">&quot;ambient/alarms/warningbell1.wav&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaopenui"><strong>playerMeta:openUI</strong></h2>
+<p><strong>Description</strong></p>
+<p>Opens a VGUI panel for the player.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>panel</strong> (<code>String</code>): The name of the VGUI panel to open.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">openUI</span><span class="p">(</span><span class="s2">&quot;InventoryPanel&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaopenpage"><strong>playerMeta:openPage</strong></h2>
+<p><strong>Description</strong></p>
+<p>Opens a web page for the player.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>url</strong> (<code>String</code>): The URL of the web page to open.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">openPage</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetarequestdropdown"><strong>playerMeta:requestDropdown</strong></h2>
+<p><strong>Description</strong></p>
+<p>Requests a dropdown selection from the player.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>title</strong> (<code>String</code>): The title of the request.</li>
+<li><strong>subTitle</strong> (<code>String</code>): The subtitle of the request.</li>
+<li><strong>options</strong> (<code>Table</code>): The table of options to choose from.</li>
+<li><strong>callback</strong> (<code>function</code>): The function to call upon receiving the selected option.</li>
+</ol>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">requestDropdown</span><span class="p">(</span><span class="s2">&quot;Choose Option&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Select one of the following:&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;Option1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Option2&quot;</span><span class="p">},</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">selected</span><span class="p">)</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player selected:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">selected</span><span class="p">)</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetarequestoptions"><strong>playerMeta:requestOptions</strong></h2>
+<p><strong>Description</strong></p>
+<p>Requests multiple options selection from the player.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>title</strong> (<code>String</code>): The title of the request.</li>
+<li><strong>subTitle</strong> (<code>String</code>): The subtitle of the request.</li>
+<li><strong>options</strong> (<code>Table</code>): The table of options to choose from.</li>
+<li><strong>limit</strong> (<code>int</code>): The maximum number of selectable options.</li>
+<li><strong>callback</strong> (<code>function</code>): The function to call upon receiving the selected options.</li>
+</ol>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">requestOptions</span><span class="p">(</span><span class="s2">&quot;Select Items&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Choose up to 3 items:&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;Item1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Item2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Item3&quot;</span><span class="p">},</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">selected</span><span class="p">)</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player selected:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">table.concat</span><span class="p">(</span><span class="nv">selected</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;, &quot;</span><span class="p">))</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetarequeststring"><strong>playerMeta:requestString</strong></h2>
+<p><strong>Description</strong></p>
+<p>Requests a string input from the player. Supports both callback and promise-based usage.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>title</strong> (<code>String</code>): The title of the string input dialog.</li>
+<li><strong>subTitle</strong> (<code>String</code>): The subtitle or description of the string input dialog.</li>
+<li><strong>callback</strong> (<code>function</code>, optional): The function to call with the entered string.</li>
+<li><strong>default</strong> (<code>String</code>, optional): The default value for the string input.</li>
+</ol>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Promise|nil</strong>: A promise object resolving with the entered string, or <code>nil</code> if a callback is provided.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c1">-- Using callback</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="nv">player</span><span class="p">:</span><span class="nf">requestString</span><span class="p">(</span><span class="s2">&quot;Enter Name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Please enter your name:&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">name</span><span class="p">)</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player entered:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">name</span><span class="p">)</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="c1">-- Using promise</span>
+</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="kd">local</span><span class="w"> </span><span class="nv">promise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">requestString</span><span class="p">(</span><span class="s2">&quot;Enter Name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Please enter your name:&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DefaultName&quot;</span><span class="p">)</span>
+</span><span id="__span-36-8"><a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="kr">if</span><span class="w"> </span><span class="nv">promise</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-36-9"><a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a><span class="w">    </span><span class="nv">promise</span><span class="p">:</span><span class="nf">next</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">name</span><span class="p">)</span>
+</span><span id="__span-36-10"><a id="__codelineno-36-10" name="__codelineno-36-10" href="#__codelineno-36-10"></a><span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player entered:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">name</span><span class="p">)</span>
+</span><span id="__span-36-11"><a id="__codelineno-36-11" name="__codelineno-36-11" href="#__codelineno-36-11"></a><span class="w">    </span><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-36-12"><a id="__codelineno-36-12" name="__codelineno-36-12" href="#__codelineno-36-12"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetabinaryquestion"><strong>playerMeta:binaryQuestion</strong></h2>
+<p><strong>Description</strong></p>
+<p>Requests a binary choice from the player.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>question</strong> (<code>String</code>): The question to present to the player.</li>
+<li><strong>option1</strong> (<code>String</code>): The text for the first option.</li>
+<li><strong>option2</strong> (<code>String</code>): The text for the second option.</li>
+<li><strong>manualDismiss</strong> (<code>Boolean</code>): Whether the notice should be manually dismissed.</li>
+<li><strong>callback</strong> (<code>function</code>): The function to call with the choice (<code>0</code> or <code>1</code>) when the player selects an option.</li>
+</ol>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">binaryQuestion</span><span class="p">(</span><span class="s2">&quot;Confirm Action&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Yes&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;No&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">choice</span><span class="p">)</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">choice</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player chose Yes.&quot;</span><span class="p">)</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">    </span><span class="kr">else</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player chose No.&quot;</span><span class="p">)</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetagetplaytime"><strong>playerMeta:getPlayTime</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the player's total playtime.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code> and <strong>Client</strong></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Float</strong>: The total playtime of the player in seconds.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">playTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getPlayTime</span><span class="p">()</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Playtime:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">playTime</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetacreateserverragdoll"><strong>playerMeta:createServerRagdoll</strong></h2>
+<p><strong>Description</strong></p>
+<p>Creates a ragdoll entity for the player on the server.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>dontSetPlayer</strong> (<code>Boolean</code>): Determines whether to associate the player with the ragdoll.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Entity</strong>: The created ragdoll entity.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">ragdoll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">createServerRagdoll</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetadostaredaction"><strong>playerMeta:doStaredAction</strong></h2>
+<p><strong>Description</strong></p>
+<p>Performs a stared action towards an entity for a certain duration. Executes callbacks upon completion or cancellation.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>entity</strong> (<code>Entity</code>): The entity towards which the player performs the stared action.</li>
+<li><strong>callback</strong> (<code>function</code>): The function to call when the stared action is completed.</li>
+<li><strong>time</strong> (<code>int</code>, optional): The duration of the stared action in seconds. Defaults to <code>5</code>.</li>
+<li><strong>onCancel</strong> (<code>function</code>): The function to call if the stared action is canceled.</li>
+<li><strong>distance</strong> (<code>int</code>, optional): The maximum distance for the stared action. Defaults to <code>96</code>.</li>
+</ol>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">doStaredAction</span><span class="p">(</span><span class="nv">targetEntity</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stared action completed.&quot;</span><span class="p">)</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="kr">end</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stared action canceled.&quot;</span><span class="p">)</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="kr">end</span><span class="p">,</span><span class="w"> </span><span class="mi">150</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetanotify"><strong>playerMeta:notify</strong></h2>
+<p><strong>Description</strong></p>
+<p>Notifies the player with a message using the Lilia notice system.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>message</strong> (<code>String</code>): The message to notify the player.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">notify</span><span class="p">(</span><span class="s2">&quot;You have received a new item!&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetanotifylocalized"><strong>playerMeta:notifyLocalized</strong></h2>
+<p><strong>Description</strong></p>
+<p>Notifies the player with a localized message using the Lilia notice system.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>message</strong> (<code>String</code>): The key of the localized message to notify the player.</li>
+<li><strong>...</strong> (<code>any</code>): Additional arguments to format the localized message.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">notifyLocalized</span><span class="p">(</span><span class="s2">&quot;welcome_message&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">Nick</span><span class="p">())</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetacreateragdoll"><strong>playerMeta:createRagdoll</strong></h2>
+<p><strong>Description</strong></p>
+<p>Creates a ragdoll entity for the player. Can optionally freeze the ragdoll initially.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>freeze</strong> (<code>Boolean</code>): Whether to freeze the ragdoll initially.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Entity</strong>: The created ragdoll entity.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">ragdoll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">createRagdoll</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetasetragdolled"><strong>playerMeta:setRagdolled</strong></h2>
+<p><strong>Description</strong></p>
+<p>Sets the player to a ragdolled state or removes the ragdoll.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>state</strong> (<code>Boolean</code>): Whether to set the player to a ragdolled state (<code>true</code>) or remove the ragdoll (<code>false</code>).</li>
+<li><strong>time</strong> (<code>int</code>, optional): The duration for which the player remains ragdolled.</li>
+<li><strong>getUpGrace</strong> (<code>int</code>, optional): The grace period for the player to get up before the ragdoll is removed.</li>
+<li><strong>getUpMessage</strong> (<code>String</code>, optional): The message displayed when the player is getting up. Defaults to <code>"@wakingUp"</code>.</li>
+</ol>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setRagdolled</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;@gettingUp&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetasyncvars"><strong>playerMeta:syncVars</strong></h2>
+<p><strong>Description</strong></p>
+<p>Synchronizes networked variables with the player.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">syncVars</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetasetlocalvar"><strong>playerMeta:setLocalVar</strong></h2>
+<p><strong>Description</strong></p>
+<p>Sets a local variable for the player and synchronizes it over the network.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>key</strong> (<code>String</code>): The key of the variable.</li>
+<li><strong>value</strong> (<code>any</code>): The value of the variable.</li>
+</ol>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setLocalVar</span><span class="p">(</span><span class="s2">&quot;health&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaisfaction"><strong>playerMeta:isFaction</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player belongs to the specified faction.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>faction</strong> (<code>String</code>): The faction to check against.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player belongs to the specified faction, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isFaction</span><span class="p">(</span><span class="s2">&quot;Police&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is in the Police faction.&quot;</span><span class="p">)</span>
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaisclass"><strong>playerMeta:isClass</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player belongs to the specified class.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>class</strong> (<code>String</code>): The class to check against.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player belongs to the specified class, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isClass</span><span class="p">(</span><span class="s2">&quot;Medic&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is a Medic.&quot;</span><span class="p">)</span>
+</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetagetdarkrpvar"><strong>playerMeta:getDarkRPVar</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the player's DarkRP money. This is used as compatibility for DarkRP Vars.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>var</strong> (<code>String</code>): The DarkRP variable to fetch (only <code>"money"</code> is allowed).</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Integer|nil</strong>: The player's money if the variable is valid, or <code>nil</code> if not.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">money</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getDarkRPVar</span><span class="p">(</span><span class="s2">&quot;money&quot;</span><span class="p">)</span>
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">money</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player Money:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">money</span><span class="p">)</span>
+</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetagetmoney"><strong>playerMeta:getMoney</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the amount of money owned by the player's character.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Integer</strong>: The amount of money owned by the player's character.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">money</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getMoney</span><span class="p">()</span>
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player Money:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">money</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetacanafford"><strong>playerMeta:canAfford</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player's character can afford a specified amount of money. This function uses Lilia methods to determine if the player can afford the specified amount. It is designed to be compatible with the DarkRP <code>canAfford</code> method.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>amount</strong> (<code>int</code>): The amount of money to check.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: Whether the player's character can afford the specified amount of money.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">canAfford</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player can afford the item.&quot;</span><span class="p">)</span>
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="kr">else</span>
+</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player cannot afford the item.&quot;</span><span class="p">)</span>
+</span><span id="__span-51-5"><a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaaddmoney"><strong>playerMeta:addMoney</strong></h2>
+<p><strong>Description</strong></p>
+<p>Adds money to the player's character. This function uses Lilia methods to add the specified amount of money to the player. It handles wallet limits and spawns excess money as an item in the world if necessary.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>amount</strong> (<code>int</code>): The amount of money to add.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the operation was successful, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">addMoney</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetatakemoney"><strong>playerMeta:takeMoney</strong></h2>
+<p><strong>Description</strong></p>
+<p>Takes money from the player's character.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>amount</strong> (<code>int</code>): The amount of money to take.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">takeMoney</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetahasskilllevel"><strong>playerMeta:hasSkillLevel</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player has a skill level equal to or greater than the specified level.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>skill</strong> (<code>String</code>): The skill to check.</li>
+<li><strong>level</strong> (<code>int</code>): The required skill level.</li>
+</ol>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: Whether the player's skill level meets or exceeds the specified level.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">hasSkillLevel</span><span class="p">(</span><span class="s2">&quot;Archery&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player has Archery level 3 or higher.&quot;</span><span class="p">)</span>
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetameetsrequiredskills"><strong>playerMeta:meetsRequiredSkills</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player meets the required skill levels.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>requiredSkillLevels</strong> (<code>Table</code>): A table containing the required skill levels.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: Whether the player meets all the required skill levels.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">requiredSkills</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nv">Archery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nv">Stealth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span>
+</span><span id="__span-55-2"><a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">meetsRequiredSkills</span><span class="p">(</span><span class="nv">requiredSkills</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-55-3"><a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player meets all required skills.&quot;</span><span class="p">)</span>
+</span><span id="__span-55-4"><a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a><span class="kr">else</span>
+</span><span id="__span-55-5"><a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player does not meet the required skills.&quot;</span><span class="p">)</span>
+</span><span id="__span-55-6"><a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetarestorestamina"><strong>playerMeta:restoreStamina</strong></h2>
+<p><strong>Description</strong></p>
+<p>Restores stamina for the player. This function restores a certain amount of stamina to the player, clamping the value between 0 and the character's maximum stamina. If stamina is restored above a certain threshold, it will trigger the removal of a breathless state.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>amount</strong> (<code>int</code>): The amount of stamina to restore.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">restoreStamina</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaconsumestamina"><strong>playerMeta:consumeStamina</strong></h2>
+<p><strong>Description</strong></p>
+<p>Consumes stamina from the player. This function decreases the player's stamina by a specified amount, clamping the value between 0 and the character's maximum stamina. If stamina is depleted, it may trigger a breathless state.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>amount</strong> (<code>int</code>): The amount of stamina to consume.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">consumeStamina</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetacaneditvendor"><strong>playerMeta:CanEditVendor</strong></h2>
+<p><strong>Description</strong></p>
+<p>Determines if the player can edit a vendor. This function checks whether the player has the necessary privilege to edit vendors.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player has the privilege to edit vendors, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">CanEditVendor</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player can edit vendors.&quot;</span><span class="p">)</span>
+</span><span id="__span-58-3"><a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetacanoverrideview"><strong>playerMeta:CanOverrideView</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks various conditions to determine if the player can switch to a third-person view.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player can override the view to third-person, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">CanOverrideView</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player can switch to third-person view.&quot;</span><span class="p">)</span>
+</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaisinthirdperson"><strong>playerMeta:IsInThirdPerson</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player is currently using third-person view. This function verifies if third-person mode is active for the player.</p>
+<p><strong>Realm</strong></p>
+<p><code>Client</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player is in third-person view, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">IsInThirdPerson</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is in third-person view.&quot;</span><span class="p">)</span>
+</span><span id="__span-60-3"><a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaisuser"><strong>playerMeta:isUser</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player belongs to the "user" user group.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player is in the "user" group, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isUser</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is a regular user.&quot;</span><span class="p">)</span>
+</span><span id="__span-61-3"><a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaisstaff"><strong>playerMeta:isStaff</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player is a staff member.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player is a staff member, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isStaff</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-62-2"><a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is a staff member.&quot;</span><span class="p">)</span>
+</span><span id="__span-62-3"><a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaisvip"><strong>playerMeta:isVIP</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player is a VIP.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the player is a VIP, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isVIP</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-63-2"><a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is a VIP.&quot;</span><span class="p">)</span>
+</span><span id="__span-63-3"><a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaisstaffonduty"><strong>playerMeta:isStaffOnDuty</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the staff member is currently on duty (FACTION_STAFF).</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the staff member is currently on duty, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isStaffOnDuty</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-64-2"><a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Staff member is on duty.&quot;</span><span class="p">)</span>
+</span><span id="__span-64-3"><a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetahaswhitelist"><strong>playerMeta:hasWhitelist</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player has whitelisted access to a faction.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>faction</strong> (<code>int</code>): The faction to check for whitelisting.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: Whether the player has whitelisted access to the specified faction.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">hasWhitelist</span><span class="p">(</span><span class="nv">TEAM_POLICE</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player has access to the Police faction.&quot;</span><span class="p">)</span>
+</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetagetclass"><strong>playerMeta:getClass</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the class of the player's character.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>String|nil</strong>: The class of the player's character, or <code>nil</code> if not found.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">class</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getClass</span><span class="p">()</span>
+</span><span id="__span-66-2"><a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">class</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-66-3"><a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player Class:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">class</span><span class="p">)</span>
+</span><span id="__span-66-4"><a id="__codelineno-66-4" name="__codelineno-66-4" href="#__codelineno-66-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetahasclasswhitelist"><strong>playerMeta:hasClassWhitelist</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the player has whitelisted access to a class.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>class</strong> (<code>int</code>): The class to check for whitelisting.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: Whether the player has whitelisted access to the specified class.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">hasClassWhitelist</span><span class="p">(</span><span class="s2">&quot;Medic&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-67-2"><a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player has access to the Medic class.&quot;</span><span class="p">)</span>
+</span><span id="__span-67-3"><a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetagetclassdata"><strong>playerMeta:getClassData</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the data of the player's character class.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Table|nil</strong>: A table containing the data of the player's character class, or <code>nil</code> if not found.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">classData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getClassData</span><span class="p">()</span>
+</span><span id="__span-68-2"><a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">classData</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-68-3"><a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player Class Data:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">classData</span><span class="p">.</span><span class="py">name</span><span class="p">)</span>
+</span><span id="__span-68-4"><a id="__codelineno-68-4" name="__codelineno-68-4" href="#__codelineno-68-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetawhitelistallclasses"><strong>playerMeta:WhitelistAllClasses</strong></h2>
+<p><strong>Description</strong></p>
+<p>Whitelists all classes for the player.</p>
+<p><strong>Realm</strong></p>
+<ul>
+<li><strong>Server</strong></li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">WhitelistAllClasses</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetawhitelistallfactions"><strong>playerMeta:WhitelistAllFactions</strong></h2>
+<p><strong>Description</strong></p>
+<p>Whitelists all factions for the player.</p>
+<p><strong>Realm</strong></p>
+<ul>
+<li><strong>Server</strong></li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">WhitelistAllFactions</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetawhitelisteverything"><strong>playerMeta:WhitelistEverything</strong></h2>
+<p><strong>Description</strong></p>
+<p>Whitelists everything (all classes and factions) for the player.</p>
+<p><strong>Realm</strong></p>
+<ul>
+<li><strong>Server</strong></li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">WhitelistEverything</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaclasswhitelist"><strong>playerMeta:classWhitelist</strong></h2>
+<p><strong>Description</strong></p>
+<p>Whitelists the player for a specific class.</p>
+<p><strong>Realm</strong></p>
+<ul>
+<li><strong>Server</strong></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>class</strong> (<code>int</code>): The class to whitelist the player for.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">classWhitelist</span><span class="p">(</span><span class="s2">&quot;Medic&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaclassunwhitelist"><strong>playerMeta:classUnWhitelist</strong></h2>
+<p><strong>Description</strong></p>
+<p>Removes the whitelist status for a specific class from the player.</p>
+<p><strong>Realm</strong></p>
+<ul>
+<li><strong>Server</strong></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>class</strong> (<code>int</code>): The class to remove the whitelist status for.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">classUnWhitelist</span><span class="p">(</span><span class="s2">&quot;Medic&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetasetwhitelisted"><strong>playerMeta:setWhitelisted</strong></h2>
+<p><strong>Description</strong></p>
+<p>Sets whether the player is whitelisted for a faction.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ol>
+<li><strong>faction</strong> (<code>int</code>): The faction ID.</li>
+<li><strong>whitelisted</strong> (<code>bool</code>): Whether the player should be whitelisted for the faction.</li>
+</ol>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: Whether the operation was successful.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setWhitelisted</span><span class="p">(</span><span class="nv">TEAM_POLICE</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="playermetaisliliapersistent"><strong>playerMeta:IsLiliaPersistent</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the entity is persistent. This function checks whether the entity is flagged as persistent.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the entity is persistent, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">entity</span><span class="p">:</span><span class="nf">IsLiliaPersistent</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Entity is persistent.&quot;</span><span class="p">)</span>
+</span><span id="__span-75-3"><a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../item_meta/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Item meta">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Item meta
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../tool_meta/" class="md-footer__link md-footer__link--next" aria-label="Next: Tool meta">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Tool meta
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/LiliaFramework/Lilia" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
