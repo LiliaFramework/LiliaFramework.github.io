@@ -26,3 +26,33 @@ Lilia is a lightweight, modular framework for building Garry’s Mod addons in G
    ```bash
    git clone https://github.com/LiliaFramework/Lilia.wiki.git
    cd Lilia.wiki
+2. **Create** and **activate** a Python virtual environment (recommended):
+
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+3. **Install** the documentation dependencies:
+
+   ```bash
+   pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin
+   ```
+4. **Serve** locally on `http://127.0.0.1:8000` (auto-reloads on changes):
+
+   ```bash
+   mkdocs serve
+   ```
+5. Open your browser at [http://127.0.0.1:8000](http://127.0.0.1:8000) to preview the docs.
+
+---
+
+## 🤝 Contributing
+
+All documentation changes live in the main Lilia repo:
+
+1. Fork & clone **LiliaFramework/Lilia**.
+2. Edit files under `docs/`.
+3. Commit, push to your fork, and open a PR against `main`.
+4. Tag your PR with **documentation**.
+
+> **Tip:** Use markdown linting and spell-check before opening a PR.
