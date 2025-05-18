@@ -1,0 +1,3723 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://liliaframework.github.io/framework/meta/inventory_meta/">
+      
+      
+        <link rel="prev" href="../entity_meta/">
+      
+      
+        <link rel="next" href="../item_meta/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Inventory meta - Lilia Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lavender">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#inventorymetagetdata" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Lilia Documentation" class="md-header__button md-logo" aria-label="Lilia Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo_small.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lilia Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Inventory meta
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lavender"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="lavender"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Lilia Documentation" class="md-nav__button md-logo" aria-label="Lilia Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo_small.png" alt="logo">
+
+    </a>
+    Lilia Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Framework
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Definitions
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Definitions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/faction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Faction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/class/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/attribute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Attribute
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/command/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Command
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../definitions/items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Items
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Hooks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Hooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hooks/gamemode_hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gamemode hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hooks/faction_hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Faction Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hooks/class_hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Class Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Meta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../character_meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Character meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entity_meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entity meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Inventory meta
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inventory meta
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaextend" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:extend
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaconfigure" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:configure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaadddataproxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:addDataProxy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetitemsbyuniqueid" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getItemsByUniqueID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaregister" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:register
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetanew" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:new
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetatostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:tostring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagettype" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaondatachanged" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:onDataChanged
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetitems" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getItems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetitemsoftype" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getItemsOfType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetfirstitemoftype" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getFirstItemOfType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetahasitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:hasItem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetitemcount" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getItemCount
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetid" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaeq" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:eq
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaadditem" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:addItem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaadd" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:add
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetasyncitemadded" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:syncItemAdded
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetainitializestorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:initializeStorage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetarestorefromstorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:restoreFromStorage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaremoveitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:removeItem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaremove" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:remove
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetasetdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:setData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetacanaccess" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:canAccess
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaaddaccessrule" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:addAccessRule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaremoveaccessrule" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:removeAccessRule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetrecipients" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getRecipients
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaoninstanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:onInstanced
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaonloaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:onLoaded
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaloaditems" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:loadItems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaonitemsloaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:onItemsLoaded
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetainstance" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:instance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetasyncdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:syncData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:sync
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetadelete" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:delete
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetadestroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:destroy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetashow" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:show
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetwidth" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getWidth
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetheight" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getHeight
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getSize
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetacanitemfitininventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:canItemFitInInventory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetacanadd" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:canAdd
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetadoesitemoverlapwithother" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:doesItemOverlapWithOther
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetadoesfitinventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:doesFitInventory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetadoesitemfitatpos" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:doesItemFitAtPos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetafindfreeposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:findFreePosition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetasetsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:setSize
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetawipeitems" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:wipeItems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetasetowner" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:setOwner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetarequesttransfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:requestTransfer
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item_meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Item meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player_meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Player meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tool_meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tool meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Libraries
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.attrib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.attribs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.bar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.bar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.character/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.character
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.chat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.class/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.color
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.command/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.command
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.config
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.currency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.currency
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.darkrp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.darkrp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.db
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.ease/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.ease
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.faction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.faction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.flag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.flag
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.inventory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.item/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.item
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.keybind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lia.keybind
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.languages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.lang
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.log
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.math/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.math
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.menu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.net/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.net
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.notice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.notices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.option/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.option
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.string
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.table/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.time
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.util
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Information
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Information
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/compatibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Addons with Improved Compatibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/installing_the_gamemode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installing the gamemode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../information/preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WIP Framework Previeww
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../modules/wip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WIP Modules Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaextend" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:extend
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaconfigure" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:configure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaadddataproxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:addDataProxy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetitemsbyuniqueid" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getItemsByUniqueID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaregister" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:register
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetanew" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:new
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetatostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:tostring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagettype" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaondatachanged" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:onDataChanged
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetitems" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getItems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetitemsoftype" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getItemsOfType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetfirstitemoftype" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getFirstItemOfType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetahasitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:hasItem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetitemcount" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getItemCount
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetid" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaeq" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:eq
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaadditem" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:addItem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaadd" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:add
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetasyncitemadded" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:syncItemAdded
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetainitializestorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:initializeStorage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetarestorefromstorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:restoreFromStorage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaremoveitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:removeItem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaremove" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:remove
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetasetdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:setData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetacanaccess" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:canAccess
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaaddaccessrule" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:addAccessRule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaremoveaccessrule" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:removeAccessRule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetrecipients" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getRecipients
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaoninstanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:onInstanced
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaonloaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:onLoaded
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaloaditems" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:loadItems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetaonitemsloaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:onItemsLoaded
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetainstance" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:instance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetasyncdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:syncData
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetasync" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:sync
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetadelete" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:delete
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetadestroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:destroy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetashow" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:show
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetwidth" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getWidth
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetheight" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getHeight
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetagetsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:getSize
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetacanitemfitininventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:canItemFitInInventory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetacanadd" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:canAdd
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetadoesitemoverlapwithother" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:doesItemOverlapWithOther
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetadoesfitinventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:doesFitInventory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetadoesitemfitatpos" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:doesItemFitAtPos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetafindfreeposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:findFreePosition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetasetsize" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:setSize
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetawipeitems" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:wipeItems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetasetowner" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:setOwner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventorymetarequesttransfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventoryMeta:requestTransfer
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Inventory meta</h1>
+
+<hr />
+<p>Holds items within a grid layout.</p>
+<p>Inventories are objects that contain <code>Item</code>s in a grid layout. Every <code>Character</code> will have exactly one inventory attached to it, which is the only inventory that is allowed to hold bags—any item that has its own inventory (i.e., a suitcase). Inventories can be owned by a character, or they can be individually interacted with as standalone objects. For example, the container plugin attaches inventories to props, allowing for items to be stored outside of any character inventories and remain "in the world".</p>
+<hr />
+<h2 id="inventorymetagetdata"><strong>inventoryMeta:getData</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves data associated with a specified key from the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>key</strong> (<code>String</code>): The key for the data.</li>
+<li><strong>default</strong> (<code>any</code>, optional): The default value to return if the key does not exist.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>any</strong>: The value associated with the key, or the default value if the key does not exist.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">health</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">getData</span><span class="p">(</span><span class="s2">&quot;health&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Health:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">health</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaextend"><strong>inventoryMeta:extend</strong></h2>
+<p><strong>Description</strong></p>
+<p>Extends the inventory to create a subclass with a specified class name.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>className</strong> (<code>String</code>): The name of the subclass.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Table</strong>: A subclass of the <code>Inventory</code> class.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">GridInventory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Inventory</span><span class="p">:</span><span class="nf">extend</span><span class="p">(</span><span class="s2">&quot;GridInv&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaconfigure"><strong>inventoryMeta:configure</strong></h2>
+<p><strong>Description</strong></p>
+<p>Configures the inventory.</p>
+<p>This function is meant to be overridden in subclasses to define specific configurations.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span><span class="w"> </span><span class="nc">GridInventory</span><span class="p">:</span><span class="nf">configure</span><span class="p">()</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="c1">-- Custom configuration</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaadddataproxy"><strong>inventoryMeta:addDataProxy</strong></h2>
+<p><strong>Description</strong></p>
+<p>Adds a data proxy to the inventory for a specified key.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>key</strong> (<code>any</code>): The key for the data proxy.</li>
+<li><strong>onChange</strong> (<code>function</code>): The function to call when the data associated with the key changes.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">addDataProxy</span><span class="p">(</span><span class="s2">&quot;health&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">old</span><span class="p">,</span><span class="w"> </span><span class="nv">new</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Health changed from&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">old</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;to&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">new</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetagetitemsbyuniqueid"><strong>inventoryMeta:getItemsByUniqueID</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves items with a specified unique ID from the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>uniqueID</strong> (<code>String</code>): The unique ID of the items to retrieve.</li>
+<li><strong>onlyMain</strong> (<code>Boolean</code>): Whether to retrieve only main items.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Table</strong>: An array containing the items with the specified unique ID.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">weapons</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">getItemsByUniqueID</span><span class="p">(</span><span class="s2">&quot;weapon_rifle&quot;</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">weapon</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">weapons</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Weapon ID:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">weapon</span><span class="p">:</span><span class="nf">getID</span><span class="p">())</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaregister"><strong>inventoryMeta:register</strong></h2>
+<p><strong>Description</strong></p>
+<p>Registers the inventory with a specified type ID.</p>
+<p><strong>Note:</strong> This method sets the inventory's type and configures it accordingly.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>typeID</strong> (<code>String</code>): The type ID to register the inventory with.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">register</span><span class="p">(</span><span class="s2">&quot;grid&quot;</span><span class="p">)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">-- This sets the inventory&#39;s type to &#39;grid&#39;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetanew"><strong>inventoryMeta:new</strong></h2>
+<p><strong>Description</strong></p>
+<p>Creates a new instance of the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Table</strong>: A new instance of the <code>Inventory</code> class.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">newInventory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Inventory</span><span class="p">:</span><span class="nf">new</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetatostring"><strong>inventoryMeta:tostring</strong></h2>
+<p><strong>Description</strong></p>
+<p>Returns a string representation of the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>String</strong>: A string representation of the inventory, including its class name and ID.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">tostring</span><span class="p">(</span><span class="nv">inventory</span><span class="p">))</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">-- Output: &quot;GridInv[123]&quot;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetagettype"><strong>inventoryMeta:getType</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the type of the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Table</strong>: The type information of the inventory.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">typeInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">getType</span><span class="p">()</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventory Type:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">typeInfo</span><span class="p">.</span><span class="py">typeID</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaondatachanged"><strong>inventoryMeta:onDataChanged</strong></h2>
+<p><strong>Description</strong></p>
+<p>Callback function called when data associated with a key changes.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>key</strong> (<code>any</code>): The key whose data has changed.</li>
+<li><strong>oldValue</strong> (<code>any</code>): The old value of the data.</li>
+<li><strong>newValue</strong> (<code>any</code>): The new value of the data.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span><span class="w"> </span><span class="nc">Inventory</span><span class="p">:</span><span class="nf">onDataChanged</span><span class="p">(</span><span class="nv">key</span><span class="p">,</span><span class="w"> </span><span class="nv">oldValue</span><span class="p">,</span><span class="w"> </span><span class="nv">newValue</span><span class="p">)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nv">key</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;changed from&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">oldValue</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;to&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">newValue</span><span class="p">)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetagetitems"><strong>inventoryMeta:getItems</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves all items in the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Table</strong>: An array containing all items in the inventory.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">getItems</span><span class="p">()</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">items</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item ID:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">item</span><span class="p">:</span><span class="nf">getID</span><span class="p">())</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetagetitemsoftype"><strong>inventoryMeta:getItemsOfType</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves items of a specific type from the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>itemType</strong> (<code>String</code>): The type of items to retrieve.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Table</strong>: An array containing items of the specified type.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">healthPacks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">getItemsOfType</span><span class="p">(</span><span class="s2">&quot;health_pack&quot;</span><span class="p">)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">pack</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">healthPacks</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Health Pack ID:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">pack</span><span class="p">:</span><span class="nf">getID</span><span class="p">())</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetagetfirstitemoftype"><strong>inventoryMeta:getFirstItemOfType</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the first item of a specific type from the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>itemType</strong> (<code>String</code>): The type of item to retrieve.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Table|nil</strong>: The first item of the specified type, or <code>nil</code> if not found.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">firstHealthPack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">getFirstItemOfType</span><span class="p">(</span><span class="s2">&quot;health_pack&quot;</span><span class="p">)</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">firstHealthPack</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First Health Pack ID:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">firstHealthPack</span><span class="p">:</span><span class="nf">getID</span><span class="p">())</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetahasitem"><strong>inventoryMeta:hasItem</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if the inventory contains an item of a specific type.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>itemType</strong> (<code>String</code>): The type of item to check for.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: Returns <code>true</code> if the inventory contains an item of the specified type, otherwise <code>false</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">hasItem</span><span class="p">(</span><span class="s2">&quot;health_pack&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventory contains a health pack.&quot;</span><span class="p">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kr">else</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No health packs in inventory.&quot;</span><span class="p">)</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetagetitemcount"><strong>inventoryMeta:getItemCount</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the total count of items in the inventory, optionally filtered by item type.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>itemType</strong> (<code>String</code>, optional): The type of item to count. If <code>nil</code>, counts all items.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Integer</strong>: The total count of items in the inventory, optionally filtered by item type.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">totalItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">getItemCount</span><span class="p">()</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total Items:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">totalItems</span><span class="p">)</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">healthPackCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">getItemCount</span><span class="p">(</span><span class="s2">&quot;health_pack&quot;</span><span class="p">)</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Health Packs:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">healthPackCount</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetagetid"><strong>inventoryMeta:getID</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the ID of the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Integer</strong>: The ID of the inventory.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">invID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">getID</span><span class="p">()</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventory ID:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">invID</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaeq"><strong>inventoryMeta:eq</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if two inventories are equal based on their IDs.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>other</strong> (<code>Inventory</code>): The other inventory to compare with.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: Returns <code>true</code> if the inventories have the same ID, otherwise <code>false</code>.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">inventory1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">inventory2</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Both inventories are the same.&quot;</span><span class="p">)</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kr">else</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventories are different.&quot;</span><span class="p">)</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaadditem"><strong>inventoryMeta:addItem</strong></h2>
+<p><strong>Description</strong></p>
+<p>Adds an item to the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>item</strong> (<code>Item</code>): The item to add to the inventory.</li>
+<li><strong>noReplicate</strong> (<code>Boolean</code>): Set to <code>true</code> to prevent <code>OnItemAdded</code> from being called on the added item.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Inventory</strong>: Returns the inventory itself.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">weapon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">lia</span><span class="p">.</span><span class="py">item</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">&quot;weapon_rifle&quot;</span><span class="p">)</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">addItem</span><span class="p">(</span><span class="nv">weapon</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaadd"><strong>inventoryMeta:add</strong></h2>
+<p><strong>Description</strong></p>
+<p>Alias for the <code>addItem</code> function.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>item</strong> (<code>Item</code>): The item to add to the inventory.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Inventory</strong>: Returns the inventory itself.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">add</span><span class="p">(</span><span class="nv">weapon</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetasyncitemadded"><strong>inventoryMeta:syncItemAdded</strong></h2>
+<p><strong>Description</strong></p>
+<p>Synchronizes the addition of an item with clients.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>item</strong> (<code>Item</code>): The item being added.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">syncItemAdded</span><span class="p">(</span><span class="nv">weapon</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetainitializestorage"><strong>inventoryMeta:initializeStorage</strong></h2>
+<p><strong>Description</strong></p>
+<p>Initializes the storage for the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>initialData</strong> (<code>Table</code>): Initial data for the inventory.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Deferred</strong>: A deferred promise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">promise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">initializeStorage</span><span class="p">({</span><span class="nv">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nv">item1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;value1&quot;</span><span class="p">})</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nv">promise</span><span class="p">:</span><span class="nf">next</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">invID</span><span class="p">)</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventory initialized with ID:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">invID</span><span class="p">)</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetarestorefromstorage"><strong>inventoryMeta:restoreFromStorage</strong></h2>
+<p><strong>Description</strong></p>
+<p>Restores the inventory from storage.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">restoreFromStorage</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaremoveitem"><strong>inventoryMeta:removeItem</strong></h2>
+<p><strong>Description</strong></p>
+<p>Removes an item from the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>itemID</strong> (<code>int</code>): The ID of the item to remove.</li>
+<li><strong>preserveItem</strong> (<code>Boolean</code>): Whether to preserve the item's data in the database.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Deferred</strong>: A deferred promise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">removeItem</span><span class="p">(</span><span class="mi">12345</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">):</span><span class="nb">next</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item removed while preserving data.&quot;</span><span class="p">)</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaremove"><strong>inventoryMeta:remove</strong></h2>
+<p><strong>Description</strong></p>
+<p>Alias for the <code>removeItem</code> function.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>itemID</strong> (<code>int</code>): The ID of the item to remove.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Deferred</strong>: A deferred promise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">remove</span><span class="p">(</span><span class="mi">12345</span><span class="p">):</span><span class="nb">next</span><span class="p">(</span><span class="kr">function</span><span class="p">()</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item removed.&quot;</span><span class="p">)</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetasetdata"><strong>inventoryMeta:setData</strong></h2>
+<p><strong>Description</strong></p>
+<p>Sets data associated with a key in the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>key</strong> (<code>any</code>): The key to associate the data with.</li>
+<li><strong>value</strong> (<code>any</code>): The value to set for the key.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Inventory</strong>: Returns the inventory itself.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">setData</span><span class="p">(</span><span class="s2">&quot;owner&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">player</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetacanaccess"><strong>inventoryMeta:canAccess</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if a certain action is permitted for the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>action</strong> (<code>String</code>): The action to check for access.</li>
+<li><strong>context</strong> (<code>Table</code>): Additional context for the access check.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean|nil</strong>: Returns <code>true</code> if the action is permitted, <code>false</code> if denied, or <code>nil</code> if not applicable.</li>
+<li><strong>String</strong> (optional): A reason for the access result.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">canAccess</span><span class="p">,</span><span class="w"> </span><span class="nv">reason</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">canAccess</span><span class="p">(</span><span class="s2">&quot;remove_item&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nv">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">})</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">canAccess</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Access granted.&quot;</span><span class="p">)</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="kr">else</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Access denied:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">reason</span><span class="p">)</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaaddaccessrule"><strong>inventoryMeta:addAccessRule</strong></h2>
+<p><strong>Description</strong></p>
+<p>Adds an access rule to the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>rule</strong> (<code>function</code>): The access rule function.</li>
+<li><strong>priority</strong> (<code>int</code>, optional): The priority of the access rule.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Inventory</strong>: Returns the inventory itself.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">addAccessRule</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">inv</span><span class="p">,</span><span class="w"> </span><span class="nv">action</span><span class="p">,</span><span class="w"> </span><span class="nv">context</span><span class="p">)</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">action</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;remove_item&quot;</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">context</span><span class="p">.</span><span class="py">client</span><span class="p">:</span><span class="nf">IsAdmin</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="kr">end</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaremoveaccessrule"><strong>inventoryMeta:removeAccessRule</strong></h2>
+<p><strong>Description</strong></p>
+<p>Removes an access rule from the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>rule</strong> (<code>function</code>): The access rule function to remove.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Inventory</strong>: Returns the inventory itself.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">removeAccessRule</span><span class="p">(</span><span class="nv">existingRuleFunction</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetagetrecipients"><strong>inventoryMeta:getRecipients</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the recipients for synchronization.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Table</strong>: An array containing the recipients for synchronization.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">recipients</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">getRecipients</span><span class="p">()</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">client</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">recipients</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Syncing with client:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">client</span><span class="p">:</span><span class="nf">Nick</span><span class="p">())</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaoninstanced"><strong>inventoryMeta:onInstanced</strong></h2>
+<p><strong>Description</strong></p>
+<p>Initializes an instance of the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">onInstanced</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaonloaded"><strong>inventoryMeta:onLoaded</strong></h2>
+<p><strong>Description</strong></p>
+<p>Callback function called when the inventory is loaded.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kr">function</span><span class="w"> </span><span class="nc">Inventory</span><span class="p">:</span><span class="nf">onLoaded</span><span class="p">()</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventory loaded.&quot;</span><span class="p">)</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaloaditems"><strong>inventoryMeta:loadItems</strong></h2>
+<p><strong>Description</strong></p>
+<p>Loads items from the database into the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Deferred</strong>: A deferred promise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">loadItems</span><span class="p">():</span><span class="nb">next</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">items</span><span class="p">)</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Items loaded:&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="nv">items</span><span class="p">)</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetaonitemsloaded"><strong>inventoryMeta:onItemsLoaded</strong></h2>
+<p><strong>Description</strong></p>
+<p>Callback function called when items are loaded into the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kr">function</span><span class="w"> </span><span class="nc">Inventory</span><span class="p">:</span><span class="nf">onItemsLoaded</span><span class="p">(</span><span class="nv">items</span><span class="p">)</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loaded&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="nv">items</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;items into the inventory.&quot;</span><span class="p">)</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetainstance"><strong>inventoryMeta:instance</strong></h2>
+<p><strong>Description</strong></p>
+<p>Instantiates a new inventory instance.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>initialData</strong> (<code>Table</code>): Initial data for the inventory instance.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Table</strong>: The newly instantiated inventory instance.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">instance</span><span class="p">({</span><span class="nv">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nv">item1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;value1&quot;</span><span class="p">})</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetasyncdata"><strong>inventoryMeta:syncData</strong></h2>
+<p><strong>Description</strong></p>
+<p>Synchronizes data changes with clients.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>key</strong> (<code>any</code>): The key whose data has changed.</li>
+<li><strong>recipients</strong> (<code>Table</code>): The recipients to synchronize with.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">syncData</span><span class="p">(</span><span class="s2">&quot;health&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nv">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">})</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetasync"><strong>inventoryMeta:sync</strong></h2>
+<p><strong>Description</strong></p>
+<p>Synchronizes the inventory with clients.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>recipients</strong> (<code>Table</code>, optional): The recipients to synchronize with.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">sync</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetadelete"><strong>inventoryMeta:delete</strong></h2>
+<p><strong>Description</strong></p>
+<p>Deletes the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">delete</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetadestroy"><strong>inventoryMeta:destroy</strong></h2>
+<p><strong>Description</strong></p>
+<p>Destroys the inventory and its associated items.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">destroy</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetashow"><strong>inventoryMeta:show</strong></h2>
+<p><strong>Description</strong></p>
+<p>Displays the inventory UI to the specified parent element.</p>
+<p><strong>Realm</strong></p>
+<p><code>Client</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>parent</strong> (<code>any</code>, optional): The parent element to which the inventory UI will be displayed.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>any</strong>: The result of the <code>lia.inventory.show</code> function.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">show</span><span class="p">(</span><span class="nv">panel</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetagetwidth"><strong>inventoryMeta:getWidth</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the width of the inventory grid.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Integer</strong>: The width of the inventory grid.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">getWidth</span><span class="p">()</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventory Width:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">width</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetagetheight"><strong>inventoryMeta:getHeight</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the height of the inventory grid.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Integer</strong>: The height of the inventory grid.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">getHeight</span><span class="p">()</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventory Height:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">height</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetagetsize"><strong>inventoryMeta:getSize</strong></h2>
+<p><strong>Description</strong></p>
+<p>Retrieves the size (width and height) of the inventory grid.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Integer</strong>: The width of the inventory grid.</li>
+<li><strong>Integer</strong>: The height of the inventory grid.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">width</span><span class="p">,</span><span class="w"> </span><span class="nv">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">getSize</span><span class="p">()</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventory Size:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">width</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">height</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetacanitemfitininventory"><strong>inventoryMeta:canItemFitInInventory</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if an item can fit in the inventory at a given position.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>item</strong> (<code>Item</code>): The item to check.</li>
+<li><strong>x</strong> (<code>Integer</code>): The X position in the inventory grid.</li>
+<li><strong>y</strong> (<code>Integer</code>): The Y position in the inventory grid.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: Whether the item can fit in the inventory.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">canFit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">canItemFitInInventory</span><span class="p">(</span><span class="nv">item</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">canFit</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item can fit at position (2,3).&quot;</span><span class="p">)</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="kr">else</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item cannot fit at position (2,3).&quot;</span><span class="p">)</span>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetacanadd"><strong>inventoryMeta:canAdd</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if an item can fit within the inventory based on its size.</p>
+<p>Verifies whether the item's width and height are within the bounds of the inventory dimensions.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>item</strong> (<code>String|Item</code>): The item to check. This can be a string representing the item type or the item object itself.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: <code>true</code> if the item fits within the inventory dimensions, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">canFit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">canAdd</span><span class="p">(</span><span class="s2">&quot;health_pack&quot;</span><span class="p">)</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">canFit</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Health pack can be added to the inventory.&quot;</span><span class="p">)</span>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="kr">else</span>
+</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Health pack is too large for the inventory.&quot;</span><span class="p">)</span>
+</span><span id="__span-43-6"><a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetadoesitemoverlapwithother"><strong>inventoryMeta:doesItemOverlapWithOther</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if an item overlaps with another item in the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>testItem</strong> (<code>Item</code>): The item to test for overlap.</li>
+<li><strong>x</strong> (<code>Integer</code>): The X position of the test item in the inventory grid.</li>
+<li><strong>y</strong> (<code>Integer</code>): The Y position of the test item in the inventory grid.</li>
+<li><strong>item</strong> (<code>Item</code>): The item to check against.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: Whether the test item overlaps with the given item.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">overlaps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">doesItemOverlapWithOther</span><span class="p">(</span><span class="nv">testItem</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="nv">existingItem</span><span class="p">)</span>
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">overlaps</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Items overlap.&quot;</span><span class="p">)</span>
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="kr">else</span>
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No overlap detected.&quot;</span><span class="p">)</span>
+</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetadoesfitinventory"><strong>inventoryMeta:doesFitInventory</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if an item can fit in the inventory, including within bags.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>item</strong> (<code>Item</code>): The item to check.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: Whether the item can fit in the inventory.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">canFit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">doesFitInventory</span><span class="p">(</span><span class="nv">item</span><span class="p">)</span>
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">canFit</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item can fit in the inventory or its bags.&quot;</span><span class="p">)</span>
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="kr">else</span>
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No space available for the item.&quot;</span><span class="p">)</span>
+</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetadoesitemfitatpos"><strong>inventoryMeta:doesItemFitAtPos</strong></h2>
+<p><strong>Description</strong></p>
+<p>Checks if an item fits at a specific position in the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>testItem</strong> (<code>Item</code>): The item to check.</li>
+<li><strong>x</strong> (<code>Integer</code>): The X position in the inventory grid.</li>
+<li><strong>y</strong> (<code>Integer</code>): The Y position in the inventory grid.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Boolean</strong>: Whether the item fits at the given position.</li>
+<li><strong>Item</strong> (optional): The item it overlaps with, if any.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">fits</span><span class="p">,</span><span class="w"> </span><span class="nv">overlappingItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">doesItemFitAtPos</span><span class="p">(</span><span class="nv">testItem</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span>
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">fits</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item fits at position (3,4).&quot;</span><span class="p">)</span>
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="kr">else</span>
+</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item overlaps with:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">overlappingItem</span><span class="p">:</span><span class="nf">getID</span><span class="p">())</span>
+</span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetafindfreeposition"><strong>inventoryMeta:findFreePosition</strong></h2>
+<p><strong>Description</strong></p>
+<p>Finds a free position in the inventory where an item can fit.</p>
+<p><strong>Realm</strong></p>
+<p><code>Shared</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>item</strong> (<code>Item</code>): The item to find a position for.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><strong>Integer|nil</strong>: The X position in the inventory grid, or <code>nil</code> if no position is found.</li>
+<li><strong>Integer|nil</strong>: The Y position in the inventory grid, or <code>nil</code> if no position is found.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">x</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inventory</span><span class="p">:</span><span class="nf">findFreePosition</span><span class="p">(</span><span class="nv">item</span><span class="p">)</span>
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">y</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Free position found at:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">x</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="p">)</span>
+</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="kr">else</span>
+</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No free position available for the item.&quot;</span><span class="p">)</span>
+</span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetasetsize"><strong>inventoryMeta:setSize</strong></h2>
+<p><strong>Description</strong></p>
+<p>Sets the size of the inventory grid.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>w</strong> (<code>Integer</code>): The width of the grid.</li>
+<li><strong>h</strong> (<code>Integer</code>): The height of the grid.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">setSize</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">)</span>
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventory size set to 10x8.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetawipeitems"><strong>inventoryMeta:wipeItems</strong></h2>
+<p><strong>Description</strong></p>
+<p>Removes all items from the inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">wipeItems</span><span class="p">()</span>
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All items have been removed from the inventory.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetasetowner"><strong>inventoryMeta:setOwner</strong></h2>
+<p><strong>Description</strong></p>
+<p>Sets the owner of the inventory.</p>
+<p>If the owner is a player, it sets the inventory's owner to the player's character ID.</p>
+<p><strong>Realm</strong></p>
+<p><code>Server</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>owner</strong> (<code>Player|Integer</code>): The new owner of the inventory (Player object or character ID number).</li>
+<li><strong>fullUpdate</strong> (<code>Boolean</code>, optional): Whether to sync the inventory to the client.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">setOwner</span><span class="p">(</span><span class="nv">player</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inventory owner set to player.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="inventorymetarequesttransfer"><strong>inventoryMeta:requestTransfer</strong></h2>
+<p><strong>Description</strong></p>
+<p>Requests a transfer of an item to another inventory.</p>
+<p><strong>Realm</strong></p>
+<p><code>Client</code></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><strong>itemID</strong> (<code>Integer</code>): The ID of the item to transfer.</li>
+<li><strong>destinationID</strong> (<code>Integer</code>): The ID of the destination inventory.</li>
+<li><strong>x</strong> (<code>Integer</code>): The X position in the destination grid.</li>
+<li><strong>y</strong> (<code>Integer</code>): The Y position in the destination grid.</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="nv">inventory</span><span class="p">:</span><span class="nf">requestTransfer</span><span class="p">(</span><span class="mi">456</span><span class="p">,</span><span class="w"> </span><span class="nv">destinationInventoryID</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Transfer request sent for item 456.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../entity_meta/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Entity meta">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Entity meta
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../item_meta/" class="md-footer__link md-footer__link--next" aria-label="Next: Item meta">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Item meta
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/LiliaFramework/Lilia" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
