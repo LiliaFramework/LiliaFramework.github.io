@@ -47,7 +47,7 @@ Called after a character has been restored from the database. Useful for post-re
 hook.Add("CharRestored", "AwardWelcomePackage", function(character)
     local welcomePackage = {"welcome_pack", "starter_weapon", "basic_armor"}
     for _, itemID in ipairs(welcomePackage) do
-        character:getInventory():addItem(itemID)
+        character:getInv():addItem(itemID)
     end
     print("Welcome package awarded to:", character:getName())
 end)
@@ -385,7 +385,7 @@ Called after all data has been loaded.
 **Example:**
 ```lua
 hook.Add("PostLoadData", "InitializePlayerStats", function()
-    for _, ply in ipairs(player.GetAll()) do
+    for _, ply in player.Iterator() do
         local stats = lia.data.get("player_" .. ply:getChar():getID(), {kills = 0, deaths = 0})
         ply:setKills(stats.kills)
         ply:setDeaths(stats.deaths)
@@ -405,7 +405,7 @@ Saves all relevant data to disk, triggered during map cleanup and shutdown.
 **Example:**
 ```lua
 hook.Add("SaveData", "PersistPlayerData", function()
-    for _, ply in ipairs(player.GetAll()) do
+    for _, ply in player.Iterator() do
         local char = ply:getChar()
         if char then
             lia.data.set("player_" .. char:getID(), char:getData(), false, false)
@@ -503,7 +503,7 @@ Called to save persistent data (like map entities), often during map cleanup or 
 **Usage Example:**
 ```lua
 hook.Add("PersistenceSave", "SaveMapEntities", function()
-    for _, ent in ipairs(ents.GetAll()) do
+    for _, ent in ents.Iterator() do
         if ent:isPersistent() then
             lia.data.set("entity_" .. ent:EntIndex(), ent:getData(), true)
             print("Saved entity data for:", ent:GetClass())
@@ -543,7 +543,7 @@ Used during character cleanup routines for additional steps when removing or tra
 **Example:**
 ```lua
 hook.Add("CharCleanUp", "RemoveTemporaryItems", function(character)
-    local inventory = character:getInventory()
+    local inventory = character:getInv()
     for _, item in ipairs(inventory:getItems()) do
         if item:isTemporary() then
             inventory:removeItem(item.id)
@@ -665,7 +665,7 @@ Called whenever a new log message is added. Allows for custom logic or modificat
 ```lua
 hook.Add("OnServerLog", "AlertAdminsOnHighSeverity", function(client, logType, logString, category, color)
     if category == "error" then
-        for _, admin in ipairs(player.GetAll()) do
+    for _, admin in player.Iterator() do
             if admin:isAdmin() then
                 lia.notifications.send(admin, "Error Log: " .. logString, color)
             end
@@ -1322,9 +1322,9 @@ Triggered when the client sends a request to transfer an item from one inventory
 **Example:**
 ```lua
 hook.Add("HandleItemTransferRequest", "ValidateItemTransfer", function(client, itemID, x, y, invID)
-    local item = client:getInventory():getItemByID(itemID)
+    local item = client:getInv():getItemByID(itemID)
     if item and item:isTransferable() then
-        client:getInventory():moveItem(itemID, invID, x, y)
+        client:getInv():moveItem(itemID, invID, x, y)
         print(client:Name() .. " transferred item ID " .. itemID .. " to inventory " .. invID)
     else
         client:ChatPrint("You cannot transfer this item.")
@@ -1468,9 +1468,9 @@ Called when the system attempts to combine one item with another in an inventory
 hook.Add("ItemCombine", "CombineHealthAndHerb", function(client, item, targetItem)
     if item.uniqueID == "health_potion" and targetItem.uniqueID == "herb" then
         local newItem = lia.item.create("super_health_potion")
-        client:getInventory():addItem(newItem)
-        client:getInventory():removeItem(item.id)
-        client:getInventory():removeItem(targetItem.id)
+        client:getInv():addItem(newItem)
+        client:getInv():removeItem(item.id)
+        client:getInv():removeItem(targetItem.id)
         print(client:Name() .. " combined Health Potion with Herb to create Super Health Potion.")
         return true
     end
@@ -4575,7 +4575,7 @@ Called after a new character has been successfully created. Allows for additiona
 **Example:**
 ```lua
 hook.Add("OnCharCreated", "SetupInitialInventory", function(client, character, originalData)
-    local inventory = character:getInventory()
+    local inventory = character:getInv()
     inventory:addItem("starter_pack")
     inventory:addItem("basic_weapon")
     print("Initial inventory setup for new character:", character:getName())
