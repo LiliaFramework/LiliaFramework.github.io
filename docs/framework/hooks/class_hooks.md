@@ -1,137 +1,129 @@
-# Class Hooks
+        ## OnCanBe
 
-Class hooks allow you to manage and respond to various events related to player classes in your game. Similar to **Factions**, each **Class** has its own set of hooks that are triggered when players join, leave, switch, or spawn within a class. These hooks are specifically designed to be used within class tables created in `schema/classes/classname.lua` and are not interchangeable with regular gamemode hooks.
+        **Realm:** Unknown
 
----
+        **Description:**
+            Determines whether a player is allowed to switch to the class. This is evaluated before the class change occurs.
+            
 
-## **OnCanBe**
+        ---
 
-**Description**
+        ### Parameters
 
-Determines whether a player is allowed to switch to a specific class. This hook is evaluated before a class switch occurs, allowing you to enforce restrictions based on player attributes or roles.
+            * **client** *(Player)*: The player attempting to switch to the class.
 
-**Parameters**
+        ---
 
-- **client** (`Player`): The player attempting to switch to the class.
+        ### Returns
 
-**Returns**
+            * bool – true if the player is permitted to switch to the class, false otherwise.
 
-- **bool**: `true` if the player is permitted to switch to the class, `false` otherwise.
+        ---
 
-**Example**
+        ### Example
 
-```lua
-function CLASS:OnCanBe(client)
-    -- Allow switch if the player is staff or has the "Z" flag
-    return client:isStaff() or client:getChar():hasFlags("Z")
-end
-```
+            ```lua
+            function CLASS:OnCanBe(client)
+            return client:isStaff() or client:getChar():hasFlags("Z")
+            end
+            ```
 
-*In this example, only staff members or players with the "Z" flag can switch to this class.*
+        ## OnLeave
 
----
+        **Realm:** Server
 
-## **OnLeave**
+        **Description:**
+            Triggered when a player leaves the class. Useful for resetting models or other class-specific attributes.
+            
 
-**Description**
+        ---
 
-Triggered when a player leaves the current class and joins a different one. This hook allows you to perform actions such as resetting models or other class-specific attributes when a player exits a class.
+        ### Parameters
 
-**Realm**
+            * **client** *(Player)*: The player who has left the class.
 
-`Server`
+        ---
 
-**Parameters**
+        ### Example
 
-- **client** (`Player`): The player who has left the class.
+            ```lua
+            function CLASS:OnLeave(client)
+            local character = client:getChar()
+            character:setModel("models/player/alyx.mdl")
+            end
+            ```
 
-**Example**
+        ## OnSet
 
-```lua
-function CLASS:OnLeave(client)
-    local character = client:getChar()
-    -- Change the player's model to Alyx when they leave the class
-    character:setModel("models/player/alyx.mdl")
-end
-```
+        **Realm:** Server
 
-*This example changes the player's model to "Alyx" upon leaving the class.*
+        **Description:**
+            Called when a player successfully joins the class. Initialize class-specific settings here.
+            
 
----
+        ---
 
-## **OnSet**
+        ### Parameters
 
-**Description**
+            * **client** *(Player)*: The player who has joined the class.
 
-Called when a player successfully joins a class. Use this hook to initialize class-specific settings, such as setting the player's model or other attributes upon joining.
+        ---
 
-**Realm**
+        ### Example
 
-`Server`
+            ```lua
+            function CLASS:OnSet(client)
+            client:setModel("models/police.mdl")
+            end
+            ```
 
-**Parameters**
+        ## OnSpawn
 
-- **client** (`Player`): The player who has joined the class.
+        **Realm:** Server
 
-**Example**
+        **Description:**
+            Invoked when a class member spawns. Use this for spawn-specific setup like health or weapons.
+            
 
-```lua
-function CLASS:OnSet(client)
-    -- Set the player's model to a police model when they join the class
-    client:setModel("models/police.mdl")
-end
-```
+        ---
 
-*Here, the player's model is set to a police model upon joining the class.*
+        ### Parameters
 
----
+            * **client** *(Player)*: The player who has just spawned.
 
-## **OnSpawn**
+        ---
 
-**Description**
+        ### Example
 
-Invoked when a player in the class spawns into the world. This hook is useful for setting spawn-specific attributes like health, weapons, or other spawn-related properties.
+            ```lua
+            function CLASS:OnSpawn(client)
+            client:SetMaxHealth(500)
+            client:SetHealth(500)
+            end
+            ```
 
-**Realm**
+        ## OnTransferred
 
-`Server`
+        **Realm:** Server
 
-**Parameters**
+        **Description:**
+            Executes actions when a character is transferred to the class.
+            
 
-- **client** (`Player`): The player who has just spawned.
+        ---
 
-**Example**
+        ### Parameters
 
-```lua
-function CLASS:OnSpawn(client)
-    -- Set the player's maximum and current health to 500 upon spawning
-    client:SetMaxHealth(500)
-    client:SetHealth(500)
-end
-```
+            * **character** *(Character)*: The character that was transferred.
 
-*In this example, the player's maximum and current health are both set to 500 when they spawn.*
+        ---
 
----
+        ### Example
 
-## **OnTransferred**
+            ```lua
+            function CLASS:OnTransferred(character)
+            local randomModelIndex = math.random(1, #self.models)
+            character:setModel(self.models[randomModelIndex])
+            end
+            ```
 
-- **Description:**  
-  Executes actions when a character is transferred to the class
-
-- **Realm:**  
-
-  `Server`
-
-- **Parameters:**
-  - `character` (`Character`): The character that was transferred.
-
-- **Usage Example:**
-  ```lua
-  function CLASS:OnTransferred(character)
-      local randomModelIndex = math.random(1, #self.models)
-      character:setModel(self.models[randomModelIndex])
-  end
-  ```
-
----
