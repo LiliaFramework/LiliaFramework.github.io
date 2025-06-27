@@ -17,5 +17,6 @@
         MarkupObject – The parsed markup object with size information.
 
     Example Usage:
+        -- This snippet demonstrates a common usage of lia.markup.parse
         local object = lia.markup.parse("<color=255,0,0>Hello</color>", 200)
 ]]

@@ -17,6 +17,10 @@
 
     Returns:
         nil
+
+    Example Usage:
+        -- This snippet demonstrates a common usage of lia.webimage.register
+        lia.webimage.register("logo.png", "https://example.com/logo.png")
 ]]
 
 --[[
@@ -35,4 +39,8 @@
 
     Returns:
         Material|nil – The image material or nil if missing.
+
+    Example Usage:
+        -- This snippet demonstrates a common usage of lia.webimage.get
+        local mat = lia.webimage.get("logo.png")
 ]]

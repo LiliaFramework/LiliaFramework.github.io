@@ -11,8 +11,15 @@
             Called after the F1 menu panel is created so additional sections can be added.
             Populates the character information sections of the F1 menu.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Prints a message after the info panel is built.
             hook.Add("LoadCharInformation", "PrintLoad", function()
@@ -31,6 +38,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Inserts a custom "Help" tab into the F1 menu.
             hook.Add("CreateMenuButtons", "AddHelpTab", function(tabs)
@@ -50,6 +61,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Draws "Preview" text over the character model each frame.
             hook.Add("DrawLiliaModelView", "Watermark", function(panel, entity)
@@ -68,6 +83,10 @@
 
         Realm:
             Client
+
+        Returns:
+            boolean – Return true to allow override
+
         Example Usage:
             -- Allows other hooks to replace player names on the scoreboard.
             hook.Add("ShouldAllowScoreboardOverride", "OverrideNames", function(ply, field)
@@ -85,6 +104,10 @@
 
         Realm:
             Client
+
+        Returns:
+            string or nil – Name text to display
+
         Example Usage:
             -- Displays player names with an admin prefix.
             hook.Add("GetDisplayedName", "AdminPrefix", function(ply)
@@ -104,6 +127,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Announces in chat when someone stops using voice chat.
             hook.Add("PlayerEndVoice", "NotifyVoiceStop", function(ply)
@@ -122,6 +149,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Lets you react when a spawn menu icon is removed.
             hook.Add("SpawnlistContentChanged", "IconRemoved", function(icon)
@@ -143,6 +174,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Draws the item quantity in the bottom-right corner.
             hook.Add("ItemPaintOver", "ShowQuantity", function(panel, item, w, h)
@@ -163,6 +198,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Adds an "Inspect" choice to an item's context menu.
             hook.Add("OnCreateItemInteractionMenu", "AddInspect", function(panel, menu, item)
@@ -185,6 +224,7 @@
 
         Returns:
             boolean – True if the action can run.
+
         Example Usage:
             -- Disables the drop action for all items.
             hook.Add("CanRunItemAction", "BlockDrop", function(item, action)
@@ -204,6 +244,10 @@
 
         Realm:
             Client
+
+        Returns:
+            number – Maximum starting points
+
         Example Usage:
             -- Gives every new character 60 starting points.
             hook.Add("GetMaxStartingAttributePoints", "DoublePoints", function(client)
@@ -223,6 +267,10 @@
 
         Realm:
             Client
+
+        Returns:
+            number – Maximum starting value
+
         Example Usage:
             -- Limits the Strength attribute to a maximum of 20.
             hook.Add("GetAttributeStartingMax", "CapStrength", function(client, attribute)
@@ -241,6 +289,10 @@
 
         Realm:
             Client
+
+        Returns:
+            boolean – False to hide the player
+
         Example Usage:
             -- Stops bots from showing up on the scoreboard.
             hook.Add("ShouldShowPlayerOnScoreboard", "HideBots", function(ply)
@@ -260,6 +312,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Adds a friendly "Wave" choice in the scoreboard menu.
             hook.Add("ShowPlayerOptions", "WaveOption", function(ply, options)
@@ -279,6 +335,10 @@
 
         Realm:
             Client
+
+        Returns:
+            string – Description text
+
         Example Usage:
             -- Shows an OOC description when requested by the scoreboard.
             hook.Add("GetDisplayedDescription", "OOCDesc", function(ply, isOOC)
@@ -297,6 +357,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Displays a hint when the user types "/help".
             hook.Add("ChatTextChanged", "CommandHint", function(text)
@@ -310,8 +374,15 @@
             Fires when the chat box closes.
             Fired when the chat box is closed.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Prints a message whenever the chat box closes.
             hook.Add("FinishChat", "ChatClosed", function()
@@ -325,8 +396,15 @@
             Fires when the chat box opens.
             Fired when the chat box is opened.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Plays a sound whenever the chat box opens.
             hook.Add("StartChat", "ChatOpened", function()
@@ -349,6 +427,7 @@
 
         Returns:
             string – Modified markup text.
+
         Example Usage:
             -- Turns chat messages green before they appear.
             hook.Add("ChatAddText", "GreenSystem", function(text, ...)
@@ -369,6 +448,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Adds the item's weight to its tooltip.
             hook.Add("DisplayItemRelevantInfo", "ShowWeight", function(extra, client, item)
@@ -390,6 +473,7 @@
 
         Returns:
             Vector, Angle – Position and angle values.
+
         Example Usage:
             -- Positions the main menu camera with a slight offset.
             hook.Add("GetMainMenuPosition", "OffsetCharView", function(character)
@@ -411,6 +495,7 @@
 
         Returns:
             boolean – False to disallow deletion.
+
         Example Usage:
             -- Blocks deletion of the first character slot.
             hook.Add("CanDeleteChar", "ProtectSlot1", function(id)
@@ -430,6 +515,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Adds the character's faction to the menu info panel.
             hook.Add("LoadMainMenuInformation", "AddFactionInfo", function(info, character)
@@ -451,6 +540,7 @@
 
         Returns:
             boolean – False to disallow creation.
+
         Example Usage:
             -- Restricts character creation to admins only.
             hook.Add("CanPlayerCreateChar", "AdminsOnly", function(ply)
@@ -470,6 +560,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Changes a bodygroup on the preview model.
             hook.Add("ModifyCharacterModel", "ApplyBodygroup", function(ent, character)
@@ -488,6 +582,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Adds a custom "background" step to the character creator.
             hook.Add("ConfigureCharacterCreationSteps", "InsertBackground", function(panel)
@@ -509,6 +607,7 @@
 
         Returns:
             number – Maximum character count.
+
         Example Usage:
             -- Gives admins extra character slots.
             hook.Add("GetMaxPlayerChar", "AdminSlots", function(ply)
@@ -530,6 +629,7 @@
 
         Returns:
             boolean, string – False and reason to hide.
+
         Example Usage:
             -- Hides the delete button when the feature is locked.
             hook.Add("ShouldMenuButtonShow", "HideDelete", function(name)
@@ -543,8 +643,15 @@
             Called when the character creation panel should reset.
             Called to reset the character creation panel.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Notifies whenever the creation panel resets.
             hook.Add("ResetCharacterPanel", "ClearFields", function()
@@ -558,8 +665,15 @@
             Notifies when the EasyIcons font sheet has loaded.
             Fired when the EasyIcons library has loaded.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Prints a message once the EasyIcons font is loaded.
             hook.Add("EasyIconsLoaded", "Notify", function()
@@ -579,6 +693,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Logs newly registered CAMI usergroups.
             hook.Add("CAMI.OnUsergroupRegistered", "LogGroup", function(group)
@@ -598,6 +716,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Logs whenever a usergroup is removed from CAMI.
             hook.Add("CAMI.OnUsergroupUnregistered", "LogRemoval", function(group)
@@ -616,6 +738,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Reports when a new CAMI privilege is registered.
             hook.Add("CAMI.OnPrivilegeRegistered", "LogPrivilege", function(priv)
@@ -634,6 +760,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Reports when a CAMI privilege is removed.
             hook.Add("CAMI.OnPrivilegeUnregistered", "LogPrivRemoval", function(priv)
@@ -657,6 +787,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Lets superadmins bypass privilege checks.
             hook.Add("CAMI.PlayerHasAccess", "AllowSuperadmins", function(_, actor, priv, cb)
@@ -680,6 +814,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Grants access for a specific SteamID.
             hook.Add("CAMI.SteamIDHasAccess", "AllowSteamID", function(_, steamID, priv, cb)
@@ -701,6 +839,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Announces when a player's usergroup changes.
             hook.Add("CAMI.PlayerUsergroupChanged", "AnnounceChange", function(ply, old, new)
@@ -722,6 +864,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Logs usergroup changes by SteamID.
             hook.Add("CAMI.SteamIDUsergroupChanged", "LogSIDChange", function(sid, old, new)
@@ -739,6 +885,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Sets a fixed width for tooltips before layout.
             hook.Add("TooltipLayout", "FixedWidth", function(panel)
@@ -758,6 +908,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Adds a dark background and skips default paint.
             hook.Add("TooltipPaint", "BlurBackground", function(panel, w, h)
@@ -778,6 +932,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Fades tooltips in when they are created.
             hook.Add("TooltipInitialize", "SetupFade", function(panel, target)
@@ -797,6 +955,10 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
             -- Gives players a crowbar on spawn.
             hook.Add("PlayerLoadout", "GiveCrowbar", function(ply)
@@ -817,6 +979,10 @@
 
         Realm:
             Server
+
+        Returns:
+            boolean – Return true to mark for permanent death
+
         Example Usage:
             -- Prevent permanent death from fall damage.
             hook.Add("PlayerShouldPermaKill", "NoFallPK", function(ply, inflictor)
@@ -836,6 +1002,10 @@
 
         Realm:
             Server
+
+        Returns:
+            boolean – False to block dropping
+
         Example Usage:
             -- Disallow dropping locked items.
             hook.Add("CanPlayerDropItem", "NoLockedDrop", function(ply, item)
@@ -855,6 +1025,10 @@
 
         Realm:
             Server
+
+        Returns:
+            boolean – False to prevent pickup
+
         Example Usage:
             -- Block taking admin items.
             hook.Add("CanPlayerTakeItem", "NoAdminPickup", function(ply, item)
@@ -874,6 +1048,10 @@
 
         Realm:
             Server
+
+        Returns:
+            boolean – False to block equipping
+
         Example Usage:
             -- Allow equipping only if level requirement met.
             hook.Add("CanPlayerEquipItem", "CheckLevel", function(ply, item)
@@ -895,6 +1073,10 @@
 
         Realm:
             Server
+
+        Returns:
+            boolean – False to prevent unequipping
+
         Example Usage:
             -- Prevent unequipping cursed gear.
             hook.Add("CanPlayerUnequipItem", "Cursed", function(ply, item)
@@ -916,6 +1098,10 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
             -- Log all OOC chat.
             hook.Add("PostPlayerSay", "LogOOC", function(ply, msg, chatType)
@@ -934,6 +1120,10 @@
 
         Realm:
             Server
+
+        Returns:
+            boolean – False to skip ragdoll
+
         Example Usage:
             -- Disable ragdolls for bots.
             hook.Add("ShouldSpawnClientRagdoll", "NoBotRagdoll", function(ply)
@@ -947,8 +1137,15 @@
             Called when the framework saves persistent data.
             Modules can store custom information here.
 
+        Parameters:
+            None
+
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
             -- Save a timestamp to file.
             hook.Add("SaveData", "RecordTime", function()
@@ -962,11 +1159,29 @@
             Fires when map persistence should be written to disk.
             Allows adding extra persistent entities.
 
+        Parameters:
+            None
+
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
-            hook.Add("PersistenceSave", "Notice", function()
-                print("Saving persistent entities")
+            -- Backs up all persistent entities to a data file whenever saving occurs.
+            hook.Add("PersistenceSave", "BackupEntities", function()
+                local entities = {}
+                for _, ent in ipairs(ents.GetAll()) do
+                    if ent:GetPersistent() then
+                        entities[#entities + 1] = {
+                            class = ent:GetClass(),
+                            pos = ent:GetPos(),
+                            ang = ent:GetAngles()
+                        }
+                    end
+                end
+                file.Write("backup/entities.txt", util.TableToJSON(entities, true))
             end)
 ]]
 --[[
@@ -998,11 +1213,30 @@
             Triggered when stored data should be loaded.
             Modules can restore custom information here.
 
+        Parameters:
+            None
+
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
-            hook.Add("LoadData", "LoadExtras", function()
-                print("Loading custom data")
+            -- Restores map props from a saved JSON file on disk.
+            hook.Add("LoadData", "LoadCustomProps", function()
+                if file.Exists("map/props.txt", "DATA") then
+                    local props = util.JSONToTable(file.Read("map/props.txt", "DATA")) or {}
+                    for _, info in ipairs(props) do
+                        local ent = ents.Create(info.class)
+                        if IsValid(ent) then
+                            ent:SetPos(info.pos)
+                            ent:SetAngles(info.ang)
+                            ent:Spawn()
+                            ent:Activate()
+                        end
+                    end
+                end
             end)
 ]]
 --[[
@@ -1012,11 +1246,25 @@
             Called after all persistent data has loaded.
             Useful for post-processing.
 
+        Parameters:
+            None
+
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
-            hook.Add("PostLoadData", "Ready", function()
-                print("Data fully loaded")
+            -- Spawns a supply crate at a stored position once everything is loaded.
+            hook.Add("PostLoadData", "SpawnCrate", function()
+                local info = lia.data.get("supplyCrate")
+                if info then
+                    local crate = ents.Create("prop_physics")
+                    crate:SetModel("models/props_junk/wood_crate001a.mdl")
+                    crate:SetPos(info.pos)
+                    crate:Spawn()
+                end
             end)
 ]]
 --[[
@@ -1026,8 +1274,15 @@
             Queries if data saving should occur during shutdown.
             Return false to cancel saving.
 
+        Parameters:
+            None
+
         Realm:
             Server
+
+        Returns:
+            boolean – False to cancel saving
+
         Example Usage:
             -- Skip saving during quick restarts.
             hook.Add("ShouldDataBeSaved", "NoSave", function()
@@ -1047,9 +1302,14 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
-            hook.Add("OnCharDisconnect", "Goodbye", function(ply, char)
-                print(char:getName(), "has left")
+            -- Store the character's last position so it can be restored later.
+            hook.Add("OnCharDisconnect", "SaveLogoutPos", function(ply, char)
+                char:setData("logoutPos", ply:GetPos())
             end)
 ]]
 --[[
@@ -1064,9 +1324,16 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
-            hook.Add("SetupBotPlayer", "WelcomeBot", function(bot)
-                bot:ChatPrint("Beep boop!")
+            -- Give the bot a starter pistol and set up a small inventory.
+            hook.Add("SetupBotPlayer", "InitBot", function(bot)
+                local char = bot:getChar()
+                char.vars.inv = {lia.inventory.new("GridInv")}
+                bot:Give("weapon_pistol")
             end)
 ]]
 --[[
@@ -1081,9 +1348,18 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
-            hook.Add("PlayerLiliaDataLoaded", "SendWelcome", function(ply)
-                ply:ChatPrint("Data loaded")
+            -- Cache the player's faction color from saved data for use after their character loads.
+            hook.Add("PlayerLiliaDataLoaded", "CacheFactionColor", function(ply)
+                local fid = ply:getData("factionID", 0)
+                local faction = lia.faction.indices[fid]
+                if faction then
+                    ply.cachedFactionColor = faction.color
+                end
             end)
 ]]
 --[[
@@ -1098,9 +1374,15 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
-            hook.Add("PostPlayerInitialSpawn", "Greet", function(ply)
-                print("Hello", ply:Nick())
+            -- Initialize some default variables for new players.
+            hook.Add("PostPlayerInitialSpawn", "SetupTutorialState", function(ply)
+                ply:setNetVar("inTutorial", true)
+                ply:ChatPrint("Welcome! Follow the arrows to begin the tutorial.")
             end)
 ]]
 --[[
@@ -1115,7 +1397,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when FactionOnLoadout is triggered
             hook.Add("FactionOnLoadout", "GiveRadio", function(ply)
                 if ply:getChar():getFaction() == "police" then
                     ply:Give("weapon_radio")
@@ -1134,7 +1421,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when ClassOnLoadout is triggered
             hook.Add("ClassOnLoadout", "MedicItems", function(ply)
                 if ply:getChar():getClass() == "medic" then
                     ply:Give("medkit")
@@ -1153,9 +1445,14 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when PostPlayerLoadout is triggered
             hook.Add("PostPlayerLoadout", "SetColor", function(ply)
-                ply:SetPlayerColor(Vector(0,1,0))
+                ply:SetPlayerColor(Vector(0, 1, 0))
             end)
 ]]
 --[[
@@ -1170,7 +1467,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when FactionPostLoadout is triggered
             hook.Add("FactionPostLoadout", "Shout", function(ply)
                 if ply:getChar():getFaction() == "soldier" then
                     ply:EmitSound("npc/combine_soldier/gear6.wav")
@@ -1189,7 +1491,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when ClassPostLoadout is triggered
             hook.Add("ClassPostLoadout", "Pose", function(ply)
                 ply:ConCommand("act muscle")
             end)
@@ -1206,7 +1513,12 @@
 
         Realm:
             Server
+
+        Returns:
+            string – Inventory type
+
         Example Usage:
+            -- Prints a message when GetDefaultInventoryType is triggered
             hook.Add("GetDefaultInventoryType", "UseGrid", function()
                 return "GridInv"
             end)
@@ -1218,9 +1530,17 @@
             Decides whether saved persistent items should be deleted on load.
             Return true to wipe them from the database.
 
+        Parameters:
+            None
+
         Realm:
             Server
+
+        Returns:
+            boolean – True to delete items
+
         Example Usage:
+            -- Prints a message when ShouldDeleteSavedItems is triggered
             hook.Add("ShouldDeleteSavedItems", "ClearDrops", function()
                 return false
             end)
@@ -1237,7 +1557,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnSavedItemLoaded is triggered
             hook.Add("OnSavedItemLoaded", "PrintCount", function(items)
                 print("Loaded", #items, "items")
             end)
@@ -1254,7 +1579,12 @@
 
         Realm:
             Client
+
+        Returns:
+            boolean – False to hide info
+
         Example Usage:
+            -- Prints a message when ShouldDrawEntityInfo is triggered
             hook.Add("ShouldDrawEntityInfo", "HideNPCs", function(ent)
                 if ent:IsNPC() then return false end
             end)
@@ -1273,7 +1603,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when DrawEntityInfo is triggered
             hook.Add("DrawEntityInfo", "LabelProps", function(ent, a, pos)
                 draw.SimpleText(ent:GetClass(), "DermaDefault", pos.x, pos.y, Color(255,255,255,a))
             end)
@@ -1290,7 +1625,12 @@
 
         Realm:
             Client
+
+        Returns:
+            table – {text, color} info
+
         Example Usage:
+            -- Prints a message when GetInjuredText is triggered
             hook.Add("GetInjuredText", "SimpleHealth", function(ply)
                 if ply:Health() <= 20 then return {"Critical", Color(255,0,0)} end
             end)
@@ -1307,7 +1647,12 @@
 
         Realm:
             Client
+
+        Returns:
+            boolean – False to hide info
+
         Example Usage:
+            -- Prints a message when ShouldDrawPlayerInfo is triggered
             hook.Add("ShouldDrawPlayerInfo", "HideLocal", function(ply)
                 if ply == LocalPlayer() then return false end
             end)
@@ -1326,7 +1671,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when DrawCharInfo is triggered
             hook.Add("DrawCharInfo", "JobTitle", function(ply, char, info)
                 info[#info + 1] = {"Job: " .. (char:getClass() or "None")}
             end)
@@ -1343,7 +1693,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when ItemShowEntityMenu is triggered
             hook.Add("ItemShowEntityMenu", "QuickTake", function(ent)
                 print("Opening menu for", ent)
             end)
@@ -1355,9 +1710,17 @@
             Fired just before the client finishes loading the framework.
             Useful for setup tasks.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when PreLiliaLoaded is triggered
             hook.Add("PreLiliaLoaded", "Prep", function()
                 print("About to finish loading")
             end)
@@ -1369,9 +1732,17 @@
             Indicates the client finished initializing the framework.
             Modules can start creating panels here.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when LiliaLoaded is triggered
             hook.Add("LiliaLoaded", "Ready", function()
                 print("Lilia client ready")
             end)
@@ -1391,7 +1762,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when InventoryDataChanged is triggered
             hook.Add("InventoryDataChanged", "TrackWeight", function(inv, k, old, new)
                 if k == "weight" then print("Weight changed to", new) end
             end)
@@ -1408,7 +1784,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when ItemInitialized is triggered
             hook.Add("ItemInitialized", "PrintID", function(item)
                 print("Created item", item.uniqueID)
             end)
@@ -1425,7 +1806,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when InventoryInitialized is triggered
             hook.Add("InventoryInitialized", "AnnounceInv", function(inv)
                 print("Inventory", inv:getID(), "ready")
             end)
@@ -1443,7 +1829,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when InventoryItemAdded is triggered
             hook.Add("InventoryItemAdded", "NotifyAdd", function(inv, item)
                 print("Added", item.name)
             end)
@@ -1461,7 +1852,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when InventoryItemRemoved is triggered
             hook.Add("InventoryItemRemoved", "NotifyRemove", function(inv, item)
                 print("Removed", item.name)
             end)
@@ -1478,7 +1874,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when InventoryDeleted is triggered
             hook.Add("InventoryDeleted", "Clear", function(inv)
                 print("Inventory", inv:getID(), "deleted")
             end)
@@ -1495,7 +1896,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when ItemDeleted is triggered
             hook.Add("ItemDeleted", "Log", function(item)
                 print("Item", item.uniqueID, "gone")
             end)
@@ -1515,7 +1921,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnCharVarChanged is triggered
             hook.Add("OnCharVarChanged", "WatchMoney", function(char, k, old, new)
                 if k == "money" then print("Money changed", new) end
             end)
@@ -1535,7 +1946,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnCharLocalVarChanged is triggered
             hook.Add("OnCharLocalVarChanged", "WatchFlags", function(char, k, old, new)
                 if k == "flags" then print("Flags changed") end
             end)
@@ -1555,7 +1971,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when ItemDataChanged is triggered
             hook.Add("ItemDataChanged", "TrackDurability", function(item, key)
                 if key == "durability" then print("New durability", item.data[key]) end
             end)
@@ -1574,7 +1995,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when ItemQuantityChanged is triggered
             hook.Add("ItemQuantityChanged", "CountStacks", function(item, old, new)
                 print("Quantity now", new)
             end)
@@ -1592,7 +2018,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when KickedFromChar is triggered
             hook.Add("KickedFromChar", "Notify", function(id, current)
                 print("Kicked from", id, current and "(current)" or "")
             end)
@@ -1613,7 +2044,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when HandleItemTransferRequest is triggered
             hook.Add("HandleItemTransferRequest", "LogMove", function(ply, itemID, x, y)
                 print(ply, "moved item", itemID, "to", x, y)
             end)
@@ -1630,7 +2066,12 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when CharLoaded is triggered
             hook.Add("CharLoaded", "Notify", function(id)
                 print("Character", id, "loaded")
             end)
@@ -1647,7 +2088,12 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when PreCharDelete is triggered
             hook.Add("PreCharDelete", "Protect", function(id)
                 if id == 1 then return false end
             end)
@@ -1665,7 +2111,12 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnCharDelete is triggered
             hook.Add("OnCharDelete", "Announce", function(ply, id)
                 print(ply, "deleted char", id)
             end)
@@ -1684,7 +2135,12 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnCharCreated is triggered
             hook.Add("OnCharCreated", "Welcome", function(ply, char)
                 print("Created", char:getName())
             end)
@@ -1701,7 +2157,12 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnTransferred is triggered
             hook.Add("OnTransferred", "Goodbye", function(ply)
                 print(ply, "left the server")
             end)
@@ -1718,7 +2179,12 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when CharPreSave is triggered
             hook.Add("CharPreSave", "Record", function(char)
                 char:setData("lastSave", os.time())
             end)
@@ -1735,7 +2201,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when CharListLoaded is triggered
             hook.Add("CharListLoaded", "CountChars", function(list)
                 print("Loaded", #list, "characters")
             end)
@@ -1753,7 +2224,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when CharListUpdated is triggered
             hook.Add("CharListUpdated", "Diff", function(old, new)
                 print("Characters updated")
             end)
@@ -1770,7 +2246,12 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+        -- Prints a message when getCharMaxStamina is triggered
         hook.Add("getCharMaxStamina", "Double", function(char)
             return 200
         end)
@@ -1791,7 +2272,9 @@
 
         Returns:
             number – Modified stamina cost.
+
         Example Usage:
+            -- Prints a message when AdjustStaminaOffsetRunning is triggered
             hook.Add("AdjustStaminaOffsetRunning", "EnduranceBonus", function(ply, cost)
                 return cost + ply:getChar():getAttrib("stamina", 0) * -0.01
             end)
@@ -1812,7 +2295,9 @@
 
         Returns:
             number – Modified regeneration amount.
+
         Example Usage:
+            -- Prints a message when AdjustStaminaRegeneration is triggered
             hook.Add("AdjustStaminaRegeneration", "RestAreaBoost", function(ply, amount)
                 if ply:isInSafeZone() then
                     return amount * 2
@@ -1835,7 +2320,9 @@
 
         Returns:
             number – New offset to apply.
+
         Example Usage:
+            -- Prints a message when AdjustStaminaOffset is triggered
             hook.Add("AdjustStaminaOffset", "MinimumDrain", function(ply, off)
                 return math.max(off, -1)
             end)
@@ -1853,7 +2340,12 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when PostLoadFonts is triggered
             hook.Add("PostLoadFonts", "LogoFont", function()
                 surface.CreateFont("Logo", {size = 32, font = "Tahoma"})
             end)
@@ -1874,6 +2366,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Adds a custom thirst bar next to stamina.
             hook.Add("AddBarField", "AddThirstBar", function(section, id, label, min, max, value)
@@ -1894,6 +2390,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Add a custom "Settings" tab.
             hook.Add("AddSection", "AddSettingsSection", function(name, color, priority)
@@ -1917,6 +2417,10 @@
 
         Realm:
             Server
+
+        Returns:
+            boolean, string – False and reason to block
+
         Example Usage:
             -- Prevent quest items from being dropped.
             hook.Add("CanItemBeTransfered", "BlockQuestItemDrop", function(item, newInv, oldInv)
@@ -1934,8 +2438,10 @@
 
         Realm:
             Client
+
         Returns:
             boolean – False to block opening.
+
         Example Usage:
             -- Disallow bag use while fighting.
             hook.Add("CanOpenBagPanel", "BlockBagInCombat", function(item)
@@ -1953,8 +2459,10 @@
 
         Realm:
             Shared
+
         Returns:
             boolean – False to block the change.
+
         Example Usage:
             -- Restrict model swaps for certain factions.
             hook.Add("CanOutfitChangeModel", "RestrictModelSwap", function(item)
@@ -1973,8 +2481,10 @@
 
         Realm:
             Shared
+
         Returns:
             boolean – False to disallow editing.
+
         Example Usage:
             -- Allow only admins to edit vendors.
             hook.Add("CanPerformVendorEdit", "AdminVendorEdit", function(client)
@@ -1993,8 +2503,10 @@
 
         Realm:
             Shared
+
         Returns:
             boolean – False to disallow pickup.
+
         Example Usage:
             -- Prevent money pickup while handcuffed.
             hook.Add("CanPickupMoney", "BlockWhileCuffed", function(client)
@@ -2014,8 +2526,10 @@
 
         Realm:
             Shared
+
         Returns:
             boolean – False to deny access.
+
         Example Usage:
             -- Only police can unlock jail cells.
             hook.Add("CanPlayerAccessDoor", "PoliceDoors", function(client, door, access)
@@ -2034,8 +2548,10 @@
 
         Realm:
             Server
+
         Returns:
             boolean – False to deny access.
+
         Example Usage:
             -- Block access unless the vendor allows the player's faction.
             hook.Add("CanPlayerAccessVendor", "CheckVendorFaction", function(client, vendor)
@@ -2054,8 +2570,10 @@
 
         Realm:
             Shared
+
         Returns:
             boolean – False to prevent holding.
+
         Example Usage:
             -- Prevent grabbing heavy physics objects.
             hook.Add("CanPlayerHoldObject", "WeightLimit", function(client, ent)
@@ -2075,8 +2593,10 @@
 
         Realm:
             Shared
+
         Returns:
             boolean – False to block the action.
+
         Example Usage:
             -- Block medkit use inside safe zones.
             hook.Add("CanPlayerInteractItem", "SafeZoneBlock", function(client, action, item)
@@ -2097,8 +2617,10 @@
 
         Realm:
             Shared
+
         Returns:
             boolean – False to block knocking.
+
         Example Usage:
             -- Prevent knocking while disguised.
             hook.Add("CanPlayerKnock", "BlockDisguisedKnock", function(client, door)
@@ -2118,8 +2640,10 @@
 
         Realm:
             Server
+
         Returns:
             boolean – False to deny spawning.
+
         Example Usage:
             -- Limit players to one storage crate.
             hook.Add("CanPlayerSpawnStorage", "LimitStorage", function(client, ent, data)
@@ -2137,8 +2661,10 @@
 
         Realm:
             Shared
+
         Returns:
             boolean – False to block punching.
+
         Example Usage:
             -- Prevent punching while restrained.
             hook.Add("CanPlayerThrowPunch", "NoPunchWhenTied", function(client)
@@ -2159,6 +2685,10 @@
 
         Realm:
             Server
+
+        Returns:
+            boolean, string – False and reason to deny trade
+
         Example Usage:
             -- Block selling stolen goods.
             hook.Add("CanPlayerTradeWithVendor", "DisallowStolenItems", function(client, vendor, itemType, selling)
@@ -2171,8 +2701,15 @@
         Description:
             Called before any inventory menu is shown.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            boolean – False to prevent opening
+
         Example Usage:
             -- Prevent opening inventory while in a cutscene.
             hook.Add("CanPlayerViewInventory", "BlockDuringCutscene", function()
@@ -2191,6 +2728,10 @@
 
         Realm:
             Server
+
+        Returns:
+            boolean – False to cancel saving
+
         Example Usage:
             -- Disable saving during special events.
             hook.Add("CanSaveData", "NoEventSaves", function(entity, inv)
@@ -2209,6 +2750,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Grant extra access for characters owned by admins.
             hook.Add("CharHasFlags", "AdminExtraFlags", function(char, flags)
@@ -2229,6 +2774,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Log every time characters save data.
             hook.Add("CharPostSave", "LogCharSaves", function(char)
@@ -2241,8 +2790,15 @@
         Description:
             Fired after the database has been successfully connected.
 
+        Parameters:
+            None
+
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Prepare custom tables once the DB connects.
             hook.Add("DatabaseConnected", "CreateCustomTables", function()
@@ -2264,6 +2820,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Display remaining uses next to item name.
             hook.Add("DrawItemDescription", "AddUseCount", function(item, x, y, color, alpha)
@@ -2282,6 +2842,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            number – Maximum attribute value
+
         Example Usage:
             -- Increase stamina cap for admins.
             hook.Add("GetAttributeMax", "AdminStamina", function(client, attrib)
@@ -2301,6 +2865,10 @@
 
         Realm:
             Server
+
+        Returns:
+            number, number – Width and height
+
         Example Usage:
             -- Expand default bags for admins.
             hook.Add("GetDefaultInventorySize", "AdminBags", function(client)
@@ -2320,6 +2888,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            string – Model path to use
+
         Example Usage:
             -- Use a golden model for large sums.
             hook.Add("GetMoneyModel", "GoldMoneyModel", function(amount)
@@ -2340,6 +2912,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Scale punch damage by strength attribute.
             hook.Add("GetPlayerPunchDamage", "StrengthPunch", function(client, dmg, context)
@@ -2359,6 +2935,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Shift-click to quickly move items.
             hook.Add("InterceptClickItemIcon", "ShiftQuickMove", function(panel, icon, key)
@@ -2381,6 +2961,7 @@
 
         Returns:
             bool – true if combination succeeds and items are consumed, false otherwise.
+
         Example Usage:
             -- Combine two ammo boxes into one stack.
             hook.Add("ItemCombine", "StackAmmo", function(client, base, other)
@@ -2403,6 +2984,10 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
             -- Drop the item into the world when removed.
             hook.Add("ItemDraggedOutOfInventory", "DropOnDragOut", function(_, item)
@@ -2424,6 +3009,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Log item function usage for analytics.
             hook.Add("ItemFunctionCalled", "TrackItemUse", function(item, action, client, entity, result)
@@ -2441,6 +3030,10 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
             -- Notify the player about the transfer result.
             hook.Add("ItemTransfered", "NotifyTransfer", function(context)
@@ -2462,6 +3055,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Notify the player when they gain a temporary bonus.
             hook.Add("OnCharAttribBoosted", "BoostNotice", function(client, char, key, id, amount)
@@ -2482,6 +3079,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Print the changed attribute on the local player's HUD.
             hook.Add("OnCharAttribUpdated", "PrintAttribChange", function(client, char, key, value)
@@ -2503,6 +3104,10 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
             -- Apply a stun effect when knocked down.
             hook.Add("OnCharFallover", "ApplyStun", function(client, _, forced)
@@ -2521,6 +3126,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Record the kick reason.
             hook.Add("OnCharKick", "LogKickReason", function(char, client)
@@ -2539,6 +3148,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Announce permadeath in chat.
             hook.Add('OnCharPermakilled', 'AnnouncePK', function(char, time)
@@ -2556,6 +3169,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Play a sound whenever someone becomes recognized.
             hook.Add('OnCharRecognized', 'PlayRecognizeSound', function(client)
@@ -2579,6 +3196,10 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
             -- Log vendor transactions to the console.
             hook.Add('OnCharTradeVendor', 'LogVendorTrade', function(client, vendor, item, selling)
@@ -2598,6 +3219,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Tint death ragdolls red.
             hook.Add('OnCreatePlayerRagdoll', 'RedRagdoll', function(client, ent, dead)
@@ -2617,6 +3242,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Add a custom tab to storage windows.
             hook.Add('OnCreateStoragePanel', 'AddSortTab', function(localPanel, storagePanel, storage)
@@ -2635,6 +3264,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Play a sound when ammo is picked up.
             hook.Add('OnItemAdded', 'AmmoPickupSound', function(ply, item)
@@ -2655,6 +3288,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Set custom data on freshly made items.
             hook.Add('OnItemCreated', 'InitCustomData', function(item)
@@ -2672,6 +3309,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Play a sound when rare items appear.
             hook.Add('OnItemSpawned', 'RareSpawnSound', function(itemEnt)
@@ -2690,6 +3331,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Automatically switch to the buy tab.
             hook.Add('OnOpenVendorMenu', 'DefaultBuyTab', function(panel, vendor)
@@ -2708,6 +3353,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Reward an achievement for looting money.
             hook.Add('OnPickupMoney', 'MoneyAchievement', function(client, ent)
@@ -2729,6 +3378,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Freeze the player during the sequence.
             hook.Add('OnPlayerEnterSequence', 'FreezeDuringSeq', function(client, seq, callback, time, noFreeze)
@@ -2750,6 +3403,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Send analytics for item usage.
             hook.Add('OnPlayerInteractItem', 'Analytics', function(client, action, item, result, data)
@@ -2769,6 +3426,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Give class specific weapons.
             hook.Add('OnPlayerJoinClass', 'ClassWeapons', function(client, class, oldClass)
@@ -2786,6 +3447,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Unfreeze the player after the sequence.
             hook.Add('OnPlayerLeaveSequence', 'UnfreezeAfterSeq', function(client)
@@ -2803,6 +3468,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Warn players when their ammo stack disappears.
             hook.Add('OnPlayerLostStackItem', 'WarnLostAmmo', function(item)
@@ -2822,6 +3491,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Prevent switching while in combat.
             hook.Add('OnPlayerSwitchClass', 'NoCombatSwap', function(client, class, oldClass)
@@ -2843,6 +3516,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Validate transfers before sending to the server.
             hook.Add('OnRequestItemTransfer', 'ValidateTransfer', function(panel, itemID, invID, x, y)
@@ -2860,6 +3537,10 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
             -- Verify entities when the map reloads.
             hook.Add('PersistenceLoad', 'CheckPersistent', function(name)
@@ -2878,6 +3559,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Track how often players browse vendors.
             hook.Add('PlayerAccessVendor', 'VendorAnalytics', function(client, vendor)
@@ -2895,6 +3580,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Print the player's stamina amount whenever it increases.
             hook.Add('PlayerStaminaGained', 'PrintStaminaGain', function(client)
@@ -2914,6 +3603,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Play a sound when the player runs out of stamina.
             hook.Add('PlayerStaminaLost', 'TiredSound', function(client)
@@ -2934,6 +3627,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Play a custom sound on punch.
             hook.Add('PlayerThrowPunch', 'PunchSound', function(client, trace)
@@ -2952,6 +3649,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Draw a watermark over the inventory.
             hook.Add('PostDrawInventory', 'InventoryWatermark', function(panel)
@@ -2971,6 +3672,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Deny using keys on locked chests.
             hook.Add('PrePlayerInteractItem', 'BlockChestKeys', function(client, action, item)
@@ -2988,6 +3693,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Only the bag owner may open it.
             hook.Add('SetupBagInventoryAccessRules', 'OwnerOnlyBags', function(inv)
@@ -3000,8 +3709,15 @@
         Description:
             Runs before the gamemode initializes its database connection.
 
+        Parameters:
+            None
+
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
             -- Register additional tables.
             hook.Add('SetupDatabase', 'AddExtraTables', function()
@@ -3021,6 +3737,10 @@
 
         Realm:
             Server
+
+        Returns:
+            boolean – False to disallow transfer
+
         Example Usage:
             -- Prevent weapons from being stored in car trunks.
             hook.Add('StorageCanTransferItem', 'NoWeaponsInCars', function(client, storage, item)
@@ -3039,6 +3759,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Drop items when a crate is destroyed.
             hook.Add('StorageEntityRemoved', 'DropContents', function(entity, inv)
@@ -3058,6 +3782,10 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
             -- Send a notification when storage is initialized.
             hook.Add('StorageInventorySet', 'NotifyStorage', function(entity, inv, isCar)
@@ -3076,6 +3804,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Display storage name in the chat.
             hook.Add('StorageOpen', 'AnnounceStorage', function(entity, isCar)
@@ -3094,6 +3826,10 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
             -- Log how many items were restored.
             hook.Add('StorageRestored', 'PrintRestore', function(storage, inv)
@@ -3111,6 +3847,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Auto-fill a remembered password.
             hook.Add('StorageUnlockPrompt', 'AutoFill', function(entity)
@@ -3123,8 +3863,15 @@
         Description:
             Called when a vendor's allowed classes are updated.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- React to class access changes.
             hook.Add("VendorClassUpdated", "LogVendorClassChange", function(vendor, id, allowed)
@@ -3137,8 +3884,15 @@
         Description:
             Called after a delay when a vendor's data is edited.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Log which key changed.
             hook.Add("VendorEdited", "PrintVendorEdit", function(vendor, key)
@@ -3151,8 +3905,15 @@
         Description:
             Called when a player exits from interacting with a vendor.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Notify the player when they leave a vendor.
             hook.Add("VendorExited", "PrintVendorExit", function()
@@ -3165,8 +3926,15 @@
         Description:
             Called when a vendor's allowed factions are updated.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Print updated faction permissions.
             hook.Add("VendorFactionUpdated", "LogVendorFactionUpdate", function(vendor, id, allowed)
@@ -3179,8 +3947,15 @@
         Description:
             Called when a vendor's item max stock value changes.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Log stock limit changes.
             hook.Add("VendorItemMaxStockUpdated", "LogVendorStockLimits", function(vendor, itemType, value)
@@ -3193,8 +3968,15 @@
         Description:
             Called when a vendor's item mode is changed.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Print the new mode value.
             hook.Add("VendorItemModeUpdated", "PrintVendorMode", function(vendor, itemType, value)
@@ -3207,8 +3989,15 @@
         Description:
             Called when a vendor's item price is changed.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Print the new item price.
             hook.Add("VendorItemPriceUpdated", "LogVendorItemPrice", function(vendor, itemType, value)
@@ -3221,8 +4010,15 @@
         Description:
             Called when a vendor's item stock value changes.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Log remaining stock for the item.
             hook.Add("VendorItemStockUpdated", "LogVendorItemStock", function(vendor, itemType, value)
@@ -3235,8 +4031,15 @@
         Description:
             Called when a vendor's available money changes.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Print the vendor's new money amount.
             hook.Add("VendorMoneyUpdated", "LogVendorMoney", function(vendor, money, oldMoney)
@@ -3249,8 +4052,15 @@
         Description:
             Called when a vendor menu is opened on the client.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Print which vendor was opened.
             hook.Add("VendorOpened", "PrintVendorOpened", function(vendor)
@@ -3263,8 +4073,15 @@
         Description:
             Called when vendor synchronization data is received.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Print a message when vendor data syncs.
             hook.Add("VendorSynchronized", "LogVendorSync", function(vendor)
@@ -3277,8 +4094,15 @@
         Description:
             Called when a player attempts to trade with a vendor.
 
+        Parameters:
+            None
+
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
             -- Log all vendor trades to the console.
             hook.Add("VendorTradeEvent", "LogVendorTrades", function(client, entity, uniqueID, isSellingToVendor)
@@ -3292,11 +4116,15 @@
         Description:
             Returns an alternate model path for a dropped item.
 
+        Parameters:
+            None
+
         Realm:
             Server
 
         Returns:
             string|nil – Alternate model path or nil for default.
+
         Example Usage:
             -- Replace drop model for weapons.
             hook.Add("getItemDropModel", "CustomDropModelForWeapons", function(itemTable, entity)
@@ -3311,11 +4139,15 @@
         Description:
             Allows modules to override a vendor item's price dynamically.
 
+        Parameters:
+            None
+
         Realm:
             Shared
 
         Returns:
             integer|nil – New price or nil for default.
+
         Example Usage:
             -- Increase price for rare items when buying from the vendor.
             hook.Add("getPriceOverride", "DynamicPricing", function(vendor, uniqueID, price, isSellingToVendor)
@@ -3334,11 +4166,15 @@
         Description:
             Checks if a character is fake recognized rather than truly known.
 
+        Parameters:
+            None
+
         Realm:
             Shared
 
         Returns:
             boolean
+
         Example Usage:
             -- Flag suspicious characters as fake.
             hook.Add("isCharFakeRecognized", "DetectFakeCharacters", function(character, id)
@@ -3353,11 +4189,15 @@
         Description:
             Determines whether one character recognizes another.
 
+        Parameters:
+            None
+
         Realm:
             Shared
 
         Returns:
             boolean
+
         Example Usage:
             -- Only recognize characters from the same faction.
             hook.Add("isCharRecognized", "ValidateCharacterRecognition", function(character, id)
@@ -3370,11 +4210,15 @@
         Description:
             Determines if a chat type counts toward recognition.
 
+        Parameters:
+            None
+
         Realm:
             Shared
 
         Returns:
             boolean
+
         Example Usage:
             -- Mark admin chat as recognized to reveal player names.
             hook.Add("isRecognizedChatType", "ValidateRecognitionChat", function(chatType)
@@ -3388,11 +4232,15 @@
         Description:
             Determines whether an entity can be used as trunk storage.
 
+        Parameters:
+            None
+
         Realm:
             Shared
 
         Returns:
             boolean
+
         Example Usage:
             -- Only vehicles are valid trunk containers.
             hook.Add("isSuitableForTrunk", "AllowOnlyCars", function(entity)
@@ -3415,7 +4263,9 @@
 
         Returns:
             bool
+
         Example Usage:
+            -- Prints a message when CanPlayerEarnSalary is triggered
             hook.Add("CanPlayerEarnSalary", "RestrictSalaryToActivePlayers", function(client, faction, class)
                 if not client:isActive() then
                     return false -- Inactive players do not earn salary
@@ -3439,7 +4289,9 @@
 
         Returns:
             bool|nil: false to block, nil to allow.
+
         Example Usage:
+            -- Prints a message when CanPlayerJoinClass is triggered
             hook.Add("CanPlayerJoinClass", "RestrictEliteClass", function(client, class, info)
                 if class == CLASS_ELITE and not client:hasPermission("join_elite") then
                     return false
@@ -3461,7 +4313,9 @@
 
         Returns:
             bool|nil: false to block, nil to allow.
+
         Example Usage:
+            -- Prints a message when CanPlayerUseCommand is triggered
             hook.Add("CanPlayerUseCommand", "BlockSensitiveCommands", function(client, command)
                 local blockedCommands = {"shutdown", "restart"}
                 if table.HasValue(blockedCommands, command) and not client:isSuperAdmin() then
@@ -3485,7 +4339,9 @@
 
         Returns:
             bool: false to block, nil or true to allow.
+
         Example Usage:
+            -- Prints a message when CanPlayerUseDoor is triggered
             hook.Add("CanPlayerUseDoor", "AllowOnlyOwners", function(client, door, access)
                 if access == DOOR_LOCK and door:getOwner() ~= client then
                     return false -- Only the owner can lock the door
@@ -3504,7 +4360,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when CharCleanUp is triggered
             hook.Add("CharCleanUp", "RemoveTemporaryItems", function(character)
                 local inventory = character:getInv()
                 for _, item in ipairs(inventory:getItems()) do
@@ -3521,9 +4382,17 @@
         Description:
             Called after a character has been restored from the database. Useful for post-restoration logic such as awarding default items or setting up data.
 
+        Parameters:
+            None
+
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when CharRestored is triggered
             hook.Add("CharRestored", "AwardWelcomePackage", function(character)
                 local welcomePackage = {"welcome_pack", "starter_weapon", "basic_armor"}
                 for _, itemID in ipairs(welcomePackage) do
@@ -3538,9 +4407,17 @@
         Description:
             Called when creating a default inventory for a character. Should return a [deferred](https://github.com/Be1zebub/luassert-deferred) (or similar promise) object that resolves with the new inventory.
 
+        Parameters:
+            None
+
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when CreateDefaultInventory is triggered
             hook.Add("CreateDefaultInventory", "InitializeStarterInventory", function(character)
                 local d = deferred.new()
 
@@ -3570,7 +4447,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when CreateInventoryPanel is triggered
             hook.Add("CreateInventoryPanel", "CustomInventoryUI", function(inventory, parent)
                 local panel = vgui.Create("DPanel", parent)
                 panel:SetSize(400, 600)
@@ -3605,7 +4487,12 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when CreateSalaryTimer is triggered
             hook.Add("CreateSalaryTimer", "SetupSalaryTimer", function(client)
                 timer.Create("SalaryTimer_" .. client:SteamID(), 60, 0, function()
                     if IsValid(client) and MODULE:CanPlayerEarnSalary(client, client:getFaction(), client:getClass()) then
@@ -3630,7 +4517,12 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when DoModuleIncludes is triggered
             hook.Add("DoModuleIncludes", "TrackModuleDependencies", function(path, module)
                 print("Including submodule from path:", path)
                 module.dependencies = module.dependencies or {}
@@ -3653,7 +4545,9 @@
         Returns:
             string: The default description.
             bool: Whether to override.
+
         Example Usage:
+            -- Prints a message when GetDefaultCharDesc is triggered
             hook.Add("GetDefaultCharDesc", "CitizenDefaultDesc", function(client, faction)
                 if faction == FACTION_CITIZEN then
                     return "A hardworking member of society.", true
@@ -3677,7 +4571,9 @@
         Returns:
             string: The default name.
             bool: Whether to override the user-provided name.
+
         Example Usage:
+            -- Prints a message when GetDefaultCharName is triggered
             hook.Add("GetDefaultCharName", "PoliceDefaultName", function(client, faction, data)
                 if faction == FACTION_POLICE then
                     return "Officer " .. data.lastName or "Smith", true
@@ -3700,7 +4596,9 @@
 
         Returns:
             any: The salary amount
+
         Example Usage:
+            -- Prints a message when GetSalaryAmount is triggered
             hook.Add("GetSalaryAmount", "CalculateDynamicSalary", function(client, faction, class)
                 local baseSalary = faction.baseSalary or 1000
                 local classBonus = class.salaryBonus or 0
@@ -3723,7 +4621,9 @@
 
         Returns:
             any: The salary limit
+
         Example Usage:
+            -- Prints a message when GetSalaryLimit is triggered
             hook.Add("GetSalaryLimit", "SetSalaryLimitsBasedOnRole", function(client, faction, class)
                 if faction.name == "Police" then
                     return 5000 -- Police have a higher salary limit
@@ -3738,9 +4638,17 @@
         Description:
             Called when `lia.config` is fully initialized.
 
+        Parameters:
+            None
+
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when this hook is triggered
             function MODULE:InitializedConfig()
                 if lia.config.enableSpecialFeatures then
                     lia.features.enable()
@@ -3756,9 +4664,17 @@
         Description:
             Called once all item modules have been loaded from a directory.
 
+        Parameters:
+            None
+
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when InitializedItems is triggered
             hook.Add("InitializedItems", "SetupSpecialItems", function()
                 local specialItem = lia.item.create({
                     uniqueID = "magic_ring",
@@ -3778,9 +4694,17 @@
         Description:
             Called after all modules are fully initialized.
 
+        Parameters:
+            None
+
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when InitializedModules is triggered
             hook.Add("InitializedModules", "FinalizeModuleSetup", function()
                 lia.modules.finalizeSetup()
                 print("All modules have been fully initialized.")
@@ -3792,9 +4716,17 @@
         Description:
             Called when `lia.option` is fully initialized.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when this hook is triggered
             function MODULE:InitializedOptions()
                LocalPlayer():ChatPrint("LOADED OPTIONS!")
             end
@@ -3805,9 +4737,17 @@
         Description:
             Called after the schema has finished initializing.
 
+        Parameters:
+            None
+
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when InitializedSchema is triggered
             hook.Add("InitializedSchema", "SchemaReadyNotification", function()
                 print("Schema has been successfully initialized.")
                 lia.notifications.broadcast("Welcome to the server! The schema is now active.")
@@ -3826,7 +4766,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when KeyLock is triggered
             hook.Add("KeyLock", "LogDoorLock", function(owner, entity, time)
                 entity:setLocked(true)
                 lia.log.write("DoorLock", owner:Name() .. " locked door ID: " .. entity:EntIndex() .. " for " .. time .. " seconds.")
@@ -3846,7 +4791,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when KeyUnlock is triggered
             hook.Add("KeyUnlock", "LogDoorUnlock", function(owner, entity, time)
                 entity:setLocked(false)
                 lia.log.write("DoorUnlock", owner:Name() .. " unlocked door ID: " .. entity:EntIndex() .. " after " .. time .. " seconds.")
@@ -3859,9 +4809,17 @@
         Description:
             Called after all essential DB tables have been loaded.
 
+        Parameters:
+            None
+
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when LiliaTablesLoaded is triggered
             hook.Add("LiliaTablesLoaded", "InitializeGameState", function()
                 lia.gameState = lia.gameState or {}
                 lia.gameState.activeEvents = {}
@@ -3879,7 +4837,12 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnItemRegistered is triggered
             hook.Add("OnItemRegistered", "AddItemDurability", function(item)
                 if item.uniqueID == "sword_basic" then
                     item.durability = 100
@@ -3900,9 +4863,17 @@
         Description:
             Called before the faction tables are loaded. Good spot for data setup prior to factions being processed.
 
+        Parameters:
+            None
+
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnLoadTables is triggered
             hook.Add("OnLoadTables", "SetupFactionDefaults", function()
                 lia.factions = lia.factions or {}
                 lia.factions.defaultPermissions = {canUseWeapons = true, canAccessBank = false}
@@ -3915,9 +4886,17 @@
         Description:
             Called when MySQLOO successfully connects to the database. Use to register prepared statements or init DB logic.
 
+        Parameters:
+            None
+
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnMySQLOOConnected is triggered
             hook.Add("OnMySQLOOConnected", "PrepareDatabaseStatements", function()
                 lia.db.prepare("insertPlayer", "INSERT INTO lia_players (_steamID, _steamName) VALUES (?, ?)", {MYSQLOO_STRING, MYSQLOO_STRING})
                 lia.db.prepare("updatePlayerStats", "UPDATE lia_players SET kills = ?, deaths = ? WHERE _steamID = ?", {MYSQLOO_NUMBER, MYSQLOO_NUMBER, MYSQLOO_STRING})
@@ -3938,7 +4917,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnPlayerPurchaseDoor is triggered
             hook.Add("OnPlayerPurchaseDoor", "HandleDoorPurchase", function(client, entity, buying, CallOnDoorChild)
                 if buying then
                     client:deductMoney(entity:getPrice())
@@ -3967,7 +4951,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnServerLog is triggered
             hook.Add("OnServerLog", "AlertAdminsOnHighSeverity", function(client, logType, logString, category, color)
                 if category == "error" then
                 for _, admin in player.Iterator() do
@@ -3984,9 +4973,17 @@
         Description:
             Called after wiping tables in the DB, typically after major resets/cleanups.
 
+        Parameters:
+            None
+
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnWipeTables is triggered
             hook.Add("OnWipeTables", "ReinitializeDefaults", function()
                 lia.db.execute("INSERT INTO lia_factions (name, description) VALUES ('Citizen', 'Regular inhabitants.')")
                 lia.db.execute("INSERT INTO lia_classes (name, faction) VALUES ('Warrior', 'Citizen')")
@@ -4010,7 +5007,9 @@
 
         Returns:
             bool|nil|modifiedString: false to cancel, or return a modified string to change the message.
+
         Example Usage:
+            -- Prints a message when PlayerMessageSend is triggered
             hook.Add("PlayerMessageSend", "FilterProfanity", function(speaker, chatType, message, anonymous)
                 local filteredMessage = string.gsub(message, "badword", "****")
                 if filteredMessage ~= message then
@@ -4030,7 +5029,12 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when PlayerModelChanged is triggered
             hook.Add("PlayerModelChanged", "UpdatePlayerAppearance", function(client, model)
                 print(client:Name() .. " changed their model to " .. model)
                 -- Update related appearance settings
@@ -4052,7 +5056,9 @@
 
         Returns:
             bool|nil: false to disallow, true to allow, or nil to let other hooks decide.
+
         Example Usage:
+            -- Prints a message when PlayerUseDoor is triggered
             hook.Add("PlayerUseDoor", "LogDoorUsage", function(client, entity)
                 print(client:Name() .. " is attempting to use door ID:", entity:EntIndex())
                 -- Allow or disallow based on custom conditions
@@ -4067,9 +5073,20 @@
         Description:
             Called for registering DB prepared statements post-MySQLOO connection.
 
+        Parameters:
+            None
+
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Set up a prepared SQL statement for later use.
+            hook.Add("RegisterPreparedStatements", "InitLogStatement", function()
+                lia.db.prepare("insert_log", "INSERT INTO logs(text) VALUES(?)")
+            end)
 ]]
 --[[
         ShouldBarDraw(barName)
@@ -4085,7 +5102,9 @@
 
         Returns:
             bool|nil: false to hide, nil to allow.
+
         Example Usage:
+            -- Prints a message when ShouldBarDraw is triggered
             hook.Add("ShouldBarDraw", "HideArmorHUD", function(barName)
                 if barName == "armor" then
                     return false
@@ -4106,7 +5125,9 @@
 
         Returns:
             bool (true if 3rd-person should be disabled)
+
         Example Usage:
+            -- Prints a message when ShouldDisableThirdperson is triggered
             hook.Add("ShouldDisableThirdperson", "DisableForInvisibles", function(client)
                 if client:isInvisible() then
                     return true -- Disable third-person view when invisible
@@ -4119,12 +5140,17 @@
         Description:
             Determines whether all HUD bars should be hidden.
 
+        Parameters:
+            None
+
         Realm:
             Client
 
         Returns:
             bool|nil: true to hide, nil to allow rendering.
+
         Example Usage:
+            -- Prints a message when ShouldHideBars is triggered
             hook.Add("ShouldHideBars", "HideHUDInCinematic", function()
                 if gui.IsInCinematicMode() then
                     return true
@@ -4142,7 +5168,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when thirdPersonToggled is triggered
             hook.Add("thirdPersonToggled", "NotifyThirdPersonChange", function(state)
                 if state then
                     chat.AddText(Color(0,255,0), "Third-person view enabled.")
@@ -4167,6 +5198,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Change the money field label.
             hook.Add("AddTextField", "RenameMoneyField", function(section, name, label, value)
@@ -4189,6 +5224,10 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
             -- Log newly added fields.
             hook.Add("F1OnAddTextField", "LogFields", function(section, name)
@@ -4211,7 +5250,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when F1OnAddBarField is triggered
             hook.Add("F1OnAddBarField", "TrackBars", function(section, name)
                 print("Added bar", name)
             end)
@@ -4227,7 +5271,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when CreateInformationButtons is triggered
             hook.Add("CreateInformationButtons", "AddHelpPage", function(pages)
                 table.insert(pages, {name = "Help", drawFunc = function(parent) end})
             end)
@@ -4243,7 +5292,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when PopulateConfigurationButtons is triggered
             hook.Add("PopulateConfigurationButtons", "AddControlsPage", function(pages)
                 table.insert(pages, {name = "Controls", drawFunc = function(p) end})
             end)
@@ -4254,9 +5308,17 @@
         Description:
             Called after keybinds have been loaded from disk.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when InitializedKeybinds is triggered
             hook.Add("InitializedKeybinds", "NotifyKeybinds", function()
                 chat.AddText("Keybinds loaded")
             end)
@@ -4272,9 +5334,12 @@
 
         Realm:
             Server
+
         Returns:
             number|nil – Custom cooldown in seconds.
+
         Example Usage:
+            -- Prints a message when getOOCDelay is triggered
             hook.Add("getOOCDelay", "AdminOOC", function(ply)
                 if ply:IsAdmin() then
                     return 5
@@ -4296,9 +5361,12 @@
 
         Realm:
             Client
+
         Returns:
             string|nil – Replacement text.
+
         Example Usage:
+            -- Prints a message when OnChatReceived is triggered
             hook.Add("OnChatReceived", "CensorChat", function(ply, type, msg)
                 return msg:gsub("badword", "****")
             end)
@@ -4315,9 +5383,12 @@
 
         Realm:
             Client
+
         Returns:
             table|nil – Adjusted part data.
+
         Example Usage:
+            -- Prints a message when getAdjustedPartData is triggered
             hook.Add("getAdjustedPartData", "DebugParts", function(ply, partID)
                 print("Requesting part", partID)
             end)
@@ -4335,9 +5406,12 @@
 
         Realm:
             Client
+
         Returns:
             table|nil – Modified data table.
+
         Example Usage:
+            -- Prints a message when AdjustPACPartData is triggered
             hook.Add("AdjustPACPartData", "ColorParts", function(ply, partID, d)
                 d.Color = Vector(1,0,0)
                 return d
@@ -4355,7 +5429,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when attachPart is triggered
             hook.Add("attachPart", "AnnouncePart", function(ply, partID)
                 print(ply, "received part", partID)
             end)
@@ -4372,7 +5451,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when removePart is triggered
             hook.Add("removePart", "LogPartRemoval", function(ply, partID)
                 print(partID, "removed from", ply)
             end)
@@ -4388,7 +5472,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnPAC3PartTransfered is triggered
             hook.Add("OnPAC3PartTransfered", "TrackTransfers", function(p)
                 print("Part transferred", p)
             end)
@@ -4404,7 +5493,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when DrawPlayerRagdoll is triggered
             hook.Add("DrawPlayerRagdoll", "TintRagdoll", function(ent)
                 render.SetColorModulation(1,0,0)
             end)
@@ -4415,9 +5509,17 @@
         Description:
             Initializes PAC3 outfits from equipped items after modules load.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when setupPACDataFromItems is triggered
             hook.Add("setupPACDataFromItems", "InitPAC", function()
                 print("Equipped PAC data loaded")
             end)
@@ -4433,9 +5535,12 @@
 
         Realm:
             Client
+
         Returns:
             Entity – Replacement entity.
+
         Example Usage:
+            -- Prints a message when TryViewModel is triggered
             hook.Add("TryViewModel", "UsePlayerViewModel", function(ent)
                 return ent == LocalPlayer():GetViewModel() and LocalPlayer() or ent
             end)
@@ -4446,12 +5551,18 @@
         Description:
             Lets modules provide a custom sound when cycling weapons in the selector.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
         Returns:
             string|nil – Sound path.
             number|nil – Playback pitch.
+
         Example Usage:
+            -- Prints a message when WeaponCycleSound is triggered
             hook.Add("WeaponCycleSound", "SilentCycle", function()
                 return "buttons/button15.wav", 100
             end)
@@ -4462,12 +5573,18 @@
         Description:
             Similar to WeaponCycleSound but used when confirming a weapon choice.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
         Returns:
             string|nil – Sound path.
             number|nil – Playback pitch.
+
         Example Usage:
+            -- Prints a message when WeaponSelectSound is triggered
             hook.Add("WeaponSelectSound", "CustomSelectSound", function()
                 return "buttons/button24.wav", 90
             end)
@@ -4483,9 +5600,12 @@
 
         Realm:
             Client
+
         Returns:
             boolean
+
         Example Usage:
+            -- Prints a message when ShouldDrawWepSelect is triggered
             hook.Add("ShouldDrawWepSelect", "HideInVehicles", function(ply)
                 return not ply:InVehicle()
             end)
@@ -4501,9 +5621,12 @@
 
         Realm:
             Client
+
         Returns:
             boolean|nil – false to block selection.
+
         Example Usage:
+            -- Prints a message when CanPlayerChooseWeapon is triggered
             hook.Add("CanPlayerChooseWeapon", "BlockPhysgun", function(wep)
                 if IsValid(wep) and wep:GetClass() == "weapon_physgun" then
                     return false
@@ -4522,9 +5645,12 @@
 
         Realm:
             Client
+
         Returns:
             number|nil – New respawn time.
+
         Example Usage:
+            -- Prints a message when OverrideSpawnTime is triggered
             hook.Add("OverrideSpawnTime", "ShortRespawns", function(ply, time)
                 if ply:IsAdmin() then return 2 end
             end)
@@ -4535,11 +5661,17 @@
         Description:
             Lets modules suppress the respawn HUD from showing.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
         Returns:
             boolean|nil – false to hide.
+
         Example Usage:
+            -- Prints a message when ShouldRespawnScreenAppear is triggered
             hook.Add("ShouldRespawnScreenAppear", "NoRespawnHUD", function()
                 return false
             end)
@@ -4555,7 +5687,12 @@
 
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when VoiceToggled is triggered
             hook.Add("VoiceToggled", "AnnounceVoice", function(state)
                 print("Voice chat set to", state)
             end)
@@ -4566,9 +5703,17 @@
         Description:
             Requests recreation of all registered UI fonts.
 
+        Parameters:
+            None
+
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when RefreshFonts is triggered
             hook.Add("RefreshFonts", "ReloadFonts", function()
                 print("Fonts refreshed")
             end)
@@ -4587,7 +5732,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when AdjustCreationData is triggered
             hook.Add("AdjustCreationData", "EnforceName", function(ply, data, newData)
                 if data.name == "" then newData.name = "Unnamed" end
             end)
@@ -4605,9 +5755,12 @@
 
         Realm:
             Server
+
         Returns:
             bool|nil – false to block.
+
         Example Usage:
+            -- Prints a message when CanCharBeTransfered is triggered
             hook.Add("CanCharBeTransfered", "BlockRestrictedFactions", function(char, faction)
                 if faction.isRestricted then return false end
             end)
@@ -4624,9 +5777,12 @@
 
         Realm:
             Server
+
         Returns:
             bool|nil – false to deny.
+
         Example Usage:
+            -- Prints a message when CanPlayerUseChar is triggered
             hook.Add("CanPlayerUseChar", "CheckBans", function(ply, char)
                 if char:isBanned() then return false, "Character banned" end
             end)
@@ -4644,9 +5800,12 @@
 
         Realm:
             Server
+
         Returns:
             bool|nil – false to block the switch.
+
         Example Usage:
+            -- Prints a message when CanPlayerSwitchChar is triggered
             hook.Add("CanPlayerSwitchChar", "NoSwitchInCombat", function(ply)
                 if ply:isInCombat() then return false end
             end)
@@ -4663,9 +5822,12 @@
 
         Realm:
             Server
+
         Returns:
             bool|nil – false to disallow.
+
         Example Usage:
+            -- Prints a message when CanPlayerLock is triggered
             hook.Add("CanPlayerLock", "AdminsAlwaysLock", function(ply)
                 if ply:IsAdmin() then return true end
             end)
@@ -4682,9 +5844,12 @@
 
         Realm:
             Server
+
         Returns:
             bool|nil – false to disallow.
+
         Example Usage:
+            -- Prints a message when CanPlayerUnlock is triggered
             hook.Add("CanPlayerUnlock", "AdminsAlwaysUnlock", function(ply)
                 if ply:IsAdmin() then return true end
             end)
@@ -4701,9 +5866,12 @@
 
         Realm:
             Server
+
         Returns:
             bool|nil – false to deny modification.
+
         Example Usage:
+            -- Prints a message when CanPlayerModifyConfig is triggered
             hook.Add("CanPlayerModifyConfig", "RestrictConfig", function(ply, k)
                 return ply:IsSuperAdmin()
             end)
@@ -4720,7 +5888,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when CharDeleted is triggered
             hook.Add("CharDeleted", "LogDeletion", function(ply, char)
                 print(ply:Name(), "deleted character", char:getName())
             end)
@@ -4738,9 +5911,12 @@
 
         Realm:
             Shared
+
         Returns:
             boolean
+
         Example Usage:
+            -- Prints a message when CheckFactionLimitReached is triggered
             hook.Add("CheckFactionLimitReached", "IgnoreAdmins", function(faction, char, ply)
                 if ply:IsAdmin() then
                     return false
@@ -4761,7 +5937,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when F1OnAddSection is triggered
             hook.Add("F1OnAddSection", "PrintSection", function(name)
                 print("Added section", name)
             end)
@@ -4777,9 +5958,12 @@
 
         Realm:
             Client
+
         Returns:
             string|nil – Replacement name.
+
         Example Usage:
+            -- Prints a message when GetWeaponName is triggered
             hook.Add("GetWeaponName", "UppercaseName", function(wep)
                 return wep:GetClass():upper()
             end)
@@ -4796,7 +5980,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnCharGetup is triggered
             hook.Add("OnCharGetup", "NotifyGetup", function(ply)
                 ply:ChatPrint("You stood up")
             end)
@@ -4807,9 +5996,17 @@
         Description:
             Fired once language files finish loading.
 
+        Parameters:
+            None
+
         Realm:
             Shared
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnLocalizationLoaded is triggered
             hook.Add("OnLocalizationLoaded", "PrintLang", function()
                 print("Localization ready")
             end)
@@ -4826,7 +6023,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when OnPlayerObserve is triggered
             hook.Add("OnPlayerObserve", "AnnounceObserve", function(ply, s)
                 print(ply, s and "entered" or "left", "observe mode")
             end)
@@ -4844,7 +6046,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when PlayerLoadedChar is triggered
             hook.Add("PlayerLoadedChar", "WelcomeBack", function(ply, char)
                 ply:ChatPrint("Welcome, " .. char:getName())
             end)
@@ -4862,7 +6069,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when PrePlayerLoadedChar is triggered
             hook.Add("PrePlayerLoadedChar", "SaveStuff", function(ply, new, old)
                 print("Switching characters")
             end)
@@ -4880,7 +6092,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when PostPlayerLoadedChar is triggered
             hook.Add("PostPlayerLoadedChar", "GiveItems", function(ply, char)
                 -- Give starter items here
             end)
@@ -4897,7 +6114,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when PlayerSay is triggered
             hook.Add("PlayerSay", "LogChat", function(ply, msg)
                 print(ply:Name() .. ": " .. msg)
             end)
@@ -4914,7 +6136,12 @@
 
         Realm:
             Client
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when PopulateAdminStick is triggered
             hook.Add("PopulateAdminStick", "AddCustomOption", function(menu, ent)
                 menu:AddOption("Wave", function() RunConsoleCommand("act", "wave") end)
             end)
@@ -4931,7 +6158,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when TicketSystemClaim is triggered
             hook.Add("TicketSystemClaim", "NotifyClaim", function(staff, ply)
                 staff:ChatPrint("Claimed ticket from " .. ply:Name())
             end)
@@ -4949,7 +6181,12 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Prints a message when liaOptionReceived is triggered
             hook.Add("liaOptionReceived", "PrintOptionChange", function(_, k, v)
                 print("Option", k, "set to", v)
             end)

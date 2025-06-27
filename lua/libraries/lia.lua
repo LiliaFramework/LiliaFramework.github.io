@@ -20,6 +20,7 @@
         The result of the include, if applicable.
 
     Example Usage:
+        -- This snippet demonstrates a common usage of lia.include
     lia.include("lilia/gamemode/core/libraries/util.lua", "shared")
 ]]
 --[[
@@ -41,6 +42,7 @@
         nil
 
     Example Usage:
+        -- This snippet demonstrates a common usage of lia.includeDir
     lia.includeDir("lilia/gamemode/core/libraries/shared/thirdparty", true, true)
 ]]
 --[[
@@ -62,6 +64,7 @@
         nil
 
     Example Usage:
+        -- This snippet demonstrates a common usage of lia.includeGroupedDir
     lia.includeGroupedDir("core/modules", false, true, "shared")
 ]]
 --[[
@@ -80,6 +83,7 @@
         nil
 
     Example Usage:
+        -- This snippet demonstrates a common usage of lia.error
     lia.error("Invalid configuration detected")
 ]]
 --[[
@@ -99,6 +103,7 @@
         nil
 
     Example Usage:
+        -- This snippet demonstrates a common usage of lia.deprecated
     lia.deprecated("OldFunction", function() print("Called fallback") end)
 ]]
 --[[
@@ -117,6 +122,7 @@
         nil
 
     Example Usage:
+        -- This snippet demonstrates a common usage of lia.updater
     lia.updater("Loading additional content...")
 ]]
 --[[
@@ -135,6 +141,7 @@
         nil
 
     Example Usage:
+        -- This snippet demonstrates a common usage of lia.information
     lia.information("Server started successfully")
 ]]
 --[[
@@ -154,6 +161,7 @@
         nil
 
     Example Usage:
+        -- This snippet demonstrates a common usage of lia.bootstrap
     lia.bootstrap("Database", "Connection established")
 ]]
 --[[
@@ -172,5 +180,6 @@
         nil
 
     Example Usage:
+        -- This snippet demonstrates a common usage of lia.includeEntities
     lia.includeEntities("lilia/entities")
 ]]

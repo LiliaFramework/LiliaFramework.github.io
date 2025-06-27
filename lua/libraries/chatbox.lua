@@ -12,6 +12,10 @@
 
     Realm:
         Shared
+
+    Example Usage:
+        -- This snippet demonstrates a common usage of lia.chat.timestamp
+        local ts = lia.chat.timestamp(false)
 ]]
 
 --[[
@@ -29,6 +33,10 @@
 
     Realm:
         Shared
+
+    Example Usage:
+        -- This snippet demonstrates a common usage of lia.chat.register
+        lia.chat.register("me", {onChatAdd = function(...) end})
 ]]
 
 --[[
@@ -47,6 +55,15 @@
 
     Realm:
         Shared
+
+    Example Usage:
+        -- Parse chat messages and log "/me" actions to the console
+        hook.Add("PlayerSay", "LogActions", function(ply, text)
+            local class, parsed = lia.chat.parse(ply, text)
+            if class == "me" then
+                print(ply:Name() .. " performs action: " .. parsed)
+            end
+        end)
 ]]
 
 --[[
@@ -67,4 +84,8 @@
 
     Realm:
         Server
+
+    Example Usage:
+        -- This snippet demonstrates a common usage of lia.chat.send
+        lia.chat.send(client, "ic", "Hello")
 ]]

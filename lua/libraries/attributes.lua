@@ -18,6 +18,7 @@
         nil
 
     Example Usage:
+        -- This snippet demonstrates a common usage of lia.attribs.loadFromDir
         lia.attribs.loadFromDir("schema/attributes")
 ]]
 
@@ -39,5 +40,6 @@
             None
 
         Example Usage:
+        -- This snippet demonstrates a common usage of lia.attribs.setup
             lia.attribs.setup(client)
     ]]

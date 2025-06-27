@@ -15,9 +15,15 @@
 
         Realm:
             Shared
+
+        Returns:
+            string – Default name text.
+
         Example Usage:
+            -- Generate a callsign with a prefix and random digits.
             function FACTION:GetDefaultName(client)
-                return "CT-" .. math.random(111111, 999999)
+                local digits = string.format("%06d", math.random(0, 999999))
+                return "CT-" .. digits
             end
 ]]
 --[[
@@ -31,9 +37,14 @@
 
         Realm:
             Shared
+
+        Returns:
+            string – Default description text.
+
         Example Usage:
+            -- Provide a default description referencing the player's Steam name.
             function FACTION:GetDefaultDesc(client)
-                return "A police officer"
+                return "Officer " .. client:SteamName() .. " serving the city."
             end
 ]]
 --[[
@@ -48,10 +59,17 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Give the character a uniform and pistol and record the join time.
             function FACTION:OnCharCreated(client, character)
-                local inventory = character:getInv()
-                inventory:add("fancy_suit")
+                local inv = character:getInv()
+                inv:add("police_uniform")
+                inv:add("pistol")
+                character:setData("joinedOn", os.time())
             end
 ]]
 --[[
@@ -65,9 +83,17 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Send a radio check and give the player a baton if missing.
             function FACTION:OnSpawn(client)
-                client:ChatPrint("You have spawned!")
+                client:ChatPrint("All units check in!")
+                if not client:HasWeapon("weapon_stunstick") then
+                    client:Give("weapon_stunstick")
+                end
             end
 ]]
 --[[
@@ -81,9 +107,17 @@
 
         Realm:
             Server
+
+        Returns:
+            None
+
         Example Usage:
+            -- Randomize the player's model and log the switch server-side.
             function FACTION:OnTransferred(client)
-                local randomModelIndex = math.random(1, #self.models)
-                client:getChar():setModel(self.models[randomModelIndex])
+                if self.models and #self.models > 0 then
+                    local model = self.models[math.random(#self.models)]
+                    client:getChar():setModel(model)
+                end
+                lia.log.add(client, "faction_switch", self.name)
             end
 ]]

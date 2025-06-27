@@ -18,6 +18,10 @@
 
     Internal Function:
         true
+
+    Example Usage:
+        -- This snippet demonstrates a common usage of lia.lang.loadFromDir
+        lia.lang.loadFromDir("languages")
 ]]
 
 --[[
@@ -37,4 +41,8 @@
 
     Realm:
         Shared
+
+    Example Usage:
+        -- This snippet demonstrates a common usage of lia.lang.AddTable
+        lia.lang.AddTable("english", {greeting = "Hello"})
 ]]

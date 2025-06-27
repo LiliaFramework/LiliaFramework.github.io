@@ -51,6 +51,7 @@
       Shared
 
    Example Usage:
+        -- This snippet demonstrates a common usage of lia.command.extractArgs
       local args = lia.command.extractArgs('/mycommand "quoted arg" anotherArg')
       -- args = {"quoted arg", "anotherArg"}
 ]]
@@ -74,6 +75,7 @@
          Server
 
       Example Usage:
+        -- This snippet demonstrates a common usage of lia.command.run
          lia.command.run(player, "mycommand", {"arg1", "arg2"})
    ]]
 
@@ -97,6 +99,7 @@
          Server
 
       Example Usage:
+        -- This snippet demonstrates a common usage of lia.command.parse
          lia.command.parse(player, "/mycommand arg1 arg2")
    ]]
 
@@ -118,5 +121,6 @@
          Client
 
       Example Usage:
+        -- This snippet demonstrates a common usage of lia.command.send
          lia.command.send("mycommand", "arg1", "arg2")
    ]]
