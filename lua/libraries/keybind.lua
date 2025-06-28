@@ -8,10 +8,10 @@
       Also maps the key code back to the action identifier for reverse lookup.
 
    Parameters:
-      k (string or number) - The key identifier, either as a string (to be converted) or as a key code.
-      d (string) - The unique identifier for the keybind action.
-      cb (function) - The callback function to be executed when the key is pressed.
-      rcb (function) - The callback function to be executed when the key is released.
+      k (string or number) – The key identifier, either as a string (to be converted) or as a key code.
+      d (string) – The unique identifier for the keybind action.
+      cb (function) – The callback function to be executed when the key is pressed.
+      rcb (function) – The callback function to be executed when the key is released.
 
     Returns:
         nil
@@ -23,7 +23,6 @@
         -- This snippet demonstrates a common usage of lia.keybind.add
       lia.keybind.add("space", "jump", function() print("Jump pressed!") end, function() print("Jump released!") end)
 ]]
-
 --[[
     lia.keybind.get(a, df)
 
@@ -33,11 +32,11 @@
       or an optionally provided fallback value.
 
    Parameters:
-      a (string) - The unique identifier for the keybind action.
-      df (number) - An optional default key code to return if the keybind is not set.
+      a (string) – The unique identifier for the keybind action.
+      df (number) – An optional default key code to return if the keybind is not set.
 
     Returns:
-        number - The key code associated with the keybind action, or the default/fallback value if not set.
+        number – The key code associated with the keybind action, or the default/fallback value if not set.
 
    Realm:
       Client
@@ -46,7 +45,6 @@
         -- This snippet demonstrates a common usage of lia.keybind.get
       local jumpKey = lia.keybind.get("jump", KEY_SPACE)
 ]]
-
 --[[
     lia.keybind.save()
 
@@ -71,7 +69,6 @@
         -- This snippet demonstrates a common usage of lia.keybind.save
       lia.keybind.save()
 ]]
-
 --[[
     lia.keybind.load()
 

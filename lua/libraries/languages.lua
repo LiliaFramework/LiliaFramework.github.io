@@ -8,7 +8,7 @@
       it is registered in lia.lang.names.
 
    Parameters:
-      directory (string) - The path to the directory containing language files.
+      directory (string) – The path to the directory containing language files.
 
     Returns:
         nil
@@ -23,7 +23,6 @@
         -- This snippet demonstrates a common usage of lia.lang.loadFromDir
         lia.lang.loadFromDir("languages")
 ]]
-
 --[[
     lia.lang.AddTable(name, tbl)
 
@@ -33,8 +32,8 @@
       will be merged with the existing ones.
 
    Parameters:
-      name (string) - The name of the language to update.
-      tbl (table) - A table containing language key-value pairs to add.
+      name (string) – The name of the language to update.
+      tbl (table) – A table containing language key-value pairs to add.
 
     Returns:
         nil

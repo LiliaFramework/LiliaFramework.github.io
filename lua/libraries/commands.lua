@@ -14,7 +14,6 @@
     Realm:
         Shared
 ]]
-
 --[[
     lia.command.hasAccess(client, command, data)
 
@@ -33,19 +32,18 @@
     Realm:
         Shared
 ]]
-
 --[[
-   lia.command.extractArgs
+  lia.command.extractArgs
 
    Description:
       Splits the provided text into arguments, respecting quotes.
       Quoted sections are treated as single arguments.
 
    Parameters:
-      text (string) - The raw input text to parse.
+      text (string) – The raw input text to parse.
 
    Returns:
-      table - A list of arguments extracted from the text.
+      table – A list of arguments extracted from the text.
 
    Realm:
       Shared
@@ -55,8 +53,28 @@
       local args = lia.command.extractArgs('/mycommand "quoted arg" anotherArg')
       -- args = {"quoted arg", "anotherArg"}
 ]]
+--[[
+  lia.command.parseSyntaxFields
 
-    --[[
+  Description:
+     Parses a command syntax string into an ordered list of field tables.
+     Each field contains a name and a type derived from the syntax.
+
+  Parameters:
+     syntax (string) – The syntax string, e.g. "[string Name] [number Time]".
+
+  Returns:
+     table – List of fields in call order.
+     boolean – Whether the syntax strictly used the "[type Name]" format.
+
+  Realm:
+     Shared
+
+  Example Usage:
+        -- Extract field data from a syntax string
+        local fields, valid = lia.command.parseSyntaxFields("[string Name] [number Time]")
+  ]]
+--[[
       lia.command.run
 
       Description:
@@ -64,9 +82,9 @@
          If the command returns a string, it notifies the client (if valid).
 
       Parameters:
-         client (Player) - The player or console running the command.
-         command (string) - The name of the command to run.
-         arguments (table) - A list of arguments for the command.
+         client (Player) – The player or console running the command.
+         command (string) – The name of the command to run.
+         arguments (table) – A list of arguments for the command.
 
       Returns:
          nil
@@ -78,8 +96,7 @@
         -- This snippet demonstrates a common usage of lia.command.run
          lia.command.run(player, "mycommand", {"arg1", "arg2"})
    ]]
-
-    --[[
+--[[
       lia.command.parse
 
       Description:
@@ -87,13 +104,13 @@
          and arguments if provided. If parsed successfully, the command is executed.
 
       Parameters:
-         client (Player) - The player or console issuing the command.
-         text (string) - The raw text that may contain the command name and arguments.
-         realCommand (string) - If provided, use this as the command name instead of parsing text.
-         arguments (table) - If provided, use these as the command arguments instead of parsing text.
+         client (Player) – The player or console issuing the command.
+         text (string) – The raw text that may contain the command name and arguments.
+         realCommand (string) – If provided, use this as the command name instead of parsing text.
+         arguments (table) – If provided, use these as the command arguments instead of parsing text.
 
       Returns:
-         boolean - True if the text was parsed as a valid command, false otherwise.
+         boolean – True if the text was parsed as a valid command, false otherwise.
 
       Realm:
          Server
@@ -102,17 +119,16 @@
         -- This snippet demonstrates a common usage of lia.command.parse
          lia.command.parse(player, "/mycommand arg1 arg2")
    ]]
-
-    --[[
-      lia.command.send
+--[[
+  lia.command.send
 
       Description:
-         Sends a command (and optional arguments) from the client to the server using netstream.
-         The server will then execute the command.
+         Sends a command (and optional arguments) from the client to the server using the
+         Garry's Mod net library. The server will then execute the command.
 
       Parameters:
-         command (string) - The name of the command to send.
-         ... (vararg) - Any additional arguments to pass to the command.
+         command (string) – The name of the command to send.
+         ... (vararg) – Any additional arguments to pass to the command.
 
       Returns:
          nil
@@ -123,4 +139,23 @@
       Example Usage:
         -- This snippet demonstrates a common usage of lia.command.send
          lia.command.send("mycommand", "arg1", "arg2")
-   ]]
+  ]]
+--[[
+  lia.command.openArgumentPrompt
+
+  Description:
+     Opens a window asking the player to fill in any arguments that were
+     omitted or left as placeholders when running a chat command. The
+     prompt only appears if the command's syntax fields were valid.
+
+  Parameters:
+     cmd (string) – The command name.
+     fields (table) – Table of field names to their types.
+     prefix (table) – Arguments that were already supplied before the prompt.
+
+  Returns:
+     nil
+
+  Realm:
+     Client
+]]

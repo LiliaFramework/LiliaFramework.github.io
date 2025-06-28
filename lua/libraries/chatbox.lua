@@ -17,7 +17,6 @@
         -- This snippet demonstrates a common usage of lia.chat.timestamp
         local ts = lia.chat.timestamp(false)
 ]]
-
 --[[
     lia.chat.register(chatType, data)
 
@@ -35,10 +34,14 @@
         Shared
 
     Example Usage:
-        -- This snippet demonstrates a common usage of lia.chat.register
-        lia.chat.register("me", {onChatAdd = function(...) end})
+        -- Register a simple "/me" chat command that prints actions in purple
+        lia.chat.register("me", {
+            onChatAdd = function(_, speaker, text)
+                chat.AddText(Color(200, 100, 255), "* " .. speaker:Name() .. " " .. text)
+            end,
+            prefix = {"/me"}
+        })
 ]]
-
 --[[
     lia.chat.parse(client, message, noSend)
 
@@ -65,7 +68,6 @@
             end
         end)
 ]]
-
 --[[
     lia.chat.send(speaker, chatType, text, anonymous, receivers)
 

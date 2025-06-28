@@ -7,10 +7,10 @@
       It also registers the module in the module list if applicable.
 
    Parameters:
-      uniqueID - The unique identifier of the module.
-      path - The file system path where the module is located.
-      isSingleFile - Boolean indicating if the module is a single file.
-      variable - A global variable name used to temporarily store the module.
+      uniqueID – The unique identifier of the module.
+      path – The file system path where the module is located.
+      isSingleFile – Boolean indicating if the module is a single file.
+      variable – A global variable name used to temporarily store the module.
 
    Realm:
       Server
@@ -22,7 +22,6 @@
         -- This snippet demonstrates a common usage of lia.module.load
       lia.module.load("example", "lilia/modules/example", false)
 ]]
-
 --[[
    lia.module.initialize
 
@@ -43,7 +42,6 @@
         -- This snippet demonstrates a common usage of lia.module.initialize
       lia.module.initialize()
 ]]
-
 --[[
    lia.module.loadFromDir
 
@@ -53,8 +51,8 @@
       Non-Lua files are ignored.
 
    Parameters:
-      directory - The directory path from which to load modules.
-      group - A string representing the module group (e.g., "schema" or "module").
+      directory – The directory path from which to load modules.
+      group – A string representing the module group (e.g., "schema" or "module").
 
    Realm:
       Server
@@ -66,7 +64,6 @@
         -- This snippet demonstrates a common usage of lia.module.loadFromDir
       lia.module.loadFromDir("lilia/modules/core", "module")
 ]]
-
 --[[
    lia.module.get
 
@@ -74,7 +71,7 @@
       Retrieves a module table by its identifier.
 
    Parameters:
-      identifier - The unique identifier of the module to retrieve.
+      identifier – The unique identifier of the module to retrieve.
 
    Realm:
       Server

@@ -7,8 +7,8 @@
       or re-establish one.
 
    Parameters:
-      callback (function) - The function to call when the database connection is established.
-      reconnect (boolean) - Whether to reconnect using an existing database object or not.
+      callback (function) – The function to call when the database connection is established.
+      reconnect (boolean) – Whether to reconnect using an existing database object or not.
 
     Returns:
         nil
@@ -22,7 +22,6 @@
             print("Database connected")
         end)
 ]]
-
 --[[
     lia.db.wipeTables(callback)
 
@@ -31,7 +30,7 @@
       tables. This action is irreversible and will remove all stored data.
 
    Parameters:
-      callback (function) - The function to call when the wipe operation is completed.
+      callback (function) – The function to call when the wipe operation is completed.
 
     Returns:
         nil
@@ -45,7 +44,6 @@
             print("Tables wiped")
         end)
 ]]
-
 --[[
     lia.db.loadTables()
 
@@ -66,7 +64,6 @@
         -- This snippet demonstrates a common usage of lia.db.loadTables
         lia.db.loadTables()
 ]]
-
 --[[
     lia.db.waitForTablesToLoad()
 
@@ -78,7 +75,7 @@
       None
 
     Returns:
-        deferred - Resolves when the tables are loaded.
+        deferred – Resolves when the tables are loaded.
 
     Realm:
         Shared
@@ -89,7 +86,6 @@
             print("Tables loaded")
         end)
 ]]
-
 --[[
     lia.db.convertDataType(value, noEscape)
 
@@ -99,11 +95,11 @@
       unless noEscape is set.
 
    Parameters:
-      value (any) - The value to be converted.
-      noEscape (boolean) - If true, the returned string is not escaped.
+      value (any) – The value to be converted.
+      noEscape (boolean) – If true, the returned string is not escaped.
 
     Returns:
-        string - The converted data type as a string.
+        string – The converted data type as a string.
 
     Realm:
         Shared
@@ -112,7 +108,6 @@
         -- This snippet demonstrates a common usage of lia.db.convertDataType
         local str = lia.db.convertDataType({name = "Lilia"})
 ]]
-
 --[[
     lia.db.insertTable(value, callback, dbTable)
 
@@ -121,9 +116,9 @@
       The callback is invoked after the insert query is complete.
 
    Parameters:
-      value (table) - Key-value pairs representing the columns and values to insert.
-      callback (function) - The function to call when the insert operation is complete.
-      dbTable (string) - The name of the table (without the 'lia_' prefix).
+      value (table) – Key-value pairs representing the columns and values to insert.
+      callback (function) – The function to call when the insert operation is complete.
+      dbTable (string) – The name of the table (without the 'lia_' prefix).
 
     Returns:
         nil
@@ -137,7 +132,6 @@
             print("Inserted", id)
         end, "characters")
 ]]
-
 --[[
     lia.db.updateTable(value, callback, dbTable, condition)
 
@@ -146,10 +140,10 @@
       provided condition. The callback is invoked once the update query finishes.
 
    Parameters:
-      value (table) - Key-value pairs representing columns to update and their new values.
-      callback (function) - The function to call after the update query is complete.
-      dbTable (string) - The name of the table (without the 'lia_' prefix).
-      condition (string) - The SQL condition to determine which rows to update.
+      value (table) – Key-value pairs representing columns to update and their new values.
+      callback (function) – The function to call after the update query is complete.
+      dbTable (string) – The name of the table (without the 'lia_' prefix).
+      condition (string) – The SQL condition to determine which rows to update.
 
     Returns:
         nil
@@ -163,7 +157,6 @@
             print("Row updated")
         end, "characters", "id = 1")
 ]]
-
 --[[
     lia.db.select(fields, dbTable, condition, limit)
 
@@ -173,13 +166,13 @@
       object that resolves with the query results.
 
    Parameters:
-      fields (table|string) - The columns to select, either as a table or a comma-separated string.
-      dbTable (string) - The name of the table (without the 'lia_' prefix).
-      condition (string) - The SQL condition to filter results.
-      limit (number) - Maximum number of rows to return.
+      fields (table|string) – The columns to select, either as a table or a comma-separated string.
+      dbTable (string) – The name of the table (without the 'lia_' prefix).
+      condition (string) – The SQL condition to filter results.
+      limit (number) – Maximum number of rows to return.
 
     Returns:
-        deferred - Resolves with query results and last insert ID.
+        deferred – Resolves with query results and last insert ID.
 
     Realm:
         Shared
@@ -190,7 +183,6 @@
             PrintTable(rows)
         end)
 ]]
-
 --[[
     lia.db.upsert(value, dbTable)
 
@@ -200,11 +192,11 @@
       Returns a deferred object that resolves when the operation completes.
 
    Parameters:
-      value (table) - Key-value pairs representing the columns and values.
-      dbTable (string) - The name of the table (without the 'lia_' prefix).
+      value (table) – Key-value pairs representing the columns and values.
+      dbTable (string) – The name of the table (without the 'lia_' prefix).
 
     Returns:
-        deferred - Resolves to a table of results and last insert ID.
+        deferred – Resolves to a table of results and last insert ID.
 
     Realm:
         Shared
@@ -213,7 +205,6 @@
         -- This snippet demonstrates a common usage of lia.db.upsert
         lia.db.upsert({id = 1, name = "John"}, "characters")
 ]]
-
 --[[
     lia.db.delete(dbTable, condition)
 
@@ -222,11 +213,11 @@
       If no condition is specified, all rows are deleted. Returns a deferred object.
 
    Parameters:
-      dbTable (string) - The name of the table (without the 'lia_' prefix).
-      condition (string) - The SQL condition that determines which rows to delete.
+      dbTable (string) – The name of the table (without the 'lia_' prefix).
+      condition (string) – The SQL condition that determines which rows to delete.
 
     Returns:
-        deferred - Resolves to the results of the deletion.
+        deferred – Resolves to the results of the deletion.
 
     Realm:
         Shared
@@ -237,7 +228,6 @@
             print("Row deleted")
         end)
 ]]
-
 --[[
     lia.db.GetCharacterTable(callback)
 

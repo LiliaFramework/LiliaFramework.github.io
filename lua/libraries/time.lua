@@ -29,7 +29,6 @@
             lia.data.set(key, os.time(), true)
         end)
  ]]
-
 --[[
    lia.time.toNumber
 
@@ -56,7 +55,6 @@
             end)
         end
 ]]
-
 --[[
     lia.time.GetDate
 
@@ -79,12 +77,11 @@
         -- Announce the current server date and time to all players every hour
         timer.Create("ServerTimeAnnounce", 3600, 0, function()
             local dateString = lia.time.GetDate()
-            for _, ply in ipairs(player.GetAll()) do
+            for _, ply in player.Iterator() do
                 ply:ChatPrint("Server time: " .. dateString)
             end
         end)
  ]]
-
 --[[
     lia.time.GetHour
 
