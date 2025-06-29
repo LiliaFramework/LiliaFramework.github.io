@@ -61,7 +61,6 @@ The global `ITEM` table defines per-item settings such as sounds, inventory dime
 | `unequipSound` | `string` | `""` | Sound played when unequipping. |
 | `uniqueID` | `string` | `"undefined"` | Overrides the automatically generated unique identifier. |
 | `url` | `string` | `""` | Web address opened when using the item. |
-| `visualData` | `table` | `{}` | Table storing outfit visual information. |
 | `weaponCategory` | `string` | `""` | Slot category for the weapon. |
 | `width` | `number` | `1` | Width in inventory grid. |
 
@@ -393,16 +392,6 @@ ITEM.newSkin = 1
 ITEM.outfitCategory = "body"
 ```
 
-#### `visualData`
-
-**Type:** `table`
-**Description:** Table storing outfit visual information.
-**Example:**
-
-```lua
-ITEM.visualData = {}
-```
-
 #### `pacData`
 
 **Type:** `table`
@@ -410,7 +399,31 @@ ITEM.visualData = {}
 **Example:**
 
 ```lua
-ITEM.pacData = {}
+-- This attaches an HGIBS gib model to the player’s eyes bone
+ITEM.pacData = {
+	[1] = {
+		["children"] = {
+			[1] = {
+				["children"] = {
+				},
+				["self"] = {
+					["Angles"] = Angle(12.919322967529, 6.5696062847564e-006, -1.0949343050015e-005),
+					["Position"] = Vector(-2.099609375, 0.019973754882813, 1.0180969238281),
+					["UniqueID"] = "4249811628",
+					["Size"] = 1.25,
+					["Bone"] = "eyes",
+					["Model"] = "models/Gibs/HGIBS.mdl",
+					["ClassName"] = "model",
+				},
+			},
+		},
+		["self"] = {
+			["ClassName"] = "group",
+			["UniqueID"] = "907159817",
+			["EditorExpand"] = true,
+		},
+	},
+}
 ```
 
 #### `replacements`
@@ -420,8 +433,15 @@ ITEM.pacData = {}
 **Example:**
 
 ```lua
-ITEM.replacements = "models/player/combine_soldier.mdl"
-```
+-- This will change a certain part of the model.
+ITEM.replacements = {"group01", "group02"}
+-- This will change the player's model completely.
+ITEM.replacements = "models/manhack.mdl"
+-- This will have multiple replacements.
+ITEM.replacements = {
+	{"male", "female"},
+	{"group01", "group02"}
+}```
 
 ---
 
