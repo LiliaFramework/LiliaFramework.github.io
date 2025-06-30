@@ -58,7 +58,7 @@ Quoted sections are treated as single arguments.
 **Realm:**
 
 * Shared
-**Example:**
+**Example Usage:**
 
 ```lua
     -- This snippet demonstrates a common usage of lia.command.extractArgs
@@ -86,7 +86,7 @@ Each field contains a name and a type derived from the syntax.
 **Realm:**
 
 * Shared
-**Example:**
+**Example Usage:**
 
 ```lua
     -- Extract field data from a syntax string
@@ -114,7 +114,7 @@ If the command returns a string, it notifies the client (if valid).
 **Realm:**
 
 * Server
-**Example:**
+**Example Usage:**
 
 ```lua
     -- This snippet demonstrates a common usage of lia.command.run
@@ -143,7 +143,7 @@ and arguments if provided. If parsed successfully, the command is executed.
 **Realm:**
 
 * Server
-**Example:**
+**Example Usage:**
 
 ```lua
     -- This snippet demonstrates a common usage of lia.command.parse
@@ -170,7 +170,7 @@ Garry's Mod net library. The server will then execute the command.
 **Realm:**
 
 * Client
-**Example:**
+**Example Usage:**
 
 ```lua
     -- This snippet demonstrates a common usage of lia.command.send
@@ -182,17 +182,18 @@ Garry's Mod net library. The server will then execute the command.
 
 ### lia.command.openArgumentPrompt
 
-    
 **Description:**
 
-Opens a window asking the player to fill in any arguments that were
-omitted or left as placeholders when running a chat command. The
-prompt only appears if the command's syntax fields were valid.
+Opens a window asking the player to fill in arguments for the given command. If only
+the command name is supplied, all arguments defined in the command's syntax are
+requested. Passing existing arguments causes the prompt to request only the missing
+ones.
 **Parameters:**
 
 * cmd (string) – The command name.
-* fields (table) – Table of field names to their types.
-* prefix (table) – Arguments that were already supplied before the prompt.
+* args (table|string) – Optional. Either the arguments already provided or a table of
+missing fields from the server.
+* prefix (table) – Optional prefix when using the legacy field table format.
 **Returns:**
 
 * nil

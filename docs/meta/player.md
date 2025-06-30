@@ -27,7 +27,7 @@ Returns the currently loaded character object for this player.
 
 * Character|None – The player's active character.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Retrieve the character to modify inventory
@@ -53,7 +53,7 @@ Returns either the character's roleplay name or the player's Steam name.
 
 * string – Display name.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Print the roleplay name in chat
@@ -79,7 +79,7 @@ Wrapper for CAMI privilege checks.
 
 * boolean – Result from CAMI.PlayerHasAccess.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Deny access if the player lacks a privilege
@@ -107,7 +107,7 @@ Safely returns the vehicle the player is currently using.
 
 * Entity|None – Vehicle entity or None.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Attach a camera to the vehicle the player is in
@@ -136,7 +136,7 @@ Determines if the player is currently inside a valid vehicle.
 
 * boolean – True if a vehicle entity is valid.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Allow honking only when in a valid vehicle
@@ -164,11 +164,276 @@ Returns true if the player is in noclip mode and not inside a vehicle.
 
 * boolean – Whether the player is noclipping.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Disable certain actions while noclipping
 if player:isNoClipping() then return end
+```
+---
+
+### hasRagdoll()
+
+**Description:**
+
+Checks if the player currently has an active ragdoll entity.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Shared
+
+**Returns:**
+
+* boolean – True when a ragdoll entity exists.
+
+**Example Usage:**
+
+```lua
+if player:hasRagdoll() then
+    print("Player is ragdolled")
+end
+```
+---
+
+### removeRagdoll()
+
+**Description:**
+
+Safely removes the player's ragdoll entity if present.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Shared
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+**Example Usage:**
+```lua
+-- Clean up any ragdoll left behind
+player:removeRagdoll()
+```
+---
+
+### getRagdoll()
+
+**Description:**
+
+Retrieves the ragdoll entity associated with the player.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Shared
+
+**Returns:**
+
+* Entity|None – The ragdoll entity or None.
+
+**Example Usage:**
+**Example Usage:**
+```lua
+local ragdoll = player:getRagdoll()
+```
+---
+
+### isStuck()
+
+**Description:**
+
+Determines whether the player's position is stuck in the world.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Shared
+
+**Returns:**
+
+* boolean – True if the trace detects a stuck state.
+
+**Example Usage:**
+
+**Example Usage:**
+if player:isStuck() then
+    player:SetPos(player:GetPos() + Vector(0, 0, 16))
+end
+```
+---
+
+### isNearPlayer(radius, entity)
+
+**Description:**
+
+Checks if an entity is within the given radius of the player.
+
+**Parameters:**
+
+* radius (number) – Distance in units.
+* entity (Entity) – Entity to compare.
+
+**Realm:**
+
+* Shared
+
+**Returns:**
+
+* boolean – True if the entity is close enough.
+
+**Example Usage:**
+
+**Example Usage:**
+if player:isNearPlayer(128, target) then
+    print("Target is nearby")
+end
+```
+---
+
+### entitiesNearPlayer(radius, playerOnly)
+
+**Description:**
+
+Returns a table of entities within radius of the player.
+
+**Parameters:**
+
+* radius (number) – Search distance in units.
+* playerOnly (boolean|None) – Only include players when true.
+
+**Realm:**
+
+* Shared
+
+**Returns:**
+
+* table – List of nearby entities.
+
+**Example Usage:**
+**Example Usage:**
+```lua
+for _, ent in ipairs(player:entitiesNearPlayer(256)) do
+    print(ent)
+end
+```
+---
+
+### getItemWeapon()
+
+**Description:**
+
+Returns the active weapon entity and associated item if equipped.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Shared
+
+**Returns:**
+
+* Entity|None – Weapon entity when matched.
+
+**Example Usage:**
+**Example Usage:**
+```lua
+local weapon, item = player:getItemWeapon()
+```
+---
+
+### isRunning()
+
+**Description:**
+
+Checks whether the player is moving faster than walking speed.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Shared
+
+**Returns:**
+
+* boolean – True if the player is running.
+
+**Example Usage:**
+
+**Example Usage:**
+if player:isRunning() then
+    -- player is sprinting
+end
+```
+---
+
+### isFemale()
+
+**Description:**
+
+Returns true if the player's model is considered female.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Shared
+
+**Returns:**
+
+* boolean – Whether a female model is detected.
+
+**Example Usage:**
+**Example Usage:**
+```lua
+if player:isFemale() then
+    print("Female model detected")
+end
+```
+---
+
+### getItemDropPos()
+
+**Description:**
+
+Finds a safe position in front of the player to drop items.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Shared
+
+**Returns:**
+
+* Vector – World position for dropping items.
+
+**Example Usage:**
+
+```lua
+local pos = player:getItemDropPos()
 ```
 ---
 
@@ -190,8 +455,8 @@ Returns the player's inventory item list if a character is loaded.
 
 * table|None – Table of items or None if absent.
 
-**Example:**
-
+**Example Usage:**
+**Example Usage:**
 ```lua
 -- Iterate player's items to calculate total weight
 for _, it in pairs(player:getItems() or {}) do
@@ -217,8 +482,8 @@ Performs a simple trace from the player's shoot position.
 **Returns:**
 
 * Entity|None – The entity hit or None.
-
-**Example:**
+**Example Usage:**
+**Example Usage:**
 
 ```lua
 -- Grab the entity the player is pointing at
@@ -243,8 +508,8 @@ Returns a hull trace in front of the player.
 **Returns:**
 
 * table – Trace result.
-
-**Example:**
+**Example Usage:**
+**Example Usage:**
 
 ```lua
 -- Use a hull trace for melee attacks
@@ -269,8 +534,8 @@ Returns the entity the player is looking at within a distance.
 **Returns:**
 
 * Entity|None – The entity or None if too far.
-
-**Example:**
+**Example Usage:**
+**Example Usage:**
 
 ```lua
 -- Show the name of the object being looked at
@@ -295,10 +560,10 @@ Sends a plain notification message to the player.
 
 * Server
 **Returns:**
-
+**Example Usage:**
 * None – This function does not return a value.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Send a welcome notification and log the join event
@@ -321,11 +586,11 @@ Sends a localized notification to the player.
 **Realm:**
 
 * Server
-**Returns:**
+**Example Usage:**
 
 * None – This function does not return a value.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Send a localized message including the player's name and score
@@ -347,12 +612,12 @@ Determines whether the player can edit the given vendor.
 **Realm:**
 
 * Server
-
+**Example Usage:**
 **Returns:**
 
 * boolean – True if allowed to edit.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Determine if the player may modify the vendor
@@ -373,12 +638,12 @@ Convenience wrapper to check if the player is in the "user" group.
 **Realm:**
 
 * Shared
-
+**Example Usage:**
 **Returns:**
 
 * boolean – Whether usergroup is "user".
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Check if the player belongs to the default user group
@@ -399,12 +664,12 @@ Returns true if the player belongs to a staff group.
 **Realm:**
 
 * Shared
-
+**Example Usage:**
 **Returns:**
 
 * boolean – Result from the privilege check.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Verify staff permissions for administrative actions
@@ -425,12 +690,12 @@ Checks whether the player is in the VIP group.
 **Realm:**
 
 * Shared
-
+**Example Usage:**
 **Returns:**
 
 * boolean – Result from privilege check.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Test if the player has VIP status
@@ -452,11 +717,11 @@ Determines if the player is currently in the staff faction.
 
 * Shared
 
-**Returns:**
+**Example Usage:**
 
 * boolean – True if staff faction is active.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Confirm the player is currently in a staff role
@@ -478,11 +743,11 @@ Checks if the player's character belongs to the given faction.
 
 * Shared
 
-**Returns:**
+**Example Usage:**
 
 * boolean – True if the factions match.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Compare the player's faction to a requirement
@@ -507,8 +772,8 @@ Returns true if the player's character is of the given class.
 **Returns:**
 
 * boolean – Whether the character matches the class.
-
-**Example:**
+**Example Usage:**
+**Example Usage:**
 
 ```lua
 -- Determine if the player's class matches
@@ -532,9 +797,9 @@ Determines if the player has whitelist access for a faction.
 
 **Returns:**
 
-* boolean – True if whitelisted.
+**Example Usage:**True if whitelisted.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Check for whitelist permission on a faction
@@ -556,11 +821,11 @@ Retrieves the class index of the player's character.
 
 * Shared
 
-**Returns:**
+**Example Usage:**
 
 * number|None – Class index or None.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Retrieve the current class index
@@ -580,13 +845,13 @@ Checks if the player's character is whitelisted for a class.
 
 **Realm:**
 
-* Shared
+**Example Usage:**
 
 **Returns:**
 
 * boolean – True if class whitelist exists.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Verify the player is approved for a specific class
@@ -605,14 +870,14 @@ Returns the class table of the player's current class.
 * None
 
 **Realm:**
-
+**Example Usage:**
 * Shared
 
 **Returns:**
 
 * table|None – Class definition table.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Access data table for the player's class
@@ -631,14 +896,14 @@ Compatibility helper for retrieving money with DarkRP-style calls.
 * var (string) – Currently only supports "money".
 
 **Realm:**
-
+**Example Usage:**
 * Shared
 
 **Returns:**
 
 * number|None – Money amount or None.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Read money amount in a DarkRP-compatible way
@@ -664,7 +929,7 @@ Convenience function to get the character's money amount.
 
 * number – Current funds or 0.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Fetch the character's stored funds
@@ -690,7 +955,7 @@ Checks if the player has enough money for a purchase.
 
 * boolean – True if funds are sufficient.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Check if the player has enough money to buy something
@@ -717,7 +982,7 @@ Verifies the player's character meets an attribute level.
 
 * boolean – Whether the character satisfies the requirement.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Ensure the player meets a single skill requirement
@@ -743,7 +1008,7 @@ Checks a table of skill requirements against the player.
 
 * boolean – True if all requirements are met.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Validate multiple skill requirements at once
@@ -772,7 +1037,7 @@ Plays an animation sequence and optionally freezes the player.
 
 * number|boolean – Duration or false on failure.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Play an animation while freezing the player
@@ -797,7 +1062,7 @@ Stops any forced sequence and restores player movement.
 
 * None – This function does not return a value.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Stop the player's forced animation sequence
@@ -821,7 +1086,7 @@ Increases the player's stamina value.
 * Returns:
 * None – This function does not return a value.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Give the player extra stamina points
@@ -845,7 +1110,7 @@ Reduces the player's stamina value.
 * Returns:
 * None – This function does not return a value.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Spend stamina as the player performs an action
@@ -870,7 +1135,7 @@ Adds funds to the player's character, clamping to limits.
 
 * None – This function does not return a value.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Reward the player and announce the payout
@@ -896,9 +1161,930 @@ Removes money from the player's character.
 
 * None – This function does not return a value.
 
-**Example:**
+**Example Usage:**
 
 ```lua
 -- Remove money from the player's character
 local result = player:takeMoney(amount)
 ```
+---
+
+### WhitelistAllClasses()
+
+**Description:**
+
+Grants whitelist access to every registered class.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+-- Unlock every class for the player
+player:WhitelistAllClasses()
+```
+---
+
+### WhitelistAllFactions()
+
+**Description:**
+
+Whitelists the player for all factions.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:WhitelistAllFactions()
+```
+---
+
+### WhitelistEverything()
+
+**Description:**
+
+Convenience method to whitelist all factions and classes.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+-- Give the player access to all content
+player:WhitelistEverything()
+```
+---
+
+### classWhitelist(class)
+
+**Description:**
+
+Adds a single class to the character's whitelist table.
+
+**Parameters:**
+
+* class (number) – Class index to whitelist.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:classWhitelist(CLASS_MEDIC)
+```
+---
+
+### classUnWhitelist(class)
+
+**Description:**
+
+Removes a class from the character's whitelist table.
+
+**Parameters:**
+
+* class (number) – Class index to remove.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:classUnWhitelist(CLASS_MEDIC)
+```
+---
+
+### setWhitelisted(faction, whitelisted)
+
+**Description:**
+
+Sets or clears whitelist permission for a faction.
+
+**Parameters:**
+
+* faction (number) – Faction index.
+* whitelisted (boolean|None) – Enable when true, disable when false/nil.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* boolean – True if the faction exists.
+
+**Example Usage:**
+
+```lua
+player:setWhitelisted(FACTION_POLICE, true)
+```
+---
+
+### loadLiliaData(callback)
+
+**Description:**
+
+Loads persistent Lilia data for the player from the database.
+
+**Parameters:**
+
+* callback (function|None) – Invoked with the loaded table.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:loadLiliaData(function(data) print(data) end)
+```
+---
+
+### saveLiliaData()
+
+**Description:**
+
+Saves the player's Lilia data back to the database.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:saveLiliaData()
+```
+---
+
+### setLiliaData(key, value, noNetworking)
+
+**Description:**
+
+Stores a value in the player's persistent data table.
+
+**Parameters:**
+
+* key (string) – Data key.
+* value (any) – Value to store.
+* noNetworking (boolean|None) – Skip network update when true.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:setLiliaData("settings", {foo = true})
+```
+---
+
+### setWaypoint(name, vector)
+
+**Description:**
+
+Sends a waypoint to the client at the specified position.
+
+**Parameters:**
+
+* name (string) – Display label.
+* vector (Vector) – World position.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:setWaypoint("Objective", Vector(0, 0, 0))
+```
+---
+
+### setWeighPoint(name, vector)
+
+**Description:**
+
+Alias of `setWaypoint()` for backwards compatibility.
+
+**Parameters:**
+
+* name (string) – Display label.
+* vector (Vector) – World position.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:setWeighPoint("Target", Vector(100, 100, 0))
+```
+---
+
+### setWaypointWithLogo(name, vector, logo)
+
+**Description:**
+
+Creates a waypoint using a custom logo material.
+
+**Parameters:**
+
+* name (string) – Display label.
+* vector (Vector) – World position.
+* logo (string) – Material path for the icon.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:setWaypointWithLogo("Objective", Vector(0,0,0), "path/to/icon.png")
+```
+---
+
+### getLiliaData(key, default)
+
+**Description:**
+
+Retrieves a stored value from the player's data table.
+
+**Parameters:**
+
+* key (string) – Data key.
+* default (any) – Returned if the key is nil.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* any – Stored value or default.
+
+**Example Usage:**
+
+```lua
+local settings = player:getLiliaData("settings", {})
+```
+---
+
+### getAllLiliaData()
+
+**Description:**
+
+Returns the entire table of persistent data for the player.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* table – Player data table.
+
+**Example Usage:**
+
+```lua
+local data = player:getAllLiliaData()
+```
+---
+
+### setRagdoll(entity)
+
+**Description:**
+
+Associates a ragdoll entity with the player for later retrieval.
+
+**Parameters:**
+
+* entity (Entity) – The ragdoll entity.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:setRagdoll(ragdollEnt)
+```
+---
+
+### NetworkAnimation(active, boneData)
+
+**Description:**
+
+Broadcasts animation bone data to all clients.
+
+**Parameters:**
+
+* active (boolean) – Enable or disable manipulation.
+* boneData (table) – Map of bone names to angles.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:NetworkAnimation(true, data)
+```
+---
+
+### setAction(text, time, callback)
+
+**Description:**
+
+Displays an action bar for a set duration and optionally runs a callback.
+
+**Parameters:**
+
+* text (string|None) – Text to display, or nil to clear.
+* time (number|None) – How long to show it for.
+* callback (function|None) – Executed when time elapses.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:setAction("Lockpicking", 5)
+```
+---
+
+### doStaredAction(entity, callback, time, onCancel, distance)
+
+**Description:**
+
+Runs an action only while the player stares at the entity.
+
+**Parameters:**
+
+* entity (Entity) – Target entity.
+* callback (function) – Called when the timer finishes.
+* time (number) – Duration in seconds.
+* onCancel (function|None) – Called if gaze breaks.
+* distance (number|None) – Max distance to maintain.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:doStaredAction(door, function() door:Open() end, 3)
+```
+---
+
+### stopAction()
+
+**Description:**
+
+Cancels any running action bar on the player.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:stopAction()
+```
+---
+
+### requestDropdown(title, subTitle, options, callback)
+
+**Description:**
+
+Prompts the client with a dropdown selection dialog.
+
+**Parameters:**
+
+* title (string) – Window title.
+* subTitle (string) – Description text.
+* options (table) – Table of options.
+* callback (function) – Receives the chosen value.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:requestDropdown("Choose", "Pick one", {"A", "B"}, print)
+```
+---
+
+### requestOptions(title, subTitle, options, limit, callback)
+
+**Description:**
+
+Asks the client to select one or more options from a list.
+
+**Parameters:**
+
+* title (string) – Window title.
+* subTitle (string) – Description text.
+* options (table) – Available options.
+* limit (number) – Maximum selections allowed.
+* callback (function) – Receives the chosen values.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:requestOptions("Permissions", "Select", {"A", "B"}, 2, print)
+```
+---
+
+### requestString(title, subTitle, callback, default)
+
+**Description:**
+
+Requests a string from the client.
+
+**Parameters:**
+
+* title (string) – Prompt title.
+* subTitle (string) – Prompt description.
+* callback (function|None) – Called with the string.
+* default (string|None) – Default value.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* deferred|None – Deferred object when no callback supplied.
+
+**Example Usage:**
+
+```lua
+player:requestString("Name", "Enter text", print)
+```
+---
+
+### binaryQuestion(question, option1, option2, manualDismiss, callback)
+
+**Description:**
+
+Displays a yes/no style question to the player.
+
+**Parameters:**
+
+* question (string) – Main text.
+* option1 (string) – Text for the first option.
+* option2 (string) – Text for the second option.
+* manualDismiss (boolean) – Require manual closing.
+* callback (function) – Called with chosen value.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:binaryQuestion("Proceed?", "Yes", "No", false, print)
+```
+---
+
+### getPlayTime()
+
+**Description:**
+
+Calculates how long the player has been on the server.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* number – Total seconds of playtime.
+
+**Example Usage:**
+
+```lua
+print(player:getPlayTime())
+```
+---
+
+### createRagdoll(freeze, isDead)
+
+**Description:**
+
+Spawns a ragdoll copy of the player and optionally freezes it.
+
+**Parameters:**
+
+* freeze (boolean|None) – Disable physics when true.
+* isDead (boolean|None) – Mark as a death ragdoll.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* Entity – The created ragdoll.
+
+**Example Usage:**
+
+```lua
+local rag = player:createRagdoll(true)
+```
+---
+
+### setRagdolled(state, time, getUpGrace, getUpMessage)
+
+**Description:**
+
+Toggles the player's ragdoll state for a duration.
+
+**Parameters:**
+
+* state (boolean) – Enable or disable ragdoll.
+* time (number|None) – Duration before standing up.
+* getUpGrace (number|None) – Extra time to prevent early stand.
+* getUpMessage (string|None) – Message while downed.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:setRagdolled(true, 5)
+```
+---
+
+### syncVars()
+
+**Description:**
+
+Sends all networked variables to the player.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:syncVars()
+```
+---
+
+### setLocalVar(key, value)
+
+**Description:**
+
+Sets a networked local variable on the player.
+
+**Parameters:**
+
+* key (string) – Variable name.
+* value (any) – Value to set.
+
+**Realm:**
+
+* Server
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+player:setLocalVar("health", 75)
+```
+---
+
+### getPlayTime()
+
+**Description:**
+
+Returns playtime calculated client side when called on a client.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Client
+
+**Returns:**
+
+* number – Seconds of playtime.
+
+**Example Usage:**
+
+```lua
+print(LocalPlayer():getPlayTime())
+```
+---
+
+### setWaypoint(name, vector, onReach)
+
+**Description:**
+
+Displays a waypoint on the HUD until the player reaches it.
+
+**Parameters:**
+
+* name (string) – Display label.
+* vector (Vector) – World position.
+* onReach (function|None) – Called when reached.
+
+**Realm:**
+
+* Client
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+LocalPlayer():setWaypoint("Home", Vector(0,0,0))
+```
+---
+
+### setWeighPoint(name, vector, onReach)
+
+**Description:**
+
+Alias of the client version of `setWaypoint`.
+
+**Parameters:**
+
+* name (string) – Display label.
+* vector (Vector) – World position.
+* onReach (function|None) – Called when reached.
+
+**Realm:**
+
+* Client
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+LocalPlayer():setWeighPoint("Spot", Vector(10,10,0))
+```
+---
+
+### setWaypointWithLogo(name, vector, logo, onReach)
+
+**Description:**
+
+Places a waypoint using a logo material on the client HUD.
+
+**Parameters:**
+
+* name (string) – Display label.
+* vector (Vector) – Position to navigate to.
+* logo (string) – Material path for the icon.
+* onReach (function|None) – Called when reached.
+
+**Realm:**
+
+* Client
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+LocalPlayer():setWaypointWithLogo("Loot", Vector(1,1,1), "icon.png")
+```
+---
+
+### getLiliaData(key, default)
+
+**Description:**
+
+Client side accessor for stored player data.
+
+**Parameters:**
+
+* key (string) – Data key.
+* default (any) – Fallback value.
+
+**Realm:**
+
+* Client
+
+**Returns:**
+
+* any – Stored value or default.
+
+**Example Usage:**
+
+```lua
+local data = LocalPlayer():getLiliaData("settings")
+```
+---
+
+### getAllLiliaData()
+
+**Description:**
+
+Returns the entire local data table for the player.
+
+**Parameters:**
+
+* None
+
+**Realm:**
+
+* Client
+
+**Returns:**
+
+* table – Local data table.
+
+**Example Usage:**
+
+```lua
+local data = LocalPlayer():getAllLiliaData()
+```
+---
+
+### NetworkAnimation(active, boneData)
+
+**Description:**
+
+Applies or clears clientside bone angles based on animation data.
+
+**Parameters:**
+
+* active (boolean) – Enable or disable animation.
+* boneData (table) – Bones and angles to apply.
+
+**Realm:**
+
+* Client
+
+**Returns:**
+
+* None – This function does not return a value.
+
+**Example Usage:**
+
+```lua
+LocalPlayer():NetworkAnimation(true, data)
+```
+---
