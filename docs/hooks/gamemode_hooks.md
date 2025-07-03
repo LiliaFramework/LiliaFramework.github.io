@@ -1475,7 +1475,7 @@ Runs when a player spawns and equips items. Allows modification of the default l
 
 **Realm:**
 
-* Server
+* Shared
 
 
 **Returns:**
@@ -2982,6 +2982,80 @@ Similar to OnCharVarChanged but for local-only variables. Called after the table
 hook.Add("OnCharLocalVarChanged", "WatchFlags", function(char, k, old, new)
     if k == "flags" then
         print("Flags changed")
+    end
+end)
+```
+
+---
+
+### LocalVarChanged
+
+**Description:**
+
+Triggered when `setLocalVar` updates a player's local variable. Provides both the old and new values.
+
+**Parameters:**
+
+* player (Player) – Affected player.
+
+* key (string) – Variable name.
+
+* oldValue (any) – Previous value.
+
+* value (any) – New value.
+
+**Realm:**
+
+* Shared
+
+**Returns:**
+
+* None
+
+**Example Usage:**
+
+```lua
+-- Print when a player's stamina local var changes
+hook.Add("LocalVarChanged", "TrackStamina", function(ply, k, old, new)
+    if k == "stamina" then
+        print(ply:Name(), "stamina:", new)
+    end
+end)
+```
+
+---
+
+### NetVarChanged
+
+**Description:**
+
+Runs when `setNetVar` changes an entity's networked variable. Works for global variables when the entity argument is nil.
+
+**Parameters:**
+
+* entity (Entity|nil) – Entity with the updated variable, or nil for global vars.
+
+* key (string) – Variable name.
+
+* oldValue (any) – Previous value.
+
+* value (any) – New value.
+
+**Realm:**
+
+* Shared
+
+**Returns:**
+
+* None
+
+**Example Usage:**
+
+```lua
+-- React to door network vars
+hook.Add("NetVarChanged", "WatchDoors", function(ent, k, old, new)
+    if IsValid(ent) and ent:isDoor() then
+        print("Door var", k, "changed to", new)
     end
 end)
 ```
@@ -6615,7 +6689,9 @@ end)
 
 **Description:**
 
-Determines if a player can use a specific command. Return `false` to block usage.
+Determines if a player can use a specific command. Returning either
+`true` or `false` overrides the normal permission logic; returning
+`nil` falls back to the default checks.
 
 **Parameters:**
 
@@ -6632,7 +6708,8 @@ Determines if a player can use a specific command. Return `false` to block usage
 
 **Returns:**
 
-* boolean|nil: false to block, nil to allow.
+* boolean|nil: non-nil values override the result; return `nil` to
+  allow built‑in checks to decide.
 
 
 **Example Usage:**
@@ -9536,6 +9613,7 @@ end)
 **Description:**
 
 Runs after a character has been loaded and set up for a player.
+This hook also runs client-side when the server loads the character.
 
 **Parameters:**
 
@@ -9550,7 +9628,7 @@ Runs after a character has been loaded and set up for a player.
 
 **Realm:**
 
-* Server
+* Shared
 
 
 **Returns:**
@@ -9574,6 +9652,7 @@ end)
 **Description:**
 
 Fired right before a player switches to a new character.
+This hook also runs client-side when the server loads the character.
 
 **Parameters:**
 
@@ -9588,7 +9667,7 @@ Fired right before a player switches to a new character.
 
 **Realm:**
 
-* Server
+* Shared
 
 
 **Returns:**
@@ -9612,6 +9691,7 @@ end)
 **Description:**
 
 Called after PlayerLoadedChar to allow post-load operations.
+This hook also runs client-side when the server loads the character.
 
 **Parameters:**
 
@@ -9626,7 +9706,7 @@ Called after PlayerLoadedChar to allow post-load operations.
 
 **Realm:**
 
-* Server
+* Shared
 
 
 **Returns:**

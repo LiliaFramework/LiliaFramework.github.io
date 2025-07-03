@@ -23,7 +23,7 @@ The global `CLASS` table defines per-class settings such as display name, lore, 
 | `weapons` | `table` | `{}` | Weapons granted to members of this class. |
 | `pay` | `number` | `0` | Payment amount per interval. |
 | `payLimit` | `number` | `0` | Maximum accumulated pay. |
-| `payTimer` | `number` | `300` | Interval (seconds) between paychecks. |
+| `payTimer` | `number` | `3600` | Seconds between paychecks when not overridden. |
 | `limit` | `number` | `0` | Maximum number of players in this class. |
 | `health` | `number` | `0` | Default starting health. |
 | `armor` | `number` | `0` | Default starting armor. |
@@ -39,6 +39,7 @@ The global `CLASS` table defines per-class settings such as display name, lore, 
 | `model` | `string` | `""` | Model path (or table of paths) used by this class. |
 | `index` | `number` | `auto` | Unique team index assigned at registration. |
 | `uniqueID` | `string` | `filename` | Optional identifier; defaults to the file name when omitted. |
+| `commands` | `table` | `{}` | Command names members may always use. |
 
 ---
 
@@ -256,7 +257,9 @@ CLASS.payLimit = 1000
 
 **Description:**
 
-Interval in seconds between salary payouts.
+How often salaries are paid to members of this class.
+If omitted, the timer falls back to the faction's `payTimer` or
+the global `SalaryInterval` configuration value (default `3600`).
 
 **Example Usage:**
 
@@ -509,6 +512,27 @@ Model path (or list of paths) assigned to this class.
 
 ```lua
 CLASS.model = "models/player/alyx.mdl"
+```
+
+---
+
+#### `commands`
+
+**Type:**
+
+`table`
+
+**Description:**
+
+Table of command names that members of this class may always use,
+overriding standard command permissions.
+
+**Example Usage:**
+
+```lua
+CLASS.commands = {
+    plytransfer = true,
+}
 ```
 
 ---
