@@ -1,0 +1,5051 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official documentation for the Lilia Framework">
+      
+      
+        <meta name="author" content="Lilia Framework Team">
+      
+      
+        <link rel="canonical" href="https://liliaframework.github.io/meta/player/">
+      
+      
+        <link rel="prev" href="../panel/">
+      
+      
+        <link rel="next" href="../tool/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Player Meta - Lilia Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lavender">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#player-meta" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Lilia Documentation" class="md-header__button md-logo" aria-label="Lilia Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo_small.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lilia Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Player Meta
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lavender"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="lavender"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/LiliaFramework/Lilia" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../compatibility/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Addons with Improved Compatibility
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../feature_list/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Feature List
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../installation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../modules/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Optional Modules
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../definitions/attribute/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Definitions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hooks/attribute_hooks/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Hooks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../libraries/lia.attributes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Libraries
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../character/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Meta
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Lilia Documentation" class="md-nav__button md-logo" aria-label="Lilia Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo_small.png" alt="logo">
+
+    </a>
+    Lilia Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/LiliaFramework/Lilia" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compatibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Addons with Improved Compatibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Feature List
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optional Modules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../definitions/attribute/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Definitions
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../hooks/attribute_hooks/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Hooks
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../libraries/lia.attributes/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Libraries
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Meta
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../character/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Character Meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entity Meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gridinv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GridInv Meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inventory Meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Item Meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../panel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Panel Meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Player Meta
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Player Meta
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getchar" class="md-nav__link">
+    <span class="md-ellipsis">
+      getChar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    <span class="md-ellipsis">
+      Name
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasprivilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      hasPrivilege
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcurrentvehicle" class="md-nav__link">
+    <span class="md-ellipsis">
+      getCurrentVehicle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasvalidvehicle" class="md-nav__link">
+    <span class="md-ellipsis">
+      hasValidVehicle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isnoclipping" class="md-nav__link">
+    <span class="md-ellipsis">
+      isNoClipping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hasragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      hasRagdoll
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canoverrideview" class="md-nav__link">
+    <span class="md-ellipsis">
+      CanOverrideView
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isinthirdperson" class="md-nav__link">
+    <span class="md-ellipsis">
+      IsInThirdPerson
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removeragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      removeRagdoll
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      getRagdoll
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isstuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      isStuck
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entitiesnearplayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      entitiesNearPlayer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getitemweapon" class="md-nav__link">
+    <span class="md-ellipsis">
+      getItemWeapon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isrunning" class="md-nav__link">
+    <span class="md-ellipsis">
+      isRunning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-isfemale-description-returns-true-if-the-players-model-is-considered-female-parameters-none-realm-shared-returns-boolean-whether-a-female-model-is-detected-example-usage-lua-if-playerisfemale-then-printfemale-model-detected-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      --- ### isFemale **Description:** Returns true if the player&#39;s model is considered female. **Parameters:** * None **Realm:** * Shared **Returns:** * boolean – Whether a female model is detected. **Example Usage:** ```lua if player:isFemale() then print(&quot;Female model detected&quot;) end
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="--- ### isFemale **Description:** Returns true if the player&#39;s model is considered female. **Parameters:** * None **Realm:** * Shared **Returns:** * boolean – Whether a female model is detected. **Example Usage:** ```lua if player:isFemale() then print(&#34;Female model detected&#34;) end">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getitemdroppos" class="md-nav__link">
+    <span class="md-ellipsis">
+      getItemDropPos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-pos-playergetitemdroppos" class="md-nav__link">
+    <span class="md-ellipsis">
+      local pos = player:getItemDropPos()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="local pos = player:getItemDropPos()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getitems" class="md-nav__link">
+    <span class="md-ellipsis">
+      getItems
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-iterate-players-items-to-calculate-total-weight-for-_-it-in-pairsplayergetitems-or-do-total-total-itweight-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Iterate player&#39;s items to calculate total weight for _, it in pairs(player:getItems() or {}) do total = total + it.weight end
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Iterate player&#39;s items to calculate total weight for _, it in pairs(player:getItems() or {}) do total = total + it.weight end">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gettracedentity" class="md-nav__link">
+    <span class="md-ellipsis">
+      getTracedEntity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-grab-the-entity-the-player-is-pointing-at-local-entity-playergettracedentity96" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Grab the entity the player is pointing at local entity = player:getTracedEntity(96)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Grab the entity the player is pointing at local entity = player:getTracedEntity(96)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gettrace" class="md-nav__link">
+    <span class="md-ellipsis">
+      getTrace
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-use-a-hull-trace-for-melee-attacks-local-tr-playergettrace48" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Use a hull trace for melee attacks local tr = player:getTrace(48)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Use a hull trace for melee attacks local tr = player:getTrace(48)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geteyeent" class="md-nav__link">
+    <span class="md-ellipsis">
+      getEyeEnt
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-show-the-name-of-the-object-being-looked-at-local-target-playergeteyeent128-if-isvalidtarget-then-playerchatprintstringformatclass-s-targetgetclass-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Show the name of the object being looked at local target = player:getEyeEnt(128) if IsValid(target) then player:ChatPrint(string.format(&quot;Class: %s&quot;, target:GetClass())) end
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Show the name of the object being looked at local target = player:getEyeEnt(128) if IsValid(target) then player:ChatPrint(string.format(&#34;Class: %s&#34;, target:GetClass())) end">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notify" class="md-nav__link">
+    <span class="md-ellipsis">
+      notify
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-send-a-welcome-notification-and-log-the-join-event-playernotifywelcome-to-the-server-fileappendwelcometxt-playersteamid-joinedn" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Send a welcome notification and log the join event player:notify(&quot;Welcome to the server!&quot;) file.Append(&quot;welcome.txt&quot;, player:SteamID() .. &quot; joined\n&quot;)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Send a welcome notification and log the join event player:notify(&#34;Welcome to the server!&#34;) file.Append(&#34;welcome.txt&#34;, player:SteamID() .. &#34; joined\n&#34;)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notifylocalized" class="md-nav__link">
+    <span class="md-ellipsis">
+      notifyLocalized
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-send-a-localized-message-including-the-players-name-and-score-local-score-playergetfrags-playernotifylocalizedgreeting_key-playername-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Send a localized message including the player&#39;s name and score local score = player:GetFrags() player:notifyLocalized(&quot;greeting_key&quot;, player:Name(), score)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Send a localized message including the player&#39;s name and score local score = player:GetFrags() player:notifyLocalized(&#34;greeting_key&#34;, player:Name(), score)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caneditvendor" class="md-nav__link">
+    <span class="md-ellipsis">
+      CanEditVendor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-playercaneditvendorvendor-then-vendoropeneditorplayer-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      if player:CanEditVendor(vendor) then vendor:OpenEditor(player) end
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="if player:CanEditVendor(vendor) then vendor:OpenEditor(player) end">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isuser" class="md-nav__link">
+    <span class="md-ellipsis">
+      isUser
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-check-if-the-player-belongs-to-the-default-user-group-local-result-playerisuser" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Check if the player belongs to the default user group local result = player:isUser()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Check if the player belongs to the default user group local result = player:isUser()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isstaff" class="md-nav__link">
+    <span class="md-ellipsis">
+      isStaff
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-verify-staff-permissions-for-administrative-actions-local-result-playerisstaff" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Verify staff permissions for administrative actions local result = player:isStaff()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Verify staff permissions for administrative actions local result = player:isStaff()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isvip" class="md-nav__link">
+    <span class="md-ellipsis">
+      isVIP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-test-if-the-player-has-vip-status-local-result-playerisvip" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Test if the player has VIP status local result = player:isVIP()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Test if the player has VIP status local result = player:isVIP()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isstaffonduty" class="md-nav__link">
+    <span class="md-ellipsis">
+      isStaffOnDuty
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-confirm-the-player-is-currently-in-a-staff-role-local-result-playerisstaffonduty" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Confirm the player is currently in a staff role local result = player:isStaffOnDuty()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Confirm the player is currently in a staff role local result = player:isStaffOnDuty()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isfaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      isFaction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-compare-the-players-faction-to-a-requirement-local-result-playerisfactionfaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Compare the player&#39;s faction to a requirement local result = player:isFaction(faction)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Compare the player&#39;s faction to a requirement local result = player:isFaction(faction)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      isClass
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-determine-if-the-players-class-matches-local-result-playerisclassclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Determine if the player&#39;s class matches local result = player:isClass(class)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Determine if the player&#39;s class matches local result = player:isClass(class)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#haswhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      hasWhitelist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-check-for-whitelist-permission-on-a-faction-local-result-playerhaswhitelistfaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Check for whitelist permission on a faction local result = player:hasWhitelist(faction)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Check for whitelist permission on a faction local result = player:hasWhitelist(faction)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      getClass
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-retrieve-the-current-class-index-local-result-playergetclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Retrieve the current class index local result = player:getClass()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Retrieve the current class index local result = player:getClass()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hasclasswhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      hasClassWhitelist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-verify-the-player-is-approved-for-a-specific-class-local-result-playerhasclasswhitelistclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Verify the player is approved for a specific class local result = player:hasClassWhitelist(class)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Verify the player is approved for a specific class local result = player:hasClassWhitelist(class)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getclassdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      getClassData
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-access-data-table-for-the-players-class-local-result-playergetclassdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Access data table for the player&#39;s class local result = player:getClassData()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Access data table for the player&#39;s class local result = player:getClassData()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getdarkrpvar" class="md-nav__link">
+    <span class="md-ellipsis">
+      getDarkRPVar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-read-money-amount-in-a-darkrp-compatible-way-local-result-playergetdarkrpvarvar" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Read money amount in a DarkRP-compatible way local result = player:getDarkRPVar(var)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Read money amount in a DarkRP-compatible way local result = player:getDarkRPVar(var)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getmoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      getMoney
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-fetch-the-characters-stored-funds-local-result-playergetmoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Fetch the character&#39;s stored funds local result = player:getMoney()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Fetch the character&#39;s stored funds local result = player:getMoney()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canafford" class="md-nav__link">
+    <span class="md-ellipsis">
+      canAfford
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-check-if-the-player-has-enough-money-to-buy-something-local-result-playercanaffordamount" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Check if the player has enough money to buy something local result = player:canAfford(amount)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Check if the player has enough money to buy something local result = player:canAfford(amount)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hasskilllevel" class="md-nav__link">
+    <span class="md-ellipsis">
+      hasSkillLevel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-ensure-the-player-meets-a-single-skill-requirement-local-result-playerhasskilllevelskill-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Ensure the player meets a single skill requirement local result = player:hasSkillLevel(skill, level)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Ensure the player meets a single skill requirement local result = player:hasSkillLevel(skill, level)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meetsrequiredskills" class="md-nav__link">
+    <span class="md-ellipsis">
+      meetsRequiredSkills
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-validate-multiple-skill-requirements-at-once-local-result-playermeetsrequiredskillsrequiredskilllevels" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Validate multiple skill requirements at once local result = player:meetsRequiredSkills(requiredSkillLevels)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Validate multiple skill requirements at once local result = player:meetsRequiredSkills(requiredSkillLevels)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forcesequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      forceSequence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-play-an-animation-while-freezing-the-player-local-result-playerforcesequencesequencename-callback-time-nofreeze" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Play an animation while freezing the player local result = player:forceSequence(sequenceName, callback, time, noFreeze)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Play an animation while freezing the player local result = player:forceSequence(sequenceName, callback, time, noFreeze)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leavesequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      leaveSequence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-stop-the-players-forced-animation-sequence-local-result-playerleavesequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Stop the player&#39;s forced animation sequence local result = player:leaveSequence()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Stop the player&#39;s forced animation sequence local result = player:leaveSequence()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#restorestamina" class="md-nav__link">
+    <span class="md-ellipsis">
+      restoreStamina
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-give-the-player-extra-stamina-points-local-result-playerrestorestaminaamount" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Give the player extra stamina points local result = player:restoreStamina(amount)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Give the player extra stamina points local result = player:restoreStamina(amount)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consumestamina" class="md-nav__link">
+    <span class="md-ellipsis">
+      consumeStamina
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-spend-stamina-as-the-player-performs-an-action-local-result-playerconsumestaminaamount" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Spend stamina as the player performs an action local result = player:consumeStamina(amount)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Spend stamina as the player performs an action local result = player:consumeStamina(amount)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addmoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      addMoney
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-reward-the-player-and-announce-the-payout-playeraddmoney100-playernotifylocalizedquestreward-liacurrencyget100" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Reward the player and announce the payout player:addMoney(100) player:notifyLocalized(&quot;questReward&quot;, lia.currency.get(100))
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Reward the player and announce the payout player:addMoney(100) player:notifyLocalized(&#34;questReward&#34;, lia.currency.get(100))">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#takemoney" class="md-nav__link">
+    <span class="md-ellipsis">
+      takeMoney
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-remove-money-from-the-players-character-local-result-playertakemoneyamount" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Remove money from the player&#39;s character local result = player:takeMoney(amount)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Remove money from the player&#39;s character local result = player:takeMoney(amount)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whitelistallclasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      WhitelistAllClasses
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-unlock-every-class-for-the-player-playerwhitelistallclasses" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Unlock every class for the player player:WhitelistAllClasses()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Unlock every class for the player player:WhitelistAllClasses()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whitelistallfactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      WhitelistAllFactions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playerwhitelistallfactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:WhitelistAllFactions()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:WhitelistAllFactions()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whitelisteverything" class="md-nav__link">
+    <span class="md-ellipsis">
+      WhitelistEverything
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-give-the-player-access-to-all-content-playerwhitelisteverything" class="md-nav__link">
+    <span class="md-ellipsis">
+      -- Give the player access to all content player:WhitelistEverything()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-- Give the player access to all content player:WhitelistEverything()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classwhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      classWhitelist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playerclasswhitelistclass_medic" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:classWhitelist(CLASS_MEDIC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:classWhitelist(CLASS_MEDIC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classunwhitelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      classUnWhitelist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playerclassunwhitelistclass_medic" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:classUnWhitelist(CLASS_MEDIC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:classUnWhitelist(CLASS_MEDIC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setwhitelisted" class="md-nav__link">
+    <span class="md-ellipsis">
+      setWhitelisted
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playersetwhitelistedfaction_police-true" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:setWhitelisted(FACTION_POLICE, true)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:setWhitelisted(FACTION_POLICE, true)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loadliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      loadLiliaData
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playerloadliliadatafunctiondata-printdata-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:loadLiliaData(function(data) print(data) end)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:loadLiliaData(function(data) print(data) end)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saveliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      saveLiliaData
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playersaveliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:saveLiliaData()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:saveLiliaData()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      setLiliaData
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playersetliliadatasettings-foo-true" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:setLiliaData(&quot;settings&quot;, {foo = true})
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:setLiliaData(&#34;settings&#34;, {foo = true})">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setwaypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      setWaypoint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playersetwaypointobjective-vector0-0-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:setWaypoint(&quot;Objective&quot;, Vector(0, 0, 0))
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:setWaypoint(&#34;Objective&#34;, Vector(0, 0, 0))">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setweighpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      setWeighPoint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playersetweighpointtarget-vector100-100-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:setWeighPoint(&quot;Target&quot;, Vector(100, 100, 0))
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:setWeighPoint(&#34;Target&#34;, Vector(100, 100, 0))">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setwaypointwithlogo" class="md-nav__link">
+    <span class="md-ellipsis">
+      setWaypointWithLogo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playersetwaypointwithlogoobjective-vector000-pathtoiconpng" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:setWaypointWithLogo(&quot;Objective&quot;, Vector(0,0,0), &quot;path/to/icon.png&quot;)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:setWaypointWithLogo(&#34;Objective&#34;, Vector(0,0,0), &#34;path/to/icon.png&#34;)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      getLiliaData
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-settings-playergetliliadatasettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      local settings = player:getLiliaData(&quot;settings&quot;, {})
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="local settings = player:getLiliaData(&#34;settings&#34;, {})">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getallliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      getAllLiliaData
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-data-playergetallliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      local data = player:getAllLiliaData()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="local data = player:getAllLiliaData()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      setRagdoll
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playersetragdollragdollent" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:setRagdoll(ragdollEnt)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:setRagdoll(ragdollEnt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#networkanimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      NetworkAnimation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playernetworkanimationtrue-valvebipedbip01_head-angle0-90-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:NetworkAnimation(true, { [&quot;ValveBiped.Bip01_Head&quot;] = Angle(0, 90, 0) })
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:NetworkAnimation(true, { [&#34;ValveBiped.Bip01_Head&#34;] = Angle(0, 90, 0) })">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      setAction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playersetactionlockpicking-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:setAction(&quot;Lockpicking&quot;, 5)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:setAction(&#34;Lockpicking&#34;, 5)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dostaredaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      doStaredAction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playerdostaredactiondoor-function-dooropen-end-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:doStaredAction(door, function() door:Open() end, 3)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:doStaredAction(door, function() door:Open() end, 3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stopaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      stopAction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playerstopaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:stopAction()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:stopAction()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requestdropdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      requestDropdown
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playerrequestdropdownchoose-pick-one-a-b-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:requestDropdown(&quot;Choose&quot;, &quot;Pick one&quot;, {&quot;A&quot;, &quot;B&quot;}, print)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:requestDropdown(&#34;Choose&#34;, &#34;Pick one&#34;, {&#34;A&#34;, &#34;B&#34;}, print)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requestoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      requestOptions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playerrequestoptionspermissions-select-a-b-2-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:requestOptions(&quot;Permissions&quot;, &quot;Select&quot;, {&quot;A&quot;, &quot;B&quot;}, 2, print)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:requestOptions(&#34;Permissions&#34;, &#34;Select&#34;, {&#34;A&#34;, &#34;B&#34;}, 2, print)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requeststring" class="md-nav__link">
+    <span class="md-ellipsis">
+      requestString
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playerrequeststringname-enter-text-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:requestString(&quot;Name&quot;, &quot;Enter text&quot;, print)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:requestString(&#34;Name&#34;, &#34;Enter text&#34;, print)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#binaryquestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      binaryQuestion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playerbinaryquestionproceed-yes-no-false-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:binaryQuestion(&quot;Proceed?&quot;, &quot;Yes&quot;, &quot;No&quot;, false, print)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:binaryQuestion(&#34;Proceed?&#34;, &#34;Yes&#34;, &#34;No&#34;, false, print)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getplaytime" class="md-nav__link">
+    <span class="md-ellipsis">
+      getPlayTime
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printplayergetplaytime" class="md-nav__link">
+    <span class="md-ellipsis">
+      print(player:getPlayTime())
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="print(player:getPlayTime())">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createragdoll" class="md-nav__link">
+    <span class="md-ellipsis">
+      createRagdoll
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-rag-playercreateragdolltrue" class="md-nav__link">
+    <span class="md-ellipsis">
+      local rag = player:createRagdoll(true)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="local rag = player:createRagdoll(true)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setragdolled" class="md-nav__link">
+    <span class="md-ellipsis">
+      setRagdolled
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playersetragdolledtrue-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:setRagdolled(true, 5)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:setRagdolled(true, 5)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syncvars" class="md-nav__link">
+    <span class="md-ellipsis">
+      syncVars
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playersyncvars" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:syncVars()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:syncVars()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setlocalvar" class="md-nav__link">
+    <span class="md-ellipsis">
+      setLocalVar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playersetlocalvarhealth-75" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:setLocalVar(&quot;health&quot;, 75)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:setLocalVar(&#34;health&#34;, 75)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getplaytime_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      getPlayTime
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printlocalplayergetplaytime" class="md-nav__link">
+    <span class="md-ellipsis">
+      print(LocalPlayer():getPlayTime())
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="print(LocalPlayer():getPlayTime())">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setwaypoint_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      setWaypoint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localplayersetwaypointhome-vector000" class="md-nav__link">
+    <span class="md-ellipsis">
+      LocalPlayer():setWaypoint(&quot;Home&quot;, Vector(0,0,0))
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LocalPlayer():setWaypoint(&#34;Home&#34;, Vector(0,0,0))">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setweighpoint_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      setWeighPoint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localplayersetweighpointspot-vector10100" class="md-nav__link">
+    <span class="md-ellipsis">
+      LocalPlayer():setWeighPoint(&quot;Spot&quot;, Vector(10,10,0))
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LocalPlayer():setWeighPoint(&#34;Spot&#34;, Vector(10,10,0))">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setwaypointwithlogo_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      setWaypointWithLogo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localplayersetwaypointwithlogoloot-vector111-iconpng" class="md-nav__link">
+    <span class="md-ellipsis">
+      LocalPlayer():setWaypointWithLogo(&quot;Loot&quot;, Vector(1,1,1), &quot;icon.png&quot;)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LocalPlayer():setWaypointWithLogo(&#34;Loot&#34;, Vector(1,1,1), &#34;icon.png&#34;)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getliliadata_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      getLiliaData
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-data-localplayergetliliadatasettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      local data = LocalPlayer():getLiliaData(&quot;settings&quot;)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="local data = LocalPlayer():getLiliaData(&#34;settings&#34;)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getallliliadata_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      getAllLiliaData
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-data-localplayergetallliliadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      local data = LocalPlayer():getAllLiliaData()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="local data = LocalPlayer():getAllLiliaData()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#networkanimation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      NetworkAnimation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localplayernetworkanimationtrue-valvebipedbip01_head-angle0-90-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      LocalPlayer():NetworkAnimation(true, { [&quot;ValveBiped.Bip01_Head&quot;] = Angle(0, 90, 0) })
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LocalPlayer():NetworkAnimation(true, { [&#34;ValveBiped.Bip01_Head&#34;] = Angle(0, 90, 0) })">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getparts" class="md-nav__link">
+    <span class="md-ellipsis">
+      getParts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-id-in-pairsplayergetparts-do-printequipped-part-id-end" class="md-nav__link">
+    <span class="md-ellipsis">
+      for id in pairs(player:getParts()) do print(&quot;equipped part&quot;, id) end
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="for id in pairs(player:getParts()) do print(&#34;equipped part&#34;, id) end">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syncparts" class="md-nav__link">
+    <span class="md-ellipsis">
+      syncParts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playersyncparts" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:syncParts()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:syncParts()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addpart" class="md-nav__link">
+    <span class="md-ellipsis">
+      addPart
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playeraddparthat_01" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:addPart(&quot;hat_01&quot;)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:addPart(&#34;hat_01&#34;)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#removepart" class="md-nav__link">
+    <span class="md-ellipsis">
+      removePart
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playerremoveparthat_01" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:removePart(&quot;hat_01&quot;)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:removePart(&#34;hat_01&#34;)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resetparts" class="md-nav__link">
+    <span class="md-ellipsis">
+      resetParts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playerresetparts" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:resetParts()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="player:resetParts()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lagcompensation" class="md-nav__link">
+    <span class="md-ellipsis">
+      LagCompensation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playerlagcompensationtrue-perform-trace-logic-here-playerlagcompensationfalse" class="md-nav__link">
+    <span class="md-ellipsis">
+      player:LagCompensation(true) -- perform trace logic here player:LagCompensation(false)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tool Meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vector Meta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/LiliaFramework/Lilia/edit/main/docs/docs/meta/player.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/LiliaFramework/Lilia/raw/main/docs/docs/meta/player.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="player-meta">Player Meta</h1>
+<p>Lilia extends Garry's Mod players with characters, inventories, and permission checks. This reference details the meta functions enabling that integration.</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>Player meta functions provide quick access to the active character, networking helpers for messaging or data transfer, and utility checks such as admin status. Players are entity objects that hold at most one Character instance, so these helpers unify player-related logic across the framework.</p>
+<hr />
+<h3 id="getchar">getChar</h3>
+<p><strong>Description:</strong></p>
+<p>Returns the currently loaded character object for this player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>Character|None – The player's active character.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">-- Retrieve the character to modify inventory</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getChar</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h3 id="name">Name</h3>
+<p><strong>Description:</strong></p>
+<p>Returns either the character's roleplay name or the player's Steam name.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>string – Display name.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- Print the roleplay name in chat</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">chat</span><span class="p">.</span><span class="nf">AddText</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span><span class="nf">Name</span><span class="p">())</span>
+</span></code></pre></div>
+<hr />
+<h3 id="hasprivilege">hasPrivilege</h3>
+<p><strong>Description:</strong></p>
+<p>Wrapper for CAMI privilege checks.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>privilegeName</code> (<code>string</code>) – Privilege identifier.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – Result from CAMI.PlayerHasAccess.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- Deny access if the player lacks a privilege</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">hasPrivilege</span><span class="p">(</span><span class="s2">&quot;Manage&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="getcurrentvehicle">getCurrentVehicle</h3>
+<p><strong>Description:</strong></p>
+<p>Safely returns the vehicle the player is currently using.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>Entity|None – Vehicle entity or None.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">-- Attach a camera to the vehicle the player is in</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">veh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getCurrentVehicle</span><span class="p">()</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kr">if</span><span class="w"> </span><span class="nf">IsValid</span><span class="p">(</span><span class="nv">veh</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nf">AttachCamera</span><span class="p">(</span><span class="nv">veh</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="hasvalidvehicle">hasValidVehicle</h3>
+<p><strong>Description:</strong></p>
+<p>Determines if the player is currently inside a valid vehicle.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – True if a vehicle entity is valid.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- Allow honking only when in a valid vehicle</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">hasValidVehicle</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nv">player</span><span class="p">:</span><span class="nf">GetVehicle</span><span class="p">():</span><span class="nf">EmitSound</span><span class="p">(</span><span class="s2">&quot;Horn&quot;</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="isnoclipping">isNoClipping</h3>
+<p><strong>Description:</strong></p>
+<p>Returns true if the player is in noclip mode and not inside a vehicle.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – Whether the player is noclipping.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">-- Disable certain actions while noclipping</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isNoClipping</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="kr">return</span><span class="w"> </span><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="hasragdoll">hasRagdoll</h3>
+<p><strong>Description:</strong></p>
+<p>Checks if the player currently has an active ragdoll entity.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – True when a ragdoll entity exists.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">hasRagdoll</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Player is ragdolled&quot;</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="canoverrideview">CanOverrideView</h3>
+<p><strong>Description:</strong></p>
+<p>Checks if the player is allowed to override the camera view. A valid character</p>
+<p>must be loaded and the player cannot be in a vehicle or ragdoll. The option</p>
+<p><code>thirdPersonEnabled</code> must be enabled both client and server side and the</p>
+<p><code>ShouldDisableThirdperson</code> hook must not return <code>true</code>.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – True when a third person view may be used.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">CanOverrideView</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="c1">-- Place the camera behind the player</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="isinthirdperson">IsInThirdPerson</h3>
+<p><strong>Description:</strong></p>
+<p>Returns whether third person view is enabled for this player according to the</p>
+<p><code>thirdPersonEnabled</code> option and configuration.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – True if third person mode is enabled.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">IsInThirdPerson</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Third person active&quot;</span><span class="p">)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="removeragdoll">removeRagdoll</h3>
+<p><strong>Description:</strong></p>
+<p>Safely removes the player's ragdoll entity if present.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">-- Clean up any ragdoll left behind</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">player</span><span class="p">:</span><span class="nf">removeRagdoll</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h3 id="getragdoll">getRagdoll</h3>
+<p><strong>Description:</strong></p>
+<p>Retrieves the ragdoll entity associated with the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>Entity|None – The ragdoll entity or None.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">ragdoll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getRagdoll</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h3 id="isstuck">isStuck</h3>
+<p><strong>Description:</strong></p>
+<p>Determines whether the player's position is stuck in the world.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – True if the trace detects a stuck state.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<p>if player:isStuck() then</p>
+<div class="language-text highlight"><pre><span></span><code>player:SetPos(player:GetPos() + Vector(0, 0, 16))
+</code></pre></div>
+<p>end</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>---
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>### isNearPlayer
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>**Description:**
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>Checks if an entity is within the given radius of the player.
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>**Parameters:**
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>* `radius` (`number`) – Distance in units.
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>* `entity` (`Entity`) – Entity to compare.
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>**Realm:**
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>* Shared
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>**Returns:**
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>* boolean – True if the entity is close enough.
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>**Example Usage:**
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>
+</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>if player:isNearPlayer(128, target) then
+</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>    print(&quot;Target is nearby&quot;)
+</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>end
+</span></code></pre></div>
+<hr />
+<h3 id="entitiesnearplayer">entitiesNearPlayer</h3>
+<p><strong>Description:</strong></p>
+<p>Returns a table of entities within radius of the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>radius</code> (<code>number</code>) – Search distance in units.</p>
+</li>
+<li>
+<p><code>playerOnly</code> (<code>boolean|None</code>) – Only include players when true.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>table – List of nearby entities.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">ent</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">ipairs</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span><span class="nf">entitiesNearPlayer</span><span class="p">(</span><span class="mi">256</span><span class="p">))</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">ent</span><span class="p">:</span><span class="nf">IsPlayer</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">        </span><span class="nv">ent</span><span class="p">:</span><span class="nf">ChatPrint</span><span class="p">(</span><span class="s2">&quot;Someone is close to you!&quot;</span><span class="p">)</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="kr">else</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">        </span><span class="nf">DebugDrawBox</span><span class="p">(</span><span class="nv">ent</span><span class="p">:</span><span class="nf">GetPos</span><span class="p">(),</span><span class="w"> </span><span class="nv">ent</span><span class="p">:</span><span class="nf">OBBMins</span><span class="p">(),</span><span class="w"> </span><span class="nv">ent</span><span class="p">:</span><span class="nf">OBBMaxs</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="getitemweapon">getItemWeapon</h3>
+<p><strong>Description:</strong></p>
+<p>Returns the active weapon entity and associated item if equipped.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>
+<p>Entity|None – Weapon entity when matched.</p>
+</li>
+<li>
+<p>Item|None – Inventory item associated with the weapon.</p>
+</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">weapon</span><span class="p">,</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getItemWeapon</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h3 id="isrunning">isRunning</h3>
+<p><strong>Description:</strong></p>
+<p>Checks whether the player is moving faster than walking speed.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – True if the player is running.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<p>if player:isRunning() then</p>
+<div class="language-text highlight"><pre><span></span><code>-- player is sprinting
+</code></pre></div>
+<p>end</p>
+<h2 id="-isfemale-description-returns-true-if-the-players-model-is-considered-female-parameters-none-realm-shared-returns-boolean-whether-a-female-model-is-detected-example-usage-lua-if-playerisfemale-then-printfemale-model-detected-end"><div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>---
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>### isFemale
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>**Description:**
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>Returns true if the player&#39;s model is considered female.
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>**Parameters:**
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>* None
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>**Realm:**
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>* Shared
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>**Returns:**
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>* boolean – Whether a female model is detected.
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>**Example Usage:**
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>```lua
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>if player:isFemale() then
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>    print(&quot;Female model detected&quot;)
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a>end
+</span></code></pre></div></h2>
+<h3 id="getitemdroppos">getItemDropPos</h3>
+<p><strong>Description:</strong></p>
+<p>Finds a safe position in front of the player to drop items.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>Vector – World position for dropping items.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="local-pos-playergetitemdroppos"><div class="language-lua highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getItemDropPos</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="getitems">getItems</h3>
+<p><strong>Description:</strong></p>
+<p>Returns the player's inventory item list if a character is loaded.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>table|None – Table of items or None if absent.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-iterate-players-items-to-calculate-total-weight-for-_-it-in-pairsplayergetitems-or-do-total-total-itweight-end"><div class="language-lua highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">-- Iterate player&#39;s items to calculate total weight</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">it</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">pairs</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span><span class="nf">getItems</span><span class="p">()</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="p">{})</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nv">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">it</span><span class="p">.</span><span class="py">weight</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="kr">end</span>
+</span></code></pre></div></h2>
+<h3 id="gettracedentity">getTracedEntity</h3>
+<p><strong>Description:</strong></p>
+<p>Performs a simple trace from the player's shoot position.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>distance</code> (<code>number</code>) – Trace length in units.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>Entity|None – The entity hit or None.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-grab-the-entity-the-player-is-pointing-at-local-entity-playergettracedentity96"><div class="language-lua highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">-- Grab the entity the player is pointing at</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">entity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getTracedEntity</span><span class="p">(</span><span class="mi">96</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="gettrace">getTrace</h3>
+<p><strong>Description:</strong></p>
+<p>Returns a hull trace in front of the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>distance</code> (<code>number</code>) – Hull length in units.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>table – Trace result.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-use-a-hull-trace-for-melee-attacks-local-tr-playergettrace48"><div class="language-lua highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">-- Use a hull trace for melee attacks</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">tr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getTrace</span><span class="p">(</span><span class="mi">48</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="geteyeent">getEyeEnt</h3>
+<p><strong>Description:</strong></p>
+<p>Returns the entity the player is looking at within a distance.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>distance</code> (<code>number</code>) – Maximum distance.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>Entity|None – The entity or None if too far.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-show-the-name-of-the-object-being-looked-at-local-target-playergeteyeent128-if-isvalidtarget-then-playerchatprintstringformatclass-s-targetgetclass-end"><div class="language-lua highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1">-- Show the name of the object being looked at</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getEyeEnt</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="kr">if</span><span class="w"> </span><span class="nf">IsValid</span><span class="p">(</span><span class="nv">target</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span><span class="nv">player</span><span class="p">:</span><span class="nf">ChatPrint</span><span class="p">(</span><span class="nb">string.format</span><span class="p">(</span><span class="s2">&quot;Class: %s&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">target</span><span class="p">:</span><span class="nf">GetClass</span><span class="p">()))</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="kr">end</span>
+</span></code></pre></div></h2>
+<h3 id="notify">notify</h3>
+<p><strong>Description:</strong></p>
+<p>Sends a plain notification message to the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>message</code> (<code>string</code>) – Text to display.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-send-a-welcome-notification-and-log-the-join-event-playernotifywelcome-to-the-server-fileappendwelcometxt-playersteamid-joinedn"><div class="language-lua highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">-- Send a welcome notification and log the join event</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nv">player</span><span class="p">:</span><span class="nf">notify</span><span class="p">(</span><span class="s2">&quot;Welcome to the server!&quot;</span><span class="p">)</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="nv">file</span><span class="p">.</span><span class="nf">Append</span><span class="p">(</span><span class="s2">&quot;welcome.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">SteamID</span><span class="p">()</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; joined</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="notifylocalized">notifyLocalized</h3>
+<p><strong>Description:</strong></p>
+<p>Sends a localized notification to the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>message</code> (<code>string</code>) – Translation key.</p>
+</li>
+<li>
+<p>... – Additional parameters for localization.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-send-a-localized-message-including-the-players-name-and-score-local-score-playergetfrags-playernotifylocalizedgreeting_key-playername-score"><div class="language-lua highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1">-- Send a localized message including the player&#39;s name and score</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">GetFrags</span><span class="p">()</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nv">player</span><span class="p">:</span><span class="nf">notifyLocalized</span><span class="p">(</span><span class="s2">&quot;greeting_key&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">Name</span><span class="p">(),</span><span class="w"> </span><span class="nv">score</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="caneditvendor">CanEditVendor</h3>
+<p><strong>Description:</strong></p>
+<p>Determines whether the player can edit the given vendor.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>vendor</code> (<code>Entity</code>) – Vendor entity to check.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – True if allowed to edit.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="if-playercaneditvendorvendor-then-vendoropeneditorplayer-end"><div class="language-lua highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kr">if</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">CanEditVendor</span><span class="p">(</span><span class="nv">vendor</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="nv">vendor</span><span class="p">:</span><span class="nf">OpenEditor</span><span class="p">(</span><span class="nv">player</span><span class="p">)</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="kr">end</span>
+</span></code></pre></div></h2>
+<h3 id="isuser">isUser</h3>
+<p><strong>Description:</strong></p>
+<p>Convenience wrapper to check if the player is in the "user" group.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – Whether usergroup is "user".</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-check-if-the-player-belongs-to-the-default-user-group-local-result-playerisuser"><div class="language-lua highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1">-- Check if the player belongs to the default user group</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isUser</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="isstaff">isStaff</h3>
+<p><strong>Description:</strong></p>
+<p>Returns true if the player belongs to a staff group.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – Result from the privilege check.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-verify-staff-permissions-for-administrative-actions-local-result-playerisstaff"><div class="language-lua highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1">-- Verify staff permissions for administrative actions</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isStaff</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="isvip">isVIP</h3>
+<p><strong>Description:</strong></p>
+<p>Checks whether the player is in the VIP group.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – Result from privilege check.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-test-if-the-player-has-vip-status-local-result-playerisvip"><div class="language-lua highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1">-- Test if the player has VIP status</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isVIP</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="isstaffonduty">isStaffOnDuty</h3>
+<p><strong>Description:</strong></p>
+<p>Determines if the player is currently in the staff faction.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>
+<p>Shared
+<strong>Returns:</strong></p>
+</li>
+<li>
+<p>boolean – True if staff faction is active.</p>
+</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-confirm-the-player-is-currently-in-a-staff-role-local-result-playerisstaffonduty"><div class="language-lua highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1">-- Confirm the player is currently in a staff role</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isStaffOnDuty</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="isfaction">isFaction</h3>
+<p><strong>Description:</strong></p>
+<p>Checks if the player's character belongs to the given faction.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>faction</code> (<code>number</code>) – Faction index to compare.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – True if the factions match.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-compare-the-players-faction-to-a-requirement-local-result-playerisfactionfaction"><div class="language-lua highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1">-- Compare the player&#39;s faction to a requirement</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isFaction</span><span class="p">(</span><span class="nv">faction</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="isclass">isClass</h3>
+<p><strong>Description:</strong></p>
+<p>Returns true if the player's character is of the given class.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>class</code> (<code>number</code>) – Class index to compare.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – Whether the character matches the class.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-determine-if-the-players-class-matches-local-result-playerisclassclass"><div class="language-lua highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1">-- Determine if the player&#39;s class matches</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">isClass</span><span class="p">(</span><span class="nv">class</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="haswhitelist">hasWhitelist</h3>
+<p><strong>Description:</strong></p>
+<p>Determines if the player has whitelist access for a faction.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>faction</code> (<code>number</code>) – Faction index.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – True if whitelisted.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-check-for-whitelist-permission-on-a-faction-local-result-playerhaswhitelistfaction"><div class="language-lua highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1">-- Check for whitelist permission on a faction</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">hasWhitelist</span><span class="p">(</span><span class="nv">faction</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="getclass">getClass</h3>
+<p><strong>Description:</strong></p>
+<p>Retrieves the class index of the player's character.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>number|None – Class index or None.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-retrieve-the-current-class-index-local-result-playergetclass"><div class="language-lua highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1">-- Retrieve the current class index</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getClass</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="hasclasswhitelist">hasClassWhitelist</h3>
+<p><strong>Description:</strong></p>
+<p>Checks if the player's character is whitelisted for a class.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>class</code> (<code>number</code>) – Class index.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – True if class whitelist exists.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-verify-the-player-is-approved-for-a-specific-class-local-result-playerhasclasswhitelistclass"><div class="language-lua highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1">-- Verify the player is approved for a specific class</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">hasClassWhitelist</span><span class="p">(</span><span class="nv">class</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="getclassdata">getClassData</h3>
+<p><strong>Description:</strong></p>
+<p>Returns the class table of the player's current class.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>table|None – Class definition table.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-access-data-table-for-the-players-class-local-result-playergetclassdata"><div class="language-lua highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1">-- Access data table for the player&#39;s class</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getClassData</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="getdarkrpvar">getDarkRPVar</h3>
+<p><strong>Description:</strong></p>
+<p>Compatibility helper for retrieving money with DarkRP-style calls.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>var</code> (<code>string</code>) – Currently only supports "money".</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>number|None – Money amount or None.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-read-money-amount-in-a-darkrp-compatible-way-local-result-playergetdarkrpvarvar"><div class="language-lua highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1">-- Read money amount in a DarkRP-compatible way</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getDarkRPVar</span><span class="p">(</span><span class="nv">var</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="getmoney">getMoney</h3>
+<p><strong>Description:</strong></p>
+<p>Convenience function to get the character's money amount.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>number – Current funds or 0.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-fetch-the-characters-stored-funds-local-result-playergetmoney"><div class="language-lua highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c1">-- Fetch the character&#39;s stored funds</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getMoney</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="canafford">canAfford</h3>
+<p><strong>Description:</strong></p>
+<p>Checks if the player has enough money for a purchase.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>amount</code> (<code>number</code>) – Cost to test.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – True if funds are sufficient.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-check-if-the-player-has-enough-money-to-buy-something-local-result-playercanaffordamount"><div class="language-lua highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1">-- Check if the player has enough money to buy something</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">canAfford</span><span class="p">(</span><span class="nv">amount</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="hasskilllevel">hasSkillLevel</h3>
+<p><strong>Description:</strong></p>
+<p>Verifies the player's character meets an attribute level.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>skill</code> (<code>string</code>) – Attribute ID.</p>
+</li>
+<li>
+<p><code>level</code> (<code>number</code>) – Required level.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – Whether the character satisfies the requirement.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-ensure-the-player-meets-a-single-skill-requirement-local-result-playerhasskilllevelskill-level"><div class="language-lua highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c1">-- Ensure the player meets a single skill requirement</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">hasSkillLevel</span><span class="p">(</span><span class="nv">skill</span><span class="p">,</span><span class="w"> </span><span class="nv">level</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="meetsrequiredskills">meetsRequiredSkills</h3>
+<p><strong>Description:</strong></p>
+<p>Checks a table of skill requirements against the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>requiredSkillLevels</code> (<code>table</code>) – Mapping of attribute IDs to levels.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – True if all requirements are met.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-validate-multiple-skill-requirements-at-once-local-result-playermeetsrequiredskillsrequiredskilllevels"><div class="language-lua highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="c1">-- Validate multiple skill requirements at once</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">meetsRequiredSkills</span><span class="p">(</span><span class="nv">requiredSkillLevels</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="forcesequence">forceSequence</h3>
+<p><strong>Description:</strong></p>
+<p>Plays an animation sequence and optionally freezes the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>sequenceName</code> (<code>string</code>) – Sequence to play.</p>
+</li>
+<li>
+<p><code>callback</code> (<code>function|None</code>) – Called when finished.</p>
+</li>
+<li>
+<p><code>time</code> (<code>number|None</code>) – Duration override.</p>
+</li>
+<li>
+<p><code>noFreeze</code> (<code>boolean</code>) – Don't freeze movement when true.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>number|boolean – Duration or false on failure.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-play-an-animation-while-freezing-the-player-local-result-playerforcesequencesequencename-callback-time-nofreeze"><div class="language-lua highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c1">-- Play an animation while freezing the player</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">forceSequence</span><span class="p">(</span><span class="nv">sequenceName</span><span class="p">,</span><span class="w"> </span><span class="nv">callback</span><span class="p">,</span><span class="w"> </span><span class="nv">time</span><span class="p">,</span><span class="w"> </span><span class="nv">noFreeze</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="leavesequence">leaveSequence</h3>
+<p><strong>Description:</strong></p>
+<p>Stops any forced sequence and restores player movement.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-stop-the-players-forced-animation-sequence-local-result-playerleavesequence"><div class="language-lua highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1">-- Stop the player&#39;s forced animation sequence</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">leaveSequence</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="restorestamina">restoreStamina</h3>
+<p><strong>Description:</strong></p>
+<p>Increases the player's stamina value.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>amount</code> (<code>number</code>) – Amount to restore.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>
+<p>Server</p>
+</li>
+<li>
+<p>Returns:</p>
+</li>
+<li>
+<p>None – This function does not return a value.</p>
+</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-give-the-player-extra-stamina-points-local-result-playerrestorestaminaamount"><div class="language-lua highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="c1">-- Give the player extra stamina points</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">restoreStamina</span><span class="p">(</span><span class="nv">amount</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="consumestamina">consumeStamina</h3>
+<p><strong>Description:</strong></p>
+<p>Reduces the player's stamina value.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>amount</code> (<code>number</code>) – Amount to subtract.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>
+<p>Server</p>
+</li>
+<li>
+<p>Returns:</p>
+</li>
+<li>
+<p>None – This function does not return a value.</p>
+</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-spend-stamina-as-the-player-performs-an-action-local-result-playerconsumestaminaamount"><div class="language-lua highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="c1">-- Spend stamina as the player performs an action</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">consumeStamina</span><span class="p">(</span><span class="nv">amount</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="addmoney">addMoney</h3>
+<p><strong>Description:</strong></p>
+<p>Adds funds to the player's character, clamping to limits.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>amount</code> (<code>number</code>) – Money to add.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-reward-the-player-and-announce-the-payout-playeraddmoney100-playernotifylocalizedquestreward-liacurrencyget100"><div class="language-lua highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="c1">-- Reward the player and announce the payout</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="nv">player</span><span class="p">:</span><span class="nf">addMoney</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="nv">player</span><span class="p">:</span><span class="nf">notifyLocalized</span><span class="p">(</span><span class="s2">&quot;questReward&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">lia</span><span class="p">.</span><span class="py">currency</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+</span></code></pre></div></h2>
+<h3 id="takemoney">takeMoney</h3>
+<p><strong>Description:</strong></p>
+<p>Removes money from the player's character.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>amount</code> (<code>number</code>) – Amount to subtract.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-remove-money-from-the-players-character-local-result-playertakemoneyamount"><div class="language-lua highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="c1">-- Remove money from the player&#39;s character</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">takeMoney</span><span class="p">(</span><span class="nv">amount</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="whitelistallclasses">WhitelistAllClasses</h3>
+<p><strong>Description:</strong></p>
+<p>Grants whitelist access to every registered class.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-unlock-every-class-for-the-player-playerwhitelistallclasses"><div class="language-lua highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="c1">-- Unlock every class for the player</span>
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="nv">player</span><span class="p">:</span><span class="nf">WhitelistAllClasses</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="whitelistallfactions">WhitelistAllFactions</h3>
+<p><strong>Description:</strong></p>
+<p>Whitelists the player for all factions.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playerwhitelistallfactions"><div class="language-lua highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">WhitelistAllFactions</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="whitelisteverything">WhitelistEverything</h3>
+<p><strong>Description:</strong></p>
+<p>Convenience method to whitelist all factions and classes.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="-give-the-player-access-to-all-content-playerwhitelisteverything"><div class="language-lua highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="c1">-- Give the player access to all content</span>
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="nv">player</span><span class="p">:</span><span class="nf">WhitelistEverything</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="classwhitelist">classWhitelist</h3>
+<p><strong>Description:</strong></p>
+<p>Adds a single class to the character's whitelist table.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>class</code> (<code>number</code>) – Class index to whitelist.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playerclasswhitelistclass_medic"><div class="language-lua highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">classWhitelist</span><span class="p">(</span><span class="nv">CLASS_MEDIC</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="classunwhitelist">classUnWhitelist</h3>
+<p><strong>Description:</strong></p>
+<p>Removes a class from the character's whitelist table.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>class</code> (<code>number</code>) – Class index to remove.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playerclassunwhitelistclass_medic"><div class="language-lua highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">classUnWhitelist</span><span class="p">(</span><span class="nv">CLASS_MEDIC</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="setwhitelisted">setWhitelisted</h3>
+<p><strong>Description:</strong></p>
+<p>Sets or clears whitelist permission for a faction.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>faction</code> (<code>number</code>) – Faction index.</p>
+</li>
+<li>
+<p><code>whitelisted</code> (<code>boolean|None</code>) – Enable when true, disable when false/nil.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>boolean – True if the faction exists.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playersetwhitelistedfaction_police-true"><div class="language-lua highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setWhitelisted</span><span class="p">(</span><span class="nv">FACTION_POLICE</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="loadliliadata">loadLiliaData</h3>
+<p><strong>Description:</strong></p>
+<p>Loads persistent Lilia data for the player from the database.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>callback</code> (<code>function|None</code>) – Invoked with the loaded table.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playerloadliliadatafunctiondata-printdata-end"><div class="language-lua highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">loadLiliaData</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">data</span><span class="p">)</span><span class="w"> </span><span class="nb">print</span><span class="p">(</span><span class="nv">data</span><span class="p">)</span><span class="w"> </span><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="saveliliadata">saveLiliaData</h3>
+<p><strong>Description:</strong></p>
+<p>Saves the player's Lilia data back to the database.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playersaveliliadata"><div class="language-lua highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">saveLiliaData</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="setliliadata">setLiliaData</h3>
+<p><strong>Description:</strong></p>
+<p>Stores a value in the player's persistent data table.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>key</code> (<code>string</code>) – Data key.</p>
+</li>
+<li>
+<p><code>value</code> (<code>any</code>) – Value to store.</p>
+</li>
+<li>
+<p><code>noNetworking</code> (<code>boolean|None</code>) – Skip network update when true.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playersetliliadatasettings-foo-true"><div class="language-lua highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setLiliaData</span><span class="p">(</span><span class="s2">&quot;settings&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nv">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">})</span>
+</span></code></pre></div></h2>
+<h3 id="setwaypoint">setWaypoint</h3>
+<p><strong>Description:</strong></p>
+<p>Sends a waypoint to the client at the specified position.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>name</code> (<code>string</code>) – Display label.</p>
+</li>
+<li>
+<p><code>vector</code> (<code>Vector</code>) – World position.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playersetwaypointobjective-vector0-0-0"><div class="language-lua highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setWaypoint</span><span class="p">(</span><span class="s2">&quot;Objective&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+</span></code></pre></div></h2>
+<h3 id="setweighpoint">setWeighPoint</h3>
+<p><strong>Description:</strong></p>
+<p>Alias of <code>setWaypoint()</code> for backwards compatibility.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>name</code> (<code>string</code>) – Display label.</p>
+</li>
+<li>
+<p><code>vector</code> (<code>Vector</code>) – World position.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playersetweighpointtarget-vector100-100-0"><div class="language-lua highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setWeighPoint</span><span class="p">(</span><span class="s2">&quot;Target&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">Vector</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+</span></code></pre></div></h2>
+<h3 id="setwaypointwithlogo">setWaypointWithLogo</h3>
+<p><strong>Description:</strong></p>
+<p>Creates a waypoint using a custom logo material.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>name</code> (<code>string</code>) – Display label.</p>
+</li>
+<li>
+<p><code>vector</code> (<code>Vector</code>) – World position.</p>
+</li>
+<li>
+<p><code>logo</code> (<code>string</code>) – Material path for the icon.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playersetwaypointwithlogoobjective-vector000-pathtoiconpng"><div class="language-lua highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setWaypointWithLogo</span><span class="p">(</span><span class="s2">&quot;Objective&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;path/to/icon.png&quot;</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="getliliadata">getLiliaData</h3>
+<p><strong>Description:</strong></p>
+<p>Retrieves a stored value from the player's data table.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>key</code> (<code>string</code>) – Data key.</p>
+</li>
+<li>
+<p><code>default</code> (<code>any</code>) – Returned if the key is nil.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>any – Stored value or default.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="local-settings-playergetliliadatasettings"><div class="language-lua highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">settings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getLiliaData</span><span class="p">(</span><span class="s2">&quot;settings&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{})</span>
+</span></code></pre></div></h2>
+<h3 id="getallliliadata">getAllLiliaData</h3>
+<p><strong>Description:</strong></p>
+<p>Returns the entire table of persistent data for the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>table – Player data table.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="local-data-playergetallliliadata"><div class="language-lua highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">getAllLiliaData</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="setragdoll">setRagdoll</h3>
+<p><strong>Description:</strong></p>
+<p>Associates a ragdoll entity with the player for later retrieval.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>entity</code> (<code>Entity</code>) – The ragdoll entity.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playersetragdollragdollent"><div class="language-lua highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setRagdoll</span><span class="p">(</span><span class="nv">ragdollEnt</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="networkanimation">NetworkAnimation</h3>
+<p><strong>Description:</strong></p>
+<p>Broadcasts animation bone data to all clients.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>active</code> (<code>boolean</code>) – Enable or disable manipulation.</p>
+</li>
+<li>
+<p><code>boneData</code> (<code>table</code>) – Map of bone names to angles.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playernetworkanimationtrue-valvebipedbip01_head-angle0-90-0"><div class="language-lua highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">NetworkAnimation</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>
+</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;ValveBiped.Bip01_Head&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">Angle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-59-4"><a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a>
+</span><span id="__span-59-5"><a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a><span class="p">})</span>
+</span></code></pre></div></h2>
+<h3 id="setaction">setAction</h3>
+<p><strong>Description:</strong></p>
+<p>Displays an action bar for a set duration and optionally runs a callback.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>text</code> (<code>string|None</code>) – Text to display, or nil to clear.</p>
+</li>
+<li>
+<p><code>time</code> (<code>number|None</code>) – How long to show it for.</p>
+</li>
+<li>
+<p><code>callback</code> (<code>function|None</code>) – Executed when time elapses.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playersetactionlockpicking-5"><div class="language-lua highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setAction</span><span class="p">(</span><span class="s2">&quot;Lockpicking&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="dostaredaction">doStaredAction</h3>
+<p><strong>Description:</strong></p>
+<p>Runs an action only while the player stares at the entity.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>entity</code> (<code>Entity</code>) – Target entity.</p>
+</li>
+<li>
+<p><code>callback</code> (<code>function</code>) – Called when the timer finishes.</p>
+</li>
+<li>
+<p><code>time</code> (<code>number</code>) – Duration in seconds.</p>
+</li>
+<li>
+<p><code>onCancel</code> (<code>function|None</code>) – Called if gaze breaks.</p>
+</li>
+<li>
+<p><code>distance</code> (<code>number|None</code>) – Max distance to maintain.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playerdostaredactiondoor-function-dooropen-end-3"><div class="language-lua highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">doStaredAction</span><span class="p">(</span><span class="nv">door</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span><span class="w"> </span><span class="nv">door</span><span class="p">:</span><span class="nf">Open</span><span class="p">()</span><span class="w"> </span><span class="kr">end</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="stopaction">stopAction</h3>
+<p><strong>Description:</strong></p>
+<p>Cancels any running action bar on the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playerstopaction"><div class="language-lua highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">stopAction</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="requestdropdown">requestDropdown</h3>
+<p><strong>Description:</strong></p>
+<p>Prompts the client with a dropdown selection dialog.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>title</code> (<code>string</code>) – Window title.</p>
+</li>
+<li>
+<p><code>subTitle</code> (<code>string</code>) – Description text.</p>
+</li>
+<li>
+<p><code>options</code> (<code>table</code>) – Table of options.</p>
+</li>
+<li>
+<p><code>callback</code> (<code>function</code>) – Receives the chosen value.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playerrequestdropdownchoose-pick-one-a-b-print"><div class="language-lua highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">requestDropdown</span><span class="p">(</span><span class="s2">&quot;Choose&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Pick one&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">},</span><span class="w"> </span><span class="nb">print</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="requestoptions">requestOptions</h3>
+<p><strong>Description:</strong></p>
+<p>Asks the client to select one or more options from a list.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>title</code> (<code>string</code>) – Window title.</p>
+</li>
+<li>
+<p><code>subTitle</code> (<code>string</code>) – Description text.</p>
+</li>
+<li>
+<p><code>options</code> (<code>table</code>) – Available options.</p>
+</li>
+<li>
+<p><code>limit</code> (<code>number</code>) – Maximum selections allowed.</p>
+</li>
+<li>
+<p><code>callback</code> (<code>function</code>) – Receives the chosen values.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playerrequestoptionspermissions-select-a-b-2-print"><div class="language-lua highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">requestOptions</span><span class="p">(</span><span class="s2">&quot;Permissions&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Select&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="p">},</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nb">print</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="requeststring">requestString</h3>
+<p><strong>Description:</strong></p>
+<p>Requests a string from the client.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>title</code> (<code>string</code>) – Prompt title.</p>
+</li>
+<li>
+<p><code>subTitle</code> (<code>string</code>) – Prompt description.</p>
+</li>
+<li>
+<p><code>callback</code> (<code>function|None</code>) – Called with the string.</p>
+</li>
+<li>
+<p><code>default</code> (<code>string|None</code>) – Default value.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>deferred|None – Deferred object when no callback supplied.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playerrequeststringname-enter-text-print"><div class="language-lua highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">requestString</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Enter text&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">print</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="binaryquestion">binaryQuestion</h3>
+<p><strong>Description:</strong></p>
+<p>Displays a yes/no style question to the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>question</code> (<code>string</code>) – Main text.</p>
+</li>
+<li>
+<p><code>option1</code> (<code>string</code>) – Text for the first option.</p>
+</li>
+<li>
+<p><code>option2</code> (<code>string</code>) – Text for the second option.</p>
+</li>
+<li>
+<p><code>manualDismiss</code> (<code>boolean</code>) – Require manual closing.</p>
+</li>
+<li>
+<p><code>callback</code> (<code>function</code>) – Called with chosen value.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playerbinaryquestionproceed-yes-no-false-print"><div class="language-lua highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">binaryQuestion</span><span class="p">(</span><span class="s2">&quot;Proceed?&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Yes&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;No&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nb">print</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="getplaytime">getPlayTime</h3>
+<p><strong>Description:</strong></p>
+<p>Calculates how long the player has been on the server.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>number – Total seconds of playtime.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="printplayergetplaytime"><div class="language-lua highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="nb">print</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span><span class="nf">getPlayTime</span><span class="p">())</span>
+</span></code></pre></div></h2>
+<h3 id="createragdoll">createRagdoll</h3>
+<p><strong>Description:</strong></p>
+<p>Spawns a ragdoll copy of the player and optionally freezes it.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>freeze</code> (<code>boolean|None</code>) – Disable physics when true.</p>
+</li>
+<li>
+<p><code>isDead</code> (<code>boolean|None</code>) – Mark as a death ragdoll.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>Entity – The created ragdoll.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="local-rag-playercreateragdolltrue"><div class="language-lua highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">rag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">player</span><span class="p">:</span><span class="nf">createRagdoll</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="setragdolled">setRagdolled</h3>
+<p><strong>Description:</strong></p>
+<p>Toggles the player's ragdoll state for a duration.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>state</code> (<code>boolean</code>) – Enable or disable ragdoll.</p>
+</li>
+<li>
+<p><code>time</code> (<code>number|None</code>) – Duration before standing up.</p>
+</li>
+<li>
+<p><code>getUpGrace</code> (<code>number|None</code>) – Extra time to prevent early stand.</p>
+</li>
+<li>
+<p><code>getUpMessage</code> (<code>string|None</code>) – Message while downed.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playersetragdolledtrue-5"><div class="language-lua highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setRagdolled</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="syncvars">syncVars</h3>
+<p><strong>Description:</strong></p>
+<p>Sends all networked variables to the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playersyncvars"><div class="language-lua highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">syncVars</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="setlocalvar">setLocalVar</h3>
+<p><strong>Description:</strong></p>
+<p>Sets a networked local variable on the player.</p>
+<p>Triggers the <strong>LocalVarChanged</strong> hook on both server and client.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>key</code> (<code>string</code>) – Variable name.</p>
+</li>
+<li>
+<p><code>value</code> (<code>any</code>) – Value to set.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playersetlocalvarhealth-75"><div class="language-lua highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">setLocalVar</span><span class="p">(</span><span class="s2">&quot;health&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">75</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="getplaytime_1">getPlayTime</h3>
+<p><strong>Description:</strong></p>
+<p>Returns playtime calculated client side when called on a client.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Client</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>number – Seconds of playtime.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="printlocalplayergetplaytime"><div class="language-lua highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="nb">print</span><span class="p">(</span><span class="nf">LocalPlayer</span><span class="p">():</span><span class="nf">getPlayTime</span><span class="p">())</span>
+</span></code></pre></div></h2>
+<h3 id="setwaypoint_1">setWaypoint</h3>
+<p><strong>Description:</strong></p>
+<p>Displays a waypoint on the HUD until the player reaches it.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>name</code> (<code>string</code>) – Display label.</p>
+</li>
+<li>
+<p><code>vector</code> (<code>Vector</code>) – World position.</p>
+</li>
+<li>
+<p><code>onReach</code> (<code>function|None</code>) – Called when reached.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Client</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="localplayersetwaypointhome-vector000"><div class="language-lua highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a><span class="nf">LocalPlayer</span><span class="p">():</span><span class="nf">setWaypoint</span><span class="p">(</span><span class="s2">&quot;Home&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">Vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+</span></code></pre></div></h2>
+<h3 id="setweighpoint_1">setWeighPoint</h3>
+<p><strong>Description:</strong></p>
+<p>Alias of the client version of <code>setWaypoint</code>.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>name</code> (<code>string</code>) – Display label.</p>
+</li>
+<li>
+<p><code>vector</code> (<code>Vector</code>) – World position.</p>
+</li>
+<li>
+<p><code>onReach</code> (<code>function|None</code>) – Called when reached.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Client</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="localplayersetweighpointspot-vector10100"><div class="language-lua highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a><span class="nf">LocalPlayer</span><span class="p">():</span><span class="nf">setWeighPoint</span><span class="p">(</span><span class="s2">&quot;Spot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">Vector</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+</span></code></pre></div></h2>
+<h3 id="setwaypointwithlogo_1">setWaypointWithLogo</h3>
+<p><strong>Description:</strong></p>
+<p>Places a waypoint using a logo material on the client HUD.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>name</code> (<code>string</code>) – Display label.</p>
+</li>
+<li>
+<p><code>vector</code> (<code>Vector</code>) – Position to navigate to.</p>
+</li>
+<li>
+<p><code>logo</code> (<code>string</code>) – Material path for the icon.</p>
+</li>
+<li>
+<p><code>onReach</code> (<code>function|None</code>) – Called when reached.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Client</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="localplayersetwaypointwithlogoloot-vector111-iconpng"><div class="language-lua highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a><span class="nf">LocalPlayer</span><span class="p">():</span><span class="nf">setWaypointWithLogo</span><span class="p">(</span><span class="s2">&quot;Loot&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="s2">&quot;icon.png&quot;</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="getliliadata_1">getLiliaData</h3>
+<p><strong>Description:</strong></p>
+<p>Client side accessor for stored player data.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>key</code> (<code>string</code>) – Data key.</p>
+</li>
+<li>
+<p><code>default</code> (<code>any</code>) – Fallback value.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Client</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>any – Stored value or default.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="local-data-localplayergetliliadatasettings"><div class="language-lua highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">LocalPlayer</span><span class="p">():</span><span class="nf">getLiliaData</span><span class="p">(</span><span class="s2">&quot;settings&quot;</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="getallliliadata_1">getAllLiliaData</h3>
+<p><strong>Description:</strong></p>
+<p>Returns the entire local data table for the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Client</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>table – Local data table.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="local-data-localplayergetallliliadata"><div class="language-lua highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">LocalPlayer</span><span class="p">():</span><span class="nf">getAllLiliaData</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="networkanimation_1">NetworkAnimation</h3>
+<p><strong>Description:</strong></p>
+<p>Applies or clears clientside bone angles based on animation data.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p><code>active</code> (<code>boolean</code>) – Enable or disable animation.</p>
+</li>
+<li>
+<p><code>boneData</code> (<code>table</code>) – Bones and angles to apply.</p>
+</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Client</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="localplayernetworkanimationtrue-valvebipedbip01_head-angle0-90-0"><div class="language-lua highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a><span class="nf">LocalPlayer</span><span class="p">():</span><span class="nf">NetworkAnimation</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-78-2"><a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a>
+</span><span id="__span-78-3"><a id="__codelineno-78-3" name="__codelineno-78-3" href="#__codelineno-78-3"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;ValveBiped.Bip01_Head&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">Angle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-78-4"><a id="__codelineno-78-4" name="__codelineno-78-4" href="#__codelineno-78-4"></a>
+</span><span id="__span-78-5"><a id="__codelineno-78-5" name="__codelineno-78-5" href="#__codelineno-78-5"></a><span class="p">})</span>
+</span></code></pre></div></h2>
+<h3 id="getparts">getParts</h3>
+<p><strong>Description:</strong></p>
+<p>Returns the table of PAC3 part IDs currently attached to the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>table – Mapping of active part IDs.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="for-id-in-pairsplayergetparts-do-printequipped-part-id-end"><div class="language-lua highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a><span class="kr">for</span><span class="w"> </span><span class="nv">id</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">pairs</span><span class="p">(</span><span class="nv">player</span><span class="p">:</span><span class="nf">getParts</span><span class="p">())</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-79-2"><a id="__codelineno-79-2" name="__codelineno-79-2" href="#__codelineno-79-2"></a>
+</span><span id="__span-79-3"><a id="__codelineno-79-3" name="__codelineno-79-3" href="#__codelineno-79-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;equipped part&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">id</span><span class="p">)</span>
+</span><span id="__span-79-4"><a id="__codelineno-79-4" name="__codelineno-79-4" href="#__codelineno-79-4"></a>
+</span><span id="__span-79-5"><a id="__codelineno-79-5" name="__codelineno-79-5" href="#__codelineno-79-5"></a><span class="kr">end</span>
+</span></code></pre></div></h2>
+<h3 id="syncparts">syncParts</h3>
+<p><strong>Description:</strong></p>
+<p>Sends the player's PAC3 part data to their client.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playersyncparts"><div class="language-lua highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">syncParts</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="addpart">addPart</h3>
+<p><strong>Description:</strong></p>
+<p>Adds the given PAC3 part to the player and broadcasts it.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>partID</code> (<code>string</code>) – Identifier of the part to attach.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playeraddparthat_01"><div class="language-lua highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">addPart</span><span class="p">(</span><span class="s2">&quot;hat_01&quot;</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="removepart">removePart</h3>
+<p><strong>Description:</strong></p>
+<p>Removes a previously added PAC3 part from the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>partID</code> (<code>string</code>) – Identifier of the part to remove.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playerremoveparthat_01"><div class="language-lua highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">removePart</span><span class="p">(</span><span class="s2">&quot;hat_01&quot;</span><span class="p">)</span>
+</span></code></pre></div></h2>
+<h3 id="resetparts">resetParts</h3>
+<p><strong>Description:</strong></p>
+<p>Clears all PAC3 parts that are currently attached to the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>None</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Server</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playerresetparts"><div class="language-lua highlight"><pre><span></span><code><span id="__span-83-1"><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">resetParts</span><span class="p">()</span>
+</span></code></pre></div></h2>
+<h3 id="lagcompensation">LagCompensation</h3>
+<p><strong>Description:</strong></p>
+<p>Wrapper that tracks when lag compensation is enabled on the player.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>state</code> (<code>boolean</code>) – Whether to enable lag compensation.</li>
+</ul>
+<p><strong>Realm:</strong></p>
+<ul>
+<li>Shared</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul>
+<li>None – This function does not return a value.</li>
+</ul>
+<p><strong>Example Usage:</strong></p>
+<h2 id="playerlagcompensationtrue-perform-trace-logic-here-playerlagcompensationfalse"><div class="language-lua highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a><span class="nv">player</span><span class="p">:</span><span class="nf">LagCompensation</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-84-2"><a id="__codelineno-84-2" name="__codelineno-84-2" href="#__codelineno-84-2"></a>
+</span><span id="__span-84-3"><a id="__codelineno-84-3" name="__codelineno-84-3" href="#__codelineno-84-3"></a><span class="c1">-- perform trace logic here</span>
+</span><span id="__span-84-4"><a id="__codelineno-84-4" name="__codelineno-84-4" href="#__codelineno-84-4"></a>
+</span><span id="__span-84-5"><a id="__codelineno-84-5" name="__codelineno-84-5" href="#__codelineno-84-5"></a><span class="nv">player</span><span class="p">:</span><span class="nf">LagCompensation</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+</span></code></pre></div></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../panel/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Panel Meta">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Panel Meta
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../tool/" class="md-footer__link md-footer__link--next" aria-label="Next: Tool Meta">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Tool Meta
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.instant.preview", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "navigation.top", "header.autohide", "announce.dismiss", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.footnote.tooltips", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
