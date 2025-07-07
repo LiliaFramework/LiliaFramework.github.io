@@ -357,6 +357,8 @@ print(MODULE.uniqueID)
 
 ---
 
+---
+
 ### Example `module.lua`
 
 A complete example showing common fields in use:
