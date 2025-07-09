@@ -107,7 +107,7 @@ Retrieves the stored value for the specified key from the cache.
 
 ```lua
 hook.Add("PlayerSpawn", "UseSavedSpawn", function(ply)
-    local pos = lia.data.get("spawn_pos", Vector(0, 0, 0), true)
+    local pos = lia.data.get("spawn_pos", vector_origin, true)
     if pos then
         ply:SetPos(pos)
     end
@@ -146,7 +146,7 @@ lia.data.loadTables()
 
 **Purpose**
 
-Imports legacy `.txt` files from `data/lilia` into the `lia_data` SQL table. Players are prevented from joining while the conversion runs. If `changeMap` is `true`, the current map reloads once conversion finishes.
+Imports legacy `.txt` files from `data/lilia` into the `lia_data` SQL table. Players are prevented from joining while the conversion runs. If `changeMap` is `true`, the current map reloads once conversion finishes. The original text files are deleted after conversion.
 
 **Parameters**
 
@@ -165,5 +165,4 @@ Imports legacy `.txt` files from `data/lilia` into the `lia_data` SQL table. Pla
 ```lua
 lia.data.convertToDatabase(true)
 ```
-
 ---
