@@ -10,10 +10,10 @@
     "public_uniqueID": "advert",
     "features": [
       "Adds a paid /advert command players can use",
-      "",
-      "",
-      "",
-      ""
+      "Adds a cooldown via AdvertCooldown to limit spam",
+      "Adds colored broadcast messages across the server",
+      "Adds price control via AdvertPrice configuration",
+      "Adds notifications when players lack funds"
     ],
     "workshop": []
   },
@@ -28,10 +28,10 @@
     "public_uniqueID": "alcoholism",
     "features": [
       "Adds alcohol items that raise BAC and gradually wear off",
-      "",
-      "",
-      "",
-      ""
+      "Adds screen blur and movement effects that scale with intoxication",
+      "Adds player notification when reaching DrunkNotifyThreshold",
+      "Adds configurable BAC settings like AlcoholTickTime",
+      "Adds multiple drink items with varying strength"
     ],
     "workshop": []
   },
@@ -46,10 +46,10 @@
     "public_uniqueID": "autorestarter",
     "features": [
       "Adds scheduling for automatic restarts using RestartInterval",
-      "",
-      "",
-      "",
-      ""
+      "Adds a countdown overlay configurable via RestartCountdownFont",
+      "Adds syncing of next restart time to clients",
+      "Adds automatic changelevel when the timer expires",
+      "Adds network messages to sync the restart countdown"
     ],
     "workshop": []
   },
@@ -64,10 +64,10 @@
     "public_uniqueID": "bodygrouper",
     "features": [
       "Adds a spawnable closet entity for editing bodygroups",
-      "",
-      "",
-      "",
-      ""
+      "Adds the ability to customize its model via BodyGrouperModel",
+      "Adds menu access that requires proximity or privilege",
+      "Adds an admin command to view another player's bodygroups",
+      "Adds a networked menu for editing bodygroups"
     ],
     "workshop": []
   },
@@ -82,10 +82,10 @@
     "public_uniqueID": "broadcasts",
     "features": [
       "Adds faction and class broadcast commands with CAMI checks",
-      "",
-      "",
-      "",
-      ""
+      "Adds logging of broadcast messages for staff review",
+      "Adds support for flagged players to send targeted messages",
+      "Adds CAMI privileges for broadcast access",
+      "Adds menus to select factions or classes"
     ],
     "workshop": []
   },
@@ -100,10 +100,10 @@
     "public_uniqueID": "captions",
     "features": [
       "Adds an API for timed on-screen captions",
-      "",
-      "",
-      "",
-      ""
+      "Adds support for both client and server use",
+      "Adds an easy way to deliver story prompts",
+      "Adds commands to send captions to players",
+      "Adds duration control for each caption"
     ],
     "workshop": []
   },
@@ -118,10 +118,10 @@
     "public_uniqueID": "cards",
     "features": [
       "Adds a full playing card deck",
-      "",
-      "",
-      "",
-      ""
+      "Adds random draws that sync to all players",
+      "Adds support for simple minigames",
+      "Adds easy reshuffling of the deck",
+      "Adds hooks so other modules can use cards"
     ],
     "workshop": []
   },
@@ -136,10 +136,10 @@
     "public_uniqueID": "chatmessages",
     "features": [
       "Adds periodic server adverts to chat",
-      "",
-      "",
-      "",
-      ""
+      "Adds interval control via ChatMessagesInterval",
+      "Adds localized message support",
+      "Adds rotating tips for new players",
+      "Adds toggle to disable adverts per user"
     ],
     "workshop": []
   },
@@ -154,10 +154,10 @@
     "public_uniqueID": "cigs",
     "features": [
       "Adds smokable cigarette items with workshop models",
-      "",
-      "",
-      "",
-      ""
+      "Adds puff effects while smoking",
+      "Adds cigarettes that are consumed over time",
+      "Adds configurable nicotine addiction effects",
+      "Adds ash particles that fade out"
     ],
     "workshop": [
       "3519851007"
@@ -174,10 +174,10 @@
     "public_uniqueID": "cinematictext",
     "features": [
       "Adds displays of cinematic splash text overlays",
-      "",
-      "",
-      "",
-      ""
+      "Adds screen darkening with letterbox bars",
+      "Adds support for scripted scenes",
+      "Adds timed fades for dramatic effect",
+      "Adds customizable text fonts"
     ],
     "workshop": []
   },
@@ -192,10 +192,10 @@
     "public_uniqueID": "climb",
     "features": [
       "Adds the ability to climb ledges using movement keys",
-      "",
-      "",
-      "",
-      ""
+      "Adds custom climbing animations",
+      "Adds integration with movement restrictions",
+      "Adds stamina cost for repeated climbs",
+      "Adds sound effects for grip and landing"
     ],
     "workshop": []
   },
@@ -210,10 +210,10 @@
     "public_uniqueID": "codeutils",
     "features": [
       "Adds extra helper functions in lia.util",
-      "",
-      "",
-      "",
-      ""
+      "Adds simplified utilities for common scripting tasks",
+      "Adds a central library used by other modules",
+      "Adds utilities for networking data",
+      "Adds shared constants for modules"
     ],
     "workshop": []
   },
@@ -228,10 +228,10 @@
     "public_uniqueID": "communitycommands",
     "features": [
       "Adds chat commands to open community links",
-      "",
-      "",
-      "",
-      ""
+      "Adds easy sharing of workshop and docs",
+      "Adds configurable commands via settings",
+      "Adds localization for command names",
+      "Adds the ability to add custom URLs"
     ],
     "workshop": []
   },
@@ -246,10 +246,10 @@
     "public_uniqueID": "compass",
     "features": [
       "Adds a rotating HUD compass display",
-      "",
-      "",
-      "",
-      ""
+      "Adds spot markers showing enemy bearings",
+      "Adds support that requires workshop icons",
+      "Adds pinging of points of interest",
+      "Adds compass size configuration"
     ],
     "workshop": [
       "3519849524"
@@ -266,10 +266,10 @@
     "public_uniqueID": "corpseid",
     "features": [
       "Adds the ability to identify corpses after IdentificationTime",
-      "",
-      "",
-      "",
-      ""
+      "Adds use of CorpseMessageFont for 3D2D text",
+      "Adds info display above bodies",
+      "Adds configurable identification delays",
+      "Adds logs when corpses are identified"
     ],
     "workshop": []
   },
@@ -284,10 +284,10 @@
     "public_uniqueID": "cursor",
     "features": [
       "Adds a toggleable custom cursor for the UI",
-      "",
-      "",
-      "",
-      ""
+      "Adds a purely client-side implementation",
+      "Adds improved menu navigation",
+      "Adds a hotkey to quickly show or hide the cursor",
+      "Adds compatibility with other menu modules"
     ],
     "workshop": []
   },
@@ -302,10 +302,10 @@
     "public_uniqueID": "cutscenes",
     "features": [
       "Adds a framework for simple cutscene playback",
-      "",
-      "",
-      "",
-      ""
+      "Adds scenes defined through tables",
+      "Adds syncing of camera movement across clients",
+      "Adds commands to trigger cutscenes",
+      "Adds the ability for players to skip"
     ],
     "workshop": []
   },
@@ -320,10 +320,10 @@
     "public_uniqueID": "damagenumbers",
     "features": [
       "Adds floating combat text when hitting targets",
-      "",
-      "",
-      "",
-      ""
+      "Adds different colors for damage types",
+      "Adds display of damage dealt and received",
+      "Adds scaling text based on damage amount",
+      "Adds client option to disable numbers"
     ],
     "workshop": []
   },
@@ -338,10 +338,10 @@
     "public_uniqueID": "developmenthud",
     "features": [
       "Adds a staff-only development HUD",
-      "",
-      "",
-      "",
-      ""
+      "Adds font customization via DevHudFont",
+      "Adds a requirement for the CAMI privilege",
+      "Adds real-time server performance metrics",
+      "Adds a toggle command to show or hide the HUD"
     ],
     "workshop": []
   },
@@ -356,10 +356,10 @@
     "public_uniqueID": "developmentserver",
     "features": [
       "Adds a development server mode for testing",
-      "",
-      "",
-      "",
-      ""
+      "Adds the ability to run special development functions",
+      "Adds a toggle via configuration",
+      "Adds an environment flag for dev commands",
+      "Adds logging of executed dev actions"
     ],
     "workshop": []
   },
@@ -374,10 +374,10 @@
     "public_uniqueID": "discordrelay",
     "features": [
       "Adds relaying of server logs to Discord",
-      "",
-      "",
-      "",
-      ""
+      "Adds webhook integration for connectivity",
+      "Adds formatting of real-time updates",
+      "Adds multiple webhook URLs per log type",
+      "Adds filtering to control which logs are sent"
     ],
     "workshop": []
   },
@@ -392,10 +392,10 @@
     "public_uniqueID": "donator",
     "features": [
       "Adds libraries to manage donor perks",
-      "",
-      "",
-      "",
-      ""
+      "Adds tracking for donor ranks and perks",
+      "Adds integration with the scoreboard",
+      "Adds configurable perks by tier",
+      "Adds analytics on total donations"
     ],
     "workshop": []
   },
@@ -410,10 +410,10 @@
     "public_uniqueID": "doorkick",
     "features": [
       "Adds the ability to kick doors open with an animation",
-      "",
-      "",
-      "",
-      ""
+      "Adds logging of door kick events",
+      "Adds a fun breach mechanic",
+      "Adds physics force to fling doors open",
+      "Adds a cooldown to prevent spam kicking"
     ],
     "workshop": []
   },
@@ -428,10 +428,10 @@
     "public_uniqueID": "enhanceddeath",
     "features": [
       "Adds respawning of players at hospitals",
-      "",
-      "",
-      "",
-      ""
+      "Adds a medical recovery system",
+      "Adds support for multiple hospital spawns",
+      "Adds configurable respawn delays",
+      "Adds integration with death logs"
     ],
     "workshop": []
   },
@@ -446,10 +446,10 @@
     "public_uniqueID": "extendeddescriptions",
     "features": [
       "Adds support for long item descriptions",
-      "",
-      "",
-      "",
-      ""
+      "Adds localization for multiple languages",
+      "Adds better RP text display",
+      "Adds automatic line wrapping",
+      "Adds fallback to short descriptions"
     ],
     "workshop": []
   },
@@ -464,10 +464,10 @@
     "public_uniqueID": "firstpersoneffects",
     "features": [
       "Adds head bob and view sway",
-      "",
-      "",
-      "",
-      ""
+      "Adds camera motion synced to actions",
+      "Adds a realistic first-person feel",
+      "Adds adjustable intensity via config",
+      "Adds compatibility with vehicle seats"
     ],
     "workshop": []
   },
@@ -482,10 +482,10 @@
     "public_uniqueID": "flashlight",
     "features": [
       "Adds a serious flashlight with dynamic light",
-      "",
-      "",
-      "",
-      ""
+      "Adds darkening of surroundings when turned off",
+      "Adds adjustable brightness",
+      "Adds battery consumption over time",
+      "Adds keybind toggle support"
     ],
     "workshop": []
   },
@@ -500,10 +500,10 @@
     "public_uniqueID": "freelook",
     "features": [
       "Adds the ability to look around without turning the body",
-      "",
-      "",
-      "",
-      ""
+      "Adds a toggle key similar to EFT",
+      "Adds movement direction preservation",
+      "Adds adjustable sensitivity while freelooking",
+      "Adds optional head tracking support"
     ],
     "workshop": []
   },
@@ -518,10 +518,10 @@
     "public_uniqueID": "gamemasterpoints",
     "features": [
       "Adds teleport points for game masters",
-      "",
-      "",
-      "",
-      ""
+      "Adds quick navigation across large maps",
+      "Adds saving of locations for reuse",
+      "Adds a command to list saved points",
+      "Adds sharing of points with other staff"
     ],
     "workshop": []
   },
@@ -536,10 +536,10 @@
     "public_uniqueID": "hud_extras",
     "features": [
       "Adds extra HUD elements like an FPS counter",
-      "",
-      "",
-      "",
-      ""
+      "Adds fonts configurable with FPSHudFont",
+      "Adds hooks so other modules can extend",
+      "Adds performance stats display",
+      "Adds toggles for individual HUD elements"
     ],
     "workshop": []
   },
@@ -554,10 +554,10 @@
     "public_uniqueID": "instakill",
     "features": [
       "Adds instant kill on headshots",
-      "",
-      "",
-      "",
-      ""
+      "Adds lethality configurable per weapon",
+      "Adds extra tension to combat",
+      "Adds friendly fire protection options",
+      "Adds integration with damage numbers"
     ],
     "workshop": []
   },
@@ -572,10 +572,10 @@
     "public_uniqueID": "inventory",
     "features": [
       "Adds an inventory limited by item weight",
-      "",
-      "",
-      "",
-      ""
+      "Adds a shared weightinv library file",
+      "Adds a new inventory type",
+      "Adds a drag-and-drop weight management UI",
+      "Adds support for backpacks to increase capacity"
     ],
     "workshop": []
   },
@@ -590,10 +590,10 @@
     "public_uniqueID": "joinleavemessages",
     "features": [
       "Adds announcements when players join",
-      "",
-      "",
-      "",
-      ""
+      "Adds notifications on disconnect",
+      "Adds improved community awareness",
+      "Adds relay of messages to Discord",
+      "Adds per-player toggle to hide messages"
     ],
     "workshop": []
   },
@@ -608,10 +608,10 @@
     "public_uniqueID": "loadmessages",
     "features": [
       "Adds faction-based load messages",
-      "",
-      "",
-      "",
-      ""
+      "Adds execution when players first load a character",
+      "Adds customizable message text",
+      "Adds color-coded formatting options",
+      "Adds per-faction enable toggles"
     ],
     "workshop": []
   },
@@ -626,10 +626,10 @@
     "public_uniqueID": "loyalism",
     "features": [
       "Adds a loyalty tier system for players",
-      "",
-      "",
-      "",
-      ""
+      "Adds the /partytier command access",
+      "Adds permission control through flags",
+      "Adds automatic tier progression",
+      "Adds customizable rewards per tier"
     ],
     "workshop": []
   },
@@ -644,10 +644,10 @@
     "public_uniqueID": "mapcleaner",
     "features": [
       "Adds periodic cleaning of map debris",
-      "",
-      "",
-      "",
-      ""
+      "Adds a configurable interval",
+      "Adds reduced server lag",
+      "Adds a whitelist for protected entities",
+      "Adds manual cleanup commands"
     ],
     "workshop": []
   },
@@ -662,10 +662,10 @@
     "public_uniqueID": "modelpay",
     "features": [
       "Adds payment to characters based on model",
-      "",
-      "",
-      "",
-      ""
+      "Adds custom wage definitions",
+      "Adds integration into the economy",
+      "Adds config to exclude certain models",
+      "Adds logs of wages issued"
     ],
     "workshop": []
   },
@@ -680,10 +680,10 @@
     "public_uniqueID": "modeltweaker",
     "features": [
       "Adds an entity to tweak prop models",
-      "",
-      "",
-      "",
-      ""
+      "Adds adjustments for scale and rotation",
+      "Adds easy UI controls",
+      "Adds saving of tweaked props between restarts",
+      "Adds undo support for recent tweaks"
     ],
     "workshop": []
   },
@@ -698,10 +698,10 @@
     "public_uniqueID": "npcdrop",
     "features": [
       "Adds NPCs that drop items on death",
-      "",
-      "",
-      "",
-      ""
+      "Adds DropTable to define probabilities",
+      "Adds encouragement for looting",
+      "Adds editable drop tables per NPC type",
+      "Adds weighted chances for rare items"
     ],
     "workshop": []
   },
@@ -716,10 +716,10 @@
     "public_uniqueID": "npcspawner",
     "features": [
       "Adds automatic NPC spawns at points",
-      "",
-      "",
-      "",
-      ""
+      "Adds the ability for admins to force spawns",
+      "Adds logging of spawn actions",
+      "Adds configuration for spawn intervals",
+      "Adds spawner entity previews"
     ],
     "workshop": []
   },
@@ -734,10 +734,10 @@
     "public_uniqueID": "permaremove",
     "features": [
       "Adds ability to permanently delete map entities",
-      "",
-      "",
-      "",
-      ""
+      "Adds logging for each removed entity",
+      "Adds an admin-only command",
+      "Adds confirmation prompts before removal",
+      "Adds restore list to undo mistakes"
     ],
     "workshop": []
   },
@@ -752,10 +752,10 @@
     "public_uniqueID": "radio",
     "features": [
       "Adds a radio chat channel for players",
-      "",
-      "",
-      "",
-      ""
+      "Adds font configuration via RadioFont",
+      "Adds workshop models for radios",
+      "Adds frequency channels for groups",
+      "Adds handheld radio items"
     ],
     "workshop": [
       "3431349806"
@@ -772,10 +772,10 @@
     "public_uniqueID": "raisedweapons",
     "features": [
       "Adds auto-lowering of weapons when running",
-      "",
-      "",
-      "",
-      ""
+      "Adds a raise delay set by WeaponRaiseSpeed",
+      "Adds prevention of accidental fire",
+      "Adds a toggle to keep weapons lowered",
+      "Adds compatibility with melee weapons"
     ],
     "workshop": []
   },
@@ -790,10 +790,10 @@
     "public_uniqueID": "realisticdamage",
     "features": [
       "Adds damage scaling by body part",
-      "",
-      "",
-      "",
-      ""
+      "Adds custom multipliers for realism",
+      "Adds adjustments to player damage output",
+      "Adds bleeding effects on high damage",
+      "Adds friendly fire scaling options"
     ],
     "workshop": []
   },
@@ -808,10 +808,10 @@
     "public_uniqueID": "realisticview",
     "features": [
       "Adds a first-person view that shows the full body",
-      "",
-      "",
-      "",
-      ""
+      "Adds immersive camera transitions",
+      "Adds compatibility with animations",
+      "Adds smooth leaning animations",
+      "Adds optional third-person override"
     ],
     "workshop": []
   },
@@ -826,10 +826,10 @@
     "public_uniqueID": "rumour",
     "features": [
       "Adds an anonymous rumour chat command",
-      "",
-      "",
-      "",
-      ""
+      "Adds hiding of the sender's identity",
+      "Adds encouragement for roleplay intrigue",
+      "Adds a cooldown to prevent spam",
+      "Adds admin logging of rumour messages"
     ],
     "workshop": []
   },
@@ -844,10 +844,10 @@
     "public_uniqueID": "shootlock",
     "features": [
       "Adds the ability to shoot door locks to open them",
-      "",
-      "",
-      "",
-      ""
+      "Adds a quick breach alternative",
+      "Adds a loud action that may alert others",
+      "Adds chance-based lock destruction",
+      "Adds configurable noise radius"
     ],
     "workshop": []
   },
@@ -862,10 +862,10 @@
     "public_uniqueID": "simple_lockpicking",
     "features": [
       "Adds a simple lockpick tool for doors",
-      "",
-      "",
-      "",
-      ""
+      "Adds logging of successful picks",
+      "Adds brute-force style gameplay",
+      "Adds configurable pick time",
+      "Adds chance for tools to break"
     ],
     "workshop": []
   },
@@ -880,10 +880,10 @@
     "public_uniqueID": "slots",
     "features": [
       "Adds a slot machine minigame",
-      "",
-      "",
-      "",
-      ""
+      "Adds a workshop model for the machine",
+      "Adds handling of payouts to winners",
+      "Adds customizable payout odds",
+      "Adds sound and animation effects"
     ],
     "workshop": [
       "3482441716"
@@ -900,10 +900,10 @@
     "public_uniqueID": "slowweapons",
     "features": [
       "Adds slower movement while holding heavy weapons",
-      "",
-      "",
-      "",
-      ""
+      "Adds speed penalties defined per weapon",
+      "Adds encouragement for strategic choices",
+      "Adds customizable weapon speed table",
+      "Adds automatic speed restore when switching"
     ],
     "workshop": []
   },
@@ -918,10 +918,10 @@
     "public_uniqueID": "stungun",
     "features": [
       "Adds a taser weapon that immobilizes targets",
-      "",
-      "",
-      "",
-      ""
+      "Adds StunTime and MaxDist as configurable settings",
+      "Adds optional damage and post-process effects",
+      "Adds networked stun animations",
+      "Adds logs when players are tased"
     ],
     "workshop": [
       "3432649835"
@@ -938,10 +938,10 @@
     "public_uniqueID": "tying",
     "features": [
       "Adds handcuff items that restrain players",
-      "",
-      "",
-      "",
-      ""
+      "Adds logging for tie and untie events",
+      "Adds support for roleplay arrests",
+      "Adds timed escape minigames for prisoners",
+      "Adds compatibility with the search submodule"
     ],
     "workshop": []
   },
@@ -956,10 +956,10 @@
     "public_uniqueID": "viewbob",
     "features": [
       "Adds camera bobbing while moving",
-      "",
-      "",
-      "",
-      ""
+      "Adds adjustable intensity",
+      "Adds enhanced immersion",
+      "Adds toggle to disable bobbing in vehicles",
+      "Adds configuration for bobbing frequency"
     ],
     "workshop": []
   },
@@ -974,10 +974,10 @@
     "public_uniqueID": "vmanip",
     "features": [
       "Adds VManip animation support",
-      "",
-      "",
-      "",
-      ""
+      "Adds hand gestures for items",
+      "Adds functionality within Lilia",
+      "Adds API for custom gesture triggers",
+      "Adds fallback animations when VManip is missing"
     ],
     "workshop": []
   },
@@ -992,10 +992,10 @@
     "public_uniqueID": "warrants",
     "features": [
       "Adds ability to issue and remove player warrants",
-      "",
-      "",
-      "",
-      ""
+      "Adds notifications displayed to players",
+      "Adds logging of all warrant actions",
+      "Adds CAMI privileges for warrant management",
+      "Adds timed expiration for warrants"
     ],
     "workshop": []
   },
@@ -1010,10 +1010,10 @@
     "public_uniqueID": "wartable",
     "features": [
       "Adds an interactive 3D war table",
-      "",
-      "",
-      "",
-      ""
+      "Adds the ability to plan operations on a map",
+      "Adds a workshop model",
+      "Adds marker placement for strategies",
+      "Adds support for multiple map layouts"
     ],
     "workshop": [
       "3431351432"
@@ -1030,10 +1030,10 @@
     "public_uniqueID": "whitelist",
     "features": [
       "Adds a server access whitelist",
-      "",
-      "",
-      "",
-      ""
+      "Adds toggleable player signups",
+      "Adds a public module for gating entry",
+      "Adds admin commands to manage the list",
+      "Adds notifications on join attempt"
     ],
     "workshop": []
   },
@@ -1048,10 +1048,10 @@
     "public_uniqueID": "wordfilter",
     "features": [
       "Adds chat word filtering",
-      "",
-      "",
-      "",
-      ""
+      "Adds blocking of banned phrases",
+      "Adds an easy-to-extend list",
+      "Adds regex support for advanced filters",
+      "Adds admin commands to modify the list"
     ],
     "workshop": []
   }
