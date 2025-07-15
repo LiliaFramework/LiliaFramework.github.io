@@ -112,7 +112,7 @@
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Introduces a full deck of playing cards so players can draw random cards for minigames.",
-    "version": "1.08",
+    "version": "1.10",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/cards.zip",
     "source": "https://liliaframework.github.io/Modules/cards.html",
     "public_uniqueID": "cards",
