@@ -94,7 +94,7 @@
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Provides an API for timed on-screen captions, ideal for story prompts or tutorials.",
-    "version": "1.12",
+    "version": "1.13",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/captions.zip",
     "source": "https://liliaframework.github.io/Modules/captions.html",
     "public_uniqueID": "captions",
@@ -196,24 +196,6 @@
       "Adds integration with movement restrictions",
       "Adds stamina cost for repeated climbs",
       "Adds sound effects for grip and landing"
-    ],
-    "workshop": []
-  },
-  {
-    "name": "Code Utils",
-    "author": "Samael",
-    "discord": "@liliaplayer",
-    "description": "Provides extra helper functions for lia.util used by other modules.",
-    "version": "1.12",
-    "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/codeutils.zip",
-    "source": "https://liliaframework.github.io/Modules/codeutils.html",
-    "public_uniqueID": "codeutils",
-    "features": [
-      "Adds extra helper functions in lia.util",
-      "Adds simplified utilities for common scripting tasks",
-      "Adds a central library used by other modules",
-      "Adds utilities for networking data",
-      "Adds shared constants for modules"
     ],
     "workshop": []
   },
@@ -942,6 +924,24 @@
       "Adds support for roleplay arrests",
       "Adds timed escape minigames for prisoners",
       "Adds compatibility with the search submodule"
+    ],
+    "workshop": []
+  },
+  {
+    "name": "Code Utils",
+    "author": "Samael",
+    "discord": "@liliaplayer",
+    "description": "Provides extra helper functions for lia.util used by other modules.",
+    "version": "1.13",
+    "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/utilities.zip",
+    "source": "https://liliaframework.github.io/Modules/utilities.html",
+    "public_uniqueID": "utilities",
+    "features": [
+      "Adds extra helper functions in lia.util",
+      "Adds simplified utilities for common scripting tasks",
+      "Adds a central library used by other modules",
+      "Adds utilities for networking data",
+      "Adds shared constants for modules"
     ],
     "workshop": []
   },
