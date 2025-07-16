@@ -530,7 +530,7 @@
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Makes headshots instantly lethal with configurable multipliers per weapon.",
-    "version": "1.09",
+    "version": "1.10",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/instakill.zip",
     "source": "https://liliaframework.github.io/Modules/instakill.html",
     "public_uniqueID": "instakill",
