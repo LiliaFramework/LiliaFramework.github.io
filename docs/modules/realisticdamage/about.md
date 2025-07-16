@@ -1,6 +1,6 @@
 # Realistic Damage
 
-**Version:** 1.09  
+**Version:** 1.10  
 **Author:** Samael  
 **Discord:** @liliaplayer  
 

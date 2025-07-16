@@ -1,6 +1,6 @@
 # NPC Drops
 
-**Version:** 1.10  
+**Version:** 1.11  
 **Author:** Samael  
 **Discord:** @liliaplayer  
 

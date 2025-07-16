@@ -1,6 +1,6 @@
 # Perma Remove
 
-**Version:** 1.11  
+**Version:** 1.12  
 **Author:** Boz [Base Code] & Samael [Rewrite]  
 **Discord:** bozdev  
 

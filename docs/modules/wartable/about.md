@@ -1,6 +1,6 @@
 # War Table
 
-**Version:** 1.16  
+**Version:** 1.17  
 **Author:** Samael  
 **Discord:** @liliaplayer  
 

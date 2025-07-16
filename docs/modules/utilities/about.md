@@ -1,6 +1,6 @@
 # Code Utils
 
-**Version:** 1.15  
+**Version:** 1.16  
 **Author:** Samael  
 **Discord:** @liliaplayer  
 
