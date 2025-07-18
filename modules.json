@@ -422,7 +422,7 @@
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Allows items to have lengthy, localized descriptions for richer roleplay.",
-    "version": "1.18",
+    "version": "1.19",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/extendeddescriptions.zip",
     "source": "https://liliaframework.github.io/Modules/extendeddescriptions.html",
     "public_uniqueID": "extendeddescriptions",
