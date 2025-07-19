@@ -1,10 +1,10 @@
 [
   {
-    "name": "Advert",
+    "name": "Advertisements",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Provides a paid /advert command so players can broadcast server-wide messages with a built-in cooldown.",
-    "version": "1.16",
+    "version": "1.17",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/advert.zip",
     "source": "https://liliaframework.github.io/Modules/advert.html",
     "public_uniqueID": "advert",
@@ -54,11 +54,11 @@
     "workshop": []
   },
   {
-    "name": "Bodygrouper",
+    "name": "Bodygroup Editor",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Adds a customizable bodygroup closet entity that lets players adjust their model bodygroups through a menu.",
-    "version": "1.22",
+    "version": "1.23",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/bodygrouper.zip",
     "source": "https://liliaframework.github.io/Modules/bodygrouper.html",
     "public_uniqueID": "bodygrouper",
@@ -238,11 +238,11 @@
     ]
   },
   {
-    "name": "Corpse ID",
+    "name": "Corpse Identification",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Allows players to identify corpses after a short delay, displaying details above the body.",
-    "version": "1.19",
+    "version": "1.20",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/corpseid.zip",
     "source": "https://liliaframework.github.io/Modules/corpseid.html",
     "public_uniqueID": "corpseid",
@@ -256,11 +256,11 @@
     "workshop": []
   },
   {
-    "name": "Cursor",
+    "name": "Custom Cursor",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Adds a toggleable custom cursor for navigating menus more easily.",
-    "version": "1.13",
+    "version": "1.14",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/cursor.zip",
     "source": "https://liliaframework.github.io/Modules/cursor.html",
     "public_uniqueID": "cursor",
@@ -364,11 +364,11 @@
     "workshop": []
   },
   {
-    "name": "Donator",
+    "name": "Donator Perks",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Includes helper libraries for managing donor perks and displaying them on the scoreboard.",
-    "version": "1.23",
+    "version": "1.24",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/donator.zip",
     "source": "https://liliaframework.github.io/Modules/donator.html",
     "public_uniqueID": "donator",
@@ -400,11 +400,11 @@
     "workshop": []
   },
   {
-    "name": "Hospitals",
+    "name": "Hospital Respawn",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Respawns players at designated hospitals where they recover after death.",
-    "version": "1.12",
+    "version": "1.13",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/enhanceddeath.zip",
     "source": "https://liliaframework.github.io/Modules/enhanceddeath.html",
     "public_uniqueID": "enhanceddeath",
@@ -490,11 +490,11 @@
     "workshop": []
   },
   {
-    "name": "Gamemaster Teleport Points",
+    "name": "Gamemaster Points",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Lets game masters create teleport points around the map and quickly jump between them.",
-    "version": "1.13",
+    "version": "1.14",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/gamemasterpoints.zip",
     "source": "https://liliaframework.github.io/Modules/gamemasterpoints.html",
     "public_uniqueID": "gamemasterpoints",
@@ -508,11 +508,11 @@
     "workshop": []
   },
   {
-    "name": "Extra HUD Elements",
+    "name": "HUD Extras",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Adds optional HUD elements, such as an FPS counter, that other modules can extend.",
-    "version": "1.18",
+    "version": "1.19",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/hud_extras.zip",
     "source": "https://liliaframework.github.io/Modules/hud_extras.html",
     "public_uniqueID": "hud_extras",
@@ -526,11 +526,11 @@
     "workshop": []
   },
   {
-    "name": "Instant Killing",
+    "name": "Instant Kill",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Makes headshots instantly lethal with configurable multipliers per weapon.",
-    "version": "1.15",
+    "version": "1.16",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/instakill.zip",
     "source": "https://liliaframework.github.io/Modules/instakill.html",
     "public_uniqueID": "instakill",
@@ -544,11 +544,11 @@
     "workshop": []
   },
   {
-    "name": "Weight Inv",
+    "name": "Weighted Inventory",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Implements a weight-based inventory that limits how much a character can carry.",
-    "version": "1.15",
+    "version": "1.16",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/inventory.zip",
     "source": "https://liliaframework.github.io/Modules/inventory.html",
     "public_uniqueID": "inventory",
@@ -798,11 +798,11 @@
     "workshop": []
   },
   {
-    "name": "Rumour",
+    "name": "Anonymous Rumors",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Adds an anonymous rumour command so players can spread hearsay without revealing themselves.",
-    "version": "1.14",
+    "version": "1.15",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/rumour.zip",
     "source": "https://liliaframework.github.io/Modules/rumour.html",
     "public_uniqueID": "rumour",
@@ -852,11 +852,11 @@
     "workshop": []
   },
   {
-    "name": "Slots",
+    "name": "Slot Machine",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Adds a playable slot machine using a workshop model that pays out winnings.",
-    "version": "1.15",
+    "version": "1.16",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/slots.zip",
     "source": "https://liliaframework.github.io/Modules/slots.html",
     "public_uniqueID": "slots",
@@ -872,11 +872,11 @@
     ]
   },
   {
-    "name": "Heavy Weapons",
+    "name": "Heavy Weapon Slowdown",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Slows player movement when wielding specified heavy weapons to encourage tactical choices.",
-    "version": "1.14",
+    "version": "1.15",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/slowweapons.zip",
     "source": "https://liliaframework.github.io/Modules/slowweapons.html",
     "public_uniqueID": "slowweapons",
@@ -914,7 +914,7 @@
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Introduces handcuff-style tying items for arrests and logs all tie or untie actions.",
-    "version": "1.23",
+    "version": "1.24",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/tying.zip",
     "source": "https://liliaframework.github.io/Modules/tying.html",
     "public_uniqueID": "tying",
@@ -928,11 +928,11 @@
     "workshop": []
   },
   {
-    "name": "Code Utils",
+    "name": "Code Utilities",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Provides extra helper functions for lia.util used by other modules.",
-    "version": "1.20",
+    "version": "1.21",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/utilities.zip",
     "source": "https://liliaframework.github.io/Modules/utilities.html",
     "public_uniqueID": "utilities",
@@ -946,11 +946,11 @@
     "workshop": []
   },
   {
-    "name": "View Bob",
+    "name": "View Bobbing",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Applies camera bobbing while moving with adjustable strength for immersion.",
-    "version": "1.15",
+    "version": "1.16",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/viewbob.zip",
     "source": "https://liliaframework.github.io/Modules/viewbob.html",
     "public_uniqueID": "viewbob",
@@ -964,11 +964,11 @@
     "workshop": []
   },
   {
-    "name": "VManip",
+    "name": "Viewmodel Animations",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Adds support for VManip animations and gestures within the framework.",
-    "version": "1.16",
+    "version": "1.17",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/vmanip.zip",
     "source": "https://liliaframework.github.io/Modules/vmanip.html",
     "public_uniqueID": "vmanip",
@@ -982,11 +982,11 @@
     "workshop": []
   },
   {
-    "name": "Warrant",
+    "name": "Warrant System",
     "author": "Samael",
     "discord": "@liliaplayer",
     "description": "Allows staff to issue and remove player warrants while notifying everyone involved.",
-    "version": "1.24",
+    "version": "1.25",
     "download": "https://github.com/LiliaFramework/Modules/raw/refs/heads/gh-pages/warrants.zip",
     "source": "https://liliaframework.github.io/Modules/warrants.html",
     "public_uniqueID": "warrants",
