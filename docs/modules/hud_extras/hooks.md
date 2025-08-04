@@ -1,6 +1,34 @@
 # Hooks
 
-Module-specific events raised by the HudExtras module.
+Module-specific events raised by the HUD Extras module.
+
+---
+
+### `RefreshFonts`
+
+**Purpose**
+
+`Rebuilds HUD fonts whenever font configuration changes.`
+
+**Parameters**
+
+* *(None)*
+
+**Realm**
+
+`Client`
+
+**Returns**
+
+`nil` — `No return value.`
+
+**Example**
+
+```lua
+hook.Add("RefreshFonts", "HUDExtrasFonts", function()
+    surface.CreateFont("HUDFont", {font = lia.config.get("HUDExtrasFont"), size = 24})
+end)
+```
 
 ---
 

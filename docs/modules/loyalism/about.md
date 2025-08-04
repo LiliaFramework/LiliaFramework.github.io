@@ -4,10 +4,11 @@
 Loyalism
 
 **Version:**
-1.17
+1.21
 
 **Description:**
-Implements loyalty tiers that grant access to the /partytier command when flagged.
+
+Tracks player loyalty tiers which unlock the /partytier command and other rewards. Tiers can progress automatically based on actions.
 
 <h2 style="text-align:center; font-size:1.5rem; font-weight:bold;">Features</h2>
 
