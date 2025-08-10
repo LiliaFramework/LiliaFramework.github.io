@@ -18,25 +18,27 @@ Players are entity objects that hold at most one `Character` instance, so these 
 
 **Purpose**
 
-Returns the currently loaded character object for this player.
+Returns the current character of the player.
 
 **Parameters**
 
 * None
 
+**Returns**
+
+* `Character|nil`: The player's current character, or `nil` if no character is loaded.
+
 **Realm**
 
 `Shared`
 
-**Returns**
-
-* `Character|nil`: The player's active character.
-
 **Example Usage**
 
 ```lua
--- Retrieve the character to modify inventory
 local char = player:getChar()
+if char then
+    print("Character name: " .. char:getName())
+end
 ```
 
 ---
@@ -45,25 +47,25 @@ local char = player:getChar()
 
 **Purpose**
 
-Returns either the character's role-play name or the player's Steam name.
+Returns the display name of the player, either their character name or Steam name.
 
 **Parameters**
 
 * None
 
+**Returns**
+
+* `string`: The player's display name.
+
 **Realm**
 
 `Shared`
 
-**Returns**
-
-* `string`: Display name.
-
 **Example Usage**
 
 ```lua
--- Print the role-play name in chat
-chat.AddText(player:Name())
+local name = player:Name()
+print("Player name: " .. name)
 ```
 
 ---
@@ -120,108 +122,29 @@ print(player:SteamName())
 
 ---
 
-### GetCharacter
-
-**Purpose**
-
-Alias of `getChar`.
-
-**Parameters**
-
-* None
-
-**Realm**
-
-`Shared`
-
-**Returns**
-
-* `Character|nil`: The player's active character.
-
-**Example Usage**
-
-```lua
-local character = player:GetCharacter()
-```
-
----
-
-### Nick
-
-**Purpose**
-
-Alias of `Name`.
-
-**Parameters**
-
-* None
-
-**Realm**
-
-`Shared`
-
-**Returns**
-
-* `string`: Display name.
-
-**Example Usage**
-
-```lua
-chat.AddText(player:Nick())
-```
-
----
-
-### GetName
-
-**Purpose**
-
-Alias of `Name`.
-
-**Parameters**
-
-* None
-
-**Realm**
-
-`Shared`
-
-**Returns**
-
-* `string`: Display name.
-
-**Example Usage**
-
-```lua
-local name = player:GetName()
-```
-
----
-
 ### hasPrivilege
 
 **Purpose**
 
-Wrapper for CAMI privilege checks.
+Checks if the player has the specified privilege.
 
 **Parameters**
 
-* `privilegeName` (`string`): Privilege identifier.
+* `privilegeName` (`string`): The name of the privilege to check.
+
+**Returns**
+
+* `boolean`: True if the player has the privilege, false otherwise.
 
 **Realm**
 
 `Shared`
 
-**Returns**
-
-* `boolean`: Result from `CAMI.PlayerHasAccess`.
-
 **Example Usage**
 
 ```lua
--- Deny access if the player lacks a privilege
-if not player:hasPrivilege("Manage") then
-    return false
+if player:hasPrivilege("admin") then
+    print("Player has admin privileges")
 end
 ```
 
@@ -231,27 +154,26 @@ end
 
 **Purpose**
 
-Safely returns the vehicle the player is currently using.
+Returns the player's currently occupied vehicle entity.
 
 **Parameters**
 
 * None
 
+**Returns**
+
+* `Entity|nil`: The vehicle entity the player is in, or `nil` if not in a vehicle.
+
 **Realm**
 
 `Shared`
 
-**Returns**
-
-* `Entity|nil`: Vehicle entity or `nil`.
-
 **Example Usage**
 
 ```lua
--- Attach a camera to the vehicle the player is in
-local veh = player:getCurrentVehicle()
-if IsValid(veh) then
-    AttachCamera(veh)
+local vehicle = player:getCurrentVehicle()
+if vehicle then
+    print("Player is in vehicle: " .. vehicle:GetClass())
 end
 ```
 
@@ -261,26 +183,25 @@ end
 
 **Purpose**
 
-Determines if the player is currently inside a valid vehicle.
+Checks if the player has a valid vehicle.
 
 **Parameters**
 
 * None
 
+**Returns**
+
+* `boolean`: True if the player has a valid vehicle, false otherwise.
+
 **Realm**
 
 `Shared`
 
-**Returns**
-
-* `boolean`: `true` if a vehicle entity is valid.
-
 **Example Usage**
 
 ```lua
--- Allow honking only when in a valid vehicle
 if player:hasValidVehicle() then
-    player:GetVehicle():EmitSound("Horn")
+    print("Player is in a vehicle")
 end
 ```
 
@@ -290,25 +211,26 @@ end
 
 **Purpose**
 
-Returns `true` if the player is in noclip mode and not inside a vehicle.
+Checks if the player is currently nocliping.
 
 **Parameters**
 
 * None
 
+**Returns**
+
+* `boolean`: True if the player is nocliping, false otherwise.
+
 **Realm**
 
 `Shared`
 
-**Returns**
-
-* `boolean`: Whether the player is noclipping.
-
 **Example Usage**
 
 ```lua
--- Disable certain actions while noclipping
-if player:isNoClipping() then return end
+if player:isNoClipping() then
+    print("Player is nocliping")
+end
 ```
 
 ---
@@ -317,25 +239,25 @@ if player:isNoClipping() then return end
 
 **Purpose**
 
-Checks if the player currently has an active ragdoll entity.
+Checks if the player has a ragdoll.
 
 **Parameters**
 
 * None
 
+**Returns**
+
+* `boolean`: True if the player has a ragdoll, false otherwise.
+
 **Realm**
 
 `Shared`
-
-**Returns**
-
-* `boolean`: `true` when a ragdoll entity exists.
 
 **Example Usage**
 
 ```lua
 if player:hasRagdoll() then
-    print("Player is ragdolled")
+    print("Player has a ragdoll")
 end
 ```
 
@@ -405,24 +327,23 @@ end
 
 **Purpose**
 
-Safely removes the player's ragdoll entity if present.
+Removes the player's ragdoll if one exists.
 
 **Parameters**
 
 * None
 
-**Realm**
-
-`Shared`
-
 **Returns**
 
 * `nil`: This function does not return a value.
 
+**Realm**
+
+`Shared`
+
 **Example Usage**
 
 ```lua
--- Clean up any ragdoll left behind
 player:removeRagdoll()
 ```
 
@@ -432,24 +353,27 @@ player:removeRagdoll()
 
 **Purpose**
 
-Retrieves the ragdoll entity associated with the player.
+Returns the player's ragdoll entity if one exists.
 
 **Parameters**
 
 * None
 
+**Returns**
+
+* `Entity|nil`: The ragdoll entity, or `nil` if no ragdoll exists.
+
 **Realm**
 
 `Shared`
-
-**Returns**
-
-* `Entity|nil`: The ragdoll entity or `nil`.
 
 **Example Usage**
 
 ```lua
 local ragdoll = player:getRagdoll()
+if ragdoll then
+    print("Player has a ragdoll")
+end
 ```
 
 ---
@@ -885,34 +809,6 @@ end
 ```
 
 ---
-
-### isUser
-
-**Purpose**
-
-Convenience wrapper to check if the player is in the `"user"` group.
-
-**Parameters**
-
-* None
-
-**Realm**
-
-`Shared`
-
-**Returns**
-
-* `boolean`: Whether usergroup is `"user"`.
-
-**Example Usage**
-
-```lua
--- Check if the player belongs to the default user group
-local result = player:isUser()
-```
-
----
-
 ### isStaff
 
 **Purpose**
@@ -1872,6 +1768,273 @@ local data = player:getAllLiliaData()
 
 ---
 
+### getFlags
+
+**Purpose**
+
+Returns the flags associated with the player's character.
+
+**Parameters**
+
+* None
+
+**Realm**
+
+`Shared`
+
+**Returns**
+
+* `string`: Character flags or empty string.
+
+**Example Usage**
+
+```lua
+local flags = player:getFlags()
+if flags:find("a") then
+    print("Player has admin flag")
+end
+```
+
+---
+
+### setFlags
+
+**Purpose**
+
+Replaces the character's flag string.
+
+**Parameters**
+
+* `flags` (`string`): Flags to assign.
+
+**Realm**
+
+`Shared`
+
+**Returns**
+
+* `nil`: This function does not return a value.
+
+**Example Usage**
+
+```lua
+player:setFlags("ab")
+```
+
+---
+
+### giveFlags
+
+**Purpose**
+
+Adds flags to the character.
+
+**Parameters**
+
+* `flags` (`string`): Flags to add.
+
+**Realm**
+
+`Shared`
+
+**Returns**
+
+* `nil`: This function does not return a value.
+
+**Example Usage**
+
+```lua
+player:giveFlags("a")
+```
+
+---
+
+### takeFlags
+
+**Purpose**
+
+Removes flags from the character.
+
+**Parameters**
+
+* `flags` (`string`): Flags to remove.
+
+**Realm**
+
+`Shared`
+
+**Returns**
+
+* `nil`: This function does not return a value.
+
+**Example Usage**
+
+```lua
+player:takeFlags("a")
+```
+
+---
+
+### getPlayerFlags
+
+**Purpose**
+
+Gets the player's personal flag string.
+
+**Parameters**
+
+* None
+
+**Realm**
+
+`Shared`
+
+**Returns**
+
+* `string`: Player-specific flags.
+
+**Example Usage**
+
+```lua
+local pf = player:getPlayerFlags()
+```
+
+---
+
+### setPlayerFlags
+
+**Purpose**
+
+Sets the player's personal flags.
+
+**Parameters**
+
+* `flags` (`string`): Flags to assign.
+
+**Realm**
+
+`Shared`
+
+**Returns**
+
+* `nil`: This function does not return a value.
+
+**Example Usage**
+
+```lua
+player:setPlayerFlags("v")
+```
+
+---
+
+### hasPlayerFlags
+
+**Purpose**
+
+Checks for any of the specified personal flags.
+
+**Parameters**
+
+* `flags` (`string`): Flags to check.
+
+**Realm**
+
+`Shared`
+
+**Returns**
+
+* `boolean`: Whether any flag is present.
+
+**Example Usage**
+
+```lua
+if player:hasPlayerFlags("v") then
+    print("Player is VIP")
+end
+```
+
+---
+
+### givePlayerFlags
+
+**Purpose**
+
+Adds personal flags to the player.
+
+**Parameters**
+
+* `flags` (`string`): Flags to add.
+
+**Realm**
+
+`Shared`
+
+**Returns**
+
+* `nil`: This function does not return a value.
+
+**Example Usage**
+
+```lua
+player:givePlayerFlags("v")
+```
+
+---
+
+### takePlayerFlags
+
+**Purpose**
+
+Removes personal flags from the player.
+
+**Parameters**
+
+* `flags` (`string`): Flags to remove.
+
+**Realm**
+
+`Shared`
+
+**Returns**
+
+* `nil`: This function does not return a value.
+
+**Example Usage**
+
+```lua
+player:takePlayerFlags("v")
+```
+
+---
+
+### hasFlags
+
+**Purpose**
+
+Checks both character and personal flags for any of the supplied flags.
+
+**Parameters**
+
+* `flags` (`string`): Flags to check.
+
+**Realm**
+
+`Shared`
+
+**Returns**
+
+* `boolean`: True if any flag is present.
+
+**Example Usage**
+
+```lua
+if player:hasFlags("a") then
+    print("Has admin access")
+end
+```
+
+---
+
 ### setRagdoll
 
 **Purpose**
@@ -1940,6 +2103,8 @@ Bans the player for a given reason and duration then kicks them.
 
 * `duration` (`number|nil`): Length in minutes, or `nil` for permanent.
 
+* `banner` (`Player|nil`): Player issuing the ban.
+
 **Realm**
 
 `Server`
@@ -1951,7 +2116,7 @@ Bans the player for a given reason and duration then kicks them.
 **Example Usage**
 
 ```lua
-player:banPlayer("Breaking rules", 60)
+player:banPlayer("Breaking rules", 60, admin)
 ```
 
 ---
@@ -1966,7 +2131,7 @@ Displays an action bar for a set duration and optionally runs a callback.
 
 * `text` (`string|nil`): Text to display, or nil to clear.
 
-* `time` (`number|nil`): How long to show it for.
+* `time` (`number|nil`): How long to show it for in seconds. Defaults to 5. If `time` ≤ 0, the callback runs immediately with no bar.
 
 * `callback` (`function|nil`): Executed when time elapses.
 
@@ -2002,7 +2167,7 @@ Runs an action only while the player stares at the entity.
 
 * `onCancel` (`function|nil`): Called if gaze breaks.
 
-* `distance` (`number|nil`): Max distance to maintain.
+* `distance` (`number|nil`): Max distance to maintain, defaults to 96.
 
 **Realm**
 
@@ -2265,6 +2430,32 @@ print(player:getPlayTime())
 
 ---
 
+### getSessionTime
+
+**Purpose**
+
+Returns how long the player has been connected in the current session.
+
+**Parameters**
+
+* None
+
+**Realm**
+
+`Server`
+
+**Returns**
+
+* `number`: Seconds since the player joined this session.
+
+**Example Usage**
+
+```lua
+print(player:getSessionTime())
+```
+
+---
+
 ### getTotalOnlineTime
 
 **Purpose**
@@ -2453,34 +2644,6 @@ Sets a networked local variable on the player and triggers the **LocalVarChanged
 
 ```lua
 player:setLocalVar("health", 75)
-```
-
----
-
-### getLocalVar
-
-**Purpose**
-
-Retrieves a networked local variable stored on the player.
-
-**Parameters**
-
-* `key` (`string`): Variable name.
-
-* `default` (`any`): Value returned if not set.
-
-**Realm**
-
-`Shared`
-
-**Returns**
-
-* `any`: Stored value or default.
-
-**Example Usage**
-
-```lua
-local stamina = player:getLocalVar("stamina",  char:getMaxStamina())
 ```
 
 ---
@@ -2793,15 +2956,15 @@ LocalPlayer():NetworkAnimation(true, {
 
 ---
 
-### getParts
+### playTimeGreaterThan
 
 **Purpose**
 
-Returns the table of PAC3 part IDs currently attached to the player.
+Checks if the player's total play time exceeds a threshold.
 
 **Parameters**
 
-* None
+* `time` (`number`): Time in seconds to compare against.
 
 **Realm**
 
@@ -2809,118 +2972,12 @@ Returns the table of PAC3 part IDs currently attached to the player.
 
 **Returns**
 
-* `table`: Mapping of active part IDs.
+* `boolean`: Whether the player has played longer than `time`.
 
 **Example Usage**
 
 ```lua
-for id in pairs(player:getParts()) do
-    print("equipped part", id)
+if player:playTimeGreaterThan(3600) then
+    print("Played for over an hour")
 end
 ```
-
----
-
-### syncParts
-
-**Purpose**
-
-Sends the player's PAC3 part data to their client.
-
-**Parameters**
-
-* None
-
-**Realm**
-
-`Server`
-
-**Returns**
-
-* `nil`: This function does not return a value.
-
-**Example Usage**
-
-```lua
-player:syncParts()
-```
-
----
-
-### addPart
-
-**Purpose**
-
-Adds the given PAC3 part to the player and broadcasts it.
-
-**Parameters**
-
-* `partID` (`string`): Identifier of the part to attach.
-
-**Realm**
-
-`Server`
-
-**Returns**
-
-* `nil`: This function does not return a value.
-
-**Example Usage**
-
-```lua
-player:addPart("hat_01")
-```
-
----
-
-### removePart
-
-**Purpose**
-
-Removes a previously added PAC3 part from the player.
-
-**Parameters**
-
-* `partID` (`string`): Identifier of the part to remove.
-
-**Realm**
-
-`Server`
-
-**Returns**
-
-* `nil`: This function does not return a value.
-
-**Example Usage**
-
-```lua
-player:removePart("hat_01")
-```
-
----
-
-### resetParts
-
-**Purpose**
-
-Clears all PAC3 parts that are currently attached to the player.
-
-**Parameters**
-
-* None
-
-**Realm**
-
-`Server`
-
-**Returns**
-
-* `nil`: This function does not return a value.
-
-**Example Usage**
-
-```lua
-player:resetParts()
-```
-
----

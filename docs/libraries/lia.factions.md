@@ -1,373 +1,377 @@
 # Factions Library
 
-This page covers the faction system helpers.
+This page documents the functions for working with faction management and team systems.
 
 ---
 
 ## Overview
 
-The factions library loads faction definitions and stores them for later lookup. Factions are kept in two tables:
+The factions library provides a system for managing player factions, teams, and group affiliations within the Lilia framework. It handles faction registration, team setup, model management, and provides utilities for working with faction data. The library supports faction-specific colors, models, and metadata, and integrates with Garry's Mod's team system.
 
-* `lia.faction.teams` — indexed by unique identifier.
+### lia.faction.register
 
-* `lia.faction.indices` — indexed by team number.
+**Purpose**
 
-The helpers below let you find factions and iterate over their data. See [Faction Fields](../definitions/faction.md) for the keys stored in each `FACTION` table.
+Registers a new faction with the given unique ID and data table. Handles localization, color, models, and sets up the team. Also precaches all faction models and stores the faction in the global indices and teams tables.
 
----
+**Parameters**
+
+* `uniqueID` (*string*) - The unique identifier for the faction.
+* `data` (*table*) - The data table containing faction properties (name, desc, color, models, etc).
+
+**Returns**
+
+* `index` (*number*) - The index assigned to the faction.
+* `faction` (*table*) - The faction table that was registered.
+
+**Realm**
+
+Shared.
+
+**Example Usage**
+
+```lua
+-- Register a new faction called "citizen"
+local index, faction = lia.faction.register("citizen", {
+    name = "Citizen",
+    desc = "The common people of the city.",
+    color = Color(100, 150, 200),
+    isDefault = true,
+    models = {"models/player/group01/male_01.mdl", "models/player/group01/female_01.mdl"}
+})
+```
 
 ### lia.faction.loadFromDir
 
 **Purpose**
 
-Loads all Lua faction files from a directory, includes them **shared**, and registers the resulting `FACTION` tables. Models are precached and factions are stored in both lookup tables.
+Loads all faction definition files from the specified directory, registering them into `lia.faction.teams` and `lia.faction.indices`. Each faction file should define a `FACTION` table. This function ensures the faction's name, description, and color are set and localized, and precaches all models.
 
 **Parameters**
 
-* `directory` (*string*): Path to the folder containing faction files.
-
-**Realm**
-
-`Shared`
+* `directory` (*string*) - The directory path to search for faction files (should be relative to the gamemode).
 
 **Returns**
 
-* *nil*: This function does not return a value.
+* *nil*
+
+**Realm**
+
+Shared.
 
 **Example Usage**
 
 ```lua
-lia.faction.loadFromDir("path/to/factions")
+-- Load all factions from the "factions" directory
+lia.faction.loadFromDir("gamemode/schema/factions")
 ```
-
----
 
 ### lia.faction.get
 
 **Purpose**
 
-Retrieves a faction table by its index or unique identifier.
+Retrieves a faction table by its index or unique ID.
 
 **Parameters**
 
-* `identifier` (*number | string*): Faction index or unique ID.
-
-**Realm**
-
-`Shared`
+* `identifier` (*number|string*) - The faction index or unique ID.
 
 **Returns**
 
-* *table | nil*: The faction table, or `nil` if not found.
+* `faction` (*table|nil*) - The faction table if found, or nil.
+
+**Realm**
+
+Shared.
 
 **Example Usage**
 
 ```lua
-local faction = lia.faction.get("citizen")
+-- Get the faction table for the "staff" faction
+local staffFaction = lia.faction.get("staff")
+-- Get the faction table by index
+local factionByIndex = lia.faction.get(1)
 ```
-
----
 
 ### lia.faction.getIndex
 
 **Purpose**
 
-Returns the numeric index of a faction given its unique identifier.
+Retrieves the index of a faction by its unique ID.
 
 **Parameters**
 
-* `uniqueID` (*string*): Faction unique ID.
-
-**Realm**
-
-`Shared`
+* `uniqueID` (*string*) - The unique ID of the faction.
 
 **Returns**
 
-* *number | nil*: Index if found, otherwise `nil`.
+* `index` (*number|nil*) - The index of the faction, or nil if not found.
+
+**Realm**
+
+Shared.
 
 **Example Usage**
 
 ```lua
-local index = lia.faction.getIndex("citizen")
+-- Get the index of the "staff" faction
+local staffIndex = lia.faction.getIndex("staff")
 ```
-
----
 
 ### lia.faction.getClasses
 
 **Purpose**
 
-Returns a list of class tables that belong to the specified faction.
+Retrieves all classes associated with a given faction.
 
 **Parameters**
 
-* `faction` (*number*): Faction index.
-
-**Realm**
-
-`Shared`
+* `faction` (*number|string*) - The faction index or unique ID.
 
 **Returns**
 
-* *table*: Array of class tables.
+* `classes` (*table*) - A table of class tables belonging to the faction.
+
+**Realm**
+
+Shared.
 
 **Example Usage**
 
 ```lua
-local classes = lia.faction.getClasses(FACTION_CITIZEN)
+-- Get all classes for the "staff" faction
+local staffClasses = lia.faction.getClasses("staff")
 ```
-
----
 
 ### lia.faction.getPlayers
 
 **Purpose**
 
-Retrieves all player entities whose characters are in the given faction.
+Retrieves all players currently in the specified faction.
 
 **Parameters**
 
-* `faction` (*number*): Faction index.
-
-**Realm**
-
-`Shared`
+* `faction` (*number|string*) - The faction index or unique ID.
 
 **Returns**
 
-* *table*: Array of `Player` entities.
+* `players` (*table*) - A table of player objects in the faction.
+
+**Realm**
+
+Shared.
 
 **Example Usage**
 
 ```lua
-local players = lia.faction.getPlayers(FACTION_CITIZEN)
+-- Get all players in the "staff" faction
+local staffPlayers = lia.faction.getPlayers("staff")
 ```
-
----
 
 ### lia.faction.getPlayerCount
 
 **Purpose**
 
-Counts how many players belong to the specified faction.
+Counts the number of players currently in the specified faction.
 
 **Parameters**
 
-* `faction` (*number*): Faction index.
-
-**Realm**
-
-`Shared`
+* `faction` (*number|string*) - The faction index or unique ID.
 
 **Returns**
 
-* *number*: Player count.
+* `count` (*number*) - The number of players in the faction.
+
+**Realm**
+
+Shared.
 
 **Example Usage**
 
 ```lua
-local count = lia.faction.getPlayerCount(FACTION_CITIZEN)
+-- Get the number of players in the "staff" faction
+local staffCount = lia.faction.getPlayerCount("staff")
 ```
-
----
 
 ### lia.faction.isFactionCategory
 
 **Purpose**
 
-Checks whether a faction belongs to a category defined by a list of faction IDs.
+Checks if a given faction is part of a specified category (list of factions).
 
 **Parameters**
 
-* `faction` (*string*): Faction unique ID.
-
-* `categoryFactions` (*table*): Array of faction IDs in the category.
-
-**Realm**
-
-`Shared`
+* `faction` (*number|string*) - The faction index or unique ID.
+* `categoryFactions` (*table*) - Table of faction indices or unique IDs representing the category.
 
 **Returns**
 
-* *boolean*: `true` if the faction is in the category.
+* `isCategory` (*boolean*) - True if the faction is in the category, false otherwise.
+
+**Realm**
+
+Shared.
 
 **Example Usage**
 
 ```lua
-local isMember = lia.faction.isFactionCategory("citizen", { "citizen", "veteran" })
+-- Check if "staff" is in the admin category
+local isAdmin = lia.faction.isFactionCategory("staff", {"staff", "admin", "superadmin"})
 ```
-
----
 
 ### lia.faction.jobGenerate
 
 **Purpose**
 
-Dynamically creates and registers a new faction (job) with the team system, precaching its models.
+Generates and registers a simple faction/job with the specified properties.
 
 **Parameters**
 
-* `index` (*number*): Team index.
-
-* `name` (*string*): Faction name.
-
-* `color` (*Color*): Team colour.
-
-* `default` (*boolean*): Whether this faction is default.
-
-* `models` (*table*): Array of model paths or model data.
-
-**Realm**
-
-`Shared`
+* `index` (*number*) - The index to assign to the faction.
+* `name` (*string*) - The name of the faction.
+* `color` (*Color*) - The color of the faction.
+* `default` (*boolean*) - Whether the faction is default.
+* `models` (*table|nil*) - Table of model paths for the faction (optional).
 
 **Returns**
 
-* *table*: The generated faction table.
+* `FACTION` (*table*) - The created faction table.
+
+**Realm**
+
+Shared.
 
 **Example Usage**
 
 ```lua
-local police = lia.faction.jobGenerate(
-    2,
-    "Police",
-    Color(0, 0, 255),
-    false,
-    { "models/player/police.mdl" }
-)
+-- Generate a new job/faction called "Guard"
+local guardFaction = lia.faction.jobGenerate(2, "Guard", Color(0, 100, 255), false, {"models/player/police.mdl"})
 ```
-
----
 
 ### lia.faction.formatModelData
 
 **Purpose**
 
-Normalises model tables for every registered faction, ensuring grouped categories are consistent.
+Processes and formats the model data for all factions, ensuring bodygroup data is properly set up for each model. This is useful for advanced model customization and bodygroup support.
 
 **Parameters**
 
 *None*
 
-**Realm**
-
-`Shared`
-
 **Returns**
 
-* *nil*: This function does not return a value.
+*None*
+
+**Realm**
+
+Shared.
 
 **Example Usage**
 
 ```lua
+-- Format all faction model data after loading factions
 lia.faction.formatModelData()
 ```
-
----
 
 ### lia.faction.getCategories
 
 **Purpose**
 
-Returns a list of model category names for the given faction.
+Retrieves all model categories for a given faction/team name.
 
 **Parameters**
 
-* `teamName` (*string*): Faction unique ID.
-
-**Realm**
-
-`Shared`
+* `teamName` (*string*) - The unique ID of the faction/team.
 
 **Returns**
 
-* *table*: Array of category names.
+* `categories` (*table*) - A table of category names (strings).
+
+**Realm**
+
+Shared.
 
 **Example Usage**
 
 ```lua
-local categories = lia.faction.getCategories("citizen")
+-- Get all model categories for the "staff" faction
+local categories = lia.faction.getCategories("staff")
 ```
-
----
 
 ### lia.faction.getModelsFromCategory
 
 **Purpose**
 
-Returns the models that belong to a specific category for a faction.
+Retrieves all models from a specific category for a given faction/team.
 
 **Parameters**
 
-* `teamName` (*string*): Faction unique ID.
-
-* `category` (*string*): Category name.
-
-**Realm**
-
-`Shared`
+* `teamName` (*string*) - The unique ID of the faction/team.
+* `category` (*string*) - The category name.
 
 **Returns**
 
-* *table*: Array of model paths.
+* `models` (*table*) - A table of models in the specified category.
+
+**Realm**
+
+Shared.
 
 **Example Usage**
 
 ```lua
-local models = lia.faction.getModelsFromCategory("citizen", "special")
+-- Get all "male" models for the "citizen" faction
+local maleModels = lia.faction.getModelsFromCategory("citizen", "male")
 ```
-
----
 
 ### lia.faction.getDefaultClass
 
 **Purpose**
 
-Finds the first class marked as default for the given faction.
+Retrieves the default class for a given faction.
 
 **Parameters**
 
-* `id` (*number*): Faction index.
-
-**Realm**
-
-`Shared`
+* `id` (*number|string*) - The faction index or unique ID.
 
 **Returns**
 
-* *table | nil*: Default class table, or `nil` if none.
+* `defaultClass` (*table|nil*) - The default class table, or nil if not found.
+
+**Realm**
+
+Shared.
 
 **Example Usage**
 
 ```lua
-local defaultClass = lia.faction.getDefaultClass(FACTION_CITIZEN)
+-- Get the default class for the "staff" faction
+local defaultClass = lia.faction.getDefaultClass("staff")
 ```
-
----
 
 ### lia.faction.hasWhitelist
 
 **Purpose**
 
-Client-side check whether the local player is whitelisted for a faction.
+Checks if the local player has a whitelist for the specified faction.
 
 **Parameters**
 
-* `faction` (*number*): Faction index.
-
-**Realm**
-
-`Client`
+* `faction` (*number|string*) - The faction index or unique ID.
 
 **Returns**
 
-* *boolean*: `true` if the player is whitelisted.
+* `hasWhitelist` (*boolean*) - True if the player has a whitelist or the faction is default, false otherwise.
+
+**Realm**
+
+Client.
 
 **Example Usage**
 
 ```lua
-local whitelisted = lia.faction.hasWhitelist(FACTION_CITIZEN)
+-- Check if the local player has access to the "staff" faction
+if lia.faction.hasWhitelist("staff") then
+    print("You are whitelisted for staff!")
+end
 ```
-
----

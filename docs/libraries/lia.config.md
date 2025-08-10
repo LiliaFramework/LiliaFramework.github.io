@@ -1,284 +1,172 @@
 # Config Library
 
-This page explains how to add and access configuration settings.
+## lia.config.add
 
----
+**Purpose:** Registers a new configuration variable with the Lilia config system. This function sets up the config's name, default value, type, description, category, and optional callback for when the value changes. The config is stored in `lia.config.stored`.
 
-## Overview
+**Parameters:**
+- `key` (string) - The unique key for the config variable.
+- `name` (string) - The display name for the config variable (localized automatically).
+- `value` (any) - The default value for the config variable.
+- `callback` (function) - (Optional) Function to call when the config value changes.
+- `data` (table) - Table containing additional config properties (type, desc, category, etc). String values such as `desc`, `category`, and entries in an `options` table are localized automatically.
 
-The config library stores server configuration values with descriptions and default settings. It also provides callbacks when values change, so modules can react to new options.
+**Returns:** None.
 
----
+**Realm:** Shared.
 
-### lia.config.add
-
-**Purpose**
-
-Registers a new config option with the given key, display name, default value, and optional callback. A data table describing the option is **required**.
-
-**Parameters**
-
-* `key` (*string*): Unique identifier for the option.
-
-* `name` (*string*): Display name shown in menus.
-
-* `value` (*any*): Default stored value.
-
-* `callback` (*function*): Function run when the value changes. *Optional*.
-
-* `data` (*table*): Table describing the option. Common fields include `desc`, `category`, `type`, `min`, `max`, `decimals`, `options`, and `noNetworking`.
-
-**Realm**
-
-`Shared`
-
-**Returns**
-
-* *nil*: This function does not return a value.
-
-**Example Usage**
-
+**Example Usage:**
 ```lua
--- Register a walk-speed option with limits and a callback
-lia.config.add(
-    "walkSpeed",
-    "Walk Speed",
-    130,
-    function(_, newValue)
-        for _, ply in player.Iterator() do
-            ply:SetWalkSpeed(newValue)
-        end
-    end,
-    {
-        desc = "Base walking speed for all players.",
-        category = "Movement",
-        type = "Int",
-        min = 50,
-        max = 300
-    }
-)
+-- Add a new integer config variable for maximum players
+lia.config.add("MaxPlayers", "Maximum Players", 32, function(old, new)
+    print("Max players changed from", old, "to", new)
+end, {
+    desc = "The maximum number of players allowed on the server.",
+    category = "server",
+    type = "Int",
+    min = 1,
+    max = 128
+})
 ```
 
----
+## lia.config.setDefault
 
-### lia.config.setDefault
+**Purpose:** Sets the default value for a given config variable. This does not change the current value, only the default.
 
-**Purpose**
+**Parameters:**
+- `key` (string) - The config variable key.
+- `value` (any) - The new default value.
 
-Changes the stored default for an existing config option without affecting its current value or notifying clients.
+**Returns:** None.
 
-**Parameters**
+**Realm:** Shared.
 
-* `key` (*string*): Key identifying the option.
-
-* `value` (*any*): New default value.
-
-**Realm**
-
-`Shared`
-
-**Returns**
-
-* *nil*: This function does not return a value.
-
-**Example Usage**
-
+**Example Usage:**
 ```lua
--- Update the default maximum players
-lia.config.setDefault("maxPlayers", 32)
+-- Change the default walk speed to 150
+lia.config.setDefault("WalkSpeed", 150)
 ```
 
----
+## lia.config.forceSet
 
-### lia.config.forceSet
+**Purpose:** Sets the value of a config variable, bypassing any callbacks or networking, and optionally skips saving to the database.
 
-**Purpose**
+**Parameters:**
+- `key` (string) - The config variable key.
+- `value` (any) - The value to set.
+- `noSave` (boolean) - If true, does not save the config to the database.
 
-Sets a config value directly without running callbacks or networking the update. The value is saved unless `noSave` is `true`.
+**Returns:** None.
 
-**Parameters**
+**Realm:** Shared.
 
-* `key` (*string*): Key identifying the option.
-
-* `value` (*any*): New value to set.
-
-* `noSave` (*boolean*): If `true`, value is not written to disk.
-
-**Realm**
-
-`Server`
-
-**Returns**
-
-* *nil*: This function does not return a value.
-
-**Example Usage**
-
+**Example Usage:**
 ```lua
-lia.config.forceSet("someSetting", true, true)
+-- Force the money limit to 10000 without saving to the database
+lia.config.forceSet("MoneyLimit", 10000, true)
 ```
 
----
+## lia.config.set
 
-### lia.config.set
+**Purpose:** Sets the value of a config variable, triggers networking to clients (if applicable), calls the callback, and saves the config.
 
-**Purpose**
+**Parameters:**
+- `key` (string) - The config variable key.
+- `value` (any) - The value to set.
 
-Sets a config value, saves it server-side, triggers callbacks with the old and new values, and networks the update unless the config is marked `noNetworking`.
+**Returns:** None.
 
-**Parameters**
+**Realm:** Shared (server triggers networking).
 
-* `key` (*string*): Key identifying the option.
-
-* `value` (*any*): New value to set.
-
-**Realm**
-
-`Shared`
-
-**Returns**
-
-* *nil*: This function does not return a value.
-
-**Example Usage**
-
+**Example Usage:**
 ```lua
-lia.config.set("maxPlayers", 24)
+-- Set the walk speed to 140 and notify all clients
+lia.config.set("WalkSpeed", 140)
 ```
 
----
+## lia.config.get
 
-### lia.config.get
+**Purpose:** Retrieves the value of a config variable. If the value is not set, returns the default or a provided fallback.
 
-**Purpose**
+**Parameters:**
+- `key` (string) - The config variable key.
+- `default` (any) - (Optional) Value to return if the config is not found.
 
-Retrieves the current value of a config entry. If unset, returns the stored default or the provided fallback.
+**Returns:** Any - The current value, the default, or the provided fallback.
 
-**Parameters**
+**Realm:** Shared.
 
-* `key` (*string*): Key identifying the config option.
-
-* `default` (*any*): Value to return if the config is not found.
-
-**Realm**
-
-`Shared`
-
-**Returns**
-
-* *any*: The config value or the default.
-
-**Example Usage**
-
+**Example Usage:**
 ```lua
-local players = lia.config.get("maxPlayers", 64)
+-- Get the current money limit, or 5000 if not set
+local limit = lia.config.get("MoneyLimit", 5000)
 ```
 
----
+## lia.config.load
 
-### lia.config.load
+**Purpose:** Loads all config variables from the database for the current schema/gamemode. If a config is missing, it is inserted with its default value. On the client, requests the config list from the server.
 
-**Purpose**
+**Parameters:** None.
 
-Loads config values from the database and stores them in `lia.config`. Missing entries are inserted with their defaults.
+**Returns:** None.
 
-**Parameters**
+**Realm:** Server (loads from DB), Client (requests from server).
 
-*None*
-
-**Realm**
-
-`Shared`
-
-**Returns**
-
-* *nil*: This function does not return a value.
-
-**Example Usage**
-
+**Example Usage:**
 ```lua
+-- Load all config variables at server startup
 lia.config.load()
 ```
 
----
+## lia.config.getChangedValues
 
-### lia.config.getChangedValues
+**Purpose:** Returns a table of all config variables whose value differs from their default.
 
-**Purpose**
+**Parameters:** None.
 
-Returns a table of all config entries whose current value differs from the default.
+**Returns:** table - A table of changed config key-value pairs.
 
-**Parameters**
+**Realm:** Server.
 
-*None*
-
-**Realm**
-
-`Server`
-
-**Returns**
-
-* *table*: Key-value pairs of changed config entries.
-
-**Example Usage**
-
+**Example Usage:**
 ```lua
+-- Get all changed config values for saving
 local changed = lia.config.getChangedValues()
 ```
 
----
+## lia.config.send
 
-### lia.config.send
+**Purpose:** Sends the current changed config values to a specific client or broadcasts to all clients.
 
-**Purpose**
+**Parameters:**
+- `client` (Player) - (Optional) The client to send to. If nil, broadcasts to all.
 
-Sends all changed config values to a client. If no client is provided, the values are broadcast to everyone.
+**Returns:** None.
 
-**Parameters**
+**Realm:** Server.
 
-* `client` (*Player*): Player to receive the config data.
-
-**Realm**
-
-`Server`
-
-**Returns**
-
-* *nil*: This function does not return a value.
-
-**Example Usage**
-
+**Example Usage:**
 ```lua
--- Broadcast current config to every player
+-- Send config to a specific client
+lia.config.send(somePlayer)
+
+-- Broadcast config to all clients
 lia.config.send()
 ```
 
----
+## lia.config.save
 
-### lia.config.save
+**Purpose:** Saves all changed config values to the database for the current schema/gamemode.
 
-**Purpose**
+**Parameters:** None.
 
-Writes all changed config values to the database so they persist across restarts.
+**Returns:** None.
 
-**Parameters**
+**Realm:** Server.
 
-*None*
-
-**Realm**
-
-`Server`
-
-**Returns**
-
-* *nil*: This function does not return a value.
-
-**Example Usage**
-
+**Example Usage:**
 ```lua
+-- Save all config changes to the database
 lia.config.save()
 ```
 
----
-
----
