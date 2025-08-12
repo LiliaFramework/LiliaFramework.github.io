@@ -4,7 +4,7 @@
 Community Commands
 
 **Version:**
-1.22
+1.24
 
 **Description:**
 

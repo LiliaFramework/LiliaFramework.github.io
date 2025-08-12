@@ -4,7 +4,7 @@
 Corpse ID
 
 **Version:**
-1.24
+1.26
 
 **Description:**
 

@@ -4,7 +4,7 @@
 Development HUD
 
 **Version:**
-1.25
+1.27
 
 **Description:**
 
