@@ -1,0 +1,3089 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official documentation for the Lilia Framework">
+      
+      
+        <meta name="author" content="Lilia Framework Team">
+      
+      
+        <link rel="canonical" href="https://liliaframework.github.io/libraries/lia.admin/">
+      
+      
+        <link rel="prev" href="../../hooks/gamemode_hooks/">
+      
+      
+        <link rel="next" href="../lia.attributes/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Administrator Library - Lilia Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lavender">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#administrator-library" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Lilia Documentation" class="md-header__button md-logo" aria-label="Lilia Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo_small.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lilia Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Administrator Library
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lavender"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="lavender"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/LiliaFramework/Lilia" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../compatibility/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Addons with Improved Compatibility
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../installation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Installation Tutorial
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../definitions/attribute/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Definitions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hooks/attribute_hooks/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Hooks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Libraries
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../meta/character/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Meta
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/advert/about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Modules
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Lilia Documentation" class="md-nav__button md-logo" aria-label="Lilia Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo_small.png" alt="logo">
+
+    </a>
+    Lilia Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/LiliaFramework/Lilia" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compatibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Addons with Improved Compatibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation Tutorial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../definitions/attribute/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Definitions
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../hooks/attribute_hooks/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Hooks
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Libraries
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Administrator Library
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Administrator Library
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-permission-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hierarchical Permission System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cami-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAMI Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-privilege-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Privilege Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-realm-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-Realm Functionality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Technical Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permission-checking-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permission Checking Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Synchronization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hook-system-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hook System Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Considerations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorhasaccess" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.hasAccess
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorsave" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.save
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorregisterprivilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.registerPrivilege
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorunregisterprivilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.unregisterPrivilege
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorapplyinheritance" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.applyInheritance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorload" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorcreategroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.createGroup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorremovegroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.removeGroup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorrenamegroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.renameGroup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratoraddpermission" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.addPermission
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorremovepermission" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.removePermission
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.sync
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorsetplayerusergroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.setPlayerUsergroup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorsetsteamidusergroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.setSteamIDUsergroup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorexeccommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.execCommand
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorserverexeccommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.serverExecCommand
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getprivilegecategory" class="md-nav__link">
+    <span class="md-ellipsis">
+      getPrivilegeCategory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal-structures-and-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Structures and Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Internal Structures and Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Structures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorgroups" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.groups
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratorprivileges" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.privileges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liaadministratordefaultgroups" class="md-nav__link">
+    <span class="md-ellipsis">
+      lia.administrator.DefaultGroups
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-helper-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Helper Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Internal Helper Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getgrouplevelgroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      getGroupLevel(group)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shouldgrantgroup-minaccess" class="md-nav__link">
+    <span class="md-ellipsis">
+      shouldGrant(group, minAccess)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebuildprivileges" class="md-nav__link">
+    <span class="md-ellipsis">
+      rebuildPrivileges()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#privilege-registration-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privilege Registration System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cami-integration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      CAMI Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Attributes Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.bars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bars Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.character/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Character Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.chatbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chatbox Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Classes Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Color Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Commands Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Config Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.currency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Currency Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.darkrp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DarkRP Compatibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.discord/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.discord
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.doors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.doors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.factions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Factions Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.flags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flags Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fonts Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inventory Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.item/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Item Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.keybind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Keybind Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.languages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Languages Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.logger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Logger Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.markup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markup Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Menu Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.modularity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modularity Library (lia.module)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Networking Library (lia.net)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.notice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Notice Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.option/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Option Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.playerinteract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    lia.playerinteract
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Time Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.util/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Utility Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.vendor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vendor Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.webimage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebImage Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.websound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebSound Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lia.workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../meta/character/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Meta
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../modules/advert/about/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Modules
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="administrator-library">Administrator Library</h1>
+<p>This page documents the functions for working with administrator privileges and user groups.</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The administrator library (<code>lia.administrator</code>) provides a comprehensive, hierarchical permission and user group management system for the Lilia framework. It serves as the core authorization system, handling everything from basic tool usage permissions to complex administrative operations.</p>
+<h3 id="core-architecture">Core Architecture</h3>
+<p>The system is built around three fundamental concepts:</p>
+<ol>
+<li><strong>Usergroups</strong>: Hierarchical groups that users belong to (<code>user</code>, <code>admin</code>, <code>superadmin</code>)</li>
+<li><strong>Privileges</strong>: Individual permissions that can be assigned to usergroups</li>
+<li><strong>Inheritance</strong>: Child groups inherit all privileges from their parent groups</li>
+</ol>
+<h3 id="key-features">Key Features</h3>
+<h4 id="hierarchical-permission-system">Hierarchical Permission System</h4>
+<ul>
+<li><strong>Three-tier Structure</strong>: <code>user</code> (level 1) → <code>admin</code> (level 2) → <code>superadmin</code> (level 3)</li>
+<li><strong>Custom Groups</strong>: Unlimited custom usergroups with flexible inheritance</li>
+<li><strong>Dynamic Inheritance</strong>: Groups can inherit from any existing group, creating complex permission trees</li>
+</ul>
+<h4 id="cami-integration">CAMI Integration</h4>
+<ul>
+<li><strong>Full Compatibility</strong>: Implements the CAMI (Compatibility Admin Mod Interface) standard</li>
+<li><strong>External Addon Support</strong>: Works seamlessly with ULX, SAM, ServerGuard, and other CAMI-compliant admin mods</li>
+<li><strong>Automatic Synchronization</strong>: Usergroup and privilege changes are automatically synchronized with CAMI</li>
+</ul>
+<h4 id="dynamic-privilege-management">Dynamic Privilege Management</h4>
+<ul>
+<li><strong>Automatic Registration</strong>: Tools, properties, and commands are automatically registered as privileges</li>
+<li><strong>Custom Privileges</strong>: Create custom privileges with specific access levels and categories</li>
+<li><strong>Runtime Modification</strong>: Add or remove privileges without server restart</li>
+</ul>
+<h4 id="cross-realm-functionality">Cross-Realm Functionality</h4>
+<ul>
+<li><strong>Shared Functions</strong>: Core permission checking works on both client and server</li>
+<li><strong>Network Synchronization</strong>: Admin data is automatically synchronized between server and clients</li>
+<li><strong>Client-side Validation</strong>: Permission checks can be performed client-side for UI purposes</li>
+</ul>
+<h4 id="database-integration">Database Integration</h4>
+<ul>
+<li><strong>Persistent Storage</strong>: All usergroups and privileges are stored in the database</li>
+<li><strong>Automatic Migration</strong>: Existing configurations are preserved across server restarts</li>
+<li><strong>Bulk Operations</strong>: Efficient database operations for large permission updates</li>
+</ul>
+<h3 id="technical-implementation">Technical Implementation</h3>
+<h4 id="permission-checking-flow">Permission Checking Flow</h4>
+<ol>
+<li><strong>Input Validation</strong>: Privilege name validation and type checking</li>
+<li><strong>Usergroup Resolution</strong>: Determine user's current usergroup</li>
+<li><strong>Inheritance Chain</strong>: Walk up the inheritance tree to collect all applicable privileges</li>
+<li><strong>Privilege Lookup</strong>: Check if the specific privilege is granted</li>
+<li><strong>Fallback Logic</strong>: Default to admin-level access for unknown privileges</li>
+</ol>
+<h4 id="data-synchronization">Data Synchronization</h4>
+<ul>
+<li><strong>BigTable Networking</strong>: Uses efficient binary serialization for large admin data transfers</li>
+<li><strong>Incremental Updates</strong>: Only changed data is sent to clients</li>
+<li><strong>Ready State Management</strong>: Ensures clients receive data only when ready</li>
+</ul>
+<h4 id="hook-system-integration">Hook System Integration</h4>
+<ul>
+<li><strong>Privilege Registration</strong>: <code>OnPrivilegeRegistered</code> and <code>OnPrivilegeUnregistered</code> hooks</li>
+<li><strong>Group Management</strong>: <code>OnUsergroupCreated</code>, <code>OnUsergroupRemoved</code>, <code>OnUsergroupRenamed</code> hooks</li>
+<li><strong>Permission Changes</strong>: <code>OnUsergroupPermissionsChanged</code> hook</li>
+</ul>
+<h3 id="performance-considerations">Performance Considerations</h3>
+<ul>
+<li><strong>Cached Lookups</strong>: Privilege levels are cached for fast access checking</li>
+<li><strong>Lazy Loading</strong>: Privilege categories are computed on-demand</li>
+<li><strong>Bulk Database Operations</strong>: Multiple changes are batched for efficiency</li>
+<li><strong>Memory Optimization</strong>: Uses weak references for network-ready state tracking</li>
+</ul>
+<h3 id="security-features">Security Features</h3>
+<ul>
+<li><strong>Server-side Validation</strong>: All privilege checks are validated server-side</li>
+<li><strong>SQL Injection Protection</strong>: All database queries use parameterized statements</li>
+<li><strong>Access Level Verification</strong>: Minimum access levels prevent privilege escalation</li>
+<li><strong>Logging Integration</strong>: All admin actions are logged for audit purposes</li>
+</ul>
+<p>The administrator library is the backbone of Lilia's permission system, providing a robust, extensible foundation that can scale from simple role-based access control to complex administrative hierarchies.</p>
+<h3 id="liaadministratorhasaccess">lia.administrator.hasAccess</h3>
+<p><strong>Purpose</strong></p>
+<p>Checks if a player or usergroup has access to a specific privilege.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>ply</code> (<em>Player|string</em>): The player entity or usergroup name to check.</li>
+<li><code>privilege</code> (<em>string</em>): The privilege to check access for.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>hasAccess</code> (<em>boolean</em>): True if the player/usergroup has the privilege, false otherwise.</li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Shared.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">-- Check if a player has the &quot;manageUsergroups&quot; privilege</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kr">if</span><span class="w"> </span><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">hasAccess</span><span class="p">(</span><span class="nv">ply</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;manageUsergroups&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nv">ply</span><span class="p">:</span><span class="nf">Nick</span><span class="p">()</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">&quot; can manage usergroups!&quot;</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kr">end</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1">-- Check if the &quot;admin&quot; group has the &quot;ban&quot; privilege</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kr">if</span><span class="w"> </span><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">hasAccess</span><span class="p">(</span><span class="s2">&quot;admin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ban&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Admins can ban players.&quot;</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kr">end</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1">-- Check privilege access in a command function</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nv">hook</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s2">&quot;PlayerSay&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;CheckAdminCommand&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">ply</span><span class="p">,</span><span class="w"> </span><span class="nv">text</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nb">string.sub</span><span class="p">(</span><span class="nv">text</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;!kick&quot;</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">hasAccess</span><span class="p">(</span><span class="nv">ply</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;kick&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="nv">ply</span><span class="p">:</span><span class="nf">ChatPrint</span><span class="p">(</span><span class="s2">&quot;You don&#39;t have permission to kick players!&quot;</span><span class="p">)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">            </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="kr">end</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="c1">-- Process kick command</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="c1">-- Check tool usage permission</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="nv">hook</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s2">&quot;CanTool&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;CheckToolPermissions&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">ply</span><span class="p">,</span><span class="w"> </span><span class="nv">trace</span><span class="p">,</span><span class="w"> </span><span class="nv">tool</span><span class="p">)</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">privilege</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;tool_&quot;</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">tool</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">hasAccess</span><span class="p">(</span><span class="nv">ply</span><span class="p">,</span><span class="w"> </span><span class="nv">privilege</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="nv">ply</span><span class="p">:</span><span class="nf">ChatPrint</span><span class="p">(</span><span class="s2">&quot;You don&#39;t have permission to use this tool!&quot;</span><span class="p">)</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="kr">return</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="kr">end</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="kr">end</span><span class="p">)</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="c1">-- Conditional feature access</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="kr">if</span><span class="w"> </span><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">hasAccess</span><span class="p">(</span><span class="nf">LocalPlayer</span><span class="p">(),</span><span class="w"> </span><span class="s2">&quot;seeAdminChat&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">    </span><span class="c1">-- Show admin chat UI</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">    </span><span class="nf">drawAdminChat</span><span class="p">()</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratorsave">lia.administrator.save</h3>
+<p><strong>Purpose</strong></p>
+<p>Saves all usergroups and privileges to the database and optionally synchronizes with clients.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>noNetwork</code> (<em>boolean</em>, optional): If true, skips synchronizing the updated admin data to all connected clients after saving. Defaults to false.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Server.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- Save admin data and sync to clients</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">save</span><span class="p">()</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">-- Save admin data without syncing to clients</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratorregisterprivilege">lia.administrator.registerPrivilege</h3>
+<p><strong>Purpose</strong></p>
+<p>Registers a new privilege in the admin system, assigning it to all usergroups that meet the minimum access level.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>priv</code> (<em>table</em>): A table describing the privilege with the following structure:</li>
+<li><code>ID</code> (<em>string</em>, required): Unique identifier used when checking permissions.</li>
+<li><code>Name</code> (<em>string</em>, optional): Localized name shown in privilege lists. If not provided, the ID will be used as the display name.</li>
+<li><code>MinAccess</code> (<em>string</em>, optional): The minimum usergroup required to have this privilege. Valid values are <code>"user"</code>, <code>"admin"</code>, or <code>"superadmin"</code>. Defaults to <code>"user"</code>.</li>
+<li><code>Category</code> (<em>string</em>, optional): The category this privilege belongs to for organizational purposes.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Shared.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- Register a new privilege &quot;canFly&quot; for admins and above</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">registerPrivilege</span><span class="p">({</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nv">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;canFly&quot;</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nv">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Can Fly&quot;</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nv">MinAccess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nv">Category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Fun&quot;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">})</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1">-- Register a superadmin-only privilege with custom category</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">registerPrivilege</span><span class="p">({</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nv">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;serverShutdown&quot;</span><span class="p">,</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="nv">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Server Shutdown&quot;</span><span class="p">,</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nv">MinAccess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;superadmin&quot;</span><span class="p">,</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nv">Category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Server Management&quot;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">})</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="c1">-- Register a user-level privilege for basic tools</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">registerPrivilege</span><span class="p">({</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="nv">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;useBasicTools&quot;</span><span class="p">,</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="nv">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Basic Tool Usage&quot;</span><span class="p">,</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="nv">MinAccess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="nv">Category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Tools&quot;</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="p">})</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="c1">-- Register a privilege with localized name</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">registerPrivilege</span><span class="p">({</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="nv">ID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;teleportPlayers&quot;</span><span class="p">,</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="nv">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">L</span><span class="p">(</span><span class="s2">&quot;teleportPrivilege&quot;</span><span class="p">),</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">    </span><span class="nv">MinAccess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">    </span><span class="nv">Category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Teleportation&quot;</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="p">})</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratorunregisterprivilege">lia.administrator.unregisterPrivilege</h3>
+<p><strong>Purpose</strong></p>
+<p>Unregisters a privilege from the admin system, removing it from all usergroups.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>name</code> (<em>string</em>): The name of the privilege to unregister.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Shared.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">-- Remove the &quot;canFly&quot; privilege from all groups</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">unregisterPrivilege</span><span class="p">(</span><span class="s2">&quot;canFly&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratorapplyinheritance">lia.administrator.applyInheritance</h3>
+<p><strong>Purpose</strong></p>
+<p>Applies inheritance to a usergroup, copying privileges from its parent group and ensuring minimum privileges are granted.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>groupName</code> (<em>string</em>): The name of the usergroup to apply inheritance to.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Shared.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- Apply inheritance to the &quot;moderator&quot; group after changing its parent</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">applyInheritance</span><span class="p">(</span><span class="s2">&quot;moderator&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratorload">lia.administrator.load</h3>
+<p><strong>Purpose</strong></p>
+<p>Loads usergroups and privileges from the database, ensures default groups exist, applies inheritance, and synchronizes with CAMI if available.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Server.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">-- Load all admin groups and privileges on server startup</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">load</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratorcreategroup">lia.administrator.createGroup</h3>
+<p><strong>Purpose</strong></p>
+<p>Creates a new usergroup with the specified name and info, applies inheritance, and registers it with CAMI.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>groupName</code> (<em>string</em>): The name of the new usergroup. Must be unique and not one of the default groups (<code>user</code>, <code>admin</code>, <code>superadmin</code>).</li>
+<li><code>info</code> (<em>table</em>, optional): Table containing group configuration with the following optional structure:</li>
+<li><code>_info</code> (<em>table</em>): Group metadata containing:<ul>
+<li><code>inheritance</code> (<em>string</em>): The parent group this group inherits privileges from. Defaults to <code>"user"</code>.</li>
+<li><code>types</code> (<em>table</em>): Array of strings representing group types/categories (e.g., <code>{"Staff"}</code>, <code>{"VIP"}</code>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Shared.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">-- Create a new &quot;moderator&quot; group that inherits from &quot;user&quot;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">createGroup</span><span class="p">(</span><span class="s2">&quot;moderator&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nv">_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="nv">inheritance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="nv">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;Staff&quot;</span><span class="p">}</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">})</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1">-- Create a &quot;vip&quot; group that inherits from &quot;user&quot; with VIP type</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">createGroup</span><span class="p">(</span><span class="s2">&quot;vip&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="nv">_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">        </span><span class="nv">inheritance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">        </span><span class="nv">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;VIP&quot;</span><span class="p">}</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="p">})</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="c1">-- Create an &quot;eventstaff&quot; group with custom privileges</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">createGroup</span><span class="p">(</span><span class="s2">&quot;eventstaff&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="nv">_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">        </span><span class="nv">inheritance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">        </span><span class="nv">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;Staff&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Event&quot;</span><span class="p">}</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="p">})</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratorremovegroup">lia.administrator.removeGroup</h3>
+<p><strong>Purpose</strong></p>
+<p>Removes a usergroup from the admin system, unregisters it from CAMI, and saves the changes.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>groupName</code> (<em>string</em>): The name of the usergroup to remove.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Shared.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">-- Remove the &quot;moderator&quot; group</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">removeGroup</span><span class="p">(</span><span class="s2">&quot;moderator&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratorrenamegroup">lia.administrator.renameGroup</h3>
+<p><strong>Purpose</strong></p>
+<p>Renames an existing usergroup, updates inheritance, and synchronizes with CAMI.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>oldName</code> (<em>string</em>): The current name of the usergroup.</li>
+<li><code>newName</code> (<em>string</em>): The new name for the usergroup.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Shared.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">-- Rename the &quot;moderator&quot; group to &quot;helper&quot;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">renameGroup</span><span class="p">(</span><span class="s2">&quot;moderator&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;helper&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratoraddpermission">lia.administrator.addPermission</h3>
+<p><strong>Purpose</strong></p>
+<p>Adds a permission/privilege to a usergroup and saves the change.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>groupName</code> (<em>string</em>): The name of the usergroup.</li>
+<li><code>permission</code> (<em>string</em>): The privilege to add.</li>
+<li><code>silent</code> (<em>boolean</em>, optional): If true, suppresses network updates.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Server.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">-- Give the &quot;moderator&quot; group the &quot;kick&quot; privilege</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">addPermission</span><span class="p">(</span><span class="s2">&quot;moderator&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;kick&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratorremovepermission">lia.administrator.removePermission</h3>
+<p><strong>Purpose</strong></p>
+<p>Removes a permission/privilege from a usergroup and saves the change.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>groupName</code> (<em>string</em>): The name of the usergroup.</li>
+<li><code>permission</code> (<em>string</em>): The privilege to remove.</li>
+<li><code>silent</code> (<em>boolean</em>, optional): If true, suppresses network updates.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Server.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">-- Remove the &quot;ban&quot; privilege from the &quot;moderator&quot; group</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">removePermission</span><span class="p">(</span><span class="s2">&quot;moderator&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ban&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratorsync">lia.administrator.sync</h3>
+<p><strong>Purpose</strong></p>
+<p>Synchronizes admin privileges, privilege meta, and groups to a specific client or all clients.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>c</code> (<em>Player</em>, optional): The player to sync to. If nil, syncs to all players.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Server.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">-- Sync admin data to a specific player</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">sync</span><span class="p">(</span><span class="nv">somePlayer</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1">-- Sync admin data to all players</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">sync</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratorsetplayerusergroup">lia.administrator.setPlayerUsergroup</h3>
+<p><strong>Purpose</strong></p>
+<p>Sets a player's usergroup and notifies CAMI of the change.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>ply</code> (<em>Player</em>): The player whose usergroup to set.</li>
+<li><code>newGroup</code> (<em>string</em>): The new usergroup name.</li>
+<li><code>source</code> (<em>string</em>, optional): The source of the change (for CAMI).</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Server.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">-- Set a player to the &quot;admin&quot; group</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">setPlayerUsergroup</span><span class="p">(</span><span class="nv">targetPlayer</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Console&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratorsetsteamidusergroup">lia.administrator.setSteamIDUsergroup</h3>
+<p><strong>Purpose</strong></p>
+<p>Sets the usergroup for a player by SteamID, updating both online and offline players, and notifies CAMI.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>steamId</code> (<em>string</em>): The SteamID of the player.</li>
+<li><code>newGroup</code> (<em>string</em>): The new usergroup name.</li>
+<li><code>source</code> (<em>string</em>, optional): The source of the change (for CAMI).</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>nil</code></li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Server.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">-- Set a SteamID to the &quot;vip&quot; group</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">setSteamIDUsergroup</span><span class="p">(</span><span class="s2">&quot;STEAM_0:1:123456&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;vip&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Admin Panel&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratorexeccommand">lia.administrator.execCommand</h3>
+<p><strong>Purpose</strong></p>
+<p>Executes an admin command as a chat command, such as kick, ban, mute, etc.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>cmd</code> (<em>string</em>): The command to execute (e.g., <code>"kick"</code>, <code>"ban"</code>, <code>"mute"</code>).</li>
+<li><code>victim</code> (<em>Player|string</em>): The player entity or SteamID to target.</li>
+<li><code>dur</code> (<em>number</em>, optional): Duration for timed commands (e.g., ban, mute).</li>
+<li><code>reason</code> (<em>string</em>, optional): Reason for the command.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>success</code> (<em>boolean</em>): True if the command was executed, false otherwise.</li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Client.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1">-- Kick a player for &quot;AFK&quot;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">execCommand</span><span class="p">(</span><span class="s2">&quot;kick&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">targetPlayer</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;AFK&quot;</span><span class="p">)</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1">-- Ban a player for 60 minutes for &quot;Cheating&quot;</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">execCommand</span><span class="p">(</span><span class="s2">&quot;ban&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;STEAM_0:1:123456&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Cheating&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="liaadministratorserverexeccommand">lia.administrator.serverExecCommand</h3>
+<p><strong>Purpose</strong></p>
+<p>Executes an admin command server-side on a target player, providing server-side execution with proper validation and logging.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>cmd</code> (<em>string</em>): The command to execute (e.g., <code>"kick"</code>, <code>"ban"</code>, <code>"mute"</code>, <code>"slay"</code>, <code>"bring"</code>, <code>"goto"</code>, <code>"jail"</code>, <code>"cloak"</code>, <code>"god"</code>, <code>"ignite"</code>, <code>"strip"</code>, <code>"respawn"</code>, <code>"blind"</code>).</li>
+<li><code>victim</code> (<em>Player|string</em>): The player entity or SteamID to target.</li>
+<li><code>dur</code> (<em>number</em>, optional): Duration for timed commands (e.g., ban, mute, jail, ignite).</li>
+<li><code>reason</code> (<em>string</em>, optional): Reason for the command execution.</li>
+<li><code>admin</code> (<em>Player</em>): The admin player executing the command (must have "basicAdminFunctions" privilege).</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>success</code> (<em>boolean</em>): True if the command was executed successfully, false otherwise.</li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Server.</p>
+<p><strong>Supported Commands</strong></p>
+<ul>
+<li><strong>kick</strong>: Kicks the player from the server</li>
+<li><strong>ban</strong>: Bans the player (supports duration and reason)</li>
+<li><strong>unban</strong>: Unbans a player by SteamID</li>
+<li><strong>mute</strong>: Voice mutes the player</li>
+<li><strong>unmute</strong>: Removes voice mute from the player</li>
+<li><strong>gag</strong>: Prevents the player from using voice chat</li>
+<li><strong>ungag</strong>: Allows the player to use voice chat again</li>
+<li><strong>freeze</strong>: Freezes the player in place</li>
+<li><strong>unfreeze</strong>: Unfreezes the player</li>
+<li><strong>slay</strong>: Kills the player instantly</li>
+<li><strong>kill</strong>: Kills the player and logs the action</li>
+<li><strong>bring</strong>: Teleports the player to the admin's location</li>
+<li><strong>goto</strong>: Teleports the admin to the player's location</li>
+<li><strong>return</strong>: Returns players to their previous positions (after bring/goto)</li>
+<li><strong>jail</strong>: Locks and freezes the player</li>
+<li><strong>unjail</strong>: Releases the player from jail</li>
+<li><strong>cloak</strong>: Makes the player invisible</li>
+<li><strong>uncloak</strong>: Makes the player visible again</li>
+<li><strong>god</strong>: Enables god mode for the player</li>
+<li><strong>ungod</strong>: Disables god mode for the player</li>
+<li><strong>ignite</strong>: Sets the player on fire</li>
+<li><strong>extinguish/unignite</strong>: Extinguishes the player</li>
+<li><strong>strip</strong>: Removes all weapons from the player</li>
+<li><strong>respawn</strong>: Respawns the player</li>
+<li><strong>blind</strong>: Blinds the player (black screen)</li>
+<li><strong>unblind</strong>: Removes blindness from the player</li>
+</ul>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1">-- Kick a player for spamming</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">serverExecCommand</span><span class="p">(</span><span class="s2">&quot;kick&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">targetPlayer</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Spamming&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">LocalPlayer</span><span class="p">())</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1">-- Ban a player for 60 minutes for cheating</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">serverExecCommand</span><span class="p">(</span><span class="s2">&quot;ban&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">targetPlayer</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Cheating&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">LocalPlayer</span><span class="p">())</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="c1">-- Kill a player</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">serverExecCommand</span><span class="p">(</span><span class="s2">&quot;slay&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">targetPlayer</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nf">LocalPlayer</span><span class="p">())</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="c1">-- Freeze a player for 30 seconds</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="nf">serverExecCommand</span><span class="p">(</span><span class="s2">&quot;freeze&quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">targetPlayer</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Investigation&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">LocalPlayer</span><span class="p">())</span>
+</span></code></pre></div>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Requires the admin to have the "basicAdminFunctions" privilege</li>
+<li>Automatically logs admin actions to the database</li>
+<li>Provides proper notifications to both admin and target</li>
+<li>Supports both Player entities and SteamID strings for targeting</li>
+<li>Includes comprehensive error handling and validation</li>
+</ul>
+<hr />
+<h3 id="getprivilegecategory">getPrivilegeCategory</h3>
+<p><strong>Purpose</strong></p>
+<p>Computes the category for a privilege on-demand by checking various sources instead of storing it persistently.</p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>privilegeName</code> (<em>string</em>): The name/ID of the privilege.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul>
+<li><code>string</code>: The category name for the privilege.</li>
+</ul>
+<p><strong>Realm</strong></p>
+<p>Shared.</p>
+<p><strong>Category Logic</strong></p>
+<p>The function determines privilege categories through the following hierarchy:
+1. <strong>Custom Categories</strong>: Checks <code>lia.administrator.privilegeCategories[privilegeName]</code>
+2. <strong>Command Categories</strong>: Checks if the privilege matches a command in <code>lia.command.list</code>
+3. <strong>Module Categories</strong>: Checks module-defined privileges
+4. <strong>CAMI Categories</strong>: Uses CAMI's category system if available
+5. <strong>Pattern-based Categories</strong>:
+   - Tool privileges (<code>tool_*</code>) → "categoryStaffTools"
+   - Property privileges (<code>property_*</code>) → "categoryStaffManagement"
+   - Specific patterns for ServerGuard, PAC3, SAM, simfphys, etc.</p>
+<p><strong>Example Usage</strong></p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1">-- Get category for a tool privilege</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">getPrivilegeCategory</span><span class="p">(</span><span class="s2">&quot;tool_weld&quot;</span><span class="p">)</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nb">print</span><span class="p">(</span><span class="nv">category</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Output: &quot;categoryStaffTools&quot;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1">-- Get category for a custom privilege</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="kd">local</span><span class="w"> </span><span class="nv">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">getPrivilegeCategory</span><span class="p">(</span><span class="s2">&quot;customAdminPower&quot;</span><span class="p">)</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="nb">print</span><span class="p">(</span><span class="nv">category</span><span class="p">)</span><span class="w"> </span><span class="c1">-- Output: &quot;unassigned&quot; (if no category found)</span>
+</span></code></pre></div>
+<hr />
+<h2 id="internal-structures-and-functions">Internal Structures and Functions</h2>
+<p>The administrator library uses several internal data structures and helper functions that are essential for understanding how the permission system works.</p>
+<h3 id="data-structures">Data Structures</h3>
+<h4 id="liaadministratorgroups">lia.administrator.groups</h4>
+<p><strong>Structure</strong>: Table containing all usergroups indexed by group name.</p>
+<p><strong>Example Structure</strong>:
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="py">groups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">        </span><span class="nv">_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">            </span><span class="nv">inheritance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">            </span><span class="nv">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span><span class="c1">-- privilege_name = true/false</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">        </span><span class="nv">tool_remover</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;admin&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">        </span><span class="nv">_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">            </span><span class="nv">inheritance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">            </span><span class="nv">types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;Staff&quot;</span><span class="p">}</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">        </span><span class="nv">manageUsergroups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">        </span><span class="nv">ban</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">        </span><span class="nv">kick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="w">        </span><span class="c1">-- ... other privileges</span>
+</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<h4 id="liaadministratorprivileges">lia.administrator.privileges</h4>
+<p><strong>Structure</strong>: Table mapping privilege IDs to their minimum required access level.</p>
+<p><strong>Example Structure</strong>:
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="py">privileges</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;kick&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;ban&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;manageUsergroups&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;superadmin&quot;</span><span class="p">,</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;tool_weld&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;canFly&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;admin&quot;</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<h4 id="liaadministratordefaultgroups">lia.administrator.DefaultGroups</h4>
+<p><strong>Structure</strong>: Table defining the default group hierarchy levels.</p>
+<p><strong>Structure</strong>:
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">lia</span><span class="p">.</span><span class="py">administrator</span><span class="p">.</span><span class="py">DefaultGroups</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="nv">admin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="nv">superadmin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<h3 id="internal-helper-functions">Internal Helper Functions</h3>
+<h4 id="getgrouplevelgroup">getGroupLevel(group)</h4>
+<p><strong>Purpose</strong>: Calculates the numeric level of a usergroup based on the inheritance chain.</p>
+<p><strong>Parameters</strong>:
+* <code>group</code> (<em>string</em>): The name of the usergroup to check.</p>
+<p><strong>Returns</strong>:
+* <code>number</code>: The numeric level of the group (1=user, 2=admin, 3=superadmin).</p>
+<h4 id="shouldgrantgroup-minaccess">shouldGrant(group, minAccess)</h4>
+<p><strong>Purpose</strong>: Determines if a usergroup should be granted a privilege based on the minimum access level.</p>
+<p><strong>Parameters</strong>:
+* <code>group</code> (<em>string</em>): The name of the usergroup.
+* <code>minAccess</code> (<em>string</em>): The minimum access level required.</p>
+<p><strong>Returns</strong>:
+* <code>boolean</code>: True if the group meets or exceeds the minimum access level.</p>
+<h4 id="rebuildprivileges">rebuildPrivileges()</h4>
+<p><strong>Purpose</strong>: Rebuilds the privilege lookup table by scanning all groups and determining the minimum access level for each privilege.</p>
+<p><strong>Parameters</strong>: None</p>
+<p><strong>Returns</strong>: None</p>
+<p><strong>Notes</strong>: This function is called automatically when groups are modified and ensures that the privilege system remains consistent.</p>
+<h3 id="privilege-registration-system">Privilege Registration System</h3>
+<p>The administrator library automatically registers privileges for:</p>
+<ol>
+<li><strong>Tools</strong>: All Garry's Mod tools are automatically registered as <code>tool_&lt;toolname&gt;</code> privileges</li>
+<li><strong>Properties</strong>: All map properties are registered as <code>property_&lt;propertyname&gt;</code> privileges</li>
+<li><strong>Commands</strong>: Lilia commands are automatically registered based on their privilege requirements</li>
+<li><strong>Custom Privileges</strong>: Can be registered using <code>lia.administrator.registerPrivilege()</code></li>
+</ol>
+<h3 id="cami-integration_1">CAMI Integration</h3>
+<p>The administrator library includes full CAMI (Compatibility Admin Mod Interface) support:</p>
+<ul>
+<li><strong>Automatic Registration</strong>: Usergroups and privileges are registered with CAMI when created</li>
+<li><strong>Inheritance Sync</strong>: Group inheritance is synchronized with CAMI</li>
+<li><strong>SteamID Support</strong>: Player usergroup changes are signaled to CAMI for external addon compatibility</li>
+<li><strong>Bootstrap</strong>: Existing CAMI usergroups and privileges are imported on load</li>
+</ul>
+<p>This ensures compatibility with external admin addons that use the CAMI standard.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../hooks/gamemode_hooks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Gamemode Hooks">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Gamemode Hooks
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../lia.attributes/" class="md-footer__link md-footer__link--next" aria-label="Next: Attributes Library">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Attributes Library
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.instant.preview", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "navigation.top", "header.autohide", "announce.dismiss", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
