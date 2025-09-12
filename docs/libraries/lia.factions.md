@@ -10,7 +10,7 @@ The factions library (`lia.faction`) provides a comprehensive system for managin
 
 ---
 
-### lia.faction.register
+### register
 
 **Purpose**
 
@@ -70,7 +70,7 @@ end
 
 ---
 
-### lia.faction.cacheModels
+### cacheModels
 
 **Purpose**
 
@@ -111,7 +111,7 @@ end)
 
 ---
 
-### lia.faction.loadFromDir
+### loadFromDir
 
 **Purpose**
 
@@ -153,7 +153,7 @@ end)
 
 ---
 
-### lia.faction.get
+### get
 
 **Purpose**
 
@@ -209,7 +209,7 @@ lia.command.add("factioninfo", {
 
 ---
 
-### lia.faction.getIndex
+### getIndex
 
 **Purpose**
 
@@ -253,7 +253,7 @@ end
 
 ---
 
-### lia.faction.getClasses
+### getClasses
 
 **Purpose**
 
@@ -299,7 +299,7 @@ end
 
 ---
 
-### lia.faction.getPlayers
+### getPlayers
 
 **Purpose**
 
@@ -345,7 +345,7 @@ end
 
 ---
 
-### lia.faction.getPlayerCount
+### getPlayerCount
 
 **Purpose**
 
@@ -396,7 +396,7 @@ end
 
 ---
 
-### lia.faction.isFactionCategory
+### isFactionCategory
 
 **Purpose**
 
@@ -446,7 +446,7 @@ end
 
 ---
 
-### lia.faction.jobGenerate
+### jobGenerate
 
 **Purpose**
 
@@ -495,7 +495,7 @@ end
 
 ---
 
-### lia.faction.formatModelData
+### formatModelData
 
 **Purpose**
 
@@ -546,7 +546,7 @@ end
 
 ---
 
-### lia.faction.getCategories
+### getCategories
 
 **Purpose**
 
@@ -590,7 +590,7 @@ end
 
 ---
 
-### lia.faction.getModelsFromCategory
+### getModelsFromCategory
 
 **Purpose**
 
@@ -636,7 +636,7 @@ end
 
 ---
 
-### lia.faction.getDefaultClass
+### getDefaultClass
 
 **Purpose**
 
@@ -684,7 +684,7 @@ end
 
 ---
 
-### lia.faction.registerGroup
+### registerGroup
 
 **Purpose**
 
@@ -730,7 +730,7 @@ end
 
 ---
 
-### lia.faction.getGroup
+### getGroup
 
 **Purpose**
 
@@ -782,7 +782,7 @@ end
 
 ---
 
-### lia.faction.getFactionsInGroup
+### getFactionsInGroup
 
 **Purpose**
 
@@ -828,7 +828,109 @@ end
 
 ---
 
-### lia.faction.hasWhitelist
+### getBodygroupsForModel
+
+**Purpose**
+
+Retrieves the bodygroup configuration for a specific faction and model combination.
+
+**Parameters**
+
+* `faction` (*table*): The faction object containing bodygroup data.
+* `model` (*string*): The model path to get bodygroups for.
+
+**Returns**
+
+* `bodygroups` (*table*): Table of bodygroup index-value pairs, or empty table if none found.
+
+**Realm**
+
+Shared.
+
+**Example Usage**
+
+```lua
+-- Get bodygroups for a specific faction and model
+local faction = lia.faction.get("Police")
+local bodygroups = lia.faction.getBodygroupsForModel(faction, "models/player/barney.mdl")
+if bodygroups and not table.IsEmpty(bodygroups) then
+    for bodygroupIndex, bodygroupValue in pairs(bodygroups) do
+        print("Bodygroup " .. bodygroupIndex .. " = " .. bodygroupValue)
+    end
+end
+
+-- Check if a faction has bodygroups for a model
+local function hasBodygroups(faction, model)
+    local bodygroups = lia.faction.getBodygroupsForModel(faction, model)
+    return bodygroups and not table.IsEmpty(bodygroups)
+end
+
+-- Use in a faction definition
+FACTION.bodygroups = {
+    ["models/player/barney.mdl"] = {
+        [0] = 1, -- bodygroup 0 = value 1
+        [1] = 2  -- bodygroup 1 = value 2
+    }
+}
+```
+
+---
+
+### applyBodygroups
+
+**Purpose**
+
+Applies bodygroup settings to a client based on their faction and model.
+
+**Parameters**
+
+* `client` (*Player*): The client to apply bodygroups to.
+* `faction` (*table*): The faction object containing bodygroup data.
+* `model` (*string*): The model path to get bodygroups for.
+
+**Returns**
+
+*None*
+
+**Realm**
+
+Server.
+
+**Example Usage**
+
+```lua
+-- Apply bodygroups when a player spawns
+local function onPlayerSpawn(client)
+    local char = client:getChar()
+    if char then
+        local faction = char:getFaction()
+        local model = char:getModel()
+        lia.faction.applyBodygroups(client, faction, model)
+    end
+end
+
+-- Apply bodygroups in a faction OnSpawn hook
+function FACTION:OnSpawn(client)
+    local char = client:getChar()
+    if char then
+        lia.faction.applyBodygroups(client, self, char:getModel())
+    end
+end
+
+-- Apply bodygroups when changing models
+local function changePlayerModel(client, newModel)
+    client:SetModel(newModel)
+    local char = client:getChar()
+    if char then
+        local faction = char:getFaction()
+        lia.faction.applyBodygroups(client, faction, newModel)
+    end
+end
+```
+
+---
+
+### hasWhitelist
 
 **Purpose**
 
