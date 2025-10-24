@@ -311,3 +311,21 @@ end)
 
 ---
 
+### Example Item:
+
+**Example Usage**
+
+```lua
+-- Basic item identification
+ITEM.name = "Hat"                               -- Display name shown to players
+ITEM.desc = "A stylish hat"                     -- Description text
+ITEM.category = "outfit"                        -- Category for inventory sorting
+ITEM.model = "models/Gibs/HGIBS.mdl"            -- 3D model for the item
+ITEM.width = 1                                  -- Inventory width (1 slot)
+ITEM.height = 1                                 -- Inventory height (1 slot)
+ITEM.outfitCategory = "hat"                     -- Outfit category for conflict checking
+
+```
+
+---
+

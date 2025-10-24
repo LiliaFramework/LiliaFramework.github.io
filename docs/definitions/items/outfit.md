@@ -324,3 +324,21 @@ ITEM:hook("drop", function(item) if item:getData("equip") then item:removeOutfit
 
 ---
 
+### Example Item:
+
+**Example Usage**
+
+```lua
+-- Basic item identification
+ITEM.name = "Police Uniform"                        -- Display name shown to players
+ITEM.desc = "A standard police uniform"             -- Description text
+ITEM.category = "outfit"                            -- Category for inventory sorting
+ITEM.model = "models/props_c17/BriefCase001a.mdl"   -- 3D model for the item
+ITEM.width = 1                                      -- Inventory width (1 slot)
+ITEM.height = 1                                     -- Inventory height (1 slot)
+ITEM.outfitCategory = "model"                       -- Outfit category for conflict checking
+
+```
+
+---
+

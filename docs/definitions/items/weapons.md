@@ -347,3 +347,21 @@ end
 
 ---
 
+### Example Item:
+
+**Example Usage**
+
+```lua
+-- Basic item identification
+ITEM.name = "Pistol"                              -- Display name shown to players
+ITEM.desc = "A standard issue pistol"             -- Description text
+ITEM.category = "weapons"                         -- Category for inventory sorting
+ITEM.model = "models/weapons/w_pistol.mdl"        -- 3D model for the weapon
+ITEM.class = "weapon_pistol"                      -- Weapon class to give when equipped
+ITEM.width = 2                                    -- Inventory width (2 slots)
+ITEM.height = 2                                   -- Inventory height (2 slots)
+
+```
+
+---
+
