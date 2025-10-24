@@ -46,6 +46,7 @@ hook.Run("AddBarField", "character", "health", "Health",
 function() return 0 end,
 function() return 100 end,
 function() return LocalPlayer():Health() end)
+
 ```
 
 **Medium Complexity:**
@@ -58,6 +59,7 @@ function()
 local char = LocalPlayer():getChar()
 return char and char:getAttrib("stm") or 0
 end)
+
 ```
 
 **High Complexity:**
@@ -76,6 +78,7 @@ return char and char:getAttrib(attrId) or 0
 end)
 end
 end
+
 ```
 
 ---
@@ -111,12 +114,14 @@ Client
 ```lua
 -- Simple: Add a basic section
 hook.Run("AddSection", "General Info", Color(255, 255, 255), 1, 1)
+
 ```
 
 **Medium Complexity:**
 ```lua
 -- Medium: Add a section with custom styling
 hook.Run("AddSection", "Character Stats", Color(100, 150, 200), 2, 1)
+
 ```
 
 **High Complexity:**
@@ -130,6 +135,7 @@ local sections = {
 for _, section in ipairs(sections) do
 hook.Run("AddSection", section.name, section.color, section.priority, 1)
 end
+
 ```
 
 ---
@@ -166,6 +172,7 @@ Client
 -- Simple: Add a character name field
 hook.Run("AddTextField", "General Info", "name", "Name",
 function() return LocalPlayer():Name() end)
+
 ```
 
 **Medium Complexity:**
@@ -176,6 +183,7 @@ function()
 local char = LocalPlayer():getChar()
 return char and char:getFaction() and char:getFaction().name or "Unknown"
 end)
+
 ```
 
 **High Complexity:**
@@ -195,6 +203,7 @@ end}
 for _, field in ipairs(infoFields) do
 hook.Run("AddTextField", "General Info", field.name, field.label, field.func)
 end
+
 ```
 
 ---
@@ -233,6 +242,7 @@ if IsValid(target) then
 table.insert(information, "Entity: " .. target:GetClass())
 end
 end)
+
 ```
 
 **Medium Complexity:**
@@ -250,6 +260,7 @@ table.insert(information, "Animation: " .. animation)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -277,6 +288,7 @@ table.insert(information, "Door Price: $" .. (doorData.price or 0))
 end
 end
 end)
+
 ```
 
 ---
@@ -316,6 +328,7 @@ data.color = Color(255, 0, 0) -- Make hat red
 return data
 end
 end)
+
 ```
 
 **Medium Complexity:**
@@ -334,6 +347,7 @@ end
 return data
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -374,6 +388,7 @@ data.scale = (data.scale or 1) * 1.1 -- Officers get slightly larger parts
 end
 return data
 end)
+
 ```
 
 ---
@@ -407,6 +422,7 @@ Client
 ```lua
 -- Simple: Attach a hat to a player
 hook.Run("AttachPart", client, "hat_01")
+
 ```
 
 **Medium Complexity:**
@@ -421,6 +437,7 @@ hook.Run("AttachPart", client, id)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -461,6 +478,7 @@ hook.Run("AttachPart", client, id)
 -- Log the attachment
 print(client:Name() .. " attached PAC part: " .. id)
 end)
+
 ```
 
 ---
@@ -495,6 +513,7 @@ Client
 hook.Add("CanDisplayCharInfo", "MyAddon", function(name)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -509,6 +528,7 @@ end
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -535,6 +555,7 @@ end
 end
 return true
 end)
+
 ```
 
 ---
@@ -569,6 +590,7 @@ Client
 hook.Add("CanOpenBagPanel", "MyAddon", function(item)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -581,6 +603,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -605,6 +628,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -639,6 +663,7 @@ Client
 hook.Add("CharListColumns", "MyAddon", function(columns)
 table.insert(columns, "Custom Column")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -655,6 +680,7 @@ table.remove(columns, i)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -687,6 +713,7 @@ table.insert(columns, "SteamID")
 table.insert(columns, "IP Address")
 end
 end)
+
 ```
 
 ---
@@ -722,6 +749,7 @@ Client
 hook.Add("CharListEntry", "MyAddon", function(entry, row)
 entry.customData = "Custom Value"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -735,6 +763,7 @@ entry.faction = entry.faction or "citizen"
 -- Add money data
 entry.money = entry.money or 0
 end)
+
 ```
 
 **High Complexity:**
@@ -770,6 +799,7 @@ if entry.money >= 10000 then
 entry.isRich = true
 end
 end)
+
 ```
 
 ---
@@ -806,6 +836,7 @@ Client
 hook.Add("CharListExtraDetails", "MyAddon", function(client, entry, stored)
 entry.extraInfo = "Additional Information"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -821,6 +852,7 @@ else
 entry.extraInfo = "Civilian"
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -860,6 +892,7 @@ entry.steamID = entry.steamID or "Unknown"
 entry.ipAddress = entry.ipAddress or "Unknown"
 end
 end)
+
 ```
 
 ---
@@ -894,6 +927,7 @@ Client
 hook.Add("CharListLoaded", "MyAddon", function(newCharList)
 print("Character list loaded with " .. #newCharList .. " characters")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -911,6 +945,7 @@ for faction, count in pairs(factionCount) do
 print(faction .. ": " .. count .. " characters")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -952,6 +987,7 @@ return (a.level or 1) > (b.level or 1)
 end)
 print("Character list loaded and processed with " .. #newCharList .. " characters")
 end)
+
 ```
 
 ---
@@ -987,6 +1023,7 @@ Client
 hook.Add("CharListUpdated", "MyAddon", function(oldCharList, newCharList)
 print("Character list updated from " .. #oldCharList .. " to " .. #newCharList .. " characters")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1020,6 +1057,7 @@ print("Removed character: " .. oldChar.name)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1068,6 +1106,7 @@ local oldCount = #oldCharList
 local newCount = #newCharList
 print("Character list updated: " .. oldCount .. " -> " .. newCount .. " characters")
 end)
+
 ```
 
 ---
@@ -1098,6 +1137,7 @@ Client
 hook.Add("CharMenuClosed", "MyAddon", function()
 print("Character menu closed")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1108,6 +1148,7 @@ hook.Add("CharMenuClosed", "MenuCleanup", function()
 lia.charCache = nil
 print("Character menu closed and cache cleared")
 end)
+
 ```
 
 **High Complexity:**
@@ -1123,6 +1164,7 @@ local closeTime = os.time()
 lia.lastMenuClose = closeTime
 print("Character menu closed at " .. os.date("%H:%M:%S", closeTime))
 end)
+
 ```
 
 ---
@@ -1157,6 +1199,7 @@ Client
 hook.Add("CharMenuOpened", "MyAddon", function(self)
 print("Character menu opened")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1167,6 +1210,7 @@ hook.Add("CharMenuOpened", "MenuDataLoad", function(self)
 lia.charList = lia.char.getAll()
 print("Character menu opened with " .. #lia.charList .. " characters")
 end)
+
 ```
 
 **High Complexity:**
@@ -1186,6 +1230,7 @@ self:SetBackgroundColor(Color(0, 0, 0, 200))
 end
 print("Character menu opened at " .. os.date("%H:%M:%S", openTime))
 end)
+
 ```
 
 ---
@@ -1220,6 +1265,7 @@ Client
 hook.Add("ChatAddText", "MyAddon", function(markup, ...)
 print("Chat text added")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1234,6 +1280,7 @@ markup.color = Color(255, 0, 0)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1258,6 +1305,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -1292,6 +1340,7 @@ Client
 hook.Add("ChatboxPanelCreated", "MyAddon", function(panel)
 print("Chatbox panel created")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1302,6 +1351,7 @@ if panel then
 panel:SetBackgroundColor(Color(0, 0, 0, 200))
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1321,6 +1371,7 @@ panel:SetVisible(false)
 end
 print("Chatbox panel created and customized")
 end)
+
 ```
 
 ---
@@ -1351,6 +1402,7 @@ Client
 hook.Add("ChatboxTextAdded", "MyAddon", function(...)
 print("Text added to chatbox")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1364,6 +1416,7 @@ print("Chatbox text: " .. arg)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1386,6 +1439,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -1420,6 +1474,7 @@ Client
 hook.Add("ChooseCharacter", "MyAddon", function(id)
 print("Chose character ID: " .. id)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1429,6 +1484,7 @@ hook.Add("ChooseCharacter", "CharacterCache", function(id)
 lia.selectedCharID = id
 print("Selected character: " .. id)
 end)
+
 ```
 
 **High Complexity:**
@@ -1447,6 +1503,7 @@ net.WriteUInt(id, 32)
 net.SendToServer()
 print("Selected character ID: " .. id .. " at " .. os.date("%H:%M:%S"))
 end)
+
 ```
 
 ---
@@ -1481,6 +1538,7 @@ Client
 hook.Add("ConfigUpdated", "MyAddon", function(key)
 print("Config updated: " .. key)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1492,6 +1550,7 @@ if key == "theme" then
 lia.gui.refreshTheme()
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1511,6 +1570,7 @@ lia.configCache = lia.configCache or {}
 lia.configCache[key] = lia.config.get(key)
 print("Config " .. key .. " updated and cached")
 end)
+
 ```
 
 ---
@@ -1545,6 +1605,7 @@ Client
 hook.Add("ConfigureCharacterCreationSteps", "MyAddon", function(self)
 print("Configuring character creation steps")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1559,6 +1620,7 @@ label:SetText("Custom Step")
 end)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1590,6 +1652,7 @@ end
 end)
 print("Character creation steps configured")
 end)
+
 ```
 
 ---
@@ -1620,6 +1683,7 @@ Client
 hook.Add("CreateChat", "MyAddon", function()
 print("Chat interface created")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1630,6 +1694,7 @@ if lia.chat then
 lia.chat:SetBackgroundColor(Color(0, 0, 0, 200))
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1646,6 +1711,7 @@ lia.chat:AddTab("Local", Color(100, 200, 100))
 lia.chat:AddTab("Admin", Color(255, 0, 0))
 print("Chat interface created and customized")
 end)
+
 ```
 
 ---
@@ -1682,6 +1748,7 @@ pages["Custom"] = function(panel)
 panel:Add("DLabel"):SetText("Custom Information")
 end
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1699,6 +1766,7 @@ label:SetText("Available Commands")
 label:Dock(TOP)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1729,6 +1797,7 @@ label:Dock(TOP)
 end
 end
 end)
+
 ```
 
 ---
@@ -1764,6 +1833,7 @@ Client
 hook.Add("CreateInventoryPanel", "MyAddon", function(inventory, parent)
 print("Creating inventory panel")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1774,6 +1844,7 @@ if parent then
 parent:SetBackgroundColor(Color(50, 50, 50, 200))
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1796,6 +1867,7 @@ moneyLabel:Dock(BOTTOM)
 end
 print("Inventory panel created and customized")
 end)
+
 ```
 
 ---
@@ -1832,6 +1904,7 @@ tabs["Custom"] = function(panel)
 panel:Add("DLabel"):SetText("Custom Menu")
 end
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1849,6 +1922,7 @@ label:SetText("Help & Support")
 label:Dock(TOP)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1878,6 +1952,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -1912,6 +1987,7 @@ Client
 hook.Add("DermaSkinChanged", "MyAddon", function(newSkin)
 print("Skin changed to: " .. newSkin)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1924,6 +2000,7 @@ char:setData("preferredSkin", newSkin)
 end
 print("Skin changed to: " .. newSkin)
 end)
+
 ```
 
 **High Complexity:**
@@ -1944,6 +2021,7 @@ end
 file.Write("lilia_skin.txt", newSkin)
 print("Skin changed to: " .. newSkin .. " and saved")
 end)
+
 ```
 
 ---
@@ -1980,6 +2058,7 @@ Client
 hook.Add("DrawCharInfo", "MyAddon", function(client, character, info)
 info["Name"] = character:getName()
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1990,6 +2069,7 @@ info["Name"] = character:getName()
 info["Faction"] = character:getFaction()
 info["Money"] = "$" .. character:getMoney()
 end)
+
 ```
 
 **High Complexity:**
@@ -2015,6 +2095,7 @@ local hours = math.floor(playTime / 3600)
 local minutes = math.floor((playTime % 3600) / 60)
 info["Play Time"] = hours .. "h " .. minutes .. "m"
 end)
+
 ```
 
 ---
@@ -2051,6 +2132,7 @@ Client
 hook.Add("DrawDoorInfoBox", "MyAddon", function(entity, infoTexts, alphaOverride)
 table.insert(infoTexts, "Door: " .. entity:EntIndex())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2064,6 +2146,7 @@ else
 table.insert(infoTexts, "Unowned")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2094,6 +2177,7 @@ if faction then
 table.insert(infoTexts, "Faction: " .. faction)
 end
 end)
+
 ```
 
 ---
@@ -2130,6 +2214,7 @@ Client
 hook.Add("DrawEntityInfo", "MyAddon", function(entity, alpha, position)
 draw.SimpleText(entity:GetClass(), "Default", position.x, position.y, Color(255, 255, 255, alpha))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2142,6 +2227,7 @@ text = text .. "\n" .. entity:GetModel()
 end
 draw.SimpleText(text, "Default", position.x, position.y, Color(255, 255, 255, alpha))
 end)
+
 ```
 
 **High Complexity:**
@@ -2170,6 +2256,7 @@ draw.SimpleText("Name: " .. name, "Default", position.x, y, Color(255, 255, 100,
 end
 end
 end)
+
 ```
 
 ---
@@ -2205,6 +2292,7 @@ Client
 hook.Add("DrawLiliaModelView", "MyAddon", function(self, ent)
 print("Drawing model view")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2215,6 +2303,7 @@ if ent then
 ent:SetAngles(Angle(0, 45, 0))
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2234,6 +2323,7 @@ if ent.customMaterial then
 ent:SetMaterial(ent.customMaterial)
 end
 end)
+
 ```
 
 ---
@@ -2268,6 +2358,7 @@ Client
 hook.Add("DrawPlayerRagdoll", "MyAddon", function(entity)
 print("Drawing ragdoll: " .. entity:EntIndex())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2278,6 +2369,7 @@ if entity:GetModel() then
 entity:SetColor(Color(255, 200, 200))
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2317,6 +2409,7 @@ draw.SimpleText("Dead for: " .. math.floor(timeSinceDeath) .. "s", "Default", 0,
 cam.End3D2D()
 end
 end)
+
 ```
 
 ---
@@ -2347,6 +2440,7 @@ Client
 hook.Add("ExitStorage", "MyAddon", function()
 print("Exited storage")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2358,6 +2452,7 @@ lia.storagePanel:Remove()
 lia.storagePanel = nil
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2384,6 +2479,7 @@ end
 net.Start("StorageExited")
 net.SendToServer()
 end)
+
 ```
 
 ---
@@ -2414,6 +2510,7 @@ Client
 hook.Add("F1MenuClosed", "MyAddon", function()
 print("F1 menu closed")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2423,6 +2520,7 @@ hook.Add("F1MenuClosed", "F1MenuCleanup", function()
 lia.f1MenuOpen = false
 print("F1 menu closed and state updated")
 end)
+
 ```
 
 **High Complexity:**
@@ -2444,6 +2542,7 @@ end
 lia.f1CharCache = nil
 print("F1 menu closed at " .. os.date("%H:%M:%S", closeTime))
 end)
+
 ```
 
 ---
@@ -2478,6 +2577,7 @@ Client
 hook.Add("F1MenuOpened", "MyAddon", function(self)
 print("F1 menu opened")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2488,6 +2588,7 @@ lia.f1MenuOpen = true
 lia.f1OpenTime = os.time()
 print("F1 menu opened")
 end)
+
 ```
 
 **High Complexity:**
@@ -2515,6 +2616,7 @@ self:SetBackgroundColor(Color(0, 0, 0, 200))
 end
 print("F1 menu opened at " .. os.date("%H:%M:%S", openTime))
 end)
+
 ```
 
 ---
@@ -2549,6 +2651,7 @@ Client
 hook.Add("FilterCharModels", "MyAddon", function(models)
 print("Filtering " .. #models .. " character models")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2565,6 +2668,7 @@ table.remove(models, i)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2602,6 +2706,7 @@ end
 end
 print("Filtered models for " .. faction .. ": " .. #models .. " remaining")
 end)
+
 ```
 
 ---
@@ -2638,6 +2743,7 @@ Client
 hook.Add("FilterDoorInfo", "MyAddon", function(entity, doorData, doorInfo)
 print("Filtering door info for " .. entity:EntIndex())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2652,6 +2758,7 @@ if owner and owner ~= char:getID() then
 doorInfo.owner = "Hidden"
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2686,6 +2793,7 @@ if doorFaction and doorFaction ~= faction then
 doorInfo.warning = "Restricted Access"
 end
 end)
+
 ```
 
 ---
@@ -2721,6 +2829,7 @@ Client
 hook.Add("GetAdjustedPartData", "MyAddon", function(wearer, id)
 return {scale = 1, color = Color(255, 255, 255)}
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2739,6 +2848,7 @@ data.color = Color(255, 255, 255)
 end
 return data
 end)
+
 ```
 
 **High Complexity:**
@@ -2774,6 +2884,7 @@ end
 end
 return data
 end)
+
 ```
 
 ---
@@ -2809,6 +2920,7 @@ Client
 hook.Add("GetDoorInfoForAdminStick", "MyAddon", function(target, extraInfo)
 table.insert(extraInfo, "Door: " .. target:EntIndex())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2824,6 +2936,7 @@ end
 local locked = target:getNetVar("locked", false)
 table.insert(extraInfo, "Status: " .. (locked and "Locked" or "Unlocked"))
 end)
+
 ```
 
 **High Complexity:**
@@ -2864,6 +2977,7 @@ if #sharedWith > 0 then
 table.insert(extraInfo, "Shared with: " .. #sharedWith .. " players")
 end
 end)
+
 ```
 
 ---
@@ -2898,6 +3012,7 @@ Client
 hook.Add("GetInjuredText", "MyAddon", function(c)
 return "Injured"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2917,6 +3032,7 @@ else
 return "Healthy"
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2956,6 +3072,7 @@ injuryText = "Unconscious"
 end
 return injuryText
 end)
+
 ```
 
 ---
@@ -2990,6 +3107,7 @@ Client
 hook.Add("GetMainMenuPosition", "MyAddon", function(character)
 return {x = 100, y = 100}
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3004,6 +3122,7 @@ w = w * 0.8,
 h = h * 0.8
 }
 end)
+
 ```
 
 **High Complexity:**
@@ -3038,6 +3157,7 @@ w = w * 0.8,
 h = h * 0.8
 }
 end)
+
 ```
 
 ---
@@ -3072,6 +3192,7 @@ Client
 hook.Add("GetWeaponName", "MyAddon", function(weapon)
 return weapon:GetClass()
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3080,6 +3201,7 @@ end)
 hook.Add("GetWeaponName", "WeaponPrintName", function(weapon)
 return weapon:GetPrintName() or weapon:GetClass()
 end)
+
 ```
 
 **High Complexity:**
@@ -3121,6 +3243,7 @@ end
 end
 return qualityPrefix .. baseName .. enchantmentSuffix
 end)
+
 ```
 
 ---
@@ -3155,6 +3278,7 @@ Client
 hook.Add("HUDVisibilityChanged", "MyAddon", function(visible)
 print("HUD visibility: " .. tostring(visible))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3165,6 +3289,7 @@ if IsValid(MyCustomPanel) then
 MyCustomPanel:SetVisible(visible)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -3191,6 +3316,7 @@ else
 hook.Run("CustomHUDHidden")
 end
 end)
+
 ```
 
 ---
@@ -3221,6 +3347,7 @@ Client
 hook.Add("InitializedKeybinds", "MyAddon", function()
 print("Keybinds initialized")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3231,6 +3358,7 @@ lia.keybind.add("my_action", "My Action", KEY_F1, function()
 print("My action triggered!")
 end)
 end)
+
 ```
 
 **High Complexity:**
@@ -3268,6 +3396,7 @@ lia.keybind.setKey(key, keyCode)
 end
 print("Keybind system initialized with " .. #keybinds .. " custom keybinds")
 end)
+
 ```
 
 ---
@@ -3298,6 +3427,7 @@ Client
 hook.Add("InitializedOptions", "MyAddon", function()
 print("Options initialized")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3306,6 +3436,7 @@ end)
 hook.Add("InitializedOptions", "CustomOptions", function()
 lia.option.add("myOption", "My Option", "A custom option", true)
 end)
+
 ```
 
 **High Complexity:**
@@ -3352,6 +3483,7 @@ lia.option.set(key, value)
 end
 print("Option system initialized with " .. #options .. " custom options")
 end)
+
 ```
 
 ---
@@ -3382,6 +3514,7 @@ Client
 hook.Add("InteractionMenuClosed", "MyAddon", function()
 print("Interaction menu closed")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3391,6 +3524,7 @@ hook.Add("InteractionMenuClosed", "MenuCleanup", function()
 lia.interactionMenuOpen = false
 lia.currentInteractionTarget = nil
 end)
+
 ```
 
 **High Complexity:**
@@ -3414,6 +3548,7 @@ end
 lia.interactionCache = nil
 print("Interaction menu closed at " .. os.date("%H:%M:%S", closeTime))
 end)
+
 ```
 
 ---
@@ -3448,6 +3583,7 @@ Client
 hook.Add("InteractionMenuOpened", "MyAddon", function(frame)
 print("Interaction menu opened")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3457,6 +3593,7 @@ hook.Add("InteractionMenuOpened", "MenuState", function(frame)
 lia.interactionMenuOpen = true
 lia.interactionMenuOpenTime = os.time()
 end)
+
 ```
 
 **High Complexity:**
@@ -3487,6 +3624,7 @@ frame:SetSize(300, 400)
 end
 print("Interaction menu opened at " .. os.date("%H:%M:%S", openTime))
 end)
+
 ```
 
 ---
@@ -3523,6 +3661,7 @@ Client
 hook.Add("InterceptClickItemIcon", "MyAddon", function(self, itemIcon, keyCode)
 print("Item clicked: " .. (itemIcon.item and itemIcon.item.name or "Unknown"))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3541,6 +3680,7 @@ menu:Open()
 return true
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -3587,6 +3727,7 @@ item:use()
 return true
 end
 end)
+
 ```
 
 ---
@@ -3622,6 +3763,7 @@ Client
 hook.Add("InventoryClosed", "MyAddon", function(self, inventory)
 print("Inventory closed")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3633,6 +3775,7 @@ if char then
 char:setData("lastInventoryClose", os.time())
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -3663,6 +3806,7 @@ inventory:clearSelection()
 -- Trigger custom event
 hook.Run("CustomInventoryClosed", inventory)
 end)
+
 ```
 
 ---
@@ -3699,6 +3843,7 @@ Client
 hook.Add("InventoryItemIconCreated", "MyAddon", function(icon, item, self)
 print("Item icon created: " .. item.name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3715,6 +3860,7 @@ elseif quality == "epic" then
 icon:SetBorderColor(Color(150, 0, 255))
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -3763,6 +3909,7 @@ equippedIcon:SizeToContents()
 equippedIcon:SetPos(5, 5)
 end
 end)
+
 ```
 
 ---
@@ -3798,6 +3945,7 @@ Client
 hook.Add("InventoryOpened", "MyAddon", function(panel, inventory)
 print("Inventory opened")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3809,6 +3957,7 @@ if char then
 char:setData("lastInventoryOpen", os.time())
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -3839,6 +3988,7 @@ weightLabel:SetHeight(20)
 -- Trigger custom event
 hook.Run("CustomInventoryOpened", inventory)
 end)
+
 ```
 
 ---
@@ -3875,6 +4025,7 @@ Client
 hook.Add("InventoryPanelCreated", "MyAddon", function(panel, inventory, parent)
 print("Inventory panel created")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3884,6 +4035,7 @@ hook.Add("InventoryPanelCreated", "CustomizeInventoryPanel", function(panel, inv
 panel:SetBackgroundColor(Color(50, 50, 50, 200))
 panel:SetSize(500, 350)
 end)
+
 ```
 
 **High Complexity:**
@@ -3949,6 +4101,7 @@ filterArmor.DoClick = function()
 inventory:setFilter("armor")
 end
 end)
+
 ```
 
 ---
@@ -3986,6 +4139,7 @@ Client
 hook.Add("ItemPaintOver", "MyAddon", function(self, itemTable, w, h)
 draw.SimpleText(itemTable.name, "DermaDefault", w / 2, h - 10, Color(255, 255, 255), TEXT_ALIGN_CENTER)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4002,6 +4156,7 @@ local barColor = Color(255 * (1 - durability / 100), 255 * (durability / 100), 0
 surface.SetDrawColor(barColor)
 surface.DrawRect(2, h - 8, barWidth, 6)
 end)
+
 ```
 
 **High Complexity:**
@@ -4042,6 +4197,7 @@ local borderColor = borderColors[quality] or Color(150, 150, 150)
 surface.SetDrawColor(borderColor)
 surface.DrawOutlinedRect(0, 0, w, h, 2)
 end)
+
 ```
 
 ---
@@ -4076,6 +4232,7 @@ Client
 hook.Add("ItemShowEntityMenu", "MyAddon", function(entity)
 print("Showing menu for: " .. tostring(entity))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4090,6 +4247,7 @@ chat.AddText("You examine the " .. item.name)
 end)
 menu:Open()
 end)
+
 ```
 
 **High Complexity:**
@@ -4129,6 +4287,7 @@ end)
 end
 menu:Open()
 end)
+
 ```
 
 ---
@@ -4159,6 +4318,7 @@ Client
 hook.Add("KeybindsLoaded", "MyAddon", function()
 print("Keybinds have been loaded")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4170,6 +4330,7 @@ lia.keybind.register("customAction", KEY_F, function()
 print("Custom action triggered")
 end, "Custom Action")
 end)
+
 ```
 
 **High Complexity:**
@@ -4208,6 +4369,7 @@ label:Dock(TOP)
 end
 end)
 end)
+
 ```
 
 ---
@@ -4243,6 +4405,7 @@ Client
 hook.Add("KickedFromChar", "MyAddon", function(id, isCurrentChar)
 print("Kicked from character: " .. id)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4253,6 +4416,7 @@ if isCurrentChar then
 lia.util.notify("You have been kicked from your character")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -4287,6 +4451,7 @@ else
 print("Character " .. id .. " was kicked")
 end
 end)
+
 ```
 
 ---
@@ -4317,6 +4482,7 @@ Client
 hook.Add("LoadCharInformation", "MyAddon", function()
 print("Loading character information")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4329,6 +4495,7 @@ if char then
 netstream.Start("RequestCustomCharData", char:getID())
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -4348,6 +4515,7 @@ MyAddon.SetPreference(key, value)
 end
 print("Character information loaded for " .. char:getName())
 end)
+
 ```
 
 ---
@@ -4383,6 +4551,7 @@ Client
 hook.Add("LoadMainMenuInformation", "MyAddon", function(info, character)
 info["Level"] = character:getData("level", 1)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4393,6 +4562,7 @@ info["Level"] = character:getData("level", 1)
 info["Experience"] = character:getData("exp", 0)
 info["Money"] = lia.currency.get(character:getMoney())
 end)
+
 ```
 
 **High Complexity:**
@@ -4418,6 +4588,7 @@ local hours = math.floor(playTime / 3600)
 local minutes = math.floor((playTime % 3600) / 60)
 info["Playtime"] = string.format("%dh %dm", hours, minutes)
 end)
+
 ```
 
 ---
@@ -4453,6 +4624,7 @@ Client
 hook.Add("ModifyScoreboardModel", "MyAddon", function(client, ply)
 return ply:GetModel()
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4465,6 +4637,7 @@ return char:getModel()
 end
 return ply:GetModel()
 end)
+
 ```
 
 **High Complexity:**
@@ -4484,6 +4657,7 @@ end
 -- Show character model
 return char:getModel()
 end)
+
 ```
 
 ---
@@ -4514,6 +4688,7 @@ Client
 hook.Add("OnAdminStickMenuClosed", "MyAddon", function()
 print("Admin stick menu closed")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4523,6 +4698,7 @@ hook.Add("OnAdminStickMenuClosed", "CleanupAdminMenu", function()
 MyAddon.selectedEntity = nil
 MyAddon.menuOpen = false
 end)
+
 ```
 
 **High Complexity:**
@@ -4541,6 +4717,7 @@ end
 MyAddon.tempData = {}
 print("Admin stick menu closed and cleaned up")
 end)
+
 ```
 
 ---
@@ -4578,6 +4755,7 @@ Client
 hook.Add("OnChatReceived", "MyAddon", function(client, chatType, text, anonymous)
 print("Received " .. chatType .. " message: " .. text)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4594,6 +4772,7 @@ return char ~= nil
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -4647,6 +4826,7 @@ end
 -- Log message
 print(string.format("[%s] %s: %s", chatType, client:Name(), text))
 end)
+
 ```
 
 ---
@@ -4685,6 +4865,7 @@ menu:AddOption("Use Item", function()
 print("Used item: " .. itemTable.name)
 end)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4706,6 +4887,7 @@ menu:AddOption("Examine", function()
 self:examine()
 end)
 end)
+
 ```
 
 **High Complexity:**
@@ -4757,6 +4939,7 @@ LocalPlayer():ChatPrint("Ammo: " .. ammo)
 end)
 end
 end)
+
 ```
 
 ---
@@ -4793,6 +4976,7 @@ Client
 hook.Add("OnCreateStoragePanel", "MyAddon", function(localInvPanel, storageInvPanel, storage)
 print("Storage panel created")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4806,6 +4990,7 @@ if storageInvPanel then
 storageInvPanel:SetBackgroundColor(Color(100, 50, 50, 200))
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -4850,6 +5035,7 @@ infoLabel:SetHeight(20)
 end
 print("Storage panel created for " .. storageType .. " storage")
 end)
+
 ```
 
 ---
@@ -4885,6 +5071,7 @@ Client
 hook.Add("OnDeathSoundPlayed", "MyAddon", function(client, deathSound)
 print("Death sound played: " .. deathSound)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4898,6 +5085,7 @@ sound = deathSound,
 time = os.time()
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -4923,6 +5111,7 @@ local stats = client:getData("deathStats", {sounds = {}})
 stats.sounds[deathSound] = (stats.sounds[deathSound] or 0) + 1
 client:setData("deathStats", stats)
 end)
+
 ```
 
 ---
@@ -4953,6 +5142,7 @@ Client
 hook.Add("OnFontsRefreshed", "MyAddon", function()
 print("Fonts have been refreshed")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4966,6 +5156,7 @@ weight = 500
 })
 print("Custom fonts reloaded")
 end)
+
 ```
 
 **High Complexity:**
@@ -4990,6 +5181,7 @@ MyAddon.mainPanel:UpdateFonts()
 end
 print("Advanced font system refreshed")
 end)
+
 ```
 
 ---
@@ -5025,6 +5217,7 @@ Client
 hook.Add("OnOpenVendorMenu", "MyAddon", function(self, vendor)
 print("Vendor menu opened: " .. vendor.name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5039,6 +5232,7 @@ elseif vendor.faction == "medic" then
 self:SetColor(Color(255, 255, 255, 255))
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5092,6 +5286,7 @@ end
 print(string.format("%s accessed vendor %s (Faction: %s)",
 LocalPlayer():Name(), vendor.name, faction))
 end)
+
 ```
 
 ---
@@ -5127,6 +5322,7 @@ Client
 hook.Add("OnPainSoundPlayed", "MyAddon", function(client, painSound)
 print("Pain sound played: " .. painSound)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5140,6 +5336,7 @@ sound = painSound,
 time = os.time()
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -5165,6 +5362,7 @@ local stats = client:getData("painStats", {sounds = {}})
 stats.sounds[painSound] = (stats.sounds[painSound] or 0) + 1
 client:setData("painStats", stats)
 end)
+
 ```
 
 ---
@@ -5200,6 +5398,7 @@ Client
 hook.Add("OnPlayerDataSynced", "MyAddon", function(player, lastID)
 print("Player data synced for " .. player:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5215,6 +5414,7 @@ hook.Run("CharLoaded", char:getID())
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5273,6 +5473,7 @@ hook.Run("CharLoaded", char:getID())
 print("Player data synced for " .. player:Name() .. " (Char ID: " .. lastID .. ")")
 end
 end)
+
 ```
 
 ---
@@ -5308,6 +5509,7 @@ Client
 hook.Add("OnThemeChanged", "MyAddon", function(themeName, themeData)
 print("Theme changed to: " .. themeName)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5319,6 +5521,7 @@ MyAddon.primaryColor = themeData.colors.primary
 MyAddon.secondaryColor = themeData.colors.secondary
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5340,6 +5543,7 @@ lia.data.set("preferredTheme", themeName)
 -- Notify user
 lia.util.notify("Theme changed to " .. themeName)
 end)
+
 ```
 
 ---
@@ -5374,6 +5578,7 @@ Client
 hook.Add("OpenAdminStickUI", "MyAddon", function(tgt)
 print("Admin stick UI opened for " .. tostring(tgt))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5387,6 +5592,7 @@ print("Examining player: " .. char:getName())
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5414,6 +5620,7 @@ target = IsValid(tgt) and tgt:EntIndex() or "Invalid",
 timestamp = os.time()
 })
 end)
+
 ```
 
 ---
@@ -5448,6 +5655,7 @@ Client
 hook.Add("PaintItem", "MyAddon", function(item)
 draw.SimpleText(item.name, "DermaDefault", 10, 10, Color(255, 255, 255))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5463,6 +5671,7 @@ color = Color(150, 0, 255)
 end
 draw.SimpleText(item.name, "DermaDefault", 10, 10, color)
 end)
+
 ```
 
 **High Complexity:**
@@ -5492,6 +5701,7 @@ y = y + 15
 draw.SimpleText("Quantity: x" .. quantity, "DermaDefault", x, y, Color(255, 255, 255))
 end
 end)
+
 ```
 
 ---
@@ -5529,6 +5739,7 @@ tempMenu:AddOption("Custom Action", function()
 print("Custom action performed")
 end)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5541,6 +5752,7 @@ RunConsoleCommand("lia_plyteleporttome", tgt:SteamID())
 end)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5568,6 +5780,7 @@ tempMenu:AddOption("Copy Model", function()
 SetClipboardText(tgt:GetModel())
 end)
 end)
+
 ```
 
 ---
@@ -5606,6 +5819,7 @@ panel:Dock(FILL)
 return panel
 end
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5624,6 +5838,7 @@ end
 return panel
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5661,6 +5876,7 @@ end
 return panel
 end
 end)
+
 ```
 
 ---
@@ -5699,6 +5915,7 @@ panel:Dock(FILL)
 return panel
 end
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5718,6 +5935,7 @@ end
 return panel
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5758,6 +5976,7 @@ end
 return panel
 end
 end)
+
 ```
 
 ---
@@ -5793,6 +6012,7 @@ Client
 hook.Add("PopulateInventoryItems", "MyAddon", function(pnlContent, tree)
 local node = tree:AddNode("Custom Items")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5809,6 +6029,7 @@ end
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5846,6 +6067,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -5881,6 +6103,7 @@ Client
 hook.Add("PostDrawInventory", "MyAddon", function(mainPanel, parentPanel)
 print("Inventory drawn")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5893,6 +6116,7 @@ label:SetText("Custom Inventory")
 label:Dock(BOTTOM)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5913,6 +6137,7 @@ weightLabel:Dock(BOTTOM)
 weightLabel:SetHeight(20)
 end
 end)
+
 ```
 
 ---
@@ -5948,6 +6173,7 @@ Client
 hook.Add("PostLoadFonts", "MyAddon", function(mainFont, configuredFont)
 print("Fonts loaded: " .. mainFont)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5960,6 +6186,7 @@ size = 24,
 weight = 500
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -5987,6 +6214,7 @@ antialias = true
 end
 print("Custom fonts created")
 end)
+
 ```
 
 ---
@@ -6017,6 +6245,7 @@ Client
 hook.Add("PreDrawPhysgunBeam", "MyAddon", function()
 print("Drawing physgun beam")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6030,6 +6259,7 @@ render.SetColorMaterial()
 render.DrawBeam(client:GetShootPos(), client:GetEyeTrace().HitPos, 8, 0, 1, Color(255, 0, 0, 255))
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -6057,6 +6287,7 @@ end
 render.SetColorMaterial()
 render.DrawBeam(client:GetShootPos(), trace.HitPos, 8, 0, 1, color)
 end)
+
 ```
 
 ---
@@ -6087,6 +6318,7 @@ Client
 hook.Add("RefreshFonts", "MyAddon", function()
 print("Fonts refreshed")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6099,6 +6331,7 @@ size = 24,
 weight = 500
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -6126,6 +6359,7 @@ antialias = true
 })
 end
 end)
+
 ```
 
 ---
@@ -6161,6 +6395,7 @@ Client
 hook.Add("RemovePart", "MyAddon", function(client, id)
 print(client:Name() .. " removed part: " .. id)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6174,6 +6409,7 @@ partsUsed[id] = (partsUsed[id] or 0) + 1
 char:setData("partsUsed", partsUsed)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -6196,6 +6432,7 @@ ply:ChatPrint(client:Name() .. " removed a part")
 end
 end
 end)
+
 ```
 
 ---
@@ -6226,6 +6463,7 @@ Client
 hook.Add("ResetCharacterPanel", "MyAddon", function()
 print("Character panel reset")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6235,6 +6473,7 @@ hook.Add("ResetCharacterPanel", "ClearCustomData", function()
 MyAddon.selectedCharacter = nil
 MyAddon.panelData = {}
 end)
+
 ```
 
 **High Complexity:**
@@ -6255,6 +6494,7 @@ timer.Simple(0.1, function()
 MyAddon.RebuildPanel()
 end)
 end)
+
 ```
 
 ---
@@ -6289,6 +6529,7 @@ Client
 hook.Add("ScoreboardClosed", "MyAddon", function(self)
 print("Scoreboard closed")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6298,6 +6539,7 @@ hook.Add("ScoreboardClosed", "CleanupScoreboard", function(self)
 MyAddon.scoreboardData = {}
 MyAddon.selectedPlayer = nil
 end)
+
 ```
 
 **High Complexity:**
@@ -6316,6 +6558,7 @@ end
 -- Notify other systems
 hook.Run("CustomScoreboardClosed", self)
 end)
+
 ```
 
 ---
@@ -6350,6 +6593,7 @@ Client
 hook.Add("ScoreboardOpened", "MyAddon", function(self)
 print("Scoreboard opened")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6361,6 +6605,7 @@ players = player.GetAll(),
 lastUpdate = os.time()
 }
 end)
+
 ```
 
 **High Complexity:**
@@ -6385,6 +6630,7 @@ end
 -- Notify other systems
 hook.Run("CustomScoreboardOpened", self)
 end)
+
 ```
 
 ---
@@ -6420,6 +6666,7 @@ Client
 hook.Add("ScoreboardRowCreated", "MyAddon", function(slot, ply)
 print("Scoreboard row created for " .. ply:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6434,6 +6681,7 @@ slot:SetBackgroundColor(Color(0, 0, 255, 50))
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -6457,6 +6705,7 @@ customLabel:SetText("[" .. faction .. "]")
 customLabel:Dock(RIGHT)
 customLabel:SetTextColor(Color(255, 255, 255))
 end)
+
 ```
 
 ---
@@ -6492,6 +6741,7 @@ Client
 hook.Add("ScoreboardRowRemoved", "MyAddon", function(self, ply)
 print("Scoreboard row removed for " .. ply:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6500,6 +6750,7 @@ end)
 hook.Add("ScoreboardRowRemoved", "CleanupRowData", function(self, ply)
 MyAddon.playerData[ply:SteamID()] = nil
 end)
+
 ```
 
 **High Complexity:**
@@ -6516,6 +6767,7 @@ end
 -- Update scoreboard statistics
 MyAddon.UpdateStats()
 end)
+
 ```
 
 ---
@@ -6546,6 +6798,7 @@ Client
 hook.Add("SetupPACDataFromItems", "MyAddon", function()
 print("Setting up PAC3 data from items")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6564,6 +6817,7 @@ end
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -6598,6 +6852,7 @@ if factionPAC then
 hook.Run("AttachPart", LocalPlayer(), factionPAC)
 end
 end)
+
 ```
 
 ---
@@ -6632,6 +6887,7 @@ Client
 hook.Add("SetupQuickMenu", "MyAddon", function(self)
 print("Setting up quick menu")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6645,6 +6901,7 @@ customBtn.DoClick = function()
 print("Custom action clicked")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -6678,6 +6935,7 @@ inventoryBtn.DoClick = function()
 RunConsoleCommand("lia_inventory")
 end
 end)
+
 ```
 
 ---
@@ -6713,6 +6971,7 @@ Client
 hook.Add("ShouldAllowScoreboardOverride", "MyAddon", function(ply, override)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6721,6 +6980,7 @@ end)
 hook.Add("ShouldAllowScoreboardOverride", "AdminOverride", function(ply, override)
 return ply:IsAdmin()
 end)
+
 ```
 
 **High Complexity:**
@@ -6737,6 +6997,7 @@ return ply:getNetVar("canSortScoreboard", false)
 end
 return false
 end)
+
 ```
 
 ---
@@ -6771,6 +7032,7 @@ Client
 hook.Add("ShouldBarDraw", "MyAddon", function(bar)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6782,6 +7044,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -6805,6 +7068,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -6839,6 +7103,7 @@ Client
 hook.Add("ShouldDisableThirdperson", "MyAddon", function(self)
 return false
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6856,6 +7121,7 @@ end
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -6887,6 +7153,7 @@ end
 end
 return false
 end)
+
 ```
 
 ---
@@ -6921,6 +7188,7 @@ Client
 hook.Add("ShouldDrawAmmo", "MyAddon", function(wpn)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6931,6 +7199,7 @@ local weaponClass = wpn:GetClass()
 local hideAmmoWeapons = {"weapon_crowbar", "weapon_stunstick"}
 return not table.HasValue(hideAmmoWeapons, weaponClass)
 end)
+
 ```
 
 **High Complexity:**
@@ -6961,6 +7230,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -6995,6 +7265,7 @@ Client
 hook.Add("ShouldDrawEntityInfo", "MyAddon", function(e)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7005,6 +7276,7 @@ local class = e:GetClass()
 local hideClasses = {"prop_physics", "prop_dynamic"}
 return not table.HasValue(hideClasses, class)
 end)
+
 ```
 
 **High Complexity:**
@@ -7043,6 +7315,7 @@ return true
 end
 return false
 end)
+
 ```
 
 ---
@@ -7077,6 +7350,7 @@ Client
 hook.Add("ShouldDrawPlayerInfo", "MyAddon", function(e)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7092,6 +7366,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -7146,6 +7421,7 @@ return true
 end
 return false
 end)
+
 ```
 
 ---
@@ -7180,6 +7456,7 @@ Client
 hook.Add("ShouldDrawWepSelect", "MyAddon", function(client)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7192,6 +7469,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -7222,6 +7500,7 @@ return true
 end
 return false
 end)
+
 ```
 
 ---
@@ -7252,6 +7531,7 @@ Client
 hook.Add("ShouldHideBars", "MyAddon", function()
 return false
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7269,6 +7549,7 @@ return true
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -7320,6 +7601,7 @@ return true
 end
 return false
 end)
+
 ```
 
 ---
@@ -7354,6 +7636,7 @@ Client
 hook.Add("ShouldMenuButtonShow", "MyAddon", function(button)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7363,6 +7646,7 @@ hook.Add("ShouldMenuButtonShow", "HideButtons", function(button)
 local hiddenButtons = {"admin", "debug"}
 return not table.HasValue(hiddenButtons, button)
 end)
+
 ```
 
 **High Complexity:**
@@ -7393,6 +7677,7 @@ return false
 end
 return permissions[button] or false
 end)
+
 ```
 
 ---
@@ -7428,6 +7713,7 @@ Client
 hook.Add("ShouldPlayDeathSound", "MyAddon", function(client, deathSound)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7437,6 +7723,7 @@ hook.Add("ShouldPlayDeathSound", "SuppressSounds", function(client, deathSound)
 local suppressedSounds = {"vo/npc/male01/pain01.wav"}
 return not table.HasValue(suppressedSounds, deathSound)
 end)
+
 ```
 
 **High Complexity:**
@@ -7470,6 +7757,7 @@ end
 -- Only play if other players are nearby
 return nearbyPlayers > 0
 end)
+
 ```
 
 ---
@@ -7505,6 +7793,7 @@ Client
 hook.Add("ShouldPlayPainSound", "MyAddon", function(client, painSound)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7514,6 +7803,7 @@ hook.Add("ShouldPlayPainSound", "SuppressPainSounds", function(client, painSound
 local suppressedSounds = {"vo/npc/male01/pain01.wav"}
 return not table.HasValue(suppressedSounds, painSound)
 end)
+
 ```
 
 **High Complexity:**
@@ -7554,6 +7844,7 @@ end
 -- Only play if other players are nearby
 return nearbyPlayers > 0
 end)
+
 ```
 
 ---
@@ -7584,6 +7875,7 @@ Client
 hook.Add("ShouldRespawnScreenAppear", "MyAddon", function()
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7596,6 +7888,7 @@ local faction = char:getFaction()
 local hiddenFactions = {"ghost", "spectator"}
 return not table.HasValue(hiddenFactions, faction)
 end)
+
 ```
 
 **High Complexity:**
@@ -7632,6 +7925,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -7666,6 +7960,7 @@ Client
 hook.Add("ShouldShowClassOnScoreboard", "MyAddon", function(clsData)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7675,6 +7970,7 @@ hook.Add("ShouldShowClassOnScoreboard", "HideClasses", function(clsData)
 local hiddenClasses = {"admin", "debug"}
 return not table.HasValue(hiddenClasses, clsData.uniqueID)
 end)
+
 ```
 
 **High Complexity:**
@@ -7708,6 +8004,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -7742,6 +8039,7 @@ Client
 hook.Add("ShouldShowFactionOnScoreboard", "MyAddon", function(ply)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7754,6 +8052,7 @@ local faction = char:getFaction()
 local hiddenFactions = {"ghost", "spectator"}
 return not table.HasValue(hiddenFactions, faction)
 end)
+
 ```
 
 **High Complexity:**
@@ -7793,6 +8092,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -7827,6 +8127,7 @@ Client
 hook.Add("ShouldShowPlayerOnScoreboard", "MyAddon", function(ply)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7839,6 +8140,7 @@ local faction = char:getFaction()
 local hiddenFactions = {"ghost", "spectator"}
 return not table.HasValue(hiddenFactions, faction)
 end)
+
 ```
 
 **High Complexity:**
@@ -7883,6 +8185,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -7917,6 +8220,7 @@ Client
 hook.Add("ShouldSpawnClientRagdoll", "MyAddon", function(client)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7929,6 +8233,7 @@ local faction = char:getFaction()
 local suppressedFactions = {"ghost", "spectator"}
 return not table.HasValue(suppressedFactions, faction)
 end)
+
 ```
 
 **High Complexity:**
@@ -7975,6 +8280,7 @@ end
 -- Only spawn if other players are nearby
 return nearbyPlayers > 0
 end)
+
 ```
 
 ---
@@ -8011,6 +8317,7 @@ hook.Add("ShowPlayerOptions", "MyAddon", function(ply, initialOpts)
 table.insert(initialOpts, {"Examine", function() print("Examining " .. ply:Name()) end})
 return initialOpts
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8025,6 +8332,7 @@ table.insert(initialOpts, {"Arrest", function() print("Arresting " .. ply:Name()
 end
 return initialOpts
 end)
+
 ```
 
 **High Complexity:**
@@ -8080,6 +8388,7 @@ end})
 end
 return initialOpts
 end)
+
 ```
 
 ---
@@ -8114,6 +8423,7 @@ Client
 hook.Add("StorageUnlockPrompt", "MyAddon", function(entity)
 print("Storage unlock prompt shown for " .. tostring(entity))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8122,6 +8432,7 @@ end)
 hook.Add("StorageUnlockPrompt", "CustomMessage", function(entity)
 lia.util.notify("This storage is locked. You need a key to open it.")
 end)
+
 ```
 
 **High Complexity:**
@@ -8171,6 +8482,7 @@ end)
 menu:AddOption("Cancel", function() end)
 menu:Open()
 end)
+
 ```
 
 ---
@@ -8205,6 +8517,7 @@ Client
 hook.Add("ThirdPersonToggled", "MyAddon", function(newValue)
 print("Third person " .. (newValue and "enabled" or "disabled"))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8213,6 +8526,7 @@ end)
 hook.Add("ThirdPersonToggled", "NotifyToggle", function(newValue)
 lia.util.notify("Third person " .. (newValue and "enabled" or "disabled"))
 end)
+
 ```
 
 **High Complexity:**
@@ -8246,6 +8560,7 @@ if char then
 char:setData("thirdPerson", newValue)
 end
 end)
+
 ```
 
 ---
@@ -8287,6 +8602,7 @@ frame:SetTitle("Support Ticket")
 frame:MakePopup()
 return frame
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8307,6 +8623,7 @@ text:SetMultiline(true)
 text:Dock(FILL)
 return frame
 end)
+
 ```
 
 **High Complexity:**
@@ -8356,6 +8673,7 @@ frame:Close()
 end
 return frame
 end)
+
 ```
 
 ---
@@ -8391,6 +8709,7 @@ Client
 hook.Add("TooltipInitialize", "MyAddon", function(self, panel)
 self:SetText("Tooltip")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8403,6 +8722,7 @@ elseif panel:GetClassName() == "DTextEntry" then
 self:SetText("Enter text here")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -8439,6 +8759,7 @@ self:SetSize(200, 20)
 -- Set tooltip delay
 self:SetDelay(0.5)
 end)
+
 ```
 
 ---
@@ -8473,6 +8794,7 @@ Client
 hook.Add("TooltipLayout", "MyAddon", function(self)
 self:SizeToContents()
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8488,6 +8810,7 @@ if h > 100 then
 self:SetTall(100)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -8527,6 +8850,7 @@ self:SetZPos(1000)
 self:SetBackgroundColor(Color(0, 0, 0, 200))
 self:SetBorderColor(Color(100, 100, 100))
 end)
+
 ```
 
 ---
@@ -8563,6 +8887,7 @@ Client
 hook.Add("TooltipPaint", "MyAddon", function(self, w, h)
 draw.RoundedBox(4, 0, 0, w, h, Color(0, 0, 0, 200))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8576,6 +8901,7 @@ draw.RoundedBox(4, 0, 0, w, h, Color(100, 100, 100, 255))
 -- Text
 draw.SimpleText(self:GetText(), "DermaDefault", w/2, h/2, Color(255, 255, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 end)
+
 ```
 
 **High Complexity:**
@@ -8611,6 +8937,7 @@ surface.SetDrawColor(Color(255, 255, 255, 200))
 surface.DrawTexturedRect(5, 5, 16, 16)
 end
 end)
+
 ```
 
 ---
@@ -8645,6 +8972,7 @@ Client
 hook.Add("TryViewModel", "MyAddon", function(entity)
 print("Trying to view model: " .. tostring(entity))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8658,6 +8986,7 @@ print("Viewing model: " .. model)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -8724,6 +9053,7 @@ closeButton.DoClick = function()
 frame:Close()
 end
 end)
+
 ```
 
 ---
@@ -8758,6 +9088,7 @@ Client
 hook.Add("UpdateScoreboardColors", "MyAddon", function(teamColors)
 print("Updating scoreboard colors")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8768,6 +9099,7 @@ teamColors[1] = Color(255, 0, 0) -- Red
 teamColors[2] = Color(0, 255, 0) -- Green
 teamColors[3] = Color(0, 0, 255) -- Blue
 end)
+
 ```
 
 **High Complexity:**
@@ -8809,6 +9141,7 @@ if IsValid(lia.gui.scoreboard) then
 lia.gui.scoreboard:UpdateColors(teamColors)
 end
 end)
+
 ```
 
 ---
@@ -8839,6 +9172,7 @@ Client
 hook.Add("VendorExited", "MyAddon", function()
 print("Vendor exited")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8848,6 +9182,7 @@ hook.Add("VendorExited", "CleanupVendor", function()
 lia.vendor.current = nil
 lia.vendor.cache = {}
 end)
+
 ```
 
 **High Complexity:**
@@ -8882,6 +9217,7 @@ local vendorStats = char:getData("vendorStats", {})
 vendorStats.exits = (vendorStats.exits or 0) + 1
 char:setData("vendorStats", vendorStats)
 end)
+
 ```
 
 ---
@@ -8916,6 +9252,7 @@ Client
 hook.Add("VendorSynchronized", "MyAddon", function(vendor)
 print("Vendor synchronized: " .. tostring(vendor))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8926,6 +9263,7 @@ if IsValid(lia.gui.vendor) and lia.gui.vendor.vendor == vendor then
 lia.gui.vendor:Populate()
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -8953,6 +9291,7 @@ if client:GetPos():Distance(vendor:GetPos()) < 200 then
 lia.util.notify("Vendor inventory updated")
 end
 end)
+
 ```
 
 ---
@@ -8987,6 +9326,7 @@ Client
 hook.Add("VoiceToggled", "MyAddon", function(enabled)
 print("Voice chat " .. (enabled and "enabled" or "disabled"))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8995,6 +9335,7 @@ end)
 hook.Add("VoiceToggled", "NotifyVoiceToggle", function(enabled)
 lia.util.notify("Voice chat " .. (enabled and "enabled" or "disabled"))
 end)
+
 ```
 
 **High Complexity:**
@@ -9019,6 +9360,7 @@ enabled = enabled,
 timestamp = os.time()
 })
 end)
+
 ```
 
 ---
@@ -9049,6 +9391,7 @@ Client
 hook.Add("WeaponCycleSound", "MyAddon", function()
 return "common/wpn_select.wav"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9059,6 +9402,7 @@ local soundEnabled = lia.config.get("weaponSounds", true)
 if not soundEnabled then return "" end
 return "common/wpn_select.wav"
 end)
+
 ```
 
 **High Complexity:**
@@ -9083,6 +9427,7 @@ return factionSounds[faction] or "common/wpn_select.wav"
 end
 return "common/wpn_select.wav"
 end)
+
 ```
 
 ---
@@ -9113,6 +9458,7 @@ Client
 hook.Add("WeaponSelectSound", "MyAddon", function()
 return "common/wpn_hudoff.wav"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9123,6 +9469,7 @@ local soundEnabled = lia.config.get("weaponSounds", true)
 if not soundEnabled then return "" end
 return "common/wpn_hudoff.wav"
 end)
+
 ```
 
 **High Complexity:**
@@ -9147,6 +9494,7 @@ return factionSounds[faction] or "common/wpn_hudoff.wav"
 end
 return "common/wpn_hudoff.wav"
 end)
+
 ```
 
 ---
@@ -9182,6 +9530,7 @@ Client
 hook.Add("WebImageDownloaded", "MyAddon", function(url, material)
 print("Image downloaded: " .. url)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9191,6 +9540,7 @@ hook.Add("WebImageDownloaded", "CacheImages", function(url, material)
 lia.webImage.cache = lia.webImage.cache or {}
 lia.webImage.cache[url] = material
 end)
+
 ```
 
 **High Complexity:**
@@ -9217,6 +9567,7 @@ timestamp = os.time()
 -- Notify completion
 hook.Run("OnWebImageReady", url, material)
 end)
+
 ```
 
 ---
@@ -9252,6 +9603,7 @@ Client
 hook.Add("WebSoundDownloaded", "MyAddon", function(name, path)
 print("Sound downloaded: " .. name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9261,6 +9613,7 @@ hook.Add("WebSoundDownloaded", "CacheSounds", function(name, path)
 lia.webSound.cache = lia.webSound.cache or {}
 lia.webSound.cache[name] = path
 end)
+
 ```
 
 **High Complexity:**
@@ -9287,6 +9640,249 @@ timestamp = os.time()
 -- Notify completion
 hook.Run("OnWebSoundReady", name, path)
 end)
+
+```
+
+---
+
+### ColorToHex
+
+**Purpose**
+
+Allows modification of the voice indicator text displayed when a player is speaking
+
+**When Called**
+
+When the voice indicator is being drawn and a player is currently speaking
+
+**Parameters**
+
+* `client` (*Player*): The LocalPlayer() who is currently speaking
+* `voiceText` (*string*): The current voice indicator text (e.g., "You are talking - 3 players can hear you")
+* `voiceType` (*string*): The voice type string (e.g., "talking", "whispering", "yelling")
+
+**Returns**
+
+* string or nil - Return a string to replace the voice text, or return nil/false to keep the original text
+
+**Realm**
+
+Client
+
+**Example Usage**
+
+**Low Complexity:**
+```lua
+-- Simple: Add emojis to voice indicator
+hook.Add("ModifyVoiceIndicatorText", "AddVoiceEmojis", function(client, voiceText, voiceType)
+    if voiceType == L("whispering") then
+        return "🔇 " .. voiceText .. " 🔇"
+    elseif voiceType == L("yelling") then
+        return "📢 " .. voiceText .. " 📢"
+    elseif voiceType == L("talking") then
+        return "💬 " .. voiceText .. " 💬"
+    end
+    return nil -- Keep original text
+end)
+
+```
+
+**Medium Complexity:**
+```lua
+-- Medium: Custom formatting based on voice type
+hook.Add("ModifyVoiceIndicatorText", "CustomVoiceFormat", function(client, voiceText, voiceType)
+    local char = client:getChar()
+    if not char then return nil end
+    local name = char:getName()
+    if voiceType == L("whispering") then
+        return name .. " is whispering quietly..."
+    elseif voiceType == L("yelling") then
+        return name .. " is YELLING LOUDLY!"
+    elseif voiceType == L("talking") then
+        return name .. " is speaking normally"
+    end
+    return nil -- Keep original text
+end)
+
+```
+
+**High Complexity:**
+```lua
+-- High: Advanced voice indicator with custom styling
+hook.Add("ModifyVoiceIndicatorText", "AdvancedVoiceIndicator", function(client, voiceText, voiceType)
+    local char = client:getChar()
+    if not char then return nil end
+    local name = char:getName()
+    local faction = char:getFaction()
+    local factionData = lia.faction.get(faction)
+    -- Get listener count if voice range is enabled
+    local listenerCount = 0
+    if lia.option.get("voiceRange", false) then
+        -- Calculate listeners (simplified version)
+        local baseRange = voiceType == L("whispering") and lia.config.get("WhisperRange", 70) or
+                         voiceType == L("talking") and lia.config.get("TalkRange", 280) or
+                         voiceType == L("yelling") and lia.config.get("YellRange", 840) or
+                         lia.config.get("TalkRange", 280)
+        local count = 0
+        local clientPos = client:GetPos()
+        for _, ply in player.Iterator() do
+            if ply ~= client and IsValid(ply) and ply:getChar() and ply:Alive() then
+                local distance = clientPos:Distance(ply:GetPos())
+                local clearLOS = IsLineOfSightClear(client, ply)
+                local effectiveRange = clearLOS and baseRange or baseRange * 0.16
+                if distance <= effectiveRange then
+                    count = count + 1
+                end
+            end
+        end
+        listenerCount = count
+    end
+    -- Custom formatting based on faction and voice type
+    local prefix = ""
+    local suffix = ""
+    if factionData and factionData.color then
+        local color = factionData.color
+        prefix = string.format("[%s] ", ColorToHex(color))
+    end
+    if voiceType == L("whispering") then
+        suffix = " whispers softly"
+    elseif voiceType == L("yelling") then
+        suffix = " YELLS LOUDLY"
+    elseif voiceType == L("talking") then
+        suffix = " speaks"
+    end
+    local result = prefix .. name .. suffix
+    if listenerCount > 0 then
+        result = result .. " - " .. listenerCount .. " players can hear you"
+    end
+    return result
+end)
+-- Helper function for color conversion
+function ColorToHex(color)
+    return string.format("#%02X%02X%02X", color.r, color.g, color.b)
+end
+
+```
+
+---
+
+### ModifyVoiceIndicatorText
+
+**Purpose**
+
+Allows modification of the voice indicator text displayed when a player is speaking
+
+**When Called**
+
+When the voice indicator is being drawn and a player is currently speaking
+
+**Parameters**
+
+* `client` (*Player*): The LocalPlayer() who is currently speaking
+* `voiceText` (*string*): The current voice indicator text (e.g., "You are talking - 3 players can hear you")
+* `voiceType` (*string*): The voice type string (e.g., "talking", "whispering", "yelling")
+
+**Returns**
+
+* string or nil - Return a string to replace the voice text, or return nil/false to keep the original text
+
+**Realm**
+
+Client
+
+**Example Usage**
+
+**Low Complexity:**
+```lua
+-- Simple: Add emojis to voice indicator
+hook.Add("ModifyVoiceIndicatorText", "AddVoiceEmojis", function(client, voiceText, voiceType)
+    if voiceType == L("whispering") then
+        return "🔇 " .. voiceText .. " 🔇"
+    elseif voiceType == L("yelling") then
+        return "📢 " .. voiceText .. " 📢"
+    elseif voiceType == L("talking") then
+        return "💬 " .. voiceText .. " 💬"
+    end
+    return nil -- Keep original text
+end)
+
+```
+
+**Medium Complexity:**
+```lua
+-- Medium: Custom formatting based on voice type
+hook.Add("ModifyVoiceIndicatorText", "CustomVoiceFormat", function(client, voiceText, voiceType)
+    local char = client:getChar()
+    if not char then return nil end
+    local name = char:getName()
+    if voiceType == L("whispering") then
+        return name .. " is whispering quietly..."
+    elseif voiceType == L("yelling") then
+        return name .. " is YELLING LOUDLY!"
+    elseif voiceType == L("talking") then
+        return name .. " is speaking normally"
+    end
+    return nil -- Keep original text
+end)
+
+```
+
+**High Complexity:**
+```lua
+-- High: Advanced voice indicator with custom styling
+hook.Add("ModifyVoiceIndicatorText", "AdvancedVoiceIndicator", function(client, voiceText, voiceType)
+    local char = client:getChar()
+    if not char then return nil end
+    local name = char:getName()
+    local faction = char:getFaction()
+    local factionData = lia.faction.get(faction)
+    -- Get listener count if voice range is enabled
+    local listenerCount = 0
+    if lia.option.get("voiceRange", false) then
+        -- Calculate listeners (simplified version)
+        local baseRange = voiceType == L("whispering") and lia.config.get("WhisperRange", 70) or
+                         voiceType == L("talking") and lia.config.get("TalkRange", 280) or
+                         voiceType == L("yelling") and lia.config.get("YellRange", 840) or
+                         lia.config.get("TalkRange", 280)
+        local count = 0
+        local clientPos = client:GetPos()
+        for _, ply in player.Iterator() do
+            if ply ~= client and IsValid(ply) and ply:getChar() and ply:Alive() then
+                local distance = clientPos:Distance(ply:GetPos())
+                local clearLOS = IsLineOfSightClear(client, ply)
+                local effectiveRange = clearLOS and baseRange or baseRange * 0.16
+                if distance <= effectiveRange then
+                    count = count + 1
+                end
+            end
+        end
+        listenerCount = count
+    end
+    -- Custom formatting based on faction and voice type
+    local prefix = ""
+    local suffix = ""
+    if factionData and factionData.color then
+        local color = factionData.color
+        prefix = string.format("[%s] ", ColorToHex(color))
+    end
+    if voiceType == L("whispering") then
+        suffix = " whispers softly"
+    elseif voiceType == L("yelling") then
+        suffix = " YELLS LOUDLY"
+    elseif voiceType == L("talking") then
+        suffix = " speaks"
+    end
+    local result = prefix .. name .. suffix
+    if listenerCount > 0 then
+        result = result .. " - " .. listenerCount .. " players can hear you"
+    end
+    return result
+end)
+-- Helper function for color conversion
+function ColorToHex(color)
+    return string.format("#%02X%02X%02X", color.r, color.g, color.b)
+end
+
 ```
 
 ---

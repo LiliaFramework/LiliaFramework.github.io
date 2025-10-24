@@ -43,6 +43,7 @@ if offset > 0 then -- Only modify regeneration, not drain
 return offset * 1.5 -- 50% faster regeneration
 end
 end)
+
 ```
 
 **Medium Complexity:**
@@ -58,6 +59,7 @@ else -- Drain
 return offset * (1 - con * 0.05) -- 5% less drain per constitution point
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -99,6 +101,7 @@ else
 return offset * modifiers.drain
 end
 end)
+
 ```
 
 ---
@@ -133,6 +136,7 @@ Shared
 hook.Add("CanOutfitChangeModel", "MyAddon", function(self)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -149,6 +153,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -178,6 +183,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -213,6 +219,7 @@ Shared
 hook.Add("CommandAdded", "MyAddon", function(command, data)
 print("Command added: " .. command)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -223,6 +230,7 @@ lia.commandList = lia.commandList or {}
 table.insert(lia.commandList, command)
 print("Command " .. command .. " registered")
 end)
+
 ```
 
 **High Complexity:**
@@ -242,6 +250,7 @@ command,
 tostring(data.adminOnly or false),
 data.syntax or "N/A"))
 end)
+
 ```
 
 ---
@@ -277,6 +286,7 @@ Shared
 hook.Add("DoModuleIncludes", "MyAddon", function(path, MODULE)
 print("Including: " .. path)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -289,6 +299,7 @@ local loadTime = SysTime() - startTime
 print("Loaded " .. path .. " in " .. loadTime .. "s")
 end)
 end)
+
 ```
 
 **High Complexity:**
@@ -312,6 +323,7 @@ lia.moduleLoadTimes = lia.moduleLoadTimes or {}
 lia.moduleLoadTimes[MODULE.name or path] = loadTime
 end)
 end)
+
 ```
 
 ---
@@ -347,6 +359,7 @@ Shared
 hook.Add("GetDisplayedDescription", "MyAddon", function(ply, description)
 return description
 end)
+
 ```
 
 **Medium Complexity:**
@@ -360,6 +373,7 @@ return "[" .. faction .. "] " .. description
 end
 return description
 end)
+
 ```
 
 **High Complexity:**
@@ -382,6 +396,7 @@ prefix = prefix .. "[WANTED] "
 end
 return prefix .. description
 end)
+
 ```
 
 ---
@@ -418,6 +433,7 @@ hook.Add("GetDisplayedName", "MyAddon", function(speaker, chatType)
 local char = speaker:getChar()
 return char and char:getName() or speaker:Name()
 end)
+
 ```
 
 **Medium Complexity:**
@@ -432,6 +448,7 @@ else
 return char:getName()
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -460,6 +477,7 @@ name = "[ADMIN] " .. name
 end
 return name
 end)
+
 ```
 
 ---
@@ -496,6 +514,7 @@ Shared
 hook.Add("GetDoorInfo", "MyAddon", function(entity, doorData, doorInfo)
 return doorInfo
 end)
+
 ```
 
 **Medium Complexity:**
@@ -506,6 +525,7 @@ doorInfo.customField = "Custom Value"
 doorInfo.price = entity:getNetVar("price", 0)
 return doorInfo
 end)
+
 ```
 
 **High Complexity:**
@@ -532,6 +552,7 @@ doorInfo.allowedFactions = allowedFactions
 end
 return doorInfo
 end)
+
 ```
 
 ---
@@ -566,6 +587,7 @@ Shared
 hook.Add("GetModelGender", "MyAddon", function(model)
 return "male"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -577,6 +599,7 @@ return "female"
 end
 return "male"
 end)
+
 ```
 
 **High Complexity:**
@@ -600,6 +623,7 @@ return "female"
 end
 return "male"
 end)
+
 ```
 
 ---
@@ -630,6 +654,7 @@ Shared
 hook.Add("InitializedConfig", "MyAddon", function()
 print("Configuration initialized")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -639,6 +664,7 @@ hook.Add("InitializedConfig", "CustomConfig", function()
 lia.config.add("myAddonEnabled", true, "Enable My Addon")
 lia.config.add("myAddonValue", 100, "My Addon Value")
 end)
+
 ```
 
 **High Complexity:**
@@ -666,6 +692,7 @@ print("My Addon enabled: " .. tostring(value))
 end)
 print("Configuration system initialized with " .. #configOptions .. " options")
 end)
+
 ```
 
 ---
@@ -696,6 +723,7 @@ Shared
 hook.Add("InitializedItems", "MyAddon", function()
 print("Items initialized")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -708,6 +736,7 @@ model = "models/props_junk/cardboard_box004a.mdl",
 description = "A custom item"
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -755,6 +784,7 @@ client:ChatPrint("Used custom weapon!")
 end)
 print("Item system initialized with " .. #customItems .. " custom items")
 end)
+
 ```
 
 ---
@@ -785,6 +815,7 @@ Shared
 hook.Add("InitializedModules", "MyAddon", function()
 print("Modules initialized")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -798,6 +829,7 @@ author = "Me",
 version = "1.0.0"
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -840,6 +872,7 @@ lia.module.setConfig(moduleID, config)
 end
 print("Module system initialized with " .. #modules .. " custom modules")
 end)
+
 ```
 
 ---
@@ -870,6 +903,7 @@ Shared
 hook.Add("InitializedSchema", "MyAddon", function()
 print("Schema initialized")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -879,6 +913,7 @@ hook.Add("InitializedSchema", "CustomSchema", function()
 lia.schema.set("myAddonVersion", "1.0.0")
 lia.schema.set("myAddonEnabled", true)
 end)
+
 ```
 
 **High Complexity:**
@@ -915,6 +950,7 @@ lia.schema.set(key, value)
 end
 print("Schema system initialized with custom data")
 end)
+
 ```
 
 ---
@@ -952,6 +988,7 @@ Shared
 hook.Add("InventoryDataChanged", "MyAddon", function(instance, key, oldValue, value)
 print("Inventory data changed: " .. key .. " = " .. tostring(value))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -964,6 +1001,7 @@ elseif key == "maxWeight" then
 print("Max weight changed from " .. oldValue .. " to " .. value)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -993,6 +1031,7 @@ owner:ChatPrint("Inventory " .. key .. " changed to " .. tostring(value))
 end
 end
 end)
+
 ```
 
 ---
@@ -1027,6 +1066,7 @@ Shared
 hook.Add("InventoryInitialized", "MyAddon", function(instance)
 print("Inventory initialized: " .. instance:getID())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1037,6 +1077,7 @@ instance:setData("weight", 0)
 instance:setData("maxWeight", 100)
 instance:setData("created", os.time())
 end)
+
 ```
 
 **High Complexity:**
@@ -1079,6 +1120,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -1117,6 +1159,7 @@ Shared
 hook.Add("InventoryItemDataChanged", "MyAddon", function(item, key, oldValue, newValue, inventory)
 print("Item data changed: " .. key .. " = " .. tostring(newValue))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1131,6 +1174,7 @@ print("Item " .. item.name .. " is almost broken!")
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1172,6 +1216,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -1207,6 +1252,7 @@ Shared
 hook.Add("IsCharFakeRecognized", "MyAddon", function(self, id)
 return false
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1216,6 +1262,7 @@ hook.Add("IsCharFakeRecognized", "FakeRecognitionCheck", function(self, id)
 local fakeRecognized = self:getData("fakeRecognized", {})
 return table.HasValue(fakeRecognized, id)
 end)
+
 ```
 
 **High Complexity:**
@@ -1237,6 +1284,7 @@ end
 end
 return false
 end)
+
 ```
 
 ---
@@ -1273,6 +1321,7 @@ hook.Add("IsCharRecognized", "MyAddon", function(self, id)
 local recognized = self:getData("recognized", {})
 return table.HasValue(recognized, id)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1290,6 +1339,7 @@ return true
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -1323,6 +1373,7 @@ end
 end
 return false
 end)
+
 ```
 
 ---
@@ -1357,6 +1408,7 @@ Shared
 hook.Add("IsRecognizedChatType", "MyAddon", function(chatType)
 return chatType == "ic"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1366,6 +1418,7 @@ hook.Add("IsRecognizedChatType", "RecognizedChatTypes", function(chatType)
 local recognizedTypes = {"ic", "w", "y"}
 return table.HasValue(recognizedTypes, chatType)
 end)
+
 ```
 
 **High Complexity:**
@@ -1389,6 +1442,7 @@ end
 -- Default to requiring recognition
 return true
 end)
+
 ```
 
 ---
@@ -1419,6 +1473,7 @@ Shared
 hook.Add("IsValid", "MyAddon", function()
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1429,6 +1484,7 @@ hook.Add("IsValid", "EntityStateCheck", function()
 -- IsValid() is a built-in GMod function
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -1440,6 +1496,7 @@ hook.Add("IsValid", "AdvancedValidation", function()
 -- Custom validation logic would go here
 return true
 end)
+
 ```
 
 ---
@@ -1477,6 +1534,7 @@ Shared
 hook.Add("ItemDataChanged", "MyAddon", function(item, key, oldValue, newValue)
 print("Item data changed: " .. key .. " = " .. tostring(newValue))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1491,6 +1549,7 @@ print("Item " .. item.name .. " is almost broken!")
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1538,6 +1597,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -1575,6 +1635,7 @@ use = {name = "Use", icon = "icon16/accept.png"},
 drop = {name = "Drop", icon = "icon16/bin.png"}
 }
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1592,6 +1653,7 @@ functions.unequip = {name = "Unequip", icon = "icon16/delete.png"}
 end
 return functions
 end)
+
 ```
 
 **High Complexity:**
@@ -1622,6 +1684,7 @@ functions.repair = {name = "Repair", icon = "icon16/wrench.png"}
 end
 return functions
 end)
+
 ```
 
 ---
@@ -1656,6 +1719,7 @@ Shared
 hook.Add("ItemInitialized", "MyAddon", function(item)
 print("Item initialized: " .. item.name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1669,6 +1733,7 @@ if not item:getData("quality") then
 item:setData("quality", "common")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1700,6 +1765,7 @@ lia.itemRegistry = lia.itemRegistry or {}
 lia.itemRegistry[item:getID()] = item
 end
 end)
+
 ```
 
 ---
@@ -1736,6 +1802,7 @@ Shared
 hook.Add("ItemQuantityChanged", "MyAddon", function(item, oldValue, quantity)
 print(item.name .. " quantity changed from " .. oldValue .. " to " .. quantity)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1746,6 +1813,7 @@ if quantity <= 0 then
 item:remove()
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1788,6 +1856,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -1818,6 +1887,7 @@ Shared
 hook.Add("LiliaLoaded", "MyAddon", function()
 print("Lilia framework loaded")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1827,6 +1897,7 @@ hook.Add("LiliaLoaded", "InitializeAddon", function()
 MyAddon.Initialize()
 print("MyAddon initialized")
 end)
+
 ```
 
 **High Complexity:**
@@ -1850,6 +1921,7 @@ model = "models/props_lab/box01a.mdl"
 })
 print("MyAddon fully initialized with Lilia")
 end)
+
 ```
 
 ---
@@ -1887,6 +1959,7 @@ Shared
 hook.Add("NetVarChanged", "MyAddon", function(entity, key, oldValue, value)
 print("NetVar changed: " .. key .. " = " .. tostring(value))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1899,6 +1972,7 @@ elseif key == "armor" then
 print("Armor changed from " .. oldValue .. " to " .. value)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -1924,6 +1998,7 @@ end
 -- Trigger custom events
 hook.Run("CustomNetVarChanged_" .. key, entity, oldValue, value)
 end)
+
 ```
 
 ---
@@ -1958,6 +2033,7 @@ Shared
 hook.Add("OnItemRegistered", "MyAddon", function(ITEM)
 print("Item registered: " .. ITEM.name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1971,6 +2047,7 @@ model = ITEM.model,
 registered = os.time()
 }
 end)
+
 ```
 
 **High Complexity:**
@@ -1999,6 +2076,7 @@ net.WriteString(ITEM.uniqueID)
 net.Broadcast()
 end
 end)
+
 ```
 
 ---
@@ -2029,6 +2107,7 @@ Shared
 hook.Add("OnLoaded", "MyAddon", function()
 print("Lilia framework has finished loading")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2043,6 +2122,7 @@ else
 print("Client addon initialized")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2064,6 +2144,7 @@ hook.Add("HUDPaint", "MyAddonHUD", function()
 end)
 end
 end)
+
 ```
 
 ---
@@ -2099,6 +2180,7 @@ Shared
 hook.Add("OnModuleTableCreated", "MyAddon", function(moduleName, moduleTable)
 print("Module created: " .. moduleName)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2112,6 +2194,7 @@ created = os.time(),
 enabled = moduleTable.enabled or false
 }
 end)
+
 ```
 
 **High Complexity:**
@@ -2133,6 +2216,7 @@ moduleTable.data = data
 end)
 end
 end)
+
 ```
 
 ---
@@ -2167,6 +2251,7 @@ Shared
 hook.Add("OnModuleTableRemoved", "MyAddon", function(moduleName)
 print("Module removed: " .. moduleName)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2178,6 +2263,7 @@ MyAddon.modules[moduleName] = nil
 print("Cleaned up data for module: " .. moduleName)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2201,6 +2287,7 @@ ply:ChatPrint("Module " .. moduleName .. " has been removed")
 end
 end
 end)
+
 ```
 
 ---
@@ -2238,6 +2325,7 @@ Shared
 hook.Add("OnPrivilegeRegistered", "MyAddon", function(privilege, name, access, category)
 print("Privilege registered: " .. name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2251,6 +2339,7 @@ access = access,
 category = category
 }
 end)
+
 ```
 
 **High Complexity:**
@@ -2276,6 +2365,7 @@ ply:ChatPrint("New privilege registered: " .. name)
 end
 end
 end)
+
 ```
 
 ---
@@ -2311,6 +2401,7 @@ Shared
 hook.Add("OnPrivilegeUnregistered", "MyAddon", function(privilege, name)
 print("Privilege unregistered: " .. name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2321,6 +2412,7 @@ if MyAddon.privileges and MyAddon.privileges[privilege] then
 MyAddon.privileges[privilege] = nil
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2342,6 +2434,7 @@ char:revokePrivilege(privilege)
 end
 end
 end)
+
 ```
 
 ---
@@ -2376,6 +2469,7 @@ Shared
 hook.Add("OnQuestItemLoaded", "MyAddon", function(item)
 print("Quest item loaded: " .. item.name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2389,6 +2483,7 @@ name = item.name,
 loaded = os.time()
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -2413,6 +2508,7 @@ lia.data.set("questItems", data)
 end)
 end
 end)
+
 ```
 
 ---
@@ -2449,6 +2545,7 @@ Shared
 hook.Add("OptionChanged", "MyAddon", function(key, old, value)
 print("Option " .. key .. " changed from " .. tostring(old) .. " to " .. tostring(value))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2463,6 +2560,7 @@ new = value,
 time = os.time()
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -2490,6 +2588,7 @@ net.WriteType(value)
 net.Broadcast()
 end
 end)
+
 ```
 
 ---
@@ -2525,6 +2624,7 @@ Shared
 hook.Add("OverrideFactionDesc", "MyAddon", function(uniqueID, description)
 return "[FACTION] " .. description
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2535,6 +2635,7 @@ if uniqueID == "citizen" then
 return "Citizens are the backbone of society."
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2553,6 +2654,7 @@ end
 end
 return description .. "\n\nCurrent Members: " .. count
 end)
+
 ```
 
 ---
@@ -2591,6 +2693,7 @@ table.insert(models, "models/player/group01/male_01.mdl")
 return models
 end
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2604,6 +2707,7 @@ return {
 }
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2628,6 +2732,7 @@ end
 return filtered
 end
 end)
+
 ```
 
 ---
@@ -2663,6 +2768,7 @@ Shared
 hook.Add("OverrideFactionName", "MyAddon", function(uniqueID, name)
 return "[" .. uniqueID:upper() .. "] " .. name
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2676,6 +2782,7 @@ medic = "Médecin"
 }
 return localizedNames[uniqueID] or name
 end)
+
 ```
 
 **High Complexity:**
@@ -2699,6 +2806,7 @@ status = " [RECRUITING]"
 end
 return name .. " (" .. count .. ")" .. status
 end)
+
 ```
 
 ---
@@ -2733,6 +2841,7 @@ Shared
 hook.Add("PlayerStaminaDepleted", "MyAddon", function(player)
 print(player:Name() .. " ran out of stamina")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2744,6 +2853,7 @@ player:SetRunSpeed(150)
 player:SetWalkSpeed(75)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2773,6 +2883,7 @@ end
 end)
 end
 end)
+
 ```
 
 ---
@@ -2807,6 +2918,7 @@ Shared
 hook.Add("PlayerStaminaGained", "MyAddon", function(self)
 print(self:Name() .. " gained stamina")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2821,6 +2933,7 @@ char:setData("staminaGains", staminaGains + 1)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2842,6 +2955,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -2876,6 +2990,7 @@ Shared
 hook.Add("PlayerStaminaLost", "MyAddon", function(self)
 print(self:Name() .. " lost stamina")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2890,6 +3005,7 @@ char:setData("staminaLoss", staminaLoss + 1)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -2909,6 +3025,7 @@ self:ChatPrint("Warning: Stamina is critically low!")
 end
 end
 end)
+
 ```
 
 ---
@@ -2939,6 +3056,7 @@ Shared
 hook.Add("PreLiliaLoaded", "MyAddon", function()
 print("Lilia is about to load")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2948,6 +3066,7 @@ hook.Add("PreLiliaLoaded", "InitializeAddon", function()
 MyAddon.PreInitialize()
 print("Addon pre-initialized")
 end)
+
 ```
 
 **High Complexity:**
@@ -2964,6 +3083,7 @@ MyAddon.config.debug = false
 hook.Add("PlayerInitialSpawn", "MyAddonSpawn", MyAddon.OnPlayerSpawn)
 print("Advanced pre-load initialization completed")
 end)
+
 ```
 
 ---
@@ -2998,6 +3118,7 @@ Shared
 hook.Add("calcStaminaChange", "MyAddon", function(client)
 return 1
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3009,6 +3130,7 @@ if not char then return 1 end
 local endurance = char:getAttrib("end", 0)
 return 1 + (endurance * 0.1)
 end)
+
 ```
 
 **High Complexity:**
@@ -3053,6 +3175,7 @@ end
 local finalChange = baseChange + attrBonus + factionBonus + itemBonus + statusPenalty
 return math.max(0.1, finalChange)
 end)
+
 ```
 
 ---
@@ -3087,6 +3210,7 @@ Shared
 hook.Add("getData", "MyAddon", function(default)
 return default
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3099,6 +3223,7 @@ return default
 end
 return data
 end)
+
 ```
 
 **High Complexity:**
@@ -3126,6 +3251,7 @@ expiry = CurTime() + 60
 lia.data.cache = cache
 return data
 end)
+
 ```
 
 ---

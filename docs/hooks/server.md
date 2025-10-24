@@ -44,6 +44,7 @@ Server
 ```lua
 -- Simple: Add a basic warning
 hook.Run("AddWarning", charID, playerName, steamID, os.time(), "Rule violation", adminName, adminSteamID)
+
 ```
 
 **Medium Complexity:**
@@ -53,6 +54,7 @@ local reason = "Excessive RDM - 3 kills in 5 minutes"
 local timestamp = os.time()
 hook.Run("AddWarning", target:getChar():getID(), target:Nick(), target:SteamID(),
 timestamp, reason, client:Nick(), client:SteamID())
+
 ```
 
 **High Complexity:**
@@ -77,6 +79,7 @@ target:Kick("Too many warnings")
 end
 end
 end)
+
 ```
 
 ---
@@ -114,6 +117,7 @@ Server
 hook.Add("AdjustCreationData", "MyAddon", function(client, data, newData, originalData)
 data.money = data.money + 1000 -- Give extra starting money
 end)
+
 ```
 
 **Medium Complexity:**
@@ -127,6 +131,7 @@ elseif data.faction == "citizen" then
 data.money = data.money + 200 -- Citizens get small bonus
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -155,6 +160,7 @@ end
 data.creationTime = os.time()
 data.creationIP = client:IPAddress()
 end)
+
 ```
 
 ---
@@ -190,6 +196,7 @@ Server
 hook.Add("BagInventoryReady", "MyAddon", function(self, inventory)
 print("Bag inventory ready for item: " .. self.uniqueID)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -204,6 +211,7 @@ inventory:add(magicItem)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -240,6 +248,7 @@ inventory:add(item)
 end
 end
 end
+end
 -- Set up access rules based on character data
 local charLevel = char:getData("level", 1)
 if charLevel >= 10 then
@@ -250,6 +259,7 @@ end
 print(string.format("Bag inventory created for %s (Level %d, Faction: %s)",
 char:getName(), charLevel, faction))
 end)
+
 ```
 
 ---
@@ -285,6 +295,7 @@ Server
 hook.Add("BagInventoryRemoved", "MyAddon", function(self, inv)
 print("Bag inventory removed for item: " .. self.uniqueID)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -296,6 +307,7 @@ if char then
 char:setData("bagCount", (char:getData("bagCount", 0) - 1))
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -320,6 +332,7 @@ end
 char:getPlayer():ChatPrint("Valuable items recovered from destroyed bag!")
 end
 end)
+
 ```
 
 ---
@@ -356,6 +369,7 @@ Server
 hook.Add("CanBeTransfered", "MyAddon", function(targetChar, faction, client)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -368,6 +382,7 @@ return false -- Police can't become criminals
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -401,6 +416,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -437,6 +453,7 @@ Server
 hook.Add("CanCharBeTransfered", "MyAddon", function(targetChar, faction, client)
 return hook.Run("CanBeTransfered", targetChar, faction, client)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -454,6 +471,7 @@ return false -- Must be 21+ to be police
 end
 return hook.Run("CanBeTransfered", targetChar, faction, client)
 end)
+
 ```
 
 **High Complexity:**
@@ -491,6 +509,7 @@ return false
 end
 return hook.Run("CanBeTransfered", targetChar, faction, client)
 end)
+
 ```
 
 ---
@@ -526,6 +545,7 @@ Server
 hook.Add("CanDeleteChar", "MyAddon", function(client, character)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -539,6 +559,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -574,6 +595,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -609,6 +631,7 @@ Server
 hook.Add("CanInviteToClass", "MyAddon", function(client, target)
 return client:IsAdmin()
 end)
+
 ```
 
 **Medium Complexity:**
@@ -620,6 +643,7 @@ if not char then return false end
 local rank = char:getData("rank", 0)
 return rank >= 3
 end)
+
 ```
 
 **High Complexity:**
@@ -649,6 +673,7 @@ end
 char:setData("lastClassInvite", os.time())
 return true
 end)
+
 ```
 
 ---
@@ -684,6 +709,7 @@ Server
 hook.Add("CanInviteToFaction", "MyAddon", function(client, target)
 return client:IsAdmin()
 end)
+
 ```
 
 **Medium Complexity:**
@@ -694,6 +720,7 @@ local char = client:getChar()
 if not char then return false end
 return char:getData("factionLeader", false)
 end)
+
 ```
 
 **High Complexity:**
@@ -731,6 +758,7 @@ end
 char:setData("lastFactionInvite", os.time())
 return true
 end)
+
 ```
 
 ---
@@ -768,6 +796,7 @@ Server
 hook.Add("CanItemBeTransfered", "MyAddon", function(item, fromInventory, toInventory, client)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -784,6 +813,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -841,6 +871,7 @@ end
 end
 return true
 end)
+
 ```
 
 ---
@@ -877,6 +908,7 @@ hook.Add("CanPerformVendorEdit", "MyAddon", function(self, vendor)
 local client = self.activator
 return client and client:IsAdmin()
 end)
+
 ```
 
 **Medium Complexity:**
@@ -890,6 +922,7 @@ if not char then return false end
 local owner = vendor.owner
 return owner == char:getID() or client:IsAdmin()
 end)
+
 ```
 
 **High Complexity:**
@@ -917,6 +950,7 @@ end
 char:setData("lastVendorEdit", os.time())
 return true
 end)
+
 ```
 
 ---
@@ -951,6 +985,7 @@ Server
 hook.Add("CanPersistEntity", "MyAddon", function(entity)
 return entity:GetClass() == "prop_physics"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -964,6 +999,7 @@ local persistClasses = {
 }
 return persistClasses[entity:GetClass()] or false
 end)
+
 ```
 
 **High Complexity:**
@@ -1000,6 +1036,7 @@ end
 end
 return true
 end)
+
 ```
 
 ---
@@ -1035,6 +1072,7 @@ Server
 hook.Add("CanPickupMoney", "MyAddon", function(activator, self)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1051,6 +1089,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -1092,6 +1131,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -1128,6 +1168,7 @@ Server
 hook.Add("CanPlayerAccessDoor", "MyAddon", function(client, self, access)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1139,6 +1180,7 @@ if not char then return false end
 local owner = self:getNetVar("owner")
 return owner == char:getID()
 end)
+
 ```
 
 **High Complexity:**
@@ -1164,6 +1206,7 @@ return true
 end
 return false
 end)
+
 ```
 
 ---
@@ -1199,6 +1242,7 @@ Server
 hook.Add("CanPlayerAccessVendor", "MyAddon", function(activator, self)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1213,6 +1257,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -1243,6 +1288,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -1277,6 +1323,7 @@ Server
 hook.Add("CanPlayerChooseWeapon", "MyAddon", function(weapon)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1286,6 +1333,7 @@ hook.Add("CanPlayerChooseWeapon", "RestrictWeapons", function(weapon)
 local restrictedWeapons = {"weapon_crowbar", "weapon_stunstick"}
 return not table.HasValue(restrictedWeapons, weapon:GetClass())
 end)
+
 ```
 
 **High Complexity:**
@@ -1319,6 +1367,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -1354,6 +1403,7 @@ Server
 hook.Add("CanPlayerCreateChar", "MyAddon", function(client, data)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1368,6 +1418,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -1419,6 +1470,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -1454,6 +1506,7 @@ Server
 hook.Add("CanPlayerDropItem", "MyAddon", function(client, item)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1472,6 +1525,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -1539,6 +1593,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -1573,6 +1628,7 @@ Server
 hook.Add("CanPlayerEarnSalary", "MyAddon", function(client)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1585,6 +1641,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -1613,6 +1670,7 @@ end
 end
 return true
 end)
+
 ```
 
 ---
@@ -1648,6 +1706,7 @@ Server
 hook.Add("CanPlayerEquipItem", "MyAddon", function(client, item)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1666,6 +1725,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -1742,6 +1802,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -1777,6 +1838,7 @@ Server
 hook.Add("CanPlayerHoldObject", "MyAddon", function(client, entity)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1789,6 +1851,7 @@ return true
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -1818,6 +1881,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -1855,6 +1919,7 @@ Server
 hook.Add("CanPlayerInteractItem", "MyAddon", function(client, action, self, data)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1872,6 +1937,7 @@ return true
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -1911,6 +1977,7 @@ end
 end
 return true
 end)
+
 ```
 
 ---
@@ -1947,6 +2014,7 @@ Server
 hook.Add("CanPlayerJoinClass", "MyAddon", function(client, class, info)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -1961,6 +2029,7 @@ return true
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -1986,6 +2055,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -2020,6 +2090,7 @@ Server
 hook.Add("CanPlayerKnock", "MyAddon", function(client)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2033,6 +2104,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -2060,6 +2132,7 @@ end
 char:setData("lastKnock", os.time())
 return true
 end)
+
 ```
 
 ---
@@ -2095,6 +2168,7 @@ Server
 hook.Add("CanPlayerLock", "MyAddon", function(client, door)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2107,6 +2181,7 @@ return true
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -2134,6 +2209,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -2169,6 +2245,7 @@ Server
 hook.Add("CanPlayerModifyConfig", "MyAddon", function(client, key)
 return client:IsAdmin()
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2182,6 +2259,7 @@ return true
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -2209,6 +2287,7 @@ end
 client:ChatPrint("You don't have permission to modify config")
 return false
 end)
+
 ```
 
 ---
@@ -2243,6 +2322,7 @@ Server
 hook.Add("CanPlayerOpenScoreboard", "MyAddon", function(client)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2256,6 +2336,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -2279,6 +2360,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -2314,6 +2396,7 @@ Server
 hook.Add("CanPlayerRotateItem", "MyAddon", function(client, item)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2326,6 +2409,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -2346,6 +2430,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -2381,6 +2466,7 @@ Server
 hook.Add("CanPlayerSeeLogCategory", "MyAddon", function(client, k)
 return client:IsAdmin()
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2394,6 +2480,7 @@ return true
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -2419,6 +2506,7 @@ return true
 end
 return false
 end)
+
 ```
 
 ---
@@ -2455,6 +2543,7 @@ Server
 hook.Add("CanPlayerSpawnStorage", "MyAddon", function(client, entity, info)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2468,6 +2557,7 @@ return true
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -2499,6 +2589,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -2535,6 +2626,7 @@ Server
 hook.Add("CanPlayerSwitchChar", "MyAddon", function(client, currentChar, character)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2548,6 +2640,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -2583,6 +2676,7 @@ end
 currentChar:setData("lastSwitch", os.time())
 return true
 end)
+
 ```
 
 ---
@@ -2618,6 +2712,7 @@ Server
 hook.Add("CanPlayerTakeItem", "MyAddon", function(client, item)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2637,6 +2732,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -2710,6 +2806,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -2744,6 +2841,7 @@ Server
 hook.Add("CanPlayerThrowPunch", "MyAddon", function(client)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2757,6 +2855,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -2783,6 +2882,7 @@ end
 char:setData("lastPunch", CurTime())
 return true
 end)
+
 ```
 
 ---
@@ -2820,6 +2920,7 @@ Server
 hook.Add("CanPlayerTradeWithVendor", "MyAddon", function(client, vendor, itemType, isSellingToVendor)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2835,6 +2936,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -2872,6 +2974,7 @@ end
 char:setData("lastVendorTrade", os.time())
 return true
 end)
+
 ```
 
 ---
@@ -2907,6 +3010,7 @@ Server
 hook.Add("CanPlayerUnequipItem", "MyAddon", function(client, item)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -2925,6 +3029,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -2987,6 +3092,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -3022,6 +3128,7 @@ Server
 hook.Add("CanPlayerUnlock", "MyAddon", function(client, door)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3034,6 +3141,7 @@ return true
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -3056,6 +3164,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -3091,6 +3200,7 @@ Server
 hook.Add("CanPlayerUseChar", "MyAddon", function(client, character)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3102,6 +3212,7 @@ return true
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -3125,6 +3236,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -3160,6 +3272,7 @@ Server
 hook.Add("CanPlayerUseCommand", "MyAddon", function(client, command)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3172,6 +3285,7 @@ return client:IsAdmin()
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -3211,6 +3325,7 @@ end
 char:setData("lastCommand_" .. command, os.time())
 return true
 end)
+
 ```
 
 ---
@@ -3246,6 +3361,7 @@ Server
 hook.Add("CanPlayerUseDoor", "MyAddon", function(client, door)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3258,6 +3374,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -3289,6 +3406,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -3319,6 +3437,7 @@ Server
 hook.Add("CanPlayerViewInventory", "MyAddon", function()
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3336,6 +3455,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -3396,6 +3516,7 @@ end
 end
 return true
 end)
+
 ```
 
 ---
@@ -3431,6 +3552,7 @@ Server
 hook.Add("CanRunItemAction", "MyAddon", function(itemTable, k)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3447,6 +3569,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -3480,6 +3603,7 @@ end
 end
 return true
 end)
+
 ```
 
 ---
@@ -3515,6 +3639,7 @@ Server
 hook.Add("CanSaveData", "MyAddon", function(ent, inventory)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3531,6 +3656,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -3562,6 +3688,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -3596,6 +3723,7 @@ Server
 hook.Add("CharCleanUp", "MyAddon", function(character)
 print("Character cleaned up: " .. character:getName())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3609,6 +3737,7 @@ character:setData("tempData", nil)
 character:setData("cachedData", nil)
 print("Character data cleaned up: " .. character:getName())
 end)
+
 ```
 
 **High Complexity:**
@@ -3638,6 +3767,7 @@ character:setData("lastAng", nil)
 print(string.format("Character %s (ID: %d) cleaned up",
 character:getName(), character:getID()))
 end)
+
 ```
 
 ---
@@ -3673,6 +3803,7 @@ Server
 hook.Add("CharDeleted", "MyAddon", function(client, character)
 print(client:Name() .. " deleted character: " .. character:getName())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3689,6 +3820,7 @@ ply:ChatPrint(character:getName() .. " was deleted")
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -3747,6 +3879,7 @@ end
 print(string.format("%s deleted character %s (Faction: %s)",
 client:Name(), character:getName(), faction))
 end)
+
 ```
 
 ---
@@ -3782,6 +3915,7 @@ Server
 hook.Add("CharForceRecognized", "MyAddon", function(ply, range)
 print(ply:Name() .. " was force recognized")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3797,6 +3931,7 @@ char:setData("recognitionTime", os.time())
 ply:ChatPrint("You have been force recognized")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -3838,6 +3973,7 @@ ply:ChatPrint("You have been force recognized")
 print(string.format("%s was force recognized (Faction: %s, Range: %d)",
 ply:Name(), faction, range))
 end)
+
 ```
 
 ---
@@ -3873,6 +4009,7 @@ Server
 hook.Add("CharHasFlags", "MyAddon", function(self, flags)
 return self:getData("flags", ""):find(flags) ~= nil
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3888,6 +4025,7 @@ local factionFlags = {
 local hasFactionFlags = factionFlags[faction] or ""
 return hasFactionFlags:find(flags) ~= nil
 end)
+
 ```
 
 **High Complexity:**
@@ -3922,6 +4060,7 @@ return true
 end
 return false
 end)
+
 ```
 
 ---
@@ -3956,6 +4095,7 @@ Server
 hook.Add("CharLoaded", "MyAddon", function(id)
 print("Character loaded: " .. id)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -3970,6 +4110,7 @@ character:setData("loadTime", os.time())
 print("Character " .. character:getName() .. " loaded successfully")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -4011,6 +4152,7 @@ end
 print(string.format("Character %s (ID: %d, Faction: %s, Level: %d) loaded successfully",
 name, id, faction, level))
 end)
+
 ```
 
 ---
@@ -4045,6 +4187,7 @@ Server
 hook.Add("CharPostSave", "MyAddon", function(self)
 print("Character " .. self:getName() .. " saved")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4054,6 +4197,7 @@ hook.Add("CharPostSave", "SaveTimestamp", function(self)
 self:setData("lastSave", os.time())
 print("Character " .. self:getName() .. " saved at " .. os.date("%H:%M:%S"))
 end)
+
 ```
 
 **High Complexity:**
@@ -4072,6 +4216,7 @@ print("Backup created for character " .. self:getName())
 end
 print(string.format("Character %s saved (Save #%d)", self:getName(), saveCount))
 end)
+
 ```
 
 ---
@@ -4106,6 +4251,7 @@ Server
 hook.Add("CharPreSave", "MyAddon", function(character)
 print("Saving character: " .. character:getName())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4119,6 +4265,7 @@ character:setMoney(0)
 print("Fixed negative money for " .. character:getName())
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -4145,6 +4292,7 @@ end
 character:setData("preSaveTime", os.time())
 print("Character " .. character:getName() .. " validated and ready for save")
 end)
+
 ```
 
 ---
@@ -4179,6 +4327,7 @@ Server
 hook.Add("CharRestored", "MyAddon", function(character)
 print("Character " .. character:getName() .. " restored")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4189,6 +4338,7 @@ character:setData("restored", true)
 character:setData("restoreTime", os.time())
 print("Character " .. character:getName() .. " restored successfully")
 end)
+
 ```
 
 **High Complexity:**
@@ -4209,6 +4359,7 @@ character:setData("unconscious", false)
 character:setData("bleeding", false)
 print("Character " .. character:getName() .. " fully restored")
 end)
+
 ```
 
 ---
@@ -4246,6 +4397,7 @@ Server
 hook.Add("ChatParsed", "MyAddon", function(client, chatType, message, anonymous)
 print(client:Name() .. " sent " .. chatType .. " message: " .. message)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4258,6 +4410,7 @@ client:ChatPrint("Message too long")
 return false
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -4281,6 +4434,7 @@ end
 -- Log chat
 lia.log.add(client, "chat", chatType, message)
 end)
+
 ```
 
 ---
@@ -4317,6 +4471,7 @@ Server
 hook.Add("CheckFactionLimitReached", "MyAddon", function(faction, character, client)
 return false
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4336,6 +4491,7 @@ return count >= factionData.limit
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -4368,6 +4524,7 @@ return true
 end
 return false
 end)
+
 ```
 
 ---
@@ -4405,6 +4562,7 @@ Server
 hook.Add("CommandRan", "MyAddon", function(client, command, arguments, results)
 print(client:Name() .. " ran command: " .. command)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4417,6 +4575,7 @@ local commandCount = char:getData("commandCount", 0) + 1
 char:setData("commandCount", commandCount)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -4446,6 +4605,7 @@ lia.log.add(client, "command", command, table.concat(arguments, " "))
 print(string.format("%s ran command: %s (Args: %d, Success: %s)",
 client:Name(), command, #arguments, tostring(results ~= false)))
 end)
+
 ```
 
 ---
@@ -4483,6 +4643,7 @@ Server
 hook.Add("ConfigChanged", "MyAddon", function(key, value, oldValue, client)
 print("Config changed: " .. key .. " = " .. tostring(value))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4495,6 +4656,7 @@ elseif key == "serverName" then
 RunConsoleCommand("hostname", value)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -4528,6 +4690,7 @@ ply:ChatPrint("[CONFIG] " .. key .. " changed to: " .. tostring(value))
 end
 end
 end)
+
 ```
 
 ---
@@ -4562,6 +4725,7 @@ Server
 hook.Add("CreateCharacter", "MyAddon", function(data)
 print("Creating character: " .. data.name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4572,6 +4736,7 @@ data.items = data.items or {}
 table.insert(data.items, "wallet")
 table.insert(data.items, "phone")
 end)
+
 ```
 
 **High Complexity:**
@@ -4597,6 +4762,7 @@ end
 data.createdAt = os.time()
 print("Character " .. data.name .. " created with " .. #data.items .. " items")
 end)
+
 ```
 
 ---
@@ -4631,6 +4797,7 @@ Server
 hook.Add("CreateDefaultInventory", "MyAddon", function(character)
 print("Creating inventory for: " .. character:getName())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4646,6 +4813,7 @@ local sizes = {
 local size = sizes[faction] or {w = 6, h = 4}
 character:getInv():setSize(size.w, size.h)
 end)
+
 ```
 
 **High Complexity:**
@@ -4684,6 +4852,7 @@ end
 end
 print("Inventory created for " .. character:getName() .. " (" .. size.w .. "x" .. size.h .. ")")
 end)
+
 ```
 
 ---
@@ -4721,6 +4890,7 @@ end
 end
 end)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4744,6 +4914,7 @@ end
 end
 end)
 end)
+
 ```
 
 **High Complexity:**
@@ -4778,6 +4949,7 @@ char:setData("totalSalaryEarned", totalEarned + totalSalary)
 end
 end)
 end)
+
 ```
 
 ---
@@ -4813,6 +4985,7 @@ Server
 hook.Add("CustomClassValidation", "MyAddon", function(client, newClass)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4834,6 +5007,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -4883,6 +5057,7 @@ end
 end
 return true
 end)
+
 ```
 
 ---
@@ -4918,6 +5093,7 @@ Server
 hook.Add("CustomLogHandler", "MyAddon", function(message, category)
 print("[" .. category .. "] " .. message)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4929,6 +5105,7 @@ if table.HasValue(importantCategories, category) then
 print("[IMPORTANT][" .. category .. "] " .. message)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -4959,6 +5136,7 @@ timestamp = os.date("!%Y-%m-%dT%H:%M:%S")
 hook.Run("DiscordRelaySend", embed)
 end
 end)
+
 ```
 
 ---
@@ -4989,6 +5167,7 @@ Server
 hook.Add("DatabaseConnected", "MyAddon", function()
 print("Database connected")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -4998,6 +5177,7 @@ hook.Add("DatabaseConnected", "DatabaseInit", function()
 lia.db.query("CREATE TABLE IF NOT EXISTS custom_data (id INTEGER PRIMARY KEY, data TEXT)")
 print("Database connected and tables initialized")
 end)
+
 ```
 
 **High Complexity:**
@@ -5017,6 +5197,7 @@ end
 lia.db.query("CREATE INDEX IF NOT EXISTS idx_player_stats_steamid ON player_stats(steamid)")
 print("Database connected and fully initialized")
 end)
+
 ```
 
 ---
@@ -5051,6 +5232,7 @@ Server
 hook.Add("DeleteCharacter", "MyAddon", function(id)
 print("Character " .. id .. " deleted")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5061,6 +5243,7 @@ lia.db.query("DELETE FROM character_items WHERE charid = ?", id)
 lia.db.query("DELETE FROM character_stats WHERE charid = ?", id)
 print("Character " .. id .. " deleted and data cleaned up")
 end)
+
 ```
 
 **High Complexity:**
@@ -5081,6 +5264,7 @@ end
 end
 print("Character " .. id .. " deleted and archived")
 end)
+
 ```
 
 ---
@@ -5115,6 +5299,7 @@ Server
 hook.Add("DiscordRelaySend", "MyAddon", function(embed)
 print("Sending Discord message: " .. (embed.title or "No title"))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5126,6 +5311,7 @@ text = "Server: " .. GetHostName()
 }
 print("Sending Discord message with server info")
 end)
+
 ```
 
 **High Complexity:**
@@ -5152,6 +5338,7 @@ end
 end
 print("Sending Discord message: " .. (embed.title or "No title"))
 end)
+
 ```
 
 ---
@@ -5182,6 +5369,7 @@ Server
 hook.Add("DiscordRelayUnavailable", "MyAddon", function()
 print("Discord relay is unavailable")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5194,6 +5382,7 @@ ply:ChatPrint("Discord relay is unavailable")
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5214,6 +5403,7 @@ print("Attempting to reconnect Discord relay...")
 -- Reconnection logic here
 end)
 end)
+
 ```
 
 ---
@@ -5248,6 +5438,7 @@ Server
 hook.Add("DiscordRelayed", "MyAddon", function(embed)
 print("Message relayed to Discord")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5258,6 +5449,7 @@ local relayCount = lia.data.get("discordRelayCount", 0)
 lia.data.set("discordRelayCount", relayCount + 1)
 print("Message relayed to Discord (Total: " .. (relayCount + 1) .. ")")
 end)
+
 ```
 
 **High Complexity:**
@@ -5277,6 +5469,7 @@ relayTypes[msgType] = (relayTypes[msgType] or 0) + 1
 lia.data.set("discordRelayTypes", relayTypes)
 print("Message relayed to Discord: " .. msgType)
 end)
+
 ```
 
 ---
@@ -5313,6 +5506,7 @@ Server
 hook.Add("DoorEnabledToggled", "MyAddon", function(client, door, newState)
 print(client:Name() .. " set door to " .. (newState and "enabled" or "disabled"))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5326,6 +5520,7 @@ ply:ChatPrint("A door has been " .. (newState and "enabled" or "disabled"))
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5349,6 +5544,7 @@ end
 lia.db.query("INSERT INTO door_logs (timestamp, steamid, doorid, action) VALUES (?, ?, ?, ?)",
 os.time(), client:SteamID(), door:MapCreationID(), newState and "enabled" or "disabled")
 end)
+
 ```
 
 ---
@@ -5385,6 +5581,7 @@ Server
 hook.Add("DoorHiddenToggled", "MyAddon", function(client, entity, newState)
 print(client:Name() .. " toggled door visibility to " .. tostring(newState))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5398,6 +5595,7 @@ ply:ChatPrint("A door has been " .. (newState and "hidden" or "made visible"))
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5427,6 +5625,7 @@ entity:SetNoDraw(false)
 entity:SetCollisionGroup(COLLISION_GROUP_NONE)
 end
 end)
+
 ```
 
 ---
@@ -5464,6 +5663,7 @@ hook.Add("DoorLockToggled", "MyAddon", function(client, door, state)
 local status = state and "locked" or "unlocked"
 print(client:Name() .. " " .. status .. " door " .. door:EntIndex())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5479,6 +5679,7 @@ if char then
 char:setData("doorsLocked", (char:getData("doorsLocked", 0) + 1))
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5531,6 +5732,7 @@ end
 print(string.format("%s %s door %s at %s",
 client:Name(), state and "locked" or "unlocked", door:EntIndex(), os.date("%Y-%m-%d %H:%M:%S")))
 end)
+
 ```
 
 ---
@@ -5567,6 +5769,7 @@ Server
 hook.Add("DoorOwnableToggled", "MyAddon", function(client, door, newState)
 print(client:Name() .. " set door ownable to: " .. tostring(newState))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5581,6 +5784,7 @@ if not newState then
 door:setNetVar("owner", nil)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5620,6 +5824,7 @@ end
 print(string.format("%s set door %s ownable to: %s",
 client:Name(), door:EntIndex(), tostring(newState)))
 end)
+
 ```
 
 ---
@@ -5656,6 +5861,7 @@ Server
 hook.Add("DoorPriceSet", "MyAddon", function(client, door, price)
 print(client:Name() .. " set door price to $" .. price)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5669,6 +5875,7 @@ end
 door:setNetVar("price", price)
 client:ChatPrint("Door price set to $" .. price)
 end)
+
 ```
 
 **High Complexity:**
@@ -5707,6 +5914,7 @@ client:ChatPrint("Door price set to $" .. price)
 lia.db.query("INSERT INTO door_logs (timestamp, steamid, doorid, action, value) VALUES (?, ?, ?, ?, ?)",
 os.time(), client:SteamID(), door:MapCreationID(), "price_set", price)
 end)
+
 ```
 
 ---
@@ -5743,6 +5951,7 @@ Server
 hook.Add("DoorTitleSet", "MyAddon", function(client, door, name)
 print(client:Name() .. " set door title to: " .. name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5756,6 +5965,7 @@ end
 door:setNetVar("title", name)
 client:ChatPrint("Door title set to: " .. name)
 end)
+
 ```
 
 **High Complexity:**
@@ -5802,6 +6012,7 @@ client:ChatPrint("Door title set to: " .. name)
 lia.db.query("INSERT INTO door_logs (timestamp, steamid, doorid, action, value) VALUES (?, ?, ?, ?, ?)",
 os.time(), client:SteamID(), door:MapCreationID(), "title_set", name)
 end)
+
 ```
 
 ---
@@ -5832,6 +6043,7 @@ Server
 hook.Add("FetchSpawns", "MyAddon", function()
 print("Fetching spawn points")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5842,6 +6054,7 @@ local spawns = lia.db.query("SELECT * FROM spawns")
 lia.spawns = spawns
 print("Loaded " .. #spawns .. " spawn points")
 end)
+
 ```
 
 **High Complexity:**
@@ -5872,6 +6085,7 @@ for faction, factionSpawns in pairs(lia.spawns) do
 print(faction .. " spawns: " .. #factionSpawns)
 end
 end)
+
 ```
 
 ---
@@ -5908,6 +6122,7 @@ Server
 hook.Add("ForceRecognizeRange", "MyAddon", function(ply, range, fakeName)
 print("Set recognition range for " .. ply:Name() .. ": " .. range)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5922,6 +6137,7 @@ char:setData("fakeName", fakeName)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -5950,6 +6166,7 @@ end
 print(string.format("Recognition range set for %s: %d units (Fake name: %s)",
 ply:Name(), range, fakeName or "None"))
 end)
+
 ```
 
 ---
@@ -5980,6 +6197,7 @@ Server
 hook.Add("GetAllCaseClaims", "MyAddon", function()
 return {}
 end)
+
 ```
 
 **Medium Complexity:**
@@ -5989,6 +6207,7 @@ hook.Add("GetAllCaseClaims", "ClaimsLoading", function()
 local claims = lia.db.query("SELECT * FROM case_claims WHERE active = 1")
 return claims or {}
 end)
+
 ```
 
 **High Complexity:**
@@ -6023,6 +6242,7 @@ return a.createdAt > b.createdAt
 end)
 return processedClaims
 end)
+
 ```
 
 ---
@@ -6058,6 +6278,7 @@ Shared
 hook.Add("GetAttributeMax", "MyAddon", function(target, attrKey)
 return 100
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6071,6 +6292,7 @@ local maxes = {
 }
 return maxes[attrKey] or 100
 end)
+
 ```
 
 **High Complexity:**
@@ -6105,6 +6327,7 @@ end
 end
 return baseMax
 end)
+
 ```
 
 ---
@@ -6140,6 +6363,7 @@ Server
 hook.Add("GetAttributeStartingMax", "MyAddon", function(client, k)
 return 50
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6153,6 +6377,7 @@ local startingMaxes = {
 }
 return startingMaxes[k] or 50
 end)
+
 ```
 
 **High Complexity:**
@@ -6179,6 +6404,7 @@ local attrBonuses = {
 baseMax = baseMax + (attrBonuses[k] or 0)
 return baseMax
 end)
+
 ```
 
 ---
@@ -6213,6 +6439,7 @@ Server
 hook.Add("GetCharMaxStamina", "MyAddon", function(char)
 return 100
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6222,6 +6449,7 @@ hook.Add("GetCharMaxStamina", "ConstitutionStamina", function(char)
 local con = char:getAttrib("con", 0)
 return 100 + (con * 5)
 end)
+
 ```
 
 **High Complexity:**
@@ -6272,6 +6500,7 @@ end
 end
 return math.max(math.floor(finalStamina), 10) -- Minimum of 10
 end)
+
 ```
 
 ---
@@ -6308,6 +6537,7 @@ Server
 hook.Add("GetDamageScale", "MyAddon", function(hitgroup, dmgInfo, damageScale)
 return damageScale
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6321,6 +6551,7 @@ return damageScale * 0.5
 end
 return damageScale
 end)
+
 ```
 
 **High Complexity:**
@@ -6349,6 +6580,7 @@ end
 end
 return damageScale
 end)
+
 ```
 
 ---
@@ -6385,6 +6617,7 @@ Server
 hook.Add("GetDefaultCharDesc", "MyAddon", function(client, factionIndex, context)
 return "A new character"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6398,6 +6631,7 @@ local factionDescs = {
 }
 return factionDescs[factionIndex] or "A new character"
 end)
+
 ```
 
 **High Complexity:**
@@ -6414,6 +6648,7 @@ desc = "A " .. gender .. " working as a " .. (faction.name or "character")
 end
 return desc
 end)
+
 ```
 
 ---
@@ -6450,6 +6685,7 @@ Server
 hook.Add("GetDefaultCharName", "MyAddon", function(client, factionIndex, context)
 return "John Doe"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6463,6 +6699,7 @@ local factionNames = {
 }
 return factionNames[factionIndex] or "John Doe"
 end)
+
 ```
 
 **High Complexity:**
@@ -6483,6 +6720,7 @@ return firstName .. " " .. lastName
 end
 return firstName .. " " .. lastName
 end)
+
 ```
 
 ---
@@ -6518,6 +6756,7 @@ Server
 hook.Add("GetDefaultInventorySize", "MyAddon", function(client, char)
 return {6, 4}
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6532,6 +6771,7 @@ return {7, 5}
 end
 return {6, 4}
 end)
+
 ```
 
 **High Complexity:**
@@ -6561,6 +6801,7 @@ baseSize[2] = baseSize[2] + 1
 end
 return baseSize
 end)
+
 ```
 
 ---
@@ -6595,6 +6836,7 @@ Server
 hook.Add("GetDefaultInventoryType", "MyAddon", function(character)
 return "grid"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6609,6 +6851,7 @@ return "medical_grid"
 end
 return "grid"
 end)
+
 ```
 
 **High Complexity:**
@@ -6635,6 +6878,7 @@ return "advanced_grid"
 end
 return "grid"
 end)
+
 ```
 
 ---
@@ -6673,6 +6917,7 @@ ang = ent:GetAngles(),
 model = ent:GetModel()
 }
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6691,6 +6936,7 @@ data.customData = ent.customData
 end
 return data
 end)
+
 ```
 
 **High Complexity:**
@@ -6723,6 +6969,7 @@ end
 data.createdAt = ent:getNetVar("createdAt", os.time())
 return data
 end)
+
 ```
 
 ---
@@ -6757,6 +7004,7 @@ Server
 hook.Add("GetHandsAttackSpeed", "MyAddon", function(client)
 return 1.0
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6768,6 +7016,7 @@ if not char then return 1.0 end
 local dex = char:getAttrib("dex", 0)
 return 1.0 + (dex * 0.1)
 end)
+
 ```
 
 **High Complexity:**
@@ -6803,6 +7052,7 @@ end
 end
 return baseSpeed + dexBonus + levelBonus + factionBonus + equipmentBonus
 end)
+
 ```
 
 ---
@@ -6838,6 +7088,7 @@ Server
 hook.Add("GetItemDropModel", "MyAddon", function(itemTable, self)
 return itemTable.model or "models/props_junk/cardboard_box004a.mdl"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6851,6 +7102,7 @@ local models = {
 }
 return models[itemTable.uniqueID] or itemTable.model or "models/props_junk/cardboard_box004a.mdl"
 end)
+
 ```
 
 **High Complexity:**
@@ -6893,6 +7145,7 @@ end
 -- Return default model
 return itemTable.model or "models/props_junk/cardboard_box004a.mdl"
 end)
+
 ```
 
 ---
@@ -6927,6 +7180,7 @@ Server
 hook.Add("GetItemStackKey", "MyAddon", function(item)
 return item.uniqueID
 end)
+
 ```
 
 **Medium Complexity:**
@@ -6941,6 +7195,7 @@ key = key .. "_" .. quality
 end
 return key
 end)
+
 ```
 
 **High Complexity:**
@@ -6972,6 +7227,7 @@ key = key .. "_" .. customData
 end
 return key
 end)
+
 ```
 
 ---
@@ -7006,6 +7262,7 @@ Server
 hook.Add("GetItemStacks", "MyAddon", function(inventory)
 return {}
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7023,6 +7280,7 @@ table.insert(stacks[key], item)
 end
 return stacks
 end)
+
 ```
 
 **High Complexity:**
@@ -7060,6 +7318,7 @@ return a.data.count > b.data.count
 end)
 return sortedStacks
 end)
+
 ```
 
 ---
@@ -7094,6 +7353,7 @@ Server
 hook.Add("GetMaxPlayerChar", "MyAddon", function(client)
 return 3
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7106,6 +7366,7 @@ else
 return 3
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -7147,6 +7408,7 @@ baseLimit = baseLimit + (factionBonuses[faction] or 0)
 end
 return math.max(1, baseLimit)
 end)
+
 ```
 
 ---
@@ -7181,6 +7443,7 @@ Shared
 hook.Add("GetMaxSkillPoints", "MyAddon", function(client)
 return 100
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7192,6 +7455,7 @@ if not char then return 100 end
 local level = char:getData("level", 1)
 return 50 + (level * 5)
 end)
+
 ```
 
 **High Complexity:**
@@ -7218,6 +7482,7 @@ basePoints = basePoints + 25
 end
 return basePoints
 end)
+
 ```
 
 ---
@@ -7253,6 +7518,7 @@ Server
 hook.Add("GetMaxStartingAttributePoints", "MyAddon", function(client, count)
 return 10
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7265,6 +7531,7 @@ return 15
 end
 return 10
 end)
+
 ```
 
 **High Complexity:**
@@ -7288,6 +7555,7 @@ basePoints = basePoints + 2
 end
 return basePoints
 end)
+
 ```
 
 ---
@@ -7322,6 +7590,7 @@ Server
 hook.Add("GetMoneyModel", "MyAddon", function(amount)
 return "models/props_lab/box01a.mdl"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7335,6 +7604,7 @@ return "models/props_lab/box01a.mdl"
 end
 return "models/props_junk/cardboard_box001a.mdl"
 end)
+
 ```
 
 **High Complexity:**
@@ -7354,6 +7624,7 @@ else
 return "models/props_junk/cardboard_box001a.mdl"
 end
 end)
+
 ```
 
 ---
@@ -7388,6 +7659,7 @@ Server
 hook.Add("GetOOCDelay", "MyAddon", function(speaker)
 return 3
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7399,6 +7671,7 @@ return 0
 end
 return 3
 end)
+
 ```
 
 **High Complexity:**
@@ -7420,6 +7693,7 @@ return 5
 end
 return 3
 end)
+
 ```
 
 ---
@@ -7454,6 +7728,7 @@ Server
 hook.Add("GetPlayTime", "MyAddon", function(client)
 return client:GetUTimeTotalTime()
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7464,6 +7739,7 @@ local totalTime = client:GetUTimeTotalTime()
 local sessionTime = client:GetUTimeSessionTime()
 return totalTime + sessionTime
 end)
+
 ```
 
 **High Complexity:**
@@ -7481,6 +7757,7 @@ local sessionStart = char:getData("sessionStart", os.time())
 local sessionTime = os.time() - sessionStart
 return charPlayTime + sessionTime
 end)
+
 ```
 
 ---
@@ -7516,6 +7793,7 @@ Server
 hook.Add("GetPlayerDeathSound", "MyAddon", function(client, isFemale)
 return "vo/npc/male01/pain09.wav"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7527,6 +7805,7 @@ return "vo/npc/female01/pain09.wav"
 end
 return "vo/npc/male01/pain09.wav"
 end)
+
 ```
 
 **High Complexity:**
@@ -7550,6 +7829,7 @@ return "vo/npc/female01/pain0" .. math.random(7, 9) .. ".wav"
 end
 return "vo/npc/male01/pain0" .. math.random(7, 9) .. ".wav"
 end)
+
 ```
 
 ---
@@ -7586,6 +7866,7 @@ Server
 hook.Add("GetPlayerPainSound", "MyAddon", function(client, paintype, isFemale)
 return "vo/npc/male01/pain01.wav"
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7597,6 +7878,7 @@ return "vo/npc/female01/pain0" .. math.random(1, 6) .. ".wav"
 end
 return "vo/npc/male01/pain0" .. math.random(1, 6) .. ".wav"
 end)
+
 ```
 
 **High Complexity:**
@@ -7629,6 +7911,7 @@ return "vo/npc/female01/pain0" .. soundNum .. ".wav"
 end
 return "vo/npc/male01/pain0" .. soundNum .. ".wav"
 end)
+
 ```
 
 ---
@@ -7663,6 +7946,7 @@ Server
 hook.Add("GetPlayerPunchDamage", "MyAddon", function(client)
 return 10
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7674,6 +7958,7 @@ if not char then return 10 end
 local str = char:getAttrib("str", 0)
 return 10 + (str * 2)
 end)
+
 ```
 
 **High Complexity:**
@@ -7713,6 +7998,7 @@ end
 end
 return baseDamage + strBonus + levelBonus + factionBonus + equipmentBonus
 end)
+
 ```
 
 ---
@@ -7747,6 +8033,7 @@ Server
 hook.Add("GetPlayerPunchRagdollTime", "MyAddon", function(client)
 return 3
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7758,6 +8045,7 @@ if not char then return 3 end
 local con = char:getAttrib("con", 0)
 return math.max(1, 3 - (con * 0.1))
 end)
+
 ```
 
 **High Complexity:**
@@ -7798,6 +8086,7 @@ end
 end
 return math.max(0.5, baseTime - conReduction - levelReduction + factionModifier + equipmentModifier)
 end)
+
 ```
 
 ---
@@ -7835,6 +8124,7 @@ Server
 hook.Add("GetPriceOverride", "MyAddon", function(self, uniqueID, price, isSellingToVendor)
 return price
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7851,6 +8141,7 @@ return price * 0.8 -- 20% discount
 end
 return price
 end)
+
 ```
 
 **High Complexity:**
@@ -7896,6 +8187,7 @@ finalPrice = finalPrice * 0.5 -- 50% of original price when selling
 end
 return math.max(1, finalPrice)
 end)
+
 ```
 
 ---
@@ -7931,6 +8223,7 @@ Server
 hook.Add("GetRagdollTime", "MyAddon", function(self, time)
 return time
 end)
+
 ```
 
 **Medium Complexity:**
@@ -7942,6 +8235,7 @@ return time * 1.5
 end
 return time
 end)
+
 ```
 
 **High Complexity:**
@@ -7981,6 +8275,7 @@ finalTime = finalTime * 1.2
 end
 return math.max(0.5, finalTime)
 end)
+
 ```
 
 ---
@@ -8017,6 +8312,7 @@ Server
 hook.Add("GetSalaryAmount", "MyAddon", function(client, faction, class)
 return 100
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8030,6 +8326,7 @@ local salaries = {
 }
 return salaries[faction] or 50
 end)
+
 ```
 
 **High Complexity:**
@@ -8067,6 +8364,7 @@ local donatorLevel = char:getData("donatorLevel", 0)
 local donatorBonus = donatorLevel * 25
 return baseSalary + classBonus + levelBonus + performanceBonus + donatorBonus
 end)
+
 ```
 
 ---
@@ -8101,6 +8399,7 @@ Server
 hook.Add("GetTicketsByRequester", "MyAddon", function(steamID)
 return {}
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8110,6 +8409,7 @@ hook.Add("GetTicketsByRequester", "TicketLoading", function(steamID)
 local tickets = lia.db.query("SELECT * FROM tickets WHERE requester = ?", steamID)
 return tickets or {}
 end)
+
 ```
 
 **High Complexity:**
@@ -8149,6 +8449,7 @@ table.insert(processedTickets, processedTicket)
 end
 return processedTickets
 end)
+
 ```
 
 ---
@@ -8183,6 +8484,7 @@ Server
 hook.Add("GetVendorSaleScale", "MyAddon", function(self)
 return 1.0
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8197,6 +8499,7 @@ local scales = {
 }
 return scales[vendorType] or 1.0
 end)
+
 ```
 
 **High Complexity:**
@@ -8232,6 +8535,7 @@ local playerCount = #player.GetAll()
 local populationModifier = 1 + (playerCount * 0.01)
 return baseScale * levelModifier * reputationModifier * timeModifier * populationModifier
 end)
+
 ```
 
 ---
@@ -8266,6 +8570,7 @@ Server
 hook.Add("GetWarnings", "MyAddon", function(charID)
 return {}
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8275,6 +8580,7 @@ hook.Add("GetWarnings", "WarningLoading", function(charID)
 local warnings = lia.db.query("SELECT * FROM warnings WHERE char_id = ?", charID)
 return warnings or {}
 end)
+
 ```
 
 **High Complexity:**
@@ -8311,6 +8617,7 @@ table.insert(processedWarnings, processedWarning)
 end
 return processedWarnings
 end)
+
 ```
 
 ---
@@ -8345,6 +8652,7 @@ Server
 hook.Add("GetWarningsByIssuer", "MyAddon", function(steamID)
 return {}
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8354,6 +8662,7 @@ hook.Add("GetWarningsByIssuer", "IssuerWarnings", function(steamID)
 local warnings = lia.db.query("SELECT * FROM warnings WHERE warner_steamid = ?", steamID)
 return warnings or {}
 end)
+
 ```
 
 **High Complexity:**
@@ -8406,6 +8715,7 @@ stats.severityCounts[warning.severity] = (stats.severityCounts[warning.severity]
 end
 return processedWarnings, stats
 end)
+
 ```
 
 ---
@@ -8444,6 +8754,7 @@ Server
 hook.Add("HandleItemTransferRequest", "MyAddon", function(client, itemID, x, y, invID)
 print(client:Name() .. " wants to transfer " .. itemID)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8464,6 +8775,7 @@ client:ChatPrint("You don't own this item")
 return
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -8508,6 +8820,7 @@ destInventory:add(item, x, y)
 lia.log.add(client, "item_transfer", itemID, "Transferred to inventory " .. invID)
 client:ChatPrint("Item transferred successfully")
 end)
+
 ```
 
 ---
@@ -8542,6 +8855,7 @@ Server
 hook.Add("InitializeStorage", "MyAddon", function(entity)
 print("Initializing storage: " .. entity:EntIndex())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8552,6 +8866,7 @@ entity:setNetVar("storageType", "general")
 entity:setNetVar("maxWeight", 100)
 entity:setNetVar("maxItems", 50)
 end)
+
 ```
 
 **High Complexity:**
@@ -8589,6 +8904,7 @@ end
 entity:setNetVar("createdAt", os.time())
 print("Storage initialized: " .. entity:EntIndex() .. " (Type: " .. storageType .. ")")
 end)
+
 ```
 
 ---
@@ -8623,6 +8939,7 @@ Server
 hook.Add("InventoryDeleted", "MyAddon", function(instance)
 print("Inventory deleted: " .. instance:getID())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8633,6 +8950,7 @@ hook.Add("InventoryDeleted", "CleanupInventory", function(instance)
 lia.inventoryCache[instance:getID()] = nil
 print("Inventory deleted and cleaned up: " .. instance:getID())
 end)
+
 ```
 
 **High Complexity:**
@@ -8656,6 +8974,7 @@ end
 print("Inventory deleted: " .. invID)
 lia.log.add("Inventory " .. invID .. " was deleted", "inventory")
 end)
+
 ```
 
 ---
@@ -8691,6 +9010,7 @@ Shared
 hook.Add("InventoryItemAdded", "MyAddon", function(inventory, item)
 print("Item added: " .. item.name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8701,6 +9021,7 @@ local currentWeight = inventory:getData("weight", 0)
 local itemWeight = item.weight or 1
 inventory:setData("weight", currentWeight + itemWeight)
 end)
+
 ```
 
 **High Complexity:**
@@ -8737,6 +9058,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -8773,6 +9095,7 @@ Shared
 hook.Add("InventoryItemRemoved", "MyAddon", function(self, instance, preserveItem)
 print("Item removed: " .. self.name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8783,6 +9106,7 @@ local currentWeight = instance:getData("weight", 0)
 local itemWeight = self.weight or 1
 instance:setData("weight", math.max(0, currentWeight - itemWeight))
 end)
+
 ```
 
 **High Complexity:**
@@ -8821,6 +9145,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -8855,6 +9180,7 @@ Server
 hook.Add("IsSuitableForTrunk", "MyAddon", function(entity)
 return entity:IsVehicle()
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8868,6 +9194,7 @@ local suitableClasses = {
 }
 return suitableClasses[entity:GetClass()] or false
 end)
+
 ```
 
 **High Complexity:**
@@ -8902,6 +9229,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -8938,6 +9266,7 @@ Server
 hook.Add("ItemCombine", "MyAddon", function(client, item, target)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -8961,6 +9290,7 @@ end
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -9002,6 +9332,7 @@ end
 client:ChatPrint("These items cannot be combined")
 return false
 end)
+
 ```
 
 ---
@@ -9036,6 +9367,7 @@ Server
 hook.Add("ItemDeleted", "MyAddon", function(instance)
 print("Item deleted: " .. instance.name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9046,6 +9378,7 @@ hook.Add("ItemDeleted", "CleanupItemData", function(instance)
 lia.itemCache[instance:getID()] = nil
 print("Item deleted and cleaned up: " .. instance.name)
 end)
+
 ```
 
 **High Complexity:**
@@ -9069,6 +9402,7 @@ end
 print("Item deleted: " .. instance.name .. " (ID: " .. itemID .. ")")
 lia.log.add("Item " .. instance.name .. " (" .. itemID .. ") was deleted", "item")
 end)
+
 ```
 
 ---
@@ -9104,6 +9438,7 @@ Server
 hook.Add("ItemDraggedOutOfInventory", "MyAddon", function(client, item)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9116,6 +9451,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -9150,6 +9486,7 @@ end
 char:setData("lastItemDrag", CurTime())
 return true
 end)
+
 ```
 
 ---
@@ -9188,6 +9525,7 @@ Server
 hook.Add("ItemFunctionCalled", "MyAddon", function(self, method, client, entity, results)
 print(client:Name() .. " used " .. method .. " on " .. self.name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9200,6 +9538,7 @@ local usageCount = char:getData("itemUsage_" .. self.uniqueID, 0)
 char:setData("itemUsage_" .. self.uniqueID, usageCount + 1)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -9236,6 +9575,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -9274,6 +9614,7 @@ Server
 hook.Add("ItemFunctionCalled", "MyAddon", function(self, method, client, entity, results)
 print(client:Name() .. " used " .. method .. " on " .. self.name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9286,6 +9627,7 @@ local usageCount = char:getData("itemUsage_" .. self.uniqueID, 0)
 char:setData("itemUsage_" .. self.uniqueID, usageCount + 1)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -9322,6 +9664,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -9356,6 +9699,7 @@ Server
 hook.Add("ItemTransfered", "MyAddon", function(context)
 print("Item " .. context.item.uniqueID .. " transferred")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9371,6 +9715,7 @@ if toChar then
 toChar:setData("itemsTransferredIn", (toChar:getData("itemsTransferredIn", 0) + 1))
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -9440,6 +9785,7 @@ print(string.format("Item %s transferred from %s to %s",
 item.uniqueID, fromChar and fromChar:getName() or "Unknown",
 toChar and toChar:getName() or "Unknown"))
 end)
+
 ```
 
 ---
@@ -9476,6 +9822,7 @@ Server
 hook.Add("KeyLock", "MyAddon", function(owner, entity, time)
 print(owner:Name() .. " locked " .. tostring(entity))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9487,6 +9834,7 @@ if not char then return end
 local locks = char:getData("locksUsed", 0)
 char:setData("locksUsed", locks + 1)
 end)
+
 ```
 
 **High Complexity:**
@@ -9514,6 +9862,7 @@ ply:ChatPrint("You hear a lock clicking nearby")
 end
 end
 end)
+
 ```
 
 ---
@@ -9550,6 +9899,7 @@ Server
 hook.Add("KeyUnlock", "MyAddon", function(owner, entity, time)
 print(owner:Name() .. " unlocked " .. tostring(entity))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9561,6 +9911,7 @@ if not char then return end
 local unlocks = char:getData("unlocksUsed", 0)
 char:setData("unlocksUsed", unlocks + 1)
 end)
+
 ```
 
 **High Complexity:**
@@ -9588,6 +9939,7 @@ ply:ChatPrint("You hear a lock clicking nearby")
 end
 end
 end)
+
 ```
 
 ---
@@ -9618,6 +9970,7 @@ Server
 hook.Add("LiliaTablesLoaded", "MyAddon", function()
 print("Lilia tables loaded")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9627,6 +9980,7 @@ hook.Add("LiliaTablesLoaded", "CreateCustomTables", function()
 lia.db.query("CREATE TABLE IF NOT EXISTS my_table (id INTEGER PRIMARY KEY, data TEXT)")
 print("Custom tables created")
 end)
+
 ```
 
 **High Complexity:**
@@ -9646,6 +10000,7 @@ end
 lia.db.query("CREATE INDEX IF NOT EXISTS idx_my_stats_charid ON my_stats(charid)")
 print("Custom database tables and indexes created")
 end)
+
 ```
 
 ---
@@ -9676,6 +10031,7 @@ Server
 hook.Add("LoadData", "MyAddon", function()
 print("Loading data")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9686,6 +10042,7 @@ local data = lia.data.get("myAddonData", {})
 MyAddon.data = data
 print("Custom data loaded")
 end)
+
 ```
 
 **High Complexity:**
@@ -9708,6 +10065,7 @@ MyAddon.playerData = MyAddon.playerData or {}
 MyAddon.sessionData = {}
 print("All data loaded successfully")
 end)
+
 ```
 
 ---
@@ -9743,6 +10101,7 @@ Server
 hook.Add("ModifyCharacterModel", "MyAddon", function(client, character)
 return character:getModel()
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9757,6 +10116,7 @@ return "models/player/medic.mdl"
 end
 return character:getModel()
 end)
+
 ```
 
 **High Complexity:**
@@ -9789,6 +10149,7 @@ end
 end
 return baseModel
 end)
+
 ```
 
 ---
@@ -9824,6 +10185,7 @@ Server
 hook.Add("OnAdminSystemLoaded", "MyAddon", function(groups, privileges)
 print("Admin system loaded")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9836,6 +10198,7 @@ immunity = 50
 }
 print("Custom admin groups added")
 end)
+
 ```
 
 **High Complexity:**
@@ -9864,6 +10227,7 @@ description = "Allows editing vendor inventories"
 }
 print("Admin system customized with new groups and privileges")
 end)
+
 ```
 
 ---
@@ -9898,6 +10262,7 @@ Server
 hook.Add("OnBackupCreated", "MyAddon", function(metadata)
 print("Backup created")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9907,6 +10272,7 @@ hook.Add("OnBackupCreated", "LogBackupDetails", function(metadata)
 print("Backup created: " .. metadata.filename)
 print("Size: " .. metadata.size .. " bytes")
 end)
+
 ```
 
 **High Complexity:**
@@ -9935,6 +10301,7 @@ print("Old backup deleted to maintain backup limit")
 end
 end)
 end)
+
 ```
 
 ---
@@ -9969,6 +10336,7 @@ Server
 hook.Add("OnCharAttribBoosted", "MyAddon", function(character)
 print(character:getName() .. " boosted an attribute")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -9978,6 +10346,7 @@ hook.Add("OnCharAttribBoosted", "TrackAttributeBoosts", function(character)
 local boosts = character:getData("attributeBoosts", 0)
 character:setData("attributeBoosts", boosts + 1)
 end)
+
 ```
 
 **High Complexity:**
@@ -10004,6 +10373,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -10041,6 +10411,7 @@ Server
 hook.Add("OnCharAttribUpdated", "MyAddon", function(client, character, key, newValue)
 print(character:getName() .. " " .. key .. " updated to " .. newValue)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -10051,6 +10422,7 @@ local changes = character:getData("attributeChanges", {})
 changes[key] = (changes[key] or 0) + 1
 character:setData("attributeChanges", changes)
 end)
+
 ```
 
 **High Complexity:**
@@ -10082,6 +10454,7 @@ client:SetRunSpeed(250 * speedBonus)
 client:SetWalkSpeed(100 * speedBonus)
 end
 end)
+
 ```
 
 ---
@@ -10118,6 +10491,7 @@ Server
 hook.Add("OnCharCreated", "MyAddon", function(client, character, originalData)
 print(client:Name() .. " created character: " .. character:getName())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -10137,6 +10511,7 @@ end
 end
 client:ChatPrint("Welcome! You received starting bonuses.")
 end)
+
 ```
 
 **High Complexity:**
@@ -10189,6 +10564,7 @@ client:ChatPrint("Character created successfully! Welcome to the server.")
 print(string.format("%s created %s character: %s",
 client:Name(), faction, character:getName()))
 end)
+
 ```
 
 ---
@@ -10224,6 +10600,7 @@ Server
 hook.Add("OnCharDelete", "MyAddon", function(client, id)
 print(client:Name() .. " deleted character ID: " .. id)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -10236,6 +10613,7 @@ char:setData("charactersDeleted", (char:getData("charactersDeleted", 0) + 1))
 char:setData("lastCharDelete", os.time())
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -10288,6 +10666,7 @@ ply:ChatPrint("[ADMIN] " .. client:Name() .. " deleted character ID " .. id)
 end
 end
 end)
+
 ```
 
 ---
@@ -10323,6 +10702,7 @@ Server
 hook.Add("OnCharDisconnect", "MyAddon", function(client, character)
 print(client:Name() .. " disconnected with character: " .. character:getName())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -10338,6 +10718,7 @@ character:setData("lastArmor", client:Armor())
 -- Save disconnect time
 character:setData("lastDisconnect", os.time())
 end)
+
 ```
 
 **High Complexity:**
@@ -10393,6 +10774,7 @@ end
 print(string.format("%s disconnected with character %s (Faction: %s)",
 client:Name(), character:getName(), character:getFaction()))
 end)
+
 ```
 
 ---
@@ -10429,6 +10811,7 @@ Server
 hook.Add("OnCharFallover", "MyAddon", function(character, client, ragdoll)
 print(character:getName() .. " fell over")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -10438,6 +10821,7 @@ hook.Add("OnCharFallover", "SetRagdollData", function(character, client, ragdoll
 ragdoll:setNetVar("charID", character:getID())
 ragdoll:setNetVar("fallTime", os.time())
 end)
+
 ```
 
 **High Complexity:**
@@ -10468,6 +10852,7 @@ ply:ChatPrint(character:getName() .. " fell over")
 end
 end
 end)
+
 ```
 
 ---
@@ -10504,6 +10889,7 @@ Server
 hook.Add("OnCharFlagsGiven", "MyAddon", function(ply, self, addedFlags)
 print(self:getName() .. " received flags: " .. addedFlags)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -10514,6 +10900,7 @@ local flagHistory = self:getData("flagHistory", {})
 table.insert(flagHistory, {action = "given", flags = addedFlags, time = os.time()})
 self:setData("flagHistory", flagHistory)
 end)
+
 ```
 
 **High Complexity:**
@@ -10547,6 +10934,7 @@ admin:ChatPrint("[FLAGS] " .. self:getName() .. " received flags: " .. addedFlag
 end
 end
 end)
+
 ```
 
 ---
@@ -10583,6 +10971,7 @@ Server
 hook.Add("OnCharFlagsTaken", "MyAddon", function(ply, self, removedFlags)
 print(self:getName() .. " lost flags: " .. removedFlags)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -10593,6 +10982,7 @@ local flagHistory = self:getData("flagHistory", {})
 table.insert(flagHistory, {action = "taken", flags = removedFlags, time = os.time()})
 self:setData("flagHistory", flagHistory)
 end)
+
 ```
 
 **High Complexity:**
@@ -10626,6 +11016,7 @@ admin:ChatPrint("[FLAGS] " .. self:getName() .. " lost flags: " .. removedFlags)
 end
 end
 end)
+
 ```
 
 ---
@@ -10661,6 +11052,7 @@ Server
 hook.Add("OnCharGetup", "MyAddon", function(target, entity)
 print(target:Name() .. " got up")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -10679,6 +11071,7 @@ target:SetHealth(math.min(currentHealth + 25, maxHealth))
 target:ChatPrint("You have regained consciousness")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -10740,6 +11133,7 @@ end
 print(string.format("%s got up (Faction: %s, Health: %d)",
 char:getName(), faction, target:Health()))
 end)
+
 ```
 
 ---
@@ -10775,6 +11169,7 @@ Server
 hook.Add("OnCharKick", "MyAddon", function(self, client)
 print(self:getName() .. " was kicked")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -10791,6 +11186,7 @@ ply:ChatPrint(self:getName() .. " was kicked from the server")
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -10856,6 +11252,7 @@ end
 print(string.format("%s was kicked (Faction: %s, Reason: %s)",
 self:getName(), faction, kickReason))
 end)
+
 ```
 
 ---
@@ -10893,6 +11290,7 @@ Server
 hook.Add("OnCharNetVarChanged", "MyAddon", function(character, key, oldVar, value)
 print(character:getName() .. " netvar changed: " .. key .. " = " .. tostring(value))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -10911,6 +11309,7 @@ client:ChatPrint("Money changed from $" .. oldVar .. " to $" .. value)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -10984,6 +11383,7 @@ print(string.format("%s netvar changed: %s from %s to %s",
 character:getName(), key, tostring(oldVar), tostring(value)))
 end
 end)
+
 ```
 
 ---
@@ -11019,6 +11419,7 @@ Server
 hook.Add("OnCharPermakilled", "MyAddon", function(character, client)
 print(character:getName() .. " was permanently killed")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -11035,6 +11436,7 @@ ply:ChatPrint(character:getName() .. " was permanently killed")
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -11107,6 +11509,7 @@ end
 print(string.format("%s was permanently killed (Faction: %s, Level: %d)",
 character:getName(), faction, character:getData("level", 1)))
 end)
+
 ```
 
 ---
@@ -11142,6 +11545,7 @@ Server
 hook.Add("OnCharRecognized", "MyAddon", function(client, target)
 print(client:Name() .. " recognized " .. target:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -11158,6 +11562,7 @@ clientChar:setData("recognitions", recognitions)
 client:ChatPrint("You recognized " .. targetChar:getName())
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -11221,6 +11626,7 @@ end
 print(string.format("%s recognized %s (Factions: %s -> %s)",
 clientChar:getName(), targetChar:getName(), clientFaction, targetFaction))
 end)
+
 ```
 
 ---
@@ -11262,6 +11668,7 @@ hook.Add("OnCharTradeVendor", "MyAddon", function(client, vendor, item, isSellin
 local action = isSellingToVendor and "sold" or "bought"
 print(character:getName() .. " " .. action .. " " .. item.uniqueID .. " from vendor")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -11275,6 +11682,7 @@ local action = isSellingToVendor and "sold" or "bought"
 client:ChatPrint("You " .. action .. " " .. item.uniqueID .. " from vendor")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -11346,6 +11754,7 @@ local action = isSellingToVendor and "sold" or "bought"
 print(string.format("%s %s %s from vendor %s (Faction: %s)",
 character:getName(), action, item.uniqueID, vendor:EntIndex(), faction))
 end)
+
 ```
 
 ---
@@ -11383,6 +11792,7 @@ Server
 hook.Add("OnCharVarChanged", "MyAddon", function(character, varName, oldVar, newVar)
 print(character:getName() .. " var changed: " .. varName .. " = " .. tostring(newVar))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -11406,6 +11816,7 @@ end
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -11482,6 +11893,7 @@ print(string.format("%s var changed: %s from %s to %s",
 character:getName(), varName, tostring(oldVar), tostring(newVar)))
 end
 end)
+
 ```
 
 ---
@@ -11517,6 +11929,7 @@ Server
 hook.Add("OnCharacterCreated", "MyAddon", function(character, client)
 print(client:Name() .. " created character: " .. character:getName())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -11536,6 +11949,7 @@ end
 end
 client:ChatPrint("Welcome! You received starting bonuses.")
 end)
+
 ```
 
 **High Complexity:**
@@ -11588,6 +12002,7 @@ client:ChatPrint("Character created successfully! Welcome to the server.")
 print(string.format("%s created %s character: %s",
 client:Name(), faction, character:getName()))
 end)
+
 ```
 
 ---
@@ -11622,6 +12037,7 @@ Server
 hook.Add("OnCharacterDeath", "MyAddon", function(character)
 print("Character " .. character:getName() .. " has died")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -11638,6 +12054,7 @@ local expLoss = math.min(character:getData("experience", 0) * 0.05, 100)
 character:setData("experience", character:getData("experience", 0) - expLoss)
 client:ChatPrint("You lost $" .. moneyLoss .. " and " .. expLoss .. " experience")
 end)
+
 ```
 
 **High Complexity:**
@@ -11688,6 +12105,7 @@ end
 print(string.format("%s (%s) died at %s",
 character:getName(), faction, os.date("%Y-%m-%d %H:%M:%S")))
 end)
+
 ```
 
 ---
@@ -11725,6 +12143,7 @@ Server
 hook.Add("OnCharacterDeleted", "MyAddon", function(charID, charName, owner, admin)
 print("Character " .. charName .. " (ID: " .. charID .. ") was deleted")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -11745,6 +12164,7 @@ ply:ChatPrint("Character " .. charName .. " was deleted")
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -11815,6 +12235,7 @@ end
 print(string.format("Character %s (ID: %d) was deleted by %s",
 charName, charID, admin and admin:Name() or (owner and owner:Name() or "Unknown")))
 end)
+
 ```
 
 ---
@@ -11845,6 +12266,7 @@ Server
 hook.Add("OnCharacterFieldsUpdated", "MyAddon", function()
 print("Character fields have been updated")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -11860,6 +12282,7 @@ end
 end
 print("Character fields updated and synced to all players")
 end)
+
 ```
 
 **High Complexity:**
@@ -11893,6 +12316,7 @@ end
 -- Log field update
 print("Character fields updated successfully")
 end)
+
 ```
 
 ---
@@ -11928,6 +12352,7 @@ Server
 hook.Add("OnCharacterLoaded", "MyAddon", function(character, client)
 print(client:Name() .. " loaded character: " .. character:getName())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -11944,6 +12369,7 @@ client:SetModel(model)
 end
 client:ChatPrint("Character loaded: " .. character:getName())
 end)
+
 ```
 
 **High Complexity:**
@@ -12011,6 +12437,7 @@ end
 print(string.format("%s loaded character %s (Faction: %s, Level: %d)",
 client:Name(), character:getName(), faction, level))
 end)
+
 ```
 
 ---
@@ -12045,6 +12472,7 @@ Server
 hook.Add("OnCharacterRevive", "MyAddon", function(character)
 print(character:getName() .. " was revived")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -12063,6 +12491,7 @@ client:SetHealth(math.min(currentHealth + 50, maxHealth))
 client:ChatPrint("You have been revived!")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -12141,6 +12570,7 @@ end
 print(string.format("%s was revived (Faction: %s, Health: %d)",
 character:getName(), faction, client:Health()))
 end)
+
 ```
 
 ---
@@ -12175,6 +12605,7 @@ Server
 hook.Add("OnCharacterSchemaValidated", "MyAddon", function(validationResults)
 print("Character schema validation completed")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -12187,6 +12618,7 @@ else
 print("Character schema validation failed: " .. validationResults.error)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -12225,6 +12657,7 @@ end
 print(string.format("Character schema validation completed: %s",
 validationResults.valid and "PASSED" or "FAILED"))
 end)
+
 ```
 
 ---
@@ -12260,6 +12693,7 @@ Server
 hook.Add("OnCharacterUpdated", "MyAddon", function(charID, updateData)
 print("Character " .. charID .. " was updated")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -12272,6 +12706,7 @@ lia.char.setData("updateCount", updateCount)
 -- Track last update time
 lia.char.setData("lastUpdate", os.time())
 end)
+
 ```
 
 **High Complexity:**
@@ -12335,6 +12770,7 @@ end
 print(string.format("Character %s (ID: %d) was updated",
 character:getName(), charID))
 end)
+
 ```
 
 ---
@@ -12371,6 +12807,7 @@ Server
 hook.Add("OnCharactersRestored", "MyAddon", function(client, characters, stats)
 print(client:Name() .. " had " .. #characters .. " characters restored")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -12388,6 +12825,7 @@ ply:ChatPrint(client:Name() .. " had characters restored")
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -12445,6 +12883,7 @@ end
 print(string.format("%s had %d characters restored",
 client:Name(), #characters))
 end)
+
 ```
 
 ---
@@ -12479,6 +12918,7 @@ Server
 hook.Add("OnCheaterCaught", "MyAddon", function(client)
 print("Cheater caught: " .. client:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -12494,6 +12934,7 @@ ply:ChatPrint("[ADMIN] Cheater caught: " .. client:Name())
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -12543,6 +12984,7 @@ print(string.format("Repeat cheater: %s (SteamID: %s) - %d offenses",
 client:Name(), steamID, cheaterHistory[steamID]))
 end
 end)
+
 ```
 
 ---
@@ -12579,6 +13021,7 @@ Server
 hook.Add("OnCheaterStatusChanged", "MyAddon", function(client, target, status)
 print(client:Name() .. " cheater status changed to: " .. status)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -12593,6 +13036,7 @@ elseif status == "cleared" then
 client:ChatPrint("Your cheater status has been cleared")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -12655,6 +13099,7 @@ end
 print(string.format("Cheater status changed: %s -> %s (Admin: %s)",
 client:Name(), status, target and target:Name() or "System"))
 end)
+
 ```
 
 ---
@@ -12690,6 +13135,7 @@ Server
 hook.Add("OnColumnAdded", "MyAddon", function(column, data)
 print("Column added: " .. column)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -12702,6 +13148,7 @@ elseif column == "money" then
 print("Money column added to character table")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -12738,6 +13185,7 @@ ply:ChatPrint("[ADMIN] Database column added: " .. column)
 end
 end
 end)
+
 ```
 
 ---
@@ -12774,6 +13222,7 @@ Server
 hook.Add("OnColumnRemoved", "MyAddon", function(tableName, columnName, snapshot)
 print("Column removed: " .. columnName .. " from " .. tableName)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -12790,6 +13239,7 @@ if snapshot then
 print("Snapshot contains " .. #snapshot .. " records")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -12835,6 +13285,7 @@ ply:ChatPrint("[ADMIN] Database column removed: " .. columnName .. " from " .. t
 end
 end
 end)
+
 ```
 
 ---
@@ -12871,6 +13322,7 @@ Server
 hook.Add("OnConfigUpdated", "MyAddon", function(key, oldValue, value)
 print("Config updated: " .. key .. " = " .. tostring(value))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -12883,6 +13335,7 @@ elseif key == "serverName" then
 RunConsoleCommand("hostname", value)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -12922,6 +13375,7 @@ ply:ChatPrint("[CONFIG] " .. key .. " changed to: " .. tostring(value))
 end
 end
 end)
+
 ```
 
 ---
@@ -12958,6 +13412,7 @@ Server
 hook.Add("OnCreatePlayerRagdoll", "MyAddon", function(self, entity, isDead)
 print(self:Name() .. " ragdoll created")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -12968,6 +13423,7 @@ entity:setNetVar("owner", self:SteamID())
 entity:setNetVar("isDead", isDead)
 entity:setNetVar("deathTime", os.time())
 end)
+
 ```
 
 **High Complexity:**
@@ -13009,6 +13465,7 @@ end
 print(string.format("Ragdoll created for %s (Faction: %s, Dead: %s)",
 self:Name(), faction, tostring(isDead)))
 end)
+
 ```
 
 ---
@@ -13046,6 +13503,7 @@ Server
 hook.Add("OnDataSet", "MyAddon", function(key, value, gamemode, map)
 print("Data set: " .. key .. " = " .. tostring(value))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -13061,6 +13519,7 @@ print("Invalid level value: " .. tostring(value))
 return false
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -13109,6 +13568,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -13139,6 +13599,7 @@ Server
 hook.Add("OnDatabaseConnected", "MyAddon", function()
 print("Database connected successfully")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -13150,6 +13611,7 @@ lia.db.query("CREATE TABLE IF NOT EXISTS players (id INTEGER PRIMARY KEY, steami
 lia.db.query("CREATE TABLE IF NOT EXISTS characters (id INTEGER PRIMARY KEY, playerid INTEGER, name TEXT)")
 print("Database connected and tables initialized")
 end)
+
 ```
 
 **High Complexity:**
@@ -13192,6 +13654,7 @@ ply:ChatPrint("Database connected successfully")
 end
 print("Database initialization completed")
 end)
+
 ```
 
 ---
@@ -13222,6 +13685,7 @@ Server
 hook.Add("OnDatabaseInitialized", "MyAddon", function()
 print("Database has been initialized")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -13231,6 +13695,7 @@ hook.Add("OnDatabaseInitialized", "SetupCustomTables", function()
 lia.db.query("CREATE TABLE IF NOT EXISTS addon_data (id INT PRIMARY KEY, data TEXT)")
 print("Custom tables created")
 end)
+
 ```
 
 **High Complexity:**
@@ -13250,6 +13715,7 @@ lia.db.query("DELETE FROM server_logs WHERE timestamp < ?", os.time() - 604800)
 end)
 print("Advanced database initialization complete")
 end)
+
 ```
 
 ---
@@ -13280,6 +13746,7 @@ Server
 hook.Add("OnDatabaseLoaded", "MyAddon", function()
 print("Database loading complete")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -13289,6 +13756,7 @@ hook.Add("OnDatabaseLoaded", "InitAfterDB", function()
 MyAddon:Initialize()
 print("Addon initialized after database load")
 end)
+
 ```
 
 **High Complexity:**
@@ -13312,6 +13780,7 @@ MyAddon:SyncData()
 end)
 print("All systems initialized after database load")
 end)
+
 ```
 
 ---
@@ -13342,6 +13811,7 @@ Server
 hook.Add("OnDatabaseReset", "MyAddon", function()
 print("Database has been reset")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -13352,6 +13822,7 @@ MyAddon.data = {}
 MyAddon.cache = {}
 print("Addon data cleared")
 end)
+
 ```
 
 **High Complexity:**
@@ -13380,6 +13851,7 @@ ply:ChatPrint("Server data has been reset")
 end
 print("Complete database reset performed")
 end)
+
 ```
 
 ---
@@ -13410,6 +13882,7 @@ Server
 hook.Add("OnDatabaseWiped", "MyAddon", function()
 print("Database has been wiped")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -13419,6 +13892,7 @@ hook.Add("OnDatabaseWiped", "ResetAddonState", function()
 MyAddon:Reset()
 print("Addon state reset after database wipe")
 end)
+
 ```
 
 **High Complexity:**
@@ -13442,6 +13916,7 @@ end
 lia.db.query("CREATE TABLE IF NOT EXISTS lia_characters (id INTEGER PRIMARY KEY, steamid VARCHAR(255), name VARCHAR(255))")
 print("Complete database wipe performed")
 end)
+
 ```
 
 ---
@@ -13477,6 +13952,7 @@ Server
 hook.Add("OnEntityLoaded", "MyAddon", function(createdEnt, data)
 print("Entity loaded: " .. tostring(createdEnt))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -13490,6 +13966,7 @@ class = createdEnt:GetClass(),
 time = os.time()
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -13515,6 +13992,7 @@ if createdEnt.OnLoaded then
 createdEnt:OnLoaded(data)
 end
 end)
+
 ```
 
 ---
@@ -13550,6 +14028,7 @@ Server
 hook.Add("OnEntityPersistUpdated", "MyAddon", function(ent, data)
 print("Entity data updated: " .. tostring(ent))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -13563,6 +14042,7 @@ data = data,
 time = os.time()
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -13592,6 +14072,7 @@ net.WriteTable(data)
 net.Broadcast()
 end
 end)
+
 ```
 
 ---
@@ -13627,6 +14108,7 @@ Server
 hook.Add("OnEntityPersisted", "MyAddon", function(ent, entData)
 print("Entity persisted: " .. tostring(ent))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -13640,6 +14122,7 @@ class = ent:GetClass(),
 time = os.time()
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -13666,6 +14149,7 @@ local stats = lia.data.get("entityStats", {})
 stats[ent:GetClass()] = (stats[ent:GetClass()] or 0) + 1
 lia.data.set("entityStats", stats)
 end)
+
 ```
 
 ---
@@ -13701,6 +14185,7 @@ Server
 hook.Add("OnItemAdded", "MyAddon", function(owner, item)
 print("Item " .. item.uniqueID .. " added to inventory")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -13715,6 +14200,7 @@ elseif item.uniqueID == "stamina_boost" then
 char:setData("staminaBonus", (char:getData("staminaBonus", 0) + 5))
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -13760,6 +14246,7 @@ local itemWeight = item:getData("weight", 1)
 local currentWeight = char:getData("currentWeight", 0)
 char:setData("currentWeight", currentWeight + itemWeight)
 end)
+
 ```
 
 ---
@@ -13795,6 +14282,7 @@ Server
 hook.Add("OnItemCreated", "MyAddon", function(itemTable, self)
 print("Item created: " .. itemTable.uniqueID)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -13809,6 +14297,7 @@ self:setData("healAmount", 50)
 self:setData("uses", 3)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -13860,6 +14349,7 @@ if self:getData("bindOnPickup", false) then
 self:setData("boundTo", char:getID())
 end
 end)
+
 ```
 
 ---
@@ -13894,6 +14384,7 @@ Server
 hook.Add("OnItemSpawned", "MyAddon", function(self)
 print("Item spawned: " .. self:GetItem().uniqueID)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -13909,6 +14400,7 @@ self:SetPhysicsAttacker(self:GetOwner(), 5)
 self:GetPhysicsObject():SetMass(1)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -13956,6 +14448,7 @@ if sound then
 self:EmitSound(sound)
 end
 end)
+
 ```
 
 ---
@@ -13992,6 +14485,7 @@ Server
 hook.Add("OnItemsTransferred", "MyAddon", function(fromChar, toChar, items)
 print(fromChar:getName() .. " transferred items to " .. toChar:getName())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -14008,6 +14502,7 @@ time = os.time()
 fromChar:setData("lastTransferOut", log)
 toChar:setData("lastTransferIn", log)
 end)
+
 ```
 
 **High Complexity:**
@@ -14032,6 +14527,7 @@ local toStats = toChar:getData("transferStats", {sent = 0, received = 0})
 toStats.received = toStats.received + table.Count(items)
 toChar:setData("transferStats", toStats)
 end)
+
 ```
 
 ---
@@ -14062,6 +14558,7 @@ Server
 hook.Add("OnLoadTables", "MyAddon", function()
 print("Database tables are being loaded")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -14071,6 +14568,7 @@ hook.Add("OnLoadTables", "InitCustomTables", function()
 lia.db.query("CREATE TABLE IF NOT EXISTS custom_data (id INT PRIMARY KEY, data TEXT)")
 print("Custom tables initialized")
 end)
+
 ```
 
 **High Complexity:**
@@ -14087,6 +14585,7 @@ print("Migrated player_stats table")
 end
 end)
 end)
+
 ```
 
 ---
@@ -14122,6 +14621,7 @@ Server
 hook.Add("OnOOCMessageSent", "MyAddon", function(client, message)
 print(client:Name() .. " sent OOC: " .. message)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -14139,6 +14639,7 @@ client:ChatPrint("You are muted and cannot send OOC messages")
 return false
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -14206,6 +14707,7 @@ ply:ChatPrint("[OOC] " .. client:Name() .. ": " .. message)
 end
 end
 end)
+
 ```
 
 ---
@@ -14240,6 +14742,7 @@ Server
 hook.Add("OnPAC3PartTransfered", "MyAddon", function(part)
 print("PAC3 part transferred: " .. (part.name or "Unknown"))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -14252,6 +14755,7 @@ part = part,
 time = os.time()
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -14280,6 +14784,7 @@ ply:ChatPrint("PAC3 part " .. part.name .. " has been transferred")
 end
 end
 end)
+
 ```
 
 ---
@@ -14315,6 +14820,7 @@ Server
 hook.Add("OnPickupMoney", "MyAddon", function(client, moneyEntity)
 print(client:Name() .. " picked up money")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -14328,6 +14834,7 @@ local pickups = char:getData("moneyPickups", 0)
 char:setData("moneyPickups", pickups + amount)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -14356,6 +14863,7 @@ end
 -- Notify player
 client:ChatPrint("You picked up " .. lia.currency.get(amount))
 end)
+
 ```
 
 ---
@@ -14392,6 +14900,7 @@ Server
 hook.Add("OnPlayerDropWeapon", "MyAddon", function(client, weapon, entity)
 print(client:Name() .. " dropped weapon: " .. weapon:GetClass())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -14404,6 +14913,7 @@ char:setData("weaponsDropped", (char:getData("weaponsDropped", 0) + 1))
 char:setData("lastWeaponDrop", os.time())
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -14464,6 +14974,7 @@ end
 print(string.format("%s dropped weapon %s (Value: $%d)",
 client:Name(), weapon:GetClass(), weaponValue))
 end)
+
 ```
 
 ---
@@ -14502,6 +15013,7 @@ Server
 hook.Add("OnPlayerEnterSequence", "MyAddon", function(self, sequenceName, callback, time, noFreeze)
 print(self:Name() .. " entered sequence: " .. sequenceName)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -14514,6 +15026,7 @@ char:setData("sequencesUsed", (char:getData("sequencesUsed", 0) + 1))
 char:setData("lastSequence", os.time())
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -14586,6 +15099,7 @@ end
 print(string.format("%s entered sequence %s (Duration: %d seconds)",
 self:Name(), sequenceName, time))
 end)
+
 ```
 
 ---
@@ -14624,6 +15138,7 @@ Server
 hook.Add("OnPlayerInteractItem", "MyAddon", function(client, action, self, result, data)
 print(client:Name() .. " used " .. self.uniqueID .. " with action " .. action)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -14643,6 +15158,7 @@ client:ChatPrint("You gained " .. boostAmount .. " stamina")
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -14714,6 +15230,7 @@ client:ChatPrint("Item is already at full durability")
 end
 end
 end)
+
 ```
 
 ---
@@ -14750,6 +15267,7 @@ Server
 hook.Add("OnPlayerJoinClass", "MyAddon", function(client, class, oldClass)
 print(client:Name() .. " joined class: " .. class)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -14770,6 +15288,7 @@ char:setData("salary", 500)
 end
 client:ChatPrint("Class bonuses applied!")
 end)
+
 ```
 
 **High Complexity:**
@@ -14843,6 +15362,7 @@ end
 print(string.format("%s joined class %s (was %s)",
 client:Name(), class, oldClass or "none"))
 end)
+
 ```
 
 ---
@@ -14877,6 +15397,7 @@ Server
 hook.Add("OnPlayerLeaveSequence", "MyAddon", function(self)
 print(self:Name() .. " left sequence")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -14889,6 +15410,7 @@ char:setData("sequencesCompleted", (char:getData("sequencesCompleted", 0) + 1))
 char:setData("lastSequenceEnd", os.time())
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -14950,6 +15472,7 @@ end
 print(string.format("%s left sequence %s (Duration: %d seconds)",
 self:Name(), currentSequence or "unknown", sequenceDuration))
 end)
+
 ```
 
 ---
@@ -14986,6 +15509,7 @@ Server
 hook.Add("OnPlayerLevelUp", "MyAddon", function(player, oldValue, newValue)
 print(player:Name() .. " leveled up from " .. oldValue .. " to " .. newValue)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -15002,6 +15526,7 @@ local moneyBonus = newValue * 100
 char:setMoney(char:getMoney() + moneyBonus)
 player:ChatPrint("Level up! You gained " .. skillPoints .. " skill points and $" .. moneyBonus)
 end)
+
 ```
 
 **High Complexity:**
@@ -15050,6 +15575,7 @@ end
 print(string.format("%s leveled up from %d to %d",
 player:Name(), oldValue, newValue))
 end)
+
 ```
 
 ---
@@ -15084,6 +15610,7 @@ Server
 hook.Add("OnPlayerLostStackItem", "MyAddon", function(itemTypeOrItem)
 print("Player lost stack item: " .. tostring(itemTypeOrItem))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -15094,6 +15621,7 @@ MyAddon.stackLosses = MyAddon.stackLosses or {}
 local itemType = type(itemTypeOrItem) == "string" and itemTypeOrItem or itemTypeOrItem.uniqueID
 MyAddon.stackLosses[itemType] = (MyAddon.stackLosses[itemType] or 0) + 1
 end)
+
 ```
 
 **High Complexity:**
@@ -15126,6 +15654,7 @@ local stats = lia.data.get("stackStats", {lost = 0})
 stats.lost = stats.lost + 1
 lia.data.set("stackStats", stats)
 end)
+
 ```
 
 ---
@@ -15165,6 +15694,7 @@ else
 print(client:Name() .. " exited observer mode")
 end
 end)
+
 ```
 
 **Medium Complexity:**
@@ -15195,6 +15725,7 @@ end
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -15261,6 +15792,7 @@ print(string.format("%s exited observer mode at %s",
 client:Name(), os.date("%Y-%m-%d %H:%M:%S")))
 end
 end)
+
 ```
 
 ---
@@ -15297,6 +15829,7 @@ Server
 hook.Add("OnPlayerPurchaseDoor", "MyAddon", function(client, door, price)
 print(client:Name() .. " purchased door for $" .. price)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -15313,6 +15846,7 @@ door:setNetVar("owner", char:getID())
 door:setNetVar("purchaseTime", os.time())
 client:ChatPrint("Door purchased! You received a $" .. bonus .. " bonus")
 end)
+
 ```
 
 **High Complexity:**
@@ -15362,6 +15896,7 @@ end
 print(string.format("%s purchased door %s for $%d",
 client:Name(), door:EntIndex(), price))
 end)
+
 ```
 
 ---
@@ -15397,6 +15932,7 @@ Server
 hook.Add("OnPlayerRagdollCreated", "MyAddon", function(player, ragdoll)
 print("Ragdoll created for " .. player:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -15415,6 +15951,7 @@ local skin = char:getSkin()
 ragdoll:SetSkin(skin)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -15468,6 +16005,7 @@ end)
 print(string.format("Ragdoll created for %s (Char: %s, Faction: %s)",
 player:Name(), char:getName(), char:getFaction()))
 end)
+
 ```
 
 ---
@@ -15498,6 +16036,7 @@ Server
 hook.Add("OnPlayerStatsTableCreated", "MyAddon", function()
 print("Player stats table created")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -15509,6 +16048,7 @@ lia.db.query("ALTER TABLE player_stats ADD COLUMN IF NOT EXISTS kills INTEGER DE
 lia.db.query("ALTER TABLE player_stats ADD COLUMN IF NOT EXISTS deaths INTEGER DEFAULT 0")
 lia.db.query("ALTER TABLE player_stats ADD COLUMN IF NOT EXISTS playtime INTEGER DEFAULT 0")
 end)
+
 ```
 
 **High Complexity:**
@@ -15545,6 +16085,7 @@ lia.db.query("CREATE INDEX IF NOT EXISTS idx_player_stats_kills ON player_stats(
 lia.db.query("INSERT OR IGNORE INTO player_stats (steamid, playtime, last_activity) SELECT steamid, 0, CURRENT_TIMESTAMP FROM characters WHERE steamid NOT IN (SELECT steamid FROM player_stats)")
 print("Advanced player stats system initialized")
 end)
+
 ```
 
 ---
@@ -15581,6 +16122,7 @@ Server
 hook.Add("OnPlayerSwitchClass", "MyAddon", function(client, class, oldClass)
 print(client:Name() .. " switched from " .. oldClass .. " to " .. class)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -15594,6 +16136,7 @@ local switchBonus = 100
 char:setMoney(char:getMoney() + switchBonus)
 client:ChatPrint("Class switch bonus: $" .. switchBonus)
 end)
+
 ```
 
 **High Complexity:**
@@ -15683,6 +16226,7 @@ end
 print(string.format("%s switched from %s to %s class",
 client:Name(), oldClass or "none", class))
 end)
+
 ```
 
 ---
@@ -15719,6 +16263,7 @@ Server
 hook.Add("OnPlayerXPGain", "MyAddon", function(player, gained, reason)
 print(player:Name() .. " gained " .. gained .. " XP for " .. reason)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -15739,6 +16284,7 @@ local bonusXP = math.floor(gained * factionMultiplier)
 char:setData("experience", char:getData("experience", 0) + bonusXP)
 player:ChatPrint("You gained " .. bonusXP .. " XP (with faction bonus)")
 end)
+
 ```
 
 **High Complexity:**
@@ -15793,6 +16339,7 @@ player:ChatPrint("You gained " .. math.floor(finalXP) .. " XP for " .. reason)
 print(string.format("%s gained %d XP for %s (Level %d)",
 player:Name(), math.floor(finalXP), reason, currentLevel))
 end)
+
 ```
 
 ---
@@ -15829,6 +16376,7 @@ Server
 hook.Add("OnRecordUpserted", "MyAddon", function(dbTable, data, action)
 print("Record " .. action .. "ed in " .. dbTable)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -15842,6 +16390,7 @@ action = action,
 timestamp = os.time()
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -15870,6 +16419,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -15905,6 +16455,7 @@ Server
 hook.Add("OnRequestItemTransfer", "MyAddon", function(item, targetInventory)
 print("Item transfer requested: " .. item.name)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -15918,6 +16469,7 @@ target = targetInventory:getID(),
 time = os.time()
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -15941,6 +16493,7 @@ char:setData("transferCount", transferCount + 1)
 end
 end
 end)
+
 ```
 
 ---
@@ -15975,6 +16528,7 @@ Server
 hook.Add("OnRestoreCompleted", "MyAddon", function(restoreLog)
 print("Restore completed successfully")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -15987,6 +16541,7 @@ ply:ChatPrint("Database restore completed")
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -16011,6 +16566,7 @@ char:sync()
 end
 end
 end)
+
 ```
 
 ---
@@ -16045,6 +16601,7 @@ Server
 hook.Add("OnRestoreFailed", "MyAddon", function(failedLog)
 print("Restore failed")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -16057,6 +16614,7 @@ ply:ChatPrint("Database restore failed: " .. (failedLog.error or "Unknown error"
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -16083,6 +16641,7 @@ if failedLog.backup then
 lia.db.restore(failedLog.backup)
 end
 end)
+
 ```
 
 ---
@@ -16117,6 +16676,7 @@ Server
 hook.Add("OnSalaryAdjust", "MyAddon", function(client)
 print(client:Name() .. "'s salary was adjusted")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -16133,6 +16693,7 @@ action = "adjusted"
 char:setData("salaryHistory", history)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -16155,6 +16716,7 @@ stats.adjustments = stats.adjustments + 1
 stats.lastAdjustment = os.time()
 char:setData("salaryStats", stats)
 end)
+
 ```
 
 ---
@@ -16193,6 +16755,7 @@ Server
 hook.Add("OnSalaryGiven", "MyAddon", function(client, char, pay, faction, class)
 print(client:Name() .. " received salary: " .. pay)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -16208,6 +16771,7 @@ class = class
 })
 char:setData("salaryHistory", history)
 end)
+
 ```
 
 **High Complexity:**
@@ -16232,6 +16796,7 @@ char:setData("salaryStats", stats)
 -- Notify player
 client:ChatPrint("You received your salary: " .. lia.currency.get(pay))
 end)
+
 ```
 
 ---
@@ -16266,6 +16831,7 @@ Server
 hook.Add("OnSavedItemLoaded", "MyAddon", function(loadedItems)
 print("Loaded " .. table.Count(loadedItems) .. " items")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -16280,6 +16846,7 @@ loaded = os.time()
 })
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -16303,6 +16870,7 @@ for _, item in pairs(loadedItems) do
 MyAddon.itemStats[item.uniqueID] = (MyAddon.itemStats[item.uniqueID] or 0) + 1
 end
 end)
+
 ```
 
 ---
@@ -16340,6 +16908,7 @@ Server
 hook.Add("OnServerLog", "MyAddon", function(client, logType, logString, category)
 print("[" .. logType .. "] " .. logString)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -16356,6 +16925,7 @@ time = os.time()
 })
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -16387,6 +16957,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -16423,6 +16994,7 @@ Server
 hook.Add("OnSkillsChanged", "MyAddon", function(character, oldValue, value)
 print(character:getName() .. "'s skills changed")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -16437,6 +17009,7 @@ time = os.time()
 })
 character:setData("skillHistory", history)
 end)
+
 ```
 
 **High Complexity:**
@@ -16466,6 +17039,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -16501,6 +17075,7 @@ Server
 hook.Add("OnTableBackedUp", "MyAddon", function(tableName, snapshot)
 print("Table backed up: " .. tableName)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -16513,6 +17088,7 @@ time = os.time(),
 records = #snapshot
 }
 end)
+
 ```
 
 **High Complexity:**
@@ -16542,6 +17118,7 @@ ply:ChatPrint("Table " .. tableName .. " backed up (" .. #snapshot .. " records)
 end
 end
 end)
+
 ```
 
 ---
@@ -16577,6 +17154,7 @@ Server
 hook.Add("OnTableRemoved", "MyAddon", function(tableName, snapshot)
 print("Table removed: " .. tableName)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -16589,6 +17167,7 @@ data = snapshot,
 removed = os.time()
 }
 end)
+
 ```
 
 **High Complexity:**
@@ -16612,6 +17191,7 @@ end
 -- Clean up related data
 lia.data.delete("table_" .. tableName)
 end)
+
 ```
 
 ---
@@ -16647,6 +17227,7 @@ Server
 hook.Add("OnTableRestored", "MyAddon", function(tableName, data)
 print("Table restored: " .. tableName)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -16660,6 +17241,7 @@ records = #data,
 time = os.time()
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -16688,6 +17270,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -16718,6 +17301,7 @@ Server
 hook.Add("OnTablesReady", "MyAddon", function()
 print("Database tables are ready")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -16729,6 +17313,7 @@ MyAddon.data = data
 print("Addon data loaded")
 end)
 end)
+
 ```
 
 **High Complexity:**
@@ -16753,6 +17338,7 @@ end)
 end)
 print("Advanced addon initialization complete")
 end)
+
 ```
 
 ---
@@ -16789,6 +17375,7 @@ Server
 hook.Add("OnTicketClaimed", "MyAddon", function(client, requester, ticketMessage)
 print(client:Name() .. " claimed ticket from " .. requester:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -16801,6 +17388,7 @@ local claims = char:getData("ticketsClaimed", 0)
 char:setData("ticketsClaimed", claims + 1)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -16825,6 +17413,7 @@ stats.claimed = stats.claimed + 1
 char:setData("ticketStats", stats)
 end
 end)
+
 ```
 
 ---
@@ -16861,6 +17450,7 @@ Server
 hook.Add("OnTicketClosed", "MyAddon", function(client, requester, ticketMessage)
 print(client:Name() .. " closed ticket from " .. requester:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -16873,6 +17463,7 @@ local resolved = char:getData("ticketsResolved", 0)
 char:setData("ticketsResolved", resolved + 1)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -16897,6 +17488,7 @@ stats.resolved = stats.resolved + 1
 char:setData("ticketStats", stats)
 end
 end)
+
 ```
 
 ---
@@ -16932,6 +17524,7 @@ Server
 hook.Add("OnTicketCreated", "MyAddon", function(noob, message)
 print(noob:Name() .. " created a ticket: " .. message)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -16944,6 +17537,7 @@ ply:ChatPrint("New ticket from " .. noob:Name() .. ": " .. message)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -16973,6 +17567,7 @@ end
 -- Confirm to player
 noob:ChatPrint("Your ticket has been submitted. An admin will assist you shortly.")
 end)
+
 ```
 
 ---
@@ -17010,6 +17605,7 @@ Server
 hook.Add("OnTransferFailed", "MyAddon", function(fromChar, toChar, items, err)
 print("Transfer failed: " .. err)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -17025,6 +17621,7 @@ if IsValid(toPlayer) then
 toPlayer:ChatPrint("Transfer failed: " .. err)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -17053,6 +17650,7 @@ local stats = fromChar:getData("transferStats", {failed = 0})
 stats.failed = (stats.failed or 0) + 1
 fromChar:setData("transferStats", stats)
 end)
+
 ```
 
 ---
@@ -17087,6 +17685,7 @@ Server
 hook.Add("OnTransferred", "MyAddon", function(targetPlayer)
 print(targetPlayer:Name() .. " was transferred")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -17099,6 +17698,7 @@ local transfers = char:getData("transfers", 0)
 char:setData("transfers", transfers + 1)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -17123,6 +17723,7 @@ targetPlayer:ChatPrint("You have been transferred")
 -- Sync character data
 char:sync()
 end)
+
 ```
 
 ---
@@ -17158,6 +17759,7 @@ Server
 hook.Add("OnUsergroupCreated", "MyAddon", function(groupName, groupData)
 print("Usergroup created: " .. groupName)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -17170,6 +17772,7 @@ data = groupData,
 created = os.time()
 }
 end)
+
 ```
 
 **High Complexity:**
@@ -17195,6 +17798,7 @@ ply:ChatPrint("New usergroup created: " .. groupName)
 end
 end
 end)
+
 ```
 
 ---
@@ -17230,6 +17834,7 @@ Server
 hook.Add("OnUsergroupPermissionsChanged", "MyAddon", function(groupName, permissions)
 print("Permissions changed for: " .. groupName)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -17243,6 +17848,7 @@ permissions = permissions,
 time = os.time()
 })
 end)
+
 ```
 
 **High Complexity:**
@@ -17273,6 +17879,7 @@ ply:ChatPrint("Permissions updated for " .. groupName)
 end
 end
 end)
+
 ```
 
 ---
@@ -17307,6 +17914,7 @@ Server
 hook.Add("OnUsergroupRemoved", "MyAddon", function(groupName)
 print("Usergroup removed: " .. groupName)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -17317,6 +17925,7 @@ if MyAddon.usergroups and MyAddon.usergroups[groupName] then
 MyAddon.usergroups[groupName] = nil
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -17344,6 +17953,7 @@ ply:ChatPrint("Usergroup removed: " .. groupName)
 end
 end
 end)
+
 ```
 
 ---
@@ -17379,6 +17989,7 @@ Server
 hook.Add("OnUsergroupRenamed", "MyAddon", function(oldName, newName)
 print("Usergroup renamed: " .. oldName .. " -> " .. newName)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -17390,6 +18001,7 @@ MyAddon.usergroups[newName] = MyAddon.usergroups[oldName]
 MyAddon.usergroups[oldName] = nil
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -17418,6 +18030,7 @@ ply:ChatPrint("Usergroup renamed: " .. oldName .. " -> " .. newName)
 end
 end
 end)
+
 ```
 
 ---
@@ -17454,6 +18067,7 @@ Server
 hook.Add("OnVendorEdited", "MyAddon", function(client, vendor, key)
 print(client:Name() .. " edited vendor property: " .. key)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -17474,6 +18088,7 @@ return false
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -17536,6 +18151,7 @@ ply:ChatPrint("[ADMIN] " .. client:Name() .. " edited vendor " .. vendor:EntInde
 end
 end
 end)
+
 ```
 
 ---
@@ -17570,6 +18186,7 @@ Server
 hook.Add("OnlineStaffDataReceived", "MyAddon", function(staffData)
 print("Received staff data for " .. table.Count(staffData) .. " staff members")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -17585,6 +18202,7 @@ lastSeen = os.time()
 }
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -17612,6 +18230,7 @@ ply:ChatPrint("Staff data updated")
 end
 end
 end)
+
 ```
 
 ---
@@ -17648,6 +18267,7 @@ Server
 hook.Add("OptionReceived", "MyAddon", function(client, key, value)
 print(client:Name() .. " changed option " .. key .. " to " .. tostring(value))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -17661,6 +18281,7 @@ options[key] = value
 char:setData("options", options)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -17687,6 +18308,7 @@ options[key] = value
 char:setData("options", options)
 end
 end)
+
 ```
 
 ---
@@ -17722,6 +18344,7 @@ Server
 hook.Add("OverrideSpawnTime", "MyAddon", function(client, respawnTime)
 return respawnTime * 0.5
 end)
+
 ```
 
 **Medium Complexity:**
@@ -17737,6 +18360,7 @@ elseif faction == FACTION_MEDIC then
 return 20
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -17765,6 +18389,7 @@ respawnTime = respawnTime + (deaths * 2)
 end
 return math.max(respawnTime, 5)
 end)
+
 ```
 
 ---
@@ -17800,6 +18425,7 @@ Server
 hook.Add("PlayerAccessVendor", "MyAddon", function(activator, self)
 print(activator:Name() .. " accessed a vendor")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -17812,6 +18438,7 @@ local vendorUses = char:getData("vendorUses", 0)
 char:setData("vendorUses", vendorUses + 1)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -17840,6 +18467,7 @@ activator:ChatPrint("Achievement unlocked: Shopaholic!")
 end
 end
 end)
+
 ```
 
 ---
@@ -17874,6 +18502,7 @@ Server
 hook.Add("PlayerCheatDetected", "MyAddon", function(client)
 print("Cheat detected: " .. client:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -17888,6 +18517,7 @@ ply:ChatPrint("Player " .. client:Name() .. " was kicked for cheating")
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -17926,6 +18556,7 @@ ply:ChatPrint("[CHEAT] " .. client:Name() .. " detected and punished")
 end
 end
 end)
+
 ```
 
 ---
@@ -17960,6 +18591,7 @@ Server
 hook.Add("PlayerDisconnect", "MyAddon", function(client)
 print(client:Name() .. " disconnected")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -17971,6 +18603,7 @@ if char then
 char:save()
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -17997,6 +18630,7 @@ ply:ChatPrint(client:Name() .. " has disconnected")
 end
 end
 end)
+
 ```
 
 ---
@@ -18032,6 +18666,7 @@ Server
 hook.Add("PlayerGagged", "MyAddon", function(target, admin)
 print(target:Name() .. " was gagged by " .. admin:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -18045,6 +18680,7 @@ table.insert(gagHistory, {admin = admin:SteamID(), time = os.time()})
 char:setData("gagHistory", gagHistory)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -18073,6 +18709,7 @@ ply:ChatPrint("[ADMIN] " .. admin:Name() .. " gagged " .. target:Name())
 end
 end
 end)
+
 ```
 
 ---
@@ -18107,6 +18744,7 @@ Server
 hook.Add("PlayerLiliaDataLoaded", "MyAddon", function(client)
 print("Lilia data loaded for " .. client:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -18118,6 +18756,7 @@ if char then
 char:setData("addonInitialized", true)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -18145,6 +18784,7 @@ net.Start("liaPlayerDataSync")
 net.WriteTable(client.customData or {})
 net.Send(client)
 end)
+
 ```
 
 ---
@@ -18181,6 +18821,7 @@ Server
 hook.Add("PlayerLoadedChar", "MyAddon", function(client, character, currentChar)
 print(client:Name() .. " loaded character: " .. character:getName())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -18197,6 +18838,7 @@ character:setData("lastLoad", os.time())
 character:setData("loadCount", (character:getData("loadCount", 0) + 1))
 client:ChatPrint("Character loaded: " .. character:getName())
 end)
+
 ```
 
 **High Complexity:**
@@ -18271,6 +18913,7 @@ end
 print(string.format("%s loaded character %s (Faction: %s)",
 client:Name(), character:getName(), faction))
 end)
+
 ```
 
 ---
@@ -18309,6 +18952,7 @@ Server
 hook.Add("PlayerMessageSend", "MyAddon", function(speaker, chatType, text, anonymous, receivers)
 print(speaker:Name() .. " sent: " .. text)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -18323,6 +18967,7 @@ return false
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -18353,6 +18998,7 @@ os.time(), speaker:SteamID(), chatType, text)
 local messageCount = char:getData("messageCount", 0)
 char:setData("messageCount", messageCount + 1)
 end)
+
 ```
 
 ---
@@ -18388,6 +19034,7 @@ Server
 hook.Add("PlayerModelChanged", "MyAddon", function(client, value)
 print(client:Name() .. " model changed to " .. value)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -18401,6 +19048,7 @@ table.insert(modelHistory, {model = value, time = os.time()})
 char:setData("modelHistory", modelHistory)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -18426,6 +19074,7 @@ ply:ChatPrint(client:Name() .. " changed their appearance")
 end
 end
 end)
+
 ```
 
 ---
@@ -18461,6 +19110,7 @@ Server
 hook.Add("PlayerMuted", "MyAddon", function(target, admin)
 print(target:Name() .. " was muted by " .. admin:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -18474,6 +19124,7 @@ table.insert(muteHistory, {admin = admin:SteamID(), time = os.time()})
 char:setData("muteHistory", muteHistory)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -18502,6 +19153,7 @@ ply:ChatPrint("[ADMIN] " .. admin:Name() .. " muted " .. target:Name())
 end
 end
 end)
+
 ```
 
 ---
@@ -18532,6 +19184,7 @@ Server
 hook.Add("PlayerShouldAct", "MyAddon", function()
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -18543,6 +19196,7 @@ if not IsValid(client) then return false end
 local char = client:getChar()
 return char ~= nil
 end)
+
 ```
 
 **High Complexity:**
@@ -18567,6 +19221,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -18603,6 +19258,7 @@ Server
 hook.Add("PlayerShouldPermaKill", "MyAddon", function(client, inflictor, attacker)
 return false
 end)
+
 ```
 
 **Medium Complexity:**
@@ -18615,6 +19271,7 @@ return true
 end
 return false
 end)
+
 ```
 
 **High Complexity:**
@@ -18644,6 +19301,7 @@ return true
 end
 return false
 end)
+
 ```
 
 ---
@@ -18680,6 +19338,7 @@ Server
 hook.Add("PlayerSpawnPointSelected", "MyAddon", function(client, pos, ang)
 print(client:Name() .. " spawning at " .. tostring(pos))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -18692,6 +19351,7 @@ char:setData("lastSpawnPos", pos)
 char:setData("lastSpawnAng", ang)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -18714,6 +19374,7 @@ char:setData("spawnCount", spawnCount + 1)
 client:SetHealth(100)
 client:SetArmor(0)
 end)
+
 ```
 
 ---
@@ -18748,6 +19409,7 @@ Server
 hook.Add("PlayerThrowPunch", "MyAddon", function(client)
 print(client:Name() .. " threw a punch")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -18760,6 +19422,7 @@ local punchCount = char:getData("punchCount", 0)
 char:setData("punchCount", punchCount + 1)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -18782,6 +19445,7 @@ client:ChatPrint("Achievement unlocked: Brawler!")
 end
 end
 end)
+
 ```
 
 ---
@@ -18817,6 +19481,7 @@ Server
 hook.Add("PlayerUngagged", "MyAddon", function(target, admin)
 print(target:Name() .. " was ungagged by " .. admin:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -18825,6 +19490,7 @@ end)
 hook.Add("PlayerUngagged", "NotifyUngag", function(target, admin)
 target:ChatPrint("You have been ungagged by " .. admin:Name())
 end)
+
 ```
 
 **High Complexity:**
@@ -18843,6 +19509,7 @@ ply:ChatPrint("[ADMIN] " .. admin:Name() .. " ungagged " .. target:Name())
 end
 end
 end)
+
 ```
 
 ---
@@ -18878,6 +19545,7 @@ Server
 hook.Add("PlayerUnmuted", "MyAddon", function(target, admin)
 print(target:Name() .. " was unmuted by " .. admin:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -18886,6 +19554,7 @@ end)
 hook.Add("PlayerUnmuted", "NotifyUnmute", function(target, admin)
 target:ChatPrint("You have been unmuted by " .. admin:Name())
 end)
+
 ```
 
 **High Complexity:**
@@ -18904,6 +19573,7 @@ ply:ChatPrint("[ADMIN] " .. admin:Name() .. " unmuted " .. target:Name())
 end
 end
 end)
+
 ```
 
 ---
@@ -18939,6 +19609,7 @@ Server
 hook.Add("PlayerUseDoor", "MyAddon", function(client, door)
 print(client:Name() .. " used a door")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -18951,6 +19622,7 @@ local doorUses = char:getData("doorUses", 0)
 char:setData("doorUses", doorUses + 1)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -18974,6 +19646,7 @@ client:ChatPrint("Achievement unlocked: Doorman!")
 end
 end
 end)
+
 ```
 
 ---
@@ -19009,6 +19682,7 @@ Server
 hook.Add("PostDoorDataLoad", "MyAddon", function(ent, doorData)
 print("Door data loaded for entity " .. ent:EntIndex())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -19019,6 +19693,7 @@ if doorData.customLocked then
 ent:Fire("Lock")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -19055,6 +19730,7 @@ doorData.title or "None",
 doorData.price or "None",
 doorData.owner or "None"))
 end)
+
 ```
 
 ---
@@ -19085,6 +19761,7 @@ Server
 hook.Add("PostLoadData", "MyAddon", function()
 print("Data loaded")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -19094,6 +19771,7 @@ hook.Add("PostLoadData", "InitializeSystems", function()
 MyAddon.Initialize()
 print("Systems initialized after data load")
 end)
+
 ```
 
 **High Complexity:**
@@ -19115,6 +19793,7 @@ MyAddon.SaveData()
 end)
 print("Post-load initialization completed")
 end)
+
 ```
 
 ---
@@ -19149,6 +19828,7 @@ Server
 hook.Add("PostPlayerInitialSpawn", "MyAddon", function(client)
 client:ChatPrint("Welcome to the server!")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -19170,6 +19850,7 @@ end
 end
 end)
 end)
+
 ```
 
 **High Complexity:**
@@ -19204,6 +19885,7 @@ client:ChatPrint("Welcome! You received a first-time bonus!")
 end
 end)
 end)
+
 ```
 
 ---
@@ -19240,6 +19922,7 @@ Server
 hook.Add("PostPlayerLoadedChar", "MyAddon", function(client, character, currentChar)
 client:ChatPrint("Welcome back, " .. character:getName())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -19251,6 +19934,7 @@ client:SetHealth(health)
 local armor = character:getData("savedArmor", 0)
 client:SetArmor(armor)
 end)
+
 ```
 
 **High Complexity:**
@@ -19281,6 +19965,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -19315,6 +20000,7 @@ Server
 hook.Add("PostPlayerLoadout", "MyAddon", function(client)
 print(client:Name() .. " received loadout")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -19326,6 +20012,7 @@ if char and char:getData("vip", false) then
 client:Give("weapon_pistol")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -19358,6 +20045,7 @@ client:SetRunSpeed(300)
 client:SetWalkSpeed(150)
 end
 end)
+
 ```
 
 ---
@@ -19395,6 +20083,7 @@ Server
 hook.Add("PostPlayerSay", "MyAddon", function(client, message, chatType, anonymous)
 print(client:Name() .. " said: " .. message)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -19407,6 +20096,7 @@ local messageCount = char:getData("messageCount", 0)
 char:setData("messageCount", messageCount + 1)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -19429,6 +20119,7 @@ client:ChatPrint("Achievement unlocked: Chatty!")
 end
 end
 end)
+
 ```
 
 ---
@@ -19465,6 +20156,7 @@ Server
 hook.Add("PostScaleDamage", "MyAddon", function(hitgroup, dmgInfo, damageScale)
 print("Damage scaled to: " .. damageScale)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -19480,6 +20172,7 @@ char:setData("lastDamageTaken", damage)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -19502,6 +20195,7 @@ attackerChar:setData("damageDealt", damageDealt + damage)
 local damageTaken = targetChar:getData("damageTaken", 0)
 targetChar:setData("damageTaken", damageTaken + damage)
 end)
+
 ```
 
 ---
@@ -19536,6 +20230,7 @@ Server
 hook.Add("PreCharDelete", "MyAddon", function(id)
 print("Character " .. id .. " is being deleted")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -19548,6 +20243,7 @@ if char then
 lia.db.query("INSERT INTO char_backups SELECT * FROM characters WHERE id = ?", id)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -19569,6 +20265,7 @@ end
 -- Log deletion
 lia.log.add("Character " .. char:getName() .. " (" .. id .. ") is being deleted", "character")
 end)
+
 ```
 
 ---
@@ -19604,6 +20301,7 @@ Server
 hook.Add("PreDoorDataSave", "MyAddon", function(door, doorData)
 print("Saving door data for entity " .. door:EntIndex())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -19614,6 +20312,7 @@ if doorData.price and doorData.price < 0 then
 doorData.price = 0
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -19640,6 +20339,7 @@ door:EntIndex(),
 doorData.title or "None",
 doorData.price or "None"))
 end)
+
 ```
 
 ---
@@ -19676,6 +20376,7 @@ Server
 hook.Add("PrePlayerInteractItem", "MyAddon", function(client, action, self)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -19691,6 +20392,7 @@ end
 char:setData("lastItemUse", CurTime())
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -19720,6 +20422,7 @@ end
 char:setData("lastItemUse", CurTime())
 return true
 end)
+
 ```
 
 ---
@@ -19756,6 +20459,7 @@ Server
 hook.Add("PrePlayerLoadedChar", "MyAddon", function(client, character, currentChar)
 print(client:Name() .. " is loading character " .. character:getName())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -19767,6 +20471,7 @@ currentChar:setData("lastHealth", client:Health())
 currentChar:setData("lastArmor", client:Armor())
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -19790,6 +20495,7 @@ end
 lia.db.query("INSERT INTO char_load_logs (timestamp, charid, steamid) VALUES (?, ?, ?)",
 os.time(), character:getID(), client:SteamID())
 end)
+
 ```
 
 ---
@@ -19828,6 +20534,7 @@ Server
 hook.Add("PreSalaryGive", "MyAddon", function(client, char, pay, faction, class)
 print(client:Name() .. " is receiving $" .. pay .. " salary")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -19840,6 +20547,7 @@ local level = char:getData("level", 1)
 pay = pay + (level * 10)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -19871,6 +20579,7 @@ end
 lia.db.query("INSERT INTO salary_logs (timestamp, charid, amount, faction, class) VALUES (?, ?, ?, ?, ?)",
 os.time(), char:getID(), pay, faction, class)
 end)
+
 ```
 
 ---
@@ -19907,6 +20616,7 @@ Server
 hook.Add("PreScaleDamage", "MyAddon", function(hitgroup, dmgInfo, damageScale)
 print("Scaling damage for hitgroup " .. hitgroup)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -19917,6 +20627,7 @@ if hitgroup == HITGROUP_HEAD then
 damageScale = damageScale * 1.5
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -19943,6 +20654,7 @@ if armor > 0 then
 damageScale = damageScale * (1 - (armor / 200))
 end
 end)
+
 ```
 
 ---
@@ -19973,6 +20685,7 @@ Server
 hook.Add("RegisterPreparedStatements", "MyAddon", function()
 print("Registering prepared statements")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -19982,6 +20695,7 @@ hook.Add("RegisterPreparedStatements", "RegisterCustomStatements", function()
 lia.db.prepare("my_query", "SELECT * FROM my_table WHERE id = ?")
 lia.db.prepare("my_insert", "INSERT INTO my_table (data) VALUES (?)")
 end)
+
 ```
 
 **High Complexity:**
@@ -20000,6 +20714,7 @@ lia.db.prepare("get_item_data", "SELECT * FROM item_data WHERE itemid = ?")
 lia.db.prepare("update_item_data", "UPDATE item_data SET value = ? WHERE itemid = ? AND key = ?")
 print("All prepared statements registered")
 end)
+
 ```
 
 ---
@@ -20035,6 +20750,7 @@ Server
 hook.Add("RemoveWarning", "MyAddon", function(charID, index)
 print("Warning " .. index .. " removed for character " .. charID)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -20047,6 +20763,7 @@ local warningRemovals = char:getData("warningRemovals", 0)
 char:setData("warningRemovals", warningRemovals + 1)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -20073,6 +20790,7 @@ ply:ChatPrint("[ADMIN] Warning " .. index .. " removed for " .. char:getName())
 end
 end
 end)
+
 ```
 
 ---
@@ -20111,6 +20829,7 @@ Server
 hook.Add("RunAdminSystemCommand", "MyAddon", function(cmd, admin, victim, dur, reason)
 print(admin:Name() .. " ran command: " .. cmd)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -20124,6 +20843,7 @@ commands[cmd] = (commands[cmd] or 0) + 1
 char:setData("commandsUsed", commands)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -20150,6 +20870,7 @@ ply:ChatPrint("[ADMIN] " .. message)
 end
 end
 end)
+
 ```
 
 ---
@@ -20180,6 +20901,7 @@ Server
 hook.Add("SaveData", "MyAddon", function()
 print("Saving data")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -20188,6 +20910,7 @@ end)
 hook.Add("SaveData", "SaveCustomData", function()
 lia.data.set("myAddonData", MyAddon.data)
 end)
+
 ```
 
 **High Complexity:**
@@ -20209,6 +20932,7 @@ lia.db.query("INSERT INTO data_saves (timestamp, data) VALUES (?, ?)",
 os.time(), util.TableToJSON(MyAddon.data))
 print("All data saved successfully")
 end)
+
 ```
 
 ---
@@ -20244,6 +20968,7 @@ Server
 hook.Add("SendPopup", "MyAddon", function(noob, message)
 print("Sending popup to " .. noob:Name() .. ": " .. message)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -20256,6 +20981,7 @@ local customMessage = "[" .. char:getFaction() .. "] " .. message
 noob:ChatPrint(customMessage)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -20279,6 +21005,7 @@ noob:ChatPrint(customMessage)
 lia.db.query("INSERT INTO popup_logs (timestamp, steamid, message) VALUES (?, ?, ?)",
 os.time(), noob:SteamID(), message)
 end)
+
 ```
 
 ---
@@ -20313,6 +21040,7 @@ Server
 hook.Add("SetupBagInventoryAccessRules", "MyAddon", function(inventory)
 print("Setting up bag access rules")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -20322,6 +21050,7 @@ hook.Add("SetupBagInventoryAccessRules", "BasicAccessRules", function(inventory)
 inventory:setData("accessLevel", "owner")
 inventory:setData("allowTransfer", true)
 end)
+
 ```
 
 **High Complexity:**
@@ -20345,6 +21074,7 @@ end
 inventory:setData("accessTime", os.time())
 inventory:setData("accessDuration", 3600) -- 1 hour
 end)
+
 ```
 
 ---
@@ -20379,6 +21109,7 @@ Server
 hook.Add("SetupBotPlayer", "MyAddon", function(client)
 print("Setting up bot: " .. client:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -20388,6 +21119,7 @@ hook.Add("SetupBotPlayer", "ConfigureBot", function(client)
 client:SetNetVar("isBot", true)
 client:SetNetVar("botType", "guard")
 end)
+
 ```
 
 **High Complexity:**
@@ -20410,6 +21142,7 @@ hook.Run("BotAIUpdate", client)
 end
 end)
 end)
+
 ```
 
 ---
@@ -20440,6 +21173,7 @@ Server
 hook.Add("SetupDatabase", "MyAddon", function()
 print("Setting up database")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -20448,6 +21182,7 @@ end)
 hook.Add("SetupDatabase", "CreateCustomTables", function()
 lia.db.query("CREATE TABLE IF NOT EXISTS my_table (id INTEGER PRIMARY KEY, data TEXT)")
 end)
+
 ```
 
 **High Complexity:**
@@ -20469,6 +21204,7 @@ lia.db.query("CREATE INDEX IF NOT EXISTS idx_player_stats_steamid ON player_stat
 lia.db.prepare("get_player_stats", "SELECT * FROM player_stats WHERE steamid = ?")
 lia.db.prepare("update_player_stats", "UPDATE player_stats SET kills = ?, deaths = ? WHERE steamid = ?")
 end)
+
 ```
 
 ---
@@ -20504,6 +21240,7 @@ Server
 hook.Add("SetupPlayerModel", "MyAddon", function(client, character)
 print("Setting up model for " .. character:getName())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -20520,6 +21257,7 @@ if model then
 client:SetModel(model)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -20553,6 +21291,7 @@ for i, group in ipairs(bodygroups) do
 client:SetBodygroup(i, group)
 end
 end)
+
 ```
 
 ---
@@ -20583,6 +21322,7 @@ Server
 hook.Add("ShouldDataBeSaved", "MyAddon", function()
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -20592,6 +21332,7 @@ hook.Add("ShouldDataBeSaved", "CheckSaveConditions", function()
 local players = player.GetAll()
 return #players > 0
 end)
+
 ```
 
 **High Complexity:**
@@ -20614,6 +21355,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -20644,6 +21386,7 @@ Server
 hook.Add("ShouldDeleteSavedItems", "MyAddon", function()
 return false
 end)
+
 ```
 
 **Medium Complexity:**
@@ -20653,6 +21396,7 @@ hook.Add("ShouldDeleteSavedItems", "DeleteOldItems", function()
 local lastCleanup = lia.data.get("lastItemCleanup", 0)
 return os.time() - lastCleanup > 86400 -- 24 hours
 end)
+
 ```
 
 **High Complexity:**
@@ -20677,6 +21421,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -20713,6 +21458,7 @@ Server
 hook.Add("StorageCanTransferItem", "MyAddon", function(client, storage, item)
 return true
 end)
+
 ```
 
 **Medium Complexity:**
@@ -20722,6 +21468,7 @@ hook.Add("StorageCanTransferItem", "ItemRestrictions", function(client, storage,
 local restrictedItems = {"weapon_crowbar", "weapon_stunstick"}
 return not table.HasValue(restrictedItems, item.uniqueID)
 end)
+
 ```
 
 **High Complexity:**
@@ -20772,6 +21519,7 @@ return false
 end
 return true
 end)
+
 ```
 
 ---
@@ -20807,6 +21555,7 @@ Server
 hook.Add("StorageEntityRemoved", "MyAddon", function(self, inventory)
 print("Storage entity removed: " .. tostring(self))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -20819,6 +21568,7 @@ end
 -- Remove from storage list
 lia.storage.list[self] = nil
 end)
+
 ```
 
 **High Complexity:**
@@ -20858,6 +21608,7 @@ ownerChar:setData("storageCount", (ownerChar:getData("storageCount", 0) - 1))
 end
 end
 end)
+
 ```
 
 ---
@@ -20894,6 +21645,7 @@ Server
 hook.Add("StorageInventorySet", "MyAddon", function(entity, inventory, isCar)
 print("Storage inventory set for " .. tostring(entity))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -20905,6 +21657,7 @@ inventory:setMaxWeight(isCar and 1000 or 500)
 inventory:setMaxItems(isCar and 50 or 25)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -20946,6 +21699,7 @@ ply:ChatPrint("Storage is now available")
 end
 end
 end)
+
 ```
 
 ---
@@ -20976,6 +21730,7 @@ Server
 hook.Add("StorageItemRemoved", "MyAddon", function()
 print("Item removed from storage")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -20990,6 +21745,7 @@ end
 end
 print("Active storages: " .. storageCount)
 end)
+
 ```
 
 **High Complexity:**
@@ -21036,6 +21792,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -21071,6 +21828,7 @@ Server
 hook.Add("StorageOpen", "MyAddon", function(storage, isCar)
 print("Storage opened: " .. tostring(storage))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -21082,6 +21840,7 @@ storageData.openCount = (storageData.openCount or 0) + 1
 storageData.lastOpened = os.time()
 storage:setNetVar("storageData", storageData)
 end)
+
 ```
 
 **High Complexity:**
@@ -21126,6 +21885,7 @@ inventory:setMaxItems(inventory:getMaxItems() * 1.5)
 end
 end
 end)
+
 ```
 
 ---
@@ -21161,6 +21921,7 @@ Server
 hook.Add("StorageRestored", "MyAddon", function(ent, inventory)
 print("Storage restored: " .. tostring(ent))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -21172,6 +21933,7 @@ inventory:setMaxWeight(500)
 inventory:setMaxItems(25)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -21220,6 +21982,7 @@ if corruptedItems > 0 then
 print(string.format("Storage %s restored with %d corrupted items", ent:EntIndex(), corruptedItems))
 end
 end)
+
 ```
 
 ---
@@ -21254,6 +22017,7 @@ Server
 hook.Add("StoreSpawns", "MyAddon", function(spawns)
 print("Storing " .. #spawns .. " spawn points")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -21266,6 +22030,7 @@ print("Invalid spawn point at index " .. i)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -21306,6 +22071,7 @@ spawn.ang.p, spawn.ang.y, spawn.ang.r)
 end
 print(string.format("Stored %d valid spawn points", #validSpawns))
 end)
+
 ```
 
 ---
@@ -21340,6 +22106,7 @@ Server
 hook.Add("SyncCharList", "MyAddon", function(client)
 print("Syncing character list with " .. client:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -21353,6 +22120,7 @@ print("Invalid character data for " .. client:Name())
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -21391,6 +22159,7 @@ net.WriteTable(validChars)
 net.Send(client)
 print(string.format("Synced %d characters for %s", #validChars, client:Name()))
 end)
+
 ```
 
 ---
@@ -21427,6 +22196,7 @@ Server
 hook.Add("TicketSystemClaim", "MyAddon", function(client, requester, ticketMessage)
 print(client:Name() .. " claimed ticket from " .. requester:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -21440,6 +22210,7 @@ ply:ChatPrint("[ADMIN] " .. client:Name() .. " claimed ticket from " .. requeste
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -21476,6 +22247,7 @@ local clientData = client:getData("ticketStats", {})
 clientData.claimed = (clientData.claimed or 0) + 1
 client:setData("ticketStats", clientData)
 end)
+
 ```
 
 ---
@@ -21512,6 +22284,7 @@ Server
 hook.Add("TicketSystemClose", "MyAddon", function(client, requester, ticketMessage)
 print(client:Name() .. " closed ticket from " .. requester:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -21525,6 +22298,7 @@ ply:ChatPrint("[ADMIN] " .. client:Name() .. " closed ticket from " .. requester
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -21569,6 +22343,7 @@ requester:setData("ticketData", nil)
 end
 end)
 end)
+
 ```
 
 ---
@@ -21604,6 +22379,7 @@ Server
 hook.Add("TicketSystemCreated", "MyAddon", function(noob, message)
 print(noob:Name() .. " created a ticket: " .. message)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -21616,6 +22392,7 @@ ply:ChatPrint("[TICKET] " .. noob:Name() .. ": " .. message)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -21660,6 +22437,7 @@ noob:setData("ticketStats", playerData)
 -- Notify player
 noob:ChatPrint("Your ticket has been created. An admin will respond soon.")
 end)
+
 ```
 
 ---
@@ -21696,6 +22474,7 @@ Server
 hook.Add("ToggleLock", "MyAddon", function(client, door, state)
 print(client:Name() .. " " .. (state and "locked" or "unlocked") .. " door")
 end)
+
 ```
 
 **Medium Complexity:**
@@ -21709,6 +22488,7 @@ ply:ChatPrint("A door has been " .. (state and "locked" or "unlocked"))
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -21750,6 +22530,7 @@ char:setData("doorMaster", true)
 client:ChatPrint("You have mastered door locking!")
 end
 end)
+
 ```
 
 ---
@@ -21784,6 +22565,7 @@ Server
 hook.Add("TransferItem", "MyAddon", function(itemID)
 print("Item transferred: " .. itemID)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -21796,6 +22578,7 @@ local transferCount = item:getData("transferCount", 0)
 item:setData("transferCount", transferCount + 1)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -21847,6 +22630,7 @@ item:setData("broken", true)
 end
 end
 end)
+
 ```
 
 ---
@@ -21881,6 +22665,7 @@ Server
 hook.Add("UpdateEntityPersistence", "MyAddon", function(ent)
 print("Updating persistence for " .. tostring(ent))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -21892,6 +22677,7 @@ ent:setData("lastUpdate", os.time())
 ent:setData("persistent", true)
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -21940,6 +22726,7 @@ class = ent:GetClass(),
 timestamp = os.time()
 })
 end)
+
 ```
 
 ---
@@ -21976,6 +22763,7 @@ Server
 hook.Add("VendorClassUpdated", "MyAddon", function(vendor, id, allowed)
 print("Vendor class " .. id .. " " .. (allowed and "allowed" or "denied"))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -21989,6 +22777,7 @@ ply:ChatPrint("Vendor class " .. id .. " " .. (allowed and "allowed" or "denied"
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -22029,6 +22818,7 @@ if IsValid(lia.gui.vendor) and lia.gui.vendor.vendor == vendor then
 lia.gui.vendor:Populate()
 end
 end)
+
 ```
 
 ---
@@ -22064,6 +22854,7 @@ Server
 hook.Add("VendorEdited", "MyAddon", function(liaVendorEnt, key)
 print("Vendor edited: " .. key)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -22074,6 +22865,7 @@ if key == "name" and liaVendorEnt:getNetVar("name") == "" then
 liaVendorEnt:setNetVar("name", "Unnamed Vendor")
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -22117,6 +22909,7 @@ if IsValid(lia.gui.vendor) and lia.gui.vendor.vendor == liaVendorEnt then
 lia.gui.vendor:Populate()
 end
 end)
+
 ```
 
 ---
@@ -22153,6 +22946,7 @@ Server
 hook.Add("VendorFactionUpdated", "MyAddon", function(vendor, id, allowed)
 print("Vendor faction " .. id .. " " .. (allowed and "allowed" or "denied"))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -22169,6 +22963,7 @@ end
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -22218,6 +23013,7 @@ vendor:removeItem(item.uniqueID, 1)
 end
 end
 end)
+
 ```
 
 ---
@@ -22254,6 +23050,7 @@ Server
 hook.Add("VendorItemMaxStockUpdated", "MyAddon", function(vendor, itemType, value)
 print("Vendor item " .. itemType .. " max stock set to " .. value)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -22267,6 +23064,7 @@ value = 1000
 end
 vendor:setNetVar("itemMaxStock_" .. itemType, value)
 end)
+
 ```
 
 **High Complexity:**
@@ -22315,6 +23113,7 @@ if IsValid(lia.gui.vendor) and lia.gui.vendor.vendor == vendor then
 lia.gui.vendor:Populate()
 end
 end)
+
 ```
 
 ---
@@ -22351,6 +23150,7 @@ Server
 hook.Add("VendorItemModeUpdated", "MyAddon", function(vendor, itemType, value)
 print("Vendor item " .. itemType .. " mode set to " .. value)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -22363,6 +23163,7 @@ value = "both"
 end
 vendor:setNetVar("itemMode_" .. itemType, value)
 end)
+
 ```
 
 **High Complexity:**
@@ -22416,6 +23217,7 @@ if IsValid(lia.gui.vendor) and lia.gui.vendor.vendor == vendor then
 lia.gui.vendor:Populate()
 end
 end)
+
 ```
 
 ---
@@ -22452,6 +23254,7 @@ Server
 hook.Add("VendorItemPriceUpdated", "MyAddon", function(vendor, itemType, value)
 print("Vendor item " .. itemType .. " price set to " .. value)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -22465,6 +23268,7 @@ value = 1000000
 end
 vendor:setNetVar("itemPrice_" .. itemType, value)
 end)
+
 ```
 
 **High Complexity:**
@@ -22521,6 +23325,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -22557,6 +23362,7 @@ Server
 hook.Add("VendorItemStockUpdated", "MyAddon", function(vendor, itemType, value)
 print("Vendor item " .. itemType .. " stock set to " .. value)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -22568,6 +23374,7 @@ value = 0
 end
 vendor:setNetVar("itemStock_" .. itemType, value)
 end)
+
 ```
 
 **High Complexity:**
@@ -22629,6 +23436,7 @@ end
 end
 end
 end)
+
 ```
 
 ---
@@ -22663,6 +23471,7 @@ Server
 hook.Add("VendorOpened", "MyAddon", function(vendor)
 print("Vendor opened: " .. vendor:EntIndex())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -22674,6 +23483,7 @@ vendorData.openCount = (vendorData.openCount or 0) + 1
 vendorData.lastOpened = os.time()
 vendor:setNetVar("vendorData", vendorData)
 end)
+
 ```
 
 **High Complexity:**
@@ -22717,6 +23527,7 @@ end
 print(string.format("Vendor %s opened by %s (Faction: %s, Opens: %d)",
 vendor:EntIndex(), char:getName(), faction, openCount))
 end)
+
 ```
 
 ---
@@ -22754,6 +23565,7 @@ Server
 hook.Add("VendorTradeEvent", "MyAddon", function(client, vendor, itemType, isSellingToVendor)
 print(client:Name() .. " traded " .. itemType)
 end)
+
 ```
 
 **Medium Complexity:**
@@ -22765,6 +23577,7 @@ if not char then return end
 local trades = char:getData("vendorTrades", 0)
 char:setData("vendorTrades", trades + 1)
 end)
+
 ```
 
 **High Complexity:**
@@ -22795,6 +23608,7 @@ ply:ChatPrint(client:Name() .. " traded with the vendor")
 end
 end
 end)
+
 ```
 
 ---
@@ -22834,6 +23648,7 @@ Server
 hook.Add("WarningIssued", "MyAddon", function(client, target, reason, count, warnerSteamID, warnerName)
 print(target:Name() .. " was warned by " .. client:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -22846,6 +23661,7 @@ ply:ChatPrint(target:Name() .. " was warned for: " .. reason)
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -22875,6 +23691,7 @@ char:setData("totalWarnings", count)
 char:setData("lastWarning", os.time())
 end
 end)
+
 ```
 
 ---
@@ -22914,6 +23731,7 @@ Server
 hook.Add("WarningRemoved", "MyAddon", function(client, targetClient, reason, count, warnerSteamID, warnerName)
 print(targetClient:Name() .. "'s warning was removed by " .. client:Name())
 end)
+
 ```
 
 **Medium Complexity:**
@@ -22926,6 +23744,7 @@ ply:ChatPrint(targetClient:Name() .. "'s warning was removed by " .. client:Name
 end
 end
 end)
+
 ```
 
 **High Complexity:**
@@ -22952,6 +23771,7 @@ char:setData("totalWarnings", count)
 char:setData("lastWarningRemoval", os.time())
 end
 end)
+
 ```
 
 ---
@@ -22988,6 +23808,7 @@ Server
 hook.Add("setData", "MyAddon", function(value, global, ignoreMap)
 print("Data set: " .. tostring(value))
 end)
+
 ```
 
 **Medium Complexity:**
@@ -23000,6 +23821,7 @@ return false
 end
 return true
 end)
+
 ```
 
 **High Complexity:**
@@ -23034,6 +23856,7 @@ lia.db.query("INSERT INTO data_logs (timestamp, global, value_type) VALUES (?, ?
 os.time(), global and 1 or 0, type(value))
 return true
 end)
+
 ```
 
 ---
