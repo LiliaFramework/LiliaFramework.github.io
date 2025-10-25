@@ -1,9 +1,12 @@
 # Changelog
 
-## Version 6.92 (October 25, 2025)
+## Version 6.95 (October 25, 2025)
 
 ### Changes
 
+- Revert "Spacing"
+- Revert "Successfully updated workshop Lilia to 6.92"
+- Successfully updated workshop Lilia to 6.92
 - Spacing
 - xd
 - Successfully updated workshop Lilia to 6.899
@@ -21,9 +24,6 @@
 - Update compatibility.md
 - Items
 - Naming of Page
-- Successfully updated workshop Lilia to 6.884
-- Update ci.yml
-- Successfully updated workshop Lilia to 6.882
 
 ## Version 6.899 (October 25, 2025)
 
