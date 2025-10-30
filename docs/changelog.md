@@ -1,9 +1,12 @@
 # Changelog
 
-## Version 6.916 (October 30, 2025)
+## Version 6.919 (October 30, 2025)
 
 ### Changes
 
+- Documented Item Meta
+- Optimizations
+- Successfully updated workshop Lilia to 6.916
 - New Docs Format
 - Successfully updated workshop Lilia to 6.914
 - Way too many changes lel
@@ -21,9 +24,6 @@
 - Spacing
 - xd
 - Successfully updated workshop Lilia to 6.899
-- Update commands.lua
-- Dumb Check
-- Bot Command
 
 ## Version 6.914 (October 29, 2025)
 
