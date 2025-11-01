@@ -6,6 +6,14 @@ PAC outfit item system for the Lilia framework.
 
 ### if not pac then return end
 
+**Purpose**
+
+Prevents loading if PAC addon is not available
+
+**When Called**
+
+During item definition
+
 **Example Usage**
 
 ```lua
@@ -16,6 +24,14 @@ if not pac then return end
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the display name of the PAC outfit item
+
+**When Called**
+
+During item definition
 
 **Example Usage**
 
@@ -28,6 +44,14 @@ ITEM.name = "Hat"
 
 ### Purpose:
 
+**Purpose**
+
+Sets the description of the PAC outfit item
+
+**When Called**
+
+During item definition
+
 **Example Usage**
 
 ```lua
@@ -38,6 +62,14 @@ ITEM.desc = "A stylish hat"
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the category for the PAC outfit item
+
+**When Called**
+
+During item definition
 
 **Example Usage**
 
@@ -50,6 +82,14 @@ ITEM.category = "outfit"
 
 ### Purpose:
 
+**Purpose**
+
+Sets the 3D model for the PAC outfit item
+
+**When Called**
+
+During item definition
+
 **Example Usage**
 
 ```lua
@@ -60,6 +100,14 @@ ITEM.model = "models/Gibs/HGIBS.mdl"
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the inventory width of the PAC outfit item
+
+**When Called**
+
+During item definition
 
 **Example Usage**
 
@@ -72,6 +120,14 @@ ITEM.width = 1  -- Takes 1 slot width
 
 ### Purpose:
 
+**Purpose**
+
+Sets the inventory height of the PAC outfit item
+
+**When Called**
+
+During item definition
+
 **Example Usage**
 
 ```lua
@@ -82,6 +138,14 @@ ITEM.height = 1  -- Takes 1 slot height
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the outfit category for conflict checking
+
+**When Called**
+
+During item definition
 
 **Example Usage**
 
@@ -94,6 +158,14 @@ ITEM.outfitCategory = "hat"  -- Prevents multiple items of same category
 
 ### Purpose:
 
+**Purpose**
+
+Sets the PAC data for the outfit
+
+**When Called**
+
+During item definition
+
 **Example Usage**
 
 ```lua
@@ -104,6 +176,14 @@ ITEM.pacData = {}  -- PAC attachment data
 ---
 
 ### ITEM:paintOver(item, w, h)
+
+**Purpose**
+
+Custom paint function to show equipped status
+
+**When Called**
+
+When rendering the item in inventory (CLIENT only)
 
 **Example Usage**
 
@@ -121,6 +201,14 @@ function ITEM:paintOver(item, w, h)
 
 ### ITEM:removePart(client)
 
+**Purpose**
+
+Removes the PAC part from the player
+
+**When Called**
+
+When unequipping the PAC outfit
+
 **Example Usage**
 
 ```lua
@@ -137,6 +225,14 @@ function ITEM:removePart(client)
 
 ### ITEM:onCanBeTransfered(_, newInventory)
 
+**Purpose**
+
+Prevents transfer of equipped PAC outfits
+
+**When Called**
+
+When attempting to transfer the item
+
 **Example Usage**
 
 ```lua
@@ -151,6 +247,14 @@ function ITEM:onCanBeTransfered(_, newInventory)
 
 ### ITEM:onLoadout()
 
+**Purpose**
+
+Handles PAC outfit loading on player spawn
+
+**When Called**
+
+When player spawns with equipped PAC outfit
+
 **Example Usage**
 
 ```lua
@@ -163,6 +267,14 @@ function ITEM:onLoadout()
 ---
 
 ### ITEM:onRemoved()
+
+**Purpose**
+
+Handles PAC outfit removal when item is removed
+
+**When Called**
+
+When item is removed from inventory
 
 **Example Usage**
 
@@ -178,6 +290,14 @@ function ITEM:onRemoved()
 ---
 
 ### ITEM:hook("drop", function(item) ... end)
+
+**Purpose**
+
+Handles PAC outfit removal when item is dropped
+
+**When Called**
+
+When item is dropped
 
 **Example Usage**
 

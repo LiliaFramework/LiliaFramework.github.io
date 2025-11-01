@@ -49,6 +49,14 @@ classwhitelists to control which classes a character has access to.
 
 ### Purpose:
 
+**Purpose**
+
+Sets the display name of the character class
+
+**When Called**
+
+During class definition
+
 **Example Usage**
 
 ```lua
@@ -59,6 +67,14 @@ CLASS.name = "Police Officer"
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the description of the character class
+
+**When Called**
+
+During class definition
 
 **Example Usage**
 
@@ -71,6 +87,14 @@ CLASS.desc = "A law enforcement officer responsible for maintaining order"
 
 ### Purpose:
 
+**Purpose**
+
+Sets the faction ID this class belongs to
+
+**When Called**
+
+During class definition
+
 **Example Usage**
 
 ```lua
@@ -81,6 +105,14 @@ CLASS.faction = FACTION_POLICE
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the maximum number of players allowed in this class
+
+**When Called**
+
+During class definition
 
 **Example Usage**
 
@@ -94,6 +126,14 @@ CLASS.limit = 0  -- Unlimited players
 
 ### Purpose:
 
+**Purpose**
+
+Sets the player model for this class
+
+**When Called**
+
+During class definition
+
 **Example Usage**
 
 ```lua
@@ -104,6 +144,14 @@ CLASS.model = "models/player/barney.mdl"
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets whether this class requires whitelist access
+
+**When Called**
+
+During class definition
 
 **Example Usage**
 
@@ -121,6 +169,14 @@ CLASS.isWhitelisted = true  -- Requires whitelist permission to join
 
 ### Purpose:
 
+**Purpose**
+
+Sets whether this is the default class for the faction
+
+**When Called**
+
+During class definition
+
 **Example Usage**
 
 ```lua
@@ -131,6 +187,14 @@ CLASS.isDefault = true
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Hides this class from the scoreboard display
+
+**When Called**
+
+During class definition
 
 **Example Usage**
 
@@ -143,6 +207,14 @@ CLASS.scoreboardHidden = true  -- Class will not appear in scoreboard categories
 
 ### Purpose:
 
+**Purpose**
+
+Sets the salary amount for this class
+
+**When Called**
+
+During class definition
+
 **Example Usage**
 
 ```lua
@@ -153,6 +225,15 @@ CLASS.pay = 100  -- $100 salary
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Unique identifier for the class (INTERNAL - set automatically when registered)
+
+**When Called**
+
+Set automatically during class registration
+Note: This property is internal and should not be modified directly
 
 **Example Usage**
 
@@ -169,6 +250,14 @@ name = "Police Officer",
 
 ### Purpose:
 
+**Purpose**
+
+Numeric index of the class in the class list (set automatically)
+
+**When Called**
+
+Set automatically during class registration
+
 **Example Usage**
 
 ```lua
@@ -184,6 +273,14 @@ name = "Police Officer",
 
 ### Purpose:
 
+**Purpose**
+
+Sets the team/class color for UI elements and identification
+
+**When Called**
+
+During class definition
+
 **Example Usage**
 
 ```lua
@@ -194,6 +291,14 @@ CLASS.Color = Color(0, 100, 255)  -- Blue color for police
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the maximum health for players in this class
+
+**When Called**
+
+During class definition (applied when player joins class)
 
 **Example Usage**
 
@@ -206,6 +311,14 @@ CLASS.health = 150  -- Police officers have 150 max health
 
 ### Purpose:
 
+**Purpose**
+
+Sets the armor value for players in this class
+
+**When Called**
+
+During class definition (applied when player joins class)
+
 **Example Usage**
 
 ```lua
@@ -216,6 +329,14 @@ CLASS.armor = 50  -- Police officers have 50 armor
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets weapons to give to players when they join this class
+
+**When Called**
+
+During class definition (applied when player spawns)
 
 **Example Usage**
 
@@ -229,6 +350,14 @@ CLASS.weapons = "weapon_crowbar"  -- Single weapon string
 
 ### Purpose:
 
+**Purpose**
+
+Sets the model scale for players in this class
+
+**When Called**
+
+During class definition (applied when player joins class)
+
 **Example Usage**
 
 ```lua
@@ -239,6 +368,14 @@ CLASS.scale = 1.1  -- Slightly larger model
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the running speed for players in this class
+
+**When Called**
+
+During class definition (applied when player joins class)
 
 **Example Usage**
 
@@ -253,6 +390,14 @@ CLASS.runSpeed = 1.2  -- 20% faster than default
 
 ### Purpose:
 
+**Purpose**
+
+Sets the walking speed for players in this class
+
+**When Called**
+
+During class definition (applied when player joins class)
+
 **Example Usage**
 
 ```lua
@@ -266,6 +411,14 @@ CLASS.walkSpeed = 1.1  -- 10% faster than default
 
 ### Purpose:
 
+**Purpose**
+
+Sets the jump power for players in this class
+
+**When Called**
+
+During class definition (applied when player joins class)
+
 **Example Usage**
 
 ```lua
@@ -278,6 +431,14 @@ CLASS.jumpPower = 1.3  -- 30% higher jump
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets NPC relationship overrides for this class (inherits from faction)
+
+**When Called**
+
+During class definition (applied when player joins class)
 
 **Example Usage**
 
@@ -293,6 +454,14 @@ CLASS.NPCRelations = {
 
 ### Purpose:
 
+**Purpose**
+
+Sets the blood color for players in this class
+
+**When Called**
+
+During class definition (applied when player joins class)
+
 **Example Usage**
 
 ```lua
@@ -304,6 +473,14 @@ CLASS.bloodcolor = BLOOD_COLOR_YELLOW  -- Yellow blood for aliens
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Whether runSpeed should be treated as a multiplier instead of absolute value
+
+**When Called**
+
+During class definition (used with runSpeed property)
 
 **Example Usage**
 
@@ -317,6 +494,14 @@ CLASS.runSpeed = 1.2  -- 20% faster than default
 
 ### Purpose:
 
+**Purpose**
+
+Whether walkSpeed should be treated as a multiplier instead of absolute value
+
+**When Called**
+
+During class definition (used with walkSpeed property)
+
 **Example Usage**
 
 ```lua
@@ -328,6 +513,14 @@ CLASS.walkSpeed = 1.1  -- 10% faster than default
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Whether jumpPower should be treated as a multiplier instead of absolute value
+
+**When Called**
+
+During class definition (used with jumpPower property)
 
 **Example Usage**
 
@@ -341,9 +534,21 @@ CLASS.jumpPower = 1.3  -- 30% higher jump
 
 ### Purpose:
 
+**Purpose**
+
+Check if a player can join this class
+
+**When Called**
+
+When a player attempts to join this class
+
 **Parameters**
 
 * `client` (*Player*): The player trying to join
+
+**Returns**
+
+* true to allow, false to deny
 
 **Example Usage**
 
@@ -376,6 +581,18 @@ function CLASS:OnCanBe(client)
 
 ### Purpose:
 
+**Purpose**
+
+Called when a player joins this class
+
+**When Called**
+
+When a player is assigned to this class
+
+**Realm**
+
+Server
+
 **Parameters**
 
 * `client` (*Player*): The player joining the class
@@ -392,6 +609,18 @@ function CLASS:OnSet(client)
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Called when switching from another class to this class
+
+**When Called**
+
+When a player switches classes and this becomes the new class
+
+**Realm**
+
+Server
 
 **Parameters**
 
@@ -413,6 +642,18 @@ function CLASS:OnTransferred(client, oldClass)
 
 ### Purpose:
 
+**Purpose**
+
+Called when a player spawns with this class
+
+**When Called**
+
+When a player spawns with this class
+
+**Realm**
+
+Server
+
 **Parameters**
 
 * `client` (*Player*): The player spawning
@@ -431,6 +672,18 @@ function CLASS:OnSpawn(client)
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Called when leaving this class
+
+**When Called**
+
+When a player leaves this class
+
+**Realm**
+
+Server
 
 **Parameters**
 

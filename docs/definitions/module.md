@@ -12,6 +12,10 @@ The module system provides comprehensive functionality for defining modules with
 
 ### Purpose:
 
+**Purpose**
+
+Sets the display name of the module
+
 **Example Usage**
 
 ```lua
@@ -23,6 +27,10 @@ MODULE.name = "Inventory System"
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the author of the module
 
 **Example Usage**
 
@@ -36,6 +44,10 @@ MODULE.author = "Samael"
 
 ### Purpose:
 
+**Purpose**
+
+Sets the Discord contact for the module author
+
 **Example Usage**
 
 ```lua
@@ -47,6 +59,10 @@ MODULE.discord = "@liliaplayer"
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the description of the module
 
 **Example Usage**
 
@@ -60,6 +76,10 @@ MODULE.desc = "A comprehensive inventory management system"
 
 ### Purpose:
 
+**Purpose**
+
+Sets the version number of the module
+
 **Example Usage**
 
 ```lua
@@ -71,6 +91,10 @@ MODULE.version = 1.0
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the unique version identifier for the module
 
 **Example Usage**
 
@@ -84,6 +108,15 @@ MODULE.versionID = "private_inventory"
 
 ### Purpose:
 
+**Purpose**
+
+Unique identifier for the module (INTERNAL - set automatically when loaded)
+
+**When Called**
+
+Set automatically during module loading
+Note: This property is internal and should not be modified directly
+
 **Example Usage**
 
 ```lua
@@ -95,6 +128,10 @@ MODULE.versionID = "private_inventory"
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the privileges required for this module
 
 **Example Usage**
 
@@ -113,6 +150,10 @@ Min = 1
 
 ### Purpose:
 
+**Purpose**
+
+Sets the file dependencies for this module
+
 **Example Usage**
 
 ```lua
@@ -130,6 +171,10 @@ Type = "shared"
 
 ### Purpose:
 
+**Purpose**
+
+Sets the network strings used by this module
+
 **Example Usage**
 
 ```lua
@@ -141,6 +186,10 @@ MODULE.NetworkStrings = {"liaInventoryOpen", "liaInventorySync"}
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the Workshop content IDs required by this module
 
 **Example Usage**
 
@@ -154,6 +203,10 @@ MODULE.WorkshopContent = {"1234567890", "0987654321"}
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the web-hosted sound files used by this module
 
 **Example Usage**
 
@@ -169,6 +222,10 @@ MODULE.WebSounds = {
 
 ### Purpose:
 
+**Purpose**
+
+Sets the web-hosted image files used by this module
+
 **Example Usage**
 
 ```lua
@@ -183,6 +240,10 @@ MODULE.WebImages = {
 
 ### Purpose:
 
+**Purpose**
+
+Sets whether the module is enabled by default
+
 **Example Usage**
 
 ```lua
@@ -195,21 +256,61 @@ MODULE.enabled = true
 
 ### Purpose:
 
----
+**Purpose**
 
-### Purpose:
-
----
-
-### Purpose:
+Sets the folder path for the module
+Internal Variable: This is set automatically by the module system
+]]
 
 ---
 
 ### Purpose:
 
+**Purpose**
+
+Sets the file path for the module
+Internal Variable: This is set automatically by the module system
+]]
+
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the variable name for the module
+Internal Variable: This is set automatically by the module system
+]]
+
+---
+
+### Purpose:
+
+**Purpose**
+
+Sets whether the module is currently loading
+Internal Variable: This is set automatically by the module system
+]]
+
+---
+
+### Purpose:
+
+**Purpose**
+
+Called when the module is fully loaded
+
+**When Called**
+
+After all module files have been loaded and initialized
+
+**Realm**
+
+Shared (called on both server and client)
+
+**Returns**
+
+* None
 
 **Example Usage**
 

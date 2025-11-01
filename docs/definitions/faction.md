@@ -52,6 +52,14 @@ classwhitelists to control which classes a character has access to within the fa
 
 ### Purpose:
 
+**Purpose**
+
+Sets the display name of the character faction
+
+**When Called**
+
+During faction definition
+
 **Example Usage**
 
 ```lua
@@ -62,6 +70,14 @@ FACTION.name = "Police Department"
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the description of the character faction
+
+**When Called**
+
+During faction definition
 
 **Example Usage**
 
@@ -74,6 +90,14 @@ FACTION.desc = "Law enforcement officers responsible for maintaining order and p
 
 ### Purpose:
 
+**Purpose**
+
+Sets the team/faction color for UI elements and identification
+
+**When Called**
+
+During faction definition
+
 **Example Usage**
 
 ```lua
@@ -84,6 +108,14 @@ FACTION.color = Color(0, 100, 255)  -- Blue color for police
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the player models available for this faction
+
+**When Called**
+
+During faction definition
 
 **Example Usage**
 
@@ -107,6 +139,14 @@ FACTION.models = {
 
 ### Purpose:
 
+**Purpose**
+
+Sets weapons to give to players when they join this faction
+
+**When Called**
+
+During faction definition (applied when player spawns)
+
 **Example Usage**
 
 ```lua
@@ -119,6 +159,14 @@ FACTION.weapons = "weapon_crowbar"  -- Single weapon string
 
 ### Purpose:
 
+**Purpose**
+
+Sets whether this is a default faction that new characters can join
+
+**When Called**
+
+During faction definition
+
 **Example Usage**
 
 ```lua
@@ -130,6 +178,16 @@ FACTION.isDefault = false  -- Requires special permission or whitelist
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Unique identifier for the faction (INTERNAL - set automatically when registered)
+
+**When Called**
+
+Set automatically during faction registration
+Note: This property is internal and should not be modified directly
+Auto-Assignment: If not explicitly defined, the uniqueID is automatically set to the faction file name (without .lua extension)
 
 **Example Usage**
 
@@ -150,6 +208,14 @@ name = "Police Department",
 
 ### Purpose:
 
+**Purpose**
+
+Numeric index of the faction in the faction list (set automatically or manually)
+
+**When Called**
+
+Set automatically during faction registration, or manually specified
+
 **Example Usage**
 
 ```lua
@@ -167,6 +233,14 @@ FACTION.index = 2  -- Will use team index 2
 
 ### Purpose:
 
+**Purpose**
+
+Sets the maximum health for players in this faction
+
+**When Called**
+
+During faction definition (applied when player joins faction)
+
 **Example Usage**
 
 ```lua
@@ -177,6 +251,14 @@ FACTION.health = 120  -- Police officers have 120 max health
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the armor value for players in this faction
+
+**When Called**
+
+During faction definition (applied when player joins faction)
 
 **Example Usage**
 
@@ -189,6 +271,14 @@ FACTION.armor = 50  -- Standard police armor
 
 ### Purpose:
 
+**Purpose**
+
+Sets the model scale for players in this faction
+
+**When Called**
+
+During faction definition (applied when player joins faction)
+
 **Example Usage**
 
 ```lua
@@ -199,6 +289,14 @@ FACTION.scale = 1.1  -- Slightly larger model
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the running speed for players in this faction
+
+**When Called**
+
+During faction definition (applied when player joins faction)
 
 **Example Usage**
 
@@ -213,6 +311,14 @@ FACTION.runSpeed = 1.2  -- 20% faster than default
 
 ### Purpose:
 
+**Purpose**
+
+Sets the walking speed for players in this faction
+
+**When Called**
+
+During faction definition (applied when player joins faction)
+
 **Example Usage**
 
 ```lua
@@ -226,6 +332,14 @@ FACTION.walkSpeed = 1.1  -- 10% faster than default
 
 ### Purpose:
 
+**Purpose**
+
+Sets the jump power for players in this faction
+
+**When Called**
+
+During faction definition (applied when player joins faction)
+
 **Example Usage**
 
 ```lua
@@ -238,6 +352,14 @@ FACTION.jumpPower = 1.3  -- 30% higher jump
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets NPC relationship overrides for this faction
+
+**When Called**
+
+During faction definition (applied when player joins faction)
 
 **Example Usage**
 
@@ -253,6 +375,14 @@ FACTION.NPCRelations = {
 
 ### Purpose:
 
+**Purpose**
+
+Sets the blood color for players in this faction
+
+**When Called**
+
+During faction definition (applied when player joins faction)
+
 **Example Usage**
 
 ```lua
@@ -264,6 +394,14 @@ FACTION.bloodcolor = BLOOD_COLOR_YELLOW  -- Yellow blood for aliens
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Whether runSpeed should be treated as a multiplier instead of absolute value
+
+**When Called**
+
+During faction definition (used with runSpeed property)
 
 **Example Usage**
 
@@ -277,6 +415,14 @@ FACTION.runSpeed = 1.2  -- 20% faster than default
 
 ### Purpose:
 
+**Purpose**
+
+Whether walkSpeed should be treated as a multiplier instead of absolute value
+
+**When Called**
+
+During faction definition (used with walkSpeed property)
+
 **Example Usage**
 
 ```lua
@@ -288,6 +434,14 @@ FACTION.walkSpeed = 1.1  -- 10% faster than default
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Whether jumpPower should be treated as a multiplier instead of absolute value
+
+**When Called**
+
+During faction definition (used with jumpPower property)
 
 **Example Usage**
 
@@ -301,6 +455,14 @@ FACTION.jumpPower = 1.3  -- 30% higher jump
 
 ### Purpose:
 
+**Purpose**
+
+Sets items to give to characters when they are created in this faction
+
+**When Called**
+
+During faction definition (applied when character is created)
+
 **Example Usage**
 
 ```lua
@@ -311,6 +473,14 @@ FACTION.items = {"item_police_badge", "item_handcuffs"}  -- Starting items for p
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets whether players can only have one character in this faction
+
+**When Called**
+
+During faction definition
 
 **Example Usage**
 
@@ -324,6 +494,14 @@ FACTION.oneCharOnly = false  -- Players can have multiple characters in this fac
 
 ### Purpose:
 
+**Purpose**
+
+Sets the maximum number of players allowed in this faction
+
+**When Called**
+
+During faction definition
+
 **Example Usage**
 
 ```lua
@@ -336,6 +514,14 @@ FACTION.limit = 0.1  -- 10% of total server players
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets a function to generate default character names for this faction
+
+**When Called**
+
+During faction definition
 
 **Example Usage**
 
@@ -351,6 +537,14 @@ function FACTION:NameTemplate(info, client)
 
 ### Purpose:
 
+**Purpose**
+
+Sets a method to get the default character name for this faction
+
+**When Called**
+
+During faction definition
+
 **Example Usage**
 
 ```lua
@@ -363,6 +557,14 @@ function FACTION:GetDefaultName(client)
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets a method to get the default character description for this faction
+
+**When Called**
+
+During faction definition
 
 **Example Usage**
 
@@ -377,10 +579,22 @@ function FACTION:GetDefaultDesc(client)
 
 ### Purpose:
 
+**Purpose**
+
+Custom callback to check if faction player limit is reached
+
+**When Called**
+
+When a player tries to join a faction that might be at capacity
+
 **Parameters**
 
 * `character` (*Character*): The character trying to join
 * `client` (*Player*): The player whose character is joining
+
+**Returns**
+
+* true if limit reached, false if not
 
 **Example Usage**
 
@@ -402,6 +616,18 @@ function FACTION:OnCheckLimitReached(character, client)
 
 ### Purpose:
 
+**Purpose**
+
+Called when a player transfers to this faction
+
+**When Called**
+
+When a player changes factions and this becomes their new faction
+
+**Realm**
+
+Server
+
 **Parameters**
 
 * `client` (*Player*): The player transferring to this faction
@@ -420,6 +646,18 @@ function FACTION:OnTransferred(client)
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Called when a player spawns with this faction
+
+**When Called**
+
+When a player spawns with this faction
+
+**Realm**
+
+Server
 
 **Parameters**
 

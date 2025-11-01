@@ -12,6 +12,14 @@ Server-side hooks in the Lilia framework handle game logic, data persistence, pl
 
 ### AddWarning
 
+**Purpose**
+
+Adds a warning to a character's record in the administration system
+
+**When Called**
+
+When an admin issues a warning to a player
+
 **Parameters**
 
 * `charID` (*number*): The character ID of the warned player
@@ -21,6 +29,14 @@ Server-side hooks in the Lilia framework handle game logic, data persistence, pl
 * `message` (*string*): The warning message/reason
 * `warner` (*string*): The name of the admin who issued the warning
 * `warnerSteamID` (*string*): The Steam ID of the admin who issued the warning
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -70,12 +86,28 @@ end)
 
 ### AdjustCreationData
 
+**Purpose**
+
+Allows modification of character creation data before the character is created
+
+**When Called**
+
+During character creation process, before the character is saved to database
+
 **Parameters**
 
 * `client` (*Player*): The player creating the character
 * `data` (*table*): The current character data being created
 * `newData` (*table*): Additional data to be merged with the character data
 * `originalData` (*table*): The original character data before any modifications
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -135,10 +167,26 @@ end)
 
 ### BagInventoryReady
 
+**Purpose**
+
+Called when a bag item's inventory is ready and accessible
+
+**When Called**
+
+When a bag item's inventory is created or restored from database
+
 **Parameters**
 
 * `self` (*Item*): The bag item instance
 * `inventory` (*Inventory*): The inventory instance that was created/loaded
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -217,10 +265,26 @@ if not char then return end
 
 ### BagInventoryRemoved
 
+**Purpose**
+
+Called when a bag item's inventory is removed or destroyed
+
+**When Called**
+
+When a bag item is deleted or its inventory is cleaned up
+
 **Parameters**
 
 * `self` (*Item*): The bag item instance
 * `inv` (*Inventory*): The inventory instance that was removed
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -274,11 +338,27 @@ if not char then return end
 
 ### CanCharBeTransfered
 
+**Purpose**
+
+Determines if a character can be transferred (alias for CanBeTransfered)
+
+**When Called**
+
+When attempting to transfer a character to another faction
+
 **Parameters**
 
 * `targetChar` (*Character*): The character being transferred
 * `faction` (*string*): The target faction name
 * `client` (*Player*): The player requesting the transfer
+
+**Returns**
+
+* boolean - True if transfer is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -351,10 +431,26 @@ end)
 
 ### CanDeleteChar
 
+**Purpose**
+
+Determines if a character can be deleted
+
+**When Called**
+
+When a player attempts to delete a character
+
 **Parameters**
 
 * `client` (*Player*): The player requesting the deletion
 * `character` (*Character*): The character to be deleted
+
+**Returns**
+
+* boolean - True if deletion is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -421,10 +517,26 @@ end)
 
 ### CanInviteToClass
 
+**Purpose**
+
+Called to check if a player can invite another to a class
+
+**When Called**
+
+When attempting to invite a player to a class
+
 **Parameters**
 
 * `client` (*Player*): The player attempting the invite
 * `target` (*Player*): The player being invited
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -483,10 +595,26 @@ if not char or not targetChar then return false end
 
 ### CanInviteToFaction
 
+**Purpose**
+
+Called to check if a player can invite another to a faction
+
+**When Called**
+
+When attempting to invite a player to a faction
+
 **Parameters**
 
 * `client` (*Player*): The player attempting the invite
 * `target` (*Player*): The player being invited
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -552,12 +680,28 @@ if not char or not targetChar then return false end
 
 ### CanItemBeTransfered
 
+**Purpose**
+
+Called to check if an item can be transferred between inventories
+
+**When Called**
+
+When attempting to move an item from one inventory to another
+
 **Parameters**
 
 * `item` (*Item*): The item being transferred
 * `fromInventory` (*Inventory*): The source inventory
 * `toInventory` (*Inventory*): The destination inventory
 * `client` (*Player*): The player performing the transfer
+
+**Returns**
+
+* boolean - True if transfer is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -649,10 +793,26 @@ if not char then return false end
 
 ### CanPerformVendorEdit
 
+**Purpose**
+
+Called to check if a player can edit a vendor
+
+**When Called**
+
+When attempting to modify vendor settings
+
 **Parameters**
 
 * `self` (*Entity*): The vendor entity
 * `vendor` (*table*): The vendor data table
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -712,9 +872,25 @@ if not client then return false end
 
 ### CanPersistEntity
 
+**Purpose**
+
+Called to check if an entity can be persisted
+
+**When Called**
+
+When determining if an entity should be saved across map changes
+
 **Parameters**
 
 * `entity` (*Entity*): The entity to check
+
+**Returns**
+
+* boolean - True to persist, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -782,10 +958,26 @@ if not IsValid(entity) then return false end
 
 ### CanPickupMoney
 
+**Purpose**
+
+Called to check if money can be picked up
+
+**When Called**
+
+When a player attempts to pick up money
+
 **Parameters**
 
 * `activator` (*Player*): The player trying to pick up money
 * `self` (*Entity*): The money entity
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -861,11 +1053,27 @@ if not IsValid(activator) or not IsValid(self) then return false end
 
 ### CanPlayerAccessDoor
 
+**Purpose**
+
+Called to check if a player can access a door
+
+**When Called**
+
+When a player attempts to interact with a door
+
 **Parameters**
 
 * `client` (*Player*): The player attempting access
 * `self` (*Entity*): The door entity
 * `access` (*number*): The access level being checked
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -920,10 +1128,26 @@ if not char then return false end
 
 ### CanPlayerAccessVendor
 
+**Purpose**
+
+Called to check if a player can access a vendor
+
+**When Called**
+
+When a player attempts to interact with a vendor
+
 **Parameters**
 
 * `activator` (*Player*): The player attempting access
 * `self` (*Entity*): The vendor entity
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -986,9 +1210,25 @@ if not char then return false end
 
 ### CanPlayerChooseWeapon
 
+**Purpose**
+
+Called to check if a player can choose a weapon
+
+**When Called**
+
+When a player attempts to select a weapon
+
 **Parameters**
 
 * `weapon` (*Weapon*): The weapon being chosen
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -1049,10 +1289,26 @@ if not IsValid(client) then return false end
 
 ### CanPlayerCreateChar
 
+**Purpose**
+
+Determines if a player can create a new character
+
+**When Called**
+
+When a player attempts to create a new character
+
 **Parameters**
 
 * `client` (*Player*): The player creating the character
 * `data` (*table*): The character creation data
+
+**Returns**
+
+* boolean - True if creation is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -1136,10 +1392,26 @@ end)
 
 ### CanPlayerDropItem
 
+**Purpose**
+
+Called to check if a player can drop an item
+
+**When Called**
+
+When a player attempts to drop an item
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to drop the item
 * `item` (*Item*): The item being dropped
+
+**Returns**
+
+* boolean - True if dropping is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -1243,9 +1515,25 @@ if not char then return false end
 
 ### CanPlayerEarnSalary
 
+**Purpose**
+
+Called to check if a player can earn salary
+
+**When Called**
+
+When salary payment is being processed
+
 **Parameters**
 
 * `client` (*Player*): The player being checked
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -1304,10 +1592,26 @@ if not char then return false end
 
 ### CanPlayerEquipItem
 
+**Purpose**
+
+Called to check if a player can equip an item
+
+**When Called**
+
+When a player attempts to equip an item
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to equip the item
 * `item` (*Item*): The item being equipped
+
+**Returns**
+
+* boolean - True if equipping is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -1420,10 +1724,26 @@ if not char then return false end
 
 ### CanPlayerHoldObject
 
+**Purpose**
+
+Called to check if a player can hold an object
+
+**When Called**
+
+When a player attempts to pick up or hold an entity
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to hold the object
 * `entity` (*Entity*): The entity being held
+
+**Returns**
+
+* boolean - True if holding is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -1483,12 +1803,28 @@ if not char then return false end
 
 ### CanPlayerInteractItem
 
+**Purpose**
+
+Called to check if a player can interact with an item
+
+**When Called**
+
+When a player attempts to perform an action on an item
+
 **Parameters**
 
 * `client` (*Player*): The player attempting the interaction
 * `action` (*string*): The action being performed
 * `self` (*Item*): The item being interacted with
 * `data` (*table*): Additional data for the interaction
+
+**Returns**
+
+* boolean - True if interaction is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -1563,11 +1899,27 @@ if not char then return false end
 
 ### CanPlayerJoinClass
 
+**Purpose**
+
+Called to check if a player can join a class
+
+**When Called**
+
+When a player attempts to join a specific class
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to join the class
 * `class` (*number*): The class ID being joined
 * `info` (*table*): Additional class information
+
+**Returns**
+
+* boolean - True if joining is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -1625,9 +1977,25 @@ if not char then return false end
 
 ### CanPlayerKnock
 
+**Purpose**
+
+Called to check if a player can knock on doors
+
+**When Called**
+
+When a player attempts to knock on a door
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to knock
+
+**Returns**
+
+* boolean - True if knocking is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -1686,10 +2054,26 @@ if not char then return false end
 
 ### CanPlayerLock
 
+**Purpose**
+
+Called to check if a player can lock a door
+
+**When Called**
+
+When a player attempts to lock a door
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to lock the door
 * `door` (*Entity*): The door entity being locked
+
+**Returns**
+
+* boolean - True if locking is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -1747,10 +2131,26 @@ if not char then return false end
 
 ### CanPlayerModifyConfig
 
+**Purpose**
+
+Called to check if a player can modify configuration
+
+**When Called**
+
+When a player attempts to change a config value
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to modify config
 * `key` (*string*): The configuration key being modified
+
+**Returns**
+
+* boolean - True if modification is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -1809,9 +2209,25 @@ end)
 
 ### CanPlayerOpenScoreboard
 
+**Purpose**
+
+Called to check if a player can open the scoreboard
+
+**When Called**
+
+When a player attempts to open the scoreboard
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to open the scoreboard
+
+**Returns**
+
+* boolean - True if opening is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -1866,10 +2282,26 @@ if not char then return false end
 
 ### CanPlayerRotateItem
 
+**Purpose**
+
+Called to check if a player can rotate an item in inventory
+
+**When Called**
+
+When a player attempts to rotate an item
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to rotate the item
 * `item` (*Item*): The item being rotated
+
+**Returns**
+
+* boolean - True if rotation is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -1920,10 +2352,26 @@ if not char then return false end
 
 ### CanPlayerSeeLogCategory
 
+**Purpose**
+
+Called to check if a player can see a log category
+
+**When Called**
+
+When determining which log categories a player can view
+
 **Parameters**
 
 * `client` (*Player*): The player checking log access
 * `k` (*string*): The log category key
+
+**Returns**
+
+* boolean - True if viewing is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -1980,11 +2428,27 @@ end)
 
 ### CanPlayerSpawnStorage
 
+**Purpose**
+
+Called to check if a player can spawn storage entities
+
+**When Called**
+
+When a player attempts to spawn a storage container
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to spawn storage
 * `entity` (*Entity*): The storage entity being spawned
 * `info` (*table*): Information about the storage entity
+
+**Returns**
+
+* boolean - True if spawning is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -2047,11 +2511,27 @@ if not char then return false end
 
 ### CanPlayerSwitchChar
 
+**Purpose**
+
+Called to check if a player can switch characters
+
+**When Called**
+
+When a player attempts to switch from one character to another
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to switch
 * `currentChar` (*Character*): The current character
 * `character` (*Character*): The character being switched to
+
+**Returns**
+
+* boolean - True if switching is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -2118,10 +2598,26 @@ end)
 
 ### CanPlayerTakeItem
 
+**Purpose**
+
+Called to check if a player can take an item
+
+**When Called**
+
+When a player attempts to take an item from the ground or another source
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to take the item
 * `item` (*Item*): The item being taken
+
+**Returns**
+
+* boolean - True if taking is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -2232,9 +2728,25 @@ if not char then return false end
 
 ### CanPlayerThrowPunch
 
+**Purpose**
+
+Called to check if a player can throw a punch
+
+**When Called**
+
+When a player attempts to punch
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to punch
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -2292,12 +2804,28 @@ if not char then return false end
 
 ### CanPlayerTradeWithVendor
 
+**Purpose**
+
+Called to check if a player can trade with a vendor
+
+**When Called**
+
+When a player attempts to buy/sell from a vendor
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to trade
 * `vendor` (*table*): The vendor data
 * `itemType` (*string*): The item type being traded
 * `isSellingToVendor` (*boolean*): True if selling, false if buying
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -2368,10 +2896,26 @@ if not char then return false end
 
 ### CanPlayerUnequipItem
 
+**Purpose**
+
+Called to check if a player can unequip an item
+
+**When Called**
+
+When a player attempts to unequip an item
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to unequip the item
 * `item` (*Item*): The item being unequipped
+
+**Returns**
+
+* boolean - True if unequipping is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -2470,10 +3014,26 @@ if not char then return false end
 
 ### CanPlayerUnlock
 
+**Purpose**
+
+Called to check if a player can unlock a door
+
+**When Called**
+
+When a player attempts to unlock a door
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to unlock the door
 * `door` (*Entity*): The door entity being unlocked
+
+**Returns**
+
+* boolean - True if unlocking is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -2526,10 +3086,26 @@ if not char then return false end
 
 ### CanPlayerUseChar
 
+**Purpose**
+
+Called to check if a player can use a character
+
+**When Called**
+
+When a player attempts to load a character
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to use the character
 * `character` (*Character*): The character being used
+
+**Returns**
+
+* boolean - True if using is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -2582,10 +3158,26 @@ end)
 
 ### CanPlayerUseCommand
 
+**Purpose**
+
+Called to check if a player can use a command
+
+**When Called**
+
+When a player attempts to execute a command
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to use the command
 * `command` (*string*): The command being executed
+
+**Returns**
+
+* boolean - True if command use is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -2655,10 +3247,26 @@ if not char then return false end
 
 ### CanPlayerUseDoor
 
+**Purpose**
+
+Called to check if a player can use a door
+
+**When Called**
+
+When a player attempts to interact with a door
+
 **Parameters**
 
 * `client` (*Player*): The player attempting to use the door
 * `door` (*Entity*): The door entity being used
+
+**Returns**
+
+* boolean - True if door use is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -2719,6 +3327,22 @@ if not char then return false end
 ---
 
 ### CanPlayerViewInventory
+
+**Purpose**
+
+Called to check if a player can view inventories
+
+**When Called**
+
+When a player attempts to open any inventory
+
+**Returns**
+
+* boolean - True if viewing inventories is allowed, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -2814,10 +3438,26 @@ if not client then return false end
 
 ### CanRunItemAction
 
+**Purpose**
+
+Called to check if an item action can be run
+
+**When Called**
+
+When attempting to execute an item action
+
 **Parameters**
 
 * `itemTable` (*table*): The item table containing the action
 * `k` (*string*): The action key being executed
+
+**Returns**
+
+* boolean - True if action can be run, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -2885,10 +3525,26 @@ end)
 
 ### CanSaveData
 
+**Purpose**
+
+Called to check if entity data can be saved
+
+**When Called**
+
+When attempting to save entity data to the database
+
 **Parameters**
 
 * `ent` (*Entity*): The entity being saved
 * `inventory` (*Inventory*): The inventory associated with the entity
+
+**Returns**
+
+* boolean - True if data can be saved, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -2954,9 +3610,25 @@ end)
 
 ### CharCleanUp
 
+**Purpose**
+
+Called when a character is cleaned up
+
+**When Called**
+
+When a character is being removed from memory
+
 **Parameters**
 
 * `character` (*Character*): The character being cleaned up
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3017,10 +3689,26 @@ end)
 
 ### CharDeleted
 
+**Purpose**
+
+Called when a character is deleted
+
+**When Called**
+
+When a character is successfully deleted
+
 **Parameters**
 
 * `client` (*Player*): The player whose character was deleted
 * `character` (*Character*): The character that was deleted
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3113,10 +3801,26 @@ end)
 
 ### CharForceRecognized
 
+**Purpose**
+
+Called to force character recognition
+
+**When Called**
+
+When a character is forced to be recognized
+
 **Parameters**
 
 * `ply` (*Player*): The player being recognized
 * `range` (*number*): The recognition range
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3191,10 +3895,26 @@ if not char then return end
 
 ### CharHasFlags
 
+**Purpose**
+
+Called to check if a character has specific flags
+
+**When Called**
+
+When checking if a character has certain permissions
+
 **Parameters**
 
 * `self` (*Character*): The character being checked
 * `flags` (*string*): The flags to check for
+
+**Returns**
+
+* boolean - True if character has flags, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3262,9 +3982,25 @@ end)
 
 ### CharLoaded
 
+**Purpose**
+
+Called when a character is loaded
+
+**When Called**
+
+When a character is successfully loaded from the database
+
 **Parameters**
 
 * `id` (*number*): The ID of the character that was loaded
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3338,9 +4074,25 @@ if not character then return end
 
 ### CharPostSave
 
+**Purpose**
+
+Called after a character is saved
+
+**When Called**
+
+After character data has been saved to the database
+
 **Parameters**
 
 * `self` (*Character*): The character that was saved
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3386,9 +4138,25 @@ end)
 
 ### CharPreSave
 
+**Purpose**
+
+Called before a character is saved
+
+**When Called**
+
+Before character data is saved to the database
+
 **Parameters**
 
 * `character` (*Character*): The character being saved
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3446,9 +4214,25 @@ end)
 
 ### CharRestored
 
+**Purpose**
+
+Called when a character is restored
+
+**When Called**
+
+When a character is restored from backup or death
+
 **Parameters**
 
 * `character` (*Character*): The character being restored
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3497,12 +4281,28 @@ end)
 
 ### ChatParsed
 
+**Purpose**
+
+Called when chat is parsed
+
+**When Called**
+
+When a chat message is processed and parsed
+
 **Parameters**
 
 * `client` (*Player*): The player who sent the message
 * `chatType` (*string*): The type of chat (ic, ooc, etc)
 * `message` (*string*): The message content
 * `anonymous` (*boolean*): Whether the message is anonymous
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3556,11 +4356,27 @@ if not char then return false end
 
 ### CheckFactionLimitReached
 
+**Purpose**
+
+Called to check if a faction limit has been reached
+
+**When Called**
+
+When checking if more players can join a faction
+
 **Parameters**
 
 * `faction` (*number*): The faction ID being checked
 * `character` (*Character*): The character attempting to join
 * `client` (*Player*): The player attempting to join
+
+**Returns**
+
+* boolean - True if limit is reached, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3630,12 +4446,28 @@ if not factionData then return false end
 
 ### CommandRan
 
+**Purpose**
+
+Called when a command is executed
+
+**When Called**
+
+After a command has been run by a player
+
 **Parameters**
 
 * `client` (*Player*): The player who ran the command
 * `command` (*string*): The command that was executed
 * `arguments` (*table*): The arguments passed to the command
 * `results` (*any*): The results returned by the command
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3695,12 +4527,28 @@ if not char then return end
 
 ### ConfigChanged
 
+**Purpose**
+
+Called when a configuration value changes
+
+**When Called**
+
+When a config option is modified
+
 **Parameters**
 
 * `key` (*string*): The configuration key that changed
 * `value` (*any*): The new value
 * `oldValue` (*any*): The previous value
 * `client` (*Player*): The player who changed the config (if applicable)
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3764,9 +4612,25 @@ end)
 
 ### CreateCharacter
 
+**Purpose**
+
+Called when creating a character
+
+**When Called**
+
+When a new character is being created
+
 **Parameters**
 
 * `data` (*table*): The character creation data
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3820,9 +4684,25 @@ end)
 
 ### CreateDefaultInventory
 
+**Purpose**
+
+Called to create a character's default inventory
+
+**When Called**
+
+When a new character needs an inventory created
+
 **Parameters**
 
 * `character` (*Character*): The character receiving the inventory
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3893,6 +4773,22 @@ end)
 ---
 
 ### CreateSalaryTimers
+
+**Purpose**
+
+Called to create salary timers
+
+**When Called**
+
+When salary system is being initialized
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -3975,6 +4871,22 @@ for _, ply in ipairs(player.GetAll()) do
 
 ### DatabaseConnected
 
+**Purpose**
+
+Called when database is connected
+
+**When Called**
+
+When the database connection is established
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
+
 **Example Usage**
 
 **Low Complexity:**
@@ -4020,9 +4932,25 @@ end)
 
 ### DeleteCharacter
 
+**Purpose**
+
+Called when a character is deleted
+
+**When Called**
+
+When a character deletion is processed
+
 **Parameters**
 
 * `id` (*number*): The character ID being deleted
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -4071,9 +4999,25 @@ end)
 
 ### DiscordRelaySend
 
+**Purpose**
+
+Called to send a Discord relay message
+
+**When Called**
+
+When sending a message to Discord
+
 **Parameters**
 
 * `embed` (*table*): The Discord embed data
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -4129,6 +5073,22 @@ end)
 
 ### DiscordRelayUnavailable
 
+**Purpose**
+
+Called when Discord relay is unavailable
+
+**When Called**
+
+When Discord relay connection fails
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
+
 **Example Usage**
 
 **Low Complexity:**
@@ -4178,9 +5138,25 @@ end)
 
 ### DiscordRelayed
 
+**Purpose**
+
+Called when a message is relayed to Discord
+
+**When Called**
+
+After a message is successfully sent to Discord
+
 **Parameters**
 
 * `embed` (*table*): The Discord embed that was sent
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -4228,11 +5204,27 @@ end)
 
 ### DoorEnabledToggled
 
+**Purpose**
+
+Called when a door's enabled state is toggled
+
+**When Called**
+
+When a door is enabled or disabled
+
 **Parameters**
 
 * `client` (*Player*): The player toggling the state
 * `door` (*Entity*): The door entity
 * `newState` (*boolean*): The new enabled state
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -4287,11 +5279,27 @@ end)
 
 ### DoorHiddenToggled
 
+**Purpose**
+
+Called when a door's hidden state is toggled
+
+**When Called**
+
+When a door is made hidden or visible
+
 **Parameters**
 
 * `client` (*Player*): The player toggling the door visibility
 * `entity` (*Entity*): The door entity
 * `newState` (*boolean*): The new hidden state
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -4352,11 +5360,27 @@ end)
 
 ### DoorLockToggled
 
+**Purpose**
+
+Called when a door's lock state is toggled
+
+**When Called**
+
+When a door is locked or unlocked
+
 **Parameters**
 
 * `client` (*Player*): The player toggling the door lock
 * `door` (*Entity*): The door entity
 * `state` (*boolean*): True if locked, false if unlocked
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -4443,11 +5467,27 @@ if not char then return end
 
 ### DoorOwnableToggled
 
+**Purpose**
+
+Called when a door's ownable status is toggled
+
+**When Called**
+
+When a door is set to be ownable or not ownable
+
 **Parameters**
 
 * `client` (*Player*): The player toggling the ownable status
 * `door` (*Entity*): The door entity
 * `newState` (*boolean*): The new ownable state (true = ownable, false = not ownable)
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -4519,11 +5559,27 @@ if not char then return end
 
 ### DoorPriceSet
 
+**Purpose**
+
+Called when a door's price is set
+
+**When Called**
+
+When a door's purchase/rent price is changed
+
 **Parameters**
 
 * `client` (*Player*): The player setting the price
 * `door` (*Entity*): The door entity
 * `price` (*number*): The new price
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -4593,11 +5649,27 @@ if not client:IsAdmin() then
 
 ### DoorTitleSet
 
+**Purpose**
+
+Called when a door's title is set
+
+**When Called**
+
+When a door's display name is changed
+
 **Parameters**
 
 * `client` (*Player*): The player setting the title
 * `door` (*Entity*): The door entity
 * `name` (*string*): The new door title
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -4675,6 +5747,22 @@ if not client:IsAdmin() then
 
 ### FetchSpawns
 
+**Purpose**
+
+Called to fetch spawn points
+
+**When Called**
+
+When spawn points need to be loaded or refreshed
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
+
 **Example Usage**
 
 **Low Complexity:**
@@ -4732,11 +5820,27 @@ end)
 
 ### ForceRecognizeRange
 
+**Purpose**
+
+Called to force recognition range
+
+**When Called**
+
+When setting the recognition range for a player
+
 **Parameters**
 
 * `ply` (*Player*): The player to set recognition range for
 * `range` (*number*): The recognition range
 * `fakeName` (*string*): The fake name to use (optional)
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -4796,6 +5900,22 @@ if not char then return end
 ---
 
 ### GetAllCaseClaims
+
+**Purpose**
+
+Called to get all case claims
+
+**When Called**
+
+When retrieving all active case claims
+
+**Returns**
+
+* table - Table of all case claims
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -4857,10 +5977,26 @@ end)
 
 ### GetAttributeMax
 
+**Purpose**
+
+Called to get the maximum value for an attribute
+
+**When Called**
+
+When calculating attribute limits
+
 **Parameters**
 
 * `target` (*Player*): The player whose attribute max is being checked
 * `attrKey` (*string*): The attribute key
+
+**Returns**
+
+* number - The maximum attribute value
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -4926,10 +6062,26 @@ if not char then return 100 end
 
 ### GetAttributeStartingMax
 
+**Purpose**
+
+Called to get the starting maximum for an attribute
+
+**When Called**
+
+When a character is created
+
 **Parameters**
 
 * `client` (*Player*): The player creating the character
 * `k` (*string*): The attribute key
+
+**Returns**
+
+* number - The starting maximum attribute value
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -4987,9 +6139,25 @@ end)
 
 ### GetCharMaxStamina
 
+**Purpose**
+
+Gets the maximum stamina for a character
+
+**When Called**
+
+When calculating character stamina limits
+
 **Parameters**
 
 * `char` (*Character*): The character to get max stamina for
+
+**Returns**
+
+* number - The maximum stamina value
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5067,11 +6235,27 @@ end)
 
 ### GetDamageScale
 
+**Purpose**
+
+Called to get damage scale for a hitgroup
+
+**When Called**
+
+When calculating damage to a player
+
 **Parameters**
 
 * `hitgroup` (*number*): The hitgroup that was hit
 * `dmgInfo` (*CTakeDamageInfo*): The damage info
 * `damageScale` (*number*): The current damage scale
+
+**Returns**
+
+* number - The modified damage scale
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5131,11 +6315,27 @@ end)
 
 ### GetDefaultCharDesc
 
+**Purpose**
+
+Called to get default character description
+
+**When Called**
+
+When creating a new character
+
 **Parameters**
 
 * `client` (*Player*): The player creating the character
 * `factionIndex` (*number*): The faction index
 * `context` (*table*): Additional context data
+
+**Returns**
+
+* string - The default description
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5183,11 +6383,27 @@ if not faction then return "A new character" end
 
 ### GetDefaultCharName
 
+**Purpose**
+
+Called to get default character name
+
+**When Called**
+
+When creating a new character
+
 **Parameters**
 
 * `client` (*Player*): The player creating the character
 * `factionIndex` (*number*): The faction index
 * `context` (*table*): Additional context data
+
+**Returns**
+
+* string - The default name
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5239,10 +6455,26 @@ if not faction then return "John Doe" end
 
 ### GetDefaultInventorySize
 
+**Purpose**
+
+Called to get default inventory size
+
+**When Called**
+
+When creating a character's inventory
+
 **Parameters**
 
 * `client` (*Player*): The player
 * `char` (*Character*): The character
+
+**Returns**
+
+* table - {width, height} inventory size
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5304,9 +6536,25 @@ end)
 
 ### GetDefaultInventoryType
 
+**Purpose**
+
+Called to get default inventory type
+
+**When Called**
+
+When creating a character's inventory
+
 **Parameters**
 
 * `character` (*Character*): The character
+
+**Returns**
+
+* string - The inventory type
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5365,9 +6613,25 @@ end)
 
 ### GetEntitySaveData
 
+**Purpose**
+
+Called to get entity save data
+
+**When Called**
+
+When saving entity data to the database
+
 **Parameters**
 
 * `ent` (*Entity*): The entity to get save data for
+
+**Returns**
+
+* table - The save data for the entity
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5440,9 +6704,25 @@ end)
 
 ### GetHandsAttackSpeed
 
+**Purpose**
+
+Called to get hands attack speed
+
+**When Called**
+
+When calculating unarmed attack speed for a player
+
 **Parameters**
 
 * `client` (*Player*): The player whose attack speed is being calculated
+
+**Returns**
+
+* number - The attack speed multiplier
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5507,10 +6787,26 @@ if not char then return 1.0 end
 
 ### GetItemDropModel
 
+**Purpose**
+
+Called to get item drop model
+
+**When Called**
+
+When determining the model for a dropped item
+
 **Parameters**
 
 * `itemTable` (*table*): The item table
 * `self` (*Item*): The item instance
+
+**Returns**
+
+* string - The model path for the dropped item
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5584,9 +6880,25 @@ end)
 
 ### GetItemStackKey
 
+**Purpose**
+
+Called to get item stack key
+
+**When Called**
+
+When determining how items should be stacked together
+
 **Parameters**
 
 * `item` (*Item*): The item to get stack key for
+
+**Returns**
+
+* string - The stack key for grouping items
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5650,9 +6962,25 @@ end)
 
 ### GetItemStacks
 
+**Purpose**
+
+Called to get item stacks in an inventory
+
+**When Called**
+
+When retrieving stacked items from an inventory
+
 **Parameters**
 
 * `inventory` (*Inventory*): The inventory to get stacks from
+
+**Returns**
+
+* table - Table of item stacks
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5725,9 +7053,25 @@ end)
 
 ### GetMaxPlayerChar
 
+**Purpose**
+
+Called to get maximum character count for a player
+
+**When Called**
+
+When checking how many characters a player can have
+
 **Parameters**
 
 * `client` (*Player*): The player to check character limit for
+
+**Returns**
+
+* number - The maximum number of characters allowed
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5799,10 +7143,26 @@ end)
 
 ### GetMaxStartingAttributePoints
 
+**Purpose**
+
+Called to get maximum starting attribute points
+
+**When Called**
+
+During character creation
+
 **Parameters**
 
 * `client` (*Player*): The player creating the character
 * `count` (*number*): The current count
+
+**Returns**
+
+* number - The maximum starting attribute points
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5856,9 +7216,25 @@ end)
 
 ### GetMoneyModel
 
+**Purpose**
+
+Called to get money model
+
+**When Called**
+
+When spawning money entity
+
 **Parameters**
 
 * `amount` (*number*): The money amount
+
+**Returns**
+
+* string - The model path
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5909,9 +7285,25 @@ end)
 
 ### GetOOCDelay
 
+**Purpose**
+
+Called to get OOC chat delay
+
+**When Called**
+
+When checking OOC chat cooldown
+
 **Parameters**
 
 * `speaker` (*Player*): The player speaking
+
+**Returns**
+
+* number - The delay in seconds
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -5962,9 +7354,25 @@ end)
 
 ### GetPlayTime
 
+**Purpose**
+
+Called to get player playtime
+
+**When Called**
+
+When retrieving player playtime
+
 **Parameters**
 
 * `client` (*Player*): The player
+
+**Returns**
+
+* number - The playtime in seconds
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -6010,10 +7418,26 @@ end)
 
 ### GetPlayerDeathSound
 
+**Purpose**
+
+Called to get player death sound
+
+**When Called**
+
+When a player dies
+
 **Parameters**
 
 * `client` (*Player*): The dying player
 * `isFemale` (*boolean*): Whether the player is female
+
+**Returns**
+
+* string - The death sound path
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -6066,11 +7490,27 @@ end)
 
 ### GetPlayerPainSound
 
+**Purpose**
+
+Called to get player pain sound
+
+**When Called**
+
+When a player takes damage
+
 **Parameters**
 
 * `client` (*Player*): The player taking damage
 * `paintype` (*number*): The type of pain
 * `isFemale` (*boolean*): Whether the player is female
+
+**Returns**
+
+* string - The pain sound path
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -6132,9 +7572,25 @@ end)
 
 ### GetPlayerPunchDamage
 
+**Purpose**
+
+Called to get player punch damage
+
+**When Called**
+
+When calculating unarmed punch damage for a player
+
 **Parameters**
 
 * `client` (*Player*): The player whose punch damage is being calculated
+
+**Returns**
+
+* number - The punch damage amount
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -6203,9 +7659,25 @@ if not char then return 10 end
 
 ### GetPlayerPunchRagdollTime
 
+**Purpose**
+
+Called to get player punch ragdoll time
+
+**When Called**
+
+When calculating how long a player stays ragdolled from a punch
+
 **Parameters**
 
 * `client` (*Player*): The player being punched
+
+**Returns**
+
+* number - The ragdoll time in seconds
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -6275,12 +7747,28 @@ if not char then return 3 end
 
 ### GetPriceOverride
 
+**Purpose**
+
+Called to get price override for items
+
+**When Called**
+
+When calculating item prices in vendors or trading
+
 **Parameters**
 
 * `self` (*Entity*): The vendor or trading entity
 * `uniqueID` (*string*): The item unique ID
 * `price` (*number*): The base price
 * `isSellingToVendor` (*boolean*): Whether the player is selling to vendor
+
+**Returns**
+
+* number - The overridden price
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -6360,10 +7848,26 @@ if not client then return price end
 
 ### GetRagdollTime
 
+**Purpose**
+
+Called to get ragdoll time
+
+**When Called**
+
+When calculating how long an entity stays ragdolled
+
 **Parameters**
 
 * `self` (*Entity*): The ragdoll entity
 * `time` (*number*): The base ragdoll time
+
+**Returns**
+
+* number - The modified ragdoll time
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -6432,11 +7936,27 @@ end)
 
 ### GetSalaryAmount
 
+**Purpose**
+
+Called to get salary amount for a player
+
+**When Called**
+
+When calculating salary payment for a player
+
 **Parameters**
 
 * `client` (*Player*): The player receiving salary
 * `faction` (*string*): The player's faction
 * `class` (*string*): The player's class
+
+**Returns**
+
+* number - The salary amount
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -6505,9 +8025,25 @@ if not char then return 0 end
 
 ### GetTicketsByRequester
 
+**Purpose**
+
+Called to get tickets by requester
+
+**When Called**
+
+When retrieving tickets created by a specific player
+
 **Parameters**
 
 * `steamID` (*string*): The Steam ID of the requester
+
+**Returns**
+
+* table - Table of tickets created by the requester
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -6574,9 +8110,25 @@ if not tickets then return {} end
 
 ### GetVendorSaleScale
 
+**Purpose**
+
+Called to get vendor sale scale
+
+**When Called**
+
+When calculating the sale price multiplier for a vendor
+
 **Parameters**
 
 * `self` (*Entity*): The vendor entity
+
+**Returns**
+
+* number - The sale scale multiplier
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -6644,9 +8196,25 @@ end)
 
 ### GetWarnings
 
+**Purpose**
+
+Called to get warnings for a character
+
+**When Called**
+
+When retrieving warnings for a specific character
+
 **Parameters**
 
 * `charID` (*number*): The character ID to get warnings for
+
+**Returns**
+
+* table - Table of warnings for the character
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -6710,9 +8278,25 @@ if not warnings then return {} end
 
 ### GetWarningsByIssuer
 
+**Purpose**
+
+Called to get warnings by issuer
+
+**When Called**
+
+When retrieving warnings issued by a specific player
+
 **Parameters**
 
 * `steamID` (*string*): The Steam ID of the issuer
+
+**Returns**
+
+* table - Table of warnings issued by the player
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -6792,6 +8376,14 @@ if not warnings then return {} end
 
 ### HandleItemTransferRequest
 
+**Purpose**
+
+Called to handle item transfer requests
+
+**When Called**
+
+When a player requests to transfer an item
+
 **Parameters**
 
 * `client` (*Player*): The player making the request
@@ -6799,6 +8391,14 @@ if not warnings then return {} end
 * `x` (*number*): The X position in the inventory
 * `y` (*number*): The Y position in the inventory
 * `invID` (*string*): The destination inventory ID
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -6881,9 +8481,25 @@ if not char then return end
 
 ### InitializeStorage
 
+**Purpose**
+
+Called to initialize storage
+
+**When Called**
+
+When a storage entity is being initialized
+
 **Parameters**
 
 * `entity` (*Entity*): The storage entity
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -6949,9 +8565,25 @@ end)
 
 ### InventoryDeleted
 
+**Purpose**
+
+Called when an inventory is deleted
+
+**When Called**
+
+When an inventory is removed from the system
+
 **Parameters**
 
 * `instance` (*Inventory*): The inventory being deleted
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -7003,10 +8635,26 @@ end)
 
 ### InventoryItemAdded
 
+**Purpose**
+
+Called when an item is added to an inventory
+
+**When Called**
+
+When an item is placed into an inventory
+
 **Parameters**
 
 * `inventory` (*Inventory*): The inventory receiving the item
 * `item` (*Item*): The item being added
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -7071,11 +8719,27 @@ end)
 
 ### InventoryItemRemoved
 
+**Purpose**
+
+Called when an item is removed from an inventory
+
+**When Called**
+
+When an item is taken out of an inventory
+
 **Parameters**
 
 * `self` (*Item*): The item being removed
 * `instance` (*Inventory*): The inventory the item is being removed from
 * `preserveItem` (*boolean*): Whether to preserve the item after removal
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -7142,9 +8806,25 @@ end)
 
 ### IsSuitableForTrunk
 
+**Purpose**
+
+Called to check if an entity is suitable for trunk storage
+
+**When Called**
+
+When determining if an entity can be used as a trunk/storage
+
 **Parameters**
 
 * `entity` (*Entity*): The entity being checked
+
+**Returns**
+
+* boolean - True if suitable, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -7210,11 +8890,27 @@ if not IsValid(entity) then return false end
 
 ### ItemCombine
 
+**Purpose**
+
+Called when items are combined
+
+**When Called**
+
+When a player attempts to combine two items
+
 **Parameters**
 
 * `client` (*Player*): The player combining items
 * `item` (*Item*): The first item
 * `target` (*Item*): The second item being combined with
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -7297,9 +8993,25 @@ if not char then return false end
 
 ### ItemDeleted
 
+**Purpose**
+
+Called when an item is deleted
+
+**When Called**
+
+When an item is removed from the system
+
 **Parameters**
 
 * `instance` (*Item*): The item being deleted
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -7351,10 +9063,26 @@ end)
 
 ### ItemDraggedOutOfInventory
 
+**Purpose**
+
+Called when an item is dragged out of inventory
+
+**When Called**
+
+When a player drags an item outside the inventory panel
+
 **Parameters**
 
 * `client` (*Player*): The player dragging the item
 * `item` (*Item*): The item being dragged
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -7419,6 +9147,14 @@ if not char then return false end
 
 ### ItemFunctionCalled
 
+**Purpose**
+
+Called when an item function is called
+
+**When Called**
+
+When a player uses an item function
+
 **Parameters**
 
 * `self` (*Item*): The item whose function was called
@@ -7426,6 +9162,14 @@ if not char then return false end
 * `client` (*Player*): The player calling the function
 * `entity` (*Entity*): The entity involved (if any)
 * `results` (*table*): The results from the function
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -7492,9 +9236,25 @@ if not char then return end
 
 ### ItemTransfered
 
+**Purpose**
+
+Called when an item is transferred between inventories
+
+**When Called**
+
+When an item is successfully moved from one inventory to another
+
 **Parameters**
 
 * `context` (*table*): The transfer context containing source, destination, item, etc.
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -7597,11 +9357,27 @@ end)
 
 ### KeyLock
 
+**Purpose**
+
+Called when a key locks an entity
+
+**When Called**
+
+When a key is used to lock a door or entity
+
 **Parameters**
 
 * `owner` (*Player*): The player using the key
 * `entity` (*Entity*): The entity being locked
 * `time` (*number*): The time taken to lock
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -7658,11 +9434,27 @@ if not char then return end
 
 ### KeyUnlock
 
+**Purpose**
+
+Called when a key unlocks an entity
+
+**When Called**
+
+When a key is used to unlock a door or entity
+
 **Parameters**
 
 * `owner` (*Player*): The player using the key
 * `entity` (*Entity*): The entity being unlocked
 * `time` (*number*): The time taken to unlock
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -7719,6 +9511,22 @@ if not char then return end
 
 ### LiliaTablesLoaded
 
+**Purpose**
+
+Called when Lilia database tables are loaded
+
+**When Called**
+
+After database tables are created/loaded
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
+
 **Example Usage**
 
 **Low Complexity:**
@@ -7763,6 +9571,22 @@ end)
 ---
 
 ### LoadData
+
+**Purpose**
+
+Called to load persistent data
+
+**When Called**
+
+When data needs to be loaded from storage
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -7813,10 +9637,26 @@ end)
 
 ### ModifyCharacterModel
 
+**Purpose**
+
+Called to modify a character's model
+
+**When Called**
+
+When a character's model is being set
+
 **Parameters**
 
 * `client` (*Player*): The player
 * `character` (*Character*): The character whose model is being modified
+
+**Returns**
+
+* string - The modified model path
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -7881,10 +9721,26 @@ end)
 
 ### OnAdminSystemLoaded
 
+**Purpose**
+
+Called when admin system is loaded
+
+**When Called**
+
+After admin groups and privileges are initialized
+
 **Parameters**
 
 * `groups` (*table*): The admin groups table
 * `privileges` (*table*): The privileges table
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -7943,9 +9799,25 @@ end)
 
 ### OnCharAttribBoosted
 
+**Purpose**
+
+Called when a character attribute is boosted
+
+**When Called**
+
+When a character's attribute is increased
+
 **Parameters**
 
 * `character` (*Character*): The character whose attribute was boosted
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -7999,12 +9871,28 @@ end)
 
 ### OnCharAttribUpdated
 
+**Purpose**
+
+Called when a character attribute is updated
+
+**When Called**
+
+When a character's attribute value changes
+
 **Parameters**
 
 * `client` (*Player*): The player
 * `character` (*Character*): The character
 * `key` (*string*): The attribute key
 * `newValue` (*number*): The new attribute value
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -8064,11 +9952,27 @@ end)
 
 ### OnCharCreated
 
+**Purpose**
+
+Called when a character is created
+
+**When Called**
+
+When a new character is successfully created
+
 **Parameters**
 
 * `client` (*Player*): The player who created the character
 * `character` (*Character*): The character that was created
 * `originalData` (*table*): The original character data before any modifications
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -8158,10 +10062,26 @@ end)
 
 ### OnCharDelete
 
+**Purpose**
+
+Called when a character is deleted
+
+**When Called**
+
+When a character is successfully deleted
+
 **Parameters**
 
 * `client` (*Player*): The player who deleted the character
 * `id` (*number*): The ID of the character that was deleted
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -8244,10 +10164,26 @@ if not char then return end
 
 ### OnCharDisconnect
 
+**Purpose**
+
+Called when a character disconnects
+
+**When Called**
+
+When a player disconnects while having a character loaded
+
 **Parameters**
 
 * `client` (*Player*): The player who disconnected
 * `character` (*Character*): The character that was loaded when disconnecting
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -8336,11 +10272,27 @@ end)
 
 ### OnCharFallover
 
+**Purpose**
+
+Called when a character falls over
+
+**When Called**
+
+When a character is knocked down/ragdolled
+
 **Parameters**
 
 * `character` (*Character*): The character falling over
 * `client` (*Player*): The player
 * `ragdoll` (*Entity*): The ragdoll entity created
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -8398,11 +10350,27 @@ end)
 
 ### OnCharFlagsGiven
 
+**Purpose**
+
+Called when flags are given to a character
+
+**When Called**
+
+When a character receives new flags
+
 **Parameters**
 
 * `ply` (*Player*): The player receiving flags
 * `self` (*Character*): The character receiving flags
 * `addedFlags` (*string*): The flags that were added
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -8464,11 +10432,27 @@ end)
 
 ### OnCharFlagsTaken
 
+**Purpose**
+
+Called when flags are taken from a character
+
+**When Called**
+
+When a character loses flags
+
 **Parameters**
 
 * `ply` (*Player*): The player losing flags
 * `self` (*Character*): The character losing flags
 * `removedFlags` (*string*): The flags that were removed
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -8530,10 +10514,26 @@ end)
 
 ### OnCharGetup
 
+**Purpose**
+
+Called when a character gets up from being unconscious
+
+**When Called**
+
+When a character regains consciousness or is revived
+
 **Parameters**
 
 * `target` (*Player*): The player whose character got up
 * `entity` (*Entity*): The ragdoll entity that was removed
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -8631,10 +10631,26 @@ if not char then return end
 
 ### OnCharKick
 
+**Purpose**
+
+Called when a character is kicked
+
+**When Called**
+
+When a character is kicked from the server
+
 **Parameters**
 
 * `self` (*Character*): The character being kicked
 * `client` (*Player*): The player being kicked
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -8734,12 +10750,28 @@ end)
 
 ### OnCharNetVarChanged
 
+**Purpose**
+
+Called when a character's network variable changes
+
+**When Called**
+
+When a character's networked data is modified
+
 **Parameters**
 
 * `character` (*Character*): The character whose variable changed
 * `key` (*string*): The name of the variable that changed
 * `oldVar` (*any*): The previous value of the variable
 * `value` (*any*): The new value of the variable
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -8849,10 +10881,26 @@ if not client then return end
 
 ### OnCharPermakilled
 
+**Purpose**
+
+Called when a character is permanently killed
+
+**When Called**
+
+When a character is permanently removed from the game
+
 **Parameters**
 
 * `character` (*Character*): The character being permanently killed
 * `client` (*Player*): The player whose character was killed
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -8959,10 +11007,26 @@ end)
 
 ### OnCharRecognized
 
+**Purpose**
+
+Called when a character recognizes another character
+
+**When Called**
+
+When a character successfully identifies another character
+
 **Parameters**
 
 * `client` (*Player*): The player doing the recognizing
 * `target` (*Player*): The player being recognized
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -9060,6 +11124,14 @@ if not clientChar or not targetChar then return end
 
 ### OnCharTradeVendor
 
+**Purpose**
+
+Called when a character trades with a vendor
+
+**When Called**
+
+When a character buys or sells items to/from a vendor
+
 **Parameters**
 
 * `client` (*Player*): The player trading with the vendor
@@ -9069,6 +11141,14 @@ if not clientChar or not targetChar then return end
 * `character` (*Character*): The character doing the trading
 * `itemType` (*string*): The type of item being traded
 * `isFailed` (*boolean*): Whether the trade failed
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -9172,12 +11252,28 @@ end)
 
 ### OnCharVarChanged
 
+**Purpose**
+
+Called when a character's variable changes
+
+**When Called**
+
+When a character's data variable is modified
+
 **Parameters**
 
 * `character` (*Character*): The character whose variable changed
 * `varName` (*string*): The name of the variable that changed
 * `oldVar` (*any*): The previous value of the variable
 * `newVar` (*any*): The new value of the variable
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -9295,9 +11391,25 @@ if not client then return end
 
 ### OnCheaterCaught
 
+**Purpose**
+
+Called when a cheater is caught
+
+**When Called**
+
+When anti-cheat systems detect cheating behavior
+
 **Parameters**
 
 * `client` (*Player*): The player who was caught cheating
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -9380,11 +11492,27 @@ end)
 
 ### OnCheaterStatusChanged
 
+**Purpose**
+
+Called when a cheater's status changes
+
+**When Called**
+
+When a player's cheater status is modified
+
 **Parameters**
 
 * `client` (*Player*): The player whose status changed
 * `target` (*Player*): The target player (if applicable)
 * `status` (*string*): The new cheater status
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -9479,11 +11607,27 @@ if not char then return end
 
 ### OnCreatePlayerRagdoll
 
+**Purpose**
+
+Called when creating a player ragdoll
+
+**When Called**
+
+When a player ragdoll is being created
+
 **Parameters**
 
 * `self` (*Player*): The player whose ragdoll is being created
 * `entity` (*Entity*): The ragdoll entity
 * `isDead` (*boolean*): Whether the player is dead
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -9553,12 +11697,28 @@ if not char then return end
 
 ### OnDataSet
 
+**Purpose**
+
+Called when data is set
+
+**When Called**
+
+When persistent data is being saved
+
 **Parameters**
 
 * `key` (*string*): The data key
 * `value` (*any*): The data value
 * `gamemode` (*string*): The gamemode name
 * `map` (*string*): The map name
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -9640,6 +11800,22 @@ end)
 
 ### OnDatabaseLoaded
 
+**Purpose**
+
+Called when the database has finished loading all data
+
+**When Called**
+
+After all database operations and data loading is complete
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
+
 **Example Usage**
 
 **Low Complexity:**
@@ -9689,10 +11865,26 @@ end)
 
 ### OnEntityLoaded
 
+**Purpose**
+
+Called when an entity is loaded from the database
+
+**When Called**
+
+When an entity is restored from saved data
+
 **Parameters**
 
 * `createdEnt` (*Entity*): The entity that was created
 * `data` (*table*): The saved entity data
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -9749,10 +11941,26 @@ end)
 
 ### OnEntityPersistUpdated
 
+**Purpose**
+
+Called when an entity's persistent data is updated
+
+**When Called**
+
+When an entity's save data is modified
+
 **Parameters**
 
 * `ent` (*Entity*): The entity being updated
 * `data` (*table*): The updated persistent data
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -9813,10 +12021,26 @@ end)
 
 ### OnEntityPersisted
 
+**Purpose**
+
+Called when an entity is persisted to the database
+
+**When Called**
+
+When an entity's data is saved to the database
+
 **Parameters**
 
 * `ent` (*Entity*): The entity being saved
 * `entData` (*table*): The entity data being saved
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -9874,10 +12098,26 @@ end)
 
 ### OnItemAdded
 
+**Purpose**
+
+Called when an item is added to an inventory
+
+**When Called**
+
+When an item is successfully added to any inventory
+
 **Parameters**
 
 * `owner` (*Player|Character*): The owner of the inventory
 * `item` (*Item*): The item that was added
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -9955,10 +12195,26 @@ if not char then return end
 
 ### OnItemCreated
 
+**Purpose**
+
+Called when an item instance is created
+
+**When Called**
+
+When a new item instance is created from an item table
+
 **Parameters**
 
 * `itemTable` (*table*): The item table definition
 * `self` (*Item*): The item instance being created
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -10042,9 +12298,25 @@ if not char then return end
 
 ### OnItemSpawned
 
+**Purpose**
+
+Called when an item entity is spawned in the world
+
+**When Called**
+
+When an item is dropped or spawned as a world entity
+
 **Parameters**
 
 * `self` (*Entity*): The item entity that was spawned
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -10125,6 +12397,22 @@ if not item then return end
 
 ### OnLoadTables
 
+**Purpose**
+
+Called when database tables are being loaded
+
+**When Called**
+
+During database initialization when tables are loaded
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
+
 **Example Usage**
 
 **Low Complexity:**
@@ -10167,10 +12455,26 @@ end)
 
 ### OnOOCMessageSent
 
+**Purpose**
+
+Called when a player sends an OOC (Out of Character) message
+
+**When Called**
+
+When a player sends a message in OOC chat
+
 **Parameters**
 
 * `client` (*Player*): The player sending the message
 * `message` (*string*): The OOC message text
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -10273,9 +12577,25 @@ end)
 
 ### OnPAC3PartTransfered
 
+**Purpose**
+
+Called when a PAC3 part is transferred
+
+**When Called**
+
+When a PAC3 part is moved between players or inventories
+
 **Parameters**
 
 * `part` (*table*): The PAC3 part data being transferred
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -10334,10 +12654,26 @@ end)
 
 ### OnPickupMoney
 
+**Purpose**
+
+Called when a player picks up money
+
+**When Called**
+
+When a player collects money from the ground
+
 **Parameters**
 
 * `client` (*Player*): The player picking up money
 * `moneyEntity` (*Entity*): The money entity being picked up
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -10397,11 +12733,27 @@ if not char then return end
 
 ### OnPlayerDropWeapon
 
+**Purpose**
+
+Called when a player drops a weapon
+
+**When Called**
+
+When a player drops a weapon from their inventory
+
 **Parameters**
 
 * `client` (*Player*): The player dropping the weapon
 * `weapon` (*Weapon*): The weapon being dropped
 * `entity` (*Entity*): The weapon entity created
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -10492,6 +12844,14 @@ if not char then return end
 
 ### OnPlayerEnterSequence
 
+**Purpose**
+
+Called when a player enters a sequence
+
+**When Called**
+
+When a player starts a sequence (animation)
+
 **Parameters**
 
 * `self` (*Player*): The player entering the sequence
@@ -10499,6 +12859,14 @@ if not char then return end
 * `callback` (*function*): The callback function to call when sequence ends
 * `time` (*number*): The duration of the sequence
 * `noFreeze` (*boolean*): Whether the player should be frozen during sequence
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -10601,6 +12969,14 @@ if not char then return end
 
 ### OnPlayerInteractItem
 
+**Purpose**
+
+Called when a player interacts with an item
+
+**When Called**
+
+When a player uses an item or performs an action on it
+
 **Parameters**
 
 * `client` (*Player*): The player interacting with the item
@@ -10608,6 +12984,14 @@ if not char then return end
 * `self` (*Item*): The item being interacted with
 * `result` (*any*): The result of the interaction
 * `data` (*table*): Additional data for the interaction
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -10716,11 +13100,27 @@ if not char then return end
 
 ### OnPlayerJoinClass
 
+**Purpose**
+
+Called when a player joins a class
+
+**When Called**
+
+When a player successfully joins a new class
+
 **Parameters**
 
 * `client` (*Player*): The player joining the class
 * `class` (*string*): The class being joined
 * `oldClass` (*string*): The previous class (if any)
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -10832,9 +13232,25 @@ if not char then return end
 
 ### OnPlayerLeaveSequence
 
+**Purpose**
+
+Called when a player leaves a sequence
+
+**When Called**
+
+When a player finishes or exits a sequence
+
 **Parameters**
 
 * `self` (*Player*): The player leaving the sequence
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -10926,9 +13342,25 @@ if not char then return end
 
 ### OnPlayerLostStackItem
 
+**Purpose**
+
+Called when a player loses a stack item
+
+**When Called**
+
+When a player's stack item is removed or lost
+
 **Parameters**
 
 * `itemTypeOrItem` (*string/Item*): The item type or item instance that was lost
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -10989,10 +13421,26 @@ end)
 
 ### OnPlayerObserve
 
+**Purpose**
+
+Called when a player enters or exits observer mode
+
+**When Called**
+
+When a player starts or stops observing
+
 **Parameters**
 
 * `client` (*Player*): The player entering/exiting observer mode
 * `state` (*boolean*): True if entering observer mode, false if exiting
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -11111,11 +13559,27 @@ if not char then return end
 
 ### OnPlayerPurchaseDoor
 
+**Purpose**
+
+Called when a player purchases a door
+
+**When Called**
+
+When a player successfully buys a door
+
 **Parameters**
 
 * `client` (*Player*): The player purchasing the door
 * `door` (*Entity*): The door being purchased
 * `price` (*number*): The price paid for the door
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -11199,11 +13663,27 @@ if not char then return end
 
 ### OnPlayerSwitchClass
 
+**Purpose**
+
+Called when a player switches classes
+
+**When Called**
+
+When a player successfully changes their class
+
 **Parameters**
 
 * `client` (*Player*): The player switching classes
 * `class` (*string*): The new class being switched to
 * `oldClass` (*string*): The previous class
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -11324,10 +13804,26 @@ if not char then return end
 
 ### OnRequestItemTransfer
 
+**Purpose**
+
+Called when an item transfer is requested
+
+**When Called**
+
+When a request is made to transfer an item to another inventory
+
 **Parameters**
 
 * `item` (*Item*): The item being transferred
 * `targetInventory` (*Inventory*): The target inventory
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -11382,9 +13878,25 @@ end)
 
 ### OnSalaryAdjust
 
+**Purpose**
+
+Called when a player's salary is adjusted
+
+**When Called**
+
+When a player's salary amount is modified
+
 **Parameters**
 
 * `client` (*Player*): The player whose salary is being adjusted
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -11441,6 +13953,14 @@ if not char then return end
 
 ### OnSalaryGiven
 
+**Purpose**
+
+Called when a player receives their salary
+
+**When Called**
+
+When salary is paid to a player
+
 **Parameters**
 
 * `client` (*Player*): The player receiving the salary
@@ -11448,6 +13968,14 @@ if not char then return end
 * `pay` (*number*): The amount of salary paid
 * `faction` (*number*): The faction ID
 * `class` (*number*): The class ID
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -11505,9 +14033,25 @@ end)
 
 ### OnSavedItemLoaded
 
+**Purpose**
+
+Called when saved items are loaded
+
+**When Called**
+
+When items are loaded from the database
+
 **Parameters**
 
 * `loadedItems` (*table*): Table of items that were loaded
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -11563,12 +14107,28 @@ end)
 
 ### OnServerLog
 
+**Purpose**
+
+Called when a server log entry is created
+
+**When Called**
+
+When a log message is written to the server log
+
 **Parameters**
 
 * `client` (*Player*): The player associated with the log (can be nil)
 * `logType` (*string*): The type of log entry
 * `logString` (*string*): The log message
 * `category` (*string*): The log category
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -11634,11 +14194,27 @@ end)
 
 ### OnTicketClaimed
 
+**Purpose**
+
+Called when a support ticket is claimed by an admin
+
+**When Called**
+
+When an admin claims a support ticket
+
 **Parameters**
 
 * `client` (*Player*): The admin claiming the ticket
 * `requester` (*Player*): The player who created the ticket
 * `ticketMessage` (*string*): The ticket message
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -11693,11 +14269,27 @@ end)
 
 ### OnTicketClosed
 
+**Purpose**
+
+Called when a support ticket is closed
+
+**When Called**
+
+When a support ticket is resolved and closed
+
 **Parameters**
 
 * `client` (*Player*): The admin closing the ticket
 * `requester` (*Player*): The player who created the ticket
 * `ticketMessage` (*string*): The ticket message
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -11752,10 +14344,26 @@ end)
 
 ### OnTicketCreated
 
+**Purpose**
+
+Called when a new support ticket is created
+
+**When Called**
+
+When a player creates a support ticket
+
 **Parameters**
 
 * `noob` (*Player*): The player creating the ticket
 * `message` (*string*): The ticket message
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -11815,9 +14423,25 @@ end)
 
 ### OnTransferred
 
+**Purpose**
+
+Called when a player is transferred
+
+**When Called**
+
+When a player is successfully transferred
+
 **Parameters**
 
 * `targetPlayer` (*Player*): The player who was transferred
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -11872,10 +14496,26 @@ if not char then return end
 
 ### OnUsergroupCreated
 
+**Purpose**
+
+Called when a new usergroup is created
+
+**When Called**
+
+When a usergroup is added to the system
+
 **Parameters**
 
 * `groupName` (*string*): The name of the usergroup
 * `groupData` (*table*): The usergroup configuration data
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -11931,10 +14571,26 @@ end)
 
 ### OnUsergroupPermissionsChanged
 
+**Purpose**
+
+Called when usergroup permissions are changed
+
+**When Called**
+
+When a usergroup's permissions are modified
+
 **Parameters**
 
 * `groupName` (*string*): The name of the usergroup
 * `permissions` (*table*): The new permissions table
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -11996,9 +14652,25 @@ end)
 
 ### OnUsergroupRemoved
 
+**Purpose**
+
+Called when a usergroup is removed
+
+**When Called**
+
+When a usergroup is deleted from the system
+
 **Parameters**
 
 * `groupName` (*string*): The name of the usergroup being removed
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -12054,10 +14726,26 @@ end)
 
 ### OnUsergroupRenamed
 
+**Purpose**
+
+Called when a usergroup is renamed
+
+**When Called**
+
+When a usergroup's name is changed
+
 **Parameters**
 
 * `oldName` (*string*): The old name of the usergroup
 * `newName` (*string*): The new name of the usergroup
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -12115,11 +14803,27 @@ end)
 
 ### OnVendorEdited
 
+**Purpose**
+
+Called when a vendor is edited
+
+**When Called**
+
+When a vendor's properties are modified
+
 **Parameters**
 
 * `client` (*Player*): The player editing the vendor
 * `vendor` (*Entity*): The vendor entity being edited
 * `key` (*string*): The property being modified
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -12220,9 +14924,25 @@ if not char then return end
 
 ### OnlineStaffDataReceived
 
+**Purpose**
+
+Called when online staff data is received
+
+**When Called**
+
+When the server receives updated staff information
+
 **Parameters**
 
 * `staffData` (*table*): The staff data containing online staff information
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -12283,11 +15003,27 @@ end)
 
 ### OptionReceived
 
+**Purpose**
+
+Called when a client option is received
+
+**When Called**
+
+When the server receives an option setting from a client
+
 **Parameters**
 
 * `client` (*Player*): The player who sent the option
 * `key` (*string*): The option key
 * `value` (*any*): The option value
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -12345,10 +15081,26 @@ end)
 
 ### OverrideSpawnTime
 
+**Purpose**
+
+Called to override a player's respawn time
+
+**When Called**
+
+When a player's respawn time needs to be modified
+
 **Parameters**
 
 * `client` (*Player*): The player respawning
 * `respawnTime` (*number*): The current respawn time in seconds
+
+**Returns**
+
+* number - The overridden respawn time (or nil to use default)
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -12410,10 +15162,26 @@ if not char then return end
 
 ### PlayerAccessVendor
 
+**Purpose**
+
+Called when a player accesses a vendor
+
+**When Called**
+
+When a player interacts with a vendor entity
+
 **Parameters**
 
 * `activator` (*Player*): The player accessing the vendor
 * `self` (*Entity*): The vendor entity
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -12472,9 +15240,25 @@ if not char then return end
 
 ### PlayerCheatDetected
 
+**Purpose**
+
+Called when a player is detected cheating
+
+**When Called**
+
+When anti-cheat systems detect suspicious behavior
+
 **Parameters**
 
 * `client` (*Player*): The player who was detected cheating
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -12545,9 +15329,25 @@ end)
 
 ### PlayerDisconnect
 
+**Purpose**
+
+Called when a player disconnects
+
+**When Called**
+
+When a player leaves the server
+
 **Parameters**
 
 * `client` (*Player*): The player disconnecting
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -12603,10 +15403,26 @@ end)
 
 ### PlayerGagged
 
+**Purpose**
+
+Called when a player is gagged
+
+**When Called**
+
+When a player's voice chat is disabled
+
 **Parameters**
 
 * `target` (*Player*): The player being gagged
 * `admin` (*Player*): The admin issuing the gag
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -12666,9 +15482,25 @@ if not char then return end
 
 ### PlayerLiliaDataLoaded
 
+**Purpose**
+
+Called when a player's Lilia data is loaded
+
+**When Called**
+
+When a player's framework data has been loaded from the database
+
 **Parameters**
 
 * `client` (*Player*): The player whose data was loaded
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -12725,11 +15557,27 @@ if not char then return end
 
 ### PlayerLoadedChar
 
+**Purpose**
+
+Called when a player loads a character
+
+**When Called**
+
+When a player successfully loads a character
+
 **Parameters**
 
 * `client` (*Player*): The player loading the character
 * `character` (*Character*): The character being loaded
 * `currentChar` (*Character*): The previously loaded character (if any)
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -12838,6 +15686,14 @@ end)
 
 ### PlayerMessageSend
 
+**Purpose**
+
+Called when a player sends a message
+
+**When Called**
+
+When a chat message is being sent
+
 **Parameters**
 
 * `speaker` (*Player*): The player sending the message
@@ -12845,6 +15701,14 @@ end)
 * `text` (*string*): The message text
 * `anonymous` (*boolean*): Whether the message is anonymous
 * `receivers` (*table*): The players receiving the message
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -12907,10 +15771,26 @@ if not char then return false end
 
 ### PlayerModelChanged
 
+**Purpose**
+
+Called when a player's model changes
+
+**When Called**
+
+When a player's character model is changed
+
 **Parameters**
 
 * `client` (*Player*): The player whose model changed
 * `value` (*string*): The new model path
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -12967,10 +15847,26 @@ if not char then return end
 
 ### PlayerMuted
 
+**Purpose**
+
+Called when a player is muted
+
+**When Called**
+
+When a player's chat is disabled
+
 **Parameters**
 
 * `target` (*Player*): The player being muted
 * `admin` (*Player*): The admin issuing the mute
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13030,6 +15926,22 @@ if not char then return end
 
 ### PlayerShouldAct
 
+**Purpose**
+
+Called to check if a player should perform an action
+
+**When Called**
+
+When validating player actions
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
+
 **Example Usage**
 
 **Low Complexity:**
@@ -13082,11 +15994,27 @@ if not IsValid(client) then return false end
 
 ### PlayerShouldPermaKill
 
+**Purpose**
+
+Called to check if a player should be permakilled
+
+**When Called**
+
+When a player dies and permakill is being considered
+
 **Parameters**
 
 * `client` (*Player*): The dying player
 * `inflictor` (*Entity*): The entity that caused death
 * `attacker` (*Entity*): The attacker
+
+**Returns**
+
+* boolean - True to permakill, false otherwise
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13146,11 +16074,27 @@ if not char then return false end
 
 ### PlayerSpawnPointSelected
 
+**Purpose**
+
+Called when a player spawn point is selected
+
+**When Called**
+
+When determining where a player should spawn
+
 **Parameters**
 
 * `client` (*Player*): The player spawning
 * `pos` (*Vector*): The spawn position
 * `ang` (*Angle*): The spawn angle
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13203,9 +16147,25 @@ if not char then return end
 
 ### PlayerThrowPunch
 
+**Purpose**
+
+Called when a player throws a punch
+
+**When Called**
+
+When a player uses their fists to attack
+
 **Parameters**
 
 * `client` (*Player*): The player throwing the punch
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13258,10 +16218,26 @@ if not char then return end
 
 ### PlayerUngagged
 
+**Purpose**
+
+Called when a player is ungagged
+
+**When Called**
+
+When a player's voice chat is re-enabled
+
 **Parameters**
 
 * `target` (*Player*): The player being ungagged
 * `admin` (*Player*): The admin removing the gag
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13306,10 +16282,26 @@ end)
 
 ### PlayerUnmuted
 
+**Purpose**
+
+Called when a player is unmuted
+
+**When Called**
+
+When a player's chat is re-enabled
+
 **Parameters**
 
 * `target` (*Player*): The player being unmuted
 * `admin` (*Player*): The admin removing the mute
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13354,10 +16346,26 @@ end)
 
 ### PlayerUseDoor
 
+**Purpose**
+
+Called when a player uses a door
+
+**When Called**
+
+When a player interacts with a door entity
+
 **Parameters**
 
 * `client` (*Player*): The player using the door
 * `door` (*Entity*): The door entity
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13411,10 +16419,26 @@ if not char then return end
 
 ### PostDoorDataLoad
 
+**Purpose**
+
+Called after door data is loaded
+
+**When Called**
+
+After door configuration data is loaded from the database
+
 **Parameters**
 
 * `ent` (*Entity*): The door entity
 * `doorData` (*table*): The door data that was loaded
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13479,6 +16503,22 @@ if not IsValid(ent) or not doorData then return end
 
 ### PostLoadData
 
+**Purpose**
+
+Called after data is loaded
+
+**When Called**
+
+After all persistent data has been loaded
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
+
 **Example Usage**
 
 **Low Complexity:**
@@ -13526,9 +16566,25 @@ end)
 
 ### PostPlayerInitialSpawn
 
+**Purpose**
+
+Called after a player's initial spawn
+
+**When Called**
+
+After a player has fully spawned for the first time
+
 **Parameters**
 
 * `client` (*Player*): The player who spawned
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13602,11 +16658,27 @@ if not IsValid(client) then return end
 
 ### PostPlayerLoadedChar
 
+**Purpose**
+
+Called after a player has loaded a character
+
+**When Called**
+
+After a character has been fully loaded for a player
+
 **Parameters**
 
 * `client` (*Player*): The player
 * `character` (*Character*): The character that was loaded
 * `currentChar` (*Character*): The previous character (if any)
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13666,9 +16738,25 @@ end)
 
 ### PostPlayerLoadout
 
+**Purpose**
+
+Called after a player's loadout is given
+
+**When Called**
+
+After a player has received their weapons/equipment
+
 **Parameters**
 
 * `client` (*Player*): The player who received loadout
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13730,12 +16818,28 @@ if not char then return end
 
 ### PostPlayerSay
 
+**Purpose**
+
+Called after a player says something in chat
+
+**When Called**
+
+After a chat message has been processed and sent
+
 **Parameters**
 
 * `client` (*Player*): The player who spoke
 * `message` (*string*): The message that was sent
 * `chatType` (*string*): The type of chat
 * `anonymous` (*boolean*): Whether the message was anonymous
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13788,11 +16892,27 @@ if not char then return end
 
 ### PostScaleDamage
 
+**Purpose**
+
+Called after damage scaling is calculated
+
+**When Called**
+
+After damage has been scaled but before it's applied
+
 **Parameters**
 
 * `hitgroup` (*number*): The hitgroup that was hit
 * `dmgInfo` (*CTakeDamageInfo*): The damage info
 * `damageScale` (*number*): The calculated damage scale
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13848,9 +16968,25 @@ if not IsValid(target) or not IsValid(attacker) then return end
 
 ### PreCharDelete
 
+**Purpose**
+
+Called before a character is deleted
+
+**When Called**
+
+Before a character deletion is processed
+
 **Parameters**
 
 * `id` (*number*): The character ID being deleted
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13902,10 +17038,26 @@ if not char then return end
 
 ### PreDoorDataSave
 
+**Purpose**
+
+Called before door data is saved
+
+**When Called**
+
+Before door configuration data is saved to database
+
 **Parameters**
 
 * `door` (*Entity*): The door entity
 * `doorData` (*table*): The door data being saved
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -13960,11 +17112,27 @@ if not IsValid(door) then return end
 
 ### PrePlayerInteractItem
 
+**Purpose**
+
+Called before a player interacts with an item
+
+**When Called**
+
+Before an item interaction is processed
+
 **Parameters**
 
 * `client` (*Player*): The player interacting
 * `action` (*string*): The action being performed
 * `self` (*Item*): The item being interacted with
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -14027,11 +17195,27 @@ if not char then return false end
 
 ### PrePlayerLoadedChar
 
+**Purpose**
+
+Called before a player loads a character
+
+**When Called**
+
+Before a character is loaded for a player
+
 **Parameters**
 
 * `client` (*Player*): The player
 * `character` (*Character*): The character being loaded
 * `currentChar` (*Character*): The current character (if any)
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -14084,6 +17268,14 @@ end)
 
 ### PreSalaryGive
 
+**Purpose**
+
+Called before salary is given to a player
+
+**When Called**
+
+Before salary payment is processed
+
 **Parameters**
 
 * `client` (*Player*): The player receiving salary
@@ -14091,6 +17283,14 @@ end)
 * `pay` (*number*): The salary amount
 * `faction` (*string*): The faction name
 * `class` (*string*): The class name
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -14152,11 +17352,27 @@ if not char then return end
 
 ### PreScaleDamage
 
+**Purpose**
+
+Called before damage scaling is calculated
+
+**When Called**
+
+Before damage is scaled
+
 **Parameters**
 
 * `hitgroup` (*number*): The hitgroup that was hit
 * `dmgInfo` (*CTakeDamageInfo*): The damage info
 * `damageScale` (*number*): The current damage scale
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -14211,6 +17427,22 @@ if not IsValid(target) or not IsValid(attacker) then return end
 
 ### RegisterPreparedStatements
 
+**Purpose**
+
+Called to register prepared SQL statements
+
+**When Called**
+
+When setting up database prepared statements
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
+
 **Example Usage**
 
 **Low Complexity:**
@@ -14255,10 +17487,26 @@ end)
 
 ### RemoveWarning
 
+**Purpose**
+
+Called when a warning is removed
+
+**When Called**
+
+When a character warning is deleted
+
 **Parameters**
 
 * `charID` (*number*): The character ID
 * `index` (*number*): The warning index
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -14315,6 +17563,14 @@ if not char then return end
 
 ### RunAdminSystemCommand
 
+**Purpose**
+
+Called when an admin system command is run
+
+**When Called**
+
+When an admin command is executed
+
 **Parameters**
 
 * `cmd` (*string*): The command name
@@ -14322,6 +17578,14 @@ if not char then return end
 * `victim` (*Player*): The target player (if any)
 * `dur` (*number*): The duration (if applicable)
 * `reason` (*string*): The reason (if applicable)
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -14379,6 +17643,22 @@ if not char then return end
 
 ### SaveData
 
+**Purpose**
+
+Called to save persistent data
+
+**When Called**
+
+When data needs to be saved to storage
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
+
 **Example Usage**
 
 **Low Complexity:**
@@ -14425,10 +17705,26 @@ end)
 
 ### SendPopup
 
+**Purpose**
+
+Called to send a popup message
+
+**When Called**
+
+When displaying a popup to a player
+
 **Parameters**
 
 * `noob` (*Player*): The player receiving the popup
 * `message` (*string*): The popup message
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -14482,9 +17778,25 @@ if not char then return end
 
 ### SetupBagInventoryAccessRules
 
+**Purpose**
+
+Called to set up bag inventory access rules
+
+**When Called**
+
+When configuring access rules for a bag inventory
+
 **Parameters**
 
 * `inventory` (*Inventory*): The bag inventory
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -14535,9 +17847,25 @@ end)
 
 ### SetupBotPlayer
 
+**Purpose**
+
+Called to set up a bot player
+
+**When Called**
+
+When initializing a bot player
+
 **Parameters**
 
 * `client` (*Player*): The bot player
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -14587,6 +17915,22 @@ end)
 
 ### SetupDatabase
 
+**Purpose**
+
+Called to set up the database
+
+**When Called**
+
+When initializing database connections and tables
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
+
 **Example Usage**
 
 **Low Complexity:**
@@ -14633,10 +17977,26 @@ end)
 
 ### SetupPlayerModel
 
+**Purpose**
+
+Called to set up a player's model
+
+**When Called**
+
+When configuring a player's character model
+
 **Parameters**
 
 * `client` (*Player*): The player
 * `character` (*Character*): The character
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -14704,6 +18064,22 @@ end)
 
 ### ShouldDataBeSaved
 
+**Purpose**
+
+Called to check if data should be saved
+
+**When Called**
+
+When determining if current data should be persisted
+
+**Returns**
+
+* boolean - True to save, false to skip
+
+**Realm**
+
+Server
+
 **Example Usage**
 
 **Low Complexity:**
@@ -14751,6 +18127,22 @@ end)
 ---
 
 ### ShouldDeleteSavedItems
+
+**Purpose**
+
+Called to check if saved items should be deleted
+
+**When Called**
+
+When determining if old saved items should be cleaned up
+
+**Returns**
+
+* boolean - True to delete, false to keep
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -14802,11 +18194,27 @@ end)
 
 ### StorageCanTransferItem
 
+**Purpose**
+
+Called to check if an item can be transferred to storage
+
+**When Called**
+
+When attempting to transfer an item to storage
+
 **Parameters**
 
 * `client` (*Player*): The player transferring the item
 * `storage` (*Entity*): The storage entity
 * `item` (*Item*): The item being transferred
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -14884,10 +18292,26 @@ if not char then return false end
 
 ### StorageEntityRemoved
 
+**Purpose**
+
+Called when a storage entity is removed
+
+**When Called**
+
+When a storage entity is deleted or removed
+
 **Parameters**
 
 * `self` (*Entity*): The storage entity being removed
 * `inventory` (*Inventory*): The inventory associated with the storage
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -14957,11 +18381,27 @@ if not IsValid(self) then return end
 
 ### StorageInventorySet
 
+**Purpose**
+
+Called when a storage inventory is set
+
+**When Called**
+
+When a storage entity gets its inventory assigned
+
 **Parameters**
 
 * `entity` (*Entity*): The storage entity
 * `inventory` (*Inventory*): The inventory being set
 * `isCar` (*boolean*): Whether this is a car storage
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -15031,6 +18471,22 @@ if not IsValid(entity) or not inventory then return end
 ---
 
 ### StorageItemRemoved
+
+**Purpose**
+
+Called when an item is removed from storage
+
+**When Called**
+
+When an item is removed from a storage inventory
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -15109,10 +18565,26 @@ end)
 
 ### StorageOpen
 
+**Purpose**
+
+Called when storage is opened
+
+**When Called**
+
+When a player opens a storage entity
+
 **Parameters**
 
 * `storage` (*Entity*): The storage entity being opened
 * `isCar` (*boolean*): Whether this is a car storage
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -15186,10 +18658,26 @@ if not IsValid(storage) then return end
 
 ### StorageRestored
 
+**Purpose**
+
+Called when storage is restored
+
+**When Called**
+
+When a storage entity is restored from save data
+
 **Parameters**
 
 * `ent` (*Entity*): The storage entity being restored
 * `inventory` (*Inventory*): The inventory being restored
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -15267,9 +18755,25 @@ if not IsValid(ent) or not inventory then return end
 
 ### StoreSpawns
 
+**Purpose**
+
+Called to store spawn points
+
+**When Called**
+
+When spawn points are being stored
+
 **Parameters**
 
 * `spawns` (*table*): The spawn points to store
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -15340,9 +18844,25 @@ end)
 
 ### SyncCharList
 
+**Purpose**
+
+Called to sync character list with client
+
+**When Called**
+
+When character list needs to be synchronized
+
 **Parameters**
 
 * `client` (*Player*): The client to sync with
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -15412,11 +18932,27 @@ if not IsValid(client) then return end
 
 ### TicketSystemClaim
 
+**Purpose**
+
+Called when a ticket is claimed
+
+**When Called**
+
+When a support ticket is claimed by an admin
+
 **Parameters**
 
 * `client` (*Player*): The admin claiming the ticket
 * `requester` (*Player*): The player who requested the ticket
 * `ticketMessage` (*string*): The ticket message
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -15484,11 +19020,27 @@ if not IsValid(client) or not IsValid(requester) then return end
 
 ### TicketSystemClose
 
+**Purpose**
+
+Called when a ticket is closed
+
+**When Called**
+
+When a support ticket is closed
+
 **Parameters**
 
 * `client` (*Player*): The admin closing the ticket
 * `requester` (*Player*): The player who requested the ticket
 * `ticketMessage` (*string*): The ticket message
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -15564,10 +19116,26 @@ if not IsValid(client) or not IsValid(requester) then return end
 
 ### TicketSystemCreated
 
+**Purpose**
+
+Called when a ticket is created
+
+**When Called**
+
+When a player creates a support ticket
+
 **Parameters**
 
 * `noob` (*Player*): The player creating the ticket
 * `message` (*string*): The ticket message
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -15642,11 +19210,27 @@ if not IsValid(noob) then return end
 
 ### ToggleLock
 
+**Purpose**
+
+Called when a door lock is toggled
+
+**When Called**
+
+When a door is locked or unlocked
+
 **Parameters**
 
 * `client` (*Player*): The player toggling the lock
 * `door` (*Entity*): The door entity
 * `state` (*boolean*): The new lock state
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -15719,9 +19303,25 @@ if not IsValid(client) or not IsValid(door) then return end
 
 ### TransferItem
 
+**Purpose**
+
+Called to transfer an item
+
+**When Called**
+
+When an item is being transferred
+
 **Parameters**
 
 * `itemID` (*string*): The ID of the item being transferred
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -15803,9 +19403,25 @@ if not itemID then return end
 
 ### UpdateEntityPersistence
 
+**Purpose**
+
+Called to update entity persistence
+
+**When Called**
+
+When an entity's persistence data needs to be updated
+
 **Parameters**
 
 * `ent` (*Entity*): The entity to update
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -15883,11 +19499,27 @@ if not IsValid(ent) then return end
 
 ### VendorClassUpdated
 
+**Purpose**
+
+Called when a vendor class is updated
+
+**When Called**
+
+When a vendor's allowed classes are modified
+
 **Parameters**
 
 * `vendor` (*Entity*): The vendor entity
 * `id` (*string*): The class ID being updated
 * `allowed` (*boolean*): Whether the class is allowed
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -15959,10 +19591,26 @@ if not IsValid(vendor) then return end
 
 ### VendorEdited
 
+**Purpose**
+
+Called when a vendor is edited
+
+**When Called**
+
+When a vendor's properties are modified
+
 **Parameters**
 
 * `liaVendorEnt` (*Entity*): The vendor entity being edited
 * `key` (*string*): The property key being edited
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -16034,11 +19682,27 @@ if not IsValid(liaVendorEnt) then return end
 
 ### VendorFactionUpdated
 
+**Purpose**
+
+Called when a vendor faction is updated
+
+**When Called**
+
+When a vendor's allowed factions are modified
+
 **Parameters**
 
 * `vendor` (*Entity*): The vendor entity
 * `id` (*string*): The faction ID being updated
 * `allowed` (*boolean*): Whether the faction is allowed
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -16122,11 +19786,27 @@ if not IsValid(vendor) then return end
 
 ### VendorItemMaxStockUpdated
 
+**Purpose**
+
+Called when a vendor item max stock is updated
+
+**When Called**
+
+When a vendor item's maximum stock is modified
+
 **Parameters**
 
 * `vendor` (*Entity*): The vendor entity
 * `itemType` (*string*): The item type being updated
 * `value` (*number*): The new maximum stock value
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -16206,11 +19886,27 @@ if not IsValid(vendor) then return end
 
 ### VendorItemModeUpdated
 
+**Purpose**
+
+Called when a vendor item mode is updated
+
+**When Called**
+
+When a vendor item's mode is modified
+
 **Parameters**
 
 * `vendor` (*Entity*): The vendor entity
 * `itemType` (*string*): The item type being updated
 * `value` (*string*): The new mode value
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -16294,11 +19990,27 @@ if not IsValid(vendor) then return end
 
 ### VendorItemPriceUpdated
 
+**Purpose**
+
+Called when a vendor item price is updated
+
+**When Called**
+
+When a vendor item's price is modified
+
 **Parameters**
 
 * `vendor` (*Entity*): The vendor entity
 * `itemType` (*string*): The item type being updated
 * `value` (*number*): The new price value
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -16386,11 +20098,27 @@ if not IsValid(vendor) then return end
 
 ### VendorItemStockUpdated
 
+**Purpose**
+
+Called when a vendor item stock is updated
+
+**When Called**
+
+When a vendor item's stock is modified
+
 **Parameters**
 
 * `vendor` (*Entity*): The vendor entity
 * `itemType` (*string*): The item type being updated
 * `value` (*number*): The new stock value
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -16481,9 +20209,25 @@ if not IsValid(vendor) then return end
 
 ### VendorOpened
 
+**Purpose**
+
+Called when a vendor is opened by a player
+
+**When Called**
+
+When a player successfully opens a vendor
+
 **Parameters**
 
 * `vendor` (*Entity*): The vendor entity being opened
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -16556,12 +20300,28 @@ if not char then return end
 
 ### VendorTradeEvent
 
+**Purpose**
+
+Called when a vendor trade event occurs
+
+**When Called**
+
+When a player trades with a vendor
+
 **Parameters**
 
 * `client` (*Player*): The player trading
 * `vendor` (*Entity*): The vendor entity
 * `itemType` (*string*): The type of item being traded
 * `isSellingToVendor` (*boolean*): Whether the player is selling to the vendor
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -16621,6 +20381,14 @@ if not char then return end
 
 ### WarningIssued
 
+**Purpose**
+
+Called when a warning is issued
+
+**When Called**
+
+When a player receives a warning
+
 **Parameters**
 
 * `client` (*Player*): The player who issued the warning
@@ -16629,6 +20397,14 @@ if not char then return end
 * `count` (*number*): The total warning count
 * `warnerSteamID` (*string*): The SteamID of the warner
 * `warnerName` (*string*): The name of the warner
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -16688,6 +20464,14 @@ end)
 
 ### WarningRemoved
 
+**Purpose**
+
+Called when a warning is removed
+
+**When Called**
+
+When a warning is removed from a player
+
 **Parameters**
 
 * `client` (*Player*): The player who removed the warning
@@ -16696,6 +20480,14 @@ end)
 * `count` (*number*): The remaining warning count
 * `warnerSteamID` (*string*): The SteamID of the original warner
 * `warnerName` (*string*): The name of the original warner
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 
@@ -16752,11 +20544,27 @@ end)
 
 ### setData
 
+**Purpose**
+
+Called to set persistent data
+
+**When Called**
+
+When setting global or character-specific data
+
 **Parameters**
 
 * `value` (*any*): The value to set
 * `global` (*boolean*): Whether this is global data
 * `ignoreMap` (*boolean*): Whether to ignore map-specific data
+
+**Returns**
+
+* None
+
+**Realm**
+
+Server
 
 **Example Usage**
 

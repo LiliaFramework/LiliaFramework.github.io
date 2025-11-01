@@ -12,10 +12,26 @@ Shared hooks in the Lilia framework handle functionality available on both clien
 
 ### AdjustStaminaOffset
 
+**Purpose**
+
+Allows modification of stamina regeneration/drain offset for a player
+
+**When Called**
+
+During stamina calculation, allowing custom stamina modifiers
+
 **Parameters**
 
 * `client` (*Player*): The player whose stamina is being calculated
 * `offset` (*number*): The current stamina offset (positive for regen, negative for drain)
+
+**Returns**
+
+* number - The modified stamina offset, or nil to use original offset
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -92,9 +108,25 @@ end)
 
 ### CanOutfitChangeModel
 
+**Purpose**
+
+Called to check if an outfit can change model
+
+**When Called**
+
+When attempting to change a player's model via outfit
+
 **Parameters**
 
 * `self` (*Item*): The outfit item
+
+**Returns**
+
+* boolean - True to allow, false to deny
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -158,10 +190,26 @@ end)
 
 ### CommandAdded
 
+**Purpose**
+
+Called when a command is added
+
+**When Called**
+
+When a new command is registered to the framework
+
 **Parameters**
 
 * `command` (*string*): The command name
 * `data` (*table*): The command data and properties
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -209,10 +257,26 @@ end)
 
 ### DoModuleIncludes
 
+**Purpose**
+
+Called when doing module includes
+
+**When Called**
+
+When a module is being loaded and files are being included
+
 **Parameters**
 
 * `path` (*string*): The path being included
 * `MODULE` (*table*): The module table
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -266,10 +330,26 @@ end)
 
 ### GetDisplayedDescription
 
+**Purpose**
+
+Called to get displayed description
+
+**When Called**
+
+When showing a player's description
+
 **Parameters**
 
 * `ply` (*Player*): The player being described
 * `description` (*string*): The current description
+
+**Returns**
+
+* string - The modified description
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -323,10 +403,26 @@ end)
 
 ### GetDisplayedName
 
+**Purpose**
+
+Called to get displayed name in chat
+
+**When Called**
+
+When showing a player's name in chat
+
 **Parameters**
 
 * `speaker` (*Player*): The player speaking
 * `chatType` (*string*): The chat type
+
+**Returns**
+
+* string - The displayed name
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -388,11 +484,27 @@ end)
 
 ### GetDoorInfo
 
+**Purpose**
+
+Called to get door information
+
+**When Called**
+
+When retrieving door data
+
 **Parameters**
 
 * `entity` (*Entity*): The door entity
 * `doorData` (*table*): The door data table
 * `doorInfo` (*table*): The door info table
+
+**Returns**
+
+* table - The modified door info
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -447,9 +559,25 @@ end)
 
 ### GetModelGender
 
+**Purpose**
+
+Called to get model gender
+
+**When Called**
+
+When determining a model's gender
+
 **Parameters**
 
 * `model` (*string*): The model path
+
+**Returns**
+
+* string - "male" or "female"
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -501,6 +629,22 @@ end)
 ---
 
 ### InitializedConfig
+
+**Purpose**
+
+Called when configuration is initialized
+
+**When Called**
+
+When the configuration system has finished loading
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -554,6 +698,22 @@ end)
 ---
 
 ### InitializedItems
+
+**Purpose**
+
+Called when items are initialized
+
+**When Called**
+
+When the item system has finished loading
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -631,6 +791,22 @@ end)
 
 ### InitializedModules
 
+**Purpose**
+
+Called when modules are initialized
+
+**When Called**
+
+When the module system has finished loading
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
+
 **Example Usage**
 
 **Low Complexity:**
@@ -703,6 +879,22 @@ end)
 
 ### InitializedSchema
 
+**Purpose**
+
+Called when schema is initialized
+
+**When Called**
+
+When the schema system has finished loading
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
+
 **Example Usage**
 
 **Low Complexity:**
@@ -765,12 +957,28 @@ end)
 
 ### InventoryDataChanged
 
+**Purpose**
+
+Called when inventory data changes
+
+**When Called**
+
+When an inventory's data is modified
+
 **Parameters**
 
 * `instance` (*Inventory*): The inventory instance
 * `key` (*string*): The data key that changed
 * `oldValue` (*any*): The old value
 * `value` (*any*): The new value
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -830,9 +1038,25 @@ end)
 
 ### InventoryInitialized
 
+**Purpose**
+
+Called when an inventory is initialized
+
+**When Called**
+
+When an inventory is first created and set up
+
 **Parameters**
 
 * `instance` (*Inventory*): The inventory being initialized
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -903,6 +1127,14 @@ end)
 
 ### InventoryItemDataChanged
 
+**Purpose**
+
+Called when an item's data changes in an inventory
+
+**When Called**
+
+When an item's data is modified while in an inventory
+
 **Parameters**
 
 * `item` (*Item*): The item whose data changed
@@ -910,6 +1142,14 @@ end)
 * `oldValue` (*any*): The old value
 * `newValue` (*any*): The new value
 * `inventory` (*Inventory*): The inventory containing the item
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -983,10 +1223,26 @@ end)
 
 ### IsCharFakeRecognized
 
+**Purpose**
+
+Called to check if a character is fake recognized
+
+**When Called**
+
+When checking if a character appears recognized but isn't truly
+
 **Parameters**
 
 * `self` (*Character*): The character checking recognition
 * `id` (*number*): The character ID being checked
+
+**Returns**
+
+* boolean - True if fake recognized, false otherwise
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -1035,10 +1291,26 @@ end)
 
 ### IsCharRecognized
 
+**Purpose**
+
+Called to check if a character is recognized
+
+**When Called**
+
+When checking if one character recognizes another
+
 **Parameters**
 
 * `self` (*Character*): The character checking recognition
 * `id` (*number*): The character ID being checked
+
+**Returns**
+
+* boolean - True if recognized, false otherwise
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -1108,9 +1380,25 @@ end)
 
 ### IsRecognizedChatType
 
+**Purpose**
+
+Called to check if a chat type requires recognition
+
+**When Called**
+
+When determining if players need to be recognized to see names in chat
+
 **Parameters**
 
 * `chatType` (*string*): The chat type being checked
+
+**Returns**
+
+* boolean - True if recognition is required, false otherwise
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -1161,6 +1449,22 @@ end)
 
 ### IsValid
 
+**Purpose**
+
+Called to validate an entity
+
+**When Called**
+
+When checking if an entity reference is valid
+
+**Returns**
+
+* boolean - True if valid, false otherwise
+
+**Realm**
+
+Shared
+
 **Example Usage**
 
 **Low Complexity:**
@@ -1199,12 +1503,28 @@ end)
 
 ### ItemDataChanged
 
+**Purpose**
+
+Called when an item's data changes
+
+**When Called**
+
+When an item's data is modified
+
 **Parameters**
 
 * `item` (*Item*): The item whose data changed
 * `key` (*string*): The data key that changed
 * `oldValue` (*any*): The old value
 * `newValue` (*any*): The new value
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -1284,9 +1604,25 @@ end)
 
 ### ItemDefaultFunctions
 
+**Purpose**
+
+Called to get default functions for an item
+
+**When Called**
+
+When building the default interaction functions for an item
+
 **Parameters**
 
 * `item` (*Item*): The item to get functions for
+
+**Returns**
+
+* table - Table of default functions
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -1355,9 +1691,25 @@ end)
 
 ### ItemInitialized
 
+**Purpose**
+
+Called when an item is initialized
+
+**When Called**
+
+When an item is first created and set up
+
 **Parameters**
 
 * `item` (*Item*): The item being initialized
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -1420,11 +1772,27 @@ end)
 
 ### ItemQuantityChanged
 
+**Purpose**
+
+Called when an item's quantity changes
+
+**When Called**
+
+When the stack size of an item is modified
+
 **Parameters**
 
 * `item` (*Item*): The item whose quantity changed
 * `oldValue` (*number*): The old quantity
 * `quantity` (*number*): The new quantity
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -1495,6 +1863,22 @@ end)
 
 ### LiliaLoaded
 
+**Purpose**
+
+Called when Lilia framework is fully loaded
+
+**When Called**
+
+After all Lilia systems are initialized
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
+
 **Example Usage**
 
 **Low Complexity:**
@@ -1544,12 +1928,28 @@ end)
 
 ### NetVarChanged
 
+**Purpose**
+
+Called when a network variable changes
+
+**When Called**
+
+When an entity's netvar is modified
+
 **Parameters**
 
 * `entity` (*Entity*): The entity whose netvar changed
 * `key` (*string*): The netvar key
 * `oldValue` (*any*): The old value
 * `value` (*any*): The new value
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -1605,9 +2005,25 @@ end)
 
 ### OnItemRegistered
 
+**Purpose**
+
+Called when an item is registered
+
+**When Called**
+
+When a new item is added to the item system
+
 **Parameters**
 
 * `ITEM` (*table*): The item table being registered
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -1667,6 +2083,22 @@ end)
 
 ### OnLoaded
 
+**Purpose**
+
+Called when the framework has finished loading
+
+**When Called**
+
+After all framework components have been initialized
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
+
 **Example Usage**
 
 **Low Complexity:**
@@ -1719,12 +2151,28 @@ end)
 
 ### OnPrivilegeRegistered
 
+**Purpose**
+
+Called when a new privilege is registered
+
+**When Called**
+
+When a privilege is added to the system
+
 **Parameters**
 
 * `privilege` (*string*): The privilege identifier
 * `name` (*string*): The display name of the privilege
 * `access` (*string*): The access level required
 * `category` (*string*): The category the privilege belongs to
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -1781,10 +2229,26 @@ end)
 
 ### OnPrivilegeUnregistered
 
+**Purpose**
+
+Called when a privilege is unregistered
+
+**When Called**
+
+When a privilege is removed from the system
+
 **Parameters**
 
 * `privilege` (*string*): The privilege identifier
 * `name` (*string*): The display name of the privilege
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -1834,10 +2298,26 @@ end)
 
 ### OptionAdded
 
+**Purpose**
+
+Called when an option is added to the options system
+
+**When Called**
+
+When a new option is registered
+
 **Parameters**
 
 * `key` (*string*): The option key that was added
 * `option` (*table*): The option data table containing all option properties
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -1900,11 +2380,27 @@ end)
 
 ### OptionChanged
 
+**Purpose**
+
+Called when a configuration option is changed
+
+**When Called**
+
+When a configuration value is modified
+
 **Parameters**
 
 * `key` (*string*): The option key that was changed
 * `old` (*any*): The old value
 * `value` (*any*): The new value
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -1964,10 +2460,26 @@ end)
 
 ### OverrideFactionDesc
 
+**Purpose**
+
+Called to override a faction's description
+
+**When Called**
+
+When a faction description needs to be modified
+
 **Parameters**
 
 * `uniqueID` (*string*): The faction's unique ID
 * `description` (*string*): The current description
+
+**Returns**
+
+* string - The overridden description (or nil to use default)
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -2014,10 +2526,26 @@ end)
 
 ### OverrideFactionModels
 
+**Purpose**
+
+Called to override a faction's models
+
+**When Called**
+
+When a faction's available models need to be modified
+
 **Parameters**
 
 * `uniqueID` (*string*): The faction's unique ID
 * `models` (*table*): The current models table
+
+**Returns**
+
+* table - The overridden models table (or nil to use default)
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -2076,10 +2604,26 @@ end)
 
 ### OverrideFactionName
 
+**Purpose**
+
+Called to override a faction's name
+
+**When Called**
+
+When a faction name needs to be modified
+
 **Parameters**
 
 * `uniqueID` (*string*): The faction's unique ID
 * `name` (*string*): The current name
+
+**Returns**
+
+* string - The overridden name (or nil to use default)
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -2134,9 +2678,25 @@ end)
 
 ### PlayerStaminaGained
 
+**Purpose**
+
+Called when player gains stamina
+
+**When Called**
+
+When a player's stamina increases
+
 **Parameters**
 
 * `self` (*Player*): The player gaining stamina
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -2190,9 +2750,25 @@ end)
 
 ### PlayerStaminaLost
 
+**Purpose**
+
+Called when player loses stamina
+
+**When Called**
+
+When a player's stamina decreases
+
 **Parameters**
 
 * `self` (*Player*): The player losing stamina
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -2244,6 +2820,22 @@ end)
 
 ### PreLiliaLoaded
 
+**Purpose**
+
+Called before Lilia framework is loaded
+
+**When Called**
+
+Before Lilia systems are initialized
+
+**Returns**
+
+* None
+
+**Realm**
+
+Shared
+
 **Example Usage**
 
 **Low Complexity:**
@@ -2286,9 +2878,25 @@ end)
 
 ### calcStaminaChange
 
+**Purpose**
+
+Called to calculate stamina change
+
+**When Called**
+
+When calculating how much stamina should change
+
 **Parameters**
 
 * `client` (*Player*): The player whose stamina is changing
+
+**Returns**
+
+* number - The stamina change amount
+
+**Realm**
+
+Shared
 
 **Example Usage**
 
@@ -2362,9 +2970,25 @@ end)
 
 ### getData
 
+**Purpose**
+
+Called to get persistent data
+
+**When Called**
+
+When retrieving stored data
+
 **Parameters**
 
 * `default` (*any*): The default value if data doesn't exist
+
+**Returns**
+
+* any - The retrieved data or default value
+
+**Realm**
+
+Shared
 
 **Example Usage**
 

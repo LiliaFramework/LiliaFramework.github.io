@@ -6,6 +6,14 @@ Weapon item system for the Lilia framework.
 
 ### Purpose:
 
+**Purpose**
+
+Sets the display name of the weapon item
+
+**When Called**
+
+During item definition
+
 **Example Usage**
 
 ```lua
@@ -16,6 +24,14 @@ ITEM.name = "Pistol"
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the description of the weapon item
+
+**When Called**
+
+During item definition
 
 **Example Usage**
 
@@ -28,6 +44,14 @@ ITEM.desc = "A standard issue pistol"
 
 ### Purpose:
 
+**Purpose**
+
+Sets the category for the weapon item
+
+**When Called**
+
+During item definition
+
 **Example Usage**
 
 ```lua
@@ -38,6 +62,14 @@ ITEM.category = "weapons"
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the 3D model for the weapon item
+
+**When Called**
+
+During item definition
 
 **Example Usage**
 
@@ -50,6 +82,14 @@ ITEM.model = "models/weapons/w_pistol.mdl"
 
 ### Purpose:
 
+**Purpose**
+
+Sets the weapon class name
+
+**When Called**
+
+During item definition (used in equip/unequip functions)
+
 **Example Usage**
 
 ```lua
@@ -60,6 +100,14 @@ ITEM.class = "weapon_pistol"
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Sets the inventory width of the weapon item
+
+**When Called**
+
+During item definition
 
 **Example Usage**
 
@@ -72,6 +120,14 @@ ITEM.width = 2  -- Takes 2 slot width
 
 ### Purpose:
 
+**Purpose**
+
+Sets the inventory height of the weapon item
+
+**When Called**
+
+During item definition
+
 **Example Usage**
 
 ```lua
@@ -82,6 +138,14 @@ ITEM.height = 2  -- Takes 2 slot height
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Marks the item as a weapon
+
+**When Called**
+
+During item definition
 
 **Example Usage**
 
@@ -94,6 +158,14 @@ ITEM.isWeapon = true
 
 ### Purpose:
 
+**Purpose**
+
+Sets required skill levels for the weapon
+
+**When Called**
+
+During item definition
+
 **Example Usage**
 
 ```lua
@@ -105,6 +177,14 @@ ITEM.RequiredSkillLevels = {}  -- No skill requirements
 
 ### Purpose:
 
+**Purpose**
+
+Sets whether the weapon drops when player dies
+
+**When Called**
+
+During item definition
+
 **Example Usage**
 
 ```lua
@@ -115,6 +195,14 @@ ITEM.DropOnDeath = true  -- Drops on death
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Post-hook for weapon dropping
+
+**When Called**
+
+After weapon is dropped
 
 **Example Usage**
 
@@ -133,6 +221,14 @@ function ITEM.postHooks:drop()
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Handles weapon dropping with ragdoll and equip checks
+
+**When Called**
+
+When weapon is dropped
 
 **Example Usage**
 
@@ -153,6 +249,14 @@ if not client or not IsValid(client) then return false end
 
 ### Purpose:
 
+**Purpose**
+
+Prevents transfer of equipped weapons
+
+**When Called**
+
+When attempting to transfer the weapon
+
 **Example Usage**
 
 ```lua
@@ -166,6 +270,14 @@ function ITEM:OnCanBeTransfered(_, newInventory)
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Handles weapon loading on player spawn
+
+**When Called**
+
+When player spawns with equipped weapon
 
 **Example Usage**
 
@@ -190,6 +302,14 @@ function ITEM:onLoadout()
 
 ### Purpose:
 
+**Purpose**
+
+Saves weapon ammo data
+
+**When Called**
+
+When saving the weapon item
+
 **Example Usage**
 
 ```lua
@@ -205,6 +325,14 @@ function ITEM:OnSave()
 ---
 
 ### Purpose:
+
+**Purpose**
+
+Custom name function for weapons (CLIENT only)
+
+**When Called**
+
+When displaying weapon name
 
 **Example Usage**
 
