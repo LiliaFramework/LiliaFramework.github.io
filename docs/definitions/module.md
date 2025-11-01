@@ -4,7 +4,7 @@ Module definition system for the Lilia framework.
 
 ---
 
-## Overview
+Overview
 
 The module system provides comprehensive functionality for defining modules within the Lilia framework. Modules represent self-contained systems that add specific functionality to the gamemode, each with unique properties, behaviors, and configuration options. The system supports both server-side logic for gameplay mechanics and client-side properties for user interface and experience. Modules are defined using the MODULE table structure, which includes properties for identification, metadata, dependencies, privileges, and configuration. The system includes callback methods that are automatically invoked during key module lifecycle events, enabling dynamic behavior and customization. Modules can have dependencies, privileges, network strings, and various configuration options, providing a flexible foundation for modular systems.
 
@@ -291,6 +291,36 @@ Internal Variable: This is set automatically by the module system
 Sets whether the module is currently loading
 Internal Variable: This is set automatically by the module system
 ]]
+
+---
+
+### OnLoaded
+
+**Purpose**
+
+Called when the module is fully loaded
+
+**When Called**
+
+After all module files have been loaded and initialized
+
+**Realm**
+
+Shared (called on both server and client)
+
+**Returns**
+
+* None
+
+**Example Usage**
+
+```lua
+-- Called after all module files are loaded
+function MODULE:OnLoaded()
+    print("Module loaded successfully!")
+    end
+
+```
 
 ---
 

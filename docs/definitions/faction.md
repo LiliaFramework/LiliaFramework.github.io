@@ -4,7 +4,7 @@ Character faction definition system for the Lilia framework.
 
 ---
 
-## Overview
+Overview
 
 The faction system provides comprehensive functionality for defining character factions within the Lilia framework.
 Factions represent the main organizational units that characters belong to, serving as parent containers for classes.
@@ -618,7 +618,7 @@ function FACTION:OnCheckLimitReached(character, client)
 
 ---
 
-### name
+### OnTransferred
 
 **Purpose**
 
@@ -649,7 +649,7 @@ function FACTION:OnTransferred(client)
 
 ---
 
-### name
+### OnSpawn
 
 **Purpose**
 
