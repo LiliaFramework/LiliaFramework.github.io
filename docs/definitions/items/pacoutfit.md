@@ -192,8 +192,8 @@ function ITEM:paintOver(item, w, h)
     if item:getData("equip") then
         surface.SetDrawColor(110, 255, 110, 100)
         surface.DrawRect(w - 14, h - 14, 8, 8)
-        end
     end
+end
 
 ```
 
@@ -216,8 +216,8 @@ function ITEM:removePart(client)
     local char = client:getChar()
     self:setData("equip", false)
     if client.removePart then client:removePart(self.uniqueID) end
-        -- Remove attribute boosts
-        end
+    -- Remove attribute boosts
+end
 
 ```
 
@@ -238,8 +238,8 @@ When attempting to transfer the item
 ```lua
 function ITEM:onCanBeTransfered(_, newInventory)
     if newInventory and self:getData("equip") then return false end
-        return true
-        end
+    return true
+end
 
 ```
 
@@ -260,7 +260,7 @@ When player spawns with equipped PAC outfit
 ```lua
 function ITEM:onLoadout()
     if self:getData("equip") and self.player.addPart then self.player:addPart(self.uniqueID) end
-        end
+end
 
 ```
 
@@ -283,7 +283,7 @@ function ITEM:onRemoved()
     local inv = lia.item.inventories[self.invID]
     local receiver = inv.getReceiver and inv:getReceiver()
     if IsValid(receiver) and receiver:IsPlayer() and self:getData("equip") then self:removePart(receiver) end
-        end
+end
 
 ```
 
@@ -303,9 +303,101 @@ When item is dropped
 
 ```lua
 ITEM:hook("drop", function(item)
-local client = item.player
-if item:getData("equip") then item:removePart(client) end
-    end)
+    local client = item.player
+    if item:getData("equip") then item:removePart(client) end
+end)
+
+```
+
+---
+
+## Complete Examples
+
+The following examples demonstrate how to use all the properties and methods together to create complete definitions.
+
+### Complete Item Example
+
+Below is a comprehensive example showing how to define a complete item with all available properties and methods.
+
+```lua
+if not pac then return end
+
+ITEM.name = "Hat"
+
+ITEM.desc = "A stylish hat"
+
+ITEM.category = "outfit"
+
+ITEM.model = "models/Gibs/HGIBS.mdl"
+
+ITEM.width = 1  -- Takes 1 slot width
+
+ITEM.height = 1  -- Takes 1 slot height
+
+ITEM.outfitCategory = "hat"  -- Prevents multiple items of same category
+
+ITEM.pacData = {}  -- PAC attachment data
+
+```
+
+```lua
+function ITEM:paintOver(item, w, h)
+    if item:getData("equip") then
+        surface.SetDrawColor(110, 255, 110, 100)
+        surface.DrawRect(w - 14, h - 14, 8, 8)
+    end
+end
+
+```
+
+```lua
+function ITEM:removePart(client)
+    local char = client:getChar()
+    self:setData("equip", false)
+    if client.removePart then client:removePart(self.uniqueID) end
+    -- Remove attribute boosts
+end
+
+```
+
+```lua
+function ITEM:onCanBeTransfered(_, newInventory)
+    if newInventory and self:getData("equip") then return false end
+    return true
+end
+
+```
+
+```lua
+function ITEM:onLoadout()
+    if self:getData("equip") and self.player.addPart then self.player:addPart(self.uniqueID) end
+end
+
+```
+
+```lua
+function ITEM:onRemoved()
+    local inv = lia.item.inventories[self.invID]
+    local receiver = inv.getReceiver and inv:getReceiver()
+    if IsValid(receiver) and receiver:IsPlayer() and self:getData("equip") then self:removePart(receiver) end
+end
+
+```
+
+```lua
+        ITEM:hook("drop", function(item)
+            local client = item.player
+            if item:getData("equip") then item:removePart(client) end
+        end)
+
+-- Basic item identification
+    ITEM.name = "Hat"                               -- Display name shown to players
+    ITEM.desc = "A stylish hat"                     -- Description text
+    ITEM.category = "outfit"                        -- Category for inventory sorting
+    ITEM.model = "models/Gibs/HGIBS.mdl"            -- 3D model for the item
+    ITEM.width = 1                                  -- Inventory width (1 slot)
+    ITEM.height = 1                                 -- Inventory height (1 slot)
+    ITEM.outfitCategory = "hat"                     -- Outfit category for conflict checking
 
 ```
 
