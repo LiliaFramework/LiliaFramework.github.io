@@ -22,12 +22,14 @@ When you want to add a progress bar field to display character statistics
 
 **Parameters**
 
-* `sectionName` (*string*): The name of the section to add the field to
-* `fieldName` (*string*): Unique identifier for the field
-* `labelText` (*string*): Display text for the field label
-* `minFunc` (*function*): Function that returns the minimum value for the bar
-* `maxFunc` (*function*): Function that returns the maximum value for the bar
-* `valueFunc` (*function*): Function that returns the current value for the bar
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `sectionName` | **string** | The name of the section to add the field to |
+| `fieldName` | **string** | Unique identifier for the field |
+| `labelText` | **string** | Display text for the field label |
+| `minFunc` | **function** | Function that returns the minimum value for the bar |
+| `maxFunc` | **function** | Function that returns the maximum value for the bar |
+| `valueFunc` | **function** | Function that returns the current value for the bar |
 
 **Returns**
 
