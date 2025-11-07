@@ -457,21 +457,25 @@ Client
 ### lia.derma.draw
 
 #### 📋 Purpose
-Opens a text input dialog for user text entry
+Draws a rounded rectangle with specified parameters
 
 #### ⏰ When Called
-When user needs to input text through a dialog
+When rendering UI elements that need rounded corners
 
 #### ⚙️ Parameters
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `title` | **string** | Title of the dialog window |
-| `desc` | **string** | Description/placeholder text for the input field |
-| `func` | **function** | Callback function called with the entered text |
+| `radius` | **number** | Corner radius for all corners |
+| `x` | **number** | X position |
+| `y` | **number** | Y position |
+| `w` | **number** | Width |
+| `h` | **number** | Height |
+| `col` | **Color, optional** | Color to draw with |
+| `flags` | **number, optional** | Drawing flags for customization |
 
 #### ↩️ Returns
-* nil
+* boolean - Success status
 
 #### 🌐 Realm
 Client
@@ -480,43 +484,26 @@ Client
 
 #### 🔰 Low Complexity
 ```lua
-    -- Simple: Open text input dialog
-    lia.derma.textBox("Enter Name", "Type your name here", function(text)
-        print("Entered:", text)
-    end)
+    -- Simple: Draw a basic rounded rectangle
+    lia.derma.draw(8, 100, 100, 200, 100, Color(255, 0, 0))
 
 ```
 
 #### 📊 Medium Complexity
 ```lua
-    -- Medium: Text input with validation
-    lia.derma.textBox("Set Password", "Enter new password", function(text)
-        if string.len(text) >= 6 then
-            setPassword(text)
-        else
-            notify("Password too short!")
-        end
-    end)
+    -- Medium: Draw with custom flags and color
+    local flags = lia.derma.SHAPE_IOS
+    lia.derma.draw(12, 50, 50, 300, 150, Color(0, 255, 0, 200), flags)
 
 ```
 
 #### ⚙️ High Complexity
 ```lua
-    -- High: Text input with multiple validations and processing
-    lia.derma.textBox("Create Item", "Enter item name", function(text)
-        if not text or text == "" then return end
-        local cleanText = string.Trim(text)
-        if string.len(cleanText) < 3 then
-            notify("Name too short!")
-            return
-        end
-        if itemExists(cleanText) then
-            notify("Item already exists!")
-            return
-        end
-        createItem(cleanText)
-        refreshItemList()
-    end)
+    -- High: Dynamic drawing with conditions
+    local radius = isHovered and 16 or 8
+    local color = isSelected and Color(255, 255, 0) or Color(100, 100, 100)
+    local flags = bit.bor(lia.derma.SHAPE_FIGMA, lia.derma.BLUR)
+    lia.derma.draw(radius, x, y, w, h, color, flags)
 
 ```
 
