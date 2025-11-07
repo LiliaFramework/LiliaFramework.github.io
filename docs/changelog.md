@@ -1,9 +1,14 @@
 # Changelog
 
-## Version 6.947 (November 07, 2025)
+## Version 6.952 (November 07, 2025)
 
 ### Changes
 
+- Update derma.lua
+- Update client.lua
+- Yumeko Jabami
+- Update derma.lua
+- Successfully updated workshop Lilia to 6.947
 - Docs
 - Vendor Overhaul
 - Swep Editor
@@ -19,11 +24,6 @@
 - Update gettingstarted.md
 - Successfully updated workshop Lilia to 6.933
 - Yeah More Docs lmfao
-- Successfully updated workshop Lilia to 6.931
-- More Docs
-- Successfully updated workshop Lilia to 6.929
-- Docs
-- Successfully updated workshop Lilia to 6.927
 
 ## Version 6.941 (November 02, 2025)
 
