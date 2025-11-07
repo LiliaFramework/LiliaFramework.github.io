@@ -1,9 +1,12 @@
 # Changelog
 
-## Version 6.963 (November 07, 2025)
+## Version 6.966 (November 07, 2025)
 
 ### Changes
 
+- Fixing Error
+- Critical Workflow Error
+- Successfully updated workshop Lilia to 6.963
 - Update derma.lua
 - Revert "Successfully updated workshop Lilia to 6.960"
 - Successfully updated workshop Lilia to 6.960
@@ -21,9 +24,6 @@
 - Update derma.lua
 - Successfully updated workshop Lilia to 6.947
 - Docs
-- Vendor Overhaul
-- Swep Editor
-- Better Var Name
 
 ## Version 6.941 (November 02, 2025)
 
