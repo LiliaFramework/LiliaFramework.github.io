@@ -34,9 +34,7 @@
 
 - [Community Commands](https://liliaframework.github.io/modules/community_commands/about/)
 
-- [Corpse ID](https://liliaframework.github.io/modules/corpse_id/about/)
-
-- [Corpse ID](https://liliaframework.github.io/modules/corpse_id/about/)
+- [Community Commands](https://liliaframework.github.io/modules/community_commands/about/)
 
 - [Cutscenes](https://liliaframework.github.io/modules/cutscenes/about/)
 
@@ -97,8 +95,6 @@
 - [Slot Machine](https://liliaframework.github.io/modules/slot_machine/about/)
 
 - [Slot Machine](https://liliaframework.github.io/modules/slot_machine/about/)
-
-- [Tying](https://liliaframework.github.io/modules/tying/about/)
 
 - [War Table](https://liliaframework.github.io/modules/war_table/about/)
 
