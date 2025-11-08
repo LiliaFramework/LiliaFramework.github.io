@@ -5,9 +5,9 @@ Steam Group Rewards
 
 **Description:**
 
-Provides a Steam group membership rewards system that automatically checks player membership in your Steam group and rewards them with in-game currency for joining. Features automatic group member checking, manual claim system, and configurable rewards.
+Provides Steam group membership rewards system that automatically checks group membership and gives money rewards to players who join your Steam group.
 
-<h2 style="text-align:center; font-size:1.5rem; font-weight:bold;">Features</h2>
+<h2 style="text-align:center; font-size:1.5rem; font-weight:bold;">Main Features</h2>
 
 - Automatic Steam group membership checking every 5 minutes
 - Manual membership verification on demand
