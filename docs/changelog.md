@@ -1,5 +1,155 @@
 # Changelog
 
+## Version 7.022 (November 13, 2025)
+
+### Changes
+
+- Revert "Successfully updated workshop Lilia to 7.020"
+- Successfully updated workshop Lilia to 7.020
+- Update shared.lua
+- Successfully updated workshop Lilia to 7.018
+- Moved Nets
+- Successfully updated workshop Lilia to 7.016
+- Update loader.lua
+- Successfully updated workshop Lilia to 7.014
+- NPC library
+- Font Stadartization
+- Added Bruteforce in case players dont  respawn
+- Localization
+- Added More Docs
+- Successfully updated workshop Lilia to 7.08
+- ShouldShowCharVarInCreation Hook and R to rotate an held item
+- Successfully updated workshop Lilia to 7.06
+- Minor Bug Fixes
+- Successfully updated workshop Lilia to 7.04
+- Update ci.yml
+- Successfully updated workshop Lilia to 7.02
+
+## Version 7.018 (November 13, 2025)
+
+### Changes
+
+- Moved Nets
+- Successfully updated workshop Lilia to 7.016
+- Update loader.lua
+- Successfully updated workshop Lilia to 7.014
+- NPC library
+- Font Stadartization
+- Added Bruteforce in case players dont  respawn
+- Localization
+- Added More Docs
+- Successfully updated workshop Lilia to 7.08
+- ShouldShowCharVarInCreation Hook and R to rotate an held item
+- Successfully updated workshop Lilia to 7.06
+- Minor Bug Fixes
+- Successfully updated workshop Lilia to 7.04
+- Update ci.yml
+- Successfully updated workshop Lilia to 7.02
+- Config now only sends changed values
+- Minor Bug Fix
+- Optimized SWEP Editor
+- Added Categories to the Player Interact Library & LiaQuick
+
+## Version 7.016 (November 13, 2025)
+
+### Changes
+
+- Update loader.lua
+- Successfully updated workshop Lilia to 7.014
+- NPC library
+- Font Stadartization
+- Added Bruteforce in case players dont  respawn
+- Localization
+- Added More Docs
+- Successfully updated workshop Lilia to 7.08
+- ShouldShowCharVarInCreation Hook and R to rotate an held item
+- Successfully updated workshop Lilia to 7.06
+- Minor Bug Fixes
+- Successfully updated workshop Lilia to 7.04
+- Update ci.yml
+- Successfully updated workshop Lilia to 7.02
+- Config now only sends changed values
+- Minor Bug Fix
+- Optimized SWEP Editor
+- Added Categories to the Player Interact Library & LiaQuick
+- Incosistency w/  Scoreboard and Player Interact
+- Better Char Creation Angle
+
+## Version 7.014 (November 13, 2025)
+
+### Changes
+
+- NPC library
+- Font Stadartization
+- Added Bruteforce in case players dont  respawn
+- Localization
+- Added More Docs
+- Successfully updated workshop Lilia to 7.08
+- ShouldShowCharVarInCreation Hook and R to rotate an held item
+- Successfully updated workshop Lilia to 7.06
+- Minor Bug Fixes
+- Successfully updated workshop Lilia to 7.04
+- Update ci.yml
+- Successfully updated workshop Lilia to 7.02
+- Config now only sends changed values
+- Minor Bug Fix
+- Optimized SWEP Editor
+- Added Categories to the Player Interact Library & LiaQuick
+- Incosistency w/  Scoreboard and Player Interact
+- Better Char Creation Angle
+- Missing Docs
+- Successfully updated workshop Lilia to 6.994
+
+## Version 7.08 (November 12, 2025)
+
+### Changes
+
+- ShouldShowCharVarInCreation Hook and R to rotate an held item
+- Successfully updated workshop Lilia to 7.06
+- Minor Bug Fixes
+- Successfully updated workshop Lilia to 7.04
+- Update ci.yml
+- Successfully updated workshop Lilia to 7.02
+- Config now only sends changed values
+- Minor Bug Fix
+- Optimized SWEP Editor
+- Added Categories to the Player Interact Library & LiaQuick
+- Incosistency w/  Scoreboard and Player Interact
+- Better Char Creation Angle
+- Missing Docs
+- Successfully updated workshop Lilia to 6.994
+- Update panels.lua
+- Update derma.lua
+- Successfully updated workshop Lilia to 6.991
+- Update panels.lua
+- Successfully updated workshop Lilia to 6.989
+- Update panels.lua
+
+## Version 7.06 (November 11, 2025)
+
+### Changes
+
+- Minor Bug Fixes
+- Successfully updated workshop Lilia to 7.04
+- Update ci.yml
+- Successfully updated workshop Lilia to 7.02
+- Config now only sends changed values
+- Minor Bug Fix
+- Optimized SWEP Editor
+- Added Categories to the Player Interact Library & LiaQuick
+- Incosistency w/  Scoreboard and Player Interact
+- Better Char Creation Angle
+- Missing Docs
+- Successfully updated workshop Lilia to 6.994
+- Update panels.lua
+- Update derma.lua
+- Successfully updated workshop Lilia to 6.991
+- Update panels.lua
+- Successfully updated workshop Lilia to 6.989
+- Update panels.lua
+- Successfully updated workshop Lilia to 6.987
+- Update panels.lua
+
 ## Version 7.04 (November 10, 2025)
 
 ### Changes

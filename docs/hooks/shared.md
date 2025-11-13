@@ -2850,3 +2850,147 @@ Shared
 
 ---
 
+### ShouldShowCharVarInCreation
+
+#### 📋 Purpose
+Called to determine if a character variable should be shown in character creation
+
+#### ⏰ When Called
+When building the character creation UI to check if a specific character variable field should be displayed
+
+#### ↩️ Returns
+* boolean or nil - Return false to hide the variable from character creation, true or nil to show it
+
+#### 🌐 Realm
+Client
+
+#### 💡 Example Usage
+
+#### 🔰 Low Complexity
+```lua
+    -- Simple: Hide description field from character creation
+    hook.Add("ShouldShowCharVarInCreation", "HideDesc", function(varName)
+        if varName == "desc" then
+            return false
+        end
+    end)
+
+```
+
+#### 📊 Medium Complexity
+```lua
+    -- Medium: Hide multiple fields based on configuration
+    hook.Add("ShouldShowCharVarInCreation", "HideFields", function(varName)
+        local hiddenFields = lia.config.get("HiddenCharCreationFields", {})
+        if table.HasValue(hiddenFields, varName) then
+            return false
+        end
+    end)
+
+```
+
+#### ⚙️ High Complexity
+```lua
+    -- High: Complex field visibility system
+    hook.Add("ShouldShowCharVarInCreation", "AdvancedFieldVisibility", function(varName)
+        local client = LocalPlayer()
+        if not IsValid(client) then return end
+        -- Hide desc for certain factions
+        if varName == "desc" then
+            local context = lia.gui.charCreate and lia.gui.charCreate.context or {}
+            local faction = context.faction
+            if faction then
+                local hiddenFactions = {"staff", "admin"}
+                local factionData = lia.faction.indices[faction]
+                if factionData and table.HasValue(hiddenFactions, factionData.uniqueID) then
+                    return false
+                end
+            end
+        end
+        -- Hide fields based on player permissions
+        if varName == "customField" and not client:IsAdmin() then
+            return false
+        end
+        -- Check module configuration
+        local module = lia.module.get("myModule")
+        if module and module.config and module.config.hideFields then
+            if table.HasValue(module.config.hideFields, varName) then
+                return false
+            end
+        end
+        return true
+    end)
+
+```
+
+---
+
+### LiliaTablesLoaded
+
+#### 📋 Purpose
+Called when Lilia database tables have finished loading
+
+#### ⏰ When Called
+After all Lilia framework database tables have been created and loaded
+
+#### ↩️ Returns
+* None
+
+#### 🌐 Realm
+Shared
+
+#### 💡 Example Usage
+
+#### 🔰 Low Complexity
+```lua
+    -- Simple: Log table load
+    hook.Add("LiliaTablesLoaded", "MyAddon", function()
+        print("Lilia tables loaded")
+    end)
+
+```
+
+#### 📊 Medium Complexity
+```lua
+    -- Medium: Initialize systems
+    hook.Add("LiliaTablesLoaded", "SystemInit", function()
+        -- Now safe to use database
+        lia.db.query("SELECT * FROM my_table", function(data)
+            print("My table loaded:", #data, "rows")
+        end)
+    end)
+
+```
+
+#### ⚙️ High Complexity
+```lua
+    -- High: Complex initialization
+    hook.Add("LiliaTablesLoaded", "AdvancedInit", function()
+        -- Log table load
+        lia.log.add("Lilia tables loaded successfully", FLAG_NORMAL)
+        -- Create custom tables
+        lia.db.query("CREATE TABLE IF NOT EXISTS my_custom_table (id INTEGER PRIMARY KEY AUTOINCREMENT, data TEXT, timestamp INTEGER)")
+        -- Wait for custom tables to be ready
+        lia.db.waitForTablesToLoad():next(function()
+            -- Load custom data
+            lia.db.query("SELECT * FROM my_custom_table", function(data)
+                for _, row in ipairs(data) do
+                    -- Process each row
+                    hook.Run("OnCustomDataLoaded", row)
+                end
+            end)
+            -- Initialize modules that depend on tables
+            for _, module in pairs(lia.module.list) do
+                if module.onTablesLoaded then
+                    module:onTablesLoaded()
+                end
+            end
+            -- Notify all systems
+            hook.Run("OnLiliaReady")
+        end)
+    end)
+
+```
+
+---
+
