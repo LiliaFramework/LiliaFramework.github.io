@@ -10,7 +10,123 @@ The dialog library provides comprehensive functionality for managing NPC convers
 
 ---
 
+### lia.dialog.isTableEqual
+
+#### 📋 Purpose
+Deeply compares two tables for equality. Used internally for dialog state management.
+
+#### ↩️ Returns
+* (boolean) - True if both tables (and all their contents) are equal, false otherwise.
+]]
+
+---
+
+### lia.dialog.registerConfiguration
+
+#### 📋 Purpose
+Registers or augments a dialog configuration module that can be exposed from the
+"Customize this NPC" entry.
+
+#### ⚙️ Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `uniqueID` | **string** | Unique identifier for the configuration module. |
+| `data` | **table** | Table containing any combination of the following keys: |
+| `name` | **string** | Friendly display name used in UI listings. |
+| `description` | **string** | Optional helper text shown beneath the button. |
+| `order` | **number** | Sort weight (lower values appear first). |
+| `shouldShow` | **function** | Predicate run on both client/server |
+| `onOpen` | **function, client** | Callback used to build/open the UI. |
+| `onApply` | **function, server** | Callback executed when players submit |
+
+---
+
+### lia.dialog.getConfiguration
+
+#### 📋 Purpose
+Retrieves a registered NPC configuration module by its unique identifier
+
+#### ⚙️ Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `uniqueID` | **string** | The unique identifier of the configuration module to retrieve |
+
+#### ↩️ Returns
+* (table or nil)
+The configuration data table if found, nil otherwise
+]]
+
+---
+
 ### lia.dialog.getNPCData
+
+#### 📋 Purpose
+Retrieves stored NPC dialog data for a specific NPC ID
+
+#### ⏰ When Called
+Used internally when accessing NPC conversation data from the server-side storage
+
+#### ⚙️ Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `npcID` | **string** | The unique identifier of the NPC to retrieve data for |
+
+#### ↩️ Returns
+* (table or nil)
+The NPC dialog data table if found, nil otherwise
+
+#### 🌐 Realm
+Server
+
+#### 💡 Example Usage
+
+#### 🔰 Low Complexity
+```lua
+    -- Simple: Get NPC data for interaction
+    local npcData = lia.dialog.getNPCData("foodie_dealer")
+    if npcData then
+        print("Found NPC: " .. npcData.PrintName)
+    end
+
+```
+
+#### 📊 Medium Complexity
+```lua
+    -- Medium: Check if NPC has specific conversation options
+    local npcData = lia.dialog.getNPCData("merchant")
+    if npcData and npcData.Conversation then
+        local hasTradeOption = npcData.Conversation["Trade"] ~= nil
+        if hasTradeOption then
+            -- Handle trade logic
+        end
+    end
+
+```
+
+#### ⚙️ High Complexity
+```lua
+    -- High: Validate and process NPC conversation data
+    local function validateNPCConversation(npcID)
+        local npcData = lia.dialog.getNPCData(npcID)
+        if not npcData then return false, "NPC not found" end
+        if not npcData.Conversation then return false, "No conversation data" end
+        local optionCount = 0
+        for optionName, optionData in pairs(npcData.Conversation) do
+            if type(optionData) == "table" and optionData.Callback then
+                optionCount = optionCount + 1
+            end
+        end
+        return optionCount > 0, "NPC has " .. optionCount .. " valid options"
+    end
+
+```
+
+---
+
+### lia.dialog.submitConfiguration
 
 #### 📋 Purpose
 Retrieves stored NPC dialog data for a specific NPC ID
@@ -217,6 +333,72 @@ Server
 
 ---
 
+### lia.dialog.syncDialogs
+
+#### 📋 Purpose
+Synchronizes dialog data to clients, filtering conversations based on player permissions and sanitizing sensitive information
+
+#### ⏰ When Called
+Called during player spawn and when new NPCs are registered to ensure clients have up-to-date dialog information
+
+#### ⚙️ Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `client` | **Player, optional** | Specific client to sync to, or nil to sync to all clients |
+
+#### ↩️ Returns
+* None
+
+#### 🌐 Realm
+Server
+
+#### 💡 Example Usage
+
+#### 🔰 Low Complexity
+```lua
+    -- Simple: Sync all dialog data to all clients
+    lia.dialog.syncToClients()
+
+```
+
+#### 📊 Medium Complexity
+```lua
+    -- Medium: Sync data to a specific player after login
+    hook.Add("PlayerInitialSpawn", "SyncDialogData", function(ply)
+        if not ply:IsBot() then
+            lia.dialog.syncToClients(ply)
+        end
+    end)
+
+```
+
+#### ⚙️ High Complexity
+```lua
+    -- High: Selective sync after NPC registration with performance monitoring
+    local function registerAndSyncNPC(npcID, npcData)
+        local startTime = SysTime()
+        -- Register the NPC
+        local success = lia.dialog.registerNPC(npcID, npcData)
+        if not success then return false end
+        -- Sync to all clients
+        lia.dialog.syncToClients()
+        -- Log performance and notify admins
+        local syncTime = SysTime() - startTime
+        print("NPC '" .. npcID .. "' registered and synced in " .. string.format("%.3f", syncTime) .. " seconds")
+        -- Notify admins of new NPC availability
+        for _, ply in ipairs(player.GetAll()) do
+            if ply:IsAdmin() then
+                ply:ChatPrint("New NPC '" .. (npcData.PrintName or npcID) .. "' is now available!")
+            end
+        end
+        return true
+    end
+
+```
+
+---
+
 ### lia.dialog.registerNPC
 
 #### 📋 Purpose
@@ -230,7 +412,13 @@ Called during gamemode initialization or when adding new NPCs to register their 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `uniqueID` | **string** | Unique identifier for the NPC |
-| `data` | **table** | NPC data table containing Conversation and other properties |
+| `data` | **table** | NPC data table with the following properties: |
+| `PrintName` | **string** | Display name for the NPC |
+| `Greeting` | **string** | Optional opening phrase displayed when dialog starts |
+| `text` | **string** | Optional dialog text displayed above conversation options |
+| `description` | **string** | Alternative to text field |
+| `dialog` | **string** | Alternative to text field |
+| `Conversation` | **table** | Dialog options and their configurations |
 
 #### ↩️ Returns
 * (boolean)
@@ -246,9 +434,10 @@ Server
     -- Simple: Register a basic NPC
     local success = lia.dialog.registerNPC("shopkeeper", {
         PrintName = "Shopkeeper",
+        Greeting = "Welcome to my shop! How can I help you today?",
         Conversation = {
-            ["Trade"] = {Callback = function(ply) openShop(ply) end},
-            ["Bye"] = {Callback = function(ply) closeDialog(ply) end}
+            ["Trade"] = {Response = "Let me show you what I have for sale!"},
+            ["Bye"] = {Response = "Come back anytime!"}
         }
     })
 
@@ -259,19 +448,20 @@ Server
     -- Medium: Register NPC with conditional options
     local questNPC = {
         PrintName = "Quest Master",
+        Greeting = "Greetings, adventurer! I have quests that will test your courage and skill.",
         Conversation = {
             ["Available Quests"] = {
                 ShouldShow = function(ply) return ply:GetLevel() >= 5 end,
-                Callback = function(ply) showQuests(ply) end,
+                Response = "Here are the quests available to you:",
                 options = {
                     ["Accept Quest"] = {
-                        Callback = function(ply) acceptQuest(ply, "main") end,
+                        Response = "Quest accepted! Good luck on your adventure.",
                         serverOnly = true
                     }
                 }
             },
             ["Training"] = {
-                Callback = function(ply) openTraining(ply) end
+                Response = "Let me teach you some skills!"
             }
         }
     }
@@ -285,6 +475,7 @@ Server
     local function createFactionNPC(factionName, factionData)
         local npcConfig = {
             PrintName = factionName .. " Representative",
+            Greeting = "Welcome to the " .. factionName .. " recruitment office. How may I assist you?",
             Conversation = {
                 ["Greetings"] = {
                     options = {
@@ -292,18 +483,18 @@ Server
                             ShouldShow = function(ply)
                                 return not ply:GetFaction() and ply:GetLevel() >= factionData.minLevel
                             end,
-                            Callback = function(ply) joinFaction(ply, factionName) end,
+                            Response = "Welcome to the " .. factionName .. "! You are now a member.",
                             serverOnly = true
                         },
                         ["Faction Benefits"] = {
                             ShouldShow = function(ply) return ply:GetFaction() == factionName end,
-                            Callback = function(ply) showBenefits(ply) end
+                            Response = "As a member of " .. factionName .. ", you have access to special equipment and areas."
                         },
                         ["Leave Faction"] = {
                             ShouldShow = function(ply, npc)
                                 return ply:GetFaction() == factionName and npc:GetFactionRank() >= 3
                             end,
-                            Callback = function(ply) leaveFaction(ply) end,
+                            Response = "You have left the " .. factionName .. ".",
                             serverOnly = true
                         }
                     }
@@ -313,7 +504,7 @@ Server
                     options = factionData.quests
                 },
                 ["General Info"] = {
-                    Callback = function(ply) showFactionInfo(ply, factionName) end
+                    Response = "The " .. factionName .. " is dedicated to [faction purpose]. We value [faction values]."
                 }
             }
         }
@@ -565,8 +756,8 @@ Client
             LocalPlayer():notifyError("Invalid NPC entity")
             return false
         end
-        if not LocalPlayer():hasPrivilege("canManageProperties") then
-            LocalPlayer():notifyError("You don't have permission to customize NPCs")
+        if not LocalPlayer():hasPrivilege("canManageNPCs") then
+            LocalPlayer():notifyError("You don't have permission to configure NPCs")
             return false
         end
         lia.dialog.openCustomizationUI(npc)
@@ -615,6 +806,40 @@ Client
     end
 
 ```
+
+---
+
+### lia.dialog.getAvailableConfigurations
+
+#### 📋 Purpose
+Retrieves all available NPC configuration modules that are visible to the specified player
+
+#### ⚙️ Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `ply` | **Player** | The player to check visibility for |
+| `npc` | **Entity** | The NPC entity being configured |
+| `npcID` | **string** | The unique identifier of the NPC type |
+
+#### ↩️ Returns
+* (table)
+Array of available configuration modules, sorted by order
+]]
+
+---
+
+### lia.dialog.openConfigurationPicker
+
+#### 📋 Purpose
+Opens a configuration picker interface that displays all available NPC customization modules for privileged users
+
+#### ⚙️ Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `npc` | **Entity** | The NPC entity to configure |
+| `npcID` | **string, optional** | The unique identifier of the NPC type (defaults to npc.uniqueID) |
 
 ---
 
