@@ -1,10 +1,6 @@
-# Weapons Item Generator
-
-Interactive tool for generating Lilia weapons item definitions. Fill out the fields below and click "Generate Weapons Item Code" to create your item code.
-
----
-
-## Weapons Item Generator
+<p align="center">
+  <h2 style="text-align: center;">Weapons Item Generator</h2>
+</p>
 
 <div id="weapons-generator">
     <div class="generator-section">
@@ -63,7 +59,7 @@ Interactive tool for generating Lilia weapons item definitions. Fill out the fie
 
         <div class="input-group">
             <label>
-                <input type="checkbox" id="drop-on-death"> Drop on Death
+                <input type="checkbox" id="drop-on-death" checked> Drop on Death
             </label>
             <small>Weapon drops when player dies</small>
         </div>
@@ -81,18 +77,18 @@ Interactive tool for generating Lilia weapons item definitions. Fill out the fie
 <style>
 /* Material Design inspired styling for Lilia theme */
 #weapons-generator {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
     font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
+    line-height: 1.75;
 }
 
 .generator-section {
     background: var(--md-default-fg-color--lightest);
     border: 1px solid var(--md-default-fg-color--lighter);
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 24px;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 28px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     transition: box-shadow 0.3s ease;
 }
@@ -107,13 +103,13 @@ Interactive tool for generating Lilia weapons item definitions. Fill out the fie
 }
 
 .generator-section h3 {
-    margin: -6px -6px 20px -6px;
-    padding: 16px 20px;
+    margin: -8px -8px 24px -8px;
+    padding: 18px 24px;
     background: linear-gradient(135deg, #009688 0%, #b39ddb 100%);
     color: white;
     border-radius: 8px 8px 0 0;
     font-weight: 500;
-    font-size: 1.2em;
+    font-size: 1.6em;
     letter-spacing: 0.02em;
 }
 
@@ -122,26 +118,26 @@ Interactive tool for generating Lilia weapons item definitions. Fill out the fie
 }
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .input-group label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--md-default-fg-color);
-    font-size: 0.95em;
+    font-size: 1.15em;
 }
 
 .input-group input[type="text"],
 .input-group input[type="number"],
 .input-group textarea {
     width: 100%;
-    padding: 12px 16px;
+    padding: 14px 18px;
     border: 2px solid var(--md-default-fg-color--lighter);
-    border-radius: 8px;
+    border-radius: 10px;
     font-family: 'Roboto Mono', 'Courier New', monospace;
-    font-size: 14px;
+    font-size: 19px;
     background: var(--md-default-fg-color--lightest);
     color: var(--md-default-fg-color);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -173,7 +169,7 @@ Interactive tool for generating Lilia weapons item definitions. Fill out the fie
 
 .input-group textarea {
     resize: vertical;
-    min-height: 60px;
+    min-height: 80px;
     line-height: 1.4;
 }
 
@@ -182,7 +178,7 @@ Interactive tool for generating Lilia weapons item definitions. Fill out the fie
     color: var(--md-default-fg-color--light);
     font-style: normal;
     margin-top: 6px;
-    font-size: 0.85em;
+    font-size: 1.05em;
 }
 
 [data-md-color-scheme="slate"] .input-group small {
@@ -203,14 +199,14 @@ Interactive tool for generating Lilia weapons item definitions. Fill out the fie
     background: linear-gradient(135deg, #009688 0%, #b39ddb 100%);
     color: white;
     border: none;
-    padding: 16px 32px;
-    border-radius: 8px;
+    padding: 18px 34px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     display: block;
     width: 100%;
-    margin: 24px 0;
+    margin: 28px 0;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -252,7 +248,7 @@ pre {
 
 code {
     font-family: 'Roboto Mono', 'Courier New', monospace !important;
-    font-size: 13px !important;
+    font-size: 16px !important;
     line-height: 1.5 !important;
 }
 
@@ -263,18 +259,18 @@ code {
     }
 
     .generator-section {
-        padding: 16px;
-        margin-bottom: 16px;
+        padding: 18px;
+        margin-bottom: 18px;
     }
 
     .generator-section h3 {
-        font-size: 1.1em;
-        padding: 12px 16px;
+        font-size: 1.4em;
+        padding: 14px 18px;
     }
 
     .generate-btn {
-        padding: 14px 24px;
-        font-size: 15px;
+        padding: 16px 26px;
+        font-size: 19px;
     }
 }
 
@@ -291,56 +287,49 @@ code {
 
 <script>
 function generateWeaponsItem() {
-    const name = document.getElementById('item-name').value || 'Weapon Name';
-    const desc = document.getElementById('item-desc').value || 'Weapon description';
-    const category = document.getElementById('item-category').value || 'weapons';
-    const model = document.getElementById('item-model').value || 'models/weapons/w_pistol.mdl';
+    const name = (document.getElementById('item-name').value || '').trim() || 'Weapon Name';
+    const desc = (document.getElementById('item-desc').value || '').trim() || 'Weapon description';
+    const category = (document.getElementById('item-category').value || '').trim() || 'weapons';
+    const model = (document.getElementById('item-model').value || '').trim() || 'models/weapons/w_pistol.mdl';
     const width = document.getElementById('item-width').value || '1';
     const height = document.getElementById('item-height').value || '1';
-    const weaponClass = document.getElementById('weapon-class').value || 'weapon_pistol';
+    const weaponClass = (document.getElementById('weapon-class').value || '').trim() || 'weapon_pistol';
     const skillLevels = document.getElementById('skill-levels').value.trim();
     const dropOnDeath = document.getElementById('drop-on-death').checked;
 
-    // Generate the code
-    let code = `-- Copy and paste this code into your weapons item file
--- Example: gamemode/items/weapons/pistol.lua
-
-ITEM.name = "${name}"
-ITEM.desc = "${desc}"
-ITEM.category = "${category}"
-
-ITEM.model = "${model}"
-ITEM.width = ${width}
-ITEM.height = ${height}
-
-ITEM.class = "${weaponClass}"
-ITEM.isWeapon = true
-
-`;
+    const lines = [
+        '-- Copy and paste this code into your weapons item file',
+        '-- Example: gamemode/items/weapons/pistol.lua',
+        '',
+        `ITEM.name = ${JSON.stringify(name)}`,
+        `ITEM.desc = ${JSON.stringify(desc)}`,
+        `ITEM.category = ${JSON.stringify(category)}`,
+        '',
+        `ITEM.model = ${JSON.stringify(model)}`,
+        `ITEM.width = ${width}`,
+        `ITEM.height = ${height}`,
+        '',
+        `ITEM.class = ${JSON.stringify(weaponClass)}`,
+        'ITEM.isWeapon = true',
+        `ITEM.DropOnDeath = ${dropOnDeath ? 'true' : 'false'}`
+    ];
 
     if (skillLevels) {
         try {
             JSON.parse(skillLevels);
-            code += `ITEM.RequiredSkillLevels = ${skillLevels}
-`;
+            lines.push('', `ITEM.RequiredSkillLevels = ${skillLevels}`);
         } catch (e) {
-            code += `-- ITEM.RequiredSkillLevels = ${skillLevels} -- Invalid JSON format
-`;
+            lines.push('', `-- ITEM.RequiredSkillLevels = ${skillLevels} -- Invalid JSON format`);
         }
     }
 
-    if (dropOnDeath) {
-        code += `ITEM.DropOnDeath = true
-`;
-    }
+    const code = `${lines.join('\n')}\n`;
 
-    // Update the code block
     const codeBlock = document.querySelector('code');
     if (codeBlock) {
         codeBlock.textContent = code;
     }
 
-    // Also update the pre element that contains the code
     const preElement = document.querySelector('pre');
     if (preElement) {
         preElement.innerHTML = `<code>${code.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code>`;
