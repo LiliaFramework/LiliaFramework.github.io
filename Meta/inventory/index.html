@@ -1,0 +1,6115 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Official documentation for the Lilia Framework">
+      
+      
+        <meta name="author" content="Lilia Framework Team">
+      
+      
+        <link rel="canonical" href="https://liliaframework.github.io/Meta/inventory/">
+      
+      
+        <link rel="prev" href="../entity/">
+      
+      
+        <link rel="next" href="../item/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Inventory Meta - Lilia Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lavender">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#inventory-meta" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Lilia Documentation" class="md-header__button md-logo" aria-label="Lilia Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lilia Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Inventory Meta
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lavender"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="lavender"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/LiliaFramework/Lilia" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../compatibility/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Addon Compatibility
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../gettingstarted/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Definitions/aid/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Definitions
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Hooks/client/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Hooks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Libraries/administrator/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Libraries
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../character/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Meta
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../generators/attribute/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Generators
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../modules/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Modules
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Lilia Documentation" class="md-nav__button md-logo" aria-label="Lilia Documentation" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Lilia Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/LiliaFramework/Lilia" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compatibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Addon Compatibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gettingstarted/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Definitions/aid/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Definitions
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Hooks/client/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hooks
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Libraries/administrator/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Libraries
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meta
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meta
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../character/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character Meta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entity Meta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory Meta
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory Meta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getData
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getData">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        extend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="extend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        configure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="configure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        configure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="configure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adddataproxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        addDataProxy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="addDataProxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getitemsbyuniqueid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getItemsByUniqueID
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getItemsByUniqueID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        register
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="register">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        new
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="new">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tostring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="tostring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gettype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getType
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ondatachanged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onDataChanged
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="onDataChanged">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getitems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getItems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getItems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getitemsoftype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getItemsOfType
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getItemsOfType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getfirstitemoftype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getFirstItemOfType
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getFirstItemOfType">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hasitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hasItem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="hasItem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getitemcount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getItemCount
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getItemCount">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getID
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        addItem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="addItem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        add
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="add">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syncitemadded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        syncItemAdded
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="syncItemAdded">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initializestorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        initializeStorage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="initializeStorage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restorefromstorage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        restoreFromStorage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="restoreFromStorage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restorefromstorage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        restoreFromStorage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="restoreFromStorage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removeitem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        removeItem
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="removeItem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        remove
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="remove">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        setData
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="setData">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canaccess" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        canAccess
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="canAccess">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#addaccessrule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        addAccessRule
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="addAccessRule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removeaccessrule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        removeAccessRule
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="removeAccessRule">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getrecipients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getRecipients
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getRecipients">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oninstanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onInstanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="onInstanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oninstanced_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onInstanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="onInstanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onloaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onLoaded
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="onLoaded">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onloaded_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onLoaded
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="onLoaded">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loaditems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        loadItems
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="loadItems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onitemsloaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onItemsLoaded
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="onItemsLoaded">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onitemsloaded_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onItemsLoaded
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="onItemsLoaded">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        instance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="instance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syncdata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        syncData
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="syncData">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sync
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="sync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        delete
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="delete">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#destroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        destroy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="destroy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        show
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="show">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-called_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ When Called
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#returns_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ↩️ Returns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Realm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 Example Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Item Meta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../panel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panel Meta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Player Meta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../generators/attribute/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generators
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../modules/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modules
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../character/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Meta
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="inventory-meta">Inventory Meta</h1>
+<p>Inventory management system for the Lilia framework.</p>
+<hr />
+<p>Overview</p>
+<p>The inventory meta table provides comprehensive functionality for managing inventory data, item storage, and inventory operations in the Lilia framework. It handles inventory creation, item management, data persistence, capacity management, and inventory-specific operations. The meta table operates on both server and client sides, with the server managing inventory storage and validation while the client provides inventory data access and display. It includes integration with the item system for item storage, database system for inventory persistence, character system for character inventories, and network system for inventory synchronization. The meta table ensures proper inventory data synchronization, item capacity management, item validation, and comprehensive inventory lifecycle management from creation to deletion.</p>
+<hr />
+<h3 id="getdata">getData</h3>
+<h4 id="purpose">📋 Purpose</h4>
+<p>Retrieves a stored data value on the inventory.</p>
+<h4 id="when-called">⏰ When Called</h4>
+<p>Use whenever reading custom inventory metadata.</p>
+<h4 id="parameters">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>key</code></td>
+<td><strong>string</strong></td>
+<td>Data key to read.</td>
+</tr>
+<tr>
+<td><code>default</code></td>
+<td><strong>any</strong></td>
+<td>Value returned when the key is missing.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns">↩️ Returns</h4>
+<ul>
+<li>any
+Stored value or the provided default.</li>
+</ul>
+<h4 id="realm">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inv</span><span class="p">:</span><span class="nf">getData</span><span class="p">(</span><span class="s2">&quot;char&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="extend">extend</h3>
+<h4 id="purpose_1">📋 Purpose</h4>
+<p>Creates a subclass of Inventory with its own metatable.</p>
+<h4 id="when-called_1">⏰ When Called</h4>
+<p>Use when defining a new inventory type.</p>
+<h4 id="parameters_1">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>className</code></td>
+<td><strong>string</strong></td>
+<td>Registry name for the new subclass.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_1">↩️ Returns</h4>
+<ul>
+<li>table
+Newly created subclass table.</li>
+</ul>
+<h4 id="realm_1">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_1">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">Backpack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Inventory</span><span class="p">:</span><span class="nf">extend</span><span class="p">(</span><span class="s2">&quot;liaBackpack&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="configure">configure</h3>
+<h4 id="purpose_2">📋 Purpose</h4>
+<p>Sets up inventory defaults; meant to be overridden.</p>
+<h4 id="when-called_2">⏰ When Called</h4>
+<p>Invoked during type registration to configure behavior.</p>
+<h4 id="returns_2">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_2">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_2">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="kr">function</span><span class="w"> </span><span class="nc">Inventory</span><span class="p">:</span><span class="nf">configure</span><span class="p">()</span><span class="w"> </span><span class="nv">self</span><span class="p">.</span><span class="py">config</span><span class="p">.</span><span class="py">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">}</span><span class="w"> </span><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="configure_1">configure</h3>
+<h4 id="purpose_3">📋 Purpose</h4>
+<p>Sets up inventory defaults; meant to be overridden.</p>
+<h4 id="when-called_3">⏰ When Called</h4>
+<p>Invoked during type registration to configure behavior.</p>
+<h4 id="returns_3">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_3">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_3">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">    </span><span class="kr">function</span><span class="w"> </span><span class="nc">Inventory</span><span class="p">:</span><span class="nf">configure</span><span class="p">()</span><span class="w"> </span><span class="nv">self</span><span class="p">.</span><span class="py">config</span><span class="p">.</span><span class="py">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">}</span><span class="w"> </span><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="adddataproxy">addDataProxy</h3>
+<h4 id="purpose_4">📋 Purpose</h4>
+<p>Registers a proxy callback for a specific data key.</p>
+<h4 id="when-called_4">⏰ When Called</h4>
+<p>Use when you need to react to data changes.</p>
+<h4 id="parameters_2">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>key</code></td>
+<td><strong>string</strong></td>
+<td>Data key to watch.</td>
+</tr>
+<tr>
+<td><code>onChange</code></td>
+<td><strong>function</strong></td>
+<td>Callback receiving old and new values.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_4">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_4">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_4">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">addDataProxy</span><span class="p">(</span><span class="s2">&quot;locked&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">o</span><span class="p">,</span><span class="nv">n</span><span class="p">)</span><span class="w"> </span><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="getitemsbyuniqueid">getItemsByUniqueID</h3>
+<h4 id="purpose_5">📋 Purpose</h4>
+<p>Returns all items in the inventory matching a uniqueID.</p>
+<h4 id="when-called_5">⏰ When Called</h4>
+<p>Use when finding all copies of a specific item type.</p>
+<h4 id="parameters_3">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uniqueID</code></td>
+<td><strong>string</strong></td>
+<td>Item unique identifier.</td>
+</tr>
+<tr>
+<td><code>onlyMain</code></td>
+<td><strong>boolean</strong></td>
+<td>Restrict search to main inventory when true.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_5">↩️ Returns</h4>
+<ul>
+<li>table
+Array of matching item instances.</li>
+</ul>
+<h4 id="realm_5">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_5">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">meds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inv</span><span class="p">:</span><span class="nf">getItemsByUniqueID</span><span class="p">(</span><span class="s2">&quot;medkit&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="register">register</h3>
+<h4 id="purpose_6">📋 Purpose</h4>
+<p>Registers this inventory type with the system.</p>
+<h4 id="when-called_6">⏰ When Called</h4>
+<p>Invoke once per subclass to set type ID and defaults.</p>
+<h4 id="parameters_4">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>typeID</code></td>
+<td><strong>string</strong></td>
+<td>Unique identifier for this inventory type.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_6">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_6">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_6">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="nv">Inventory</span><span class="p">:</span><span class="nf">register</span><span class="p">(</span><span class="s2">&quot;bag&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="new">new</h3>
+<h4 id="purpose_7">📋 Purpose</h4>
+<p>Creates a new instance of this inventory type.</p>
+<h4 id="when-called_7">⏰ When Called</h4>
+<p>Use when a character or container needs a fresh inventory.</p>
+<h4 id="returns_7">↩️ Returns</h4>
+<ul>
+<li>table
+Deferred inventory instance creation.</li>
+</ul>
+<h4 id="realm_7">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_7">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">inv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Inventory</span><span class="p">:</span><span class="nf">new</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h3 id="tostring">tostring</h3>
+<h4 id="purpose_8">📋 Purpose</h4>
+<p>Formats the inventory as a readable string with its ID.</p>
+<h4 id="when-called_8">⏰ When Called</h4>
+<p>Use for logging or debugging output.</p>
+<h4 id="returns_8">↩️ Returns</h4>
+<ul>
+<li>string
+Localized class name and ID.</li>
+</ul>
+<h4 id="realm_8">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_8">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="nv">inv</span><span class="p">:</span><span class="nf">tostring</span><span class="p">())</span>
+</span></code></pre></div>
+<hr />
+<h3 id="gettype">getType</h3>
+<h4 id="purpose_9">📋 Purpose</h4>
+<p>Returns the inventory type definition table.</p>
+<h4 id="when-called_9">⏰ When Called</h4>
+<p>Use when accessing type-level configuration.</p>
+<h4 id="returns_9">↩️ Returns</h4>
+<ul>
+<li>table
+Registered inventory type data.</li>
+</ul>
+<h4 id="realm_9">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_9">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">typeData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inv</span><span class="p">:</span><span class="nf">getType</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h3 id="ondatachanged">onDataChanged</h3>
+<h4 id="purpose_10">📋 Purpose</h4>
+<p>Fires proxy callbacks when a tracked data value changes.</p>
+<h4 id="when-called_10">⏰ When Called</h4>
+<p>Internally after setData updates.</p>
+<h4 id="parameters_5">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>key</code></td>
+<td><strong>string</strong></td>
+<td>Data key that changed.</td>
+</tr>
+<tr>
+<td><code>oldValue</code></td>
+<td><strong>any</strong></td>
+<td>Previous value.</td>
+</tr>
+<tr>
+<td><code>newValue</code></td>
+<td><strong>any</strong></td>
+<td>New value.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_10">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_10">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_10">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">onDataChanged</span><span class="p">(</span><span class="s2">&quot;locked&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="getitems">getItems</h3>
+<h4 id="purpose_11">📋 Purpose</h4>
+<p>Returns the table of item instances in this inventory.</p>
+<h4 id="when-called_11">⏰ When Called</h4>
+<p>Use when iterating all items.</p>
+<h4 id="returns_11">↩️ Returns</h4>
+<ul>
+<li>table
+Item instances keyed by item ID.</li>
+</ul>
+<h4 id="realm_11">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_11">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="nv">id</span><span class="p">,</span><span class="w"> </span><span class="nv">itm</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nb">pairs</span><span class="p">(</span><span class="nv">inv</span><span class="p">:</span><span class="nf">getItems</span><span class="p">())</span><span class="w"> </span><span class="kr">do</span><span class="w"> </span><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="getitemsoftype">getItemsOfType</h3>
+<h4 id="purpose_12">📋 Purpose</h4>
+<p>Collects items of a given type from the inventory.</p>
+<h4 id="when-called_12">⏰ When Called</h4>
+<p>Use when filtering for a specific item uniqueID.</p>
+<h4 id="parameters_6">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>itemType</code></td>
+<td><strong>string</strong></td>
+<td>Unique item identifier to match.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_12">↩️ Returns</h4>
+<ul>
+<li>table
+Array of matching items.</li>
+</ul>
+<h4 id="realm_12">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_12">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">foods</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inv</span><span class="p">:</span><span class="nf">getItemsOfType</span><span class="p">(</span><span class="s2">&quot;food&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="getfirstitemoftype">getFirstItemOfType</h3>
+<h4 id="purpose_13">📋 Purpose</h4>
+<p>Returns the first item matching a uniqueID.</p>
+<h4 id="when-called_13">⏰ When Called</h4>
+<p>Use when only one instance of a type is needed.</p>
+<h4 id="parameters_7">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>itemType</code></td>
+<td><strong>string</strong></td>
+<td>Unique item identifier to find.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_13">↩️ Returns</h4>
+<ul>
+<li>table|nil
+Item instance or nil if none found.</li>
+</ul>
+<h4 id="realm_13">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_13">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">gun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inv</span><span class="p">:</span><span class="nf">getFirstItemOfType</span><span class="p">(</span><span class="s2">&quot;pistol&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="hasitem">hasItem</h3>
+<h4 id="purpose_14">📋 Purpose</h4>
+<p>Checks whether the inventory contains an item type.</p>
+<h4 id="when-called_14">⏰ When Called</h4>
+<p>Use before consuming or requiring an item.</p>
+<h4 id="parameters_8">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>itemType</code></td>
+<td><strong>string</strong></td>
+<td>Unique item identifier to check.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_14">↩️ Returns</h4>
+<ul>
+<li>boolean
+True if at least one matching item exists.</li>
+</ul>
+<h4 id="realm_14">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_14">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">inv</span><span class="p">:</span><span class="nf">hasItem</span><span class="p">(</span><span class="s2">&quot;keycard&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="nf">unlock</span><span class="p">()</span><span class="w"> </span><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="getitemcount">getItemCount</h3>
+<h4 id="purpose_15">📋 Purpose</h4>
+<p>Counts items, optionally filtering by uniqueID.</p>
+<h4 id="when-called_15">⏰ When Called</h4>
+<p>Use for capacity checks or UI badge counts.</p>
+<h4 id="parameters_9">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>itemType</code></td>
+<td>**string</td>
+<td>nil**</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_15">↩️ Returns</h4>
+<ul>
+<li>number
+Total quantity of matching items.</li>
+</ul>
+<h4 id="realm_15">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_15">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">ammoCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inv</span><span class="p">:</span><span class="nf">getItemCount</span><span class="p">(</span><span class="s2">&quot;ammo&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="getid">getID</h3>
+<h4 id="purpose_16">📋 Purpose</h4>
+<p>Returns the numeric identifier for this inventory.</p>
+<h4 id="when-called_16">⏰ When Called</h4>
+<p>Use when networking, saving, or comparing inventories.</p>
+<h4 id="returns_16">↩️ Returns</h4>
+<ul>
+<li>number
+Inventory ID.</li>
+</ul>
+<h4 id="realm_16">🌐 Realm</h4>
+<p>Shared</p>
+<h4 id="example-usage_16">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inv</span><span class="p">:</span><span class="nf">getID</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h3 id="additem">addItem</h3>
+<h4 id="purpose_17">📋 Purpose</h4>
+<p>Inserts an item into this inventory and persists its invID.</p>
+<h4 id="when-called_17">⏰ When Called</h4>
+<p>Use when adding an item to the inventory on the server.</p>
+<h4 id="parameters_10">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>item</code></td>
+<td><strong>Item</strong></td>
+<td>Item instance to add.</td>
+</tr>
+<tr>
+<td><code>noReplicate</code></td>
+<td><strong>boolean</strong></td>
+<td>Skip replication hooks when true.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_17">↩️ Returns</h4>
+<ul>
+<li>Inventory
+The inventory for chaining.</li>
+</ul>
+<h4 id="realm_17">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_17">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">addItem</span><span class="p">(</span><span class="nv">item</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="add">add</h3>
+<h4 id="purpose_18">📋 Purpose</h4>
+<p>Alias to addItem for convenience.</p>
+<h4 id="when-called_18">⏰ When Called</h4>
+<p>Use wherever you would call addItem.</p>
+<h4 id="parameters_11">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>item</code></td>
+<td><strong>Item</strong></td>
+<td>Item instance to add.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_18">↩️ Returns</h4>
+<ul>
+<li>Inventory
+The inventory for chaining.</li>
+</ul>
+<h4 id="realm_18">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_18">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">add</span><span class="p">(</span><span class="nv">item</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="syncitemadded">syncItemAdded</h3>
+<h4 id="purpose_19">📋 Purpose</h4>
+<p>Notifies clients about an item newly added to this inventory.</p>
+<h4 id="when-called_19">⏰ When Called</h4>
+<p>Invoked after addItem to replicate state.</p>
+<h4 id="parameters_12">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>item</code></td>
+<td><strong>Item</strong></td>
+<td>Item instance already inserted.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_19">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_19">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_19">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">syncItemAdded</span><span class="p">(</span><span class="nv">item</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="initializestorage">initializeStorage</h3>
+<h4 id="purpose_20">📋 Purpose</h4>
+<p>Creates a database record for a new inventory and its data.</p>
+<h4 id="when-called_20">⏰ When Called</h4>
+<p>Use during initial inventory creation.</p>
+<h4 id="parameters_13">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>initialData</code></td>
+<td><strong>table</strong></td>
+<td>Key/value pairs to seed invdata rows; may include char.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_20">↩️ Returns</h4>
+<ul>
+<li>Promise
+Resolves with new inventory ID.</li>
+</ul>
+<h4 id="realm_20">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_20">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">initializeStorage</span><span class="p">({</span><span class="nv">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">charID</span><span class="p">})</span>
+</span></code></pre></div>
+<hr />
+<h3 id="restorefromstorage">restoreFromStorage</h3>
+<h4 id="purpose_21">📋 Purpose</h4>
+<p>Hook for restoring inventory data from storage.</p>
+<h4 id="when-called_21">⏰ When Called</h4>
+<p>Override to load custom data during restoration.</p>
+<h4 id="returns_21">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_21">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_21">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="w">    </span><span class="kr">function</span><span class="w"> </span><span class="nc">Inventory</span><span class="p">:</span><span class="nf">restoreFromStorage</span><span class="p">()</span><span class="w"> </span><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="restorefromstorage_1">restoreFromStorage</h3>
+<h4 id="purpose_22">📋 Purpose</h4>
+<p>Hook for restoring inventory data from storage.</p>
+<h4 id="when-called_22">⏰ When Called</h4>
+<p>Override to load custom data during restoration.</p>
+<h4 id="returns_22">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_22">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_22">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="w">    </span><span class="kr">function</span><span class="w"> </span><span class="nc">Inventory</span><span class="p">:</span><span class="nf">restoreFromStorage</span><span class="p">()</span><span class="w"> </span><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="removeitem">removeItem</h3>
+<h4 id="purpose_23">📋 Purpose</h4>
+<p>Removes an item from this inventory and updates clients/DB.</p>
+<h4 id="when-called_23">⏰ When Called</h4>
+<p>Use when deleting or moving items out of the inventory.</p>
+<h4 id="parameters_14">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>itemID</code></td>
+<td><strong>number</strong></td>
+<td>ID of the item to remove.</td>
+</tr>
+<tr>
+<td><code>preserveItem</code></td>
+<td><strong>boolean</strong></td>
+<td>Keep the instance and DB row when true.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_23">↩️ Returns</h4>
+<ul>
+<li>Promise
+Resolves after removal finishes.</li>
+</ul>
+<h4 id="realm_23">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_23">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">removeItem</span><span class="p">(</span><span class="nv">itemID</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="remove">remove</h3>
+<h4 id="purpose_24">📋 Purpose</h4>
+<p>Alias for removeItem.</p>
+<h4 id="when-called_24">⏰ When Called</h4>
+<p>Use interchangeably with removeItem.</p>
+<h4 id="parameters_15">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>itemID</code></td>
+<td><strong>number</strong></td>
+<td>ID of the item to remove.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_24">↩️ Returns</h4>
+<ul>
+<li>Promise
+Resolves after removal.</li>
+</ul>
+<h4 id="realm_24">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_24">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">remove</span><span class="p">(</span><span class="nv">id</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="setdata">setData</h3>
+<h4 id="purpose_25">📋 Purpose</h4>
+<p>Updates inventory data, persists it, and notifies listeners.</p>
+<h4 id="when-called_25">⏰ When Called</h4>
+<p>Use to change stored metadata such as character assignment.</p>
+<h4 id="parameters_16">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>key</code></td>
+<td><strong>string</strong></td>
+<td>Data key to set.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><strong>any</strong></td>
+<td>New value or nil to delete.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_25">↩️ Returns</h4>
+<ul>
+<li>Inventory
+The inventory for chaining.</li>
+</ul>
+<h4 id="realm_25">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_25">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">setData</span><span class="p">(</span><span class="s2">&quot;locked&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="canaccess">canAccess</h3>
+<h4 id="purpose_26">📋 Purpose</h4>
+<p>Evaluates access rules for a given action context.</p>
+<h4 id="when-called_26">⏰ When Called</h4>
+<p>Use before allowing inventory interactions.</p>
+<h4 id="parameters_17">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>action</code></td>
+<td><strong>string</strong></td>
+<td>Action name (e.g., "repl", "transfer").</td>
+</tr>
+<tr>
+<td><code>context</code></td>
+<td><strong>table</strong></td>
+<td>Additional data such as client.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_26">↩️ Returns</h4>
+<ul>
+<li>boolean|nil, string|nil
+Decision and optional reason if a rule handled it.</li>
+</ul>
+<h4 id="realm_26">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_26">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inv</span><span class="p">:</span><span class="nf">canAccess</span><span class="p">(</span><span class="s2">&quot;repl&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nv">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ply</span><span class="p">})</span>
+</span></code></pre></div>
+<hr />
+<h3 id="addaccessrule">addAccessRule</h3>
+<h4 id="purpose_27">📋 Purpose</h4>
+<p>Inserts an access rule into the rule list.</p>
+<h4 id="when-called_27">⏰ When Called</h4>
+<p>Use when configuring permissions for this inventory type.</p>
+<h4 id="parameters_18">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rule</code></td>
+<td><strong>function</strong></td>
+<td>Function returning decision and reason.</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td>**number</td>
+<td>nil**</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_27">↩️ Returns</h4>
+<ul>
+<li>Inventory
+The inventory for chaining.</li>
+</ul>
+<h4 id="realm_27">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_27">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">addAccessRule</span><span class="p">(</span><span class="nv">myRule</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="removeaccessrule">removeAccessRule</h3>
+<h4 id="purpose_28">📋 Purpose</h4>
+<p>Removes a previously added access rule.</p>
+<h4 id="when-called_28">⏰ When Called</h4>
+<p>Use when unregistering dynamic permission logic.</p>
+<h4 id="parameters_19">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rule</code></td>
+<td><strong>function</strong></td>
+<td>The rule function to remove.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_28">↩️ Returns</h4>
+<ul>
+<li>Inventory
+The inventory for chaining.</li>
+</ul>
+<h4 id="realm_28">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_28">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">removeAccessRule</span><span class="p">(</span><span class="nv">myRule</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="getrecipients">getRecipients</h3>
+<h4 id="purpose_29">📋 Purpose</h4>
+<p>Determines which players should receive inventory replication.</p>
+<h4 id="when-called_29">⏰ When Called</h4>
+<p>Use before sending inventory data to clients.</p>
+<h4 id="returns_29">↩️ Returns</h4>
+<ul>
+<li>table
+List of player recipients allowed by access rules.</li>
+</ul>
+<h4 id="realm_29">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_29">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">recips</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">inv</span><span class="p">:</span><span class="nf">getRecipients</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h3 id="oninstanced">onInstanced</h3>
+<h4 id="purpose_30">📋 Purpose</h4>
+<p>Hook called when an inventory instance is created.</p>
+<h4 id="when-called_30">⏰ When Called</h4>
+<p>Override to perform custom initialization.</p>
+<h4 id="returns_30">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_30">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_30">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="w">    </span><span class="kr">function</span><span class="w"> </span><span class="nc">Inventory</span><span class="p">:</span><span class="nf">onInstanced</span><span class="p">()</span><span class="w"> </span><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="oninstanced_1">onInstanced</h3>
+<h4 id="purpose_31">📋 Purpose</h4>
+<p>Hook called when an inventory instance is created.</p>
+<h4 id="when-called_31">⏰ When Called</h4>
+<p>Override to perform custom initialization.</p>
+<h4 id="returns_31">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_31">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_31">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="w">    </span><span class="kr">function</span><span class="w"> </span><span class="nc">Inventory</span><span class="p">:</span><span class="nf">onInstanced</span><span class="p">()</span><span class="w"> </span><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="onloaded">onLoaded</h3>
+<h4 id="purpose_32">📋 Purpose</h4>
+<p>Hook called after inventory data is loaded.</p>
+<h4 id="when-called_32">⏰ When Called</h4>
+<p>Override to react once storage data is retrieved.</p>
+<h4 id="returns_32">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_32">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_32">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="w">    </span><span class="kr">function</span><span class="w"> </span><span class="nc">Inventory</span><span class="p">:</span><span class="nf">onLoaded</span><span class="p">()</span><span class="w"> </span><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="onloaded_1">onLoaded</h3>
+<h4 id="purpose_33">📋 Purpose</h4>
+<p>Hook called after inventory data is loaded.</p>
+<h4 id="when-called_33">⏰ When Called</h4>
+<p>Override to react once storage data is retrieved.</p>
+<h4 id="returns_33">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_33">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_33">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="w">    </span><span class="kr">function</span><span class="w"> </span><span class="nc">Inventory</span><span class="p">:</span><span class="nf">onLoaded</span><span class="p">()</span><span class="w"> </span><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="loaditems">loadItems</h3>
+<h4 id="purpose_34">📋 Purpose</h4>
+<p>Loads item instances from the database into this inventory.</p>
+<h4 id="when-called_34">⏰ When Called</h4>
+<p>Use during inventory initialization to restore contents.</p>
+<h4 id="returns_34">↩️ Returns</h4>
+<ul>
+<li>Promise
+Resolves with the loaded items table.</li>
+</ul>
+<h4 id="realm_34">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_34">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">loadItems</span><span class="p">():</span><span class="nb">next</span><span class="p">(</span><span class="kr">function</span><span class="p">(</span><span class="nv">items</span><span class="p">)</span><span class="w"> </span><span class="kr">end</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="onitemsloaded">onItemsLoaded</h3>
+<h4 id="purpose_35">📋 Purpose</h4>
+<p>Hook called after items are loaded into the inventory.</p>
+<h4 id="when-called_35">⏰ When Called</h4>
+<p>Override to run logic after contents are ready.</p>
+<h4 id="parameters_20">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>items</code></td>
+<td><strong>table</strong></td>
+<td>Loaded items table.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_35">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_35">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_35">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="w">    </span><span class="kr">function</span><span class="w"> </span><span class="nc">Inventory</span><span class="p">:</span><span class="nf">onItemsLoaded</span><span class="p">(</span><span class="nv">items</span><span class="p">)</span><span class="w"> </span><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="onitemsloaded_1">onItemsLoaded</h3>
+<h4 id="purpose_36">📋 Purpose</h4>
+<p>Hook called after items are loaded into the inventory.</p>
+<h4 id="when-called_36">⏰ When Called</h4>
+<p>Override to run logic after contents are ready.</p>
+<h4 id="parameters_21">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>items</code></td>
+<td><strong>table</strong></td>
+<td>Loaded items table.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_36">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_36">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_36">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="w">    </span><span class="kr">function</span><span class="w"> </span><span class="nc">Inventory</span><span class="p">:</span><span class="nf">onItemsLoaded</span><span class="p">(</span><span class="nv">items</span><span class="p">)</span><span class="w"> </span><span class="kr">end</span>
+</span></code></pre></div>
+<hr />
+<h3 id="instance">instance</h3>
+<h4 id="purpose_37">📋 Purpose</h4>
+<p>Creates and registers an inventory instance with initial data.</p>
+<h4 id="when-called_37">⏰ When Called</h4>
+<p>Use to instantiate a server-side inventory of this type.</p>
+<h4 id="parameters_22">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>initialData</code></td>
+<td><strong>table</strong></td>
+<td>Data used during creation (e.g., char assignment).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_37">↩️ Returns</h4>
+<ul>
+<li>Promise
+Resolves with the new inventory instance.</li>
+</ul>
+<h4 id="realm_37">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_37">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="w">    </span><span class="nv">Inventory</span><span class="p">:</span><span class="nf">instance</span><span class="p">({</span><span class="nv">char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">charID</span><span class="p">})</span>
+</span></code></pre></div>
+<hr />
+<h3 id="syncdata">syncData</h3>
+<h4 id="purpose_38">📋 Purpose</h4>
+<p>Sends a single inventory data key to recipients.</p>
+<h4 id="when-called_38">⏰ When Called</h4>
+<p>Use after setData to replicate a specific field.</p>
+<h4 id="parameters_23">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>key</code></td>
+<td><strong>string</strong></td>
+<td>Data key to send.</td>
+</tr>
+<tr>
+<td><code>recipients</code></td>
+<td>**Player</td>
+<td>table</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_38">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_38">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_38">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">syncData</span><span class="p">(</span><span class="s2">&quot;locked&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="sync">sync</h3>
+<h4 id="purpose_39">📋 Purpose</h4>
+<p>Sends full inventory state and contained items to recipients.</p>
+<h4 id="when-called_39">⏰ When Called</h4>
+<p>Use when initializing or resyncing an inventory for clients.</p>
+<h4 id="parameters_24">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recipients</code></td>
+<td>**Player</td>
+<td>table</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_39">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_39">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_39">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">sync</span><span class="p">(</span><span class="nv">ply</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="delete">delete</h3>
+<h4 id="purpose_40">📋 Purpose</h4>
+<p>Deletes this inventory via the inventory manager.</p>
+<h4 id="when-called_40">⏰ When Called</h4>
+<p>Use when permanently removing an inventory record.</p>
+<h4 id="returns_40">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_40">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_40">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">delete</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h3 id="destroy">destroy</h3>
+<h4 id="purpose_41">📋 Purpose</h4>
+<p>Clears inventory items, removes it from cache, and notifies clients.</p>
+<h4 id="when-called_41">⏰ When Called</h4>
+<p>Use when unloading or destroying an inventory instance.</p>
+<h4 id="returns_41">↩️ Returns</h4>
+<ul>
+<li>nil</li>
+</ul>
+<h4 id="realm_41">🌐 Realm</h4>
+<p>Server</p>
+<h4 id="example-usage_41">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">destroy</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+<h3 id="show">show</h3>
+<h4 id="purpose_42">📋 Purpose</h4>
+<p>Opens the inventory UI on the client.</p>
+<h4 id="when-called_42">⏰ When Called</h4>
+<p>Use to display this inventory to the player.</p>
+<h4 id="parameters_25">⚙️ Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>parent</code></td>
+<td><strong>Panel</strong></td>
+<td>Optional parent panel.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_42">↩️ Returns</h4>
+<ul>
+<li>Panel
+The created inventory panel.</li>
+</ul>
+<h4 id="realm_42">🌐 Realm</h4>
+<p>Client</p>
+<h4 id="example-usage_42">💡 Example Usage</h4>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="w">    </span><span class="nv">inv</span><span class="p">:</span><span class="nf">show</span><span class="p">()</span>
+</span></code></pre></div>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../entity/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Entity Meta">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Entity Meta
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../item/" class="md-footer__link md-footer__link--next" aria-label="Next: Item Meta">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Item Meta
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.instant.preview", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "navigation.top", "header.autohide", "announce.dismiss", "navigation.footer", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
