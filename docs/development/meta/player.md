@@ -1733,6 +1733,38 @@ The player meta table provides comprehensive functionality for managing player d
 
 ---
 
+<details class="realm-shared" id="function-getragdoll">
+<summary><a id="getRagdoll"></a>getRagdoll()</summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="getragdoll"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Gets the player's ragdoll entity from either GMod's GetRagdollEntity or the custom setRagdolled system.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">When Called</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Use when needing to access the player's current ragdoll entity.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Returns</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="/development/meta/entity/">entity|nil</a></span> The ragdoll entity if one exists, nil otherwise.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  local ragdoll = ply:getRagdoll()
+  if IsValid(ragdoll) then
+      -- Do something with ragdoll
+  end
+</code></pre>
+</div>
+
+</div>
+</details>
+
+---
+
 <details class="realm-shared" id="function-requestbuttons">
 <summary><a id="requestButtons"></a>requestButtons(title, buttons)</summary>
 <div class="details-content">
@@ -1755,6 +1787,37 @@ The player meta table provides comprehensive functionality for managing player d
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  ply:requestButtons("Actions", {{text="A", callback=cb}})
+</code></pre>
+</div>
+
+</div>
+</details>
+
+---
+
+<details class="realm-server" id="function-isstuck">
+<summary><a id="isStuck"></a>isStuck()</summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="isstuck"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Checks if the player is currently stuck in geometry.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">When Called</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Use when determining if a player needs to be repositioned.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Returns</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">boolean</a></span> True if stuck, false otherwise.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  if ply:isStuck() then
+      ply:SetPos(newPosition)
+  end
 </code></pre>
 </div>
 
@@ -2017,7 +2080,7 @@ The player meta table provides comprehensive functionality for managing player d
 <h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string</a></span> <span class="parameter">reason</span> Ban reason.</p>
-<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">duration</span> Duration in minutes; 0 or nil for perm.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">duration</span> Duration in mies; 0 or nil for perm.</p>
 <p><span class="types"><a class="type" href="/development/meta/player/">Player</a></span> <span class="parameter">banner</span> <span class="optional">optional</span> Staff issuing the ban.</p>
 </div>
 
@@ -2061,6 +2124,40 @@ The player meta table provides comprehensive functionality for managing player d
 
 ---
 
+<details class="realm-server" id="function-createragdoll">
+<summary><a id="createRagdoll"></a>createRagdoll(freeze)</summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="createragdoll"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Creates a ragdoll entity for the player with proper physics setup.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">When Called</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Use when needing to create a physical ragdoll representation.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">boolean</a></span> <span class="parameter">freeze</span> <span class="optional">optional</span> True to freeze physics, false for normal physics.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Returns</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="/development/meta/entity/">entity</a></span> The created ragdoll entity.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  local ragdoll = ply:createRagdoll(false)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+---
+
 <details class="realm-server" id="function-setragdolled">
 <summary><a id="setRagdolled"></a>setRagdolled(state, baseTime, getUpGrace, getUpMessage)</summary>
 <div class="details-content">
@@ -2084,8 +2181,7 @@ The player meta table provides comprehensive functionality for managing player d
 
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
-<pre><code class="language-lua">  ply:setRagdolled(true, 10)
-</code></pre>
+<pre><code class="language-lua"></code></pre>
 </div>
 
 </div>
@@ -2098,12 +2194,17 @@ The player meta table provides comprehensive functionality for managing player d
 <div class="details-content">
 <h3 style="margin-bottom: 5px; font-weight: 700;"><a id="syncvars"></a>Purpose</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
-  <p>Sends all known net variables to this player.</p>
+  <p>Synchronizes networked variables for this player.</p>
 </div>
 
 <h3 style="margin-bottom: 5px; font-weight: 700;">When Called</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
   <p>Use when a player joins or needs a full resync.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Returns</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.2">None.</a></span></p>
 </div>
 
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
