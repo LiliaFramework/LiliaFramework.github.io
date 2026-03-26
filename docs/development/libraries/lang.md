@@ -230,3 +230,38 @@ The languages library provides comprehensive internationalization (i18n) functio
 
 ---
 
+<details class="realm-shared" id="function-lialangresolvetoken">
+<summary><a id="lia.lang.resolveToken"></a>lia.lang.resolveToken(value)</summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="lialangresolvetoken"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Resolve @-prefixed localization tokens into their translated value.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">When Called</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>When config, options, or other string fields may store localization tokens.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string|any</a></span> <span class="parameter">value</span> Raw value to inspect and optionally localize.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Returns</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string|any</a></span> Localized string for @tokens, or the original value when no token is present.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  local title = lia.lang.resolveToken("@currencyPlural")
+  local welcome = lia.lang.resolveToken("@welcomeUser", client:Name(), os.date())
+</code></pre>
+</div>
+
+</div>
+</details>
+
+---
+
