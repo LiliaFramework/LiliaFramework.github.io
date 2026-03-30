@@ -83,7 +83,7 @@ The keybind library provides comprehensive functionality for managing keyboard b
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  local desc = lia.keybind.getDisplayDescription("openInventory")
-  print("Keybind description:", desc)
+  lia.debug("Keybind description:", desc)
 </code></pre>
 </div>
 
@@ -118,7 +118,7 @@ The keybind library provides comprehensive functionality for managing keyboard b
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  local cat = lia.keybind.getDisplayCategory("openInventory")
-  print("Keybind category:", cat)
+  lia.debug("Keybind category:", cat)
 </code></pre>
 </div>
 
@@ -154,7 +154,7 @@ The keybind library provides comprehensive functionality for managing keyboard b
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  local key = lia.keybind.get("openInventory", KEY_I)
-  print("Inventory key is:", input.GetKeyName(key))
+  lia.debug("Inventory key is:", input.GetKeyName(key))
 </code></pre>
 </div>
 

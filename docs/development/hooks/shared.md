@@ -1019,7 +1019,7 @@ Shared hooks in the Lilia framework handle functionality available on both clien
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  hook.Add("CommandAdded", "LogCommands", function(name, data)
-      print("Command registered:", name, "adminOnly:", data.adminOnly)
+      lia.debug("Command registered:", name, "adminOnly:", data.adminOnly)
   end)
 </code></pre>
 </div>
@@ -2935,7 +2935,7 @@ Shared hooks in the Lilia framework handle functionality available on both clien
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  hook.Add("OnPlayerDroppedItem", "LogItemDrop", function(client, spawnedItem)
-      print(client:Name() .. " dropped an item")
+      lia.debug(client:Name() .. " dropped an item")
   end)
 </code></pre>
 </div>
@@ -2968,7 +2968,7 @@ Shared hooks in the Lilia framework handle functionality available on both clien
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  hook.Add("OnPlayerRotateItem", "LogItemRotation", function(client, item, newRot)
-      print(client:Name() .. " rotated " .. item:getName() .. " to " .. newRot)
+      lia.debug(client:Name() .. " rotated " .. item:getName() .. " to " .. newRot)
   end)
 </code></pre>
 </div>
@@ -3000,7 +3000,7 @@ Shared hooks in the Lilia framework handle functionality available on both clien
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  hook.Add("OnPlayerTakeItem", "LogItemPickup", function(client, item)
-      print(client:Name() .. " took " .. item:getName())
+      lia.debug(client:Name() .. " took " .. item:getName())
   end)
 </code></pre>
 </div>
@@ -3034,7 +3034,7 @@ Shared hooks in the Lilia framework handle functionality available on both clien
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  hook.Add("OnPrivilegeRegistered", "SyncPrivileges", function(priv)
-      print("Privilege added:", priv.Name or priv.name)
+      lia.debug("Privilege added:", priv.Name or priv.name)
   end)
 </code></pre>
 </div>

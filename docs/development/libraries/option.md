@@ -79,7 +79,7 @@ The option library provides comprehensive functionality for managing user-config
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  local name = lia.option.getDisplayName("BarsAlwaysVisible")
-  print("Option name:", name)
+  lia.debug("Option name:", name)
 </code></pre>
 </div>
 
@@ -114,7 +114,7 @@ The option library provides comprehensive functionality for managing user-config
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  local desc = lia.option.getDisplayDesc("BarsAlwaysVisible")
-  print("Option description:", desc)
+  lia.debug("Option description:", desc)
 </code></pre>
 </div>
 
@@ -149,7 +149,7 @@ The option library provides comprehensive functionality for managing user-config
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  local cat = lia.option.getDisplayCategory("BarsAlwaysVisible")
-  print("Option category:", cat)
+  lia.debug("Option category:", cat)
 </code></pre>
 </div>
 
@@ -184,7 +184,7 @@ The option library provides comprehensive functionality for managing user-config
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  local list = lia.option.getOptions("weaponSelectorPosition")
-  for _, opt in pairs(list) do print("Choice:", opt) end
+  for _, opt in pairs(list) do lia.debug("Choice:", opt) end
 </code></pre>
 </div>
 

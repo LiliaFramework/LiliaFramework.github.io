@@ -3531,7 +3531,7 @@ Server-side hooks in the Lilia framework handle server-side logic, data persiste
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  hook.Add("OnSetUsergroup", "LogUsergroupChange", function(sid, new, source, ply)
-      print(string.format("Usergroup changed for %s to %s by %s", sid, new, source))
+      lia.debug(string.format("Usergroup changed for %s to %s by %s", sid, new, source))
   end)
 </code></pre>
 </div>
@@ -4799,7 +4799,7 @@ Server-side hooks in the Lilia framework handle server-side logic, data persiste
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  hook.Add("RemoveWarning", "MirrorWarningRemoval", function(charID, index)
-      print("Warning removed", charID, index)
+      lia.debug("Warning removed", charID, index)
   end)
 </code></pre>
 </div>
@@ -4888,7 +4888,7 @@ Server-side hooks in the Lilia framework handle server-side logic, data persiste
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  hook.Add("SetupBotPlayer", "BotWelcome", function(client)
-      print("Bot setup complete", client)
+      lia.debug("Bot setup complete", client)
   end)
 </code></pre>
 </div>
@@ -5907,7 +5907,7 @@ Server-side hooks in the Lilia framework handle server-side logic, data persiste
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  hook.Add("VendorSynchronized", "AfterVendorSync", function(vendor)
-      print("Vendor synced", vendor)
+      lia.debug("Vendor synced", vendor)
   end)
 </code></pre>
 </div>

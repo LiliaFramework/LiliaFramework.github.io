@@ -35,7 +35,7 @@ The configuration library provides comprehensive functionality for managing user
 
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
-<pre><code class="language-lua">  lia.config.add("MaxThirdPersonDistance", "maxThirdPersonDistance", 100, function(old, new)
+<pre><code class="language-lua">  lia.config.add("MaxThirdPersonDistance", "@maxThirdPersonDistance", 100, function(old, new)
       lia.option.set("thirdPersonDistance", math.min(lia.option.get("thirdPersonDistance", new), new))
   end, {category = "Lilia", type = "Int", min = 10, max = 200})
 </code></pre>
@@ -72,7 +72,7 @@ The configuration library provides comprehensive functionality for managing user
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  local name = lia.config.getDisplayName("MaxCarryWeight")
-  print("Config name:", name)
+  lia.debug("Config name:", name)
 </code></pre>
 </div>
 
@@ -107,7 +107,7 @@ The configuration library provides comprehensive functionality for managing user
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  local desc = lia.config.getDisplayDesc("MaxCarryWeight")
-  print("Config description:", desc)
+  lia.debug("Config description:", desc)
 </code></pre>
 </div>
 
@@ -142,7 +142,7 @@ The configuration library provides comprehensive functionality for managing user
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  local cat = lia.config.getDisplayCategory("MaxCarryWeight")
-  print("Config category:", cat)
+  lia.debug("Config category:", cat)
 </code></pre>
 </div>
 
