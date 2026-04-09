@@ -72,7 +72,6 @@ The configuration library provides comprehensive functionality for managing user
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  local name = lia.config.getDisplayName("MaxCarryWeight")
-  lia.debug("Config name:", name)
 </code></pre>
 </div>
 
@@ -107,7 +106,6 @@ The configuration library provides comprehensive functionality for managing user
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  local desc = lia.config.getDisplayDesc("MaxCarryWeight")
-  lia.debug("Config description:", desc)
 </code></pre>
 </div>
 
@@ -142,7 +140,6 @@ The configuration library provides comprehensive functionality for managing user
 <h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
 <div style="margin-left: 20px; margin-bottom: 20px;">
 <pre><code class="language-lua">  local cat = lia.config.getDisplayCategory("MaxCarryWeight")
-  lia.debug("Config category:", cat)
 </code></pre>
 </div>
 
