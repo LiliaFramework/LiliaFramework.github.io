@@ -39,7 +39,7 @@ The option library provides comprehensive functionality for managing user-config
 <pre><code class="language-lua">  lia.option.add("hudScale", "HUD Scale", "Scale HUD elements", 1.0, function(old, new)
       hook.Run("HUDScaleChanged", old, new)
   end, {
-      category = "@Core",
+      category = "@core",
       min = 0.5,
       max = 1.5,
       decimals = 2,

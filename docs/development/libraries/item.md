@@ -379,6 +379,47 @@ after the base item properties are set but before final localization.</p>
 
 ---
 
+<details class="realm-shared" id="function-liaitemlocalizedefinition">
+<summary><a id="lia.item.localizeDefinition"></a>lia.item.localizeDefinition(uniqueID, baseID, isBaseItem, path, luaGenerated)</summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="liaitemlocalizedefinition"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Registers an item definition with the Lilia item system, setting up inheritance and default functions.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">When Called</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Called during item loading to register item definitions, either from files or programmatically generated.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string</a></span> <span class="parameter">uniqueID</span> The unique identifier for the item.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.2">string, optional</a></span> <span class="parameter">baseID</span> The base item ID to inherit from (defaults to lia.meta.item).</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.2">boolean, optional</a></span> <span class="parameter">isBaseItem</span> Whether this is a base item definition.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.2">string, optional</a></span> <span class="parameter">path</span> The file path for loading the item (used for shared loading).</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.2">boolean, optional</a></span> <span class="parameter">luaGenerated</span> Whether the item is generated programmatically rather than loaded from a file.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Returns</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">table</a></span> The registered item definition table.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  -- Register a base item
+  lia.item.register("base_weapon", nil, true, "path/to/base_weapon.lua")
+  -- Register a regular item
+  lia.item.register("weapon_pistol", "base_weapon", false, "path/to/weapon_pistol.lua")
+</code></pre>
+</div>
+
+</div>
+</details>
+
+---
+
 <details class="realm-shared" id="function-liaitemregisteritem">
 <summary><a id="lia.item.registerItem"></a>lia.item.registerItem(id, base, properties)</summary>
 <div class="details-content">
