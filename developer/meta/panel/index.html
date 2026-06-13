@@ -1,0 +1,2619 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Premium documentation for running, shaping, and extending Lilia Garry's Mod roleplay servers.">
+      
+      
+        <meta name="author" content="Lilia Framework Team">
+      
+      
+        <link rel="canonical" href="https://liliaframework.github.io/developer/meta/panel/">
+      
+      
+        <link rel="prev" href="../item/">
+      
+      
+        <link rel="next" href="../player/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Panel - Lilia Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#panel" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Lilia Framework" class="md-header__button md-logo" aria-label="Lilia Framework" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lilia Framework
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Panel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/LiliaFramework/Lilia" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    LiliaFramework/Lilia
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Developer
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../definitions/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../generators/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Generators
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Lilia Framework" class="md-nav__button md-logo" aria-label="Lilia Framework" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Lilia Framework
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/LiliaFramework/Lilia" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    LiliaFramework/Lilia
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meta Tables
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meta Tables
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../character/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../item/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Item
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Panel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../libraries/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Libraries
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Libraries
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../libraries/lia.currency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Currency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../definitions/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../generators/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generators
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../about/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Developer
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Meta Tables
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<style>
+details > summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+    padding-right: 180px;
+}
+
+details > summary .summary-main {
+    min-width: 0;
+}
+
+details > summary .source-link-button--summary {
+    position: absolute;
+    right: 56px;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    z-index: 2;
+}
+</style>
+
+<h1 id="panel">Panel<a class="headerlink" href="#panel" title="Permanent link">&para;</a></h1>
+<p>Panel metatable helpers for inventory-aware UI behavior, layout, transitions, and drawing.</p>
+<hr />
+<h3 style="margin-bottom: 5px;">Overview</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+The panel meta table extends Garry's Mod VGUI panels with convenience helpers for inventory hook forwarding, scaled positioning and sizing, composable paint and hover effects, avatar masking, click behaviors, layout shortcuts, and transition-driven UI animation.
+</div>
+
+<hr />
+<details class="realm-client" id="function-lialistenforinventorychanges">
+<summary><span class="summary-main"><a id="liaListenForInventoryChanges"></a>liaListenForInventoryChanges(inventory)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L36" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="lialistenforinventorychanges"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Starts listening for inventory-related hooks and forwards matching events to this panel.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">table</a></span> <span class="parameter">inventory</span> The inventory object whose events should be observed.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:liaListenForInventoryChanges(inventory)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-liadeleteinventoryhooks">
+<summary><span class="summary-main"><a id="liaDeleteInventoryHooks"></a>liaDeleteInventoryHooks(id)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L94" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="liadeleteinventoryhooks"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Removes inventory hooks that were previously registered for this panel.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">id</span> <span class="optional">optional</span> A specific inventory ID to stop listening to, or `nil` to remove all tracked inventory hooks.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:liaDeleteInventoryHooks()
+  panel:liaDeleteInventoryHooks(inventory:getID())
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-setscaledpos">
+<summary><span class="summary-main"><a id="setScaledPos"></a>setScaledPos(x, y)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L136" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="setscaledpos"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Sets the panel position using screen-scaled X and Y values.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">x</span> The horizontal position before `ScreenScale` is applied.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">y</span> The vertical position before `ScreenScaleH` is applied.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:setScaledPos(32, 24)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-setscaledsize">
+<summary><span class="summary-main"><a id="setScaledSize"></a>setScaledSize(w, h)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L167" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="setscaledsize"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Sets the panel size using screen-scaled width and height values.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">w</span> The width before `ScreenScale` is applied.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">h</span> The height before `ScreenScaleH` is applied.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:setScaledSize(300, 160)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-on">
+<summary><span class="summary-main"><a id="On"></a>On(name, fn)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L216" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="on"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Appends a callback onto an existing panel method instead of replacing the method entirely.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string</a></span> <span class="parameter">name</span> The panel method name to wrap.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">function</a></span> <span class="parameter">fn</span> The callback to run after the original method.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:On("Paint", function(_, w, h)
+      surface.DrawOutlinedRect(0, 0, w, h)
+  end)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-setuptransition">
+<summary><span class="summary-main"><a id="SetupTransition"></a>SetupTransition(name, speed, fn)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L250" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="setuptransition"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Creates a transition value that smoothly lerps between `0` and `1` based on a predicate callback.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string</a></span> <span class="parameter">name</span> The field name that stores the transition value.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">speed</span> The interpolation speed multiplier.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">function</a></span> <span class="parameter">fn</span> A callback that returns whether the transition should move toward `1`.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:SetupTransition("HoverAmount", 8, function(s)
+      return s:IsHovered()
+  end)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-fadehover">
+<summary><span class="summary-main"><a id="FadeHover"></a>FadeHover(col, speed, rad)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L279" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="fadehover"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Paints a fading hover overlay over the panel.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> <span class="optional">optional</span> The hover overlay color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">speed</span> <span class="optional">optional</span> The hover fade speed.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">rad</span> <span class="optional">optional</span> An optional rounded corner radius.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:FadeHover(Color(255, 255, 255, 20), 6, 8)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-barhover">
+<summary><span class="summary-main"><a id="BarHover"></a>BarHover(col, height, speed)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L317" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="barhover"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Draws an animated bar along the bottom edge while the panel is hovered.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> <span class="optional">optional</span> The bar color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">height</span> <span class="optional">optional</span> The bar thickness.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">speed</span> <span class="optional">optional</span> The transition speed.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:BarHover(Color(0, 120, 255), 3, 8)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-fillhover">
+<summary><span class="summary-main"><a id="FillHover"></a>FillHover(col, dir, speed, mat)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L354" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="fillhover"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Fills the panel from a chosen direction while it is hovered.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> <span class="optional">optional</span> The fill color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">dir</span> <span class="optional">optional</span> The fill direction constant such as `LEFT` or `TOP`.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">speed</span> <span class="optional">optional</span> The transition speed.</p>
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/IMaterial">IMaterial</a></span> <span class="parameter">mat</span> <span class="optional">optional</span> An optional material to draw instead of a solid rectangle.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:FillHover(Color(255, 255, 255, 25), LEFT, 8)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-background">
+<summary><span class="summary-main"><a id="Background"></a>Background(col, rad, rtl, rtr, rbl, rbr)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L412" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="background"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Draws a flat or rounded background in the panel paint hook.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> The background color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">rad</span> <span class="optional">optional</span> The rounded corner radius.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">boolean</a></span> <span class="parameter">rtl</span> <span class="optional">optional</span> Whether the top-left corner is rounded when using `draw.RoundedBoxEx`.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">boolean</a></span> <span class="parameter">rtr</span> <span class="optional">optional</span> Whether the top-right corner is rounded.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">boolean</a></span> <span class="parameter">rbl</span> <span class="optional">optional</span> Whether the bottom-left corner is rounded.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">boolean</a></span> <span class="parameter">rbr</span> <span class="optional">optional</span> Whether the bottom-right corner is rounded.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:Background(Color(20, 20, 20, 220), 8)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-material">
+<summary><span class="summary-main"><a id="Material"></a>Material(mat, col)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L448" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="material"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Paints a material stretched across the panel.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/IMaterial">IMaterial</a></span> <span class="parameter">mat</span> The material to draw.</p>
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> <span class="optional">optional</span> A tint color applied to the material.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:Material(Material("vgui/white"), Color(255, 255, 255))
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-tiledmaterial">
+<summary><span class="summary-main"><a id="TiledMaterial"></a>TiledMaterial(mat, tw, th, col)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L482" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="tiledmaterial"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Paints a tiled material across the panel using UV scaling.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/IMaterial">IMaterial</a></span> <span class="parameter">mat</span> The material to tile.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">tw</span> The horizontal tile size.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">th</span> The vertical tile size.</p>
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> <span class="optional">optional</span> A tint color applied to the tiled material.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:TiledMaterial(Material("vgui/white"), 32, 32)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-outline">
+<summary><span class="summary-main"><a id="Outline"></a>Outline(col, width)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L512" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="outline"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Draws an outline around the panel with configurable thickness.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> <span class="optional">optional</span> The outline color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">width</span> <span class="optional">optional</span> The outline thickness in pixels.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:Outline(Color(255, 255, 255), 2)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-linedcorners">
+<summary><span class="summary-main"><a id="LinedCorners"></a>LinedCorners(col, cornerLen)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L544" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="linedcorners"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Draws simple line corners around the panel frame.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> <span class="optional">optional</span> The corner line color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">cornerLen</span> <span class="optional">optional</span> The length of each corner segment.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:LinedCorners(Color(255, 255, 255), 12)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-sideblock">
+<summary><span class="summary-main"><a id="SideBlock"></a>SideBlock(col, size, side)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L579" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="sideblock"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Draws a solid accent block on one side of the panel.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> <span class="optional">optional</span> The block color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">size</span> <span class="optional">optional</span> The thickness of the block.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">side</span> <span class="optional">optional</span> The side constant such as `LEFT` or `BOTTOM`.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:SideBlock(Color(0, 127, 255), 4, LEFT)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-text">
+<summary><span class="summary-main"><a id="Text"></a>Text(text, font, col, alignment, ox, oy, paint)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L628" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="text"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Sets built-in control text or paints centered text manually.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string</a></span> <span class="parameter">text</span> The text to display.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string</a></span> <span class="parameter">font</span> <span class="optional">optional</span> The font name to use.</p>
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> <span class="optional">optional</span> The text color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">alignment</span> <span class="optional">optional</span> The horizontal text alignment constant.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">ox</span> <span class="optional">optional</span> Horizontal paint offset.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">oy</span> <span class="optional">optional</span> Vertical paint offset.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">boolean</a></span> <span class="parameter">paint</span> <span class="optional">optional</span> Whether to force manual painting even when native text setters exist.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:Text("Confirm", "Trebuchet24", color_white)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-dualtext">
+<summary><span class="summary-main"><a id="DualText"></a>DualText(toptext, topfont, topcol, bottomtext, bottomfont, bottomcol, alignment, centerSpacing)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L685" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="dualtext"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Paints two stacked text lines with independent fonts and colors.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string</a></span> <span class="parameter">toptext</span> The upper text line.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string</a></span> <span class="parameter">topfont</span> <span class="optional">optional</span> The upper line font.</p>
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">topcol</span> <span class="optional">optional</span> The upper line color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string</a></span> <span class="parameter">bottomtext</span> The lower text line.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string</a></span> <span class="parameter">bottomfont</span> <span class="optional">optional</span> The lower line font.</p>
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">bottomcol</span> <span class="optional">optional</span> The lower line color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">alignment</span> <span class="optional">optional</span> The horizontal text alignment.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">centerSpacing</span> <span class="optional">optional</span> Extra spacing adjustment around the center.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:DualText("Lilia", "Trebuchet24", color_white, "Inventory", "Trebuchet18", Color(180, 180, 180))
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-blur">
+<summary><span class="summary-main"><a id="Blur"></a>Blur(amount)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L731" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="blur"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Draws a blurred fullscreen backdrop behind the panel bounds.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">amount</span> <span class="optional">optional</span> The maximum blur strength.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:Blur(8)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-circleclick">
+<summary><span class="summary-main"><a id="CircleClick"></a>CircleClick(col, speed, trad)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L769" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="circleclick"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Plays an expanding circular ripple from the click position.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> <span class="optional">optional</span> The ripple color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">speed</span> <span class="optional">optional</span> The expansion and fade speed.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">trad</span> <span class="optional">optional</span> The target radius for the ripple.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  button:CircleClick(Color(255, 255, 255, 40), 5)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-circlehover">
+<summary><span class="summary-main"><a id="CircleHover"></a>CircleHover(col, speed, trad)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L813" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="circlehover"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Draws a circular hover effect that follows the cursor.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> <span class="optional">optional</span> The hover effect color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">speed</span> <span class="optional">optional</span> The transition speed.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">trad</span> <span class="optional">optional</span> The target hover radius.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:CircleHover(Color(255, 255, 255, 20), 6)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-squarecheckbox">
+<summary><span class="summary-main"><a id="SquareCheckbox"></a>SquareCheckbox(inner, outer, speed)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L849" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="squarecheckbox"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Paints an animated square checkbox fill based on checked state.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">inner</span> <span class="optional">optional</span> The fill color used when checked.</p>
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">outer</span> <span class="optional">optional</span> The outer frame color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">speed</span> <span class="optional">optional</span> The transition speed.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  checkbox:SquareCheckbox(Color(0, 200, 0), color_white, 14)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-circlecheckbox">
+<summary><span class="summary-main"><a id="CircleCheckbox"></a>CircleCheckbox(inner, outer, speed)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L888" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="circlecheckbox"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Paints an animated circular checkbox fill based on checked state.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">inner</span> <span class="optional">optional</span> The fill color used when checked.</p>
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">outer</span> <span class="optional">optional</span> The outer frame color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">speed</span> <span class="optional">optional</span> The transition speed.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  checkbox:CircleCheckbox(Color(0, 200, 0), color_white, 14)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-avatarmask">
+<summary><span class="summary-main"><a id="AvatarMask"></a>AvatarMask(mask)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L923" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="avatarmask"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Masks an embedded `AvatarImage` using a custom stencil shape callback.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">function</a></span> <span class="parameter">mask</span> A drawing callback that defines the stencil mask shape.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:AvatarMask(function(_, w, h)
+      draw.RoundedBox(8, 0, 0, w, h, color_white)
+  end)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-circleavatar">
+<summary><span class="summary-main"><a id="CircleAvatar"></a>CircleAvatar()</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L971" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="circleavatar"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Applies a circular stencil mask to the panel avatar.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  avatarPanel:CircleAvatar()
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-circle">
+<summary><span class="summary-main"><a id="Circle"></a>Circle(col)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L994" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="circle"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Draws a filled circle that fits inside the panel.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> <span class="optional">optional</span> The circle color.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:Circle(Color(255, 255, 255))
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-circlefadehover">
+<summary><span class="summary-main"><a id="CircleFadeHover"></a>CircleFadeHover(col, speed)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1024" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="circlefadehover"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Draws a circular hover overlay that fades in and out.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> <span class="optional">optional</span> The overlay color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">speed</span> <span class="optional">optional</span> The transition speed.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:CircleFadeHover(Color(255, 255, 255, 20), 6)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-circleexpandhover">
+<summary><span class="summary-main"><a id="CircleExpandHover"></a>CircleExpandHover(col, speed)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1056" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="circleexpandhover"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Draws a circular hover overlay that expands with hover progress.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> <span class="optional">optional</span> The overlay color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">speed</span> <span class="optional">optional</span> The transition speed.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:CircleExpandHover(Color(255, 255, 255, 20), 6)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-gradient">
+<summary><span class="summary-main"><a id="Gradient"></a>Gradient(col, dir, frac, op)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1093" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="gradient"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Draws a directional gradient overlay with optional inversion.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://wiki.facepunch.com/gmod/Color">Color</a></span> <span class="parameter">col</span> The gradient tint color.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">dir</span> <span class="optional">optional</span> The gradient direction constant.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">frac</span> <span class="optional">optional</span> The fraction of the panel covered by the gradient.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">boolean</a></span> <span class="parameter">op</span> <span class="optional">optional</span> Whether to invert the gradient material direction.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:Gradient(Color(0, 0, 0, 180), BOTTOM, 1)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-setopenurl">
+<summary><span class="summary-main"><a id="SetOpenURL"></a>SetOpenURL(url)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1140" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="setopenurl"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Opens the provided URL when the panel is clicked.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string</a></span> <span class="parameter">url</span> The URL to open in the user's browser.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:SetOpenURL("https://example.com")
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-netmessage">
+<summary><span class="summary-main"><a id="NetMessage"></a>NetMessage(name, data)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1167" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="netmessage"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Sends a client-to-server net message when the panel is clicked.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string</a></span> <span class="parameter">name</span> The net message name.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">function</a></span> <span class="parameter">data</span> <span class="optional">optional</span> A callback that writes additional payload data into the net message.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  button:NetMessage("liaRequestAction", function()
+      net.WriteUInt(1, 8)
+  end)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-stick">
+<summary><span class="summary-main"><a id="Stick"></a>Stick(dock, margin, dontInvalidate)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1199" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="stick"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Docks the panel with optional uniform margin and parent invalidation.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">dock</span> <span class="optional">optional</span> The docking mode such as `FILL` or `TOP`.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">margin</span> <span class="optional">optional</span> A uniform dock margin.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">boolean</a></span> <span class="parameter">dontInvalidate</span> <span class="optional">optional</span> Whether to skip invalidating the parent layout.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:Stick(TOP, 4)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-divtall">
+<summary><span class="summary-main"><a id="DivTall"></a>DivTall(frac, target)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1228" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="divtall"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Sets the panel height to a fraction of a target panel's height.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">frac</span> <span class="optional">optional</span> The divisor used for the target height.</p>
+<p><span class="types"><a class="type" href="/developer/meta/panel/">Panel</a></span> <span class="parameter">target</span> <span class="optional">optional</span> The panel whose height is used as the source measurement.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:DivTall(3, parent)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-divwide">
+<summary><span class="summary-main"><a id="DivWide"></a>DivWide(frac, target)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1255" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="divwide"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Sets the panel width to a fraction of a target panel's width.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">frac</span> <span class="optional">optional</span> The divisor used for the target width.</p>
+<p><span class="types"><a class="type" href="/developer/meta/panel/">Panel</a></span> <span class="parameter">target</span> <span class="optional">optional</span> The panel whose width is used as the source measurement.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:DivWide(2, parent)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-squarefromheight">
+<summary><span class="summary-main"><a id="SquareFromHeight"></a>SquareFromHeight()</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1276" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="squarefromheight"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Makes the panel square by matching its width to its current height.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:SquareFromHeight()
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-squarefromwidth">
+<summary><span class="summary-main"><a id="SquareFromWidth"></a>SquareFromWidth()</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1295" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="squarefromwidth"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Makes the panel square by matching its height to its current width.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:SquareFromWidth()
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-setremove">
+<summary><span class="summary-main"><a id="SetRemove"></a>SetRemove(target)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1318" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="setremove"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Removes a target panel when this panel is clicked.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="/developer/meta/panel/">Panel</a></span> <span class="parameter">target</span> <span class="optional">optional</span> The panel to remove, or this panel when omitted.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  closeButton:SetRemove(frame)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-fadein">
+<summary><span class="summary-main"><a id="FadeIn"></a>FadeIn(time, alpha)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1344" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="fadein"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Fades the panel in from alpha `0` to a target opacity.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">time</span> <span class="optional">optional</span> The fade duration in seconds.</p>
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">number</a></span> <span class="parameter">alpha</span> <span class="optional">optional</span> The target alpha value.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:FadeIn(0.25, 255)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-hidevbar">
+<summary><span class="summary-main"><a id="HideVBar"></a>HideVBar()</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1366" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="hidevbar"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Hides and collapses a scroll panel's vertical scrollbar.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  scrollPanel:HideVBar()
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-settransitionfunc">
+<summary><span class="summary-main"><a id="SetTransitionFunc"></a>SetTransitionFunc(fn)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1392" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="settransitionfunc"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Sets the default predicate used by transition helpers.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">function</a></span> <span class="parameter">fn</span> The predicate callback used by `SetupTransition`.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Returns</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="/developer/meta/panel/">Panel</a></span> The current panel for chaining.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:SetTransitionFunc(function(s) return s:IsHovered() end)
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-cleartransitionfunc">
+<summary><span class="summary-main"><a id="ClearTransitionFunc"></a>ClearTransitionFunc()</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1413" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="cleartransitionfunc"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Clears the default predicate override used by transition helpers.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Returns</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="/developer/meta/panel/">Panel</a></span> The current panel for chaining.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:ClearTransitionFunc()
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-setappendoverwrite">
+<summary><span class="summary-main"><a id="SetAppendOverwrite"></a>SetAppendOverwrite(fn)</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1438" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="setappendoverwrite"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Overrides which panel method `On` appends to.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Parameters</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#2.1">string</a></span> <span class="parameter">fn</span> The method name that `On` should use until cleared.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Returns</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="/developer/meta/panel/">Panel</a></span> The current panel for chaining.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:SetAppendOverwrite("PaintOver")
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-clearappendoverwrite">
+<summary><span class="summary-main"><a id="ClearAppendOverwrite"></a>ClearAppendOverwrite()</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1459" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="clearappendoverwrite"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Clears the temporary method override used by `On`.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Returns</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<p><span class="types"><a class="type" href="/developer/meta/panel/">Panel</a></span> The current panel for chaining.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:ClearAppendOverwrite()
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-clearpaint">
+<summary><span class="summary-main"><a id="ClearPaint"></a>ClearPaint()</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1479" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="clearpaint"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Removes the panel `Paint` function.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  panel:ClearPaint()
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+<details class="realm-client" id="function-readytextbox">
+<summary><span class="summary-main"><a id="ReadyTextbox"></a>ReadyTextbox()</span><a class="source-link-button source-link-button--summary" href="https://github.com/LiliaFramework/Lilia/blob/main/gamemode/core/meta/panel.lua#L1498" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">View Source</a></summary>
+<div class="details-content">
+<h3 style="margin-bottom: 5px; font-weight: 700;"><a id="readytextbox"></a>Purpose</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Prepares a textbox for paint-over transitions while editing.</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Realm</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+  <p>Client</p>
+</div>
+
+<h3 style="margin-bottom: 5px; font-weight: 700;">Example Usage</h3>
+<div style="margin-left: 20px; margin-bottom: 20px;">
+<pre><code class="language-lua">  textEntry:ReadyTextbox()
+</code></pre>
+</div>
+
+</div>
+</details>
+
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../item/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Item">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Item
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../player/" class="md-footer__link md-footer__link--next" aria-label="Next: Player">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Player
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/LiliaFramework/Lilia" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/esCRH5ckbQ" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.prune", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
