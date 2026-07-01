@@ -59,6 +59,7 @@ nav:
           - Overview: developer/libraries/index.md
           # AUTO-GENERATED: LIBRARIES START
           - Currency: developer/libraries/lia.currency.md
+          - Admin: developer/libraries/lia.admin.md
           - Attributes: developer/libraries/lia.attribs.md
           - Bar: developer/libraries/lia.bar.md
           - Camera: developer/libraries/lia.camera.md
@@ -91,6 +92,8 @@ nav:
           - Player Interactions: developer/libraries/lia.playerinteract.md
           - Time: developer/libraries/lia.time.md
           - Utility: developer/libraries/lia.util.md
+          - Vendor: developer/libraries/lia.vendor.md
+          - View: developer/libraries/lia.view.md
           - Web Image: developer/libraries/lia.webimage.md
           - WebSound: developer/libraries/lia.websound.md
           - Workshop: developer/libraries/lia.workshop.md
