@@ -83,7 +83,6 @@ nav:
           - Protection: developer/hooks/protection.md
           - Recognition: developer/hooks/recognition.md
           - Salary: developer/hooks/salary.md
-          - Scoreboard: developer/hooks/scoreboard.md
           - Spawns: developer/hooks/spawns.md
           - Teams: developer/hooks/teams.md
           - UI: developer/hooks/ui.md
@@ -153,6 +152,7 @@ nav:
           - Classes: definitions/class.md
           - Factions: definitions/faction.md
           - Modules: definitions/module.md
+          - Schema: definitions/schema.md
       - Items:
           # AUTO-GENERATED: ITEM DEFINITIONS START
           - Overview: definitions/items/index.md
