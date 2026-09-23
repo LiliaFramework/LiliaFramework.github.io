@@ -10,7 +10,7 @@ exclude_docs: |
 
 theme:
   name: material
-  logo: assets/logo.png
+  logo: https://bleonheart.github.io/Samael-Assets/lilia.png?raw=true
   favicon: assets/favicon.ico
   language: en
   features:
