@@ -1,110 +1,116 @@
-# Lilia Documentation
-
 <p align="center">
-  <strong>Official Documentation for Lilia Framework</strong><br/>
-  Complete guides, API reference, and tutorials for building advanced roleplay servers with Lilia.<br/><br/>
-  <img src="https://bleonheart.github.io/Samael-Assets/lilia.png?raw=true" alt="Lilia Logo" width="150" />
+ <strong>Lilia Documentation — Framework Guides & Reference</strong><br/>
+ The documentation site for the Lilia roleplay framework, covering installation, configuration, APIs, hooks, modules, and development workflows.<br/>
+ Built with MkDocs and published as the central reference for the Lilia ecosystem.
 </p>
 
-> **Note:**
-> 
-> The documentation lives in the `documentation/` directory of the main Lilia repo:
-> 
-> https://github.com/LiliaFramework/Lilia/tree/main/documentation
-> 
-> Please do **not** open pull requests or push directly to this repo.
-
-## 🚀 Local Development
-
-Want to contribute to the documentation or preview changes locally? Here's how to set up the documentation site:
-
-### **Prerequisites**
-- Python 3.7+ installed on your system
-- Git for cloning the repository
-
-### **Setup Instructions**
-
-1. **Clone the main Lilia repository:**
-   ```bash
-   git clone https://github.com/LiliaFramework/Lilia.git
-   cd Lilia/documentation
-   ```
-
-2. **Create and activate a Python virtual environment:**
-   ```bash
-   python3 -m venv .venv
-   
-   # On Windows:
-   .venv\Scripts\activate
-   
-   # On macOS/Linux:
-   source .venv/bin/activate
-   ```
-
-3. **Install documentation dependencies:**
-   ```bash
-   pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin
-   ```
-
-4. **Start the local development server:**
-   ```bash
-   mkdocs serve
-   ```
-
-5. **Open your browser** at [http://127.0.0.1:8000](http://127.0.0.1:8000) to preview the documentation.
-
-> **Pro Tip:** The development server auto-reloads when you make changes, so you can see updates in real-time!
-
----
-
-## 📖 Documentation Structure
-
-The documentation is organized into several key sections:
-
-- **`docs/`** - Main documentation content
-- **`docs/libraries/`** - API reference for all Lilia libraries
-- **`docs/definitions/`** - Core concept definitions
-- **`docs/hooks/`** - Hook and event documentation
-- **`docs/meta/`** - Meta table documentation
-- **`mkdocs.yml`** - MkDocs configuration file
-
----
-
-## 🤝 Contributing to Documentation
-
-We welcome contributions to improve the documentation! Here's how to get started:
-
-### **Making Changes**
-1. **Fork & clone** the main [LiliaFramework/Lilia](https://github.com/LiliaFramework/Lilia) repository
-2. **Edit files** under the `documentation/docs/` directory
-3. **Test locally** using the setup instructions above
-4. **Commit, push** to your fork, and open a pull request against `main`
-5. **Tag your PR** with the `documentation` label
-
-### **What We're Looking For**
-- **Content improvements** - Better explanations, more examples
-- **New guides** - Step-by-step tutorials for common tasks
-- **API documentation** - Missing or incomplete function references
-- **Code examples** - Practical examples for developers
-- **Bug fixes** - Typos, broken links, formatting issues
-
-### **Quality Guidelines**
-- Use clear, concise language
-- Include code examples where helpful
-- Test all code snippets before submitting
-- Follow the existing documentation style
-- Use markdown linting and spell-check before opening a PR
-
----
-
-## 🌐 Live Documentation
-
-The documentation is automatically deployed and available at:
-**https://liliaframework.github.io**
-
----
+<p align="center">
+ <img src="https://github.com/LiliaFramework/Lilia/blob/main/logo.png?raw=true" alt="Lilia Logo" width="220" />
+</p>
 
 <p align="center">
-  <strong>Ready to contribute to Lilia's documentation?</strong><br/>
-  <a href="https://github.com/LiliaFramework/Lilia">Start contributing today!</a>
+ <a href="./License">
+  <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="GPLv3" />
+ </a>
+ <a href="https://liliaframework.github.io">
+  <img src="https://img.shields.io/badge/Documentation-liliaframework.github.io-blue?logo=readthedocs&logoColor=white" alt="Documentation Website" />
+ </a>
+ <img src="https://img.shields.io/badge/Built%20with-MkDocs-526CFE?logo=materialformkdocs&logoColor=white" alt="MkDocs" />
 </p>
+
+---
+
+## Overview
+
+This repository publishes the Lilia documentation site.
+
+The documentation covers:
+
+- Framework installation and setup
+- Configuration
+- Core concepts and definitions
+- Libraries and APIs
+- Hooks and events
+- Meta tables
+- Modules
+- Developer workflows
+- Generators and reference material
+
+Documentation website:
+
+https://liliaframework.github.io
+
+## Documentation Source
+
+Canonical documentation work should be made through the main Lilia repository:
+
+https://github.com/LiliaFramework/Lilia/tree/main/documentation
+
+When contributing documentation, make changes there and open the pull request against the main Lilia repository rather than treating this publishing repository as the primary source.
+
+## Local Development
+
+Clone the main Lilia repository:
+
+```bash
+git clone https://github.com/LiliaFramework/Lilia.git
+cd Lilia/documentation
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+Activate it, then install the documentation dependencies:
+
+```bash
+pip install mkdocs mkdocs-material mkdocs-awesome-pages-plugin
+```
+
+Start the local development server:
+
+```bash
+mkdocs serve
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8000
+```
+
+## Repository Structure
+
+```text
+LiliaFramework.github.io/
+├── docs/
+├── scripts/
+├── mkdocs.yml
+├── modules.json
+├── version.json
+└── README.md
+```
+
+## Contributing
+
+Documentation improvements are welcome through the main Lilia repository.
+
+Useful contributions include:
+
+- Clearer explanations
+- Additional examples
+- New guides
+- Missing API reference material
+- Hook documentation
+- Corrections to outdated information
+- Typo and formatting fixes
+
+Test documentation locally before submitting changes.
+
+## License
+
+The documentation repository is distributed under the GNU General Public License v3.0.
+
+See [License](./License) for details.
